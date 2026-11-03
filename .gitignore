@@ -11,3 +11,4 @@ qnx800/
 *.vdi
 *.img
 *.iso
+.tmp/
