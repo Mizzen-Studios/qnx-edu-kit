@@ -12,9 +12,9 @@ Owner plan: plan_v3, superseding KevScope. CANopy: Automotive & Mobility. edu-ki
 
 ## Owner dependencies
 
-- Existing zero-spend x86_64 Ubuntu 22.04/24.04 host with usable /dev/kvm and approved access. Current ARM64 host has no KVM or QEMU.
+- Updated owner decision (3 Nov21:19UTC): use the existing ARM64 Ubuntu24.04 VM with QEMU x86_64 TCG software emulation, no KVM requirement. qemu-system-x86 and qemu-user-static8.2.2 are installed; Linux guest/user feasibility testing is in progress. QNX/SDP host-tool compatibility still needs the SDK.
 - Licensed SDK/QSTI details; no account creation or SDK files in Git.
-- Trusted Discord provider/account context for #qnx-dev setup and progress. Hook and contextual relay both refused channel operations; no channel/posts were created.
+- Progress stays in the current session until the owner sorts Discord. No further channel-creation retries are required; no channel/posts were created during kickoff.
 - Review applicable file/binary licences before upstream template reuse; do not assume repository metadata overrides proprietary notices.
 
 ## CANopy acceptance backlog
