@@ -1,0 +1,8 @@
+flowchart TD
+  N0["Validate host memory range"]
+  N1["Transfer ownership to device"]
+  N2["Bounded device buffer"]
+  N3["Complete before reuse or release"]
+  N0 --> N1
+  N1 --> N2
+  N2 --> N3

@@ -1,10 +1,22 @@
-# Step 1: Setup — solution
+# Step 1: solution specification
 
-Status: BLOCKED, SDK-independent foundation only.
+Acceptance specification ONLY; no implemented target source or fabricated API stubs.
 
-Solution acceptance specification (not solution source): Record SDP build, QSTI and QEMU versions, image provenance, target architecture and permissions; validate a clean boot.
+## Goal
 
-Run `make check-step1` at repository root. It exits nonzero with BLOCKED; this is intentional.
-No QNX implementation, function signature, policy or live evidence exists here yet.
-Populate source only after local SDK API review and live register verification.
-See [verification checklist](../../../docs/verification-checklist.md).
+Establish reproducible host and evidence boundaries.
+
+## Inputs and work
+
+- Record host architecture, Python, make and QEMU version. ARM64 TCG is approved; KVM is not required.
+- Keep SDKs, images and binaries outside the checkout, even ignored folders. Record authorized SDP build, QSTI version and image provenance when available.
+
+## Required acceptance evidence
+
+A clean clone runs host checks without third-party Python packages; full verification remains blocked.
+
+## Gate
+
+Host: make check-step1 remains BLOCKED (script exit 2). Preserve raw target transcript, versions, source revision and errors. Host-model results do not replace this gate.
+
+[Return to codelab](../../../codelab/codelab.md).

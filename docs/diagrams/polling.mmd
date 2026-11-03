@@ -1,0 +1,8 @@
+flowchart TD
+  N0["Validate integer 0..12"]
+  N1["Submit one request"]
+  N2["Check busy until deadline"]
+  N3["Read result or report timeout"]
+  N0 --> N1
+  N1 --> N2
+  N2 --> N3

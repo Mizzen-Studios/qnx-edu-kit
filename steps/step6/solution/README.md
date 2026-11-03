@@ -1,10 +1,22 @@
-# Step 6: Resource manager — solution
+# Step 6: solution specification
 
-Status: BLOCKED, SDK-independent foundation only.
+Acceptance specification ONLY; no implemented target source or fabricated API stubs.
 
-Solution acceptance specification (not solution source): Review resource-manager handlers locally; implement bounded input, concurrency, partial reads and error handling; observe the finish line and safe re-probe.
+## Goal
 
-Run `make check-step6` at repository root. It exits nonzero with BLOCKED; this is intentional.
-No QNX implementation, function signature, policy or live evidence exists here yet.
-Populate source only after local SDK API review and live register verification.
-See [verification checklist](../../../docs/verification-checklist.md).
+Turn messages into a predictable client contract.
+
+## Inputs and work
+
+- Define bounded decimal input with optional newline, partial-write behavior, per-open result ownership and serialization. Cap message size before parsing.
+- Implement partial reads, offsets and EOF, errors without stale output and cancellation using actual installed resmgr declarations. Publish readiness last; process death does not reset hardware.
+
+## Required acceptance evidence
+
+Future target acceptance: write 10 to /dev/edu and read 3628800. Test concurrent clients, malformed input, partial reads, death and re-probe.
+
+## Gate
+
+Host: make check-step6 remains BLOCKED (script exit 2). Preserve raw target transcript, versions, source revision and errors. Host-model results do not replace this gate.
+
+[Return to codelab](../../../codelab/codelab.md).
