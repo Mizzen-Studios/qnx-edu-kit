@@ -1,5 +1,7 @@
 # QNX platform/source gate report — 2026-11-03 UTC
 
+Historical initial snapshot. The host/KVM/QEMU requirements below were superseded by the owner-approved TCG decision at21:19UTC; see [tested TCG feasibility](tcg-feasibility.md). Source/licensing and untested-QNX caveats still apply.
+
 Scope: read plan_v3.md completely; bounded read-only host and upstream investigation. No repository modifications, installs, SDK/image downloads, account creation, spend, public writes, or contact. Only this report is written. GPL emulator source declarations were inspected remotely as hardware-model evidence; no GPL driver code copied or stored.
 
 ## Decision summary

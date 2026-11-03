@@ -28,10 +28,10 @@ Host mode runs guard and framework tests, then explicitly SKIPs six live checks.
 | Field | State |
 |---|---|
 | Foundation host | Ubuntu 24.04.5 LTS, ARM64 (aarch64) |
-| KVM / QEMU / SDK | absent on foundation host |
+| KVM / QEMU / SDK | No KVM; installed QEMU 8.2.2 TCG + user emulation; SDK pending |
 | QNX SDP | 8.0 intended; build ID PENDING, not installed |
-| QSTI / QEMU | versions and image provenance PENDING |
-| Target | x86_64 proposed, never booted here |
+| QSTI / QEMU | QSTI image pending; apt QEMU 8.2.2 Ubuntu1.18 verified |
+| Target | x86_64 Linux TCG boot verified; QNX has not booted here |
 | Toolchain | qcc target selection PENDING local SDK confirmation |
 | macOS / Windows | UNTESTED; no verified Docker path provided |
 | Last live verification | NEVER |
@@ -52,7 +52,7 @@ No QNX declarations, compatibility shims, fake target functions or made-up signa
 
 See [verification checklist](docs/verification-checklist.md), [host test evidence](docs/test-results.md) and [learning notes](docs/learning-notes.md). Every edu register must be verified against a live device in the pinned QEMU before any register tutorial or publication. SDK review, secpol, all target code, DMA, restart, trace, eight diagrams, claat render, two fresh-agent runs and mandatory on-QNX capture remain PENDING. No 45-minute completion claim is validated.
 
-CI is host-only, not Stage-1 QNX acceptance. No QEMU, SDK or target image is downloaded. Redistribution guard scans ignored/untracked files, names, signatures and selected markers; it is conservative, not a complete licence/content detector. SDKs, binaries, archives and images must stay outside this repo (also outside ignored folders). Python stdlib only; no dependencies are installed.
+CI is host-only, not Stage-1 QNX acceptance. CI downloads no QEMU, SDK or target image. Local owner-authorized feasibility testing used apt QEMU and official checksum-verified Alpine Linux artifacts outside this repository; see [TCG feasibility](docs/tcg-feasibility.md). No QNX SDK/image has been downloaded. Redistribution guard scans ignored/untracked files, names, signatures and selected markers; it is conservative, not a complete licence/content detector. SDKs, binaries, archives and images must stay outside this repo (also outside ignored folders). Python stdlib only; no dependencies are installed.
 
 ## Credit and licence
 
