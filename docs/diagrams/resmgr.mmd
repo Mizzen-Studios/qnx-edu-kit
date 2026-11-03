@@ -1,0 +1,8 @@
+flowchart TD
+  N0["Client writes bounded text"]
+  N1["Parse and serialize request"]
+  N2["Complete or return error"]
+  N3["Read with offset and EOF"]
+  N0 --> N1
+  N1 --> N2
+  N2 --> N3
