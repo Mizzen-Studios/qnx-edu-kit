@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.build/
+.local/
+# SDKs and target artifacts must remain outside this checkout
+qnxsdp*/
+qnx800/
+*.ifs
+*.qcow2
+*.vmdk
+*.vdi
+*.img
+*.iso
