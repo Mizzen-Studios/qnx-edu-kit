@@ -46,7 +46,10 @@ class EduModel:
 
     def dma_address(self, address, count):
         # Fail closed instead of QEMU's address clamping. No physical DMA occurs.
-        if count <= 0 or count > 4096 or address < 0 or address + count - 1 > self.dma_mask:
+        if (not isinstance(address, int) or isinstance(address, bool)
+                or not isinstance(count, int) or isinstance(count, bool)
+                or count <= 0 or count > 4096 or address < 0
+                or address + count - 1 > self.dma_mask):
             raise ValueError('DMA range outside driver contract')
         return address
 
@@ -56,11 +59,13 @@ class Reprobe:
     Device state persists across process replacement: stale IRQ must be drained.
     """
     ORDER = ('pci', 'bar', 'abilities', 'ist', 'endpoint')
+    OWNED_IRQ_MASK = 0x101
     def __init__(self, device):
         self.device = device
         self.owned = []
         self.generation = 0
         self.ready = False
+        self.published = False
         self.events = []
 
     def start(self, fail_at=None):
@@ -74,9 +79,12 @@ class Reprobe:
                     raise OSError('injected host-model acquisition failure')
                 self.owned.append(resource)
                 self.events.append(('acquire', resource))
-            self.device.acknowledge(self.device.irq)
+            self.device.acknowledge(self.device.irq & self.OWNED_IRQ_MASK)
+            self.events.append(('drain', 'owned-status'))
             self.device.irq_enabled = True
             self.generation += 1
+            self.published = True
+            self.events.append(('publish', 'endpoint'))
             self.ready = True
         except OSError:
             self.stop()
@@ -84,6 +92,7 @@ class Reprobe:
 
     def stop(self):
         self.ready = False
+        self.published = False
         self.device.irq_enabled = False
         for resource in reversed(self.owned):
             self.events.append(('release', resource))

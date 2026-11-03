@@ -22,7 +22,9 @@ not proof of byte-for-byte identity with the distro-patched executable.
 ## Actual independent Linux probe, 2026-11-03
 
 Used the existing checksum-verified Alpine 3.22.7 rootfs and Linux 6.12.114 kernel,
-copied into this worktree's ignored .tmp/edu-probe (no other worktree writes).
+initially copied into this worktree's .tmp/edu-probe, then moved out to
+.openclaw/tmp/qnx-core-20261103/edu-register-evidence/edu-probe so the
+conservative guard can remain intact. No other worktree writes.
 QEMU: TCG single thread, pc machine, one CPU, 256 MiB, edu, no networking,
 no display/listener, serial stdio, enforced 60-second timeout. Guest enumerated
 edu at 0000:00:03.0 and a 1 MiB memory BAR. An od read of sysfs resource0

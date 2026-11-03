@@ -59,3 +59,21 @@ class RestartDesign(unittest.TestCase):
     def test_stop_idempotent(self):
         p=Reprobe(EduModel()); p.start(); p.stop(); events=list(p.events); p.stop()
         self.assertEqual(events,p.events)
+
+class ReviewRegressions(unittest.TestCase):
+    def test_dma_rejects_fractional_and_boolean(self):
+        for a,n in ((0.5,1),(0,1.5),(True,True),(False,1),(0,False)):
+            with self.assertRaises(ValueError): EduModel().dma_address(a,n)
+    def test_reprobe_preserves_unowned_status(self):
+        d=EduModel();d.raise_irq(0x80000101);p=Reprobe(d);p.start()
+        self.assertEqual(d.irq,0x80000000)
+    def test_publish_after_drain(self):
+        p=Reprobe(EduModel());p.start()
+        self.assertLess(p.events.index(('drain','owned-status')),p.events.index(('publish','endpoint')))
+        self.assertTrue(p.published);p.stop();self.assertFalse(p.published)
+    def test_failed_setup_never_publishes(self):
+        for stage in Reprobe.ORDER:
+            p=Reprobe(EduModel())
+            with self.assertRaises(OSError):p.start(stage)
+            self.assertFalse(p.published)
+            self.assertNotIn(('publish','endpoint'),p.events)

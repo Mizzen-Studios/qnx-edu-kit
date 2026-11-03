@@ -1,17 +1,44 @@
-# Foundation verification — 2026-11-03 UTC
+# Host verification evidence — 2026-11-03
 
-Environment: Ubuntu 24.04.5 LTS ARM64, Python 3, GNU make; no /dev/kvm, qemu-system-x86_64 or qcc present. No SDK or image downloaded. These are host framework results, not QNX functional/performance evaluations.
+Host only: Ubuntu ARM64, Python 3.12.3, GNU make 4.3. QEMU 8.2.2 TCG installed;
+Linux boot/PCI enumeration observed, ZERO register rows verified; QNX never run.
+No SDK/QSTI, target driver, secpol validation, physical DMA or target restart proof.
 
-| Command | Observed outcome |
-|---|---|
-| PYTHONDONTWRITEBYTECODE=1 ./verify.sh --host-only | exit 0; guard PASS, 11 host tests OK, all six live checks SKIP |
-| PYTHONDONTWRITEBYTECODE=1 ./verify.sh | exit 1; host checks OK, six BLOCKED, full verification BLOCKED |
-| make check-step1 through check-step6 | each nonzero (make exit 2), each reports BLOCKED |
-| sh -n verify.sh scripts/check-step.sh scripts/check-no-sdk.sh | exit 0 |
-| git diff --check | exit 0 |
+## Current repeatable checks
 
-Negative tests cover SDK/image/archive paths, renamed executable/archive signatures, markers beyond prefix/across chunks, symlinks, ignored/untracked artifacts, missing scan root, invalid steps and fabricated environment claims. Temporary fixtures contain only synthetic text/signature bytes, never SDK files or usable images, and are cleaned automatically. No register model or target-code test is present.
+- ./verify.sh --host-only: exit 0; redistribution guard PASS, 36 tests PASS,
+  six live checks explicitly SKIP. No third-party Python dependencies.
+- ./verify.sh: exit 1; all six live steps BLOCKED after host tests.
+- make check-step1 through check-step6: each exit 2, BLOCKED.
+- make deploy: exit 2; nothing copied.
+- python3 scripts/render_site.py --check: exit 0.
+- git diff --check: clean.
 
-Tests also check all 12 starter/solution task documents and Apache-2.0 text exist. These structural checks prove no target behavior. CI workflow is provided but remote execution must be independently observed; local results do not establish GitHub Actions success.
+Tests: 11 foundation/guard/gate tests, 14 initial source-pinned model/lifecycle
+tests, 7 packaging/link/diagram tests, 4 independent-review regression tests.
+Eight accessible SVG designs and matching Mermaid sources are present. These
+are contracts, not target execution diagrams. claat and Go absent; local static
+renderer tested, upstream claat export unverified. No Pages publication.
 
-Outstanding: all live ledger rows; claat export; diagrams; QNX APIs/driver/policy/build/deploy; mandatory target capture; two clean-machine learner runs. macOS and Windows UNTESTED.
+## Two fresh-agent HOST packaging checks
+
+Independent collector agents followed README/codelab host commands read-only.
+Both observed 32 tests passing before review fixes, host-only exit 0, full verify
+exit 1 and blocked target checks. First agent independently audited 27 HTML pages,
+121 local href/src references, 26 Markdown sources and 54 local links, no broken
+links. This is NOT two clean-machine QNX learner runs or visual browser QA.
+
+Second review found model integer-validation, owned-IRQ and endpoint-publication
+issues, plus stale evidence text. Fixed with four regression tests: reject bool/
+fraction DMA inputs; preserve unowned IRQ bits; explicitly separate endpoint
+acquisition from publication; publish only after owned-status drain. Updated
+current results are 36 tests, not a retroactive claim about original reviews.
+
+## Target release blockers
+
+Actual SDP build/version and QSTI provenance, real QNX build and boot, six target
+implementations/checks, deployment path, register-row live evidence, policy deny/
+allow tests, DMA/IST/resmgr/restart/trace evidence, two full clean learner runs,
+non-Linux host path and mandatory on-QNX capture. No durations or benchmark
+claims measured. Linux mmap-helper/toolchain work is an independent next step,
+not an SDK-only blocker; see register-evidence.md.

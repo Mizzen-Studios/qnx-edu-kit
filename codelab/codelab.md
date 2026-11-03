@@ -8,7 +8,7 @@ feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 
 # A first PCI driver for QNX® 8.0 — blocked draft
 
-> Last live verified: NEVER. SDP build: PENDING. QSTI: PENDING. QEMU: PENDING.
+> Last live verified: NEVER. SDP build: PENDING. QSTI: PENDING. QNX-target QEMU pin/live evidence: PENDING (host QEMU 8.2.2 installed).
 > This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; no target implementation exists. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
 
 ## 1. Setup
