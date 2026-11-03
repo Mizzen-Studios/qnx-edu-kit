@@ -1,0 +1,28 @@
+name: Host foundation only (not QNX acceptance)
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Host tests and redistribution guard
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: ./verify.sh --host-only
+      - name: Full acceptance must stay blocked
+        run: |
+          set +e
+          ./verify.sh > /tmp/edu-verify.log 2>&1
+          status=$?
+          set -e
+          cat /tmp/edu-verify.log
+          test "$status" -eq 1
+          grep -q 'BLOCKED: full verification incomplete' /tmp/edu-verify.log
+      - name: Honest summary
+        if: always()
+        run: |
+          echo '### Host foundation only' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No SDK, QSTI image or live QNX target used. Six live checks BLOCKED; host success is not target acceptance.' >> "$GITHUB_STEP_SUMMARY"
