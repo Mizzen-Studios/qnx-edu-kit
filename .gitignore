@@ -12,3 +12,13 @@ qnx800/
 *.img
 *.iso
 .tmp/
+
+# Licensed SDK/QSC and credential material must live outside this repository
+qnx800*/
+qnx-host/
+qnxsoftwarecenter*/
+QNXSoftwareCenter*/
+qsc/
+.qnx/
+.secrets/
+*.run

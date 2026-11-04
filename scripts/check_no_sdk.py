@@ -5,8 +5,8 @@ from pathlib import Path
 import re
 import sys
 
-BAD_PART = re.compile(r"^(qnxsdp.*|qnx[678][0-9]*|target-qnx.*|host-qnx.*)$", re.I)
-BAD_SUFFIX = {'.ifs', '.qcow', '.qcow2', '.vmdk', '.vdi', '.img', '.iso', '.o', '.a', '.so', '.dll', '.exe', '.zip', '.tar', '.gz', '.xz', '.bz2', '.7z', '.deb', '.rpm'}
+BAD_PART = re.compile(r"^(qnxsdp.*|qnx[678][0-9]*|target-qnx.*|host-qnx.*|qnx-host|qnxsoftwarecenter.*|qsc|[.]qnx|[.]secrets)$", re.I)
+BAD_SUFFIX = {'.ifs', '.qcow', '.qcow2', '.vmdk', '.vdi', '.img', '.iso', '.o', '.a', '.so', '.dll', '.exe', '.zip', '.tar', '.gz', '.xz', '.bz2', '.7z', '.deb', '.rpm', '.run'}
 BAD_NAME = {'qcc', 'q++', 'mkifs', 'qnxsdp-env.sh', 'libc.so', 'procnto', 'procnto-smp', 'procnto-smp-instr'}
 MAGICS = (b'\x7fELF', b'MZ', b'QFI\xfb', b'PK\x03\x04', b'\x1f\x8b', b'\xfd7zXZ\x00', b'BZh', b'7z\xbc\xaf\x27\x1c', b'vhdxfile', b'KDMV', b'\xcf\xfa\xed\xfe', b'\xfe\xed\xfa\xcf')
 MARKERS = (b'QNX Software ' + b'Development Platform', b'QNX_' + b'TARGET=', b'QNX_' + b'HOST=', b'QNX Neutrino ' + b'RTOS')
