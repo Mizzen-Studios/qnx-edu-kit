@@ -1,0 +1,50 @@
+Wed Nov  4 00:27:59 UTC 2026
+314035e53f0c20cdaefecacdace85cf900ae0910
+./scripts/check-no-sdk.sh
+PASS: redistribution guard only (not a QNX test)
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+test_all_steps_block_even_with_environment_claims (test_foundation.LiveGate.test_all_steps_block_even_with_environment_claims) ... ok
+test_invalid_step_rejected (test_foundation.LiveGate.test_invalid_step_rejected) ... ok
+test_license (test_foundation.LiveGate.test_license) ... ok
+test_step_layout (test_foundation.LiveGate.test_step_layout) ... ok
+test_external_symlink_blocked (test_foundation.RedistributionGuard.test_external_symlink_blocked) ... ok
+test_forbidden_paths (test_foundation.RedistributionGuard.test_forbidden_paths) ... ok
+test_ignored_untracked_files_still_blocked (test_foundation.RedistributionGuard.test_ignored_untracked_files_still_blocked) ... ok
+test_invalid_root_fails (test_foundation.RedistributionGuard.test_invalid_root_fails) ... ok
+test_markers_beyond_prefix_and_across_chunks (test_foundation.RedistributionGuard.test_markers_beyond_prefix_and_across_chunks) ... ok
+test_plain_source_allowed (test_foundation.RedistributionGuard.test_plain_source_allowed) ... ok
+test_renamed_binaries_and_archives (test_foundation.RedistributionGuard.test_renamed_binaries_and_archives) ... ok
+test_busy_does_not_overwrite (test_model.RegisterModel.test_busy_does_not_overwrite) ... ok
+test_explicit_mask (test_model.RegisterModel.test_explicit_mask) ... ok
+test_factorials (test_model.RegisterModel.test_factorials) ... ok
+test_input_contract (test_model.RegisterModel.test_input_contract) ... ok
+test_irq_ack_preserves_other_sources (test_model.RegisterModel.test_irq_ack_preserves_other_sources) ... ok
+test_liveness_width (test_model.RegisterModel.test_liveness_width) ... ok
+test_mask_boundary (test_model.RegisterModel.test_mask_boundary) ... ok
+test_no_spurious_completion (test_model.RegisterModel.test_no_spurious_completion) ... ok
+test_source_label (test_model.RegisterModel.test_source_label) ... ok
+test_busy_reprobe_fails_closed (test_model.RestartDesign.test_busy_reprobe_fails_closed) ... ok
+test_double_attach_rejected (test_model.RestartDesign.test_double_attach_rejected) ... ok
+test_partial_acquisition_unwinds (test_model.RestartDesign.test_partial_acquisition_unwinds) ... ok
+test_reprobe_drains_stale_status (test_model.RestartDesign.test_reprobe_drains_stale_status) ... ok
+test_stop_idempotent (test_model.RestartDesign.test_stop_idempotent) ... ok
+test_dma_rejects_fractional_and_boolean (test_model.ReviewRegressions.test_dma_rejects_fractional_and_boolean) ... ok
+test_failed_setup_never_publishes (test_model.ReviewRegressions.test_failed_setup_never_publishes) ... ok
+test_publish_after_drain (test_model.ReviewRegressions.test_publish_after_drain) ... ok
+test_reprobe_preserves_unowned_status (test_model.ReviewRegressions.test_reprobe_preserves_unowned_status) ... ok
+test_codelab_structure (test_packaging.Packaging.test_codelab_structure) ... ok
+test_eight_accessible_diagrams_and_sources (test_packaging.Packaging.test_eight_accessible_diagrams_and_sources) ... ok
+test_local_links (test_packaging.Packaging.test_local_links) ... ok
+test_no_external_runtime_assets (test_packaging.Packaging.test_no_external_runtime_assets) ... ok
+test_policy_not_fake_validation (test_packaging.Packaging.test_policy_not_fake_validation) ... ok
+test_render_current (test_packaging.Packaging.test_render_current) ... ok
+test_six_rich_folder_contracts (test_packaging.Packaging.test_six_rich_folder_contracts) ... ok
+test_actual_installed_qemu (test_qtest_live.QtestLive.test_actual_installed_qemu) ... skipped 'set EDU_LIVE_QTEST=1 for actual QEMU'
+test_requires_opt_in (test_qtest_live.QtestLive.test_requires_opt_in) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.252s
+
+OK (skipped=1)
+SKIP: all six live QNX checks (explicit host-only mode). No target acceptance claimed.
+PASS: local static rendering current (not claat or QNX verification)
