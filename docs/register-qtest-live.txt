@@ -1,0 +1,58 @@
+LIVE QEMU DEVICE ONLY — NOT QNX
+HOST Linux-7.0.0-1013-oracle-aarch64-with-glibc2.39 aarch64
+EXECUTABLE_SHA256 cfac2d1293e7cc362fd9a5b0ee7b8a8ce6b4d3abc9711cdcbbd2efb435c9a923
+BASE 7afd82275940f45e0b0b0105205a58c255cb713c
+QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)
+UPSTREAM 11aa0b1ff115b86160c4d37e7c37e6a6b13b77ea hw/misc/edu.c SHA256 198754be868d35d72dd7f83c91491856cbd76cf5d9fc4ad71bf950ab761d7ad6
+PROBE_SHA256 a6e78577a9058647c77a37a806d022eb5841712731305ad09e43eab9c049bec3
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0 -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS ID offset=0 width=32 value=0x010000ed bytes=ed000001; RO; qtest subword returns zero; 64-bit rejected
+PASS liveness offset=4 width=32 five inverse patterns; unaligned64 splits into 32-bit accesses; avoid; subword writes not claimed
+PASS factorial offset=8 0..13 modulo32; 300M busy, ignored resubmit; status 0x20 RO busy / RW bit0x80; IRQ bit1
+PASS INTx IOAPIC IRQ11 raise/partial ack/full ack/retrigger; status0x24 raise0x60 ack0x64 width32
+PASS DMA src0x80 dst0x88 count0x90 32/64-bit storage; 32-bit write replaces full value
+PASS DMA roundtrip bytes=1 device-offset=4095 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+PASS DMA roundtrip bytes=100 device-offset=17 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+PASS DMA roundtrip bytes=4096 device-offset=0 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+DEVICE EDU: clamping DMA 0x0000000010100000 to 0x0000000000100000!
+DEVICE EDU: clamping DMA 0x0000000010200000 to 0x0000000000200000!
+DEVICE EDU: clamping DMA 0x0000000010000000 to 0000000000000000!
+PASS mask boundary last-two bytes and first-above wraps to zero
+PASS dma_mask=0xfffffff high source/dest alias low RAM; property default
+PASS DMA busy parameter/command writes ignored; command without RUN ignored
+IRQ11 EVENTS IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0,dma_mask=0xffffff -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS ID offset=0 width=32 value=0x010000ed bytes=ed000001; RO; qtest subword returns zero; 64-bit rejected
+PASS liveness offset=4 width=32 five inverse patterns; unaligned64 splits into 32-bit accesses; avoid; subword writes not claimed
+PASS factorial offset=8 0..13 modulo32; 300M busy, ignored resubmit; status 0x20 RO busy / RW bit0x80; IRQ bit1
+PASS INTx IOAPIC IRQ11 raise/partial ack/full ack/retrigger; status0x24 raise0x60 ack0x64 width32
+PASS DMA src0x80 dst0x88 count0x90 32/64-bit storage; 32-bit write replaces full value
+PASS DMA roundtrip bytes=1 device-offset=4095 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+PASS DMA roundtrip bytes=100 device-offset=17 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+PASS DMA roundtrip bytes=4096 device-offset=0 commands1(width32)/7(width64) completion RUN cleared IRQ0x100
+DEVICE EDU: clamping DMA 0x0000000001100000 to 0x0000000000100000!
+DEVICE EDU: clamping DMA 0x0000000001200000 to 0x0000000000200000!
+DEVICE EDU: clamping DMA 0x0000000001000000 to 0000000000000000!
+PASS mask boundary last-two bytes and first-above wraps to zero
+PASS dma_mask=0xffffff high source/dest alias low RAM; property override
+PASS DMA busy parameter/command writes ignored; command without RUN ignored
+IRQ11 EVENTS IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11,IRQ raise 11,IRQ lower 11
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0 -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS expected QEMU fatal DMA count=0 device-address=0x40000 exit=-6
+DEVICE qemu: hardware error: EDU: DMA range 0x0000000000040000-0x000000000003ffff out of bounds (0x0000000000040000-0x0000000000040fff)!
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0 -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS expected QEMU fatal DMA count=4097 device-address=0x40000 exit=-6
+DEVICE qemu: hardware error: EDU: DMA range 0x0000000000040000-0x0000000000041000 out of bounds (0x0000000000040000-0x0000000000040fff)!
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0 -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS expected QEMU fatal DMA count=1 device-address=0x41000 exit=-6
+DEVICE qemu: hardware error: EDU: DMA range 0x0000000000041000-0x0000000000041000 out of bounds (0x0000000000040000-0x0000000000040fff)!
+COMMAND qemu-system-x86_64 -machine pc -accel tcg,thread=single -S -display none -nodefaults -m 512M -nic none -device edu,addr=04.0 -qtest stdio -qtest-log <workspace-temp>/protocol.txt -qmp unix:<workspace-temp>/qmp.sock,server=on,wait=off -bios <workspace-temp>/halt-bios.txt
+PASS PCI 1234:11e8 BAR0=0xe0000000 size=0x100000 memory MEM+MASTER PIRQ->11
+PASS expected QEMU fatal DMA count=2 device-address=0x40fff exit=-6
+DEVICE qemu: hardware error: EDU: DMA range 0x0000000000040fff-0x0000000000041000 out of bounds (0x0000000000040000-0x0000000000040fff)!
+PASS live register suite including isolated fatal DMA bounds; QNX and MSI NOT TESTED

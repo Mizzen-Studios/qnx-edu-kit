@@ -1,8 +1,8 @@
 # Register evidence boundary
 
-No register offsets are taught by the codelab until **every row** has live
-pinned-device evidence. This is not blocked only by the missing SDK: Linux QEMU
-can independently establish MMIO semantics, and a real attempt was made.
+The host-side gate now runs against actual installed QEMU 8.2.2 EDU, not a
+handwritten model. This is **NOT QNX API validation**. The earlier failed
+sysfs attempt is retained below as historical evidence, superseded by qtest.
 
 ## Source pin (not live proof)
 
@@ -35,8 +35,56 @@ register, and verified ZERO register rows. Raw serial evidence is in
 register-probe-linux.txt. A shell command exit of zero after poweroff is not
 register success. No QNX claim is made.
 
-Next independent task: build/use a provenance-pinned x86 mmap-capable Linux
-helper in a separate authorized environment, map resource0 safely and validate
-all widths, liveness patterns, factorial state, IRQ raise/ack and DMA directions,
-counts, completion and mask behavior. Never substitute sysfs enumeration for
-MMIO proof. Actual interrupt delivery and DMA require more than register reads.
+## Successful qtest verification, 2026-11-04 UTC
+
+Operator: automated assistant; independent human review pending. Base commit,
+exact executable/probe SHA256 and full command are recorded in
+[register-qtest-live.txt](register-qtest-live.txt). Installed package:
+1:8.2.2+ds-0ubuntu1.18; host aarch64 Ubuntu24.04 / Linux7.0.0-1013-oracle;
+emulated x86_64 PC TCG single-thread. No guest OS or SDK is used.
+Upstream docs/specs/edu.rst SHA256:
+fedc8a6b4dc2f3d6d127c5390f7c3580eb8a3ff24d0846bf1674d42a0c420d3c.
+Source/docs at the peeled pin were fetched, checksummed and inspected at
+edu_mmio_read/write, dma_rw, edu_dma_timer, edu_check_range, edu_clamp_addr,
+edu_fact_thread and pci_edu_realize. No upstream file/binary is vendored.
+Distro identity is recorded separately, not represented as an upstream build.
+
+### Reproduce from repository root
+
+- PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_edu_source.py (explicit online pin check)
+- PYTHONDONTWRITEBYTECODE=1 python3 scripts/edu_qtest.py --run
+- make live-edu-check (opt-in actual executable integration test)
+- make host-check (live test skipped unless EDU_LIVE_QTEST=1)
+
+Only stdlib Python and installed qemu-system-x86_64 are needed: no compiler,
+apt, SDK, account or paid resource. The probe configures PCI CF8/CFC, sizes
+and assigns BAR0, enables MEM+MASTER, then performs qtest readl/writel/readq/
+writeq and physical RAM writes/reads. PIIX routes PIRQ to IRQ11;
+irq_intercept_in ioapic proves actual INTx controller-input assertion,
+partial/full acknowledgement and repeat delivery. Factorial runs the actual
+QEMU worker, with three-second bounded polling and a large-input busy test.
+
+This distro has TCG but **no -accel qtest**; clock_step returns Unknown command.
+QMP cont/stop instead advances virtual time for the 100ms DMA timer. An original
+four-byte CLI/HLT/JMP reset loop in generated 64KiB firmware prevents normal
+BIOS reassigning PCI while time advances. It is created only under workspace
+.tmp, deleted by TemporaryDirectory and never checked in. This is test firmware,
+not Linux/QNX or a redistributed BIOS. No TCP listener/network is created; QMP
+uses a temporary workspace Unix socket. Transport/startup/factorial/process
+waits are bounded; processes cleaned up; core dumps disabled.
+
+DMA round-trips compare bytes at counts1/100/4096 and device offsets4095/17/0.
+32-bit command1 and 64-bit commands3/7 prove direction/no-IRQ/completion IRQ0x100. Default28-bit and
+explicit24-bit masks (last two bytes and first-above wrap also checked) prove high host RAM addresses clamp without altering the
+stored source/dest registers. Separate isolated QEMU processes prove count0,
+4097, device address0x41000 and crossing0x40fff cause EDU range diagnostics and
+SIGABRT. These are expected QEMU failures, **not safe driver error returns**.
+The driver must reject bad inputs before touching the device.
+
+The [row ledger](verification-checklist.md) covers every candidate register.
+Residuals are explicit: MSI, QNX interrupt attachment/delivery, QNX ownership,
+physical-address/cache APIs, full alignment/mask matrix. None are excused as SDK blockers where host testing remains
+possible; only QNX-specific validation requires SDK/target. This evidence permits
+a QEMU-device reference appendix, not target-verified QNX tutorial/API code.
+
+Transcript SHA256: 5658631e4a2841e95efc5b39776604842e27b298a2ffd5972b4b383bb0156b72.

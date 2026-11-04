@@ -56,7 +56,7 @@ CI is host-only, not Stage-1 QNX acceptance. CI downloads no QEMU, SDK or target
 
 ## Credit and licence
 
-Original foundation under [Apache-2.0](LICENSE). QEMU edu documentation/source are the proposed future register-reference authority, not live proof: https://www.qemu.org/docs/master/specs/edu.html and https://gitlab.com/qemu-project/qemu/-/blob/master/hw/misc/edu.c (unpinned references; source not vendored). QNX 8.0 local documentation must govern API implementations. No upstream code or SDK content is copied. The host model pins QEMU source by commit and checksum; see [register evidence](docs/register-evidence.md). A real Linux MMIO attempt failed; no register row is claimed live verified.
+Original foundation under [Apache-2.0](LICENSE). QEMU edu documentation/source are the proposed future register-reference authority, not live proof: https://www.qemu.org/docs/master/specs/edu.html and https://gitlab.com/qemu-project/qemu/-/blob/master/hw/misc/edu.c (unpinned references; source not vendored). QNX 8.0 local documentation must govern API implementations. No upstream code or SDK content is copied. The host model pins QEMU source by commit and checksum; see [register evidence](docs/register-evidence.md). The failed sysfs probe was superseded by actual QEMU qtest register, factorial, INTx and DMA experiments. See the row ledger: QEMU device behavior is verified, NOT QNX APIs.
 
 Repository stays private. No Pages, upstream PR, video, account creation, submission or spending is authorized by this milestone.
 

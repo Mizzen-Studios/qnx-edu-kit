@@ -37,8 +37,14 @@ current results are 36 tests, not a retroactive claim about original reviews.
 ## Target release blockers
 
 Actual SDP build/version and QSTI provenance, real QNX build and boot, six target
-implementations/checks, deployment path, register-row live evidence, policy deny/
+implementations/checks, deployment path, QNX register integration, policy deny/
 allow tests, DMA/IST/resmgr/restart/trace evidence, two full clean learner runs,
 non-Linux host path and mandatory on-QNX capture. No durations or benchmark
-claims measured. Linux mmap-helper/toolchain work is an independent next step,
-not an SDK-only blocker; see register-evidence.md.
+claims measured. Independent qtest now verifies actual QEMU registers/INTx/DMA without a compiler or SDK; see register-evidence.md.
+
+## Actual QEMU register verification — 2026-11-04
+
+make live-edu-check passes two tests including the opt-in installed QEMU8.2.2
+executable. make host-check passes 38 tests (one integration skip by default).
+No handwritten model is substituted. Full row ledger and reproducible text
+logs are linked from register-evidence.md. This does not validate QNX.
