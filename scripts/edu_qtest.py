@@ -138,7 +138,7 @@ def exercise(p,mask):
         p.wait(lambda: not p.read(0x20)&1,'factorial')
         assert p.read(8)==math.factorial(value)&0xffffffff
     # Large input forces an observable busy interval, then bounded drain.
-    p.write(8,10000000)
+    p.write(8,300000000)
     assert p.read(0x20)&1
     p.write(8,5); p.write(0x20,0)
     assert p.read(0x20)&1
@@ -150,7 +150,7 @@ def exercise(p,mask):
     assert p.read(8)==120 and p.irq.get(11)
     p.write(0x64,1); assert p.read(0x24)==0 and not p.irq[11]
     p.write(0x20,0); assert p.read(0x20)==0
-    print('PASS factorial offset=8 0..13 modulo32; 10M busy, ignored resubmit; status 0x20 RO busy / RW bit0x80; IRQ bit1')
+    print('PASS factorial offset=8 0..13 modulo32; 300M busy, ignored resubmit; status 0x20 RO busy / RW bit0x80; IRQ bit1')
     p.write(0x60,0x101); assert p.read(0x24)==0x101 and p.irq[11]
     p.write(0x24,0); assert p.read(0x24)==0x101
     p.write(0x64,1); assert p.read(0x24)==0x100 and p.irq[11]
