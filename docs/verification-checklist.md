@@ -1,24 +1,34 @@
 # Live verification ledger — NOT tutorial instructions
 
-All rows BLOCKED. No edu register offset, value or bit is proven. The plan's candidate numbers are deliberately not repeated in learner material. Before implementing a row, pin QEMU commit/version and compare its docs/specs/edu.rst with hw/misc/edu.c. Record actual candidate offset/access width/value/semantics here in a reviewed follow-up; do not infer a QNX API from QEMU source.
+The plan 7.5 register gate now has **live QEMU device evidence**, not QNX
+API/driver evidence. Observations: installed QEMU 8.2.2 Ubuntu1.18 through
+qtest on ARM64 Linux with an x86 PC machine. See [method](register-evidence.md)
+and [text log](register-qtest-live.txt). No QNX lifecycle assertion follows.
 
-| Row | Required live experiment | State / transcript |
+| Row | Observed offset/width and behavior | State |
 |---|---|---|
-| PCI identity | Enumerate actual vendor/device and BAR sizes/types; ownership/detach | BLOCKED / none |
-| ID | Read identity; record offset, width, value and byte order | BLOCKED / none |
-| Liveness | Multiple write/read inverse patterns; access width and mask | BLOCKED / none |
-| Factorial | Supported input range, result, busy behavior, timeout | BLOCKED / none |
-| Status | Busy/completion and IRQ enable bits, read/write semantics | BLOCKED / none |
-| IRQ status | Pending bits and clearing behavior with INTx | BLOCKED / none |
-| IRQ raise | Controlled raise with observed interrupt | BLOCKED / none |
-| IRQ ack | Correct ack, no stuck line, subsequent interrupts work | BLOCKED / none |
-| DMA source | Width, address and direction semantics | BLOCKED / none |
-| DMA destination | Width, device/host address semantics | BLOCKED / none |
-| DMA count | Bounds, zero/oversize behavior | BLOCKED / none |
-| DMA command | Start/direction/IRQ bits, completion status | BLOCKED / none |
-| DMA buffer | Device address, size and out-of-range behavior | BLOCKED / none |
-| DMA mask | Actual default and dma_mask property existence; boundary/clamping | BLOCKED / none |
-| Interrupt model | INTx default; MSI only if actually tested | BLOCKED / none |
+| PCI identity | 1234:11e8, BAR0 1 MiB memory at 0xe0000000; MEM+MASTER | QEMU PASS; QNX ownership pending |
+| ID | 0x00 / 32, 0x010000ed, bytes ed000001; RO | QEMU PASS |
+| Liveness | 0x04 / 32, five complementary inverse patterns | QEMU PASS |
+| Factorial | 0x08 / 32, 0..13 modulo32; large input busy + ignored resubmit; bounded poll | QEMU PASS; driver accepts 0..12 |
+| Status | 0x20 / 32, busy bit 1 RO; IRQ enable 0x80 RW | QEMU PASS |
+| IRQ status | 0x24 / 32, RO pending OR bits 1 and 0x100 | QEMU PASS |
+| IRQ raise | 0x60 / 32, OR pending and IOAPIC IRQ11 assertion | QEMU PASS |
+| IRQ ack | 0x64 / 32, partial clear holds IRQ11; full lowers; retrigger | QEMU PASS |
+| DMA source | 0x80 / 32,64; real host-to-device and reverse bytes | QEMU PASS |
+| DMA destination | 0x88 / 32,64; real round-trip bytes both directions | QEMU PASS |
+| DMA count | 0x90 / 32,64; 1/100/4096 work; 0/4097 abort QEMU | QEMU PASS |
+| DMA command | 0x98 / 32,64; RUN1 DIR2 IRQ4; RUN clears; busy writes ignored | QEMU PASS |
+| DMA buffer | 0x40000..0x40fff; full4096 and last byte; beyond/crossing abort | QEMU PASS |
+| DMA mask | Default28-bit and override24-bit high source/dest alias low RAM | QEMU PASS; last valid bytes / first-above wrap tested |
+| Interrupt model | Default INTx routed IOAPIC11; factorial/manual/DMA assert/clear | QEMU PASS; MSI/QNX delivery untested |
+
+Use naturally aligned accesses. An unaligned qtest 64-bit write at 0x04
+splits into two 32-bit writes (including factorial submission!), not rejection.
+Aligned 64-bit ID read returns all ones. qtest byte/word reads return zero;
+these are not supported device widths. Subword writes and full misalignment
+matrix are unvalidated. Pinned source allows only 32-bit below 0x80 and
+32/64-bit at DMA registers. QNX target validation remains pending for all rows.
 
 ## Required evidence per row
 
@@ -28,11 +38,11 @@ All rows BLOCKED. No edu register offset, value or bit is proven. The plan's can
 - Relevant source/doc reference lines and distinction between source reading, host model and live target result.
 - Sanitized transcript file + hash, reviewer and limitations. No credentials, proprietary source, image or SDK files.
 
-## Whole-project acceptance (all pending)
+## Whole-project acceptance (QNX still pending)
 
 1. Approved local licensed SDK setup, verified target boot and deployment user/path.
 2. Current PCI server API review, BAR lifecycle, restart-safe re-probe, bounds.
-3. Every register row above live verified before implementing or teaching it.
+3. QEMU register semantics verified independently; QNX code still needs SDK review and target tests.
 4. Abilities and secpol deny/allow experiments; least privilege after attach; exact policy syntax verified. No guessed policy distributed.
 5. Real IAT/InterruptWait lifecycle, concurrent operations, error and cleanup tests.
 6. Real resource-manager finish line, malformed/overflow/partial I/O and concurrency tests.

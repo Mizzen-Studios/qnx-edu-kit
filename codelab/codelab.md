@@ -249,4 +249,4 @@ Host model values are source-derived, NOT QNX. Reject DMA ranges beyond the conf
 
 The [restart contract](../docs/restart-policy.md) handles partial acquisition and stale state. Process replacement does not reset hardware. Trace commands are withheld until installed tool arguments are verified; no invented tracelogger flags or timing claims.
 
-The [register evidence boundary](../docs/register-evidence.md) documents the actual Linux probe failure, not an SDK excuse. Mac and Windows paths remain UNTESTED.
+The [register evidence boundary](../docs/register-evidence.md) documents successful live QEMU qtest register/INTx/DMA experiments, superseding the failed Linux sysfs probe; these are QEMU-device results, NOT QNX driver/API results. Mac and Windows paths remain UNTESTED.

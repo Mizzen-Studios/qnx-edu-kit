@@ -43,3 +43,10 @@ E1 real per-step PCI/BAR/poll/IAT/resmgr code, with 10 factorial = 3628800 live;
 Stretch begins only after a recorded core hero run. No upstream PR, public repo, Pages publication, upload, external contact, submission or paid resource without required owner approval. No QNX benchmark/comparison or certification claim. Every simulated figure must be marked simulation, never observed QNX.
 
 Demo of fail-safe patterns; not an ISO 26262 / IEC 61508 claim.
+
+## Register device gate, 2026-11-04
+
+Actual installed QEMU8.2.2 qtest proof covers every EDU register row, including
+factorial worker, routed INTx and byte-verified DMA/bounds/mask. This closes
+the independent host-device gate, not E1/QNX API acceptance. See the
+[row ledger](verification-checklist.md); MSI remains explicitly untested.
