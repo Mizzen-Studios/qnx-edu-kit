@@ -18,9 +18,12 @@ int main(void) {
     pci_devhdl_t h=pci_device_attach(bdf,pci_attachFlags_e_EXCLUSIVE,&error);
     if (h==NULL) { fprintf(stderr,"attach: %s\n",pci_strerror(error)); return 1; }
     puts("EDU PCI attached");
-    pci_ba_t bars[6]; int_t n=6; int rc=1, iid=-1; pci_irq_t irq=-1;
+    pci_ba_t bars[6] = {0}; int_t n=6; int rc=1, iid=-1; pci_irq_t irq=-1;
     volatile uint32_t *r=MAP_FAILED;
+    puts("EDU read_ba BEGIN");
     if ((error=pci_device_read_ba(h,&n,bars,pci_reqType_e_UNSPECIFIED))!=PCI_ERR_OK) goto done;
+    puts("EDU read_ba END");
+    if (n<0 || n>6) goto done;
     for (int i=0;i<n;i++) if (bars[i].bar_num==0 && bars[i].type==pci_asType_e_MEM && bars[i].size>=0x100) {
         r=mmap_device_memory(NULL,0x1000,PROT_READ|PROT_WRITE|PROT_NOCACHE,0,bars[i].addr);
         printf("EDU BAR0=%llx size=%llu\n",(unsigned long long)bars[i].addr,(unsigned long long)bars[i].size);

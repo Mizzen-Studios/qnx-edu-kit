@@ -8,8 +8,8 @@ feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 
 # A first PCI driver for QNX® 8.0 — blocked draft
 
-> Last live verified: NEVER. SDP build: PENDING. QSTI: PENDING. QNX-target QEMU pin/live evidence: PENDING (host QEMU 8.2.2 installed).
-> This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; no target implementation exists. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
+> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. The diagnostic currently faults after PCI attach, before BAR evidence. QSTI provenance and complete target acceptance remain PENDING.
+> This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; an experimental native diagnostic exists, but no working driver/resource manager is accepted. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
 
 ## 1. Setup
 Duration: 8
@@ -46,6 +46,13 @@ BLOCKED: step 1 live QNX check not implemented or verified. Nonzero exit; no tar
 </details>
 
 Starter: [task](../steps/step1/starter/README.md). Solution: [acceptance specification only](../steps/step1/solution/README.md).
+
+
+### Crash-first teaching draft
+
+Before teaching IRQ or DMA, separate a successful compile from a successful target run. The current original native/edu_probe.c diagnostic prints EDU PCI attached then faults before BAR evidence. A PCI handle is not proof of mapped registers. Preserve private core/logs outside git; isolate BAR enumeration and verify installed library/header ABI before dereferencing MMIO. Do not progress a learner to DMA or resource-manager exercises on this failing baseline.
+
+The shared CAN experiment now independently reconfirms 100/100 RX and 100/100 TX on 6 November, but only with explicit experimental PIRQ correction. It is not EDU interrupt evidence. SSH's OpenSSL capability workaround plus corrected helper packaging now passes config/start and a host-key handshake; authenticated login and the underlying fault remain unverified. Never present either workaround as a completed native tutorial.
 
 ## 2. PCI server attach
 Duration: 8
