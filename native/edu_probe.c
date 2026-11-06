@@ -36,7 +36,7 @@ static void fault_report(int signo, siginfo_t *info, void *context) {
     _exit(128+signo);
 }
 int main(void) {
-    setvbuf(stdout,NULL,_IONBF,0); puts("EDU PROBE BEGIN");
+    setvbuf(stdout,NULL,_IONBF,0); puts("EDU PROBE BEGIN"); puts("EDU STEP1 PASS QNX target process");
     struct sigaction action={0};
     action.sa_sigaction=fault_report; action.sa_flags=SA_SIGINFO;
     sigemptyset(&action.sa_mask);
@@ -58,7 +58,7 @@ int main(void) {
     if (bdf==PCI_BDF_NONE) { fputs("EDU absent\n",stderr); return 1; }
     pci_devhdl_t h=pci_device_attach(bdf,pci_attachFlags_e_EXCLUSIVE,&error);
     if (h==NULL) { fprintf(stderr,"attach: %s\n",pci_strerror(error)); return 1; }
-    puts("EDU PCI attached");
+    puts("EDU PCI attached"); puts("EDU STEP2 PASS PCI server attach");
     pci_ba_t bars[6] = {0}; int_t n=6; int rc=1, iid=-1; pci_irq_t irq=-1;
     volatile uint32_t *r=MAP_FAILED;
     puts("EDU read_ba BEGIN");
@@ -75,16 +75,16 @@ int main(void) {
     printf("EDU ID=%08x\n",r[0]);
     if (r[0]!=0x010000ed) goto done;
     r[1]=0x12345678; if (r[1]!=0xedcba987) goto done;
+    puts("EDU STEP3 PASS BAR ID and complement");
     r[8]=0; r[2]=10;
     for (int i=0;(r[8]&1) && i<1000;i++) usleep(1000);
     if ((r[8]&1) || r[2]!=3628800) goto done;
-    puts("EDU FACTORIAL 10=3628800 PASS");
+    puts("EDU FACTORIAL 10=3628800 PASS"); puts("EDU STEP4 PASS factorial polling");
     n=1; error=pci_device_read_irq(h,&n,&irq);
     if (error!=PCI_ERR_OK || n!=1 || irq<0) goto done;
     printf("EDU IRQ=%d\n",irq);
-    struct sigevent event; SIGEV_INTR_INIT(&event);
-    iid=InterruptAttachEvent(irq,&event,_NTO_INTR_FLAGS_TRK_MSK);
-    if (iid<0) { perror("InterruptAttachEvent"); goto done; }
+    iid=InterruptAttachThread(irq,_NTO_INTR_FLAGS_TRK_MSK);
+    if (iid<0) { perror("InterruptAttachThread"); goto done; }
     /* Default attachment unmasks initially; a second unmask at count zero
      * returns EAGAIN. This one-shot probe acknowledges then detaches. */
     r[0x64/4]=0xffffffff;
@@ -99,7 +99,7 @@ int main(void) {
     if (!(r[0x24/4]&1)) { fputs("EDU IRQ wake without own pending bit\n",stderr); goto done; }
     r[0x64/4]=1;
     if (r[0x24/4]&1) { fputs("EDU IRQ ack failed\n",stderr); goto done; }
-    puts("EDU IRQ raise/wait/ack PASS");
+    puts("EDU IRQ raise/wait/ack PASS"); puts("EDU STEP5 PASS IAT wait acknowledge");
     rc=edu_dma_roundtrip(h,bdf,r);
 done:
     if (iid>=0) InterruptDetach(iid);

@@ -18,7 +18,6 @@
 #define MAP_BYTES 0x1000U
 #define INPUT_MAX 3U
 #define RESULT_MAX 16U
-#define POLL_LIMIT 1000U
 #define DEADLINE_NS UINT64_C(1000000000)
 
 /* Only main's dispatch thread accesses PCI, registers or these objects. */
@@ -26,6 +25,8 @@ static volatile uint32_t *regs = MAP_FAILED;
 static char latest[RESULT_MAX];
 static size_t latest_len;
 static int failed;
+static int irq_id = -1;
+static unsigned irq_completions;
 
 typedef struct {
     iofunc_ocb_t base; /* Must be first: library uses the standard OCB. */
@@ -58,44 +59,40 @@ static int monotonic_ns(uint64_t *value)
     return EOK;
 }
 
-/* Never calculate factorial in software: completion and result come from BAR0.
- * Absolute monotonic deadline plus iteration cap; no unbounded EINTR retries.
- * This bounds polling, not OS scheduling delays or a stalled MMIO bus access. */
+/* Same dispatch thread owns IAT and MMIO. Every successful write must wake
+ * through InterruptWait and acknowledge our device's completion bit. No poll
+ * fallback: timeout or a foreign/shared interrupt cannot publish a result. */
 static int factorial(unsigned value, uint32_t *result)
 {
     uint64_t start, now;
-    int error;
-    if (failed)
-        return EIO;
-    if (regs[8] & 1U)
-        return EBUSY;
-    error = monotonic_ns(&start);
-    if (error != EOK)
-        return error;
-    regs[8] = 0; /* Polling only; do not request a factorial IRQ. */
+    if (failed) return EIO;
+    if (regs[8] & 1U) return EBUSY;
+    if (monotonic_ns(&start) != EOK) return errno;
+    regs[0x64/4] = 0xffffffffU;
+    regs[8] = 0x80U;
     regs[2] = value;
-    for (unsigned i = 0; i < POLL_LIMIT; ++i) {
-        struct timespec pause = { .tv_sec = 0, .tv_nsec = 1000000 };
-        error = monotonic_ns(&now);
-        if (error != EOK) {
-            failed = 1;
-            return error;
+    for (;;) {
+        if (monotonic_ns(&now) != EOK || now - start >= DEADLINE_NS) {
+            failed = 1; return ETIMEDOUT;
         }
-        if (now - start >= DEADLINE_NS)
-            break;
-        if (!(regs[8] & 1U)) {
+        uint64_t remaining = DEADLINE_NS - (now - start);
+        if (TimerTimeout(CLOCK_MONOTONIC, _NTO_TIMEOUT_INTR, NULL,
+                         &remaining, NULL) < 0 || InterruptWait(0, NULL) < 0) {
+            failed = 1; return errno;
+        }
+        uint32_t pending = regs[0x24/4];
+        int complete = (pending & 1U) && !(regs[8] & 1U);
+        if (pending) regs[0x64/4] = pending;
+        if (InterruptUnmask(0, irq_id) < 0) {
+            failed = 1; return errno;
+        }
+        if (complete) {
             *result = regs[2];
+            printf("EDU RESMGR IRQ completion=%u input=%u result=%" PRIu32 " ack=%08" PRIx32 "\n",
+                   ++irq_completions, value, *result, regs[0x24/4]);
             return EOK;
         }
-        if (DEADLINE_NS - (now - start) < (uint64_t)pause.tv_nsec)
-            pause.tv_nsec = (long)(DEADLINE_NS - (now - start));
-        if (nanosleep(&pause, NULL) < 0) {
-            failed = 1; /* Work may still be in flight; require restart. */
-            return errno;
-        }
     }
-    failed = 1;
-    return ETIMEDOUT;
 }
 
 /* Exactly one complete command per write: 1-2 ASCII digits, optional LF.
@@ -264,6 +261,14 @@ int main(void)
         fputs("Unexpected EDU identification\n", stderr);
         goto done;
     }
+    pci_irq_t irq = -1;
+    count = 1;
+    error = pci_device_read_irq(device, &count, &irq);
+    if (error != PCI_ERR_OK || count != 1 || irq < 0) goto pci_error;
+    regs[0x64/4] = 0xffffffffU;
+    irq_id = InterruptAttachThread(irq, _NTO_INTR_FLAGS_TRK_MSK);
+    if (irq_id < 0) { perror("InterruptAttachThread"); goto done; }
+    printf("EDU RESMGR IAT attached irq=%d id=%d\n", irq, irq_id);
     dispatch = dispatch_create();
     if (dispatch == NULL) {
         perror("dispatch_create");
@@ -295,7 +300,7 @@ int main(void)
         perror("dispatch_context_alloc");
         goto done;
     }
-    puts("EDU /dev/edu ready mode=0660 (experimental, polling only)");
+    puts("EDU /dev/edu ready mode=0660 (experimental, IAT IRQ completion required)");
     for (;;) {
         dispatch_context_t *next = dispatch_block(context);
         if (next == NULL) {
@@ -317,6 +322,8 @@ done:
         dispatch_context_free(context);
     if (dispatch != NULL)
         dispatch_destroy(dispatch);
+    if (irq_id >= 0) InterruptDetach(irq_id);
+    if (regs != MAP_FAILED) regs[0x64/4] = 0xffffffffU;
     if (regs != MAP_FAILED)
         munmap((void *)regs, MAP_BYTES);
     if (device != NULL)

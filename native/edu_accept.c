@@ -84,6 +84,14 @@ int main(void) {
         usleep(50000);
     }
     int rc=ready?tests():1;
+    if (!rc) {
+        pid_t shell=fork();
+        if (shell==0) { execl("/bin/sh","sh","-c",
+            "echo 10 > /dev/edu; value=$(cat /dev/edu); echo EDU_SHELL_RESULT=$value; test \"$value\" = 3628800",
+            (char *)NULL); _exit(127); }
+        if (reap(shell)) rc=1;
+    }
+    if (!rc) puts("EDU STEP6 PASS shell echo/cat and target acceptance");
     if (!ready) fputs("EDU RESMGR startup deadline\n",stderr);
     if (kill(server,SIGTERM)<0) { perror("owned resmgr stop"); rc=1; }
     /* Service default SIGTERM is expected; reap without claiming graceful cleanup. */
