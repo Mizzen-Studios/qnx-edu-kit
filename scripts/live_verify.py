@@ -68,7 +68,7 @@ def main():
     output=data.decode(errors='replace');sys.stdout.write(output)
     checks={str(n):bool(re.search(r'EDU STEP'+str(n)+r' PASS',output)) for n in range(1,7)}
     checks['6']=checks['6'] and 'EDU_SHELL_RESULT=3628800' in output and bool(re.search(r'EDU RESMGR IRQ completion=\d+ input=10 result=3628800 ack=00000000',output)) and 'EDU RESMGR ACCEPT PASS' in output
-    success=bool(cap) and 'EDU_PROBE_RC=0' in output and all(checks.values())
+    success=bool(cap) and 'EDU TARGET QNX 8.0' in output and 'EDU_PROBE_RC=0' in output and all(checks.values())
     evidence={'started':start,'finished':time.time(),'sources':sources(),'image_sha256':manifest['image_sha256'],'caps':cap,'steps':checks,'success':success,'label':'observed in this QEMU run; app budget, not a QNX benchmark','target_provenance':manifest.get('target_provenance','custom QNX 8 IFS; QSTI provenance unverified')}
     out=bundle/('live-'+str(time.time_ns()));out.with_suffix('.log').write_bytes(data);out.with_suffix('.json').write_text(json.dumps(evidence,indent=2)+'\n')
     for n in ([args.step] if args.step else range(1,7)): print(('PASS' if success and checks[str(n)] else 'FAIL')+': step '+str(n)+' fresh QNX target')
