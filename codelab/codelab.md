@@ -6,9 +6,11 @@ environments: Web
 status: Draft
 feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 
-# A first PCI driver for QNX® 8.0 — blocked draft
+# Write your first QNX 8.0 PCI driver in QEMU — blocked draft
 
-> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. The diagnostic currently faults after PCI attach, before BAR evidence. QSTI provenance and complete target acceptance remain PENDING.
+Expanded private tutorial draft: [build, crash diagnostics, and six acceptance boundaries](../docs/write-first-qnx8-pci-driver-qemu.md).
+
+> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. A checked per-thread I/O-level1 request recovered BAR mapping and factorial polling in the native diagnostic; interrupt completion is the next blocked gate. QSTI provenance and complete target acceptance remain PENDING.
 > This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; an experimental native diagnostic exists, but no working driver/resource manager is accepted. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
 
 ## 1. Setup

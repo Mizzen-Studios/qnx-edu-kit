@@ -6,7 +6,7 @@ Private development milestone. **Not a working QNX driver or a runnable tutorial
 
 | Criterion | Planned proof | Current evidence |
 |---|---|---|
-| Technical implementation | PCI attach, IRQ, resmgr on QNX | original diagnostic compiles; native runtime under investigation; resmgr/DMA BLOCKED |
+| Technical implementation | PCI attach, IRQ, resmgr on QNX | original diagnostic compiles; native BAR/ID/factorial polling observed; IRQ/resmgr/DMA BLOCKED |
 | Design | incremental, bounded checks | [codelab source](codelab/codelab.md), [local site](docs/site/index.html), explicit blocking framework |
 | Impact | reproducible teaching without hardware | two clean-machine learner runs PENDING |
 | Innovation | verified PCI/IRQ/DMA learning path | no novelty/first/smallest/correctness claim established |
@@ -31,16 +31,16 @@ Host mode runs guard and framework tests, then explicitly SKIPs six live checks.
 | KVM / QEMU / SDK | No KVM; QEMU 8.2.2 TCG; licensed SDK installed inside private x86 Linux guest |
 | QNX SDP | 8.0 installed and verified; see docs/sdk-install-result-20261104.md |
 | QSTI / QEMU | QSTI image pending; apt QEMU 8.2.2 Ubuntu1.18 verified |
-| Target | QNX 8 boots and hello executes under TCG; native EDU probe is under investigation |
+| Target | QNX 8 boots under TCG; EDU BAR/ID/factorial polling observed; IRQ completion under investigation |
 | Toolchain | qcc -Vgcc_ntox86_64 compiled the original native/edu_probe.c with -Wall -Wextra -Werror |
 | macOS / Windows | UNTESTED; no verified Docker path provided |
-| Last live verification | 4 November 2026; full tutorial/driver acceptance NOT passed |
+| Last live verification | 6 November 2026; BAR/polling checkpoint only; full tutorial/driver acceptance NOT passed |
 
 ## API acceptance (not yet passed)
 
 | Area | Planned evidence | file:function | Status |
 |---|---|---|---|
-| PCI server | attach/BAR/detach transcript | not implemented | BLOCKED |
+| PCI server | attach/BAR/detach transcript | native/edu_probe.c:main | experimental BAR/polling observed; full lifecycle PENDING |
 | IAT/InterruptWait | thread, INTx, ack, detach | not implemented | BLOCKED |
 | Abilities/secpol | deny/allow and least privilege | not implemented | BLOCKED |
 | Resource manager | real /dev/edu I/O and errors | not implemented | BLOCKED |
@@ -61,6 +61,8 @@ Original foundation under [Apache-2.0](LICENSE). QEMU edu documentation/source a
 Repository stays private. No Pages, upstream PR, video, account creation, submission or spending is authorized by this milestone.
 
 ## Local learning materials
+
+- [Write your first QNX 8.0 PCI driver in QEMU](docs/write-first-qnx8-pci-driver-qemu.md): expanded private draft, real build/crash-diagnostic checkpoint and explicit blocked IRQ/DMA/resource-manager gates.
 
 - [Static site design and rendering](docs/site-design.md): dependency-free, relative links, nothing published.
 - [Policy specification](docs/security-policy.md): not validated secpol syntax.
