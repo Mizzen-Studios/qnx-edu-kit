@@ -12,6 +12,7 @@
 #include <signal.h>
 #include <dlfcn.h>
 #include <string.h>
+#include "edu_dma.h"
 
 /* Diagnostic-only: no stdio, allocator or symbol lookup in the signal handler. */
 static char *hex_value(char *out, uintptr_t value) {
@@ -84,7 +85,8 @@ int main(void) {
     struct sigevent event; SIGEV_INTR_INIT(&event);
     iid=InterruptAttachEvent(irq,&event,_NTO_INTR_FLAGS_TRK_MSK);
     if (iid<0) { perror("InterruptAttachEvent"); goto done; }
-    if (InterruptUnmask(irq,iid)<0) { perror("InterruptUnmask"); goto done; }
+    /* Default attachment unmasks initially; a second unmask at count zero
+     * returns EAGAIN. This one-shot probe acknowledges then detaches. */
     r[0x64/4]=0xffffffff;
     uint64_t timeout=2000000000ULL;
     if (TimerTimeout(CLOCK_MONOTONIC,_NTO_TIMEOUT_INTR,NULL,&timeout,NULL)<0) {
@@ -97,7 +99,8 @@ int main(void) {
     if (!(r[0x24/4]&1)) { fputs("EDU IRQ wake without own pending bit\n",stderr); goto done; }
     r[0x64/4]=1;
     if (r[0x24/4]&1) { fputs("EDU IRQ ack failed\n",stderr); goto done; }
-    puts("EDU IRQ raise/wait/ack PASS"); rc=0;
+    puts("EDU IRQ raise/wait/ack PASS");
+    rc=edu_dma_roundtrip(h,bdf,r);
 done:
     if (iid>=0) InterruptDetach(iid);
     if (r!=MAP_FAILED) { r[0x64/4]=0xffffffff; munmap((void*)r,0x1000); }

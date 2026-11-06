@@ -1,11 +1,11 @@
 # Write your first QNX 8.0 PCI driver in QEMU
 
 **Private working draft, 6 November 2026. Not a completed or runnable learner tutorial.**
-No completion-time, first-ever, safety-certification or performance claim. The experimental native probe compiles and now demonstrates BAR mapping and factorial polling after requesting per-thread I/O level1; native interrupt completion remains blocked. Host models and qtest prove neither QNX PCI API correctness nor a working /dev/edu.
+No completion-time, first-ever, safety-certification or performance claim. The experimental native probe compiles and now demonstrates BAR mapping and factorial polling after requesting per-thread I/O level1; native one-shot interrupt completion and a 64-byte polled DMA round-trip now pass; normal resource-manager I/O now passes, while robustness and full learner acceptance remain pending. Host models and qtest prove neither QNX PCI API correctness nor a working /dev/edu.
 
 ## What we are building
 
-A small resource manager for QEMU's edu device, PCI vendor 0x1234/device 0x11e8. Intended finish line: write 10 to /dev/edu, read 3628800. Learn discovery/ownership, BAR mapping, bounded polling, interrupt acknowledgement, DMA ownership, and request validation. That finish line has NOT passed on QNX.
+A small resource manager for QEMU's edu device, PCI vendor 0x1234/device 0x11e8. Intended finish line: write 10 to /dev/edu, read 3628800. Learn discovery/ownership, BAR mapping, bounded polling, interrupt acknowledgement, DMA ownership, and request validation. That normal-I/O finish line now passes on QNX; full learner reproducibility and lifecycle robustness have not passed.
 
 ## 0. Establish a private, bounded environment
 
@@ -46,7 +46,7 @@ Expected progress markers (not a promise of success):
 
 Earlier runs stopped before END with exit139. The x86 PCI access path lacked per-thread I/O privilege. The probe now checks ThreadCtl(_NTO_TCTL_IO_LEVEL, (void *)(uintptr_t)_NTO_IO_LEVEL_1) before PCI access, requests neither inheritance nor level2, and fails closed if the existing process policy denies it. It does not grant itself new process abilities or change policy. With this request, the fresh native run printed END, BAR0=0xfea00000, size1048576, ID010000ed and factorial10=3628800. Normal cleanup relinquishes the thread I/O level. Least-privilege deny/allow tests remain pending.
 
- The diagnostic now records signal/code/fault number/instruction/address using an async-signal-safe write handler, then exits nonzero. Its handler deliberately does not invoke printf(), malloc(), dladdr() or PCI cleanup; symbol lookup runs before the fault. Signal-handler exit means no new core is produced by this diagnostic. Existing core-dump collection should instead be used with the uninstrumented version when needed.
+The diagnostic now records signal/code/fault number/instruction/address using an async-signal-safe write handler, then exits nonzero. Its handler deliberately does not invoke printf(), malloc(), dladdr() or PCI cleanup; symbol lookup runs before the fault. Signal-handler exit means no new core is produced by this diagnostic. Existing core-dump collection should instead be used with the uninstrumented version when needed.
 
 **Stop gate:** if END is absent, retain private fault addresses/library identity and diagnose the call/library/CPU path. Do not continue into MMIO, IRQ or DMA and do not mark this chapter passed.
 
@@ -56,23 +56,23 @@ Only after BAR retrieval succeeds: choose memory BAR0, validate size/address, ob
 
 The fresh native run supplied BAR address, ID/complement validation and factorial result. Complete acceptance still requires invalid-device behaviour and cleanup/reprobe evidence. Do not infer these from the host model or Linux qtest. See register-evidence.md for the distinct device-model evidence.
 
-## 4. Receive an interrupt — BLOCKED
+## 4. Receive an interrupt — one-shot native checkpoint
 
-Read the assigned IRQ through the owned device handle; attach a notification using APIs/abilities from the installed QNX 8 headers, unmask deliberately, arm a bounded wait, request an edu interrupt, confirm pending status, acknowledge the device, and verify it cleared. Separate device acknowledgement from kernel unmasking. Exercise timeout and detach cleanup. The existing experimental probe contains an event-wait attempt; it has NOT reached this path successfully on QNX and is not a complete interrupt service thread.
+Read the assigned IRQ through the owned device handle; attach a notification using APIs/abilities from the installed QNX 8 headers, unmask deliberately, arm a bounded wait, request an edu interrupt, confirm pending status, acknowledge the device, and verify it cleared. Separate device acknowledgement from kernel unmasking. Exercise timeout and detach cleanup. The native one-shot event-wait probe now raises status1, wakes with status1 and acknowledges it clear. Default InterruptAttachEvent attachment handles the initial unmask; the removed redundant InterruptUnmask returned EAGAIN at mask countzero. Do not blindly unmask twice. This is not a complete production interrupt service thread.
 
 Acceptance: target raise/wait/ack transcript, timeout test, teardown/restart, no interrupt storm. A configured IRQ number is not evidence of interrupt delivery.
 
-## 5. DMA ownership and completion — BLOCKED
+## 5. DMA ownership and completion — basic polled native checkpoint
 
-No native DMA implementation is accepted. First verify the installed allocation/physical-address/ability APIs, edu DMA mask and mapping contract. Allocate a bounded buffer, establish physical contiguity and address range, initialize known bytes, transfer both directions with finite completion waits, and compare every byte. Never pass a virtual pointer as a DMA address. Quiesce DMA/interrupts before unmapping or freeing; verify timeout/error paths cannot reuse an in-flight buffer.
+The original native/edu_dma.h now performs a byte-exact 64-byte RAM->EDU->RAM round-trip with polled completion on the fixed x86 QEMU configuration. See [native DMA contract](native-dma.md): one uncached contiguous page, checked physical offset/range, explicit 32-bit device mask, bus-master enable/readback, bounded waits and QEMU-specific quiescence before release. DMA IRQ and fault-injection acceptance remain pending. Do not use this diagnostic on physical hardware. First verify the installed allocation/physical-address/ability APIs, edu DMA mask and mapping contract. Allocate a bounded buffer, establish physical contiguity and address range, initialize known bytes, transfer both directions with finite completion waits, and compare every byte. Never pass a virtual pointer as a DMA address. Quiesce DMA/interrupts before unmapping or freeing; verify timeout/error paths cannot reuse an in-flight buffer.
 
 Acceptance: QNX-allocated buffer identity, mask/range validation, byte-exact transfers, completion IRQ, timeout, cleanup/reprobe. Host qtest DMA is device-behaviour evidence only.
 
-## 6. Resource manager and learner finish line — BLOCKED
+## 6. Resource manager — normal-I/O checkpoint; learner gates pending
 
-No accepted native resource manager exists. Implement /dev/edu only after the above gates pass. Validate and bound requests, reject malformed/overflowing input, serialize device ownership, define partial read/write behaviour and permissions, and return failures rather than fabricated results. Keep long-running work out of an unbounded dispatch path. On shutdown stop work, quiesce DMA/IRQ, detach and unmap in a proven order.
+Original native/edu_resmgr.c and the target-side native/edu_accept.c now cross-build with the licensed SDK and pass actual QNX write10/read3628800, 0/12 bounds, malformed/range/oversize/NUL/nonblocking rejection, zero I/O, partial reads/EOF, same-descriptor use and independent reader snapshots. See [resource-manager contract](native-resmgr.md). This is a polling-only service, separate from the IRQ/DMA diagnostic. Owned SIGTERM teardown removed the node; graceful cleanup, restart, fault recovery and least-privilege policy are not accepted. Validate and bound requests, reject malformed/overflowing input, serialize device ownership, define partial read/write behaviour and permissions, and return failures rather than fabricated results. Keep long-running work out of an unbounded dispatch path. On shutdown stop work, quiesce DMA/IRQ, detach and unmap in a proven order.
 
-Acceptance: actual target write10/read3628800, invalid/oversized requests, simultaneous clients, disconnects, termination/restart, least-privilege deny/allow evidence, then two fresh learner runs. Until then verify.sh correctly refuses full target acceptance.
+Remaining acceptance: true simultaneous-client stress, disconnects, graceful termination/restart, injected failures, least-privilege deny/allow evidence, then two fresh learner runs. Until then verify.sh correctly refuses full target acceptance.
 
 ## References and publication gate
 

@@ -10,8 +10,8 @@ feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 
 Expanded private tutorial draft: [build, crash diagnostics, and six acceptance boundaries](../docs/write-first-qnx8-pci-driver-qemu.md).
 
-> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. A checked per-thread I/O-level1 request recovered BAR mapping and factorial polling in the native diagnostic; interrupt completion is the next blocked gate. QSTI provenance and complete target acceptance remain PENDING.
-> This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; an experimental native diagnostic exists, but no working driver/resource manager is accepted. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
+> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. Checked per-thread I/O level1 recovered BAR mapping/factorial polling; corrected initial unmask handling passed a native one-shot IRQ; a 64-byte polled DMA round-trip is byte-exact. Normal resource-manager I/O now passes on QNX; robustness and full learner acceptance remain pending. QSTI provenance and complete target acceptance remain PENDING.
+> This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; an experimental native diagnostic exists, and a polling resource manager passes normal-I/O checks, but full driver acceptance remains pending. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
 
 ## 1. Setup
 Duration: 8
@@ -31,7 +31,7 @@ Establish reproducible host and evidence boundaries.
 
 A clean clone runs host checks without third-party Python packages; full verification remains blocked.
 
-Intended build: a QEMU edu PCI teaching driver. Learn PCI discovery, mapped I/O, polling, an interrupt service thread and a resource manager. Intended finish line: writing 10 and reading 3628800 via /dev/edu on QNX; NOT achieved. Need an authorized local SDP 8.0, pinned QSTI/QEMU image and a verified target. No hardware required in the proposed path.
+Intended build: a QEMU edu PCI teaching driver. Learn PCI discovery, mapped I/O, polling, an interrupt service thread and a resource manager. Intended finish line: writing 10 and reading 3628800 via /dev/edu on QNX; normal-I/O checkpoint achieved, full learner acceptance pending. Need an authorized local SDP 8.0, pinned QSTI/QEMU image and a verified target. No hardware required in the proposed path.
 
 Record SDP build, QSTI and QEMU versions, image provenance, target architecture and permissions; validate a clean boot.
 
@@ -52,7 +52,7 @@ Starter: [task](../steps/step1/starter/README.md). Solution: [acceptance specifi
 
 ### Crash-first teaching draft
 
-Before teaching IRQ or DMA, separate a successful compile from a successful target run. The current original native/edu_probe.c diagnostic prints EDU PCI attached then faults before BAR evidence. A PCI handle is not proof of mapped registers. Preserve private core/logs outside git; isolate BAR enumeration and verify installed library/header ABI before dereferencing MMIO. Do not progress a learner to DMA or resource-manager exercises on this failing baseline.
+Before teaching IRQ or DMA, separate a successful compile from a successful target run. The earlier native/edu_probe.c diagnostic faulted before BAR evidence; checked per-thread I/O level1 now resolves that fault, and BAR/IRQ/polled-DMA pass. A PCI handle is not proof of mapped registers. Preserve private core/logs outside git; isolate BAR enumeration and verify installed library/header ABI before dereferencing MMIO. Retain a stop gate for any future failing BAR baseline; see the dated follow-up and native contracts for current evidence.
 
 The shared CAN experiment now independently reconfirms 100/100 RX and 100/100 TX on 6 November, but only with explicit experimental PIRQ correction. It is not EDU interrupt evidence. SSH's OpenSSL capability workaround plus corrected helper packaging now passes config/start and a host-key handshake; authenticated login and the underlying fault remain unverified. Never present either workaround as a completed native tutorial.
 
@@ -208,7 +208,7 @@ Turn messages into a predictable client contract.
 
 ### Acceptance boundary
 
-Future target acceptance: write 10 to /dev/edu and read 3628800. Test concurrent clients, malformed input, partial reads, death and re-probe.
+Observed normal target acceptance: write 10 to /dev/edu and read 3628800. Full lifecycle acceptance remains pending. Test concurrent clients, malformed input, partial reads, death and re-probe.
 
 Review resource-manager handlers locally; implement bounded input, concurrency, partial reads and error handling; observe the finish line and safe re-probe.
 
