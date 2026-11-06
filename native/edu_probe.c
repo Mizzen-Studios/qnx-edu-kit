@@ -1,5 +1,6 @@
 /* Original application code; no SDK implementation or headers vendored. */
 #include <pci/pci.h>
+#include <sys/utsname.h>
 #include <sys/mman.h>
 #include <sys/neutrino.h>
 #include <sys/siginfo.h>
@@ -36,6 +37,9 @@ static void fault_report(int signo, siginfo_t *info, void *context) {
     _exit(128+signo);
 }
 int main(void) {
+    struct utsname target;
+    if (uname(&target)<0 || strcmp(target.sysname,"QNX")!=0) return 1;
+    printf("EDU TARGET %s %s %s\n",target.sysname,target.release,target.machine);
     setvbuf(stdout,NULL,_IONBF,0); puts("EDU PROBE BEGIN"); puts("EDU STEP1 PASS QNX target process");
     struct sigaction action={0};
     action.sa_sigaction=fault_report; action.sa_flags=SA_SIGINFO;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fresh local QSTI boot only; a saved transcript is never an input mode."""
+"""Fresh local custom QNX boot only; QSTI provenance is a separate gate; a saved transcript is never an input mode."""
 import argparse, hashlib, json, os, pathlib, re, selectors, subprocess, sys, time
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -24,8 +24,9 @@ def main():
     command=['systemd-run','--user','--scope','--quiet','-p','CPUQuota=100%','-p','MemoryMax=1G',
              'nice','-n','15','qemu-system-x86_64','-machine','pc,accel=tcg','-cpu','max',
              '-smp','1','-m','512','-display','none','-serial','stdio','-monitor','none',
-             '-no-reboot','-kernel',str(image),'-drive','file='+str(disk)+',format=raw,if=ide',
-             '-nic','user,model=virtio-net-pci','-device','edu,dma_mask=0xffffffff']
+             '-no-reboot','-kernel',str(image),'-drive','file='+str(disk)+',format=raw,if=ide,snapshot=on',
+             '-nic','user,model=virtio-net-pci','-object','can-bus,id=canbus0',
+             '-device','kvaser_pci,canbus=canbus0','-device','edu,dma_mask=0xffffffff']
     start=time.time();run=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
     selector=selectors.DefaultSelector();selector.register(run.stdout,selectors.EVENT_READ);data=b'';cap=None
     try:
@@ -68,7 +69,7 @@ def main():
     checks={str(n):bool(re.search(r'EDU STEP'+str(n)+r' PASS',output)) for n in range(1,7)}
     checks['6']=checks['6'] and 'EDU_SHELL_RESULT=3628800' in output and bool(re.search(r'EDU RESMGR IRQ completion=\d+ input=10 result=3628800 ack=00000000',output)) and 'EDU RESMGR ACCEPT PASS' in output
     success=bool(cap) and 'EDU_PROBE_RC=0' in output and all(checks.values())
-    evidence={'started':start,'finished':time.time(),'sources':sources(),'image_sha256':manifest['image_sha256'],'caps':cap,'steps':checks,'success':success,'label':'observed in this QEMU run; app budget, not a QNX benchmark'}
+    evidence={'started':start,'finished':time.time(),'sources':sources(),'image_sha256':manifest['image_sha256'],'caps':cap,'steps':checks,'success':success,'label':'observed in this QEMU run; app budget, not a QNX benchmark','target_provenance':manifest.get('target_provenance','custom QNX 8 IFS; QSTI provenance unverified')}
     out=bundle/('live-'+str(time.time_ns()));out.with_suffix('.log').write_bytes(data);out.with_suffix('.json').write_text(json.dumps(evidence,indent=2)+'\n')
     for n in ([args.step] if args.step else range(1,7)): print(('PASS' if success and checks[str(n)] else 'FAIL')+': step '+str(n)+' fresh QNX target')
     return 0 if success else 1
