@@ -1,5 +1,10 @@
 # E2 build order — private teaching draft
 
+Canonical [capability ledger](capabilities.md): compile, reference-run and learner-run
+are distinct. This page describes historical snapshot/reference infrastructure;
+the approved next slice executes actual learner edits rather than source-equivalence
+checking. No reference receipt satisfies learner acceptance.
+
 ## Start from verified E1
 
 E1 commit 387ba38 records actual fresh native functional acceptance of all six
@@ -62,7 +67,7 @@ Only the owner controlling the serialized guest lane supplies EDU_LIVE_BUNDLE
 (external manifest/image/disk) and EDU_NATIVE_LEASE=granted. Then:
 
 ```sh
-make check-step1 # repeat through check-step6 only while authorized
+make check-reference-step1 # repeat through check-step6 only while authorized
 ```
 
 Every selected gate first checks source snapshot equivalence, then invokes

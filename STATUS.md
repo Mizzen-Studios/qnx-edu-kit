@@ -1,5 +1,17 @@
 # Status — 7 November 2026
 
+## Current direction — council approval, 7 November 2026
+
+Canonical [capability ledger](docs/capabilities.md) separates host checks,
+compile PASS, E1 reference-run PASS and learner-run UNVERIFIED.
+Priority: one source/binary/image-bound step3 edited-source fault-to-fix slice.
+No reference receipt transfers to learner acceptance. Existing checks are now
+explicitly named check-reference-stepN; check-stepN is a labelled legacy alias.
+Clean licensed learner setup and native wrong/correct proof remain open until
+receipts establish them. /dev/edu learner finish follows review, not this slice.
+DMA-IRQ/secpol breadth deferred; no real learners recruited.
+
+
 **PASS: fresh native functional acceptance and clean-checkout end-to-end verify.sh.**
 
 - Direct parent-owned acceptance returned0 with all six target markers, IRQ raise/wait/ack,64-byte byte-exact RAM→EDU→RAM DMA (polled; not DMA-IRQ proof), and actual shell echo10/cat3628800 through the IAT IRQ-driven resource manager.

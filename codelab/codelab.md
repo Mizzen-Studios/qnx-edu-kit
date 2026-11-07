@@ -11,9 +11,11 @@ feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 ## 1. Setup and evidence
 Duration: 8
 
-> PRIVATE DRAFT: durations are unmeasured planning estimates, not a learner completion claim. E1 commit 387ba38 has fresh native all-six-step functional PASS with valid resource caps. QSTI provenance remains unverified; this is a custom QNX 8 IFS, not a verified QSTI release. E2 incremental snapshots have host source-contract checks, not newly observed per-snapshot qcc/target runs. Production safety, complete policy/restart/error injection and two fresh learners remain pending. Do not publish.
+> PRIVATE DRAFT: durations are unmeasured planning estimates, not a learner completion claim. E1 commit 387ba38 has fresh native all-six-step functional PASS with valid resource caps. QSTI provenance remains unverified; this is a custom QNX 8 IFS, not a verified QSTI release. All twelve E2 snapshots have source-bound qcc compilation evidence, not per-snapshot learner runtime acceptance. Production safety, complete policy/restart/error injection and two fresh learners remain pending. Do not publish.
 
-Start from the unchanged verified E1 implementation, not the old blocked placeholder. Evidence: [native receipt](../docs/acceptance/native-20261107/receipt.json), [serial transcript](../docs/acceptance/native-20261107/serial.txt), [clean checkout receipt](../docs/acceptance/native-20261107/clean-checkout-receipt.json). These are historical artifacts, never input to live acceptance. [Build order and exact scope](../docs/e2-build-order.md).
+The current journey is a learner-owned fault-to-fix lab. Consult the canonical [capability ledger](../docs/capabilities.md). Step3 is the first edited-source vertical slice; its native proof remains UNVERIFIED until source/binary/image-bound wrong-edit FAIL and corrected-edit PASS receipts are collected. The reference checks below remain intact and separate, not learner acceptance.
+
+Start from the unchanged verified E1 implementation for comparison, not as a substitute for executing learner edits. Evidence: [native receipt](../docs/acceptance/native-20261107/receipt.json), [serial transcript](../docs/acceptance/native-20261107/serial.txt), [clean checkout receipt](../docs/acceptance/native-20261107/clean-checkout-receipt.json). These are historical artifacts, never input to live acceptance. [Build order and exact scope](../docs/e2-build-order.md).
 
 Mini-map: [1] → 2 → 3 → 4 → 5 → 6
 
@@ -33,7 +35,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step1
+make check-reference-step1
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 1; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
@@ -61,7 +63,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step2
+make check-reference-step2
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 2; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
@@ -89,7 +91,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step3
+make check-reference-step3
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 3; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
@@ -117,7 +119,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step4
+make check-reference-step4
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 4; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
@@ -145,7 +147,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step5
+make check-reference-step5
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 5; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
@@ -175,7 +177,7 @@ Host, repository root; no SDK or guest is started by the first two commands:
 ```sh
 python3 tools/step_sources.py --check
 ./verify.sh --host-only
-make check-step6
+make check-reference-step6
 ```
 
 The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 6; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.

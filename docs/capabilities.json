@@ -1,0 +1,57 @@
+{
+  "schema": "qnx-capabilities.v1",
+  "project": "qnx-edu-kit learner-owned fault-to-fix lab",
+  "boundary": "Reference acceptance, compilation and learner execution are separate. No reference receipt or host model can satisfy learner-run acceptance. QSTI provenance and independent human learner validation remain unverified. No DMA-IRQ/secpol expansion in this slice.",
+  "rows": [
+    {
+      "id": "host-checks",
+      "domain": "host",
+      "level": "framework",
+      "status": "PASS",
+      "claim": "Host source contracts/models/packaging only; no native proof",
+      "evidence": "docs/test-results.md"
+    },
+    {
+      "id": "e1-reference",
+      "domain": "native",
+      "level": "reference-run",
+      "status": "PASS",
+      "claim": "Accumulated unchanged E1 all-six-step reference plus IRQ, polled DMA and /dev/edu normal I/O",
+      "evidence": "docs/acceptance/native-20261107/receipt.json",
+      "evidence_sha256": "7da4d71ec9ab059e45ee3381767a8cfcc71b341b5969ce9ce7f7966cf7d6b2f2"
+    },
+    {
+      "id": "e2-compile",
+      "domain": "native",
+      "level": "compile",
+      "status": "PASS",
+      "claim": "All6 solutions and6 starters cross-compiled; TODO starter compilation is not runtime completion",
+      "evidence": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "evidence_sha256": "0913718b896ea46b1c4f9d967c094f77c19151fa55977c65050fc0a5de22f54b"
+    },
+    {
+      "id": "learner-step3",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "UNVERIFIED",
+      "claim": "Edited source/build/binary/image/run-bound wrong-to-correct slice in progress; current check-step aliases are reference-only",
+      "evidence": "steps/step3/starter/main.c"
+    },
+    {
+      "id": "learner-dev-edu",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "UNVERIFIED",
+      "claim": "Learner-owned /dev/edu finish not yet proved",
+      "evidence": "steps/step6/starter/main.c"
+    },
+    {
+      "id": "clean-setup",
+      "domain": "native",
+      "level": "setup",
+      "status": "UNVERIFIED",
+      "claim": "Legal licensed SDP/BSP-owned setup must not require distributed SDK/images/private owner bundle; clean-machine reproduction pending",
+      "evidence": "docs/e2-build-order.md"
+    }
+  ]
+}

@@ -1,6 +1,11 @@
-# edu-kit — teaching kit for QNX® 8.0
+# edu-kit — learner-owned QNX fault-to-fix lab
 
 Private development milestone. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
+
+Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
+reference-run and learner-run are separate statuses. The next reviewable slice is
+learner-owned step3 BAR ID/complement: wrong-but-compiling edit must fail, corrected
+edit must pass using that exact source/binary/image. No reference PASS transfers.
 
 ## Criteria map
 
@@ -17,11 +22,11 @@ Host, repository root (Python 3 and POSIX shell, GNU make):
 
 ```sh
 ./verify.sh --host-only
-make check-step1    # BLOCKED without external bundle + exclusive lease
+make check-reference-step1 # unchanged E1 reference; NOT learner acceptance
 ./verify.sh         # fresh native gate; BLOCKED without bundle + lease
 ```
 
-Host mode runs guard and framework tests, then explicitly SKIPs live checks. Full verify and check-step1 through check-step6 can pass only on a fresh source/image-bound native reference boot with an authorized external bundle and exclusive lease. Missing inputs exit 2; make may report its own error status. make deploy is blocked and copies nothing. No DRYRUN pretends to build/deploy.
+Host mode runs guard and framework tests, then explicitly SKIPs live checks. Full verify and check-reference-step1 through check-reference-step6 can pass only on a fresh source/image-bound native reference boot with an authorized external bundle and exclusive lease. Missing inputs exit 2; make may report its own error status. make deploy is blocked and copies nothing. No DRYRUN pretends to build/deploy.
 
 ## Build environment
 
@@ -46,7 +51,7 @@ Host mode runs guard and framework tests, then explicitly SKIPs live checks. Ful
 | Resource manager | real /dev/edu I/O and errors | native/edu_resmgr.c and native/edu_accept.c | normal I/O PASS; lifecycle/policy PENDING |
 | DMA | mask, transfer and IRQ evidence | native/edu_dma.h | 64-byte polled round-trip PASS; DMA IRQ/error injection PENDING |
 
-Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders now contain readable E1-derived incremental C snapshots and bounded TODOs; see [E2 build order](docs/e2-build-order.md). Individual snapshot qcc/target runs remain pending. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
+Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders now contain readable E1-derived incremental C snapshots and bounded TODOs; see [E2 build order](docs/e2-build-order.md). All twelve snapshots have [qcc compile-only evidence](docs/acceptance/e2-qcc-20261107/receipt.json); per-snapshot learner target execution remains unverified. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
 
 ## Release gates and limitations
 
