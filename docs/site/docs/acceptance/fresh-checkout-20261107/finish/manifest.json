@@ -1,0 +1,12 @@
+{
+  "kind": "learner-dev-edu-v1",
+  "source_sha256": "a6b724dbbf066fd7e55ee6bd38745eaa2f35e5b4da9ef7e9b42ddf1c42f77109",
+  "binary_sha256": "22b86e25c442411f79aa14a8849ccbf0ad07a368a12741489cd7842a889db5a8",
+  "image_sha256": "cdc80acdcf99de4219b4a8054154fabb52ddf4169dac7369cb3b8bd13e7cf5cf",
+  "buildfile_sha256": "013018092d5bac4afe3eebe7d948155eb2cd341eb02fb74e0dd3203846e29fb2",
+  "startup_sha256": "ac668e878a893b4ef8421e88777fa7b2caf390e2fee97f302d3781a4ccf23d9f",
+  "source_path": "/mnt/host/rereview-20261107/step6/main.c",
+  "built_at": 1794066867.8935351,
+  "build_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+  "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+}

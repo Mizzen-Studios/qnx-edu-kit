@@ -46,3 +46,5 @@ when using _NTO_INTR_WAIT_FLAGS_UNMASK: do not unmask a second time. Detach the
 transaction IAT before stdio or dispatch (and on every error exit); printing while
 still an IST can fail the transaction. Attach in the write's factorial transaction,
 not at daemon startup. This is an implementation requirement, not a safety claim.
+
+[Fresh isolated checkout reproduction and preserved failures](acceptance/fresh-checkout-20261107/NOTES.md): wrong/corrected step3 and corrected learner /dev/edu observed; installed SDK reused, independent human/owner re-review remains not done.

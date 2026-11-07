@@ -106,3 +106,5 @@ The separate [/dev/edu learner finish](learner-dev-edu.md) is not a reference PA
 transfer. C6 remains STOPPED; no safety, timing or production-driver claims.
 
 Startup diagnosis attributes the observed failure to **sshd** in a separately traced image; internal cause remains UNVERIFIED. [Separate baseline/diagnostic bindings](acceptance/startup-diagnosis-20261107/NOTES.md). No SSH/platform health claim.
+
+[Fresh isolated checkout reproduction and preserved failures](acceptance/fresh-checkout-20261107/NOTES.md): wrong/corrected step3 and corrected learner /dev/edu observed; installed SDK reused, independent human/owner re-review remains not done.
