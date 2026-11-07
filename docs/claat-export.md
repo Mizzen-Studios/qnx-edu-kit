@@ -4,13 +4,13 @@
 
 Python 3 standard library, Linux, network only for the explicit first download:
 
-~~~sh
+```sh
 PYTHONDONTWRITEBYTECODE=1 python3 tools/export-codelab.py \
   --download --tool-cache "$HOME/.cache/qnx-edu-claat" \
   --output "$HOME/qnx-edu-export-$(date -u +%Y%m%dT%H%M%SZ)"
 CLAAT_TOOL_CACHE="$HOME/.cache/qnx-edu-claat" PYTHONDONTWRITEBYTECODE=1 \
   python3 -m unittest discover -s tests -p 'test_codelab_export.py' -v
-~~~
+```
 
 Both paths must be outside the checkout; output must not exist. Omit
 --download after caching. No Go installation is required. Linux amd64 runs
@@ -44,10 +44,10 @@ only. All lesson prose, metadata, durations, status and existing SVGs stay
 unchanged. It invokes the actual official claat html exporter with -ga '';
 **index.html and codelab.json are produced only by upstream claat**.
 
-Repository-authored .md/.svg/.mmd files from docs (excluding docs/site) and
-steps are copied alongside the output so the twelve step1..step6
-starter/solution README links resolve locally. These remain the existing
-contract/specification folders, not newly invented working QNX solutions.
+Repository-authored text (.md/.svg/.mmd/.json/.txt/.c/.h) from docs (excluding docs/site),
+steps and native are copied alongside the output so the twelve step1..step6
+starter/solution README links resolve locally. The incremental C snapshots derive from the unchanged E1 implementation;
+no newly compiled snapshot target outcome is claimed.
 The output contains a retained _source directory, the upstream qnx-edu-kit
 bundle, and a separate house export-receipt.json. No fabricated claat metadata
 is injected. The receipt records tool/source checksums, runner and checks.
@@ -62,32 +62,17 @@ an offline/privacy-hardened browser bundle. Export success is not a browser
 render or target execution claim. Use a separate fresh output for each run;
 claat update is not part of this workflow.
 
-## Observed evidence and handoff to the EDU content owner
+## Current E2 content and scope
 
-Genuine host export returned ok qnx-edu-kit. Persistent external evidence:
-.openclaw/tmp/qnx-followup10/claat/verified-export/export-receipt.json
-(relative to the enclosing assistant workspace, not this repository).
-The six core sections, twelve scaffold folder links and eight SVGs passed.
-All six focused tests passed, including an opt-in real pinned-tool export
-and rejection of a modified genuine exported image; default runs never download
-tools. Redistribution guard and git diff whitespace check passed. Full host
-suite: 49 tests, one expected live-QEMU skip, one static-render error because
-this new document requires docs/site/docs/claat-export.html. The parent EDU
-lane owns docs/site; regenerate it there after merge. No forbidden site edit
-was made here.
+The first-step warning now lives inside H2 step1 so upstream retains it.
+Validation explicitly rejects missing PRIVATE DRAFT/QSTI warnings, missing
+core steps, broken local links, changed source snapshots or changed SVGs.
+Twelve readable main.c snapshots accompany the twelve README folders;
+original native .c/.h and historical acceptance .json/.txt are text-only assets.
+No licensed headers, binaries, images, or SDK implementation are staged.
 
-Content issues to fix in the EDU lane, **not altered by this wrapper**:
-
-- claat omits prose between the H1 title and first H2 step. The opening private
-  checkpoint/warnings and expanded tutorial link therefore do not survive the
-  upstream export. Move essential warnings/link into the first step in the
-  source Markdown; do not patch generated HTML.
-- Upstream emits duration 44 from existing estimates. This is not a measured
-  44-minute learner completion. Draft/blocked wording must remain prominent.
-- The navigation section's upstream export remains untested sentence is now
-  stale for this host export; update it while preserving target acceptance gates.
-- HTML details/summary are flattened by upstream; blocked expected-output text
-  remains, but disclosure-widget interaction is not retained.
-
-Full fresh-learner QNX runs, complete E1 acceptance, production safety, public
-Pages/PR/video and publication remain outside this host export evidence.
+E1 at 387ba38 has actual all-six native functional PASS, but E2 per-snapshot
+qcc/target execution and two fresh learners are pending. QSTI provenance is
+unverified. Source/host/export checks do not earn target acceptance. The
+44-minute upstream sum is only six unmeasured private planning estimates.
+No publication, hosted site, video, submission or public PR is authorized.

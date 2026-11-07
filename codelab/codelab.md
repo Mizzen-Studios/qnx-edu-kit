@@ -1,261 +1,212 @@
 author: Mizzen Studios
-summary: PCI ownership, bounded work and interrupt lifecycle for QNX 8.0
+summary: Verified E1 PCI, IAT IRQ, polled DMA and resource-manager teaching snapshots
 id: qnx-edu-kit
 categories: QNX, PCI
 environments: Web
 status: Draft
 feedback link: https://github.com/Mizzen-Studios/qnx-edu-kit/issues
 
-# Write your first QNX 8.0 PCI driver in QEMU — blocked draft
+# Write your first QNX 8.0 PCI driver in QEMU — private E2 draft
 
-## 1. Setup
+## 1. Setup and evidence
 Duration: 8
 
-Expanded private tutorial draft: [build, crash diagnostics, and six acceptance boundaries](../docs/write-first-qnx8-pci-driver-qemu.md).
+> PRIVATE DRAFT: durations are unmeasured planning estimates, not a learner completion claim. E1 commit 387ba38 has fresh native all-six-step functional PASS with valid resource caps. QSTI provenance remains unverified; this is a custom QNX 8 IFS, not a verified QSTI release. E2 incremental snapshots have host source-contract checks, not newly observed per-snapshot qcc/target runs. Production safety, complete policy/restart/error injection and two fresh learners remain pending. Do not publish.
 
-> Private checkpoint, 6 November 2026: licensed SDP 8.0 compiled the native diagnostic; QNX boots under QEMU 8.2.2 TCG. Checked per-thread I/O level1 recovered BAR mapping/factorial polling; corrected initial unmask handling passed a native one-shot IRQ; a 64-byte polled DMA round-trip is byte-exact. Normal resource-manager I/O now passes on QNX; robustness and full learner acceptance remain pending. QSTI provenance and complete target acceptance remain PENDING.
-> This is a private teaching draft, not an executable target tutorial. Host contracts and models are available; an experimental native diagnostic exists, and a polling resource manager passes normal-I/O checks, but full driver acceptance remains pending. Estimated durations are planning targets, not measured learner times. Do not publish until all live verification gates pass.
+Start from the unchanged verified E1 implementation, not the old blocked placeholder. Evidence: [native receipt](../docs/acceptance/native-20261107/receipt.json), [serial transcript](../docs/acceptance/native-20261107/serial.txt), [clean checkout receipt](../docs/acceptance/native-20261107/clean-checkout-receipt.json). These are historical artifacts, never input to live acceptance. [Build order and exact scope](../docs/e2-build-order.md).
 
 Mini-map: [1] → 2 → 3 → 4 → 5 → 6
 
-Establish reproducible host and evidence boundaries.
+![Step 1 design, not target evidence](../docs/diagrams/environment.svg)
 
-![Step 1 design, not live evidence](../docs/diagrams/environment.svg)
+### Work through the source
 
-### Work through the contract
+Use uname to distinguish a real QNX process from a host build. Keep the licensed SDK, IFS, disk and build outputs outside the checkout. Record the authorized SDP 8.0 toolchain, x86_64 target, QEMU 8.2.2 TCG and image checksum. A host model is not a target.
 
-- Record host architecture, Python, make and QEMU version. ARM64 TCG is approved; KVM is not required.
-- Keep SDKs, images and binaries outside the checkout, even ignored folders. Record authorized SDP build, QSTI version and image provenance when available.
+Read the [starter task](../steps/step1/starter/README.md) and bounded TODO in [starter main.c](../steps/step1/starter/main.c). Compare the [solution explanation](../steps/step1/solution/README.md) and [solution main.c](../steps/step1/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-A clean clone runs host checks without third-party Python packages; full verification remains blocked.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-Intended build: a QEMU edu PCI teaching driver. Learn PCI discovery, mapped I/O, polling, an interrupt service thread and a resource manager. Intended finish line: writing 10 and reading 3628800 via /dev/edu on QNX; normal-I/O checkpoint achieved, full learner acceptance pending. Need an authorized local SDP 8.0, pinned QSTI/QEMU image and a verified target. No hardware required in the proposed path.
-
-Record SDP build, QSTI and QEMU versions, image provenance, target architecture and permissions; validate a clean boot.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step1
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 1; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 1 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP1 PASS QNX target process. Retain the entire transcript and receipt, not this expected string.
 
-</details>
-
-Starter: [task](../steps/step1/starter/README.md). Solution: [acceptance specification only](../steps/step1/solution/README.md).
-
-
-### Crash-first teaching draft
-
-Before teaching IRQ or DMA, separate a successful compile from a successful target run. The earlier native/edu_probe.c diagnostic faulted before BAR evidence; checked per-thread I/O level1 now resolves that fault, and BAR/IRQ/polled-DMA pass. A PCI handle is not proof of mapped registers. Preserve private core/logs outside git; isolate BAR enumeration and verify installed library/header ABI before dereferencing MMIO. Retain a stop gate for any future failing BAR baseline; see the dated follow-up and native contracts for current evidence.
-
-The shared CAN experiment now independently reconfirms 100/100 RX and 100/100 TX on 6 November, but only with explicit experimental PIRQ correction. It is not EDU interrupt evidence. SSH's OpenSSL capability workaround plus corrected helper packaging now passes config/start and a host-key handshake; authenticated login and the underlying fault remain unverified. Never present either workaround as a completed native tutorial.
-
-## 2. PCI server attach
+## 2. PCI discovery and ownership
 Duration: 8
 
 Mini-map: 1 → [2] → 3 → 4 → 5 → 6
 
-Separate discovery from exclusive resource ownership.
+![Step 2 design, not target evidence](../docs/diagrams/pci.svg)
 
-![Step 2 design, not live evidence](../docs/diagrams/pci.svg)
+### Work through the source
 
-### Work through the contract
+Read main from ThreadCtl(IO_LEVEL_1) through pci_device_find and pci_device_attach. The tested x86 PCI module needs checked per-thread I/O level 1: no inherited level 2. Match vendor 0x1234/device 0x11e8; attach EXCLUSIVE and detach. Missing device or failed attach must stop, never dereference a bad handle.
 
-- Review installed QNX 8.0 PCI server declarations. The discontinued legacy PCI API is not the porting target.
-- Validate device identity, BAR type and extent, interrupt route and ownership. Unwind partial acquisition in reverse order; never continue with an invalid handle.
+Read the [starter task](../steps/step2/starter/README.md) and bounded TODO in [starter main.c](../steps/step2/starter/main.c). Compare the [solution explanation](../steps/step2/solution/README.md) and [solution main.c](../steps/step2/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-Missing device, duplicate owner and injected attach failures return nonzero without leaked resources.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-Use locally reviewed QNX 8.0 PCI server declarations to enumerate and attach edu, inspect BAR metadata and detach cleanly.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step2
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 2; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 2 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP2 PASS PCI server attach. Retain the entire transcript and receipt, not this expected string.
 
-</details>
-
-Starter: [task](../steps/step2/starter/README.md). Solution: [acceptance specification only](../steps/step2/solution/README.md).
-
-## 3. ID and liveness
+## 3. BAR mapping and liveness
 Duration: 4
 
 Mini-map: 1 → 2 → [3] → 4 → 5 → 6
 
-A mapped address is not proof of a device protocol.
+![Step 3 design, not target evidence](../docs/diagrams/bar.svg)
 
-![Step 3 design, not live evidence](../docs/diagrams/bar.svg)
+### Work through the source
 
-### Work through the contract
+Read pci_device_read_ba and the BAR0 loop. Require a memory BAR, sufficient extent, and a valid mmap_device_memory result before MMIO. The verified reference maps 0x1000 bytes; the probe checks a smaller minimum extent whereas the resource manager requires the full mapping extent. Do not generalize that probe precondition to arbitrary hardware. At byte offsets 0x00 and 0x04, require ID 0x010000ed and the 32-bit complement of 0x12345678. Unmap and detach on every acquired-resource failure.
 
-- Register offsets and values remain withheld until every row has live pinned-QEMU evidence. Source inspection alone is insufficient.
-- Validate width, alignment and bounds; check identity before writing. Test complementary liveness patterns and width-limited inverse readback. Unmap on failure.
+Read the [starter task](../steps/step3/starter/README.md) and bounded TODO in [starter main.c](../steps/step3/starter/main.c). Compare the [solution explanation](../steps/step3/solution/README.md) and [solution main.c](../steps/step3/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-Wrong identity, failed mapping and out-of-bounds requests are bounded errors, never PASS.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-After every relevant checklist row has live evidence, map the validated BAR range and perform bounded ID/liveness checks.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step3
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 3; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 3 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP3 PASS BAR ID and complement. Retain the entire transcript and receipt, not this expected string.
 
-</details>
-
-Starter: [task](../steps/step3/starter/README.md). Solution: [acceptance specification only](../steps/step3/solution/README.md).
-
-## 4. Factorial polling
+## 4. Bounded factorial polling
 Duration: 4
 
 Mini-map: 1 → 2 → 3 → [4] → 5 → 6
 
-Use request ownership and a monotonic deadline.
+![Step 4 design, not target evidence](../docs/diagrams/polling.svg)
 
-![Step 4 design, not live evidence](../docs/diagrams/polling.svg)
+### Work through the source
 
-### Work through the contract
+Read the status register at 0x20 (r[8]) and factorial at 0x08 (r[2]). Disable factorial IRQ for this polling exercise, submit 10, then test busy at most 1000 one-millisecond sleeps. Require completion and 3628800; an iteration budget is not a measured wall-clock guarantee. The client contract in step6 accepts only 0..12 to avoid unsigned 32-bit overflow.
 
-- Accept decimal integers 0 through 12 for this unsigned 32-bit teaching contract; larger factorials overflow.
-- Serialize requests; busy hardware cannot silently replace pending work. Read only after completion, and distinguish timeout from valid input zero.
+Read the [starter task](../steps/step4/starter/README.md) and bounded TODO in [starter main.c](../steps/step4/starter/main.c). Compare the [solution explanation](../steps/step4/solution/README.md) and [solution main.c](../steps/step4/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-Future QNX expectations: 0 and 1 return 1; 10 returns 3628800. These are mathematical expectations, not observed target results.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-Implement a bounded wait, reject unsupported inputs, and observe the factorial finish line on the actual target.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step4
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 4; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 4 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP4 PASS factorial polling. Retain the entire transcript and receipt, not this expected string.
 
-</details>
-
-Starter: [task](../steps/step4/starter/README.md). Solution: [acceptance specification only](../steps/step4/solution/README.md).
-
-## 5. Interrupt service thread
+## 5. IAT interrupt and polled DMA
 Duration: 10
 
 Mini-map: 1 → 2 → 3 → 4 → [5] → 6
 
-Teach standalone interrupt ownership rather than io-sock assumptions.
+![Step 5 design, not target evidence](../docs/diagrams/ist.svg)
 
-![Step 5 design, not live evidence](../docs/diagrams/ist.svg)
+### Work through the source
 
-### Work through the contract
+Read pci_device_read_irq, InterruptAttachThread and InterruptWait in the probe. Clear stale status (ack 0x64), attach with TRK_MSK, arm a two-second TimerTimeout, raise bit 1 at 0x60, verify own pending bit at 0x24 and acknowledge before detach. Default attach initially unmasks: an extra unmask at count zero returns EAGAIN. Then inspect edu_dma_roundtrip: contiguous uncached MAP_PHYS memory, mem_offset physical range inside 32-bit dma_mask, checked bus mastering, two bounded 64-byte transfers and byte comparison. QEMU device buffer starts at 0x40000; never substitute a virtual pointer for the physical bus address. DMA completion is POLLED, not an IRQ claim. On failed quiescence the reference retains the allocation until the bounded external VM owner stops it.
 
-- Review actual InterruptAttachThread and InterruptWait declarations locally; no guessed signatures are supplied. Inspect IO and INTERRUPT abilities and active policy before attach.
-- On EPERM capture the failing operation and inspect grants; do not recommend broad privilege. For INTx inspect owned status, acknowledge device sources, then follow documented unmask rules. InterruptAttachEvent is contextual for io-sock, not an interchangeable standalone sample.
+Read the [starter task](../steps/step5/starter/README.md) and bounded TODO in [starter main.c](../steps/step5/starter/main.c). Compare the [solution explanation](../steps/step5/solution/README.md) and [solution main.c](../steps/step5/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-Test shared/unrelated IRQ, stale status, timeout, missing ability and repeated attach/detach. Delivery alone does not establish completion.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-Review current InterruptAttachThread and InterruptWait declarations locally; verify ability failures, INTx status, acknowledgement, unmasking and clean detach.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step5
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 5; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 5 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP5 PASS IAT wait acknowledge. Retain the entire transcript and receipt, not this expected string.
 
-</details>
+Additional required evidence: EDU DMA 64-byte RAM->EDU->RAM byte-exact PASS (polled, no DMA IRQ claim). The IRQ marker alone cannot prove DMA success.
 
-Starter: [task](../steps/step5/starter/README.md). Solution: [acceptance specification only](../steps/step5/solution/README.md).
-
-## 6. Resource manager
+## 6. IAT-backed resource manager
 Duration: 10
 
 Mini-map: 1 → 2 → 3 → 4 → 5 → [6]
 
-Turn messages into a predictable client contract.
+![Step 6 design, not target evidence](../docs/diagrams/resmgr.svg)
 
-![Step 6 design, not live evidence](../docs/diagrams/resmgr.svg)
+### Work through the source
 
-### Work through the contract
+Read factorial, parse_command, edu_write, edu_read and main in the resource-manager solution. One dispatch thread owns PCI, IAT and registers. Each synchronous successful write uses InterruptWait, checks pending AND not-busy, acknowledges and unmasks before publishing. No polling fallback. A write is one complete command: 1–2 ASCII digits, optional LF, maximum three bytes, 0..12. Nonblocking requests return EAGAIN; results have per-open snapshots, offsets and EOF. Register /dev/edu mode 0660 only after PCI/BAR/IAT setup; dispatch remains a long-running process.
 
-- Define bounded decimal input with optional newline, partial-write behavior, per-open result ownership and serialization. Cap message size before parsing.
-- Implement partial reads, offsets and EOF, errors without stale output and cancellation using actual installed resmgr declarations. Publish readiness last; process death does not reset hardware.
+Read the [starter task](../steps/step6/starter/README.md) and bounded TODO in [starter main.c](../steps/step6/starter/main.c). Compare the [solution explanation](../steps/step6/solution/README.md) and [solution main.c](../steps/step6/solution/main.c) only after attempting the boundary. These are actual source snapshots, not unconditional includes of an accumulated probe.
 
-### Acceptance boundary
+### Build and check
 
-Observed normal target acceptance: write 10 to /dev/edu and read 3628800. Full lifecycle acceptance remains pending. Test concurrent clients, malformed input, partial reads, death and re-probe.
+Host, repository root; no SDK or guest is started by the first two commands:
 
-Review resource-manager handlers locally; implement bounded input, concurrency, partial reads and error handling; observe the finish line and safe re-probe.
-
-Host (repository root):
 
 ```sh
+python3 tools/step_sources.py --check
+./verify.sh --host-only
 make check-step6
 ```
 
-<details><summary>Current expected output</summary>
+The live command is owner-controlled: obtain the exclusive native lease and external source/image-bound bundle first. Without them it is BLOCKED (exit 2). It boots the accumulated unchanged E1 reference and requires ALL six markers plus IRQ resource-manager/client/shell checks, even when selecting step 6; it does not certify an edited learner binary or independently execute this snapshot. The source-contract check rejects modified snapshots before boot. Never supply saved transcripts or fixtures as live evidence.
 
-BLOCKED: step 6 live QNX check not implemented or verified. Nonzero exit; no target command is available.
+Expected reference marker from a fresh successful target: EDU STEP6 PASS. Retain the entire transcript and receipt, not this expected string.
 
-</details>
+On the authorized QNX target with the reference manager running (do not start a second exclusive owner):
 
-Starter: [task](../steps/step6/starter/README.md). Solution: [acceptance specification only](../steps/step6/solution/README.md).
 
-## Congratulations — future acceptance only
+```sh
+printf '10\n' > /dev/edu
+cat /dev/edu
+# 3628800
+```
+
+Require EDU RESMGR IRQ completion with input=10 result=3628800 ack=00000000, EDU RESMGR ACCEPT PASS and EDU_SHELL_RESULT=3628800 in the complete harness run. The manager alone does not emit the step6 acceptance marker; native/edu_accept.c and shell checks do. Partial reads, invalid input, range errors and nonblocking checks are exercised by that client; arbitrary concurrency and production recovery are not established.
+
+## Congratulations — evidence, not elapsed time
 Duration: 0
 
-You are not finished until a real target transcript proves every core step and two fresh agents reproduce the codelab from clean clones. No congratulations or 44-minute completion claim is earned by host CI.
+Mini-map: setup → PCI → BAR → polling → IAT + polled DMA → IAT resmgr.
 
-## Extra credit — not implemented
-Duration: 0
+You have a scoped reference to study, not a measured 44-minute learner result. E1 functional native PASS does not establish fresh-learner reproducibility, QSTI provenance, least-privilege policy or physical hardware safety. Keep those gates open.
 
-DMA (estimated 10 minutes), restart/re-probe (4), tracing (5) are blocked. Validate the pinned QEMU DMA property, register semantics, physical-address handling and cache ownership before writing a DMA tutorial. Do not supply guessed commands or APIs.
-
-## Navigation and support
-Duration: 0
-
-Mini-map: setup → PCI → ID/liveness → polling → IST → resmgr.
-
-The [verification checklist](../docs/verification-checklist.md) holds candidate register work separately; no offsets or values are taught here. Eight accessible SVG design diagrams with matching Mermaid sources are provided; they depict contracts, NOT verified target flows. SVG layout is rendered by the local deterministic script rather than claiming claat or Mermaid CLI execution. Local static rendering is tested separately; upstream claat export remains untested.
-
-See [troubleshooting and glossary](../docs/learning-notes.md).
-
-## Security and extra-credit design
+## Security and DMA ownership
 Duration: 0
 
 ![Least privilege design](../docs/diagrams/abilities.svg)
 
-The [policy specification](../docs/security-policy.md) is not validated secpol syntax. IO and INTERRUPT are review areas, not proof only two grants suffice. A deny test must fail for the intended reason, not a missing binary.
+Review failing operations and narrowly required abilities; do not solve EPERM by broadly granting everything. The [policy specification](../docs/security-policy.md) is not validated secpol syntax.
 
 ![DMA ownership design](../docs/diagrams/dma.svg)
 
-Host model values are source-derived, NOT QNX. Reject DMA ranges beyond the configured mask instead of relying on address clamping. Never substitute a virtual pointer for a bus address. Keep device-buffer and host-memory extents separate and verify cache ownership using actual target documentation.
-
-The [restart contract](../docs/restart-policy.md) handles partial acquisition and stale state. Process replacement does not reset hardware. Trace commands are withheld until installed tool arguments are verified; no invented tracelogger flags or timing claims.
-
-The [register evidence boundary](../docs/register-evidence.md) documents successful live QEMU qtest register/INTx/DMA experiments, superseding the failed Linux sysfs probe; these are QEMU-device results, NOT QNX driver/API results. Mac and Windows paths remain UNTESTED.
+The reference is specific to the tested x86 QEMU PC with no IOMMU and dma_mask=0xffffffff. Do not transfer its uncached physical-memory strategy to arbitrary hardware. [Learning notes](../docs/learning-notes.md) and [claat export scope](../docs/claat-export.md) separate local host rendering, actual upstream export and live target execution. No CAN module is part of this course.

@@ -24,6 +24,11 @@ class CodelabExport(unittest.TestCase):
                     rel = Path('steps') / ('step%d' % n) / kind / 'README.md'
                     self.assertEqual((stage / rel).read_bytes(), (ROOT / rel).read_bytes())
             self.assertEqual(len(list((stage / 'docs/diagrams').glob('*.svg'))), 8)
+            for n in range(1, 7):
+                for kind in ('starter', 'solution'):
+                    rel = Path('steps') / ('step%d' % n) / kind / 'main.c'
+                    self.assertEqual((stage / rel).read_bytes(), (ROOT / rel).read_bytes())
+            self.assertEqual((stage/'native/edu_dma.h').read_bytes(), (ROOT/'native/edu_dma.h').read_bytes())
             self.assertFalse((stage / 'docs/site').exists())
             self.assertFalse(list(stage.rglob('*.ifs')))
 
@@ -68,6 +73,20 @@ class CodelabExport(unittest.TestCase):
             self.assertEqual(receipt['checks']['starter_solution_folders'], 12)
             folder = output / 'qnx-edu-kit'
             self.assertEqual(export.validate(folder, ROOT)['svg_assets'], 8)
+            self.assertEqual(receipt['checks']['source_snapshots'], 12)
+            self.assertEqual(receipt['checks']['first_step_warnings'], 'PASS')
+            source = folder/'steps/step4/solution/main.c'
+            original = source.read_bytes()
+            source.write_bytes(original + b'/* drift */')
+            with self.assertRaisesRegex(ValueError, 'source snapshot'):
+                export.validate(folder, ROOT)
+            source.write_bytes(original)
+            page = folder/'index.html'
+            original = page.read_text()
+            page.write_text(original.replace('PRIVATE DRAFT', 'REMOVED WARNING'))
+            with self.assertRaisesRegex(ValueError, 'first-step warnings'):
+                export.validate(folder, ROOT)
+            page.write_text(original)
             # Corrupt a genuine output copy; validation must fail closed.
             next((folder / 'img').glob('*.svg')).write_text('<svg/>')
             with self.assertRaisesRegex(ValueError, 'byte-identical'):

@@ -52,11 +52,11 @@ def prepare(root, stage):
     source = re.sub(r'\]\(([^)\s]+)\)', relocate, source)
     (stage / 'codelab.md').write_text(source)
     # Only repository-authored text/diagrams, never native build outputs or SDKs.
-    for folder in ('docs', 'steps'):
+    for folder in ('docs', 'steps', 'native'):
         for path in (root / folder).rglob('*'):
             if not path.is_file() or 'site' in path.relative_to(root).parts:
                 continue
-            if path.suffix not in ('.md', '.svg', '.mmd'):
+            if path.suffix not in ('.md', '.svg', '.mmd', '.txt', '.json', '.c', '.h'):
                 continue
             if path.is_symlink() or not inside(path.resolve(), root):
                 raise ValueError('unsafe source asset: ' + str(path))
@@ -96,6 +96,14 @@ def validate(folder, root):
                 raise ValueError('missing scaffold link: ' + link)
             if (folder / link).read_bytes() != (root / link).read_bytes():
                 raise ValueError('scaffold content changed: ' + link)
+    for n in range(1, 7):
+        for kind in ('starter', 'solution'):
+            link = 'steps/step%d/%s/main.c' % (n, kind)
+            if link not in parser.links or (folder / link).read_bytes() != (root / link).read_bytes():
+                raise ValueError('missing or changed source snapshot: ' + link)
+    first_step = (folder / 'index.html').read_text().split('<google-codelab-step', 2)[1]
+    if 'PRIVATE DRAFT' not in first_step or 'QSTI provenance remains unverified' not in first_step:
+        raise ValueError('essential first-step warnings omitted by upstream')
     external = []
     for link in parser.links:
         if local_target(folder, link, folder) is None:
@@ -104,7 +112,7 @@ def validate(folder, root):
     exported = sorted(digest(local_target(folder, link, folder)) for link in parser.images)
     if len(originals) != 8 or exported != originals:
         raise ValueError('eight byte-identical SVG diagrams required')
-    return {'core_steps': 6, 'starter_solution_folders': 12, 'svg_assets': 8,
+    return {'core_steps': 6, 'starter_solution_folders': 12, 'svg_assets': 8, 'source_snapshots': 12, 'first_step_warnings': 'PASS',
             'local_links': 'PASS', 'external_runtime_references': sorted(set(external))}
 
 
@@ -157,7 +165,7 @@ def main():
     source = prepare(ROOT, stage)
     subprocess.run(command + ['export', '-ga', '', '-o', str(output), str(stage / 'codelab.md')], check=True)
     folder = output / 'qnx-edu-kit'
-    for name in ('docs', 'steps'):
+    for name in ('docs', 'steps', 'native'):
         shutil.copytree(stage / name, folder / name)
     checks = validate(folder, ROOT)
     receipt = {'tool_release': VERSION, 'tool_url': URL, 'tool_sha256': SHA256,

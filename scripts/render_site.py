@@ -92,6 +92,10 @@ def outputs():
     for pattern in ('**/*.json', '**/*.txt'):
         for f in (ROOT/'docs/acceptance').glob(pattern):
             result[OUT/f.relative_to(ROOT)]=f.read_text()
+    for folder in ('steps', 'native'):
+        for pattern in ('**/*.c', '**/*.h'):
+            for f in (ROOT/folder).glob(pattern):
+                result[OUT/f.relative_to(ROOT)] = f.read_text()
     return result
 
 def main():
