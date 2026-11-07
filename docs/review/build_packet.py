@@ -32,6 +32,13 @@ def build():
  'old-host':rec(c+'parent-review.json','host-only',[c+'parent-host-final.log'],commit='d419bce01d35d3c92ed55b80b7f9faa854cb6ca3'),
  'export':rec(f+'claat-export-receipt.json','host-only',note='Tool and source hash bound; tested commit absent. Current codelab hash compared explicitly. No browser/offline/availability claim.'),
  'qtest':rec('docs/register-qtest-live.txt','observed in this QEMU run',['docs/register-qtest-live.txt'],commit='7afd82275940f45e0b0b0105205a58c255cb713c',note='QEMU-only, no QNX; BASE is recorded, probe and executable hashes in raw log. No OS image.')}
+ fresh=b+'fresh-checkout-20261107/'
+ diagnosis=b+'startup-diagnosis-20261107/'
+ for key,filename in [('fresh-wrong','wrong-native'),('fresh-correct','correct-native'),('fresh-finish-failed','finish-native'),('fresh-finish-corrected','finish-corrected-native')]:
+  e[key]=rec(fresh+filename+'.json','observed in this QEMU run',[fresh+filename+'.log'],note='Fresh automated clone; source/ELF/IFS/disk bytes bound. Checkout/documentation transitions separately in provenance.json. Initial finish is FAIL, not success.')
+ e['fresh-provenance']=rec(fresh+'provenance.json','host-only',note='Initial clone9075199, host correctioncce9ef6 and finish instruction correction95afcff; no fresh SDK install or human validation claim.')
+ for key in ['baseline','traced']:
+  e['diagnosis-'+key]=rec(diagnosis+key+'.json','observed in this QEMU run',[diagnosis+key+'.log'],note='Unchanged baseline versus separately instrumented image. Process attributed to sshd; internal cause and platform health UNVERIFIED.')
  e['compile']['binary_hashes_from_raw_log']=dict((name,h) for h,name in re.findall(r'^([0-9a-f]{64})  (output/\S+)$',(ROOT/(b+'e2-qcc-20261107/compile.txt')).read_text(),re.M))
  e['export']['current_source_matches_receipt']=sha(ROOT/'codelab/codelab.md')==json.loads((ROOT/e['export']['path']).read_text())['source_sha256']
  # Line-level coverage includes all prose/code, not just a keyword-selected subset.

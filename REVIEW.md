@@ -36,3 +36,5 @@ Run ./verify.sh --host-only, python3 tools/capability_ledger.py, python3 scripts
 ## Fresh-checkout follow-up (automated, not independent human review)
 
 See [new source-commit-bound receipts](docs/acceptance/fresh-checkout-20261107/NOTES.md) and provenance.json: wrong host1/correct host0, initial finish host1/corrected finish host0 on a freshly generated stock platform using existing legal SDK. Older missing bindings remain UNVERIFIED; no retrospective promotion. Startup process now attributed to sshd only in separately bound diagnostic image. Independent owner re-review still not done.
+
+Private editorial draft: [shot list and narration](docs/private-demo.md), planned below three minutes. No recording/upload or new runtime claim.
