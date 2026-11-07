@@ -13,17 +13,17 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "04579c9a834a4edfa0951017d68c57a5fdf37fc568598e7067020acb06d278db",
+      "sha256": "df284ba7740f3a373c5b4e5723f438f7108702891a43f9b4233f5d90b7e8b4ee",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "STATUS.md",
-      "sha256": "1ddca05bbdaf03057126da657db543dfa0b32a3d0d499a045df249412d1809e1",
+      "sha256": "3d9a67e5910fc03381c19796dad8f32fa52d2557649ebf50dbd91728e815827f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "d1dfa76a7209067e29b4aa68613c743f84ab6b629af8dcab10578e2416017907",
+      "sha256": "3934f45fab5ab556753015209e3dbe07937f858c091af0919a470415fb79769f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -43,17 +43,17 @@
     },
     {
       "path": "docs/site/README.html",
-      "sha256": "95d33926cd6d852b63b47efb3f4a39941355bd1fd4d81ad8c1ef67fa127f2a9d",
+      "sha256": "3f3068bd7612f1370433ecf4a123c6e16d948aa04af7e52ee959e28bc63396e5",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "678fefc8f359dee7b04e65d981d29ff66808f45a82c1569a73455d3e197682e3",
+      "sha256": "a6fdd826a098de8a665e28f656f6849b08621f0d0e1f56e41d28e3de014a9464",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "cebaeab9a17d24e60dbc7a5cc054801d5d5eec3431acc4c5e9c45fa60b158ec5",
+      "sha256": "33a8368eafd6550dddd2e7239db1a0ef14da050e7376db5e74c30031cfba87f1",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -63,7 +63,7 @@
     },
     {
       "path": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
-      "sha256": "6b3c768c7e2232a81640948e6f8a26849d7b65ad29ca3d0b2690efb9f555c000",
+      "sha256": "d0050b1fe3bf461b06a2cd8fab7b2f9732b432b7aa05f6f7001a0aa1ee01033f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -133,7 +133,7 @@
     },
     {
       "path": "docs/site/docs/capabilities.html",
-      "sha256": "b4e5c5897d99cffc7b379c6f4c5ecdc512bf440da3bd0a0dc59f6bf82a1e01b0",
+      "sha256": "bfb937f55a38cccee0a511c26f7d3dfcaa272c22eb2b205c00cabaab7b76e15b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -143,7 +143,7 @@
     },
     {
       "path": "docs/site/docs/claim-report.html",
-      "sha256": "33733ed470ad826ccbe937cc671dc3802012691d2547ddfec05aba1f933b9392",
+      "sha256": "28997738f5b49cb735e2de201977795f2d866be12ae9816d0de3500a092aeec6",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -298,7 +298,7 @@
     },
     {
       "path": "docs/site/index.html",
-      "sha256": "95d33926cd6d852b63b47efb3f4a39941355bd1fd4d81ad8c1ef67fa127f2a9d",
+      "sha256": "3f3068bd7612f1370433ecf4a123c6e16d948aa04af7e52ee959e28bc63396e5",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -494,6 +494,11 @@
       "exists": true
     },
     {
+      "source": "README.md",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "exists": true
+    },
+    {
       "source": "STATUS.md",
       "target": "REVIEW.md",
       "exists": true
@@ -559,6 +564,11 @@
       "exists": true
     },
     {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "exists": true
+    },
+    {
       "source": "REVIEW.md",
       "target": "docs/review/appendix.json",
       "exists": true
@@ -576,6 +586,11 @@
     {
       "source": "REVIEW.md",
       "target": "docs/learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
       "exists": true
     },
     {
@@ -949,6 +964,11 @@
       "exists": true
     },
     {
+      "source": "docs/site/README.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/REVIEW.html",
       "target": "index.html",
       "exists": true
@@ -976,6 +996,11 @@
     {
       "source": "docs/site/REVIEW.html",
       "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -1051,6 +1076,11 @@
     {
       "source": "docs/site/STATUS.html",
       "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -1536,6 +1566,11 @@
     {
       "source": "docs/site/docs/claim-report.html",
       "target": "../docs/acceptance/route-paths-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/acceptance/bootstrap-final-20261107/receipt.json",
       "exists": true
     },
     {
@@ -2234,6 +2269,11 @@
       "exists": true
     },
     {
+      "source": "docs/site/index.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/steps/README.html",
       "target": "../index.html",
       "exists": true
@@ -2671,6 +2711,17 @@
     }
   },
   "chronological_host_receipts": [
+    {
+      "receipt": "docs/acceptance/bootstrap-final-20261107/host-receipt.json",
+      "sha256": "19e81ae7dc062db583e97ea81fc287d33a7874a530ffdf8a5c697ddd87f2aad8",
+      "tested_commit": "217d545045871774baf899482193684a284c0dec",
+      "counts": {
+        "tests_total": 87,
+        "passed": 85,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
     {
       "receipt": "docs/acceptance/clean-step3-20261107/parent-review.json",
       "sha256": "eb90fb2802aec141ab0f08bf4d47ed7996b6e528896008531bb9a8a62bf7782d",

@@ -2,7 +2,7 @@
 
 qnx-edu-kit learner-owned fault-to-fix lab
 
-Reference acceptance, compilation and learner execution are separate. No reference receipt or host model can satisfy learner-run acceptance. QSTI provenance and independent human learner validation remain unverified. No DMA-IRQ/secpol expansion in this slice.
+Reference acceptance, compilation and learner execution are separate. No reference receipt or host model can satisfy learner-run acceptance. QSTI provenance and independent human learner validation remain unverified. No DMA-IRQ/secpol expansion in this slice. Supported canonical bootstrap separately observed on one existing SDK; historical route-path negative preserved. See docs/acceptance/bootstrap-final-20261107/receipt.json. No new-install/second-SDK/human acceptance.
 
 Canonical declarations: docs/capabilities.json. Generated view; ledger checks are not runtime acceptance.
 

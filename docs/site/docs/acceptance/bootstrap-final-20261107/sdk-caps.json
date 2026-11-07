@@ -1,0 +1,7 @@
+{
+  "pid": 188993,
+  "cpu": "100000 100000",
+  "memory": "1073741824",
+  "nice": 15,
+  "cmdline": "qemu-system-x86_64 -machine q35,accel=tcg -cpu max -smp 1 -m 512 -display none -no-reboot -serial stdio -monitor none -qmp unix:/home/ubuntu/qnx-host/guest/qmp.sock,server=on,wait=off -drive file=/home/ubuntu/qnx-host/guest/guest.qcow2,format=qcow2,if=virtio -drive file=/home/ubuntu/qnx-host/guest/seed.iso,format=raw,media=cdrom,readonly=on -nic user,model=virtio-net-pci -virtfs local,path=/home/ubuntu/qnx-host/guest/shared,mount_tag=hostshare,security_model=mapped-xattr,id=shared "
+}

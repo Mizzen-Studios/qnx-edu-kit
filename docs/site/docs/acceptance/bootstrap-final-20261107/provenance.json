@@ -1,0 +1,26 @@
+{
+  "instruction_commit": "2180ea5",
+  "source_commit_at_host_verification": "bd68963df0bb0d18269a1a05c8341e643e46e717",
+  "bootstrap_helper_sha256": "fce29c14bf4b899f59635ce3af7832e84c480648d7c2f2edca9e4258a308f0b9",
+  "learner_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+  "preflight_driver_sha256": "ce7b34699886c0aa700e67d4d9758f4b1c26602f5cdc97cce6257f2f7d84a4bb",
+  "snippet_sha256": "c4156001caed8b370d1a07d0e04745e06b2d37c06ceb87e05687d06f67d905ff",
+  "host_share": "/home/ubuntu/qnx-host/guest/shared/bootstrap-final-20261107",
+  "guest_share": "/mnt/host/bootstrap-final-20261107",
+  "guest_platform": "/home/qnx/bootstrap-final-20261107",
+  "guest_active": "/home/qnx/bootstrap-final-active-20261107",
+  "commands_sha256": {
+    "job.sh": "3463e04355654ef31f1b4732bb3c5134c8fa572164087c46bb80b92774ca7eb2",
+    "launch.sh": "77398b6feaabe5622674138d01663026c156e3a2f1a0c03a7011e0735627ad67",
+    "collect.sh": "ebcd760d38cb8f584d6e3d5436fe2151137bbf1043352a18c9b9da45dd583ed6"
+  },
+  "source_sha256": {
+    "step3/wrong.c": "c834e1c45aa6a994f1a1aa69888a6d87fa98c786ae28bed620eb799134e903c4",
+    "step3/correct.c": "2f37c2f234b10e78c9920372895b56e1efe7d4742cd099eb1f8a73ba46a8aaeb",
+    "finish/main.c": "29c2e2a834fa1198f21bb5b7717e4d47f3fae9fe8d72258d3b873c137c9e1a52"
+  },
+  "sdk_scope": "existing legally installed SDK; no installation/login/activation/licence change",
+  "native_features": "unchanged",
+  "early_transport_timeout": "original queue wait180 returned124 before slow guest readiness; same original job later launched; no resubmission",
+  "source_instruction_note": "2180ea5 helper/instructions followed; later prose/export projections retain helper unchanged"
+}
