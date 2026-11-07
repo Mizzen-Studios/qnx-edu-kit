@@ -1,0 +1,28 @@
+{
+  "started": 1794038453.0221305,
+  "finished": 1794038477.5230427,
+  "sources": {
+    "native/edu_accept.c": "3bcefd0b1e3f21c23e71f5d404262e3630b7699aa9054c89b44eed75987a2418",
+    "native/edu_dma.h": "4cfee7cd4b741c2e42b88add5f96c1863d70a6baefd9ebb28dbe9cf2bd230e55",
+    "native/edu_probe.c": "8b5a52ade0f5b64e568d711c4843f354fd669f77f09171c630cad8f8f4779f6d",
+    "native/edu_resmgr.c": "688cef50038ec85bce602f7ddad5875a69ed072a26ebdcdc0efa057c1cc8d42e"
+  },
+  "image_sha256": "7f23eb12551cd6b093c6de5d52fb66941c35f5b6f9d3e7468d087f1e02844d4c",
+  "caps": {
+    "pid": 114769,
+    "cpu": "100000 100000",
+    "memory": "1073741824",
+    "nice": 15
+  },
+  "steps": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true
+  },
+  "success": true,
+  "label": "observed in this QEMU run; app budget, not a QNX benchmark",
+  "target_provenance": "custom QNX 8 IFS; QSTI provenance unverified"
+}

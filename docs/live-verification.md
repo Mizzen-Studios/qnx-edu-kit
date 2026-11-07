@@ -1,8 +1,7 @@
 # Fresh QNX target verification
 
 Full verification boots an external source-bound image. No saved transcript is
-accepted as live input. Fresh IRQ-resmgr acceptance is pending until the new run
-completes; the old polling receipt is insufficient.
+accepted as live input. Fresh IRQ-resmgr acceptance and clean-checkout full verification passed on7November2026; see [current status](../STATUS.md) and source/image-bound receipts. The old polling/null-cap receipts remain insufficient.
 
 Owner workflow (private local machine only):
 

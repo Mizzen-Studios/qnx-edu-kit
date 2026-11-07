@@ -78,16 +78,20 @@ def render(source):
     if code:raise ValueError('unclosed code fence: '+str(source))
     depth=len(source.relative_to(ROOT).parts)-1
     base='../'*depth
-    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · private teaching draft</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'codelab/codelab.html">Codelab</a><span>Host evidence only · QNX pending</span></header><main>'+''.join(out)+'</main></html>\n'
+    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · private teaching draft</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'codelab/codelab.html">Codelab</a><span>Private draft · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
 
 def outputs():
     files=[ROOT/'README.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))
+    if (ROOT/'STATUS.md').is_file(): files.append(ROOT/'STATUS.md')
     result={OUT / f.relative_to(ROOT).with_suffix('.html'):render(f) for f in files}
     result[OUT/'index.html']=render(ROOT/'README.md')
     result[OUT/'LICENSE']=(ROOT/'LICENSE').read_text()
     for f in (ROOT/'docs/diagrams').glob('*'):
         result[OUT/'docs/diagrams'/f.name]=f.read_text()
     for f in (ROOT/'docs').glob('*.txt'):result[OUT/'docs'/f.name]=f.read_text()
+    for pattern in ('**/*.json', '**/*.txt'):
+        for f in (ROOT/'docs/acceptance').glob(pattern):
+            result[OUT/f.relative_to(ROOT)]=f.read_text()
     return result
 
 def main():
