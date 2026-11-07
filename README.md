@@ -5,6 +5,8 @@ Private development milestone. **Experimental native QNX components; not a produ
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate statuses. The first reviewable [learner-owned step3 slice](docs/learner-lab.md) now has fresh native wrong-edit FAIL and corrected-edit PASS, bound to actual source/binary/image. Local E1 substrate only; clean learner BSP portability is UNVERIFIED. No reference PASS transfers.
 
+**Clean bootstrap gate: BLOCKED / portability UNVERIFIED.** The [original clean setup and preflight](docs/clean-step3-setup.md) use learner-supplied licensed SDP/BSP, not E1 or an owner bundle. Fresh wrong/correct C compiled, but the stock kernel linker was killed by guest OOM under the fixed 512MiB SDK guest limit; no clean native assessment ran. [Focused diagnosis](docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.md). No course expansion before the bootstrap/independent gate.
+
 ## Criteria map
 
 | Criterion | Planned proof | Current evidence |

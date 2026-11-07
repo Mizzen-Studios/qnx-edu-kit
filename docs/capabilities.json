@@ -51,8 +51,9 @@
       "domain": "native",
       "level": "setup",
       "status": "UNVERIFIED",
-      "claim": "Legal licensed SDP/BSP-owned setup must not require distributed SDK/images/private owner bundle; clean-machine reproduction pending",
-      "evidence": "docs/e2-build-order.md"
+      "claim": "BLOCKED: stock kernel linker killed by guest OOM within fixed512MiB SDK guest; IFS empty, clean native assessments NOT_RUN. No E1/private bundle reuse. Portability UNVERIFIED.",
+      "evidence": "docs/acceptance/clean-step3-20261107/diagnosis900/outcome.json",
+      "evidence_sha256": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392"
     },
     {
       "id": "learner-step3-negative",
@@ -62,6 +63,15 @@
       "claim": "Intentional wrong-but-compiling edit: stage FAIL although application prints PASS and exits0; expected negative control, not learner completion.",
       "evidence": "docs/acceptance/learner-20261107/wrong-native.json",
       "evidence_sha256": "cba582c587100e0946ea427ce3ea304bde035db4ab5b54e8758ea4729de47db2"
+    },
+    {
+      "id": "clean-stock-image-build",
+      "domain": "host",
+      "level": "build",
+      "status": "FAIL",
+      "claim": "Licensed SDK inside capped Linux guest: fresh stock generic IFS build hit guest OOM before900s timeout. Kernel/service terminal evidence, normal build exit unavailable; no target boot.",
+      "evidence": "docs/acceptance/clean-step3-20261107/diagnosis900/outcome.json",
+      "evidence_sha256": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392"
     }
   ]
 }

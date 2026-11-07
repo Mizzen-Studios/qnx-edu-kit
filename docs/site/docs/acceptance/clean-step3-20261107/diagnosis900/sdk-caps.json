@@ -1,0 +1,13 @@
+{
+  "pid": 148248,
+  "cpu": "100000 100000",
+  "memory": "1073741824",
+  "nice": 15,
+  "guest_vcpu": 1,
+  "guest_memory_mib": 512,
+  "shared_flock": "/home/ubuntu/qnx-host/native-test.lock",
+  "holder": "warm-otter",
+  "builder_timeout_seconds": 900,
+  "previous_240_receipts": "preserved unchanged",
+  "status": "STOPPED_REAPED_LEASE_FREE"
+}

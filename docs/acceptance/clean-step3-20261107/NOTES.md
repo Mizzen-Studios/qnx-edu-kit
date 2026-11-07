@@ -4,6 +4,10 @@
 240-second builder limit. Portability UNVERIFIED; native negative/corrected runs
 NOT_RUN.** No E1 image/buildfile/owner bundle/stripped kernel was used.
 
+## Current chronology
+
+The initial 240-second result below is preserved, not the final diagnosis. The [focused fresh-directory 900-second attempt](diagnosis900/NOTES.md) established guest OOM killing the stock kernel linker before timeout. Portability remains UNVERIFIED; no clean native assessments ran. Original raw logs/JSON remain unchanged.
+
 ## Actual work and evidence
 
 - Original narrow platform instructions: docs/clean-step3-setup.md. Read-only

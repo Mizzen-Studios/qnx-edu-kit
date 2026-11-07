@@ -7,6 +7,8 @@ DMA, security policy or /dev/edu assessment. C6/safestop remains stopped.
 
 ## Legal prerequisites and current portability limit
 
+The [clean legal bootstrap attempt](clean-step3-setup.md) is BLOCKED by guest OOM during stock generic kernel linking under the fixed guest memory limit. Its original preflight/integration instructions do not use E1/owner bundles, but no clean native acceptance exists. The earlier local E1 wrong/correct proof below does not establish portability.
+
 Bring your own licensed QNX 8 SDP, x86_64 BSP/buildfile, PCI services and boot disk
 (if required by that BSP), plus host Python 3, QEMU and systemd user scopes.
 Nothing downloads an SDK, image or private owner bundle. Keep all SDKs, target

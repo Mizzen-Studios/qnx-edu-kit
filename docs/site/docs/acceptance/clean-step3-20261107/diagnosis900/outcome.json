@@ -1,0 +1,30 @@
+{
+  "kind": "clean-step3-focused-diagnosis-v1",
+  "builder_timeout_seconds": 900,
+  "result": "BLOCKED_GUEST_OOM",
+  "portability": "UNVERIFIED",
+  "target_boots": "NOT_RUN",
+  "actual_terminal_event": {
+    "kernel": "global OOM",
+    "victim_pid": 1515,
+    "victim": "x86_64-pc-nto-qnx8.0.0-ld",
+    "anon_rss_kib": 321704,
+    "file_rss_kib": 1732,
+    "virtual_kib": 588920,
+    "service": "host-queue.service",
+    "service_result": "oom-kill",
+    "service_oom_policy": "stop",
+    "at": "2026-11-07T12:36:30Z"
+  },
+  "build_exit_code": null,
+  "exit_receipt_limit": "OOMPolicy=stop terminated whole queue service including controller; no normal wait/queue rc survived. Actual kernel and service termination receipts recovered by new queue instance; not a claimed 124 timeout or normal exit.",
+  "builder_started": "2026-11-07T12:30:49Z",
+  "approximate_elapsed_seconds": 341,
+  "timeout_reached": false,
+  "ifs_bytes": 0,
+  "swap_mib": 0,
+  "caps": "unchanged 100% CPU / 1GiB host / nice15 / 1 vCPU / 512MiB guest",
+  "stock_kernel_unmodified": true,
+  "private_e1_inputs": false,
+  "missing_prerequisite": "stock kernel link completes under authorized guest memory limit; no image exists for fresh learner integration/native assessment"
+}
