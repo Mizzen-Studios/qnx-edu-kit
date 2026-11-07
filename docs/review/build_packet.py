@@ -45,6 +45,7 @@ def build():
  e['route-paths']=dict(path='docs/acceptance/route-paths-20261107/receipt.json',sha256=sha(ROOT/'docs/acceptance/route-paths-20261107/receipt.json'),label='host-only; legal setup BLOCKED',tested_source_commit='3a4821b62170bf572d9d8aacb668c6063b059ebb',note='Exact instruction/script hashes and command coverage; no guest/native rerun or portability acceptance.')
  # Line-level coverage includes all prose/code, not just a keyword-selected subset.
  sources=[ROOT/'README.md',ROOT/'STATUS.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'docs').glob('*.md'))+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs/acceptance').glob('**/*.md'))
+ sources += sorted((ROOT/'docs/proof-capture').glob('*.md'))
  groups=[('reference',['reference','reference-clean','compile'],r'PCI|BAR|factorial|IAT|Interrupt|IRQ|DMA|resmgr|resource.manager|/dev/edu|STEP[1-6]|step[1-6]'),('clean learner',['step3-wrong','step3-correct','finish','stock-build','oom'],r'learner|clean|swap|stock|Memory fault|sshd'),('host framework',['host','old-host'],r'host|model|test|guard|framework|source.contract|Python|stdlib|dependenc'),('export/site',['export'],r'claat|render|site|SVG|diagram|snapshot'),('register reference',['qtest'],r'qtest|register|QEMU.device')]
  surfaces=[]
  for p in sources:

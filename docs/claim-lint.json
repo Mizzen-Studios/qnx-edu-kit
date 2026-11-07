@@ -1,0 +1,2697 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "scope": "Offline structural lint + explicit REVIEW mapping; not a universal semantic claim verifier",
+  "acceptance": "Council CONDITIONAL scoped evidence; native features FROZEN; outsider human learning and second independent SDK UNVERIFIED",
+  "capture": "DRY ONLY; separate Olly OK required for recording/audio",
+  "boundaries": [
+    "existing licensed SDK reused, not fresh install",
+    "sshd internal cause UNVERIFIED, no full-platform health",
+    "C6FAIL/STOPPED, SocketCANUNVERIFIED",
+    "no safety/timing/availability claims"
+  ],
+  "surfaces": [
+    {
+      "path": "README.md",
+      "sha256": "aafb3aeb70fe3686f5f0ec97c13eb3ec883adbbe82dd54da8c472c6adae9c1a0",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "STATUS.md",
+      "sha256": "1ddca05bbdaf03057126da657db543dfa0b32a3d0d499a045df249412d1809e1",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "3aba10c36d4db454a95e318a1160e1b00887db139ba4c4004314fb308a90ee6c",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/private-demo.md",
+      "sha256": "6586dd2a4c0c568645e26d8aed626ac2f54d6b3184cf539ca6d33b4aaa738d28",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/proof-capture/SCRIPT.md",
+      "sha256": "fd6bc7f4c604c2355c971e8865f8380142619b469de716bfa20f50c0831f5a05",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "codelab/codelab.md",
+      "sha256": "8d69df42f362882156e05b7dbc927da19ad6e5e32682b85c4e0f798806e5f1cf",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/README.html",
+      "sha256": "7f4000934a4551775d5df56c1e82f8b20b1c9d09e3523997bc6e3f3d7d45f466",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/REVIEW.html",
+      "sha256": "303166de207611222b6ae9a0b96207e0d59c0e4c5fbfb139b90ed697e3c59f06",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/STATUS.html",
+      "sha256": "cebaeab9a17d24e60dbc7a5cc054801d5d5eec3431acc4c5e9c45fa60b158ec5",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/codelab/codelab.html",
+      "sha256": "78a2e21ca11a6e22c106e0061d2d465baa06c55c23cc59f5af69136e51cf9342",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "sha256": "307633fcfd8225600a34209806ab620647ec36249a2575c3a7575541e61a064a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "sha256": "dc9a36cde4055b7b2b4ea1e542f966a58cf52b1b94fcbda34126da6297decdd6",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "sha256": "347a9b0737085a0b695ebc3f8d6070e15a031c06283256e2781d76f33a1f1936",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
+      "sha256": "ed8e832cff6231c09437e16225872b7de4f3fec5a551b5572a7fed0c2e211cf3",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "sha256": "8fa2c10ae867d7fc6ea423d271fb2043dcfd38e09063c75aa8e438d5624ae401",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
+      "sha256": "f3f71a6935a5babc31191901d4c036a9698e81883ae6d1f7388f6acbd1055f76",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "sha256": "6f18727bd9efcc2839a581915a319c157be2152c0bc6e521927d56f3ac2db56c",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
+      "sha256": "dd759e5971a869e5f0817ff091e1209100798bc78d3e29ab57f987325d45f8df",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
+      "sha256": "48a85f4b972c9a75ce9794819da2b49eebea5b13542cd42931418248a24636fc",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "sha256": "4a279ec7697281817e169532779c200acfaf684992c083d1fd211bd55da6033d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
+      "sha256": "f46ce8ecba848b00b3a3e2cd5d28dcc657ba2d2011cbb8f7153698332ed7bba4",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
+      "sha256": "5a36cf4c623dd9ee23bcf79833b5dc970d7611d12d92d9caa32c2bb464afc534",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "sha256": "a13c6c20d4205b1cd4f60ced14adb6bfe54ae1ed3965e67f4c76833e65a63a19",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/capabilities.html",
+      "sha256": "b4e5c5897d99cffc7b379c6f4c5ecdc512bf440da3bd0a0dc59f6bf82a1e01b0",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/claat-export.html",
+      "sha256": "04dbe9ab767ab3e8c86109f3907cf999b73ca30c4afa26ed490020b771fbd65c",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/claim-report.html",
+      "sha256": "fa7df78a5212e114d4f178c336bfef9051f2cf29307cd2a0c5f28540e83caeb2",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/clean-step3-setup.html",
+      "sha256": "a3071b514774c50749e63ec7b6c6ac5b7fe268d2ec355799891d69b2010ff1cd",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/e2-build-order.html",
+      "sha256": "c076f50fc8e1a01f0896b587c9571a796f472c5dac8cea02952a874e6da36773",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/e2-results-20261107.html",
+      "sha256": "3a56dd35936fd8de646263b538dd66931f3a1fc5d53c9c61cedfe324876cf08a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/feature-gates.html",
+      "sha256": "83b951caf100f7d9bed6b93d4d8b02334d368b35f081cf954b531fca0d3375ec",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/followup10-20261106.html",
+      "sha256": "03e320946724755a5bc15799e2d6e39f4ed444c6fe4b6857a4a3872c1af9bdfa",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/followup9-20261106.html",
+      "sha256": "a74ac08bfba2f8fa794bc61e7dfa0a98808edbc8a9584ce7225cc8e40085e132",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/learner-dev-edu.html",
+      "sha256": "a1bcba43195d777d1bea69bd39a11191c5b22a5a984310a3be1a0d7b03968658",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/learner-lab.html",
+      "sha256": "ba912d4c68ecbd433ce57de8c1fac04c944df1fdd1dd5324c5a5574c24e10e75",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/learner-route.html",
+      "sha256": "14bd587ea9a42c03acbaa1135502a2a4e37c5950df8c2206b80f3cf5e3d6ba25",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/learning-notes.html",
+      "sha256": "9cf50b9b5cfed4a4deb92fb2772b35d687358e24c05533105771189f029b4d2d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/live-verification.html",
+      "sha256": "8fe2ead9454bbe5193bec10d686abefe29d1419ea80d68d27026daf6123403cd",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/native-dma.html",
+      "sha256": "8677c1d957694f5274c0ec54f25b9dfedd205cd10105dcc236cb94ad91867b01",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/native-recovery-20261104.html",
+      "sha256": "f9a2dfa8c72a1ce58896d152739297d3f97e6eb4bb45145495dd83646cfd1e9a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/native-resmgr.html",
+      "sha256": "c10d0a7da84ddb3fe4e8d2a8bb20b5bc68e3634b6d120dc554a338e7e84cb41d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/platform-gates-20261103.html",
+      "sha256": "558a9e4e1d5ebf67c8be288d3fa802cf80cda8da0f6b36b59a2b4e2dc313356b",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/private-demo.html",
+      "sha256": "9f9ad1bd6a4958e19a906b0b800ffac369d9aa706c442b6e5b3a62eb2283344d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/proof-capture/SCRIPT.html",
+      "sha256": "a3211c95206bebe6943095120c4a7cbf1e5e6648731a4ed9abf2817523bc1c2f",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/qemu-recovery-safety.html",
+      "sha256": "eb76b6a3a1d9276598386d681906c4107ba2a8adc1127d8f48b751361424611a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/recovery-20261106.html",
+      "sha256": "a4f11ca8a5d7cb932528111e7c1c96ae277e58fd8575560b3a4d0c31666076a1",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/register-evidence.html",
+      "sha256": "fe17da06d7c6d39f1f25ee816946812bf99144129139c6288d40163fd46d397f",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/restart-policy.html",
+      "sha256": "f363e8c76f5ca71d4ceef40371e511834c1deb4a0aeaad5df0ac0367d33de4b0",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/sdk-install-result-20261104.html",
+      "sha256": "a33908e9b101f5e6c969f9cc8ff25132e53a1fb8b43683810e68591ef08ef69e",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/security-policy.html",
+      "sha256": "46aefbaa4e44df4be3e4644d8dbdcc8a000370d36f454c8b066a7d304aefe49f",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/site-design.html",
+      "sha256": "6fedd00786c0e34b072c6bd7b22a461e6d552ea35a375a5b16aa611ea9c05862",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/tcg-feasibility.html",
+      "sha256": "25b8863a5d15f29938418b5d82558c5af01d06ef7006545db3a250103ac4b097",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/tcg-guest-feasibility.html",
+      "sha256": "eba8e932430b4f5813cd2e4923c49aeb22cd902a9d2a35343ff2cda1cdce817b",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/test-results.html",
+      "sha256": "c08c378e5206bb5e2d9033e5e9e0787fbe82311bf4eca58aa0577f530105ab88",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/verification-checklist.html",
+      "sha256": "7608bf34333a120c4115792a196dd2b74820f8853d3b36e86b8dbda7d0bfa0d7",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "sha256": "038620c8a6fd27029d608d38498fa5e86bf6f279ef59fbf66dc97a59a916aa2c",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/x86-user-feasibility.html",
+      "sha256": "92224ca6298b30b4e300cc68555ceee824e2a9f3111fef1f76437bef69bca67e",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/index.html",
+      "sha256": "7f4000934a4551775d5df56c1e82f8b20b1c9d09e3523997bc6e3f3d7d45f466",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/README.html",
+      "sha256": "5252cbdbbaf39f047792db85de0d7bba70932e471ff995391fa0474d3943175b",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step1/solution/README.html",
+      "sha256": "7beac861440b209791400bae70b1bd504e8210b7c22c4af8209253a45794c5b0",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step1/starter/README.html",
+      "sha256": "2d2db2fea0f5afc215fcd73de2a6a2dffddc186afe85a7fb74ccb4c46eff575f",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step2/solution/README.html",
+      "sha256": "6b580951b77ba77dff3377a0ece2311017ff6dcbaea3eb242aa83a9fc6ee4ee4",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step2/starter/README.html",
+      "sha256": "b08f1705ffdfe321d89f913ebc574b554ae89d8f0f6dc51c60a5456f08197e29",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step3/solution/README.html",
+      "sha256": "c173c25c38909e3112a9a51ba5552d0fd11c5e972ddd8cf3bb079867ce3083ff",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step3/starter/README.html",
+      "sha256": "405f1ce20f6f22852d272eed964ca86b2bb0ebb206a6366ac42c63188c44912b",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step4/solution/README.html",
+      "sha256": "d7e58f011cdaedb92445763fe8f631e158cb050de81bc57049654ca6ef445e32",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step4/starter/README.html",
+      "sha256": "d70c7a941c4c83a4c49c3a18d52edb0410e85b7c34c06b5fcf9e5580c5838574",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step5/solution/README.html",
+      "sha256": "88e26796e776f3b52e09b44df98996173a83036722859855af135ad19ed0dd7a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step5/starter/README.html",
+      "sha256": "ed161df58f05d75f6df5c4db1299ee93dd2b44319a58100d22308f7a0dca6da8",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step6/solution/README.html",
+      "sha256": "d03129c8df82276be770f2d8a179d1f8cfa5af57515b6fd71e3468ff3b345a4f",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/steps/step6/starter/README.html",
+      "sha256": "3e8b0a6de04a300873963fb63cf1facd9d34a6dddf63410027b795faf7c134d1",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    }
+  ],
+  "local_links": [
+    {
+      "source": "README.md",
+      "target": "docs/learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "REVIEW.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/capabilities.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/acceptance/clean-step3-20261107/native-clean/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/clean-step3-setup.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/learner-dev-edu.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "codelab/codelab.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/site/index.html",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/e2-build-order.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/verification-checklist.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/test-results.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/learning-notes.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/tcg-feasibility.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/register-evidence.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/write-first-qnx8-pci-driver-qemu.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/site-design.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/security-policy.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/restart-policy.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/diagrams/environment.mmd",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/learning-notes.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/claat-export.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "REVIEW.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/capabilities.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/clean-step3-20261107/native-clean/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/native-20261107/serial.txt",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/native-20261107/clean-checkout-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/native-20261107/clean-checkout-verify.txt",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/e2-build-order.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/learner-lab.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/clean-step3-20261107/parent-review.json",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/review/appendix.json",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/fresh-checkout-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/private-demo.md",
+      "exists": true
+    },
+    {
+      "source": "docs/private-demo.md",
+      "target": "proof-capture/SCRIPT.md",
+      "exists": true
+    },
+    {
+      "source": "docs/private-demo.md",
+      "target": "proof-capture/pack.json",
+      "exists": true
+    },
+    {
+      "source": "docs/private-demo.md",
+      "target": "proof-capture/report.json",
+      "exists": true
+    },
+    {
+      "source": "docs/private-demo.md",
+      "target": "learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/clean-step3-setup.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/capabilities.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/verification-checklist.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/acceptance/native-20261107/serial.txt",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/acceptance/native-20261107/clean-checkout-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/e2-build-order.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/environment.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step1/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step1/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step1/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step1/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/pci.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step2/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step2/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step2/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step2/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/bar.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step3/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step3/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step3/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step3/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/polling.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step4/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step4/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step4/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step4/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/ist.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step5/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step5/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step5/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step5/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/resmgr.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step6/starter/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step6/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step6/solution/README.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../steps/step6/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/abilities.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/security-policy.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/diagrams/dma.svg",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/learning-notes.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/claat-export.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "REVIEW.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/learner-dev-edu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/verification-checklist.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/test-results.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/learning-notes.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/tcg-feasibility.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/register-evidence.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/write-first-qnx8-pci-driver-qemu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/site-design.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/security-policy.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/restart-policy.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/diagrams/environment.mmd",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/learning-notes.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/claat-export.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
+      "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/review/appendix.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/private-demo.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "REVIEW.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/native-20261107/serial.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/native-20261107/clean-checkout-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/native-20261107/clean-checkout-verify.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/learner-lab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/clean-step3-20261107/parent-review.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/verification-checklist.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/acceptance/native-20261107/serial.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/acceptance/native-20261107/clean-checkout-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/environment.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step1/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step1/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step1/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step1/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/pci.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step2/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step2/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step2/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step2/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/bar.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step3/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step3/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step3/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step3/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/polling.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step4/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step4/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step4/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step4/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/ist.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step5/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step5/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step5/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step5/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/resmgr.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step6/starter/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step6/starter/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step6/solution/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../steps/step6/solution/main.c",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/abilities.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/security-policy.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/diagrams/dma.svg",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/learning-notes.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/claat-export.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
+      "target": "../../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
+      "target": "../../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "target": "../../../docs/acceptance/learner-finish-clean-20261107/unmasked/native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "target": "../../../docs/acceptance/learner-finish-clean-20261107/unmasked/native.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/final-host-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/clean-step3-20261107/native-clean/final-topology/correct-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/unmasked/native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/clean-step3-20261107/native-clean/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/clean-step3-20261107/native-clean/final-topology/wrong-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/clean-step3-20261107/swap-attempt/outcome.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claat-export.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claat-export.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../REVIEW.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/review/appendix.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/claim-lint.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/acceptance/route-paths-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/learner-lab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/learner-dev-edu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/learner-lab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/acceptance/native-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/acceptance/native-20261107/serial.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/acceptance/e2-host-20261107/export-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/acceptance/e2-host-20261107/host-check.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/acceptance/e2-qcc-20261107/compile.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/feature-gates.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/feature-gates.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/feature-gates.html",
+      "target": "../docs/platform-gates-20261103.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/feature-gates.html",
+      "target": "../docs/verification-checklist.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup10-20261106.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup10-20261106.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup9-20261106.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup9-20261106.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/learner-lab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
+      "target": "../docs/learner-dev-edu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
+      "target": "../REVIEW.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learning-notes.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learning-notes.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/live-verification.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/live-verification.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/live-verification.html",
+      "target": "../STATUS.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-dma.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-dma.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-recovery-20261104.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-recovery-20261104.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-resmgr.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-resmgr.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/platform-gates-20261103.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/platform-gates-20261103.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/platform-gates-20261103.html",
+      "target": "../docs/tcg-feasibility.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../docs/proof-capture/SCRIPT.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../docs/proof-capture/pack.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../docs/proof-capture/report.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/proof-capture/SCRIPT.html",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/proof-capture/SCRIPT.html",
+      "target": "../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/qemu-recovery-safety.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/qemu-recovery-safety.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/qemu-recovery-safety.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/recovery-20261106.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/recovery-20261106.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/register-evidence.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/register-evidence.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/register-evidence.html",
+      "target": "../docs/register-qtest-live.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/register-evidence.html",
+      "target": "../docs/verification-checklist.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/restart-policy.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/restart-policy.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/sdk-install-result-20261104.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/sdk-install-result-20261104.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/sdk-install-result-20261104.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/security-policy.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/security-policy.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/site-design.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/site-design.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-feasibility.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-feasibility.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-feasibility.html",
+      "target": "../docs/tcg-guest-feasibility.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-feasibility.html",
+      "target": "../docs/x86-user-feasibility.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-guest-feasibility.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-guest-feasibility.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/test-results.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/test-results.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/test-results.html",
+      "target": "../docs/acceptance/learner-finish-clean-20261107/final-host-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/verification-checklist.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/verification-checklist.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/verification-checklist.html",
+      "target": "../docs/register-evidence.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/verification-checklist.html",
+      "target": "../docs/register-qtest-live.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../docs/native-dma.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../docs/native-resmgr.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/x86-user-feasibility.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/x86-user-feasibility.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "REVIEW.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/capabilities.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/clean-step3-setup.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learner-dev-edu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/acceptance/e2-qcc-20261107/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/verification-checklist.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/test-results.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learning-notes.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/tcg-feasibility.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/register-evidence.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/write-first-qnx8-pci-driver-qemu.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/site-design.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/security-policy.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/restart-policy.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/diagrams/environment.mmd",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learning-notes.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/claat-export.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/README.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/README.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/README.html",
+      "target": "../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/solution/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/solution/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/solution/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/starter/README.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/starter/README.html",
+      "target": "../../../docs/e2-build-order.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/starter/README.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    }
+  ],
+  "dry_pack": {
+    "kind": "private-proof-capture-DRY-PACK",
+    "status": "PASS",
+    "errors": [],
+    "frozen_commit": "01060c7c1aff834d6c0b016de7fd9f988f8f7e35",
+    "narration_words": 211,
+    "planned_seconds": 160,
+    "duration_verified": "editorial plan only; no rehearsal/recorded duration",
+    "recording_performed": false,
+    "audio_performed": false,
+    "publication_performed": false,
+    "claim_mapping_review": "explicit human-authored mapping to REVIEW; hashes check presence/identity, not semantic truth",
+    "lines": [
+      {
+        "id": "L01",
+        "words": 31,
+        "start": 0,
+        "end": 20,
+        "claim": "Automated learner-owned C reproduction using reused SDK only, not fresh install, second SDK or human validation.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/provenance.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "host-only provenance",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/provenance.json",
+            "sha256": "f09afc939f11365e4fe28f485165acc44d7d204a7df3f7a6d32dbab4e25d6440"
+          }
+        ]
+      },
+      {
+        "id": "L02",
+        "words": 41,
+        "start": 20,
+        "end": 45,
+        "claim": "Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/preflight.json, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt, docs/acceptance/fresh-checkout-20261107/sdk-caps.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded SDK build boundary",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/preflight.json",
+            "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/platform-hashes.txt",
+            "sha256": "5ca743be667db1586f11b08492721d2ec1e058198dc4ae78898a6a40f0845dc7"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/sdk-caps.json",
+            "sha256": "6cfb79499436f343f28ca22beb03ea274e8d0cbe1b00976029334bcb1c42ed2c"
+          }
+        ]
+      },
+      {
+        "id": "L03",
+        "words": 24,
+        "start": 45,
+        "end": 75,
+        "claim": "Wrong step3 edit: applicationPASS/exit0 but independent stageFAIL from actual readback.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/wrong-native.json, docs/acceptance/fresh-checkout-20261107/wrong-native.log, docs/acceptance/fresh-checkout-20261107/step3/wrong.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded native QEMU observation",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/wrong-native.json",
+            "sha256": "e6dff846f146d337ca8df51bc6bfc039af76624688ec37ed7423c17747871d4d"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/wrong-native.log",
+            "sha256": "dc49ad5bba03f57e08167e411266600db3d283aa8dc4a41604ef9b50f0ba472e"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/step3/wrong.c",
+            "sha256": "c834e1c45aa6a994f1a1aa69888a6d87fa98c786ae28bed620eb799134e903c4"
+          }
+        ]
+      },
+      {
+        "id": "L04",
+        "words": 28,
+        "start": 75,
+        "end": 100,
+        "claim": "Correct step3 edit stagePASS with cooperative source/ELF/IFS/disk hash binding.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/correct-native.json, docs/acceptance/fresh-checkout-20261107/correct-native.log, docs/acceptance/fresh-checkout-20261107/step3/correct.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded native QEMU observation",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/correct-native.json",
+            "sha256": "4d5dc15560f8449f04e2cfbce8d6061f5c603826d9cdc4d6582fa539c1a1eafd"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/correct-native.log",
+            "sha256": "fe7c00ad3378612a7eeb4d66578867432555f5d82c9f364dfc65cb97627aa687"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/step3/correct.c",
+            "sha256": "2f37c2f234b10e78c9920372895b56e1efe7d4742cd099eb1f8a73ba46a8aaeb"
+          }
+        ]
+      },
+      {
+        "id": "L05",
+        "words": 49,
+        "start": 100,
+        "end": 135,
+        "claim": "Initial edited manager failure preserved; corrected own manager shell write10/read3628800 and IRQcompletion/ack0, no reference checker.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/finish-native.json, docs/acceptance/fresh-checkout-20261107/finish-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected/manifest.json, docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded native QEMU observation",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-native.json",
+            "sha256": "19bf7205f52ef4fac7668f867fd2e31a54d99e542574359b79e54a7e2393bdc5"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-native.log",
+            "sha256": "e16c828871cd6da91865fb4d01d1568070cfe053f7dbbc69d80386ab8c800a73"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json",
+            "sha256": "ef83383c93509cbb6113e4e9ff87d2685d73d2f4c799972a649c050b554ef6c2"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected-native.log",
+            "sha256": "e7e6b0ecc14281609781a4dc805d5247db9bb5d958b1754fffd6bc5d7517b466"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected/manifest.json",
+            "sha256": "62af484678314f28cc19787954e8d57c254566f9165cd87dd3775c7a0528279e"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c",
+            "sha256": "64647c88597eff57f0723ffb2e479f90501f717065edd5a008827866fd8b76fe"
+          }
+        ]
+      },
+      {
+        "id": "L06",
+        "words": 38,
+        "start": 135,
+        "end": 160,
+        "claim": "Unchanged baseline reproduces startup fault; separate traced image attributes sshd, internal cause and platformhealthUNVERIFIED.",
+        "frame": "Local sanitized file view: docs/acceptance/startup-diagnosis-20261107/baseline.json, docs/acceptance/startup-diagnosis-20261107/baseline.log, docs/acceptance/startup-diagnosis-20261107/traced.json, docs/acceptance/startup-diagnosis-20261107/traced.log. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded native QEMU observation",
+        "assets": [
+          {
+            "path": "docs/acceptance/startup-diagnosis-20261107/baseline.json",
+            "sha256": "64c151b9e7bf93f9cb03c0d471d145e95d3eda34bfb7c0850f9279c8a3529108"
+          },
+          {
+            "path": "docs/acceptance/startup-diagnosis-20261107/baseline.log",
+            "sha256": "b8a49a701c109c41ac4e6b7deeabad885dd45d4d84299afb9ee2609764cadde6"
+          },
+          {
+            "path": "docs/acceptance/startup-diagnosis-20261107/traced.json",
+            "sha256": "09b26787145787d915bad34b2c705d0567afed5e4f8c1a532c1731de7e6a0894"
+          },
+          {
+            "path": "docs/acceptance/startup-diagnosis-20261107/traced.log",
+            "sha256": "8250b3fc1c34e70b7d8bc8554c43d3c98fda3a9857f7d8d4c6576f62d7e5235c"
+          }
+        ]
+      }
+    ]
+  },
+  "negative_checks": {
+    "unbound_claim": {
+      "rejected": true,
+      "errors": [
+        "L01: unbound claim/frame"
+      ]
+    },
+    "missing_asset": {
+      "rejected": true,
+      "errors": [
+        "L01: missing/unsafe asset docs/INTENTIONAL-MISSING-ASSET"
+      ]
+    },
+    "changed_digest": {
+      "rejected": true,
+      "errors": [
+        "L01: changed frozen asset docs/acceptance/fresh-checkout-20261107/provenance.json"
+      ]
+    }
+  },
+  "chronological_host_receipts": [
+    {
+      "receipt": "docs/acceptance/clean-step3-20261107/parent-review.json",
+      "sha256": "eb90fb2802aec141ab0f08bf4d47ed7996b6e528896008531bb9a8a62bf7782d",
+      "tested_commit": "d419bce01d35d3c92ed55b80b7f9faa854cb6ca3",
+      "counts": {
+        "total": 79,
+        "passed": 77,
+        "skipped": 2,
+        "failed": 0
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/learner-20261107/parent-review.json",
+      "sha256": "2e1c154f92277da7c5a86bb67755c033591a979241f39f5307784714e1cba786",
+      "tested_commit": null,
+      "counts": {
+        "total": 74,
+        "passed": 72,
+        "skipped": 2,
+        "failed": 0
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/learner-finish-clean-20261107/final-host-receipt.json",
+      "sha256": "ebc9532f577e9a8195a7a67a685ec5bf9e9fa74edd22d89493c28c49d68433ed",
+      "tested_commit": "cec75567bfd65f02b4afb3ebb674ffe5116906d8",
+      "counts": {
+        "tests_total": 83,
+        "passed": 81,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/private-demo-20261107/receipt.json",
+      "sha256": "66c3892b27b87f1e352a642db41bd5aae65225888aba256718d8319c444396d2",
+      "tested_commit": "f6215d6500e2b8a63ae39de94f9f7611a1b53209",
+      "counts": {
+        "tests_total": 87,
+        "passed": 85,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    }
+  ],
+  "chronology_order": "receipt paths; inspect tested commits, not monotonic pass-count progress"
+}

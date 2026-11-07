@@ -83,6 +83,7 @@ def render(source):
 def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))
     files += sorted((ROOT/'docs/acceptance').glob('**/*.md'))
+    files += sorted((ROOT/'docs/proof-capture').glob('*.md'))
     if (ROOT/'STATUS.md').is_file(): files.append(ROOT/'STATUS.md')
     result={OUT / f.relative_to(ROOT).with_suffix('.html'):render(f) for f in files}
     result[OUT/'index.html']=render(ROOT/'README.md')
@@ -97,6 +98,10 @@ def outputs():
         for pattern in ('**/*.c', '**/*.h'):
             for f in (ROOT/folder).glob(pattern):
                 result[OUT/f.relative_to(ROOT)] = f.read_text()
+    for f in (ROOT/'docs/proof-capture').glob('*.json'):
+        result[OUT/f.relative_to(ROOT)]=f.read_text()
+    f=ROOT/'docs/claim-lint.json'
+    if f.is_file():result[OUT/'docs/claim-lint.json']=f.read_text()
     for name in ('appendix.json',):
         f=ROOT/'docs/review'/name
         if f.is_file(): result[OUT/'docs/review'/name]=f.read_text()

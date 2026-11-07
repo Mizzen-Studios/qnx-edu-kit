@@ -50,3 +50,9 @@ PASS. No guest/native rerun, SDK install/activation, second-SDK portability,
 human acceptance or runtime proof promotion. Historical failures/pins unchanged.
 The historical claat source no longer matches current instructions; its original
 receipt stays unchanged. A separate current host export receipt binds the new prose.
+
+## Council conditional gate and dry capture readiness
+
+Council re-review at01060c7c1aff834d6c0b016de7fd9f988f8f7e35 conditionally accepts only scoped recorded evidence; native features FROZEN. Earlier references to an independent review still pending describe their dated milestones. Human learning/second independent SDK remain UNVERIFIED. Current route-path receipt checks newer instructions at3a4821b, host-only: missing legal SDK/BSP/buildfile/disk is BLOCKED, not native/portability PASS.
+
+Current dry pack docs/proof-capture/SCRIPT.md maps every narration line to a bounded REVIEW claim, exact frozen01060c7 files and planned frame;211words/160planned seconds. No recording/audio without separate Olly OK. Evidence pins/failures preserved, no native feature/tests expansion, no C6/sshd cause chase/heartbeat. Conditional acceptance is not full-platform health, safety, timing or availability acceptance. Structural lint/report does not certify arbitrary prose semantics.
