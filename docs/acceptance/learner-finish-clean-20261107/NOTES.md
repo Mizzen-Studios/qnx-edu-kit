@@ -1,6 +1,6 @@
 # Clean-image learner /dev/edu investigation
 
-Final scoped acceptance is **PASS**; see [fresh source-bound receipt](unmasked/native.json) and [raw serial](unmasked/native.log). Earlier failures below are retained. This is edited step6 starter code, not the reference checker. The actual normal write timed out, cat returned EIO, and the stage correctly failed. All failures are preserved.
+Final scoped acceptance is **PASS**; see [fresh source-bound receipt](unmasked/native.json) and [raw serial](unmasked/native.txt). Earlier failures below are retained. This is edited step6 starter code, not the reference checker. The actual normal write timed out, cat returned EIO, and the stage correctly failed. All failures are preserved.
 
 - `initial-failure`: persistent IAT lifetime across resource-manager dispatch.
 - `irq-routing-failure`: transaction-scoped IAT with NO_UNMASK and InterruptWait UNMASK; device computes3628800, pending1, no observed completion.
