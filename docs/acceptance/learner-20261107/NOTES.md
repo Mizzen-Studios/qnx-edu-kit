@@ -2,9 +2,11 @@
 
 Final native proof: wrong host status 1, corrected host status 0; both actual
 application status 0. Nine focused host tests pass; redistribution guard passes.
-Full host discovery ran 74 tests: 71 passed, 2 skipped, 1 stale-site-render error.
-The parent owns site regeneration after this source/doc milestone; it must rerun
-the complete suite after refreshing the learner-lab HTML.
+
+Chronology (preserving the intermediate failure):
+- At learner-source commit fece074, full host discovery ran 74 tests: 71 passed, 2 skipped, 1 stale-site-render error. The original host-tests.log retains that failure.
+- Parent integration at 81397e1 regenerated the local site and reran all 74 tests: **72 passed, 2 skipped, 0 failures**. See parent-review.json for that final integration receipt. A further local-link regression during integration was corrected before that final green run; no native receipt was changed or promoted.
+- This reconciles host/site results only. Native wrong/correct observations below retain their original scope; host tests do not create fresh target or human learner validation.
 
 These are fresh-build/fresh-boot observations, not imported reference completion.
 The C snapshots are original application source, derived by completing the step3
