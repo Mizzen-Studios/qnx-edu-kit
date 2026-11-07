@@ -1,0 +1,62 @@
+SDK environment path assignments omitted; compiler diagnostics below reference original project sources only.
+E2_SOLUTION_QCC_PASS step=1
+E2_STARTER_QCC_PASS step=1 (TODO remains unimplemented)
+E2_SOLUTION_QCC_PASS step=2
+E2_STARTER_QCC_PASS step=2 (TODO remains unimplemented)
+E2_SOLUTION_QCC_PASS step=3
+steps/step3/starter/main.c: In function 'main':
+steps/step3/starter/main.c:66:35: warning: unused variable 'n' [-Wunused-variable]
+   66 |     pci_ba_t bars[6] = {0}; int_t n=6; int rc=1, iid=-1;
+      |                                   ^
+steps/step3/starter/main.c:66:14: warning: unused variable 'bars' [-Wunused-variable]
+   66 |     pci_ba_t bars[6] = {0}; int_t n=6; int rc=1, iid=-1;
+      |              ^~~~
+E2_STARTER_QCC_PASS step=3 (TODO remains unimplemented)
+E2_SOLUTION_QCC_PASS step=4
+E2_STARTER_QCC_PASS step=4 (TODO remains unimplemented)
+E2_SOLUTION_QCC_PASS step=5
+steps/step5/starter/main.c: In function 'main':
+steps/step5/starter/main.c:66:68: warning: unused variable 'irq' [-Wunused-variable]
+   66 |     pci_ba_t bars[6] = {0}; int_t n=6; int rc=1, iid=-1; pci_irq_t irq=-1;
+      |                                                                    ^~~
+E2_STARTER_QCC_PASS step=5 (TODO remains unimplemented)
+E2_SOLUTION_QCC_PASS step=6
+steps/step6/starter/main.c: In function 'main':
+steps/step6/starter/main.c:224:20: warning: unused variable 'mount_funcs' [-Wunused-variable]
+  224 |     iofunc_funcs_t mount_funcs = {
+      |                    ^~~~~~~~~~~
+steps/step6/starter/main.c:223:20: warning: unused variable 'mount' [-Wunused-variable]
+  223 |     iofunc_mount_t mount;
+      |                    ^~~~~
+steps/step6/starter/main.c:222:19: warning: unused variable 'attr' [-Wunused-variable]
+  222 |     iofunc_attr_t attr;
+      |                   ^~~~
+steps/step6/starter/main.c:221:23: warning: unused variable 'io_funcs' [-Wunused-variable]
+  221 |     resmgr_io_funcs_t io_funcs;
+      |                       ^~~~~~~~
+steps/step6/starter/main.c:220:28: warning: unused variable 'connect_funcs' [-Wunused-variable]
+  220 |     resmgr_connect_funcs_t connect_funcs;
+      |                            ^~~~~~~~~~~~~
+steps/step6/starter/main.c:219:19: warning: unused variable 'config' [-Wunused-variable]
+  219 |     resmgr_attr_t config = {0};
+      |                   ^~~~~~
+steps/step6/starter/main.c: At top level:
+steps/step6/starter/main.c:172:12: warning: 'edu_read' defined but not used [-Wunused-function]
+  172 | static int edu_read(resmgr_context_t *ctp, io_read_t *msg, iofunc_ocb_t *base)
+      |            ^~~~~~~~
+steps/step6/starter/main.c:119:12: warning: 'edu_write' defined but not used [-Wunused-function]
+  119 | static int edu_write(resmgr_context_t *ctp, io_write_t *msg, iofunc_ocb_t *base)
+      |            ^~~~~~~~~
+E2_STARTER_QCC_PASS step=6 (TODO remains unimplemented)
+54e3e8553f4e717a0083f07868f3de73ff759febdcacc500e1ea42d7bc38368f  output/step1-solution
+4292397779a44c059a3eff584cc4722aa89ac21ff762819bf9e4b259bfafc169  output/step1-starter
+887999d29e9650d2a33beae48809065d2ac6c56faa97e30be337faebcbb38a0a  output/step2-solution
+f6c91908fd052b821d92f8dbc98cecc0a683162a0c34022f8f62d7cb2f3fd56b  output/step2-starter
+58519a02cf6f7e5d1916173818ef4f36b215140736d6c905ae65c945fb610362  output/step3-solution
+b0baea274098286d58eee28635c18a6e108f79e88068b5ef2e7ddc0229d85a1c  output/step3-starter
+8985501bf188a5de139059a84340ee3ea1cf6cccbd23160532a9ce2999bdaf4b  output/step4-solution
+d29852173b8d67ebf44ab4cf23dfa3c8d4acc892081362a05e44dfe66b7d437f  output/step4-starter
+767a316d83befc1882d665e464609ed9d0e4583ae920c76fa58c02b7af123670  output/step5-solution
+6ad83b24111281c3fbfbc12dbc112a27d7dcf162e35dfedf4b55ed5eef1d5828  output/step5-starter
+f58842c2fc83e299d7bc24eb9af349f4fe10d41ab154d4520b1deece8ba60db4  output/step6-solution
+c5fc4024aadbf85831abb419f9a68849cade930eb445d788a1f1484464bb2d53  output/step6-starter
