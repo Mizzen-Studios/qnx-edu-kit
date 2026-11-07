@@ -35,7 +35,7 @@ def main():
             if cap is None:
                 found=subprocess.run(['pgrep','-P',str(run.pid)],capture_output=True,text=True).stdout.split()
                 # Walk descendants until QEMU, then bind effective cgroup limits.
-                todo=list(found)
+                todo=[str(run.pid)]+list(found)
                 while todo:
                     pid=todo.pop();proc=pathlib.Path('/proc')/pid
                     try:
