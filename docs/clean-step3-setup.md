@@ -1,40 +1,106 @@
-# Clean learner-owned step3 bootstrap
+# Clean learner-owned bootstrap — tested narrow configuration
 
-**Portability UNVERIFIED** until independent clean source/binary/image-bound negative and corrected fresh boots both exist. Earlier E1 receipts do not validate this path. No SDK/BSP/image/disk/library/licence is distributed.
+Fresh clean-platform step3 now has **wrong-edit intended FAIL and corrected native
+PASS**, with source/binary/image/disk provenance. [Receipts](acceptance/clean-step3-20261107/native-clean/NOTES.md).
+This is one automated run on the configuration below, not independent re-review,
+two fresh human learners, QSTI acceptance or broad portability. The owner gate has
+not been independently reassessed. No SDK/BSP/image/disk/library/licence is distributed.
 
-## Narrow platform and prerequisites
+## Platform and memory actually tested
 
-Attempted version scope: licensed Linux x86_64 SDP 8, Generic x86_64 BSP 0.0.1.00050T202311201204L and mkqnximage 0.5.0.00132T202605281115L; QEMU x86_64 pc TCG. This is an attempted configuration, **not a supported/portable PASS**. Scope: PCI attachment, BAR0 ID and complement only. Not QSTI, IRQ, DMA, security policy, resource managers or C6 (STOPPED).
+Licensed Linux x86_64 SDP 8, Generic x86_64 BSP 0.0.1.00050T202311201204L,
+mkqnximage 0.5.0.00132T202605281115L; QEMU 8.2.2 x86_64 pc TCG.
+Host cgroup CPUQuota 100%, MemoryMax 1 GiB, nice 15; one vCPU, 512 MiB SDK guest.
+**512 MiB guest RAM with no swap was insufficient** for the unmodified stock kernel
+link. **512 MiB RAM plus 1 GiB disk-backed guest swap completed it.** This is a tested
+configuration, not a measured minimum RAM requirement. Existing host swap settings
+were unchanged. Target QNX guests remain 1 vCPU / 512 MiB, under the same host caps.
 
-Bring an already installed licensed SDP/BSP. No login, paid downloads, installation, activation or licence changes. An ARM host can use an existing x86_64 SDK VM. Serialize all SDK/native QEMU under the same flock: CPUQuota=100%, MemoryMax=1G, nice 15, one vCPU, 512 MiB guest. Never use the older 200%/4G launcher or increase caps.
-
-These original instructions use the public [QNX 8 mkqnximage reference](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.utilities/topic/m/mkqnximage.html) empty-directory and local-snippet interfaces. Keep licensed implementation external. No E1 buildfiles/images, owner bundles, can-gate/edu-followup outputs or private stripped kernels.
+Bring an already installed licensed SDP/BSP. No login, paid download, installation,
+activation or licence change is part of this procedure. An ARM host may use its
+existing x86_64 SDK VM. Serialize SDK and native QEMU with the same exclusive flock;
+never use the historical 200% / 4 GiB launcher. No E1 buildfiles/images, owner bundles,
+private stripped kernel or cached image substitution.
 
 ## Read-only preflight
 
-Copy original scripts and edited C to the licensed SDK host. Choose a nonexistent external work directory:
+Copy original scripts and edited C to the licensed SDK host. Choose a nonexistent
+external work directory and run:
 
-    python3 learner_clean_preflight.py --sdp-env /licensed/qnx800/qnxsdp-env.sh --fresh-work /external/clean-step3
+    python3 learner_clean_preflight.py --sdp-env /licensed/qnx800/qnxsdp-env.sh --fresh-work /external/clean-platform
 
-Exit 2 means blocked; preserve JSON. Exit 0 permits an attempt, not native success or complete BSP readiness. Probe executes no compiler/image builder, creates no workspace and launches no QEMU. Environment script must be trusted. Normal compiler licensing checks remain authoritative.
+Exit 2 is blocked; preserve JSON. Exit 0 permits an attempt, not native success.
+The probe installs nothing and launches no QEMU. Trust the supplied environment
+script; normal compiler licensing remains authoritative.
 
-## Fresh generic platform
+## Guest swap and isolated build ownership
 
-1. Source the SDP environment. Make the fresh external directory. Inspect and preserve mkqnximage --help=brief. Generate with mkqnximage --type=qemu --arch=x86_64 --build, never --run. Preserve failure output. Default services do not expand assessment scope.
-2. Use documented local/snippets/ifs_files.custom to install fresh learner_bin and learner-start.sh at /proc/boot, mode 0755. scripts/learner-step3.build.in supplies only those two application entries, not a BSP.
-3. Use local/snippets/post_start.custom to invoke sh /proc/boot/learner-start.sh after platform startup/PCI readiness. Licensed platform must provide pci-server, libpci and x86 hardware modules. Inspect its documented startup rather than invent configuration or copy E1.
-4. Generate the disk/buildfile from these clean inputs. Invoke learner_lab.py build with the external generated buildfile/cwd referring to the variant-specific new output directory. It qcc-compiles the source snapshot and invokes mkifs. Use only a disk from the fresh platform. Keep options/buildfile/startup hashes externally, never proprietary files in Git.
+Inside the Linux build guest, as root, create a new 1 GiB file on its existing disk,
+not tmpfs or the shared 9p filesystem. Refuse to overwrite an existing file. The
+recorded commands used dd, chmod 600, mkswap and swapon on /var/tmp/edu-build.swap.
+No fstab entry was added. On a later SDK boot, explicitly activate that same file
+before linking; shutdown deactivates swap. Check free-m and available disk first.
+The original scripts are in [the attempt evidence](acceptance/clean-step3-20261107/swap-attempt/NOTES.md).
 
-If unmodified linking exceeds the capped SDK VM, preserve OOM/link failure and stop. Private stripped kernels/cached images cannot establish portability; no silent substitutes.
+Run the compiler/image builder in **its own transient guest systemd service**,
+not as a descendant of host-queue.service. The prior guest OOM killed the linker;
+OOMPolicy=stop then killed the queue controller too. The successful attempt used
+an isolated service, 1800-second command timeout and 1830-second service ceiling.
+Queue diagnostics remained outside it; queue restart count stayed 0. Preserve
+Result, ExecMainCode, ExecMainStatus, MainPID and terminal ActiveState. A transport
+error or active service with default status 0 is not a terminal-success receipt.
 
-## Negative then corrected
+Keep the launcher **outside** the fresh image directory: mkqnximage rejects a
+nonempty unknown directory. The initial launcher-placement rejection is preserved;
+no compiler/linker ran in that invocation. Do not silence it with --force.
 
-Initialize using learner_lab.py init and complete step3 per [learner-lab.md](learner-lab.md). Require memory BAR0 extent >=0x1000, map uncached, print actual volatile observations. Keep artifacts external.
+## Fresh generic image and application-only integration
 
-First wrong write 0x12345679 should observe complement 0xedcba986; deliberately print application PASS/exit 0. Fresh stage must FAIL/1 despite app PASS/0. Correct write to 0x12345678 and require 0xedcba987, rebuild/fresh boot: stage must PASS/0. Both need source/binary/image/disk/driver bindings, target exit, caps, locked lease and stopped/reaped QEMU. Existing runner/oracle unchanged. Host tests/compilation/saved logs cannot replace boots.
+These original instructions use the documented [mkqnximage local snippets](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.utilities/topic/m/mkqnximage.html).
+All generated platform files remain outside Git.
 
-Stop/reap SDK before target QEMU. Hold the same flock across phases, clean up every owned guest, release at end. Validation lock: /home/ubuntu/qnx-host/native-test.lock. Never interrupt another project. Missing prerequisites mean BLOCKED and portability UNVERIFIED, not inferred PASS or learner failure.
+1. Source the licensed SDP environment in an empty external directory. Run
+   `mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none`, never --run.
+   Keep the stock kernel unmodified. Preserve final IFS and disk hashes and size.
+2. Create an external learner-active directory. Its absolute location must match
+   the application-only snippet paths. Preseed a freshly compiled learner_bin
+   and a wrapper that exits 2 solely to let the platform generator resolve files;
+   **this preseed image is not assessed as learner completion**.
+3. Add local/snippets/ifs_files.learner containing the two entries from
+   scripts/learner-step3.build.in, with @OUT@ replaced by learner-active's path.
+   Add local/snippets/post_start.learner with a bounded waitfor for
+   /dev/pci/server_id_1 followed by sh /proc/boot/learner-start.sh. This supported
+   hook runs after the stock platform startup; no E1 startup is copied.
+4. Run mkqnximage --build to generate the integrated platform and matching raw
+   output/disk-qemu. Hash the original snippets and generated build/startup files.
+   Keep the generated platform implementation outside the repository.
+5. Run learner_lab.py build with the actual edited source, out=learner-active,
+   the installed SDP environment, buildfile=output/build/ifs.build and
+   bsp-cwd=the clean platform directory. It freshly qcc-compiles and mkifs-links,
+   replacing the preseed wrapper with actual source/binary binding and target exit.
+   Preserve the full resulting bundle outside Git for each variant **before**
+   replacing learner-active for another build. Keep the same matching clean disk.
 
-## Actual bounded attempt
+## Wrong edit then corrected edit
 
-See [receipts](acceptance/clean-step3-20261107/NOTES.md): both edited sources compiled. The initial 240-second attempt alone did not establish an external blocker. A focused fresh-directory 900-second attempt under identical caps then proved **guest OOM killing the stock kernel linker**, before its timeout; zero-byte IFS. Kernel and service oom-kill receipts are in diagnosis900/. The OOM-stopped queue/controller could not deliver a normal build exit code; this limitation is explicit. No native runs or portable bootstrap PASS. No private kernel stripping, swap/cap increase or licensing change was attempted.
+Use [the step3 learner loop](learner-lab.md). Wrong write 12345679 must actually
+read edcba986 and fail the fixed stage oracle even if the application exits 0.
+Correct write 12345678 must read edcba987 and pass in a fresh boot. The oracle was
+unchanged. Both runs bind source, binary, image, disk, build/run driver and startup.
+
+Stop/reap the SDK guest before target QEMU. Hold the exclusive lease throughout
+each phase, and only set EDU_NATIVE_LEASE=granted while owning it. Actual validation
+lock: /home/ubuntu/qnx-host/native-test.lock. Never interrupt another project.
+
+## Remaining limits and chronology
+
+The original 240-second failure and [diagnosis900 OOM receipts](acceptance/clean-step3-20261107/diagnosis900/NOTES.md)
+remain unchanged. The [swap build](acceptance/clean-step3-20261107/swap-attempt/NOTES.md)
+completed with nonempty stock IFS and disk; subsequent fresh wrong/correct native
+runs reached the intended learner stage. Guest soft-lockup warnings are preserved.
+
+Both target startup logs also contain an **unattributed Memory fault immediately
+after Starting sshd**, before the learner. This scope does not establish healthy
+SSH or all-platform service health, and that fault is not claimed fixed.
+The separate [/dev/edu learner finish](learner-dev-edu.md) is not a reference PASS
+transfer. C6 remains STOPPED; no safety, timing or production-driver claims.

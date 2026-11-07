@@ -7,7 +7,11 @@ DMA, security policy or /dev/edu assessment. C6/safestop remains stopped.
 
 ## Legal prerequisites and current portability limit
 
-The [clean legal bootstrap attempt](clean-step3-setup.md) is BLOCKED by guest OOM during stock generic kernel linking under the fixed guest memory limit. Its original preflight/integration instructions do not use E1/owner bundles, but no clean native acceptance exists. The earlier local E1 wrong/correct proof below does not establish portability.
+The [clean legal bootstrap](clean-step3-setup.md) now has fresh source-bound wrong-edit
+FAIL and corrected native PASS on one pinned configuration, using guest disk swap
+and the unmodified stock kernel. [Evidence](acceptance/clean-step3-20261107/native-clean/NOTES.md)
+retains the startup Memory fault caveat. Broad portability, human validation and
+independent gate reassessment remain unverified. Earlier E1 receipts are historical.
 
 Bring your own licensed QNX 8 SDP, x86_64 BSP/buildfile, PCI services and boot disk
 (if required by that BSP), plus host Python 3, QEMU and systemd user scopes.
@@ -19,11 +23,11 @@ application-only fragment `scripts/learner-step3.build.in` is a starting point, 
 a bootable BSP. Adapt YOUR BSP to include the two files and run
 `sh /proc/boot/learner-start.sh` after PCI server readiness. Include the licensed
 PCI library/hardware modules from your setup. Do not copy someone else's BSP.
-A fresh learner BSP integration has **not been verified**. Full kernel relinking
-may exceed a 512 MiB SDK guest; the local adapter uses a private debug-stripped
-copy of the licensed relocatable kernel (SDK unchanged), not larger guest limits.
-A prelinked EXEC kernel experiment was rejected by mkifs. Local native evidence
-uses the existing custom E1 boot substrate, not a portable distribution or QSTI.
+The fresh generic integration uses documented local snippets and a matching clean
+disk; no E1/private stripped kernel is used in the current clean path. Historical
+E1 adapter experiments remain preserved in their own earlier acceptance notes.
+The separately selected `--stage step6` [finish](learner-dev-edu.md) cannot accept
+step3 or reference manifests.
 
 ## Edit → build → run → diagnose → fix
 

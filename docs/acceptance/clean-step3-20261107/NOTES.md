@@ -1,10 +1,12 @@
 # Clean step3 bounded attempt — 7 November 2026
 
+**Historical attempt record.** Subsequent owner-authorized [guest-swap stock build](swap-attempt/NOTES.md) completed, followed by [fresh clean wrong/correct native step3 proof](native-clean/NOTES.md). The failure text below describes earlier attempts; original raw receipts and diagnosis900 remain unchanged.
+
 **BLOCKED: fresh unmodified generic image generation did not complete within the
 240-second builder limit. Portability UNVERIFIED; native negative/corrected runs
 NOT_RUN.** No E1 image/buildfile/owner bundle/stripped kernel was used.
 
-## Current chronology
+## Previous milestone chronology
 
 The initial 240-second result below is preserved, not the final diagnosis. The [focused fresh-directory 900-second attempt](diagnosis900/NOTES.md) established guest OOM killing the stock kernel linker before timeout. Portability remains UNVERIFIED; no clean native assessments ran. Original raw logs/JSON remain unchanged.
 

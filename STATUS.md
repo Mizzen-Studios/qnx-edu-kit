@@ -1,19 +1,21 @@
 # Status — 7 November 2026
 
-## Current direction — conditional private validation, 7 November 2026
+## Current bounded validation — 7 November 2026
 
-Canonical [capability ledger](docs/capabilities.md) separates host checks,
-compile PASS, E1 reference-run PASS and bounded step3 learner-run PASS.
-Priority: one source/binary/image-bound step3 edited-source fault-to-fix slice.
-No reference receipt transfers to learner acceptance. Existing checks are now
-explicitly named check-reference-stepN; check-stepN is a labelled legacy alias.
-Native wrong/correct proof is recorded below. Clean licensed learner BSP setup remains UNVERIFIED. /dev/edu learner finish follows review, not this slice.
-DMA-IRQ/secpol breadth deferred; no real learners recruited.
+Fresh stock generic build completed with 512 MiB guest RAM + 1 GiB disk-backed
+swap; host caps remain 100% CPU / 1 GiB / nice 15. Builder isolated from
+host-queue.service; queue stayed active with zero restarts. Original diagnosis900
+receipts are unchanged. [Build evidence](docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.md).
 
-**Clean bootstrap: BLOCKED / portability UNVERIFIED.** [Original setup/preflight](docs/clean-step3-setup.md) and [focused evidence](docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.md). Learner-supplied licensed SDP8 / Generic x86_64 BSP 0.0.1.00050T202311201204L / mkqnximage 0.5.0.00132T202605281115L were inspected. Both edited C variants actually compiled. The first 240-second termination was inconclusive; a fresh 900-second allowance established guest OOM killing stock kernel linker PID1515 at about341s (321704KiB anonymous RSS), before timeout. The IFS remained zero bytes. Kernel and service oom-kill receipts are preserved; ordinary build exit unavailable because existing OOMPolicy=stop also killed the controller. No clean wrong/correct native boots, image-bound acceptance or portable BSP PASS.
+Fresh [clean learner step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md):
+wrong edit stage FAIL/1 despite app exit 0, corrected native PASS/0. Only the wrong
+MMIO readback check failed; all provenance, caps and QEMU cleanup checks passed.
+Both logs preserve an unattributed startup Memory fault after Starting sshd.
+No full-platform/SSH-health, broad portability or independent-review claim.
+Learner /dev/edu is separately assessed, never transferred from reference PASS.
+C6 remains STOPPED. Everything private; no deployment, contacts or spend.
 
-Missing condition: stock linking must complete within the authorized 512MiB SDK guest memory, yielding a fresh IFS/matching disk before snippet/PCI-ready integration and native validation. No missing SDK claim, E1/private-kernel substitute, increased caps/swap/licensing change or further build retry. All guests stopped/reaped; shared lease FREE. C6 remains FAIL/stopped. Await independent bootstrap gate; no IRQ/resmgr/course or viewer feature breadth.
-
+## Preserved earlier milestones (not current clean-path claims)
 
 ## Historical unchanged E1 reference acceptance
 

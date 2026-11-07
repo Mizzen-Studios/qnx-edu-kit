@@ -3,9 +3,17 @@
 Private development milestone. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
-reference-run and learner-run are separate statuses. The first reviewable [learner-owned step3 slice](docs/learner-lab.md) now has fresh native wrong-edit FAIL and corrected-edit PASS, bound to actual source/binary/image. Local E1 substrate only; clean learner BSP portability is UNVERIFIED. No reference PASS transfers.
+reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)
+now records intended wrong-edit FAIL despite app exit 0, followed by corrected
+native PASS. No reference receipt transfers.
 
-**Clean bootstrap gate: BLOCKED / portability UNVERIFIED.** The [original clean setup and preflight](docs/clean-step3-setup.md) use learner-supplied licensed SDP/BSP, not E1 or an owner bundle. Fresh wrong/correct C compiled, but the stock kernel linker was killed by guest OOM under the fixed 512MiB SDK guest limit; no clean native assessment ran. [Focused diagnosis](docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.md). No course expansion before the bootstrap/independent gate.
+**Clean path demonstrated on one pinned configuration; owner gate not independently reassessed.**
+[Setup](docs/clean-step3-setup.md): unmodified stock generic kernel, 512 MiB SDK guest
+plus 1 GiB disk-backed guest swap, unchanged 100% CPU / 1 GiB host / nice 15 caps.
+The prior OOM receipts remain preserved. Both native logs retain an unattributed
+startup Memory fault after Starting sshd: no healthy-SSH/all-services claim.
+Broad portability and human learner validation remain UNVERIFIED.
+The distinct [learner /dev/edu finish](docs/learner-dev-edu.md) is the next scoped assessment.
 
 ## Criteria map
 

@@ -50,10 +50,10 @@
       "id": "clean-setup",
       "domain": "native",
       "level": "setup",
-      "status": "UNVERIFIED",
-      "claim": "BLOCKED: stock kernel linker killed by guest OOM within fixed512MiB SDK guest; IFS empty, clean native assessments NOT_RUN. No E1/private bundle reuse. Portability UNVERIFIED.",
-      "evidence": "docs/acceptance/clean-step3-20261107/diagnosis900/outcome.json",
-      "evidence_sha256": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392"
+      "status": "PASS",
+      "claim": "One pinned clean generic setup: stock kernel built using512MiB RAM+1GiB guest swap; native wrong intendedFAIL/correctedPASS. Startup Memoryfault preserved; no broad portability, SSH-health or independent-review claim.",
+      "evidence": "docs/acceptance/clean-step3-20261107/native-clean/receipt.json",
+      "evidence_sha256": "2731b19dbdcbaa8ab96dbfc3a841acf3c06fe6a4470c83ae36b2848a0de3320a"
     },
     {
       "id": "learner-step3-negative",
@@ -68,10 +68,10 @@
       "id": "clean-stock-image-build",
       "domain": "host",
       "level": "build",
-      "status": "FAIL",
-      "claim": "Licensed SDK inside capped Linux guest: fresh stock generic IFS build hit guest OOM before900s timeout. Kernel/service terminal evidence, normal build exit unavailable; no target boot.",
-      "evidence": "docs/acceptance/clean-step3-20261107/diagnosis900/outcome.json",
-      "evidence_sha256": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392"
+      "status": "PASS",
+      "claim": "Fresh unmodified stock generic IFS/disk completed with512MiB guest+1GiB guest disk swap, unchanged hostcaps; isolated service exit0 and queue zero restarts. Previous guestOOM preserved.",
+      "evidence": "docs/acceptance/clean-step3-20261107/swap-attempt/outcome.json",
+      "evidence_sha256": "796c542db81c8bc87f597af916bc562b43f9e0bbd6be3aa87183c39dfea8ea96"
     }
   ]
 }

@@ -8,7 +8,12 @@ Native acceptance is pending until the separately recorded clean-image run.
 1. Initialize an external directory with `python3 scripts/learner_lab.py init --stage step6 --work /external/finish`.
 2. Edit `main.c` to complete resource-manager registration: dispatch setup, the
    existing bounded read/write handlers, per-open result snapshots and `/dev/edu`
-   attachment. The starter includes IRQ/factorial scaffolding; this finish does
+   attachment. Keep IAT ownership transaction-scoped: attach with NO_UNMASK,
+   wait with the UNMASK flag, acknowledge and detach before returning to message
+   dispatch. The initial clean run exposed the scaffold's persistent-IST
+   lifetime across dispatch (normal write timed out; exact causality not isolated); its failure receipt is preserved. QNX
+   [documents that an IST may block only in InterruptWait](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.prog/topic/inthandler_Thread_or_Event.html).
+   The starter includes IRQ/factorial scaffolding; this finish does
    not demonstrate that a human independently implemented every earlier step.
 3. Use the licensed clean platform from [clean setup](clean-step3-setup.md).
    Its application-only snippets install the fresh `learner_bin` and
