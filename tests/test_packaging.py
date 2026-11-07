@@ -15,6 +15,8 @@ class Links(HTMLParser):
 class Packaging(unittest.TestCase):
     def test_render_current(self):
         subprocess.run(['python3',str(ROOT/'scripts/render_site.py'),'--check'],check=True,capture_output=True)
+        for name in ('learner-20261107', 'clean-step3-20261107'):
+            self.assertTrue((ROOT/'docs/site/docs/acceptance'/name/'NOTES.html').is_file())
     def test_local_links(self):
         for page in (ROOT/'docs/site').rglob('*.html'):
             parser=Links();parser.feed(page.read_text())

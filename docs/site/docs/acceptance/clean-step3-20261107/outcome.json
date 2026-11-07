@@ -1,0 +1,22 @@
+{
+  "kind": "clean-step3-bootstrap-v1",
+  "result": "BLOCKED",
+  "portability": "UNVERIFIED",
+  "sdk_prerequisites": "PRESENT",
+  "wrong_compile": "PASS",
+  "correct_compile": "PASS",
+  "clean_platform_generation": "bounded termination during IFS generation; observed cc signal 15; output/ifs.bin zero bytes",
+  "builder_limit_seconds": 240,
+  "build_exit_code": null,
+  "oom": "NOT_ESTABLISHED",
+  "negative_stage": "NOT_RUN",
+  "corrected_stage": "NOT_RUN",
+  "missing_prerequisite": "completed fresh generic boot IFS and matching disk plus executed fresh learner snippet integration",
+  "e1_substrate_reused": false,
+  "private_stripped_kernel_used": false,
+  "caps_increased": false,
+  "oracle_semantics_changed": false,
+  "c6": "STOPPED",
+  "lease": "FREE",
+  "guests": "STOPPED_REAPED"
+}

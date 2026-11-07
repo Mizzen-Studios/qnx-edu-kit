@@ -1,0 +1,18 @@
+{
+  "sdk_qemu_pid": 144372,
+  "acpi_requested": true,
+  "stop_controller_exit": 0,
+  "stop_output": [
+    "{'return': {}}",
+    "stopped"
+  ],
+  "qemu_supervisor_exit": 0,
+  "qemu_exit": 0,
+  "qemu_ended": 1794054221.3383188,
+  "reaped": true,
+  "no_qemu_running": true,
+  "shared_flock_free": true,
+  "verified_at": "2026-11-07T12:23:46Z",
+  "native_qemu_started": false,
+  "queued_build_receipt": "missing .rc after bounded compiler termination; host waiter stopped after SDK reaped; no live builder/guest left"
+}

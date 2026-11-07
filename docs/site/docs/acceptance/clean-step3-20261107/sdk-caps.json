@@ -1,0 +1,11 @@
+{
+  "pid": 144372,
+  "cpu": "100000 100000",
+  "memory": "1073741824",
+  "nice": 15,
+  "guest_vcpu": 1,
+  "guest_memory_mib": 512,
+  "serialization": "flock -n /home/ubuntu/qnx-host/native-test.lock held by launcher quiet-sable",
+  "observed_at": "2026-11-07T12:10:09Z",
+  "platform_reuse": false
+}
