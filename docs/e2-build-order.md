@@ -2,8 +2,7 @@
 
 Canonical [capability ledger](capabilities.md): compile, reference-run and learner-run
 are distinct. This page describes historical snapshot/reference infrastructure;
-the approved next slice executes actual learner edits rather than source-equivalence
-checking. No reference receipt satisfies learner acceptance.
+the [step3 learner slice](learner-lab.md) executes actual learner edits rather than source-equivalence checking (local native wrong-edit FAIL/corrected-edit PASS). No reference receipt satisfies learner acceptance.
 
 ## Start from verified E1
 
@@ -14,7 +13,7 @@ DMA. See [receipt](acceptance/native-20261107/receipt.json) and
 IFS under QEMU 8.2.2 TCG; QSTI provenance remains unverified. Those files are
 historical evidence, not inputs that can satisfy a new live check.
 
-This E2 change does not modify native/ or build a new guest. It replaces the
+The historical E2 scaffold below did not modify native/ or build a new guest. The separate learner slice now builds and boots edited source. It replaces the
 old unconditional-include exercises with readable E1-derived C snapshots.
 Steps1–4 stop after their own operation; step5 adds IAT and polled DMA;
 step6 is the IAT-backed resource manager. Starter TODOs refuse completion.
@@ -55,11 +54,11 @@ No target success is inferred from compilation. These per-snapshot commands
 were exercised for all twelve current snapshots using the licensed SDK. The
 [source-bound compile receipt](acceptance/e2-qcc-20261107/receipt.json) records
 exit0 and source hashes. Solutions passed -Werror; starter TODOs remain.
-This is compilation evidence only: per-snapshot native execution is pending.
+This twelve-snapshot receipt is compilation evidence only. Separately edited step3 native execution is recorded; other learner stages are pending.
 Do not run QNX executables on the Linux host. Do not run two exclusive PCI
 owners simultaneously. Steps1–5 are finite diagnostics; step6 stays in dispatch.
 A separately reviewed IFS/boot integration must package any learner executable;
-there is no automatic learner-image builder or deployment command in E2.
+the separate scripts/learner_lab.py build interface invokes qcc/mkifs with your licensed BSP; it does not supply a portable BSP or deployment.
 
 ## 3. Recheck the unchanged native reference — owner-controlled target
 
@@ -67,7 +66,7 @@ Only the owner controlling the serialized guest lane supplies EDU_LIVE_BUNDLE
 (external manifest/image/disk) and EDU_NATIVE_LEASE=granted. Then:
 
 ```sh
-make check-reference-step1 # repeat through check-step6 only while authorized
+make check-reference-step1 # repeat through check-reference-step6 only while authorized
 ```
 
 Every selected gate first checks source snapshot equivalence, then invokes
@@ -92,7 +91,7 @@ those from that already-verified image requires a separate native rebuild.
 ## Remaining gates
 
 Per-snapshot qcc compilation is recorded for all six solutions and six starters.
-Actual per-snapshot target execution and two fresh learners remain pending.
+The separately edited step3 BAR slice has native wrong/fixed evidence; other learner stages and two fresh learners remain pending.
 QSTI provenance, full security policy, arbitrary concurrency, timeout/fault
 injection, restart/re-probe and physical hardware portability are not claimed.
 Durations are private planning estimates, not measured learner completion times.

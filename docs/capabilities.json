@@ -33,9 +33,10 @@
       "id": "learner-step3",
       "domain": "native",
       "level": "learner-run",
-      "status": "UNVERIFIED",
-      "claim": "Edited source/build/binary/image/run-bound wrong-to-correct slice in progress; current check-step aliases are reference-only",
-      "evidence": "steps/step3/starter/main.c"
+      "status": "PASS",
+      "claim": "Local E1 substrate only: actual edited step3 C compiled and freshly booted; wrong challenge FAIL despite app exit0, corrected challenge PASS. Not all-six learner acceptance or clean BSP portability.",
+      "evidence": "docs/acceptance/learner-20261107/correct-native.json",
+      "evidence_sha256": "2c1a12f641e2483325cca3e0e5720f41ab068e6f319bf35e8029ec419a19ea7d"
     },
     {
       "id": "learner-dev-edu",
@@ -52,6 +53,15 @@
       "status": "UNVERIFIED",
       "claim": "Legal licensed SDP/BSP-owned setup must not require distributed SDK/images/private owner bundle; clean-machine reproduction pending",
       "evidence": "docs/e2-build-order.md"
+    },
+    {
+      "id": "learner-step3-negative",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "FAIL",
+      "claim": "Intentional wrong-but-compiling edit: stage FAIL although application prints PASS and exits0; expected negative control, not learner completion.",
+      "evidence": "docs/acceptance/learner-20261107/wrong-native.json",
+      "evidence_sha256": "cba582c587100e0946ea427ce3ea304bde035db4ab5b54e8758ea4729de47db2"
     }
   ]
 }

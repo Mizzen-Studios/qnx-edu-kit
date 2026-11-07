@@ -3,16 +3,17 @@
 ## Current direction — council approval, 7 November 2026
 
 Canonical [capability ledger](docs/capabilities.md) separates host checks,
-compile PASS, E1 reference-run PASS and learner-run UNVERIFIED.
+compile PASS, E1 reference-run PASS and bounded step3 learner-run PASS.
 Priority: one source/binary/image-bound step3 edited-source fault-to-fix slice.
 No reference receipt transfers to learner acceptance. Existing checks are now
 explicitly named check-reference-stepN; check-stepN is a labelled legacy alias.
-Clean licensed learner setup and native wrong/correct proof remain open until
-receipts establish them. /dev/edu learner finish follows review, not this slice.
+Native wrong/correct proof is recorded below. Clean licensed learner BSP setup remains UNVERIFIED. /dev/edu learner finish follows review, not this slice.
 DMA-IRQ/secpol breadth deferred; no real learners recruited.
 
 
-**PASS: fresh native functional acceptance and clean-checkout end-to-end verify.sh.**
+## Historical unchanged E1 reference acceptance
+
+**PASS: fresh native reference functional acceptance and clean-checkout end-to-end verify.sh.**
 
 - Direct parent-owned acceptance returned0 with all six target markers, IRQ raise/wait/ack,64-byte byte-exact RAM→EDU→RAM DMA (polled; not DMA-IRQ proof), and actual shell echo10/cat3628800 through the IAT IRQ-driven resource manager.
 - Receipt validates CPU100000/100000, memory1073741824bytes, nice15. Guest1vCPU/512MiB; no other native guest ran concurrently.
@@ -40,3 +41,13 @@ Per-snapshot native execution and fresh learners remain pending; QSTI provenance
 ## E2 recovery host/docs milestone — 11:06 UTC
 
 Reconciled build-order text with existing twelve-snapshot qcc receipt; added step boundary/runtime checklist and regression binding all12 source hashes to that compile-only receipt. Fresh host suite62 cases:60pass,2explicit skips; local static render refreshed. No new guest or native snapshot execution; per-snapshot runtime and fresh learners remain pending. C6 focused attempt failed; its native lane is stopped.
+
+## Learner-owned step3 review milestone
+
+Actual edited C was cross-compiled, imaged and freshly booted twice in serialized QEMU:
+- Wrong edit: write12345679/readedcba986, target exit0 and application PASS, independent stage exit1 (expected FAIL).
+- Correct edit: write12345678/readedcba987, target exit0, independent stage exit0 (PASS).
+- Exact edits, receipts and raw logs: docs/acceptance/learner-20261107/ (including NOTES.md); [learner journey](docs/learner-lab.md). Source, ELF, image, disk and driver hashes recorded; reference checker unchanged.
+- Effective host CPU100%/1GiB/nice15, guest1vCPU/512MiB. Guests stopped/reaped and lease released. C6 never started.
+
+Observed in this QEMU run · app budget, not a QNX benchmark. Local E1 BSP substrate adapted externally; clean learner BSP portability UNVERIFIED. A private debug-stripped licensed kernel copy avoided SDK relink OOM without increasing caps or changing SDK originals. Raw logs preserve a pre-learner SSH startup memory fault: no SSH health claim. No IRQ/DMA or /dev/edu learner PASS, QSTI provenance, malicious-output resistance or human validation. Await independent journey review before expansion.

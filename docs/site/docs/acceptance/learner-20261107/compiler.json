@@ -1,0 +1,7 @@
+{
+  "compiler": "qcc -Vgcc_ntox86_64",
+  "version": "12.2.0,gcc_ntox86_64 (default)",
+  "qcc_sha256": "97beb779f03034da4f829111569cfb5e1953942896690a5f9174798967d9fc33",
+  "query_returncode": 0,
+  "environment": "existing licensed Linux SDK guest; tool not redistributed"
+}

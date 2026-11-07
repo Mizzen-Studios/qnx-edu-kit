@@ -1,0 +1,22 @@
+{
+  "scope": "Recorded receipt inspection and host regression; no new native boot",
+  "native_source_commit": "fece07440b019167b0d7449fe1479bbf04001a42",
+  "wrong_stage": 1,
+  "correct_stage": 0,
+  "source_build_driver_bindings": "verified against exact sources, build variants and raw-log oracle",
+  "host_tests": {
+    "total": 74,
+    "passed": 72,
+    "skipped": 2,
+    "failed": 0
+  },
+  "site_render": "PASS local only",
+  "redistribution_guard": "PASS",
+  "capability_ledger": "PASS declarations only",
+  "c6": "STOPPED",
+  "remaining": [
+    "Clean learner BSP portability UNVERIFIED",
+    "Other learner stages including /dev/edu UNVERIFIED",
+    "Independent human learner validation UNVERIFIED"
+  ]
+}
