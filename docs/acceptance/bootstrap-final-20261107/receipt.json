@@ -1,0 +1,61 @@
+{
+  "instruction_commit": "2180ea53cb735d8165a864d54e3ddeb4fc71b8d8",
+  "verified_source_commit": "217d545045871774baf899482193684a284c0dec",
+  "outcome": "stock bootstrap and source-bound wrong/correct/own-dev-edu observed",
+  "existing_sdk_reused": true,
+  "new_install_or_second_sdk": false,
+  "fresh_platform": true,
+  "unmodified_stock_kernel": true,
+  "sdk_service_exit": 0,
+  "native_host_exits": {
+    "wrong": 1,
+    "correct": 0,
+    "finish": 0
+  },
+  "raw_compiler_log_external": "/home/ubuntu/qnx-host/guest/shared/bootstrap-final-20261107/build.log",
+  "raw_compiler_log_sha256": "81257ff2d9d1914808267ab40a2ed3b2370f647f6154d796cd2a3793a6857718",
+  "raw_compiler_log_not_redistributed": true,
+  "platform_hashes_sha256": "c18e51e80071b861b95b3b3669b6f464ea6d88c111a067d273f7fc2a4e8b3051",
+  "source_and_bundle_manifests": {
+    "wrong": {
+      "kind": "learner-step3-v1",
+      "source_sha256": "c834e1c45aa6a994f1a1aa69888a6d87fa98c786ae28bed620eb799134e903c4",
+      "binary_sha256": "5d5ccbf128c4d5f9ea504d4c255d714940596837ebddd24b6505d56c64da6e17",
+      "image_sha256": "ad3f4e316b33c89f39eebcb5003d8ead95c6afd0d1a2f1f3550387a2f4c9028d",
+      "buildfile_sha256": "1020fecda645bcf75e65de033795e2db26c59a8f49c271f32ceb8153636b6dbe",
+      "startup_sha256": "bff5fbc291179d0423eef7450f1f2a1233f1fa3100e789206deb67aa82a53817",
+      "source_path": "/mnt/host/bootstrap-final-20261107/step3/wrong.c",
+      "built_at": 1794073902.875524,
+      "build_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+      "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+    },
+    "correct": {
+      "kind": "learner-step3-v1",
+      "source_sha256": "2f37c2f234b10e78c9920372895b56e1efe7d4742cd099eb1f8a73ba46a8aaeb",
+      "binary_sha256": "ba83d122780ebfcb9fcaa5e2e0b38f679b2d48bc7ead65717e0de6299ca59fe5",
+      "image_sha256": "d774835090e7ff0dceb649b077b4f235b3468b6a5aeffe3aaa1e9d7ba7fab69e",
+      "buildfile_sha256": "1020fecda645bcf75e65de033795e2db26c59a8f49c271f32ceb8153636b6dbe",
+      "startup_sha256": "76debb61fd8739a2de3b30c50d585dc9b4536321b301a879f16ad78811688524",
+      "source_path": "/mnt/host/bootstrap-final-20261107/step3/correct.c",
+      "built_at": 1794074082.4381664,
+      "build_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+      "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+    },
+    "finish": {
+      "kind": "learner-dev-edu-v1",
+      "source_sha256": "29c2e2a834fa1198f21bb5b7717e4d47f3fae9fe8d72258d3b873c137c9e1a52",
+      "binary_sha256": "6d3c97f9ccc514cdbaf942640a1bc706eb08822473181a27f121dfad6bf541e5",
+      "image_sha256": "ddf0b993408dfe5b3c3a77d5f8aa9fa6ba54a70218ccf7051eda60f8a6567e9d",
+      "buildfile_sha256": "1020fecda645bcf75e65de033795e2db26c59a8f49c271f32ceb8153636b6dbe",
+      "startup_sha256": "42fadf8a6ef452235789f07b5aaf5257cf7a50cd53d9cb019294695552c91d82",
+      "source_path": "/mnt/host/bootstrap-final-20261107/finish/main.c",
+      "built_at": 1794074246.7865062,
+      "build_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+      "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+    }
+  },
+  "initial_transport_wait_exit": 124,
+  "transport_note": "slow initial boot; original queued job later completed0 without resubmission",
+  "scope": "automated single-existing-SDK route verification, not independent human gate; sshd fault remains; no full platform health",
+  "qemu_remaining": ""
+}

@@ -1,0 +1,27 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+# ---> Starting devb
+---> Mounting file systems
+Path=0 - Intel 82371SB
+ target=0 lun=0     Direct-Access(0) -          QEMU HARDDISK    Rev: 2.5+
+Path=1 - Intel 82371SB
+ target=0 lun=0            CD-ROM(5) - QEMU     QEMU DVD-ROM     Rev: 2.5+
+---> Mounting file systems
+---> Starting Networking
+---> Starting sshd
+Memory fault (core dumped) 
+---> Starting misc
+LEARNER_BIND source=29c2e2a834fa1198f21bb5b7717e4d47f3fae9fe8d72258d3b873c137c9e1a52 binary=6d3c97f9ccc514cdbaf942640a1bc706eb08822473181a27f121dfad6bf541e5
+EDU TARGET QNX 8.0.0 x86pc
+LEARNER /dev/edu registered
+EDU RESMGR IRQ completion=1 input=10 result=3628800 ack=00000000
+LEARNER_DEV_EDU write_rc=0 read_rc=0 result=3628800
+Terminated 
+LEARNER_DAEMON_EXIT=143
+LEARNER_RC=0

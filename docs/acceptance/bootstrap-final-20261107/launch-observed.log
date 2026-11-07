@@ -1,0 +1,17 @@
+bootstrap-final-20261107-2180ea5
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        23G   10G   13G  46% /
+  File: /var/tmp/edu-build.swap
+  Size: 1073741824	Blocks: 2097160    IO Block: 4096   regular file
+Device: 253,1	Inode: 20873       Links: 1
+Access: (0600/-rw-------)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2026-11-07 13:11:15.342100112 +0000
+Modify: 2026-11-07 13:11:15.169100133 +0000
+Change: 2026-11-07 13:11:15.169100133 +0000
+ Birth: 2026-11-07 13:07:32.490799883 +0000
+               total        used        free      shared  buff/cache   available
+Mem:             457         166         164           0         147         290
+Swap:           1023           0        1023
+active
+NRestarts=0
+Running as unit: learner-bootstrap-final-20261107.service; invocation ID: e7ac8330ba00454087f43c1f578cb486

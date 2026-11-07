@@ -18,3 +18,7 @@ Independent clone/workdir checked exact instructions3a4821b62170bf572d9d8aacb668
 - Videos deferred until final complete feature freeze, final verification and independent gate, then separate Olly OK. Not the current blocker; no capture, upload or publication performed.
 
 Run existing host suite, SDK guard, site/ledger/appendix checks, `python3 tools/proof_capture.py` and `python3 tools/claim_lint.py`. Negative dry checks deliberately reject blank claim/missing asset/changed hash without mutating frozen files. Local link targets checked; external URLs and fragment anchor semantics not verified. Await next gate.
+
+## Supported bootstrap follow-up
+
+[Separate actual receipt](acceptance/bootstrap-final-20261107/receipt.json): stock unmodified generic build via original helper and documented split-host/swap/service setup on existing lawful guest SDK. Original queued launch survived host wait timeout; no duplicate. Fresh wrong1/app0, correct0, own/dev/edu0 with real3628800+IRQack. Source/ELF/IFS/disk/caps/reaping bound. This supersedes only current setup status, never the historical route-paths negative or frozen proof pack. Automated single-SDK reuse, not new install/second SDK/human validation; independent owner gate remains.
