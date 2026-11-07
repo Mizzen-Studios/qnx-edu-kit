@@ -1,5 +1,7 @@
 # Status — 7 November 2026
 
+[Capability ledger](docs/capabilities.md) records scoped evidence and exclusions.
+
 ## Current bounded validation — 7 November 2026
 
 Fresh stock generic build completed with 512 MiB guest RAM + 1 GiB disk-backed

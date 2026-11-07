@@ -179,7 +179,8 @@ def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
         'nice','-n','15','qemu-system-x86_64','-machine','pc,accel=tcg','-cpu','max','-smp','1','-m','512',
         '-display','none','-serial','stdio','-monitor','none','-no-reboot','-kernel',str(Path(bundle)/'learner.ifs'),
         '-drive',f'file={Path(disk).resolve()},format=raw,if=ide,snapshot=on',
-        '-nic','user,model=virtio-net-pci','-device','edu,dma_mask=0xffffffff']
+        '-nic','user,model=virtio-net-pci','-device','edu,addr=05.0,dma_mask=0xffffffff']
+    # Fixed EDU topology; slot5 PIRQ0 was observed routed to target IRQ10.
     start = time.time()
     disk_hash = sha(disk)
     proc = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -238,6 +239,7 @@ def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
     success = bool(cap) and all(checks.values())
     evidence = dict(m, started=start, finished=time.time(), caps=cap, checks=checks,
                     success=success, qemu_wrapper_returncode=proc.returncode,
+                    qemu_command=command, edu_pci_address="05.0",
                     disk_sha256=disk_hash, stop_reason=stop_reason,
                     serialization_lock=str(lock), lease='caller-held flock observed locked',
                     run_driver_sha256=sha(Path(__file__)),
