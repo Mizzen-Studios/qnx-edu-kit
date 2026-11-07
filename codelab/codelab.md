@@ -240,7 +240,7 @@ a separate traced image; internal cause remains UNVERIFIED, not fixed here.
 
 The six historical E1/E2 snapshot lessons, check-reference-step1..6, host model and
 qtest are comparison/reference material, never your edited-source acceptance.
-[Historical codelab appendix](codelab.md),
+[Historical codelab appendix](../codelab/codelab.md),
 [capability limits](../docs/capabilities.md), [private review](../REVIEW.md).
 
 Videos are deferred until final feature freeze, final verification and independent gate, then separate Olly OK. They are not the current blocker.

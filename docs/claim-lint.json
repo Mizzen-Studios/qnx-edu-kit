@@ -38,7 +38,7 @@
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "bf50cd987ba775de0f74f5f1401289ff4d3e8448df4012113e6b3e17b67513d3",
+      "sha256": "5d24430973aded142ff58ab87791e4cc2adfe493f8726b118a96852a035069e2",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -600,7 +600,7 @@
     },
     {
       "source": "codelab/codelab.md",
-      "target": "codelab.md",
+      "target": "../codelab/codelab.md",
       "exists": true
     },
     {
