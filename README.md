@@ -99,3 +99,5 @@ For stale-output checking use python3 scripts/render_site.py --check. Actual pin
 ### Scoped learner /dev/edu result — 7 November 2026
 
 Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.
+
+Supported stock-platform helper and explicit split-host/swap/isolated-service prerequisites are in the [canonical route](docs/learner-route.md). Existing installed SDK reuse only; no installer or second-SDK claim. Videos deferred until final freeze, final verification, independent gate and separate Olly OK; not a current blocker.

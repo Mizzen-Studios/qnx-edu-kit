@@ -13,7 +13,7 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "aafb3aeb70fe3686f5f0ec97c13eb3ec883adbbe82dd54da8c472c6adae9c1a0",
+      "sha256": "04579c9a834a4edfa0951017d68c57a5fdf37fc568598e7067020acb06d278db",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "path": "REVIEW.md",
-      "sha256": "3aba10c36d4db454a95e318a1160e1b00887db139ba4c4004314fb308a90ee6c",
+      "sha256": "d1dfa76a7209067e29b4aa68613c743f84ab6b629af8dcab10578e2416017907",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -38,17 +38,17 @@
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "8d69df42f362882156e05b7dbc927da19ad6e5e32682b85c4e0f798806e5f1cf",
+      "sha256": "bf50cd987ba775de0f74f5f1401289ff4d3e8448df4012113e6b3e17b67513d3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/README.html",
-      "sha256": "7f4000934a4551775d5df56c1e82f8b20b1c9d09e3523997bc6e3f3d7d45f466",
+      "sha256": "95d33926cd6d852b63b47efb3f4a39941355bd1fd4d81ad8c1ef67fa127f2a9d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "303166de207611222b6ae9a0b96207e0d59c0e4c5fbfb139b90ed697e3c59f06",
+      "sha256": "678fefc8f359dee7b04e65d981d29ff66808f45a82c1569a73455d3e197682e3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -58,7 +58,12 @@
     },
     {
       "path": "docs/site/codelab/codelab.html",
-      "sha256": "78a2e21ca11a6e22c106e0061d2d465baa06c55c23cc59f5af69136e51cf9342",
+      "sha256": "4fa5597bf76cfc9e14ad5cdc077b8b411b738d89ba0d97292fafeb8f12b7a25a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "sha256": "6b3c768c7e2232a81640948e6f8a26849d7b65ad29ca3d0b2690efb9f555c000",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -138,7 +143,7 @@
     },
     {
       "path": "docs/site/docs/claim-report.html",
-      "sha256": "fa7df78a5212e114d4f178c336bfef9051f2cf29307cd2a0c5f28540e83caeb2",
+      "sha256": "bac7f39311f5c07a2c249154f9893c7b366b864c9efe9409081c749359d3fa80",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -183,7 +188,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "14bd587ea9a42c03acbaa1135502a2a4e37c5950df8c2206b80f3cf5e3d6ba25",
+      "sha256": "5e22106ad8e27290c163389b0c1448148b9852303f7f45830aa26caf8cfaf7c0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -293,7 +298,7 @@
     },
     {
       "path": "docs/site/index.html",
-      "sha256": "7f4000934a4551775d5df56c1e82f8b20b1c9d09e3523997bc6e3f3d7d45f466",
+      "sha256": "95d33926cd6d852b63b47efb3f4a39941355bd1fd4d81ad8c1ef67fa127f2a9d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -484,6 +489,11 @@
       "exists": true
     },
     {
+      "source": "README.md",
+      "target": "docs/learner-route.md",
+      "exists": true
+    },
+    {
       "source": "STATUS.md",
       "target": "REVIEW.md",
       "exists": true
@@ -564,6 +574,11 @@
       "exists": true
     },
     {
+      "source": "REVIEW.md",
+      "target": "docs/learner-route.md",
+      "exists": true
+    },
+    {
       "source": "docs/private-demo.md",
       "target": "proof-capture/SCRIPT.md",
       "exists": true
@@ -585,12 +600,7 @@
     },
     {
       "source": "codelab/codelab.md",
-      "target": "../docs/clean-step3-setup.md",
-      "exists": true
-    },
-    {
-      "source": "codelab/codelab.md",
-      "target": "../docs/learner-route.md",
+      "target": "codelab.md",
       "exists": true
     },
     {
@@ -600,7 +610,7 @@
     },
     {
       "source": "codelab/codelab.md",
-      "target": "../docs/verification-checklist.md",
+      "target": "../REVIEW.md",
       "exists": true
     },
     {
@@ -934,6 +944,11 @@
       "exists": true
     },
     {
+      "source": "docs/site/README.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/REVIEW.html",
       "target": "index.html",
       "exists": true
@@ -956,6 +971,11 @@
     {
       "source": "docs/site/REVIEW.html",
       "target": "docs/private-demo.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/learner-route.html",
       "exists": true
     },
     {
@@ -1045,12 +1065,7 @@
     },
     {
       "source": "docs/site/codelab/codelab.html",
-      "target": "../docs/clean-step3-setup.html",
-      "exists": true
-    },
-    {
-      "source": "docs/site/codelab/codelab.html",
-      "target": "../docs/learner-route.html",
+      "target": "../codelab/codelab.html",
       "exists": true
     },
     {
@@ -1060,7 +1075,7 @@
     },
     {
       "source": "docs/site/codelab/codelab.html",
-      "target": "../docs/verification-checklist.html",
+      "target": "../REVIEW.html",
       "exists": true
     },
     {
@@ -1261,6 +1276,16 @@
     {
       "source": "docs/site/codelab/codelab.html",
       "target": "../docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
       "exists": true
     },
     {
@@ -1760,11 +1785,6 @@
     },
     {
       "source": "docs/site/docs/learner-route.html",
-      "target": "../docs/clean-step3-setup.html",
-      "exists": true
-    },
-    {
-      "source": "docs/site/docs/learner-route.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -2206,6 +2226,11 @@
     {
       "source": "docs/site/index.html",
       "target": "docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learner-route.html",
       "exists": true
     },
     {

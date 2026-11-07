@@ -6,7 +6,7 @@ Council: CONDITIONAL acceptance of scoped recorded evidence at01060c7c1aff834d6c
 
 One [canonical route](learner-route.md) leads predict→edit→observe→diagnose→explain, step3 then own /dev/edu. README/site/codelab lead there; historical E1/E2 comparison is explicitly reference-only. User-supplied absolute QEMU/SDK/platform/work/lock paths replace private owner bootstrap paths.
 
-Independent clone/workdir checked exact instructions3a4821b62170bf572d9d8aacb668c6063b059ebb:8shell blocks syntax-checked;13host commands executed, including preflight and both starter copies. Exact commands/outputs/paths/hashes: [route receipt](acceptance/route-paths-20261107/receipt.json). Missing supplied licensed SDP environment, compatible BSP and matching generated buildfile/disk → BLOCKED. No qcc/mkifs/platform/native stage was run in that independent environment. Existing private licensed SDK remains stopped, unchanged. This is not a fresh SDK install, second-SDK portability or human learning demonstration.
+Independent clone/workdir checked exact instructions3a4821b62170bf572d9d8aacb668c6063b059ebb:8shell blocks syntax-checked;13host commands executed, including preflight and both starter copies. Exact commands/outputs/paths/hashes: [route receipt](acceptance/route-paths-20261107/receipt.json). Missing supplied licensed SDP environment, compatible BSP and matching generated buildfile/disk → BLOCKED. No qcc/mkifs/platform/native stage was run in that independent environment. That receipt did not boot the existing private licensed SDK; it remains a historical negative, not a PASS. A later supported-bootstrap verification is separate. This is not a fresh SDK install, second-SDK portability or human learning demonstration.
 
 ## Receipt chronology and script boundaries
 
@@ -15,6 +15,6 @@ Independent clone/workdir checked exact instructions3a4821b62170bf572d9d8aacb668
 - Historic claat export no longer matches current codelab prose; original retained. Separate current source-bound export: acceptance/route-paths-20261107/claat-export-receipt.json. Do not transfer old source pins to new instructions.
 - Dry script:211words/160planned seconds; every narration line has reviewed claim, frozen file hashes and frame. Evidence is accepted01060c7 historical automated reused-SDK execution, NOT native execution of current canonical-route commands. First /dev/edu failure preserved; wrong appPASS/exit0 stageFAIL stays distinct from corrected stagePASS.
 - sshd attribution belongs to separate diagnostic image; internal cause UNVERIFIED. No platform-health, safety/timing/availability, lifecycle or second-SDK claim. C6FAIL/STOPPED; SocketCANUNVERIFIED; no heartbeat/root-cause chase.
-- Recording/audio BLOCKED pending separate Olly OK. No capture, upload or publication performed.
+- Videos deferred until final complete feature freeze, final verification and independent gate, then separate Olly OK. Not the current blocker; no capture, upload or publication performed.
 
 Run existing host suite, SDK guard, site/ledger/appendix checks, `python3 tools/proof_capture.py` and `python3 tools/claim_lint.py`. Negative dry checks deliberately reject blank claim/missing asset/changed hash without mutating frozen files. Local link targets checked; external URLs and fragment anchor semantics not verified. Await next gate.

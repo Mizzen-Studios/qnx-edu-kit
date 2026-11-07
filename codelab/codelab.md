@@ -86,7 +86,7 @@ A program's own PASS is not the stage oracle.
 
 ### 2. Legal clean platform and source-bound build
 
-This is a setup gate, not a bundled bootstrap. Narrow tested configuration:
+The original `scripts/learner_bootstrap.sh` below supports stock-platform setup; it is not an SDK installer. Narrow tested configuration:
 SDP8, Generic x86_64 BSP0.0.1.00050T202311201204L,
 mkqnximage0.5.0.00132T202605281115L, QEMU8.2.2 pc TCG. Missing compatible legal
 SDP/BSP or matching disk means **BLOCKED**, not second-install portability PASS.
@@ -113,9 +113,61 @@ mkqnximage --build
 Keep the stock kernel unmodified. On the constrained SDK guest, arrange authorized
 1GiB disk-backed guest swap and an isolated transient guest build service before
 linking:512MiB without swap previously OOMed. Do not lift caps or strip the kernel.
-Stop on OOM, transport loss or nonterminal service status. The
-[setup details/history](../docs/clean-step3-setup.md) preserve swap/service operations and
-failures; owner-specific historical launchers are not a portable bootstrap.
+Stop on OOM, transport loss or nonterminal service status. The following explicit preparation is required; historical launchers are not shortcuts.
+##### Split-host mapping and isolated service (before the commands above)
+
+Choose EDU_SHARED_HOST (external directory on the QEMU host) and EDU_SHARED_GUEST
+(the same directory as mounted inside Linux). Prove the mapping by writing a nonce
+on the host and reading identical bytes inside the guest before copying scripts.
+For the existing private VM only, the parent share is mounted at /mnt/host; this
+is an environment mapping, not a portable assumption. EDU_WORK may be that shared
+mapping; EDU_PLATFORM and EDU_ACTIVE should be guest disk directories, not 9p.
+Copy learner_lab.py, learner_clean_preflight.py, learner_bootstrap.sh and
+learner-step3.build.in from this exact revision into the chosen share. Copy only
+original scripts and your edited C. At the guest set EDU_SOURCE to the wrong
+main.c, EDU_SNIPPET to that copied fragment, EDU_SDP_ENV, EDU_PLATFORM and
+EDU_ACTIVE to their guest paths; host paths are not interchangeable.
+
+Choose EDU_SWAP on the Linux guest disk and EDU_BUILD_USER as the existing licensed
+user. As guest root, reactivate the existing authorized 1GiB file (no overwrite,
+no fstab edit); check disk, owner, size and active state first:
+
+
+define these variables in Bash before running:
+
+```sh
+export EDU_SWAP=/absolute/guest-disk/existing.swap
+export EDU_BUILD_USER=existing-licensed-user
+export EDU_UNIT=learner-bootstrap-unique
+export EDU_JOB=/absolute/guest-visible-share/job.sh
+export EDU_LOG=/absolute/guest-visible-share/build.log
+df -h "$(dirname "$EDU_SWAP")"
+stat "$EDU_SWAP"
+test "$(stat -c %s "$EDU_SWAP")" = 1073741824
+swapon --show
+if ! swapon --show=NAME --noheadings | grep -Fx "$EDU_SWAP"; then swapon "$EDU_SWAP"; fi
+free -m
+systemctl is-active host-queue.service
+systemctl show host-queue.service -p NRestarts
+systemd-run --unit="$EDU_UNIT" --property="User=$EDU_BUILD_USER" --property=OOMPolicy=stop --property=RuntimeMaxSec=1830 --property="StandardOutput=file:$EDU_LOG" --property=StandardError=inherit /usr/bin/timeout --kill-after=15 1800 /bin/bash "$EDU_JOB"
+# Wait for terminal inactive/failed state; active + status0 is NOT success.
+systemctl show "$EDU_UNIT" -p ActiveState -p Result -p ExecMainCode -p ExecMainStatus -p MainPID
+systemctl show host-queue.service -p ActiveState -p NRestarts
+```
+
+EDU_JOB is a user-owned Bash file OUTSIDE EDU_PLATFORM. It exports the chosen
+variables, runs the standalone preflight (retain JSON), then calls
+`bash "$EDU_SHARED_GUEST/learner_bootstrap.sh"` instead of manually repeating the
+stock/preseed/snippet block above. It must use set -eo pipefail and stop at the
+first failure. The guest service must terminate Result=success, ExecMainStatus=0,
+MainPID=0; retain its log externally and hash it, do not commit proprietary
+compiler/platform output. If swap is absent, stop for authorized disk-swap setup;
+no automatic creation, installation or cap increase is provided. Reuse the same
+isolated-service pattern for each learner build. Set HOME for the licensed user.
+The Linux controller is existing environment infrastructure, not supplied by this
+repository; its supported console/transport must run these commands as root and
+collect terminal service status. Stop/reap its VM before each native run.
+
 Now replace the preseed with a freshly compiled source-bound bundle:
 
 ```sh
@@ -188,8 +240,10 @@ a separate traced image; internal cause remains UNVERIFIED, not fixed here.
 
 The six historical E1/E2 snapshot lessons, check-reference-step1..6, host model and
 qtest are comparison/reference material, never your edited-source acceptance.
-[Historical codelab appendix](../docs/learner-route.md),
-[capability limits](../docs/capabilities.md), [verification limits](../docs/verification-checklist.md).
+[Historical codelab appendix](codelab.md),
+[capability limits](../docs/capabilities.md), [private review](../REVIEW.md).
+
+Videos are deferred until final feature freeze, final verification and independent gate, then separate Olly OK. They are not the current blocker.
 
 ### Historical reference appendix begins here — NOT learner acceptance
 
