@@ -10,7 +10,7 @@ Canonical declarations: docs/capabilities.json. Generated view; ledger checks ar
 
 | Capability | Domain | Level | Status | Bounded claim | Evidence |
 |---|---|---|---|---|---|
-| host-checks | host | framework | PASS | Host source contracts/models/packaging only; no native proof | [source](../docs/test-results.md) |
+| host-checks | host | framework | PASS | Source-bound host suite83total:81passed/2skipped; models/contracts/packaging only, not native proof | [source](../docs/acceptance/learner-finish-clean-20261107/final-host-receipt.json) |
 | e1-reference | native | reference-run | PASS | Accumulated unchanged E1 all-six-step reference plus IRQ, polled DMA and /dev/edu normal I/O | [source](../docs/acceptance/native-20261107/receipt.json) |
 | e2-compile | native | compile | PASS | All6 solutions and6 starters cross-compiled; TODO starter compilation is not runtime completion | [source](../docs/acceptance/e2-qcc-20261107/receipt.json) |
 | learner-step3 | native | learner-run | PASS | Fresh clean stock generic platform: actual edited step3 C wrong intendedFAIL/correctedPASS, repeated on final fixed PCI topology; no E1/stripped kernel, broad portability or human-review claim. | [source](../docs/acceptance/clean-step3-20261107/native-clean/final-topology/correct-native.json) |

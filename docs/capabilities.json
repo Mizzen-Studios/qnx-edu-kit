@@ -8,8 +8,9 @@
       "domain": "host",
       "level": "framework",
       "status": "PASS",
-      "claim": "Host source contracts/models/packaging only; no native proof",
-      "evidence": "docs/test-results.md"
+      "claim": "Source-bound host suite83total:81passed/2skipped; models/contracts/packaging only, not native proof",
+      "evidence": "docs/acceptance/learner-finish-clean-20261107/final-host-receipt.json",
+      "evidence_sha256": "ebc9532f577e9a8195a7a67a685ec5bf9e9fa74edd22d89493c28c49d68433ed"
     },
     {
       "id": "e1-reference",

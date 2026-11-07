@@ -1,0 +1,23 @@
+{
+  "tested_commit": "cec75567bfd65f02b4afb3ebb674ffe5116906d8",
+  "worktree_before_test": "clean",
+  "command": "./verify.sh --host-only",
+  "exit_code": 0,
+  "tests_total": 83,
+  "passed": 81,
+  "skipped": 2,
+  "log_sha256": "4d895716cc3f685d79c25b1201e74011d1c6fbc1008fc040f09da06fb4a201fd",
+  "scope": "host only; native clean controls and learner finish are separately pinned",
+  "cleanup": {
+    "sdk_exit": {
+      "rc": 0,
+      "ended": 1794061479.0723507
+    },
+    "native_qemu": "all receipts assert reaped",
+    "shared_lock": "nonblocking flock observed free",
+    "qemu_system_processes": "none"
+  },
+  "diagnosis900": "byte-unchanged from97fabc1860d4211a0ba75603a619c7bcd6dff872",
+  "C6": "STOPPED; no new run",
+  "independent_review": "NOT_RUN"
+}

@@ -1,3 +1,9 @@
+# Current host verification — 7 November 2026
+
+Source-bound `cec75567bfd65f02b4afb3ebb674ffe5116906d8`: **83 tests:81 passed,2 skipped**, `./verify.sh --host-only` exit0. [Pinned receipt](acceptance/learner-finish-clean-20261107/final-host-receipt.json). Native learner evidence is separate; host counts never substitute for native outcomes.
+
+The material below is preserved historical evidence, not current runtime status.
+
 # Host verification evidence — 2026-11-03
 
 Host only: Ubuntu ARM64, Python 3.12.3, GNU make 4.3. QEMU 8.2.2 TCG installed;
