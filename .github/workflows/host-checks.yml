@@ -12,15 +12,15 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: ./verify.sh --host-only
-      - name: Full acceptance must stay blocked
+      - name: Missing external SDK bundle must deny live acceptance
         run: |
           set +e
-          ./verify.sh > /tmp/edu-verify.log 2>&1
+          env -u EDU_LIVE_BUNDLE -u EDU_NATIVE_LEASE ./verify.sh > /tmp/edu-verify.log 2>&1
           status=$?
           set -e
           cat /tmp/edu-verify.log
-          test "$status" -eq 1
-          grep -q 'BLOCKED: full verification incomplete' /tmp/edu-verify.log
+          test "$status" -eq 2
+          grep -q 'BLOCKED: set EDU_LIVE_BUNDLE to an external fresh-built image/manifest directory' /tmp/edu-verify.log
       - name: Honest summary
         if: always()
         run: |
