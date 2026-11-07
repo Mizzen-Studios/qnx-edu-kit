@@ -167,6 +167,10 @@ def main():
     folder = output / 'qnx-edu-kit'
     for name in ('docs', 'steps', 'native'):
         shutil.copytree(stage / name, folder / name)
+    # Canonical route links its historical codelab source; include authored source.
+    (folder / 'codelab').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT / 'codelab/codelab.md', folder / 'codelab/codelab.md')
+    shutil.copyfile(ROOT / 'REVIEW.md', folder / 'REVIEW.md')
     checks = validate(folder, ROOT)
     receipt = {'tool_release': VERSION, 'tool_url': URL, 'tool_sha256': SHA256,
                'embedded_version': REPORTED_VERSION, 'runner': command[:-1],

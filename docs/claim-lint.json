@@ -143,7 +143,7 @@
     },
     {
       "path": "docs/site/docs/claim-report.html",
-      "sha256": "bac7f39311f5c07a2c249154f9893c7b366b864c9efe9409081c749359d3fa80",
+      "sha256": "33733ed470ad826ccbe937cc671dc3802012691d2547ddfec05aba1f933b9392",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
