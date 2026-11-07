@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "401dd6f32dcc64146ab757079fe22c675b63cfe2ca7ddd9d99a2685c48693053",
+      "sha256": "a12dbf19572fd1d3ce2bd347e8bc7bf3a700b9275337e06749bbe6007fca124d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "e16a8f7b24d6953b7654d0c1c4830fc448ae32b28bf17aa943ce37da0024a4d2",
+      "sha256": "16a8f8f224962e05700d250e68bcefc72fcd796c667256a21b313dd6eca45719",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "f01ed69dbe814a0527964a4a184bd19ef3c9ef2afbd726cc1185ca0c6abaee2b",
+      "sha256": "8718bd2338b6c868e7870612723a00793e2b78e59c139cba856b2104511e065f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -48,12 +48,12 @@
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "a4ecc3fcf3fc872d71306054e94ee3b29c1adffe9042af6e0b26d7e6566d8cd4",
+      "sha256": "d7825dc0264cf84ef45b6989e0e09b94973774aa2636cffec3f07004a7a8b79a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "43a85aaf56bf1323a406b94416827273e5eb7f80f99da4e30b131e448d1cff7b",
+      "sha256": "fb9d47839008055501fddf57c444909edd96a9cb23d7acc15acb351a43bab7ca",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -193,7 +193,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "562a05457f8c7cc53a559310b3279485c7ba5dbb388a0c248bd27fe6c76eaadc",
+      "sha256": "8e1e72207c5d87a12448e315b4a9902f96a9d85133079b3a6bb6cebcc73eefb4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -233,7 +233,7 @@
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "ade2731655fdaf6e80ccdb8c9fc42e3e98ffbaf508122d1c85b9a5962704ba76",
+      "sha256": "eb605d92aea7bdbdfe8f2a97447fd21f49db46573438636007b76927499e19ac",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -2888,7 +2888,7 @@
     "kind": "private-proof-capture-DRY-PACK",
     "status": "PASS",
     "errors": [],
-    "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
+    "frozen_commit": "2dd61762bb6cbc00c75ab4c9f49619883d9330e5",
     "narration_words": 211,
     "planned_seconds": 160,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",

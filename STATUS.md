@@ -4,7 +4,7 @@ Start only with the [canonical learner route](docs/learner-route.md).
 
 ## Current completion gate — 20:03 UTC
 
-Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. This packaging follow-up does not rerun native evidence or broaden acceptance. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
+Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. The 21:05 portability/diagnostics follow-up does not broaden acceptance. Canonical instruction tip 2dd61762bb6cbc00c75ab4c9f49619883d9330e5 is host-route packaging only; fresh-clone syntax/init and SDK-boundary negatives are not second-SDK portability proof. Renewed bounded diagnostic results are separately recorded in docs/acceptance/portability-20261107/. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
 
 Current native result: [bootstrap-final](docs/acceptance/bootstrap-final-20261107/NOTES.md), wrong FAIL/app0 → correct PASS → own /dev/edu 10→3628800, IRQ completion1/ack0. Earlier sections below are dated history, not current blockers.
 
@@ -79,3 +79,7 @@ Detached clean checkout d419bce ran ./verify.sh --host-only exit0: 79 total / 77
 Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. Current owner gate is CONDITIONAL, receipt-inspected not re-run; no safety/timing acceptance; C6 stays STOPPED.
 
 Supported canonical route observed on one existing licensed SDK: [supported-bootstrap result](docs/acceptance/bootstrap-final-20261107/NOTES.md). Fresh stock platform, wrong stageFAIL/app0, correctedPASS and own /dev/edu write10/read3628800+IRQack. Automated reuse only, not a second SDK or human gate. Old missing-host-SDK negative preserved. All guests reaped; no platform-health claim.
+
+## 21:05 follow-up boundaries
+
+Single licensed Linux x86_64 host is the default route; constrained split-host VM/swap/service instructions are optional. Existing SDK reused; a clean second installation remains BLOCKED unless cached free NC entitlement and complete legal offline inputs can be established without login or licensing interaction. No native feature/sshd fix, capture or publication. Historical runtime pins and the 20:03 accepted conditional gate remain unchanged.
