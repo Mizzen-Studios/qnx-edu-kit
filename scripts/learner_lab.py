@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Learner-owned step3 only. No reference receipt or saved-log input mode."""
+"""Learner-owned step3 and /dev/edu finish. No reference/saved-log input mode."""
 import argparse
 import fcntl
 import hashlib
@@ -29,7 +29,43 @@ def external(path):
         raise ValueError('licensed build artifacts must be outside checkout')
     return path
 
-def init(work):
+def manifest_kind(stage):
+    if stage not in ('step3', 'step6'):
+        raise ValueError('unknown learner stage')
+    return 'learner-step3-v1' if stage == 'step3' else 'learner-dev-edu-v1'
+
+def startup(stage, source_hash, binary_hash):
+    binding = f'echo LEARNER_BIND source={source_hash} binary={binary_hash}\n'
+    if stage == 'step3':
+        return '#!/bin/sh\n'+binding+'/proc/boot/learner_bin\necho LEARNER_RC=$?\n'
+    manifest_kind(stage)
+    return ('#!/bin/sh\n'+binding+
+        'echo "EDU TARGET $(uname -s) $(uname -r) $(uname -m)"\n'
+        '/proc/boot/learner_bin &\nlearner_pid=$!\n'
+        'if ! waitfor /dev/edu 30; then kill "$learner_pid"; wait "$learner_pid"; echo LEARNER_RC=2; exit 2; fi\n'
+        'printf "10\\n" > /dev/edu\nwrite_rc=$?\n'
+        'observed=$(cat /dev/edu)\nread_rc=$?\n'
+        'echo "LEARNER_DEV_EDU write_rc=$write_rc read_rc=$read_rc result=$observed"\n'
+        'result_rc=1\n'
+        'if test "$write_rc" = 0 && test "$read_rc" = 0 && test "$observed" = 3628800; then result_rc=0; fi\n'
+        'kill "$learner_pid"\nwait "$learner_pid"\necho LEARNER_DAEMON_EXIT=$?\n'
+        'echo LEARNER_RC=$result_rc\n')
+
+def dev_edu_oracle(output, manifest):
+    clean = output.replace('\r', '')
+    binding = f"LEARNER_BIND source={manifest['source_sha256']} binary={manifest['binary_sha256']}"
+    events = [line.split(' ',1)[0].split('=',1)[0] for line in clean.splitlines()
+              if line.startswith(('LEARNER_BIND ', 'LEARNER_DEV_EDU ', 'LEARNER_RC='))]
+    return {
+        'binding':clean.splitlines().count(binding) == 1,
+        'ordering':events == ['LEARNER_BIND','LEARNER_DEV_EDU','LEARNER_RC'],
+        'qnx_target':bool(re.search(r'^EDU TARGET QNX 8[.]0(?:[.]\d+)? ',clean,re.M)),
+        'normal_io':re.findall(r'^LEARNER_DEV_EDU write_rc=(\d+) read_rc=(\d+) result=(\d+)$',clean,re.M) == [('0','0','3628800')],
+        'irq_completion':re.findall(r'^EDU RESMGR IRQ completion=(\d+) input=(\d+) result=(\d+) ack=([0-9a-f]{8})$',clean,re.M) == [('1','10','3628800','00000000')],
+        'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$',clean,re.M) == ['0']}
+
+def init(work, stage="step3"):
+    manifest_kind(stage)
     if not REPO_COPY:
         raise ValueError('init requires the repository copy; standalone SDK copy supports build/run')
     work = external(work)
@@ -37,15 +73,16 @@ def init(work):
     source = work / 'main.c'
     if source.exists():
         raise ValueError('refusing to overwrite learner source')
-    source.write_text((ROOT/'steps/step3/starter/main.c').read_text())
+    source.write_text((ROOT/'steps'/stage/'starter/main.c').read_text())
     return source
 
-def build(source, out, env, buildfile, cwd):
+def build(source, out, env, buildfile, cwd, stage="step3"):
     """Run inside learner licensed SDK environment; no private bundle needed.
 
     Learner BSP buildfile must install learner_bin and learner-start.sh from out.
     It must invoke /proc/boot/learner-start.sh after PCI server startup.
     """
+    kind = manifest_kind(stage)
     source = Path(source).resolve()
     out = external(out)
     out.mkdir(parents=True, exist_ok=True)
@@ -68,17 +105,14 @@ def build(source, out, env, buildfile, cwd):
         raise ValueError('qcc did not produce an ELF binary')
     binary_hash = sha(binary)
     source_hash = sha(snapshot)
-    script.write_text('#!/bin/sh\n'
-        + f'echo LEARNER_BIND source={source_hash} binary={binary_hash}\n'
-        + '/proc/boot/learner_bin\n'
-        + 'echo LEARNER_RC=$?\n')
+    script.write_text(startup(stage, source_hash, binary_hash))
     subprocess.run(['bash', '-c', 'set -eo pipefail; source "$1"; mkifs "$2" "$3"',
         'learner-image', str(Path(env).resolve()), str(Path(buildfile).resolve()), str(image)], cwd=cwd, check=True)
     if not image.is_file() or image.stat().st_size == 0:
         raise ValueError('mkifs did not produce a nonempty image')
     if sha(source) != source_hash or sha(buildfile) != build_hash:
         raise ValueError('inputs changed during build')
-    manifest = {'kind':'learner-step3-v1', 'source_sha256':source_hash,
+    manifest = {'kind':kind, 'source_sha256':source_hash,
         'binary_sha256':binary_hash, 'image_sha256':sha(image),
         'buildfile_sha256':build_hash, 'startup_sha256':sha(script),
         'source_path':str(source), 'built_at':time.time(),
@@ -100,10 +134,10 @@ def oracle(output, manifest):
         'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$', clean, re.M) == ['0']}
     return checks
 
-def verify_inputs(source, bundle):
+def verify_inputs(source, bundle, stage="step3"):
     bundle = external(bundle)
     m = json.loads((bundle/'manifest.json').read_text())
-    if m.get('kind') != 'learner-step3-v1':
+    if m.get('kind') != manifest_kind(stage):
         raise ValueError('not a learner build manifest; reference receipts cannot satisfy this stage')
     for path, key in [(Path(source),'source_sha256'),(bundle/'learner-source.c','source_sha256'),
                       (bundle/'learner_bin','binary_sha256'),(bundle/'learner.ifs','image_sha256'),
@@ -123,9 +157,9 @@ def caps(pid):
         raise ValueError('effective QEMU cap invalid')
     return cap
 
-def run(source, bundle, disk, receipt, timeout=180):
+def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
     bundle = external(bundle)
-    m = verify_inputs(source, bundle)
+    m = verify_inputs(source, bundle, stage)
     if not Path(disk).is_file():
         raise ValueError('learner BSP external boot disk absent')
     if os.environ.get('EDU_NATIVE_LEASE') != 'granted':
@@ -196,9 +230,9 @@ def run(source, bundle, disk, receipt, timeout=180):
             proc.wait(10)
         selector.close()
     output = data.decode(errors='replace')
-    checks = oracle(output,m)
+    checks = oracle(output,m) if stage == "step3" else dev_edu_oracle(output,m)
     checks['bounded_completion'] = stop_reason == 'target completed'
-    checks['inputs_unchanged_after_boot'] = verify_inputs(source, bundle) == m
+    checks['inputs_unchanged_after_boot'] = verify_inputs(source, bundle, stage) == m
     checks['disk_unchanged'] = sha(disk) == disk_hash
     checks['qemu_reaped'] = owned_pid is not None and not (Path('/proc')/str(owned_pid)).exists()
     success = bool(cap) and all(checks.values())
@@ -216,9 +250,9 @@ def run(source, bundle, disk, receipt, timeout=180):
     receipt.with_suffix('.json').write_text(json.dumps(evidence,indent=2)+'\n')
     print(output)
     if not success:
-        print('FAIL: '+stop_reason+'; inspect target exit and MMIO read-back; expected ID 010000ed, write 12345678, complement edcba987. Rebuild after edits.')
+        print('FAIL: '+stop_reason+'; inspect target exit and MMIO read-back; expected ID 010000ed, write 12345678, complement edcba987. Rebuild after edits.' if stage == 'step3' else 'FAIL: '+stop_reason+'; inspect /dev/edu normal I/O and IRQ completion.')
     else:
-        print('PASS: learner step3 source-bound native BAR read-back')
+        print('PASS: learner step3 source-bound native BAR read-back' if stage == 'step3' else 'PASS: learner /dev/edu source-bound native normal I/O')
     return 0 if success else 1
 
 def main():
@@ -229,11 +263,13 @@ def main():
     for arg in ['source','out','sdp-env','buildfile','bsp-cwd']: b.add_argument('--'+arg,required=True)
     r = sub.add_parser('run')
     for arg in ['source','bundle','disk','receipt']: r.add_argument('--'+arg,required=True)
+    for command_parser in (i,b,r):
+        command_parser.add_argument('--stage', choices=('step3','step6'), default='step3')
     a = p.parse_args()
     try:
-        if a.action=='init': print(init(a.work)); return 0
-        if a.action=='build': print(json.dumps(build(a.source,a.out,a.sdp_env,a.buildfile,a.bsp_cwd),indent=2)); return 0
-        return run(a.source,a.bundle,a.disk,a.receipt)
+        if a.action=='init': print(init(a.work,a.stage)); return 0
+        if a.action=='build': print(json.dumps(build(a.source,a.out,a.sdp_env,a.buildfile,a.bsp_cwd,a.stage),indent=2)); return 0
+        return run(a.source,a.bundle,a.disk,a.receipt,stage=a.stage)
     except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as e:
         print('BLOCKED:',e,file=sys.stderr); return 2
 
