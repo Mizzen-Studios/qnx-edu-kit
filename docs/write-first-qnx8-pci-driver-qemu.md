@@ -58,7 +58,7 @@ The fresh native run supplied BAR address, ID/complement validation and factoria
 
 ## 4. Receive an interrupt — one-shot native checkpoint
 
-Read the assigned IRQ through the owned device handle; attach a notification using APIs/abilities from the installed QNX 8 headers, unmask deliberately, arm a bounded wait, request an edu interrupt, confirm pending status, acknowledge the device, and verify it cleared. Separate device acknowledgement from kernel unmasking. Exercise timeout and detach cleanup. The native one-shot event-wait probe now raises status1, wakes with status1 and acknowledges it clear. Default InterruptAttachEvent attachment handles the initial unmask; the removed redundant InterruptUnmask returned EAGAIN at mask countzero. Do not blindly unmask twice. This is not a complete production interrupt service thread.
+Read the assigned IRQ through the owned device handle; attach a notification using APIs/abilities from the installed QNX 8 headers, unmask deliberately, arm a bounded wait, request an edu interrupt, confirm pending status, acknowledge the device, and verify it cleared. Separate device acknowledgement from kernel unmasking. Exercise timeout and detach cleanup. The native one-shot event-wait probe now raises status1, wakes with status1 and acknowledges it clear. Historical event-attachment diagnostics preceded the current reference IAT path. Current InterruptAttachThread attachment handles the initial unmask; the removed redundant InterruptUnmask returned EAGAIN at mask countzero. Do not blindly unmask twice. This is not a complete production interrupt service thread.
 
 Acceptance: target raise/wait/ack transcript, timeout test, teardown/restart, no interrupt storm. A configured IRQ number is not evidence of interrupt delivery.
 

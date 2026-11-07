@@ -71,8 +71,7 @@ Twelve readable main.c snapshots accompany the twelve README folders;
 original native .c/.h and historical acceptance .json/.txt are text-only assets.
 No licensed headers, binaries, images, or SDK implementation are staged.
 
-E1 at 387ba38 has actual all-six native functional PASS, but E2 per-snapshot
-qcc/target execution and two fresh learners are pending. QSTI provenance is
+E1 at 387ba38 is associated with all-six native functional PASS. All twelve E2 snapshots have separate compile-only receipts; per-snapshot target execution and two fresh learners remain pending. QSTI provenance is
 unverified. Source/host/export checks do not earn target acceptance. The
 44-minute upstream sum is only six unmeasured private planning estimates.
 No publication, hosted site, video, submission or public PR is authorized.

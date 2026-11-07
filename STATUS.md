@@ -1,5 +1,7 @@
 # Status — 7 November 2026
 
+[Private evidence review](REVIEW.md) records exact bindings and unresolved gaps.
+
 [Capability ledger](docs/capabilities.md) records scoped evidence and exclusions.
 
 ## Current bounded validation — 7 November 2026

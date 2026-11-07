@@ -1,6 +1,6 @@
 # edu-kit — learner-owned QNX fault-to-fix lab
 
-Private development milestone. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
+Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)
@@ -13,7 +13,7 @@ plus 1 GiB disk-backed guest swap, unchanged 100% CPU / 1 GiB host / nice 15 cap
 The prior OOM receipts remain preserved. Both native logs retain an unattributed
 startup Memory fault after Starting sshd: no healthy-SSH/all-services claim.
 Broad portability and human learner validation remain UNVERIFIED.
-The distinct [learner /dev/edu finish](docs/learner-dev-edu.md) is the next scoped assessment.
+The distinct [learner /dev/edu finish](docs/learner-dev-edu.md) has one scoped normal-I/O result, not independent learner acceptance.
 
 ## Criteria map
 
@@ -59,7 +59,7 @@ Host mode runs guard and framework tests, then explicitly SKIPs live checks. Ful
 | Resource manager | real /dev/edu I/O and errors | native/edu_resmgr.c and native/edu_accept.c | normal I/O PASS; lifecycle/policy PENDING |
 | DMA | mask, transfer and IRQ evidence | native/edu_dma.h | 64-byte polled round-trip PASS; DMA IRQ/error injection PENDING |
 
-Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders now contain readable E1-derived incremental C snapshots and bounded TODOs; see [E2 build order](docs/e2-build-order.md). All twelve snapshots have [qcc compile-only evidence](docs/acceptance/e2-qcc-20261107/receipt.json); only the separately edited step3 BAR slice has learner-run proof; other learner stages remain unverified. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
+Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders now contain readable E1-derived incremental C snapshots and bounded TODOs; see [E2 build order](docs/e2-build-order.md). All twelve snapshots have [qcc compile-only evidence](docs/acceptance/e2-qcc-20261107/receipt.json); the separately edited step3 BAR slice and one edited step6 normal-I/O finish have learner-run proof; other learner stages remain unverified. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
 
 ## Release gates and limitations
 
