@@ -29,7 +29,9 @@ python3 "$EDU_REPO/scripts/learner_clean_preflight.py" --sdp-env "$EDU_SDP_ENV" 
 ```
 
 Run the preflight **inside your already licensed Linux x86_64 SDK host**, not
-merely the ARM QEMU host. It checks compiler/image tools and stock startup/kernel/
+merely the ARM QEMU host. A single-host reader runs it locally; split hosts run it
+after copying the original script. A missing ARM-host SDK is only a negative check,
+not evidence that your existing SDK in another host is unavailable. It checks compiler/image tools and stock startup/kernel/
 PCI files, not activation, complete BSP compatibility or bootability. Exit2 is
 **BLOCKED: stop and retain JSON**. Do not install/activate an SDK or substitute an
 owner image. Trust the supplied environment script before sourcing it.
@@ -161,7 +163,7 @@ collect terminal service status. Stop/reap its VM before each native run.
 Now replace the preseed with a freshly compiled source-bound bundle:
 
 ```sh
-python3 "$EDU_REPO/scripts/learner_lab.py" build --stage step3 --source "$EDU_WORK/step3/main.c" --out "$EDU_ACTIVE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
+flock "$EDU_NATIVE_LOCK" python3 "$EDU_REPO/scripts/learner_lab.py" build --stage step3 --source "$EDU_WORK/step3/main.c" --out "$EDU_ACTIVE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
 ```
 
 Preserve the entire bundle externally before replacing it with another variant.
