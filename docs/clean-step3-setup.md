@@ -37,4 +37,4 @@ Stop/reap SDK before target QEMU. Hold the same flock across phases, clean up ev
 
 ## Actual bounded attempt
 
-See [receipts](acceptance/clean-step3-20261107/NOTES.md) for inventory, attempts, failures and limits.
+See [receipts](acceptance/clean-step3-20261107/NOTES.md): both edited sources compiled, but clean generic image generation reached IFS then its bounded termination (zero-byte IFS). No native runs. This is not a proven OOM, missing SDK or portable bootstrap PASS.

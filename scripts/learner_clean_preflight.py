@@ -5,7 +5,6 @@ No downloads, activation, BSP modifications or QEMU launch. Never a native PASS.
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -28,7 +27,7 @@ def probe(env, work):
             result['tools'] = dict(zip(['qcc', 'mkifs', 'mkqnximage'], lines[:3]))
             target = Path(lines[3])
             required = ['x86_64/boot/sys/startup-x86', 'x86_64/boot/sys/procnto-smp-instr',
-                        'x86_64/usr/sbin/pci-server', 'x86_64/usr/lib/libpci.so']
+                        'x86_64/sbin/pci-server', 'x86_64/lib/libpci.so']
             result['licensed_components'] = {name: (target/name).exists() for name in required}
             checks['licensed_components_present'] = all(result['licensed_components'].values())
             result['sdp_env_sha256'] = hashlib.sha256(env.read_bytes()).hexdigest()

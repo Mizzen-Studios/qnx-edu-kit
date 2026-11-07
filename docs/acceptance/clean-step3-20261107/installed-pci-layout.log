@@ -1,0 +1,6 @@
+/home/qnx/qnx800/target/qnx/x86_64/sbin/pci-server
+/home/qnx/qnx800/target/qnx/x86_64/lib/libpci.so.3.0
+/home/qnx/qnx800/target/qnx/x86_64/lib/libpci.so
+/home/qnx/qnx800/target/qnx/x86_64/lib/libpci.so.3.0.sym
+total 96332
+-rw-r--r-- 1 qnx qnx 98642227 Nov  4 13:55 BSP_x86_64_br-hw-rel_be-800_SVN989189_JBN50.zip

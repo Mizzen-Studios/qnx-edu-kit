@@ -1,0 +1,42 @@
+{
+  "kind": "clean-step3-preflight-v1",
+  "platform": "QNX 8 x86_64 / QEMU pc TCG",
+  "checks": {
+    "sdp_env_exists": true,
+    "fresh_workspace": true,
+    "sdk_tools_present": true,
+    "licensed_components_present": true,
+    "python3": true
+  },
+  "portability": "UNVERIFIED",
+  "native_acceptance": "NOT_RUN",
+  "environment_returncode": 0,
+  "tools": {
+    "qcc": "/home/qnx/qnx800/host/linux/x86_64/usr/bin/qcc",
+    "mkifs": "/home/qnx/qnx800/host/linux/x86_64/usr/bin/mkifs",
+    "mkqnximage": "/home/qnx/qnx800/host/common/bin/mkqnximage"
+  },
+  "licensed_components": {
+    "x86_64/boot/sys/startup-x86": true,
+    "x86_64/boot/sys/procnto-smp-instr": true,
+    "x86_64/sbin/pci-server": true,
+    "x86_64/lib/libpci.so": true
+  },
+  "sdp_env_sha256": "cf2a534405000e2a4552e027a75f5a43e1562667fd12210c88763bc354325555",
+  "ready_for_clean_build_attempt": true,
+  "limits": "all SDK/native QEMU: shared flock; CPU 100%; memory 1 GiB; nice 15; 1 vCPU; 512 MiB guest"
+}
+ff8684c7a45eac8353b9367ccec2d3805ef3ca7270f12c1781b0c061d9af4b1b  wrong.c
+c49750e4edf0303fb852555c21e9be6ebdca7749eed16234ecacf3df2c32db6b  wrong.bin
+1aa31a582a8fdfb4f9bb5f8a987f4667f3adcce30652b0bb68f89933ba5fd208  correct.c
+7ec97b0839201bd1f4b7008c52134553846042877df9bd462f0bd22efe9734a1  correct.bin
+Options changed
+
+To allow root ssh, you need an ssh identity file.  You probably want to use
+an option such as:
+
+    --ssh-ident=~/.ssh/id_ed25519.pub
+
+To just avoid future messages use --ssh-ident=none
+
+Run mkqnximage --help=ssh-ident for more information

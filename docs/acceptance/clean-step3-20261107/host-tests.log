@@ -2,6 +2,7 @@ test_existing_work_refused (test_learner_clean_bootstrap.CleanBootstrapTests.tes
 test_missing_licensed_component_blocks (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_licensed_component_blocks) ... ok
 test_missing_sdk_is_blocked_not_native_pass (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_sdk_is_blocked_not_native_pass) ... ok
 test_probe_does_not_launch_or_install (test_learner_clean_bootstrap.CleanBootstrapTests.test_probe_does_not_launch_or_install) ... ok
+test_real_qnx8_layout_is_accepted_without_usr_prefix (test_learner_clean_bootstrap.CleanBootstrapTests.test_real_qnx8_layout_is_accepted_without_usr_prefix) ... ok
 test_actual_readback_and_exit_required (test_learner_lab.LearnerTests.test_actual_readback_and_exit_required) ... ok
 test_build_compiles_snapshot_and_rebuilds_image (test_learner_lab.LearnerTests.test_build_compiles_snapshot_and_rebuilds_image) ... ok
 test_checkout_outputs_forbidden (test_learner_lab.LearnerTests.test_checkout_outputs_forbidden) ... ok
@@ -13,6 +14,6 @@ test_standalone_sdk_copy_allows_external_build (test_learner_lab.LearnerTests.te
 test_tampered_inputs_refused (test_learner_lab.LearnerTests.test_tampered_inputs_refused) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.013s
+Ran 14 tests in 0.019s
 
 OK

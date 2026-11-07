@@ -1,0 +1,18 @@
+{
+  "kind": "clean-step3-compile-only-v1",
+  "target": "QNX 8 x86_64",
+  "build_driver": "attempt-driver.sh",
+  "source_origin": "fresh edit of step3 starter; no reference binaries or E1 platform inputs",
+  "wrong": {
+    "source_sha256": "ff8684c7a45eac8353b9367ccec2d3805ef3ca7270f12c1781b0c061d9af4b1b",
+    "binary_sha256": "c49750e4edf0303fb852555c21e9be6ebdca7749eed16234ecacf3df2c32db6b",
+    "qcc_exit": 0
+  },
+  "correct": {
+    "source_sha256": "1aa31a582a8fdfb4f9bb5f8a987f4667f3adcce30652b0bb68f89933ba5fd208",
+    "binary_sha256": "7ec97b0839201bd1f4b7008c52134553846042877df9bd462f0bd22efe9734a1",
+    "qcc_exit": 0
+  },
+  "native_acceptance": "NOT_RUN",
+  "portability": "UNVERIFIED"
+}
