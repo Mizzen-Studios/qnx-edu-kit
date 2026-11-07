@@ -1,0 +1,9 @@
+MainPID=670
+OOMPolicy=stop
+ControlGroup=/system.slice/host-queue.service
+Id=host-queue.service
+
+MainPID=1024
+OOMPolicy=stop
+ControlGroup=/system.slice/edu-clean-swap-build-actual.service
+Id=edu-clean-swap-build-actual.service

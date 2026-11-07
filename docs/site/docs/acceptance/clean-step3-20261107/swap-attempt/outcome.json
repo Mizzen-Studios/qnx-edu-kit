@@ -1,0 +1,87 @@
+{
+  "kind": "clean-stock-swap-build-v1",
+  "result": "PASS_BUILD_ONLY",
+  "native_assessment": "NOT_RUN_YET",
+  "portability": "UNVERIFIED",
+  "guest_ram_mib": 512,
+  "guest_swap_mib": 1024,
+  "host_caps": "100%CPU/1GiB/nice15/1vCPU unchanged",
+  "unit": "edu-clean-swap-build-actual.service",
+  "terminal": {
+    "MainPID": 0,
+    "Result": "success",
+    "ActiveState": "inactive",
+    "SubState": "dead",
+    "ExecMainStatus": 0
+  },
+  "queue_restarts": 0,
+  "ifs_bytes": 10910400,
+  "disk_bytes": 154345984,
+  "ifs_sha256": "b7795d4d3c462ff2447b31bf909c72d9034f78a9dca732df1177ad31c0b1eb3a",
+  "disk_sha256": "d1cd5516fe219f4b46fe3268f40b0b7af4e1dce0dd53d8fb68e017bfeba7be9a",
+  "findings": [
+    "Guest disk-backed swap allowed the unmodified stock kernel link to complete.",
+    "Earlier OOMPolicy=stop affected whole queue service; builder now isolated and queue remained active with zero restarts.",
+    "Guest soft-lockup warnings and transient systemd transport error retained. Initial collector service snapshot was not terminal; subsequent confirmation is authoritative.",
+    "Pre-build nonempty-directory rejection preserved; launcher moved outside before stock build.",
+    "No exact minimum RAM inferred: tested512MiB+1GiB swap succeeds;512MiB/no swap previously OOM."
+  ],
+  "receipts": {
+    "build.log": {
+      "raw_sha256": "25d5041fca420b09b93aeba2250ce8bec671e1077d3197d29b8bf46bd39c1422",
+      "saved_sha256": "e04c7120e3e8b77a3a3356adfd94fa2391d69399f3fa312745268bf0ba5bb35d"
+    },
+    "memory-before.log": {
+      "raw_sha256": "0254518698825a426bce8c3256a7588724a7599a73470a04328afc197a62205a",
+      "saved_sha256": "0254518698825a426bce8c3256a7588724a7599a73470a04328afc197a62205a"
+    },
+    "memory-swap.log": {
+      "raw_sha256": "388b2b9919958bee4c3421dc4b4926c0c11034a03d3e3e3ab3e6beaa0d1e470c",
+      "saved_sha256": "388b2b9919958bee4c3421dc4b4926c0c11034a03d3e3e3ab3e6beaa0d1e470c"
+    },
+    "swap-setup.log": {
+      "raw_sha256": "1bb4f0edbac7213987104d6dbf5022134b98de218ec0a52644cd91e8159b042a",
+      "saved_sha256": "1bb4f0edbac7213987104d6dbf5022134b98de218ec0a52644cd91e8159b042a"
+    },
+    "resources.log": {
+      "raw_sha256": "d498024cb6ee26b8570d476680ef467756b35b66dab28ba58a7f2d66817624f5",
+      "saved_sha256": "d498024cb6ee26b8570d476680ef467756b35b66dab28ba58a7f2d66817624f5"
+    },
+    "isolation.log": {
+      "raw_sha256": "a8ce83c83c7e176db3b7bbeee6a8f7a3e35067c02c049b379cc588385f8a07cb",
+      "saved_sha256": "a8ce83c83c7e176db3b7bbeee6a8f7a3e35067c02c049b379cc588385f8a07cb"
+    },
+    "service-exit.log": {
+      "raw_sha256": "87fbdd6b626a4b9730501e7d9e5b95f588aa7ba52797c88225ad377cd1afbf7b",
+      "saved_sha256": "87fbdd6b626a4b9730501e7d9e5b95f588aa7ba52797c88225ad377cd1afbf7b"
+    },
+    "service-confirmed.log": {
+      "raw_sha256": "32a174f180c5883d1dca00156ad9862aae2503a7d1dd1cb36f2aec7fcaeac1f8",
+      "saved_sha256": "32a174f180c5883d1dca00156ad9862aae2503a7d1dd1cb36f2aec7fcaeac1f8"
+    },
+    "queue-after.log": {
+      "raw_sha256": "96d095739b4a7bfc00f2d3df7832fc3222cb8666e36d76930579a2cc76f903b0",
+      "saved_sha256": "96d095739b4a7bfc00f2d3df7832fc3222cb8666e36d76930579a2cc76f903b0"
+    },
+    "processes-confirmed.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "saved_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "final-hashes.log": {
+      "raw_sha256": "14e9f46bdf2d3af005863515e4ba530a5aa382e2ce0cbdbcaedeaeaeca663c2d",
+      "saved_sha256": "14e9f46bdf2d3af005863515e4ba530a5aa382e2ce0cbdbcaedeaeaeca663c2d"
+    },
+    "started": {
+      "raw_sha256": "5c45572d60b2d4fa2830258adb06ba61c9214d0e31469c23dcd9f7efaa2b7069",
+      "saved_sha256": "5c45572d60b2d4fa2830258adb06ba61c9214d0e31469c23dcd9f7efaa2b7069"
+    },
+    "finished": {
+      "raw_sha256": "05bb0b66cfb61da67ad9127ec055270e425fbdff5cee62adb8fd50d77afb15ba",
+      "saved_sha256": "05bb0b66cfb61da67ad9127ec055270e425fbdff5cee62adb8fd50d77afb15ba"
+    },
+    "dmesg-confirmed.log": {
+      "raw_sha256": "4e0117f5894f1147f0a2d96f2cea1be7d2992537eeff585f45caf672277461fa",
+      "saved_sha256": "4e0117f5894f1147f0a2d96f2cea1be7d2992537eeff585f45caf672277461fa"
+    }
+  }
+}

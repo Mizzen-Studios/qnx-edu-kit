@@ -1,0 +1,3 @@
+The current directory is neither that of an existing mkqnximage virtual image nor is it
+an empty directory. This might be OK but as creating virtual images in random locations
+is often not what is intended, you have to include the --force option to enable it.

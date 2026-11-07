@@ -1,0 +1,10 @@
+{
+  "qemu_pid": 150382,
+  "cpu_max": "100000 100000",
+  "memory_max": "1073741824",
+  "nice": 15,
+  "guest_mib": 512,
+  "vcpus": 1,
+  "lease": "flock held by managed SDK process session71026",
+  "prior_diagnosis_sha256": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392"
+}

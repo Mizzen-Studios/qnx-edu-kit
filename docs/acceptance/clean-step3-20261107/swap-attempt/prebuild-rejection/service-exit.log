@@ -1,0 +1,6 @@
+Result=exit-code
+OOMPolicy=stop
+ExecMainCode=1
+ExecMainStatus=1
+ControlGroup=
+ActiveState=failed

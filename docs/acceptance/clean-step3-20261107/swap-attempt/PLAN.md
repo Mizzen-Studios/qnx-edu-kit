@@ -5,3 +5,5 @@ Gate remains NOT PASSED. One fresh stock generic build, 1800-second build limit 
 Finding: the earlier guest global OOM killed a linker in host-queue.service. Its OOMPolicy=stop then stopped the controller/waiter as well, losing the ordinary build exit. This attempt places the builder in a separate transient guest systemd service, with the queue/monitor outside that service. Capture service Result/ExecMainCode/ExecMainStatus even if the build wrapper cannot write an exit receipt.
 
 Conditional next steps: only if the stock image completes, integrate fresh learner snippets, compile wrong/correct sources, and run distinct source/binary/image/disk-bound native assessments. Then learner /dev/edu normal I/O completion, not a transferred reference PASS. Otherwise preserve failure and stop; no second memory strategy or build retry. C6 STOPPED.
+
+Pre-build harness correction: first transient unit exited1 because build.sh made the requested image directory nonempty; no image build or linker ran. Moved that original launcher outside the directory (no --force), preserved the rejection, and started actual unit edu-clean-swap-build-actual at13:11:59UTC.

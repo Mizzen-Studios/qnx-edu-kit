@@ -1,0 +1,82 @@
+2026-11-07T13:12:09Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         133           6           0         338         323
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4172 S    mkqnximage
+2026-11-07T13:12:32Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         134           6           0         337         322
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4244 S    mkqnximage
+2026-11-07T13:12:57Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         135          11           0         331         322
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4244 S    mkqnximage
+2026-11-07T13:13:20Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         139          18           0         324         317
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4244 S    mkqnximage
+2026-11-07T13:13:44Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         137          10           0         330         319
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4244 S    mkqnximage
+2026-11-07T13:14:08Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         140           7           0         334         316
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  4244 S    mkqnximage
+   1540    1032  3664 S    builddisk
+   1547    1540  2756 S    mkifs
+   1552    1551  2632 S    qcc
+2026-11-07T13:14:32Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         314          10           0         154         143
+Swap:           1023           0        1023
+     48       2     0 I<   kworker/R-mld
+   1032    1024  3380 S    mkqnximage
+   1540    1032  2812 S    builddisk
+   1547    1540  2756 S    mkifs
+   1556    1555  2636 S    qcc
+2026-11-07T13:14:57Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         414           5           0          57          42
+Swap:           1023         163         860
+     48       2     0 I<   kworker/R-mld
+   1032    1024  2176 S    mkqnximage
+   1540    1032  2072 S    builddisk
+   1547    1540  1752 S    mkifs
+   1556    1555  1752 S    qcc
+2026-11-07T13:15:22Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         416           4           0          57          41
+Swap:           1023         332         691
+     48       2     0 I<   kworker/R-mld
+   1032    1024  2180 S    mkqnximage
+   1540    1032  2076 S    builddisk
+   1547    1540  1756 S    mkifs
+   1556    1555  1756 S    qcc
+2026-11-07T13:15:46Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         430           6           0          41          26
+Swap:           1023         397         626
+     48       2     0 I<   kworker/R-mld
+   1032    1024  2180 S    mkqnximage
+   1540    1032  2076 S    builddisk
+   1547    1540  1756 S    mkifs
+   1556    1555  1756 S    qcc
+2026-11-07T13:16:10Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         116         258           0         102         340
+Swap:           1023          21        1002
+     48       2     0 I<   kworker/R-mld
+   1032    1024  2176 S    mkqnximage
+   1540    1032  3112 S    builddisk

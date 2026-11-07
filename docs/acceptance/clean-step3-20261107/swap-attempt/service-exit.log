@@ -1,0 +1,6 @@
+Result=success
+OOMPolicy=stop
+ExecMainCode=0
+ExecMainStatus=0
+ControlGroup=/system.slice/edu-clean-swap-build-actual.service
+ActiveState=active
