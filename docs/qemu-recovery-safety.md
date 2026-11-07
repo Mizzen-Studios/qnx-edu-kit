@@ -1,5 +1,14 @@
 # QEMU recovery safety — 4 November 2026
 
+**HISTORICAL REFERENCE ONLY — superseded launch instructions below must not be
+executed for the learner route.** In particular scripts/qemu-capped.sh and the
+old owner guestctl example use historical200%CPU/4GiB, not today's authorized
+100%CPU/1GiB/nice15 and guest1vCPU/512MiB. No guestctl bootstrap is provided.
+Use the [canonical learner route](learner-route.md), legal supplied SDK/BSP/QEMU
+paths and shared exclusive lease; stop at unavailable setup. Old observations
+and failed hypotheses below remain preserved, not current launcher approval.
+
+
 Use `scripts/qemu-capped.sh COMMAND [ARG ...]` for every QEMU launch, including the SDK guest controller and EDU qtest tests. Example:
 
     ./scripts/qemu-capped.sh python3 /home/ubuntu/qnx-host/guest/guestctl.py start

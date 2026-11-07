@@ -39,7 +39,7 @@ Image also printed Memory fault (core dumped) immediately after Starting sshd. M
 
 ## State and remaining core
 
-Persistent Linux SDK guest cleanly ACPI-stopped after verification; QEMU supervisor exited0. Restart with /home/ubuntu/qnx-host/guest/guestctl.py start. SDK resides inside persistent guest disk, NOT directly on ARM host. Credentials are no longer the SDK gate. No SDK/binaries/images/licences/caches/secrets in repositories.
+Persistent Linux SDK guest cleanly ACPI-stopped after verification; QEMU supervisor exited0. Historical owner guestctl restart advice is withdrawn: it is not a learner bootstrap and must not be used with the old caps. Follow the [canonical route](learner-route.md) and stop at missing legal setup. SDK resides inside persistent guest disk, NOT directly on ARM host. Credentials are no longer the SDK gate. No SDK/binaries/images/licences/caches/secrets in repositories.
 
 Private evidence outside repositories: /home/ubuntu/qnx-host/guest/shared/results; shared/qnx-native/native-gate.log, fallback-gate.log, traffic-gate.log, traffic-gate-recheck.log, traffic-results.json; guest-home private QSC/build logs. Internal artifacts only, not public evaluation results.
 
