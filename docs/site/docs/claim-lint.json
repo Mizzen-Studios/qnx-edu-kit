@@ -33,7 +33,7 @@
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "b60d1683713b2b89618e6265613e7160021ab7e4e39b615fc0ee3b4a25fde3fd",
+      "sha256": "3d64d75e25b01016da17ef1419f5c8b73f2450defaeade9593226c64f84eb24a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -238,7 +238,7 @@
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "925944932a421f43878dd6c1aca6c6c45ff42c056dfefc5ab9e774ed8fc84814",
+      "sha256": "5c1fceab436500c3dcb3485b018b751dd1f43168b530f0337e12f8d0eb5f79a4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -2928,7 +2928,8 @@
     "kind": "private-proof-capture-DRY-PACK",
     "status": "PASS",
     "errors": [],
-    "frozen_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
+    "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
+    "packet_source_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
     "narration_words": 211,
     "planned_seconds": 160,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",

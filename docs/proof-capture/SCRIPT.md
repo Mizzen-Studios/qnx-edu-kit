@@ -2,7 +2,8 @@
 
 No recording or audio capture. Separate Olly OK required. No publication/upload authorized.
 
-Accepted-tip asset binding: 5876304a82d1c07ecde7401a9c522ef28ec268de
+Accepted-tip asset binding: ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
+Current packet instruction-source binding (not runtime acceptance): 5876304a82d1c07ecde7401a9c522ef28ec268de
 recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.
 Exact whitespace narration word count: 211; planned 160 seconds (not measured).
 C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.

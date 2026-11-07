@@ -1,6 +1,6 @@
 {
   "schema": "private-dry-pack.v1",
-  "frozen_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
+  "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
   "capture_authorization": "NOT_GRANTED: separate Olly OK required",
   "lines": [
     {
@@ -159,5 +159,6 @@
   "prior_frozen_commit": "01060c7c1aff834d6c0b016de7fd9f988f8f7e35",
   "recorded": false,
   "gate": "CONDITIONAL: owner receipt-inspected, not re-run, 2026-11-07 20:03 UTC",
-  "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9"
+  "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
+  "packet_source_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de"
 }
