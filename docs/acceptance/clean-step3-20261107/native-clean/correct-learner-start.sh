@@ -1,0 +1,4 @@
+#!/bin/sh
+echo LEARNER_BIND source=1aa31a582a8fdfb4f9bb5f8a987f4667f3adcce30652b0bb68f89933ba5fd208 binary=3d7556b29e89e8c85035048d1b1cdc26f91fcfda7bc48ffbc9dfc8ec6bfa30db
+/proc/boot/learner_bin
+echo LEARNER_RC=$?

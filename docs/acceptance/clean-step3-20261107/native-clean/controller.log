@@ -1,0 +1,29 @@
+Generating output/build/mount_fs.sh
+Generating output/build/expandfs.sh
+Generating output/build/post_startup.sh
+Generating output/build/start_net.sh
+Generating output/build/startup.sh
+Generating output/build/passwd
+Generating output/build/group
+Generating output/build/shadow
+Generating output/build/ifs.build
+Generating output/build/system.build
+Generating output/build/data.build
+Generating output/build/qemu_options
+Building disk
+Generating system partition . . .
+Generating data partition . . .
+Generating ifs . . .
+Building boot partition . . .
+Building disk . . .
+Target type: qemu
+Architecture: x86_64
+Security: no
+Repositories:
+    
+    /home/qnx/qnx800/target/qnx
+
+Options with non-default values:
+
+
+For full list of options, run "mkqnximage --options"

@@ -1,0 +1,12 @@
+{
+  "kind": "learner-step3-v1",
+  "source_sha256": "ff8684c7a45eac8353b9367ccec2d3805ef3ca7270f12c1781b0c061d9af4b1b",
+  "binary_sha256": "cbd483bcc5c54811d00e3b739f4f434ac47e718b6fd735a7a8e0ca953e815036",
+  "image_sha256": "f51b20376d3036b3704ee53aae3a809ed2a238ec7bc4472da9341b99f196a734",
+  "buildfile_sha256": "6d94f55b656a91b3e164fec05b3001425ef321310c1380bd7c95bb9bbf180652",
+  "startup_sha256": "e5bc4a97b401a711a7577372c848504fa1c14ca80ee14be706ff369a6f2916c5",
+  "source_path": "/home/qnx/clean-step3-swap-20261107/learner-active/wrong.c",
+  "built_at": 1794058085.280698,
+  "build_driver_sha256": "0cbded0cbaee20489612edb0eceb8b65c181ebb4144d5ac594eb6e41e2e96b8e",
+  "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+}
