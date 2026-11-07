@@ -1,0 +1,180 @@
+[  182.239870] audit: type=1400 audit(1794054510.368:94): apparmor="STATUS" operation="profile_load" profile="unconfined" name="unprivileged_userns" pid=569 comm="apparmor_parser"
+[  205.399811] watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [apparmor_parser:567]
+[  205.400689] Modules linked in: irqbypass 9pnet_virtio 9pnet parport_pc parport binfmt_misc nls_iso8859_1 input_leds serio_raw sch_fq_codel dm_multipath msr efi_pstore nfnetlink dmi_sysfs ip_tables x_tables autofs4 btrfs blake2b_generic raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 crct10dif_pclmul crc32_pclmul polyval_clmulni polyval_generic ghash_clmulni_intel sha256_ssse3 sha1_ssse3 vga16fb vgastate psmouse ahci libahci aesni_intel crypto_simd cryptd
+[  205.401909] CPU: 0 PID: 567 Comm: apparmor_parser Not tainted 6.8.0-147-generic #147-Ubuntu
+[  205.402041] Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[  205.402311] RIP: 0010:clear_page_erms+0x7/0x10
+[  205.403067] Code: 48 89 47 38 48 8d 7f 40 75 d9 90 c3 cc cc cc cc 0f 1f 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 b9 00 10 00 00 31 c0 <f3> aa c3 cc cc cc cc 66 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+[  205.403224] RSP: 0018:ff55090640347808 EFLAGS: 00000246
+[  205.403313] RAX: 0000000000000000 RBX: 0000000000000200 RCX: 00000000000003f6
+[  205.403347] RDX: fff6d89200118000 RSI: fff6d89200114400 RDI: ff131c8d44510c0a
+[  205.403382] RBP: ff55090640347838 R08: 0000000000000000 R09: 0000000000000000
+[  205.403415] R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000008000
+[  205.403448] R13: 0000000000000009 R14: fff6d89200110000 R15: 0000000000000001
+[  205.403596] FS:  0000751eae9fd740(0000) GS:ff131c8d5f400000(0000) knlGS:0000000000000000
+[  205.403639] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  205.403674] CR2: 000062da16e5e000 CR3: 000000001e214000 CR4: 0000000000751ef0
+[  205.403961] PKRU: 55555554
+[  205.404093] Call Trace:
+[  205.404952]  <TASK>
+[  205.405185]  ? post_alloc_hook+0xcd/0x120
+[  205.411532]  get_page_from_freelist+0x1f2/0x650
+[  205.411767]  __alloc_pages+0x1e9/0x350
+[  205.411812]  __kmalloc_large_node+0x75/0x130
+[  205.411865]  ? asm_sysvec_apic_timer_interrupt+0x1b/0x20
+[  205.411920]  __kmalloc_node+0x3f7/0x510
+[  205.411952]  ? kvmalloc_node+0x5d/0x100
+[  205.412010]  kvmalloc_node+0x5d/0x100
+[  205.412044]  ? kvmalloc_node+0x5d/0x100
+[  205.412079]  compress_zstd+0x93/0x1e0
+[  205.412181]  aa_unpack+0x44b/0x4a0
+[  205.412227]  aa_replace_profiles+0x9b/0x12c0
+[  205.412309]  policy_update+0xf5/0x190
+[  205.412407]  profile_replace+0xd1/0x160
+[  205.412446]  vfs_write+0x100/0x470
+[  205.412496]  ? arch_exit_to_user_mode_prepare.isra.0+0x1a/0xe0
+[  205.412535]  ? syscall_exit_to_user_mode+0x43/0x1e0
+[  205.412586]  ? do_syscall_64+0x94/0x180
+[  205.412630]  ? filemap_read+0x3fd/0x470
+[  205.412692]  ksys_write+0x73/0x100
+[  205.412732]  __x64_sys_write+0x19/0x30
+[  205.412765]  x64_sys_call+0x7e/0x25a0
+[  205.412799]  do_syscall_64+0x87/0x180
+[  205.412855]  ? vfs_read+0x278/0x3a0
+[  205.412886]  ? vfs_read+0x278/0x3a0
+[  205.412918]  ? rseq_get_rseq_cs+0x22/0x280
+[  205.412977]  ? rseq_ip_fixup+0x90/0x170
+[  205.413016]  ? restore_fpregs_from_fpstate+0x3d/0xd0
+[  205.413052]  ? switch_fpu_return+0x55/0xf0
+[  205.413085]  ? arch_exit_to_user_mode_prepare.isra.0+0x9c/0xe0
+[  205.413139]  ? syscall_exit_to_user_mode+0x43/0x1e0
+[  205.413181]  ? do_syscall_64+0x94/0x180
+[  205.413212]  ? exc_page_fault+0x94/0x1b0
+[  205.413248]  entry_SYSCALL_64_after_hwframe+0x78/0x80
+[  205.413414] RIP: 0033:0x751eae71c844
+[  205.414143] Code: c7 00 16 00 00 00 b8 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d 05 f8 0e 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89
+[  205.414188] RSP: 002b:00007fff8dd8fe68 EFLAGS: 00000202 ORIG_RAX: 0000000000000001
+[  205.414244] RAX: ffffffffffffffda RBX: 000062da16de6350 RCX: 0000751eae71c844
+[  205.414269] RDX: 0000000000056e2a RSI: 0000751eae913010 RDI: 0000000000000007
+[  205.414291] RBP: 00007fff8dd8feb0 R08: 0000000000080010 R09: 0000000000040ff0
+[  205.414313] R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000056e2a
+[  205.414335] R13: 0000000000080000 R14: 0000751eae913010 R15: 0000000000056e2a
+[  205.414459]  </TASK>
+[  230.167728] ppdev: user-space parallel port driver
+[  232.141101] kvm_amd: Nested Virtualization enabled
+[  232.141523] kvm_amd: Nested Paging enabled
+[  232.142516] kvm_amd: Virtual GIF supported
+[  232.142677] kvm_amd: PMU virtualization is disabled
+[  233.953391] audit: type=1400 audit(1794054562.082:95): apparmor="STATUS" operation="profile_load" profile="unconfined" name="unix-chkpwd" pid=568 comm="apparmor_parser"
+[  234.029710] audit: type=1400 audit(1794054562.159:96): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=573 comm="apparmor_parser"
+[  234.303018] audit: type=1400 audit(1794054562.432:97): apparmor="STATUS" operation="profile_load" profile="unconfined" name="tcpdump" pid=572 comm="apparmor_parser"
+[  234.329015] audit: type=1400 audit(1794054562.457:98): apparmor="STATUS" operation="profile_load" profile="unconfined" name="transmission-cli" pid=562 comm="apparmor_parser"
+[  234.329175] audit: type=1400 audit(1794054562.458:99): apparmor="STATUS" operation="profile_load" profile="unconfined" name="transmission-daemon" pid=562 comm="apparmor_parser"
+[  234.329210] audit: type=1400 audit(1794054562.458:100): apparmor="STATUS" operation="profile_load" profile="unconfined" name="transmission-gtk" pid=562 comm="apparmor_parser"
+[  234.329241] audit: type=1400 audit(1794054562.458:101): apparmor="STATUS" operation="profile_load" profile="unconfined" name="transmission-qt" pid=562 comm="apparmor_parser"
+[  234.424118] audit: type=1400 audit(1794054562.552:102): apparmor="STATUS" operation="profile_load" profile="unconfined" name="uwsgi-core" pid=575 comm="apparmor_parser"
+[  234.542645] audit: type=1400 audit(1794054562.672:103): apparmor="STATUS" operation="profile_load" profile="unconfined" name="rsyslogd" pid=574 comm="apparmor_parser"
+[  234.843605] audit: type=1400 audit(1794054562.973:104): apparmor="STATUS" operation="profile_load" profile="unconfined" name="virtiofsd" pid=587 comm="apparmor_parser"
+[  249.966473] ISO 9660 Extensions: Microsoft Joliet Level 3
+[  249.994079] ISO 9660 Extensions: RRIP_1991A
+[  295.848895] netfs: FS-Cache loaded
+[  296.239709] 9p: Installing v9fs 9p2000 file system support
+[  322.037905] kauditd_printk_skb: 14 callbacks suppressed
+[  322.038189] audit: type=1400 audit(1794054650.350:119): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="rsyslogd" pid=710 comm="apparmor_parser"
+[  392.014964] loop0: detected capacity change from 0 to 8
+[  423.220653] audit: type=1400 audit(1794054751.542:120): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=914 comm="apparmor_parser"
+[  482.296914] loop0: detected capacity change from 0 to 8
+[  493.324563] audit: type=1400 audit(1794054821.654:121): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=1110 comm="apparmor_parser"
+[  564.569685] clocksource: Long readout interval, skipping watchdog check: cs_nsec: 1195197944 wd_nsec: 1195164070
+[  661.833105] x86_64-pc-nto-q invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=0
+[  661.834549] CPU: 0 PID: 1515 Comm: x86_64-pc-nto-q Tainted: G             L     6.8.0-147-generic #147-Ubuntu
+[  661.835342] Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[  661.835738] Call Trace:
+[  661.837564]  <TASK>
+[  661.838953]  dump_stack_lvl+0x76/0xa0
+[  661.840786]  dump_stack+0x10/0x20
+[  661.840824]  dump_header+0x49/0x210
+[  661.840879]  oom_kill_process+0x118/0x280
+[  661.840924]  ? oom_evaluate_task+0x143/0x1e0
+[  661.840964]  out_of_memory+0x103/0x350
+[  661.841013]  __alloc_pages_may_oom+0x10c/0x1d0
+[  661.841068]  __alloc_pages_slowpath.constprop.0+0x4d9/0xa70
+[  661.841116]  __alloc_pages+0x31f/0x350
+[  661.841210]  alloc_pages_mpol+0x91/0x210
+[  661.841267]  vma_alloc_folio+0x64/0xd0
+[  661.841302]  alloc_anon_folio+0x1cc/0x340
+[  661.841351]  do_anonymous_page+0x6c/0x430
+[  661.841387]  handle_pte_fault+0x1cb/0x1d0
+[  661.841418]  __handle_mm_fault+0x654/0x790
+[  661.841471]  handle_mm_fault+0x18a/0x380
+[  661.841506]  do_user_addr_fault+0x169/0x670
+[  661.841550]  exc_page_fault+0x83/0x1b0
+[  661.841598]  asm_exc_page_fault+0x27/0x30
+[  661.841862] RIP: 0033:0x77c46d38984a
+[  661.843700] Code: c5 fe 7f 07 c5 fe 7f 47 20 c5 fe 7f 47 40 c5 fe 7f 47 60 c5 f8 77 c3 66 0f 1f 84 00 00 00 00 00 40 0f b6 c6 48 89 d1 48 89 fa <f3> aa 48 89 d0 c5 f8 77 c3 66 66 2e 0f 1f 84 00 00 00 00 00 66 90
+[  661.844207] RSP: 002b:00007ffdcba1e1f8 EFLAGS: 00000206
+[  661.845261] RAX: 0000000000000000 RBX: 0000000029758780 RCX: 000000000fc1e020
+[  661.845303] RDX: 000077c44ac3a020 RSI: 0000000000000000 RDI: 000077c44b01c000
+[  661.845336] RBP: 00007ffdcba1e280 R08: 00000000ffffffff R09: 0000000000000000
+[  661.845370] R10: 0000000000000022 R11: 0000000000000246 R12: 000000000000001a
+[  661.845402] R13: 0000000000000000 R14: 0000000000000000 R15: 000077c46d514000
+[  661.845663]  </TASK>
+[  661.846142] Mem-Info:
+[  661.846750] active_anon:48426 inactive_anon:42106 isolated_anon:0
+                active_file:8 inactive_file:21 isolated_file:0
+                unevictable:6823 dirty:0 writeback:0
+                slab_reclaimable:2489 slab_unreclaimable:9901
+                mapped:2198 shmem:244 pagetables:731
+                sec_pagetables:0 bounce:0
+                kernel_misc_reclaimable:0
+                free:1021 free_pcp:110 free_cma:0
+[  661.847806] Node 0 active_anon:193704kB inactive_anon:168424kB active_file:32kB inactive_file:84kB unevictable:27292kB isolated(anon):0kB isolated(file):0kB mapped:8792kB dirty:0kB writeback:0kB shmem:976kB shmem_thp:0kB shmem_pmdmapped:0kB anon_thp:0kB writeback_tmp:0kB kernel_stack:2080kB pagetables:2924kB sec_pagetables:0kB all_unreclaimable? yes
+[  661.848194] Node 0 DMA free:1708kB boost:0kB min:92kB low:112kB high:132kB reserved_highatomic:0KB active_anon:2268kB inactive_anon:11192kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15992kB managed:15360kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[  661.848722] lowmem_reserve[]: 0 404 404 404 404
+[  661.848956] Node 0 DMA32 free:2376kB boost:0kB min:2524kB low:3152kB high:3780kB reserved_highatomic:0KB active_anon:191436kB inactive_anon:157232kB active_file:32kB inactive_file:84kB unevictable:27292kB writepending:0kB present:507760kB managed:452856kB mlocked:27292kB bounce:0kB free_pcp:440kB local_pcp:440kB free_cma:0kB
+[  661.849037] lowmem_reserve[]: 0 0 0 0 0
+[  661.849337] Node 0 DMA: 3*4kB (UM) 2*8kB (ME) 3*16kB (UE) 1*32kB (M) 1*64kB (U) 2*128kB (M) 3*256kB (UM) 1*512kB (U) 0*1024kB 0*2048kB 0*4096kB = 1708kB
+[  661.850218] Node 0 DMA32: 48*4kB (U) 77*8kB (U) 46*16kB (UME) 6*32kB (UE) 2*64kB (M) 4*128kB (UM) 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 2376kB
+[  661.850797] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  661.850935] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  661.851017] 2467 total pagecache pages
+[  661.851089] 0 pages in swap cache
+[  661.851172] Free swap  = 0kB
+[  661.851204] Total swap = 0kB
+[  661.851871] 130938 pages RAM
+[  661.851924] 0 pages HighMem/MovableOnly
+[  661.851967] 13884 pages reserved
+[  661.851997] 0 pages hwpoisoned
+[  661.852116] Tasks state (memory values in pages):
+[  661.852159] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[  661.852737] [    305]     0   305     8519     1045      256      787         2    90112        0          -250 systemd-journal
+[  661.853003] [    362]     0   362    72240     6784     4608     2176         0   114688        0         -1000 multipathd
+[  661.853053] [    370]     0   370     6489     1280      640      640         0    73728        0         -1000 systemd-udevd
+[  661.853099] [    484]   991   484     5368     1248      512      736         0    86016        0             0 systemd-resolve
+[  661.853209] [    492]   996   492    22759      992      224      768         0    81920        0             0 systemd-timesyn
+[  661.853255] [    616]   998   616     4753     1024      288      736         0    77824        0             0 systemd-network
+[  661.853299] [    662]     0   662     1807      608       64      544         0    61440        0             0 cron
+[  661.853341] [    663]   101   663     2447     1088      192      896         0    57344        0          -900 dbus-daemon
+[  661.853384] [    667]     0   667     1936      576       64      512         0    57344        0             0 host-queue
+[  661.853515] [    668]   989   668    77045     1056      224      832         0    98304        0             0 polkitd
+[  661.853565] [    677]     0   677     4407      960      224      736         0    77824        0             0 systemd-logind
+[  661.853610] [    688]     0   688   117237     1440      544      896         0   143360        0             0 udisksd
+[  661.853654] [    700]     0   700     1936      576       64      512         0    65536        0             0 bash
+[  661.853696] [    738]     0   738     1531      416        0      416         0    49152        0             0 timeout
+[  661.853738] [    739]     0   739     1936      301       45      256         0    61440        0             0 bash
+[  661.853781] [    743]     0   743     2094      704      192      512         0    53248        0             0 mkqnximage
+[  661.853823] [    744]   102   744    55629     1216      352      864         0    81920        0             0 rsyslogd
+[  661.853866] [    796]     0   796    98025     1344      512      832         0   131072        0             0 ModemManager
+[  661.853909] [    799]     0   799     1538      480       32      448         0    57344        0             0 agetty
+[  661.853953] [    803]     0   803    27504     3200     2336      864         0   114688        0             0 unattended-upgr
+[  661.853996] [    839]     0   839     1527      448       32      416         0    49152        0             0 agetty
+[  661.854039] [    915]     0   915   100170     2319     1455      864         0   237568        0             0 fwupd
+[  661.854083] [   1499]     0  1499     1969      608       96      512         0    53248        0             0 builddisk
+[  661.854140] [   1509]     0  1509     1294      576      128      448         0    53248        0             0 mkifs
+[  661.854187] [   1513]     0  1513      701      448        0      448         0    45056        0             0 sh
+[  661.854229] [   1514]     0  1514     1282      512       64      448         0    53248        0             0 qcc
+[  661.854270] [   1515]     0  1515   147230    80859    80426      433         0   704512        0             0 x86_64-pc-nto-q
+[  661.854315] [   1521]     0  1521     1529      416        0      416         0    57344        0             0 sleep
+[  661.854544] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/system.slice/host-queue.service,task=x86_64-pc-nto-q,pid=1515,uid=0
+[  661.857340] Out of memory: Killed process 1515 (x86_64-pc-nto-q) total-vm:588920kB, anon-rss:321704kB, file-rss:1732kB, shmem-rss:0kB, UID:0 pgtables:688kB oom_score_adj:0
+[  664.013116] oom_reaper: reaped process 1515 (x86_64-pc-nto-q), now anon-rss:84kB, file-rss:44kB, shmem-rss:0kB

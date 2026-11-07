@@ -1,0 +1,38 @@
+2026-11-07T12:37:13Z
+   1523       1    1523  3732 Ss   /bin/bash /usr/local/sbin/host-queue
+# /etc/systemd/system/host-queue.service
+[Unit]
+Description=Trusted local host shared command queue
+After=network-online.target
+Wants=network-online.target
+[Service]
+ExecStart=/usr/local/sbin/host-queue
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+#!/bin/bash
+set -u
+mkdir -p /mnt/host
+mountpoint -q /mnt/host || mount -t 9p -o trans=virtio,version=9p2000.L,msize=262144 hostshare /mnt/host
+printf 'ready %s
+' "$(date --iso-8601=seconds)" > /mnt/host/ready
+while :; do
+ for cmd in /mnt/host/queue/*.sh; do
+  [ -f "$cmd" ] || continue
+  id=$(basename "$cmd" .sh)
+  mv "$cmd" "$cmd.running"
+  bash "$cmd.running" > "/mnt/host/results/$id.log" 2>&1
+  rc=$?
+  printf '%s
+' "$rc" > "/mnt/host/results/$id.rc.tmp"
+  mv "/mnt/host/results/$id.rc.tmp" "/mnt/host/results/$id.rc"
+  mv "$cmd.running" "$cmd.done"
+ done
+ sleep 1
+done
+ed1a84e2af9d8c6bf693aae5d48b0619375a1e715e6056be5109dd35d76edf27  output/build/ifs.build
+output/build/ifs.build 4965 bytes
+96b6379b235daf756c77c8dfe3079d4108ab663ffd1a277ce47c3192aaddf502  output/build/startup.sh
+output/build/startup.sh 1787 bytes
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  output/ifs.bin
+output/ifs.bin 0 bytes

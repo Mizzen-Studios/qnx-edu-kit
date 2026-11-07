@@ -1,0 +1,17 @@
+{
+  "sdk_qemu_pid": 148248,
+  "stop_controller_exit": 0,
+  "stop_output": [
+    "{'return': {}}",
+    "stopped"
+  ],
+  "qemu_supervisor_exit": 0,
+  "qemu_exit": 0,
+  "qemu_ended": 1794055141.392195,
+  "reaped": true,
+  "no_qemu_running": true,
+  "shared_flock_free": true,
+  "verified_at": "2026-11-07T12:39:07Z",
+  "native_qemu_started": false,
+  "orphan_host_waiter": "stopped after guest was reaped; no queued retry"
+}

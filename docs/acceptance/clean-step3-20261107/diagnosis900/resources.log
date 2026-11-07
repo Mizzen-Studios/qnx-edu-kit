@@ -1,0 +1,80 @@
+2026-11-07T12:30:49Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         164         168           0         146         292
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4152 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:31:27Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         167         145           0         165         290
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4368 R    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:32:04Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         197         100           0         180         259
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4372 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:32:40Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         161         123           0         194         296
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4440 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:33:07Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         144         121           0         212         312
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4440 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:33:32Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         152         113           0         213         305
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4444 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+   1111     743     738  3896 S    /bin/bash /home/qnx/qnx800/host/linux/x86_64/../../common/mkqnximage/opt_scripts/opt_python configure
+2026-11-07T12:33:58Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         163          96           0         218         293
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4444 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:34:26Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         168          90           0         219         288
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4444 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+   1166     743     738  3808 S    /bin/bash /home/qnx/qnx800/host/linux/x86_64/../../common/mkqnximage/opt_scripts/opt_sshd_pregen configure
+2026-11-07T12:34:51Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         153          84           0         241         303
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4444 R    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:35:15Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         141          91           0         246         315
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4448 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+2026-11-07T12:35:38Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         143          73           0         262         314
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  4448 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+   1499     743     738  3648 R    /bin/bash /home/qnx/qnx800/host/linux/x86_64/../../common/mkqnximage/builddisk
+2026-11-07T12:36:10Z
+               total        used        free      shared  buff/cache   available
+Mem:             457         311           9           0         166         146
+Swap:              0           0           0
+    738     700     738  2032 Ss   timeout --kill-after=15 900 mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+    743     738     738  3364 S    /bin/bash /home/qnx/qnx800/host/common/bin/mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
+   1499     743     738  2792 S    /bin/bash /home/qnx/qnx800/host/linux/x86_64/../../common/mkqnximage/builddisk
+   1509    1499     738  2752 S    mkifs -o output output/build/ifs.build output/ifs.bin
+   1513    1509     738  1920 S    sh -c -- qcc -bootstrap -nostdlib -Wl,--no-keep-memory -Vgcc_ntox86_64 -Wl,-z -Wl,"max-page-size=4096" -Wl,--section-start -Wl,.text=0xffff800000002000 -Wl,--no-relax -o"output/procnto-smp-instr.sym" "/home/qnx/qnx800/target/qnx/x86_64/boot/sys/procnto-smp-instr"
+   1514    1513     738  2632 S    qcc -bootstrap -nostdlib -Wl,--no-keep-memory -Vgcc_ntox86_64 -Wl,-z -Wl,max-page-size=4096 -Wl,--section-start -Wl,.text=0xffff800000002000 -Wl,--no-relax -ooutput/procnto-smp-instr.sym /home/qnx/qnx800/target/qnx/x86_64/boot/sys/procnto-smp-instr
+   1515    1514     738 198252 R<  /home/qnx/qnx800/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx8.0.0-ld -dn -Bstatic -plugin=/home/qnx/qnx800/host/linux/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx8.0.0/12.2.0/liblto_plugin.so -plugin-opt=/home/qnx/qnx800/host/linux/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx8.0.0/12.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/file1Ds55V_qcc_1514/tmp_qcc_1514.res --sysroot=/home/qnx/qnx800/target/qnx/x86_64/ -T/home/qnx/qnx800/target/qnx/x86_64/lib/nto.link --no-keep-memory -z max-page-size=4096 --section-start .text=0xffff800000002000 --no-relax /home/qnx/qnx800/target/qnx/x86_64/boot/sys/procnto-smp-instr -o output/procnto-smp-instr.sym -rpath-link /home/qnx/qnx800/target/qnx/x86_64/lib:/home/qnx/qnx800/target/qnx/x86_64/usr/lib:/home/qnx/qnx800/target/qnx/x86_64/lib/gcc/12.2.0:/home/qnx/qnx800/target/qnx/x86_64/opt/lib -Y/home/qnx/qnx800/target/qnx/x86_64/lib:/home/qnx/qnx800/target/qnx/x86_64/usr/lib:/home/qnx/qnx800/target/qnx/x86_64/opt/lib -L/home/qnx/qnx800/host/linux/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx8.0.0/12.2.0 -L/home/qnx/qnx800/target/qnx/x86_64/lib/gcc/12.2.0 -L/home/qnx/qnx800/target/qnx/usr/x86_64-pc-nto-qnx8.0.0/lib -L/home/qnx/qnx800/target/qnx/x86_64/lib -L/home/qnx/qnx800/target/qnx/x86_64/usr/lib -L/home/qnx/qnx800/target/qnx/x86_64/opt/lib

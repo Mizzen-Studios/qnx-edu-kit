@@ -1,0 +1,12 @@
+2026-11-07T12:37:27Z
+Nov 07 12:30:06 qnx-linux-fallback systemd[1]: Started host-queue.service - Trusted local host shared command queue.
+Nov 07 12:36:30 qnx-linux-fallback systemd[1]: host-queue.service: A process of this unit has been killed by the OOM killer.
+Nov 07 12:36:32 qnx-linux-fallback systemd[1]: host-queue.service: Failed with result 'oom-kill'.
+Nov 07 12:36:32 qnx-linux-fallback systemd[1]: host-queue.service: Consumed 2min 56.030s CPU time.
+Nov 07 12:36:32 qnx-linux-fallback systemd[1]: host-queue.service: Scheduled restart job, restart counter is at 1.
+Nov 07 12:36:33 qnx-linux-fallback systemd[1]: Started host-queue.service - Trusted local host shared command queue.
+Result=success
+NRestarts=1
+OOMPolicy=stop
+ExecMainCode=0
+ExecMainStatus=0

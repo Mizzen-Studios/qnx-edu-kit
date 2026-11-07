@@ -4,7 +4,7 @@
 
 ## Narrow platform and prerequisites
 
-Licensed Linux x86_64 SDP 8 and Generic x86_64 components; QEMU x86_64 pc TCG. Scope: PCI attachment, BAR0 ID and complement only. Not QSTI, IRQ, DMA, security policy, resource managers or C6 (STOPPED).
+Attempted version scope: licensed Linux x86_64 SDP 8, Generic x86_64 BSP 0.0.1.00050T202311201204L and mkqnximage 0.5.0.00132T202605281115L; QEMU x86_64 pc TCG. This is an attempted configuration, **not a supported/portable PASS**. Scope: PCI attachment, BAR0 ID and complement only. Not QSTI, IRQ, DMA, security policy, resource managers or C6 (STOPPED).
 
 Bring an already installed licensed SDP/BSP. No login, paid downloads, installation, activation or licence changes. An ARM host can use an existing x86_64 SDK VM. Serialize all SDK/native QEMU under the same flock: CPUQuota=100%, MemoryMax=1G, nice 15, one vCPU, 512 MiB guest. Never use the older 200%/4G launcher or increase caps.
 
@@ -37,4 +37,4 @@ Stop/reap SDK before target QEMU. Hold the same flock across phases, clean up ev
 
 ## Actual bounded attempt
 
-See [receipts](acceptance/clean-step3-20261107/NOTES.md): both edited sources compiled, but clean generic image generation reached IFS then its bounded termination (zero-byte IFS). No native runs. This is not a proven OOM, missing SDK or portable bootstrap PASS.
+See [receipts](acceptance/clean-step3-20261107/NOTES.md): both edited sources compiled. The initial 240-second attempt alone did not establish an external blocker. A focused fresh-directory 900-second attempt under identical caps then proved **guest OOM killing the stock kernel linker**, before its timeout; zero-byte IFS. Kernel and service oom-kill receipts are in diagnosis900/. The OOM-stopped queue/controller could not deliver a normal build exit code; this limitation is explicit. No native runs or portable bootstrap PASS. No private kernel stripping, swap/cap increase or licensing change was attempted.
