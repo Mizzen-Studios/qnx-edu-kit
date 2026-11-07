@@ -1,0 +1,210 @@
+{
+  "schema": "edu-route-independent-paths.v1",
+  "tested_commit": "3a4821b62170bf572d9d8aacb668c6063b059ebb",
+  "scope": "host-only commands and path checks; NO guest, native build or rerun; not a fresh SDK installation or second-SDK portability proof",
+  "chosen_paths": {
+    "EDU_REPO": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/checkout",
+    "EDU_WORK": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/learner",
+    "EDU_SDP_ENV": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/legal-inputs/qnx800/qnxsdp-env.sh",
+    "EDU_PLATFORM": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/clean-platform",
+    "EDU_ACTIVE": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/learner-active",
+    "EDU_QEMU": "/usr/bin/qemu-system-x86_64",
+    "EDU_NATIVE_LOCK": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/native-test.lock",
+    "EDU_LIVE_QTEST": "0"
+  },
+  "instructions": {
+    "README.md": "aafb3aeb70fe3686f5f0ec97c13eb3ec883adbbe82dd54da8c472c6adae9c1a0",
+    "codelab/codelab.md": "8d69df42f362882156e05b7dbc927da19ad6e5e32682b85c4e0f798806e5f1cf",
+    "docs/learner-route.md": "9c0e2afeb99cf6a94f902b0c8a8afb68baf1a8d5b634b0567acf37ba36510b0e",
+    "scripts/learner_lab.py": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+    "scripts/learner_clean_preflight.py": "ce7b34699886c0aa700e67d4d9758f4b1c26602f5cdc97cce6257f2f7d84a4bb",
+    "scripts/learner-step3.build.in": "c4156001caed8b370d1a07d0e04745e06b2d37c06ceb87e05687d06f67d905ff"
+  },
+  "shell_blocks": [
+    {
+      "index": 0,
+      "sha256": "abaa4f81450517087d3b6f49327a82b5d295b563c2374fae6bc505e71fd9bcfd",
+      "exact_text": "export EDU_REPO=/absolute/path/to/qnx-edu-kit\nexport EDU_WORK=/absolute/external/edu-learner\nexport EDU_SDP_ENV=/absolute/licensed/qnx800/qnxsdp-env.sh\nexport EDU_PLATFORM=/absolute/external/new-clean-platform\nexport EDU_ACTIVE=/absolute/external/learner-active\nexport EDU_QEMU=/absolute/path/to/qemu-system-x86_64\nexport EDU_NATIVE_LOCK=/absolute/external/native-test.lock\nexport PATH=\"$(dirname \"$EDU_QEMU\"):$PATH\"\npython3 \"$EDU_REPO/scripts/learner_lab.py\" --help\npython3 \"$EDU_REPO/scripts/learner_clean_preflight.py\" --sdp-env \"$EDU_SDP_ENV\" --fresh-work \"$EDU_PLATFORM\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 1,
+      "sha256": "c8e4912224b3d8f49a71fbbc044ed678357c42352d32f991fb262673b0194a8e",
+      "exact_text": "\"$EDU_QEMU\" --version\ncommand -v flock\ncommand -v systemd-run\nsystemctl --user show-environment >/dev/null\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 2,
+      "sha256": "6fe13c1db34b60c7017656753b3d7ae3ff9a5522ad0920f977f3886c18408385",
+      "exact_text": "python3 \"$EDU_REPO/scripts/learner_lab.py\" init --stage step3 --work \"$EDU_WORK/step3\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 3,
+      "sha256": "ef50b0dd2fb9a9bd9c7ff7e4df577946b26efbdff29540793fd9e1aa5b06963a",
+      "exact_text": "source \"$EDU_SDP_ENV\"\nmkdir -p \"$EDU_ACTIVE\"\nqcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o \"$EDU_ACTIVE/learner_bin\" \"$EDU_WORK/step3/main.c\" -lpci\nprintf '#!/bin/sh\\nexit 2\\n' > \"$EDU_ACTIVE/learner-start.sh\"\nmkdir \"$EDU_PLATFORM\"\ncd \"$EDU_PLATFORM\"\nmkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none\nmkdir -p local/snippets\nsed \"s|@OUT@|$EDU_ACTIVE|g\" \"$EDU_REPO/scripts/learner-step3.build.in\" > local/snippets/ifs_files.learner\nprintf 'waitfor /dev/pci/server_id_1 30\\nsh /proc/boot/learner-start.sh\\n' > local/snippets/post_start.learner\nmkqnximage --build\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 4,
+      "sha256": "7b94be0fbc3280aa647c08e0c2f154e81c009d98a8903c99abe020784605f631",
+      "exact_text": "python3 \"$EDU_REPO/scripts/learner_lab.py\" build --stage step3 --source \"$EDU_WORK/step3/main.c\" --out \"$EDU_ACTIVE\" --sdp-env \"$EDU_SDP_ENV\" --buildfile \"$EDU_PLATFORM/output/build/ifs.build\" --bsp-cwd \"$EDU_PLATFORM\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 5,
+      "sha256": "907ecbc4880e378a7bde0ffa03908cccc921d68b351cdd24fd080215244a19df",
+      "exact_text": "flock \"$EDU_NATIVE_LOCK\" env EDU_NATIVE_LOCK=\"$EDU_NATIVE_LOCK\" EDU_NATIVE_LEASE=granted python3 \"$EDU_REPO/scripts/learner_lab.py\" run --stage step3 --source \"$EDU_WORK/step3/main.c\" --bundle \"$EDU_ACTIVE\" --disk \"$EDU_PLATFORM/output/disk-qemu\" --receipt \"$EDU_WORK/step3/wrong\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 6,
+      "sha256": "9333bfddfed3fa127c2934db26ba01072a87238402d05b62cd95dc83ec5efbfc",
+      "exact_text": "python3 \"$EDU_REPO/scripts/learner_lab.py\" init --stage step6 --work \"$EDU_WORK/finish\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    },
+    {
+      "index": 7,
+      "sha256": "206ab99b0317faeb2d70287a2afcc337a69c2c228f7f9e617c79b95ea93c7089",
+      "exact_text": "python3 \"$EDU_REPO/scripts/learner_lab.py\" build --stage step6 --source \"$EDU_WORK/finish/main.c\" --out \"$EDU_ACTIVE\" --sdp-env \"$EDU_SDP_ENV\" --buildfile \"$EDU_PLATFORM/output/build/ifs.build\" --bsp-cwd \"$EDU_PLATFORM\"\nflock \"$EDU_NATIVE_LOCK\" env EDU_NATIVE_LOCK=\"$EDU_NATIVE_LOCK\" EDU_NATIVE_LEASE=granted python3 \"$EDU_REPO/scripts/learner_lab.py\" run --stage step6 --source \"$EDU_WORK/finish/main.c\" --bundle \"$EDU_ACTIVE\" --disk \"$EDU_PLATFORM/output/disk-qemu\" --receipt \"$EDU_WORK/finish/result\"\n",
+      "syntax": "PASS bash -n",
+      "execution": "only individual host commands listed in records; legal build/native commands NOT_RUN"
+    }
+  ],
+  "records": [
+    {
+      "command": "python3 \"$EDU_REPO/scripts/learner_lab.py\" --help",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only CLI/path",
+      "stdout": "usage: learner_lab.py [-h] {init,build,run} ...\n\nLearner-owned step3 and /dev/edu finish. No reference/saved-log input mode.\n\npositional arguments:\n  {init,build,run}\n\noptions:\n  -h, --help        show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "command": "\"$EDU_QEMU\" --version",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "version only; no guest",
+      "stdout": "QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)\nCopyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers\n",
+      "stderr": ""
+    },
+    {
+      "command": "command -v flock",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only utility/session presence; not effective caps",
+      "stdout": "/usr/bin/flock\n",
+      "stderr": ""
+    },
+    {
+      "command": "command -v systemd-run",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only utility/session presence; not effective caps",
+      "stdout": "/usr/bin/systemd-run\n",
+      "stderr": ""
+    },
+    {
+      "command": "systemctl --user show-environment >/dev/null",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only utility/session presence; not effective caps",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python3 \"$EDU_REPO/scripts/learner_clean_preflight.py\" --sdp-env \"$EDU_SDP_ENV\" --fresh-work \"$EDU_PLATFORM\"",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "scope": "BLOCKED legal setup; no installed SDP at supplied independent path",
+      "stdout": "{\n  \"kind\": \"clean-step3-preflight-v1\",\n  \"platform\": \"QNX 8 x86_64 / QEMU pc TCG\",\n  \"checks\": {\n    \"sdp_env_exists\": false,\n    \"fresh_workspace\": true,\n    \"python3\": true\n  },\n  \"portability\": \"UNVERIFIED\",\n  \"native_acceptance\": \"NOT_RUN\",\n  \"ready_for_clean_build_attempt\": false,\n  \"limits\": \"all SDK/native QEMU: shared flock; CPU 100%; memory 1 GiB; nice 15; 1 vCPU; 512 MiB guest\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 \"$EDU_REPO/scripts/learner_lab.py\" init --stage step3 --work \"$EDU_WORK/step3\"",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "isolated host-only starter-copy command; not route progression past blocker",
+      "stdout": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/learner/step3/main.c\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 \"$EDU_REPO/scripts/learner_lab.py\" init --stage step6 --work \"$EDU_WORK/finish\"",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "isolated host-only starter-copy command; not route progression past blocker",
+      "stdout": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/learner/finish/main.c\n",
+      "stderr": ""
+    },
+    {
+      "command": "cd \"$EDU_REPO\" && ./verify.sh --host-only",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "existing host suite only; no target rerun",
+      "stdout": "PYTHONDONTWRITEBYTECODE=1 python3 tools/step_sources.py --check\nCHECKED: twelve E1-derived source snapshots current (host contract only)\n./scripts/check-no-sdk.sh\nPASS: redistribution guard only (not a QNX test)\nPYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v\nSKIP: live QNX checks (explicit host-only); no target acceptance claimed.\n",
+      "stderr": "test_declarations_and_pinned_evidence_current (test_capability_ledger.CapabilityLedger.test_declarations_and_pinned_evidence_current) ... ok\ntest_invalid_missing_and_changed_evidence_rejected (test_capability_ledger.CapabilityLedger.test_invalid_missing_and_changed_evidence_rejected) ... ok\ntest_readme_status_use_canonical_ledger (test_capability_ledger.CapabilityLedger.test_readme_status_use_canonical_ledger) ... ok\ntest_actual_official_claat_export (test_codelab_export.CodelabExport.test_actual_official_claat_export) ... skipped 'opt-in: pinned official claat cache required'\ntest_bad_binary_rejected_before_execution (test_codelab_export.CodelabExport.test_bad_binary_rejected_before_execution) ... ok\ntest_escape_missing_and_external_links (test_codelab_export.CodelabExport.test_escape_missing_and_external_links) ... ok\ntest_missing_binary_does_not_download_implicitly (test_codelab_export.CodelabExport.test_missing_binary_does_not_download_implicitly) ... ok\ntest_output_inside_checkout_refused (test_codelab_export.CodelabExport.test_output_inside_checkout_refused) ... ok\ntest_prepare_preserves_content_except_relative_paths (test_codelab_export.CodelabExport.test_prepare_preserves_content_except_relative_paths) ... ok\ntest_all_steps_block_even_with_environment_claims (test_foundation.LiveGate.test_all_steps_block_even_with_environment_claims) ... ok\ntest_invalid_step_rejected (test_foundation.LiveGate.test_invalid_step_rejected) ... ok\ntest_license (test_foundation.LiveGate.test_license) ... ok\ntest_step_layout (test_foundation.LiveGate.test_step_layout) ... ok\ntest_external_symlink_blocked (test_foundation.RedistributionGuard.test_external_symlink_blocked) ... ok\ntest_forbidden_paths (test_foundation.RedistributionGuard.test_forbidden_paths) ... ok\ntest_ignored_untracked_files_still_blocked (test_foundation.RedistributionGuard.test_ignored_untracked_files_still_blocked) ... ok\ntest_invalid_root_fails (test_foundation.RedistributionGuard.test_invalid_root_fails) ... ok\ntest_markers_beyond_prefix_and_across_chunks (test_foundation.RedistributionGuard.test_markers_beyond_prefix_and_across_chunks) ... ok\ntest_plain_source_allowed (test_foundation.RedistributionGuard.test_plain_source_allowed) ... ok\ntest_renamed_binaries_and_archives (test_foundation.RedistributionGuard.test_renamed_binaries_and_archives) ... ok\ntest_existing_work_refused (test_learner_clean_bootstrap.CleanBootstrapTests.test_existing_work_refused) ... ok\ntest_missing_licensed_component_blocks (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_licensed_component_blocks) ... ok\ntest_missing_sdk_is_blocked_not_native_pass (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_sdk_is_blocked_not_native_pass) ... ok\ntest_probe_does_not_launch_or_install (test_learner_clean_bootstrap.CleanBootstrapTests.test_probe_does_not_launch_or_install) ... ok\ntest_real_qnx8_layout_is_accepted_without_usr_prefix (test_learner_clean_bootstrap.CleanBootstrapTests.test_real_qnx8_layout_is_accepted_without_usr_prefix) ... ok\ntest_finish_and_bar_manifests_are_not_interchangeable (test_learner_dev_edu.FinishTests.test_finish_and_bar_manifests_are_not_interchangeable) ... ok\ntest_finish_initializes_actual_todo_and_preserves_edits (test_learner_dev_edu.FinishTests.test_finish_initializes_actual_todo_and_preserves_edits) ... ok\ntest_finish_requires_bound_normal_io_and_irq (test_learner_dev_edu.FinishTests.test_finish_requires_bound_normal_io_and_irq) ... ok\ntest_finish_wrapper_uses_real_device_io (test_learner_dev_edu.FinishTests.test_finish_wrapper_uses_real_device_io) ... ok\ntest_actual_readback_and_exit_required (test_learner_lab.LearnerTests.test_actual_readback_and_exit_required) ... ok\ntest_build_compiles_snapshot_and_rebuilds_image (test_learner_lab.LearnerTests.test_build_compiles_snapshot_and_rebuilds_image) ... ok\ntest_checkout_outputs_forbidden (test_learner_lab.LearnerTests.test_checkout_outputs_forbidden) ... ok\ntest_identified_qemu_is_killed_on_cap_rejection (test_learner_lab.LearnerTests.test_identified_qemu_is_killed_on_cap_rejection) ... ok\ntest_init_copies_todo_and_preserves_edits (test_learner_lab.LearnerTests.test_init_copies_todo_and_preserves_edits) ... ok\ntest_native_refuses_free_lock (test_learner_lab.LearnerTests.test_native_refuses_free_lock) ... ok\ntest_reference_manifest_refused (test_learner_lab.LearnerTests.test_reference_manifest_refused) ... ok\ntest_standalone_sdk_copy_allows_external_build (test_learner_lab.LearnerTests.test_standalone_sdk_copy_allows_external_build) ... ok\ntest_tampered_inputs_refused (test_learner_lab.LearnerTests.test_tampered_inputs_refused) ... ok\ntest_corrupt_image_rejected_before_boot (test_live_verify.FreshOnly.test_corrupt_image_rejected_before_boot) ... ok\ntest_inspects_scope_exec_replaced_root_pid (test_live_verify.FreshOnly.test_inspects_scope_exec_replaced_root_pid) ... ok\ntest_no_polling_resmgr_fallback (test_live_verify.FreshOnly.test_no_polling_resmgr_fallback) ... ok\ntest_no_transcript_replay_argument (test_live_verify.FreshOnly.test_no_transcript_replay_argument) ... ok\ntest_requires_complete_exit_record_and_streams_live (test_live_verify.FreshOnly.test_requires_complete_exit_record_and_streams_live) ... ok\ntest_stale_source_rejected_before_boot (test_live_verify.FreshOnly.test_stale_source_rejected_before_boot) ... ok\ntest_busy_does_not_overwrite (test_model.RegisterModel.test_busy_does_not_overwrite) ... ok\ntest_explicit_mask (test_model.RegisterModel.test_explicit_mask) ... ok\ntest_factorials (test_model.RegisterModel.test_factorials) ... ok\ntest_input_contract (test_model.RegisterModel.test_input_contract) ... ok\ntest_irq_ack_preserves_other_sources (test_model.RegisterModel.test_irq_ack_preserves_other_sources) ... ok\ntest_liveness_width (test_model.RegisterModel.test_liveness_width) ... ok\ntest_mask_boundary (test_model.RegisterModel.test_mask_boundary) ... ok\ntest_no_spurious_completion (test_model.RegisterModel.test_no_spurious_completion) ... ok\ntest_source_label (test_model.RegisterModel.test_source_label) ... ok\ntest_busy_reprobe_fails_closed (test_model.RestartDesign.test_busy_reprobe_fails_closed) ... ok\ntest_double_attach_rejected (test_model.RestartDesign.test_double_attach_rejected) ... ok\ntest_partial_acquisition_unwinds (test_model.RestartDesign.test_partial_acquisition_unwinds) ... ok\ntest_reprobe_drains_stale_status (test_model.RestartDesign.test_reprobe_drains_stale_status) ... ok\ntest_stop_idempotent (test_model.RestartDesign.test_stop_idempotent) ... ok\ntest_dma_rejects_fractional_and_boolean (test_model.ReviewRegressions.test_dma_rejects_fractional_and_boolean) ... ok\ntest_failed_setup_never_publishes (test_model.ReviewRegressions.test_failed_setup_never_publishes) ... ok\ntest_publish_after_drain (test_model.ReviewRegressions.test_publish_after_drain) ... ok\ntest_reprobe_preserves_unowned_status (test_model.ReviewRegressions.test_reprobe_preserves_unowned_status) ... ok\ntest_codelab_structure (test_packaging.Packaging.test_codelab_structure) ... ok\ntest_eight_accessible_diagrams_and_sources (test_packaging.Packaging.test_eight_accessible_diagrams_and_sources) ... ok\ntest_local_links (test_packaging.Packaging.test_local_links) ... ok\ntest_no_external_runtime_assets (test_packaging.Packaging.test_no_external_runtime_assets) ... ok\ntest_policy_not_fake_validation (test_packaging.Packaging.test_policy_not_fake_validation) ... ok\ntest_render_current (test_packaging.Packaging.test_render_current) ... ok\ntest_six_rich_folder_contracts (test_packaging.Packaging.test_six_rich_folder_contracts) ... ok\ntest_cap_failure_has_no_uncapped_retry (test_qemu_capped.CappedLauncherTests.test_cap_failure_has_no_uncapped_retry) ... ok\ntest_exact_cap_and_argument_boundaries (test_qemu_capped.CappedLauncherTests.test_exact_cap_and_argument_boundaries) ... ok\ntest_missing_command (test_qemu_capped.CappedLauncherTests.test_missing_command) ... ok\ntest_actual_elf_bytes_not_only_escaped_markers (test_qsc_hygiene.QSCHygiene.test_actual_elf_bytes_not_only_escaped_markers) ... ok\ntest_qsc_credential_paths_and_installer (test_qsc_hygiene.QSCHygiene.test_qsc_credential_paths_and_installer) ... ok\ntest_actual_installed_qemu (test_qtest_live.QtestLive.test_actual_installed_qemu) ... skipped 'set EDU_LIVE_QTEST=1 for actual QEMU'\ntest_requires_opt_in (test_qtest_live.QtestLive.test_requires_opt_in) ... ok\ntest_all_sources_and_generated_pages_covered (test_review_packet.ReviewPacket.test_all_sources_and_generated_pages_covered) ... ok\ntest_no_archival_commit_promoted_to_tested_commit (test_review_packet.ReviewPacket.test_no_archival_commit_promoted_to_tested_commit) ... ok\ntest_raw_success_and_negative_control_not_interchanged (test_review_packet.ReviewPacket.test_raw_success_and_negative_control_not_interchanged) ... ok\ntest_receipt_and_surface_inventory_current (test_review_packet.ReviewPacket.test_receipt_and_surface_inventory_current) ... ok\ntest_compile_receipt_covers_exact_current_snapshots_only (test_step_sources.StepSources.test_compile_receipt_covers_exact_current_snapshots_only) ... ok\ntest_snapshot_drift_rejected_before_live_gate (test_step_sources.StepSources.test_snapshot_drift_rejected_before_live_gate) ... ok\ntest_solutions_stop_at_their_boundary (test_step_sources.StepSources.test_solutions_stop_at_their_boundary) ... ok\ntest_starters_refuse_the_missing_boundary (test_step_sources.StepSources.test_starters_refuse_the_missing_boundary) ... ok\ntest_step1_starter_host_syntax_only (test_step_sources.StepSources.test_step1_starter_host_syntax_only) ... ok\ntest_twelve_snapshots_match_unchanged_e1 (test_step_sources.StepSources.test_twelve_snapshots_match_unchanged_e1) ... ok\ntest_warning_inside_first_step_and_no_can_course (test_step_sources.StepSources.test_warning_inside_first_step_and_no_can_course) ... ok\n\n----------------------------------------------------------------------\nRan 87 tests in 2.507s\n\nOK (skipped=2)\n"
+    },
+    {
+      "command": "python3 \"$EDU_REPO/tools/capability_ledger.py\"",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only existing gate",
+      "stdout": "PASS: capability declarations current; not new runtime proof\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 \"$EDU_REPO/scripts/render_site.py\" --check",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only existing gate",
+      "stdout": "PASS: local static rendering current (not claat or QNX verification)\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 \"$EDU_REPO/docs/review/build_packet.py\" --check",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only existing gate",
+      "stdout": "PASS: review source/site hashes and receipt inventory current (offline inspection only)\n",
+      "stderr": ""
+    },
+    {
+      "command": "git -C \"$EDU_REPO\" diff --check",
+      "cwd": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/workdir",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "scope": "host-only existing gate",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "legal_setup": {
+    "status": "BLOCKED",
+    "missing": [
+      "supplied trusted licensed SDP environment at /home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-route-independent-20261107/legal-inputs/qnx800/qnxsdp-env.sh",
+      "compatible legal stock Generic x86_64 BSP in this independent environment",
+      "matching generated output/build/ifs.build and output/disk-qemu"
+    ],
+    "existing_sdk": "Existing licensed SDK is inside stopped private x86 SDK guest, deliberately not booted or copied; no installation, activation or licence changes.",
+    "consequence": "qcc/mkqnximage/mkifs builds and step3 wrong/fix plus learner /dev/edu native runs NOT_RUN. Historical native receipts unchanged."
+  }
+}
