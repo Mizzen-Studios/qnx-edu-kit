@@ -17,6 +17,10 @@ Test shared/unrelated IRQ, stale status, timeout, missing ability and repeated a
 
 ## Gate
 
-Host: make check-step5 remains BLOCKED (script exit 2). Preserve raw target transcript, versions, source revision and errors. Host-model results do not replace this gate.
+Host: make check-step5 launches a fresh source/image-bound accumulated target run when the external bundle and exclusive lease are supplied. Without them it remains BLOCKED (exit 2). Preserve raw target transcript, versions, source revision and errors. Host-model results do not replace this gate.
 
 [Return to codelab](../../../codelab/codelab.md).
+
+## Source entry
+
+main.c deliberately returns2 until the learner implements the documented contract. Compare the original solution only after attempting the exercise.

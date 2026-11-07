@@ -61,7 +61,7 @@ class LiveGate(unittest.TestCase):
         for step in range(1, 7):
             with self.subTest(step=step):
                 result = subprocess.run([str(ROOT / 'scripts/check-step.sh'), str(step)], capture_output=True, text=True,
-                                        env={**os.environ, 'QNX_TARGET': '/made/up', 'QNX_HOST': '/made/up', 'LIVE_VERIFIED': '1'})
+                                        env={**os.environ, 'EDU_LIVE_BUNDLE':'', 'EDU_NATIVE_LEASE':'', 'QNX_TARGET': '/made/up', 'QNX_HOST': '/made/up', 'LIVE_VERIFIED': '1'})
                 self.assertEqual(result.returncode, 2)
                 self.assertIn('BLOCKED:', result.stdout)
                 self.assertNotIn('PASS', result.stdout)
