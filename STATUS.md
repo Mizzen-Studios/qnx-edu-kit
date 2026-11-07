@@ -83,3 +83,5 @@ Supported canonical route observed on one existing licensed SDK: [supported-boot
 ## 21:05 follow-up boundaries
 
 Single licensed Linux x86_64 host is the default route; constrained split-host VM/swap/service instructions are optional. Existing SDK reused; a clean second installation remains BLOCKED unless cached free NC entitlement and complete legal offline inputs can be established without login or licensing interaction. No native feature/sshd fix, capture or publication. Historical runtime pins and the 20:03 accepted conditional gate remain unchanged.
+
+21:05 bounded follow-up result: fresh non-owner-path host87/85pass/2skip; canonical instructions5876304. Second SDK BLOCKED at read-only metadata/entitlement boundary, no install/login/licence change. Renewed unchanged baseline and separate traced image reproduce sshd Memory fault/core; internal cause UNVERIFIED, no fix or platform-health claim. No new slog2/backtrace. Guests stopped/reaped, lease free. [Exact follow-up receipts](docs/acceptance/portability-20261107/NOTES.md).

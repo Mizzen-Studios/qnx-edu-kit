@@ -1,0 +1,26 @@
+{
+  "existing_sdk_reused": true,
+  "new_install": false,
+  "second_sdk": "BLOCKED",
+  "queued_job": "1794085837344024336",
+  "controller": "guestctl-capped.py",
+  "transport_wait_seconds": 240,
+  "transport_exit": 124,
+  "result": "read-only cached inventory did not terminate within bounded attempt; no entitlement established",
+  "blocker": "Existing SDK guest boot reached queue and inventory ran, but no terminal result/entitlement evidence before bounded shutdown. Host cache contains QSC installer only, not established complete SDP8 offline packages. Need independently confirmed free NC second-install entitlement and complete legally available inputs requiring no login/licence interaction; otherwise owner must separately authorize interaction. No account sync/login/activation attempted.",
+  "caps": {
+    "cpu": "100000 100000",
+    "memory": "1073741824",
+    "nice": 15,
+    "guest_vcpu": 1,
+    "guest_memory_mib": 512
+  },
+  "no_sdk_files_in_repo": true,
+  "no_licence_change": true,
+  "initial_failure_preserved": true,
+  "raw_serial_external": "/home/ubuntu/qnx-host/diagnosis-2105/sdk-serial-final.log",
+  "raw_serial_sha256": "d2e0b137b85cf4d85b35cd8748f71e8b2164a9b0870f27fe2edc54cfa0bf1445",
+  "inspection_script_sha256": "914570fe0865a0f4a59a647283081bbd4d64b6b1ab434adecefc247597a8bde9",
+  "sdk_qemu_stopped_reaped": true,
+  "sdk_qemu_launcher_exit": 0
+}

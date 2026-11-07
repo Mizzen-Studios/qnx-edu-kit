@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "45146349ce347201fdcf1b4d66743d5b271faac4680489f0bffdb58787c623fd",
+      "sha256": "b234dc4e6c041d6deccc77349f47eaf5356cbc118451fc505c272826f15db46d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "b6a0e365b3ee2bed2f834b265c2364a47e65f90de104f3dce150523ddffe6763",
+      "sha256": "7001fcbc2550d3420882062628c8979e52cdf3ff234ea82cf8a024864e5e0958",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -124,6 +124,11 @@
     {
       "path": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
       "sha256": "24bccc10ba3301131c350a6caf79dae21acdff0355626996ee112102d78d474a",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/portability-20261107/NOTES.html",
+      "sha256": "b00c917d205be76d5245dab0f98e522935ce89e8fa39da7e81384cebbdcbad50",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -584,6 +589,11 @@
       "exists": true
     },
     {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/portability-20261107/NOTES.md",
+      "exists": true
+    },
+    {
       "source": "REVIEW.md",
       "target": "docs/review/appendix.json",
       "exists": true
@@ -606,6 +616,11 @@
     {
       "source": "REVIEW.md",
       "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/portability-20261107/NOTES.md",
       "exists": true
     },
     {
@@ -1560,6 +1575,21 @@
     },
     {
       "source": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/portability-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/portability-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/portability-20261107/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },

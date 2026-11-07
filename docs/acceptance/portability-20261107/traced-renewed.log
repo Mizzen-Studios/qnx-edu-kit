@@ -1,0 +1,58 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+# ---> Starting devb
+---> Mounting file systems
+Path=0 - Intel 82371SB
+ target=0 lun=0     Direct-Access(0) -          QEMU HARDDISK    Rev: 2.5+
+Path=1 - Intel 82371SB
+ target=0 lun=0            CD-ROM(5) - QEMU     QEMU DVD-ROM     Rev: 2.5+
+---> Mounting file systems
+---> Starting Networking
++ echo ---> Starting sshd
+---> Starting sshd
++ [ ! -f /data/var/ssh/ssh_host_rsa_key ]
++ [ ! -f /data/var/ssh/ssh_host_ed25519_key ]
++ /system/bin/sshd -f /system/etc/ssh/sshd_config
+Memory fault (core dumped) 
++ qconn
++ echo DIAG_PRIOR_RC=0
+DIAG_PRIOR_RC=0
++ pidin ar
+     pid Arguments
+       1 procnto-smp-instr -mr -d 0777 -u 0777 
+   16386 /bin/sh /proc/boot/startup.sh 
+   16387 slogger2 -U 21:21 
+   28676 pci-server --aspace-enable --config=/proc/boot/pci_server.cfg 
+   49157 devc-ser8250 -e 
+   57351 ksh ksh 
+   61446 fsevmgr 
+   65544 devb-eide cam user=20:20 blk cache=64M,auto=partition,vnode=2000,ncache=2000,commit=low 
+  131081 random -U 22:22 -s /data/var/random/rnd-seed 
+  143370 pipe -U 24:24 
+  155659 devc-pty -U 37:37 
+  159756 dumper -U 30:30 -d /data/var/dumper -M 1000 -D cores 
+  163853 io-sock -m phy -m pci -m usb -d vtnet_pci 
+  225297 dhcpcd: [manager] [ip4] [ip6] -bq -f /system/etc/dhcpcd/dhcpcd.conf -c /system/etc/dhcpcd/dhcpcd-run-hooks 
+  253966 qconn 
+  258063 pidin ar 
++ ls -l /data/var/dumper
+total 15392
+-rw-r-----  1 root 30 7880704 2026-11-07 21:18 sshd.core
++ set +x
+---> Starting misc
+LEARNER_BIND source=42b3cc31935090db26140c62b67a0dd3f7998f81ab226a3103b2ad9df8b9a965 binary=0253b89fa66aa171418f8ba496ec9a57a1e4c600fb770901cba3f5b54b2f0c40
+EDU TARGET QNX 8.0.0 x86pc
+LEARNER PCI_COMMAND=0103
+LEARNER IRQ 10 selected; IAT ownership is transaction-scoped
+LEARNER /dev/edu registered; awaiting real client I/O
+EDU RESMGR IRQ completion=1 input=10 result=3628800 ack=00000000
+LEARNER_DEV_EDU write_rc=0 read_rc=0 result=3628800
+Terminated 
+LEARNER_DAEMON_EXIT=143
+LEARNER_RC=0
