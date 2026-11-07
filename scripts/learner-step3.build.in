@@ -1,0 +1,8 @@
+# Original application-only mkifs fragment, NOT a BSP or bootable buildfile.
+# Append after your licensed x86_64 BSP buildfile's boot/startup definitions.
+# Replace @OUT@ with an absolute SDK-host output directory (no spaces).
+# Your BSP startup must start PCI services and then run:
+#   sh /proc/boot/learner-start.sh
+# Include libpci.so and its hardware modules using YOUR licensed BSP setup.
+[perms=0755] /proc/boot/learner_bin=@OUT@/learner_bin
+[perms=0755] /proc/boot/learner-start.sh=@OUT@/learner-start.sh

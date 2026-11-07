@@ -1,0 +1,17 @@
+{
+  "build_returncode": 0,
+  "wrong_stage_returncode": 1,
+  "correct_stage_returncode": 0,
+  "proof_script_returncode": 0,
+  "wrong_target_returncode": 0,
+  "correct_target_returncode": 0,
+  "wrong_readback": "010000ed/12345679/edcba986",
+  "correct_readback": "010000ed/12345678/edcba987",
+  "sdk_stopped_reaped": true,
+  "native_stopped_reaped": true,
+  "lease_free_check_returncode": 0,
+  "no_qemu_query_returncode": 1,
+  "checked_at": "2026-11-07T11:40:01Z",
+  "c6": "STOPPED; never started",
+  "portability": "clean learner BSP integration unverified; local E1 experimental substrate only"
+}

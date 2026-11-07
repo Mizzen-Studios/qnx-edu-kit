@@ -1,0 +1,24 @@
+{
+  "kind": "learner-step3-v1",
+  "source_sha256": "e67899169a977c469c72a5391cd91528f8de298c79a861509445e07f307c892e",
+  "binary_sha256": "dd2b53fe9b2ceb12c32311ce31be787754813972864cbf379483abd33102e684",
+  "image_sha256": "0ae53231c8df1b91bcec8df8e8e9b3f8b5d42e41f912f2ca527306d06c4d0260",
+  "buildfile_sha256": "5f350f336f0aceb392b997846b1c75b2985ac8d879c067439bbf7685f32b1d8a",
+  "startup_sha256": "f8f2079c96c3e225fd63dfe5a5795273e158d973579cd0aed5dda3946483f1af",
+  "source_path": "/mnt/host/learner-step3/wrong.c",
+  "built_at": 1794051417.9589047,
+  "build_driver_sha256": "f6be785f8f1e08b42fe0a42b1fd165fa59140b440bd23785df4a8984c3b9c5f1",
+  "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+}
+{
+  "kind": "learner-step3-v1",
+  "source_sha256": "9723c5cee2b47bf9eefe6317f3ed050d3b7caec5af858a3ef91349e09b7b8b5d",
+  "binary_sha256": "4e11a40142d9d344d3fbbf35a0df37ef0d94e620143e875f066bfda9e08eb052",
+  "image_sha256": "c321085efc456606c34f0027858fd6bb217468f9ff0aec808abafaa86708246b",
+  "buildfile_sha256": "927296b54a83875c9c518dac185859d9b5850c6d4cf4acaaf9f5693cb3bd407b",
+  "startup_sha256": "6dc5e77e33fd0371932eb73f7de7183a252b225e13bfae1f6aea48f716f8fcf9",
+  "source_path": "/mnt/host/learner-step3/correct.c",
+  "built_at": 1794051436.1604207,
+  "build_driver_sha256": "f6be785f8f1e08b42fe0a42b1fd165fa59140b440bd23785df4a8984c3b9c5f1",
+  "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified"
+}

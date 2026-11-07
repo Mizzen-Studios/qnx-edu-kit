@@ -1,0 +1,10 @@
+{
+  "pid": 136297,
+  "cpu": "100000 100000",
+  "memory": "1073741824",
+  "nice": 15,
+  "guest_vcpu": 1,
+  "guest_memory_mib": 512,
+  "phase": "licensed SDK build guest",
+  "observed": 1794050635.613439
+}

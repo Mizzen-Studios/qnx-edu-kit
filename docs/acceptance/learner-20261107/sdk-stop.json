@@ -1,0 +1,8 @@
+{
+  "sdk_start_foreground_returncode": 0,
+  "sdk_stop_returncode": 0,
+  "no_qemu_before_native": true,
+  "pgrep_returncode": 1,
+  "checked_at": "2026-11-07T11:39:06Z",
+  "lease": "flock held continuously by foreground briny-nudibranch; no native SDK overlap"
+}

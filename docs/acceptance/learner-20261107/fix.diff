@@ -1,0 +1,15 @@
+--- docs/acceptance/learner-20261107/wrong.c	2026-11-07 11:25:53.950120786 +0000
++++ docs/acceptance/learner-20261107/correct.c	2026-11-07 11:25:53.950069946 +0000
+@@ -78,10 +78,10 @@
+     printf("EDU MAP=%p\n",(void*)r);
+     printf("EDU ID=%08x\n",r[0]);
+     if (r[0]!=0x010000ed) goto done;
+-    uint32_t written=0x12345679; r[1]=written;
++    uint32_t written=0x12345678; r[1]=written;
+     uint32_t observed=r[1];
+     printf("LEARNER_MMIO id=%08x write=%08x read=%08x\n", r[0], written, observed);
+-    if (observed!=0xedcba986) goto done;
++    if (observed!=0xedcba987) goto done;
+     puts("EDU STEP3 PASS BAR ID and complement");
+     rc=0;
+     goto done;

@@ -1,0 +1,14 @@
+test_actual_readback_and_exit_required (test_learner_lab.LearnerTests.test_actual_readback_and_exit_required) ... ok
+test_build_compiles_snapshot_and_rebuilds_image (test_learner_lab.LearnerTests.test_build_compiles_snapshot_and_rebuilds_image) ... ok
+test_checkout_outputs_forbidden (test_learner_lab.LearnerTests.test_checkout_outputs_forbidden) ... ok
+test_identified_qemu_is_killed_on_cap_rejection (test_learner_lab.LearnerTests.test_identified_qemu_is_killed_on_cap_rejection) ... ok
+test_init_copies_todo_and_preserves_edits (test_learner_lab.LearnerTests.test_init_copies_todo_and_preserves_edits) ... ok
+test_native_refuses_free_lock (test_learner_lab.LearnerTests.test_native_refuses_free_lock) ... ok
+test_reference_manifest_refused (test_learner_lab.LearnerTests.test_reference_manifest_refused) ... ok
+test_standalone_sdk_copy_allows_external_build (test_learner_lab.LearnerTests.test_standalone_sdk_copy_allows_external_build) ... ok
+test_tampered_inputs_refused (test_learner_lab.LearnerTests.test_tampered_inputs_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.016s
+
+OK

@@ -1,0 +1,43 @@
+{
+  "kind": "learner-step3-v1",
+  "source_sha256": "9723c5cee2b47bf9eefe6317f3ed050d3b7caec5af858a3ef91349e09b7b8b5d",
+  "binary_sha256": "4e11a40142d9d344d3fbbf35a0df37ef0d94e620143e875f066bfda9e08eb052",
+  "image_sha256": "c321085efc456606c34f0027858fd6bb217468f9ff0aec808abafaa86708246b",
+  "buildfile_sha256": "927296b54a83875c9c518dac185859d9b5850c6d4cf4acaaf9f5693cb3bd407b",
+  "startup_sha256": "6dc5e77e33fd0371932eb73f7de7183a252b225e13bfae1f6aea48f716f8fcf9",
+  "source_path": "/mnt/host/learner-step3/correct.c",
+  "built_at": 1794051436.1604207,
+  "build_driver_sha256": "f6be785f8f1e08b42fe0a42b1fd165fa59140b440bd23785df4a8984c3b9c5f1",
+  "target_provenance": "learner supplied licensed SDP/BSP; QSTI unverified",
+  "started": 1794051587.1227567,
+  "finished": 1794051594.0701945,
+  "caps": {
+    "pid": 141402,
+    "cpu": "100000 100000",
+    "memory": "1073741824",
+    "nice": 15
+  },
+  "checks": {
+    "binding": true,
+    "ordering": true,
+    "qnx_target": true,
+    "device_readback": true,
+    "exit_zero": true,
+    "bounded_completion": true,
+    "inputs_unchanged_after_boot": true,
+    "disk_unchanged": true,
+    "qemu_reaped": true
+  },
+  "success": true,
+  "qemu_wrapper_returncode": 0,
+  "disk_sha256": "59269af3ae940d2e520271e8b2e989cc8de5918c8e6cf283bc88cfd734c30951",
+  "stop_reason": "target completed",
+  "serialization_lock": "/home/ubuntu/qnx-host/native-test.lock",
+  "lease": "caller-held flock observed locked",
+  "run_driver_sha256": "0cbded0cbaee20489612edb0eceb8b65c181ebb4144d5ac594eb6e41e2e96b8e",
+  "target_returncode": [
+    "0"
+  ],
+  "observation": "fresh custom QNX boot, not QSTI or hardware qualification",
+  "substrate_note": "local E1 BSP and external disk; debug-stripped licensed kernel; not portable"
+}
