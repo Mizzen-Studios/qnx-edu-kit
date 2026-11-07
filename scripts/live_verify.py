@@ -35,7 +35,7 @@ def main():
             if cap is None:
                 found=subprocess.run(['pgrep','-P',str(run.pid)],capture_output=True,text=True).stdout.split()
                 # Walk descendants until QEMU, then bind effective cgroup limits.
-                todo=list(found)
+                todo=[str(run.pid)]+list(found)
                 while todo:
                     pid=todo.pop();proc=pathlib.Path('/proc')/pid
                     try:
@@ -52,7 +52,8 @@ def main():
                 chunk=os.read(run.stdout.fileno(),65536)
                 if not chunk: break
                 data+=chunk
-                if b'EDU_PROBE_RC=' in data: break
+                sys.stdout.write(chunk.decode(errors='replace'));sys.stdout.flush()
+                if re.search(rb'EDU_PROBE_RC=\d+\r?\n',data): break
             if run.poll() is not None: break
     finally:
         # systemd scope wrapper is not QEMU: signal captured owned QEMU first.
@@ -65,10 +66,10 @@ def main():
                 try: os.kill(cap['pid'],9)
                 except ProcessLookupError: pass
             run.terminate();run.wait(10)
-    output=data.decode(errors='replace');sys.stdout.write(output)
+    output=data.decode(errors='replace')
     checks={str(n):bool(re.search(r'EDU STEP'+str(n)+r' PASS',output)) for n in range(1,7)}
     checks['6']=checks['6'] and 'EDU_SHELL_RESULT=3628800' in output and bool(re.search(r'EDU RESMGR IRQ completion=\d+ input=10 result=3628800 ack=00000000',output)) and 'EDU RESMGR ACCEPT PASS' in output
-    success=bool(cap) and 'EDU TARGET QNX 8.0' in output and 'EDU_PROBE_RC=0' in output and all(checks.values())
+    success=bool(cap) and 'EDU TARGET QNX 8.0' in output and bool(re.search(r'EDU_PROBE_RC=0\r?\n',output)) and all(checks.values())
     evidence={'started':start,'finished':time.time(),'sources':sources(),'image_sha256':manifest['image_sha256'],'caps':cap,'steps':checks,'success':success,'label':'observed in this QEMU run; app budget, not a QNX benchmark','target_provenance':manifest.get('target_provenance','custom QNX 8 IFS; QSTI provenance unverified')}
     out=bundle/('live-'+str(time.time_ns()));out.with_suffix('.log').write_bytes(data);out.with_suffix('.json').write_text(json.dumps(evidence,indent=2)+'\n')
     for n in ([args.step] if args.step else range(1,7)): print(('PASS' if success and checks[str(n)] else 'FAIL')+': step '+str(n)+' fresh QNX target')

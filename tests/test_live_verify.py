@@ -20,3 +20,13 @@ class FreshOnly(unittest.TestCase):
     def test_no_polling_resmgr_fallback(self):
         s=(ROOT/'native/edu_resmgr.c').read_text();self.assertIn('InterruptAttachThread(',s);self.assertIn('InterruptWait(',s)
         self.assertNotIn('nanosleep(',s);self.assertNotIn('Polling only',s)
+
+    def test_requires_complete_exit_record_and_streams_live(self):
+        s=(ROOT/'scripts/live_verify.py').read_text()
+        self.assertIn("sys.stdout.flush()",s)
+        self.assertIn("EDU_PROBE_RC=0",s)
+        self.assertNotIn("if b'EDU_PROBE_RC=' in data",s)
+
+    def test_inspects_scope_exec_replaced_root_pid(self):
+        s=(ROOT/'scripts/live_verify.py').read_text()
+        self.assertIn('todo=[str(run.pid)]+list(found)',s)
