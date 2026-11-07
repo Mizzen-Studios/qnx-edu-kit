@@ -38,3 +38,11 @@ No C6 work, publication or deployment is performed.
 The clean target still logs an unattributed Memory fault after Starting sshd. No healthy-SSH/full-platform claim. The earlier NO_UNMASK and routing hypotheses failed and remain in the receipt history.
 
 Startup diagnosis attributes the observed failure to **sshd** in a separately traced image; internal cause remains UNVERIFIED. [Separate baseline/diagnostic bindings](acceptance/startup-diagnosis-20261107/NOTES.md). No SSH/platform health claim.
+
+## Fresh-checkout correction
+
+When adapting the starter, remove its explicit InterruptUnmask after InterruptWait
+when using _NTO_INTR_WAIT_FLAGS_UNMASK: do not unmask a second time. Detach the
+transaction IAT before stdio or dispatch (and on every error exit); printing while
+still an IST can fail the transaction. Attach in the write's factorial transaction,
+not at daemon startup. This is an implementation requirement, not a safety claim.
