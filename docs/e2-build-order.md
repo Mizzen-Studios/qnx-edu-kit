@@ -47,8 +47,10 @@ qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra \
 
 Starter unused scaffolding warnings are expected until the TODO is completed.
 No target success is inferred from compilation. These per-snapshot commands
-are compile contracts derived from the verified E1 qcc flags, NOT newly
-observed E2 compilation. This host-only lane cannot verify them with an SDK.
+were exercised for all twelve current snapshots using the licensed SDK. The
+[source-bound compile receipt](acceptance/e2-qcc-20261107/receipt.json) records
+exit0 and source hashes. Solutions passed -Werror; starter TODOs remain.
+This is compilation evidence only: per-snapshot native execution is pending.
 Do not run QNX executables on the Linux host. Do not run two exclusive PCI
 owners simultaneously. Steps1–5 are finite diagnostics; step6 stays in dispatch.
 A separately reviewed IFS/boot integration must package any learner executable;
@@ -84,7 +86,8 @@ those from that already-verified image requires a separate native rebuild.
 
 ## Remaining gates
 
-Actual per-snapshot qcc/target checks and two fresh learners are pending.
+Per-snapshot qcc compilation is recorded for all six solutions and six starters.
+Actual per-snapshot target execution and two fresh learners remain pending.
 QSTI provenance, full security policy, arbitrary concurrency, timeout/fault
 injection, restart/re-probe and physical hardware portability are not claimed.
 Durations are private planning estimates, not measured learner completion times.

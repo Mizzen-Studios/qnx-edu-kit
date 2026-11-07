@@ -21,6 +21,16 @@ class StepSources(unittest.TestCase):
         for name, expected in receipt['sources'].items():
             self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(), expected)
 
+    def test_compile_receipt_covers_exact_current_snapshots_only(self):
+        receipt = json.loads((ROOT/'docs/acceptance/e2-qcc-20261107/receipt.json').read_text())
+        self.assertEqual(receipt['exit_code'], 0)
+        self.assertIn('not native execution', receipt['status'])
+        recorded = {entry['path']: entry['sha256'] for entry in receipt['sources']}
+        self.assertEqual(set(recorded), set(steps.snapshots()))
+        self.assertEqual(len(receipt['sources']), 12)
+        for name, digest in recorded.items():
+            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(), digest, name)
+
     def test_solutions_stop_at_their_boundary(self):
         for n in range(1, 5):
             source = (ROOT/f'steps/step{n}/solution/main.c').read_text()

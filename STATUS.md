@@ -24,3 +24,7 @@ a fresh native reference; no transcript replay or learner-binary claim.
 See [build order](docs/e2-build-order.md). All six solution snapshots passed actual qcc -Werror and all six starters
 compiled (TODOs remain). [Receipt](docs/acceptance/e2-qcc-20261107/receipt.json).
 Per-snapshot native execution and fresh learners remain pending; QSTI provenance unverified.
+
+## E2 recovery host/docs milestone — 11:06 UTC
+
+Reconciled build-order text with existing twelve-snapshot qcc receipt; added step boundary/runtime checklist and regression binding all12 source hashes to that compile-only receipt. Fresh host suite62 cases:60pass,2explicit skips; local static render refreshed. No new guest or native snapshot execution; per-snapshot runtime and fresh learners remain pending. C6 focused attempt failed; its native lane is stopped.
