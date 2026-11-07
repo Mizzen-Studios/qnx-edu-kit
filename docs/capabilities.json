@@ -34,17 +34,18 @@
       "domain": "native",
       "level": "learner-run",
       "status": "PASS",
-      "claim": "Local E1 substrate only: actual edited step3 C compiled and freshly booted; wrong challenge FAIL despite app exit0, corrected challenge PASS. Not all-six learner acceptance or clean BSP portability.",
-      "evidence": "docs/acceptance/learner-20261107/correct-native.json",
-      "evidence_sha256": "2c1a12f641e2483325cca3e0e5720f41ab068e6f319bf35e8029ec419a19ea7d"
+      "claim": "Fresh clean stock generic platform: actual edited step3 C wrong intendedFAIL/correctedPASS, repeated on final fixed PCI topology; no E1/stripped kernel, broad portability or human-review claim.",
+      "evidence": "docs/acceptance/clean-step3-20261107/native-clean/final-topology/correct-native.json",
+      "evidence_sha256": "885beb8da00ee0be899d87ba293a24a5574dd039fb5c75c2e2674042531fd208"
     },
     {
       "id": "learner-dev-edu",
       "domain": "native",
       "level": "learner-run",
-      "status": "UNVERIFIED",
-      "claim": "Learner-owned /dev/edu finish not yet proved",
-      "evidence": "steps/step6/starter/main.c"
+      "status": "PASS",
+      "claim": "One edited step6 starter: fresh clean-image normal write10/read3628800 with IRQ completion and ack, source-bound; no reference checker, human/all-stage or platform-health claim.",
+      "evidence": "docs/acceptance/learner-finish-clean-20261107/unmasked/native.json",
+      "evidence_sha256": "01ce4c3b2b338282b5a583a3a9cdff174ae47e859dcce9b07d4718fb8d4af2c7"
     },
     {
       "id": "clean-setup",
@@ -61,8 +62,8 @@
       "level": "learner-run",
       "status": "FAIL",
       "claim": "Intentional wrong-but-compiling edit: stage FAIL although application prints PASS and exits0; expected negative control, not learner completion.",
-      "evidence": "docs/acceptance/learner-20261107/wrong-native.json",
-      "evidence_sha256": "cba582c587100e0946ea427ce3ea304bde035db4ab5b54e8758ea4729de47db2"
+      "evidence": "docs/acceptance/clean-step3-20261107/native-clean/final-topology/wrong-native.json",
+      "evidence_sha256": "99b3cc011c3d11863dd9edfec0de1a13e3f5baddbbe714d7ee89fa13033bf7d6"
     },
     {
       "id": "clean-stock-image-build",

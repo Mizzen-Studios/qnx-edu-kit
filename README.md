@@ -84,3 +84,7 @@ Repository stays private. No Pages, upstream PR, video, account creation, submis
 
 Host · repository root: run python3 scripts/render_site.py, then open docs/site/index.html.
 For stale-output checking use python3 scripts/render_site.py --check. Actual pinned upstream claat export is separately verified; see [export scope](docs/claat-export.md). This local renderer does not claim to be claat.
+
+### Scoped learner /dev/edu result — 7 November 2026
+
+Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.

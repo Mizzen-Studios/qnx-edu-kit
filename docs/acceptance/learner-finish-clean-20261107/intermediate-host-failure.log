@@ -1,0 +1,112 @@
+PYTHONDONTWRITEBYTECODE=1 python3 tools/step_sources.py --check
+CHECKED: twelve E1-derived source snapshots current (host contract only)
+./scripts/check-no-sdk.sh
+PASS: redistribution guard only (not a QNX test)
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+test_declarations_and_pinned_evidence_current (test_capability_ledger.CapabilityLedger.test_declarations_and_pinned_evidence_current) ... ERROR
+test_invalid_missing_and_changed_evidence_rejected (test_capability_ledger.CapabilityLedger.test_invalid_missing_and_changed_evidence_rejected) ... ok
+test_readme_status_use_canonical_ledger (test_capability_ledger.CapabilityLedger.test_readme_status_use_canonical_ledger) ... FAIL
+test_actual_official_claat_export (test_codelab_export.CodelabExport.test_actual_official_claat_export) ... skipped 'opt-in: pinned official claat cache required'
+test_bad_binary_rejected_before_execution (test_codelab_export.CodelabExport.test_bad_binary_rejected_before_execution) ... ok
+test_escape_missing_and_external_links (test_codelab_export.CodelabExport.test_escape_missing_and_external_links) ... ok
+test_missing_binary_does_not_download_implicitly (test_codelab_export.CodelabExport.test_missing_binary_does_not_download_implicitly) ... ok
+test_output_inside_checkout_refused (test_codelab_export.CodelabExport.test_output_inside_checkout_refused) ... ok
+test_prepare_preserves_content_except_relative_paths (test_codelab_export.CodelabExport.test_prepare_preserves_content_except_relative_paths) ... ok
+test_all_steps_block_even_with_environment_claims (test_foundation.LiveGate.test_all_steps_block_even_with_environment_claims) ... ok
+test_invalid_step_rejected (test_foundation.LiveGate.test_invalid_step_rejected) ... ok
+test_license (test_foundation.LiveGate.test_license) ... ok
+test_step_layout (test_foundation.LiveGate.test_step_layout) ... ok
+test_external_symlink_blocked (test_foundation.RedistributionGuard.test_external_symlink_blocked) ... ok
+test_forbidden_paths (test_foundation.RedistributionGuard.test_forbidden_paths) ... ok
+test_ignored_untracked_files_still_blocked (test_foundation.RedistributionGuard.test_ignored_untracked_files_still_blocked) ... ok
+test_invalid_root_fails (test_foundation.RedistributionGuard.test_invalid_root_fails) ... ok
+test_markers_beyond_prefix_and_across_chunks (test_foundation.RedistributionGuard.test_markers_beyond_prefix_and_across_chunks) ... ok
+test_plain_source_allowed (test_foundation.RedistributionGuard.test_plain_source_allowed) ... ok
+test_renamed_binaries_and_archives (test_foundation.RedistributionGuard.test_renamed_binaries_and_archives) ... ok
+test_existing_work_refused (test_learner_clean_bootstrap.CleanBootstrapTests.test_existing_work_refused) ... ok
+test_missing_licensed_component_blocks (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_licensed_component_blocks) ... ok
+test_missing_sdk_is_blocked_not_native_pass (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_sdk_is_blocked_not_native_pass) ... ok
+test_probe_does_not_launch_or_install (test_learner_clean_bootstrap.CleanBootstrapTests.test_probe_does_not_launch_or_install) ... ok
+test_real_qnx8_layout_is_accepted_without_usr_prefix (test_learner_clean_bootstrap.CleanBootstrapTests.test_real_qnx8_layout_is_accepted_without_usr_prefix) ... ok
+test_finish_and_bar_manifests_are_not_interchangeable (test_learner_dev_edu.FinishTests.test_finish_and_bar_manifests_are_not_interchangeable) ... ok
+test_finish_initializes_actual_todo_and_preserves_edits (test_learner_dev_edu.FinishTests.test_finish_initializes_actual_todo_and_preserves_edits) ... ok
+test_finish_requires_bound_normal_io_and_irq (test_learner_dev_edu.FinishTests.test_finish_requires_bound_normal_io_and_irq) ... ok
+test_finish_wrapper_uses_real_device_io (test_learner_dev_edu.FinishTests.test_finish_wrapper_uses_real_device_io) ... ok
+test_actual_readback_and_exit_required (test_learner_lab.LearnerTests.test_actual_readback_and_exit_required) ... ok
+test_build_compiles_snapshot_and_rebuilds_image (test_learner_lab.LearnerTests.test_build_compiles_snapshot_and_rebuilds_image) ... ok
+test_checkout_outputs_forbidden (test_learner_lab.LearnerTests.test_checkout_outputs_forbidden) ... ok
+test_identified_qemu_is_killed_on_cap_rejection (test_learner_lab.LearnerTests.test_identified_qemu_is_killed_on_cap_rejection) ... ok
+test_init_copies_todo_and_preserves_edits (test_learner_lab.LearnerTests.test_init_copies_todo_and_preserves_edits) ... ok
+test_native_refuses_free_lock (test_learner_lab.LearnerTests.test_native_refuses_free_lock) ... ok
+test_reference_manifest_refused (test_learner_lab.LearnerTests.test_reference_manifest_refused) ... ok
+test_standalone_sdk_copy_allows_external_build (test_learner_lab.LearnerTests.test_standalone_sdk_copy_allows_external_build) ... ok
+test_tampered_inputs_refused (test_learner_lab.LearnerTests.test_tampered_inputs_refused) ... ok
+test_corrupt_image_rejected_before_boot (test_live_verify.FreshOnly.test_corrupt_image_rejected_before_boot) ... ok
+test_inspects_scope_exec_replaced_root_pid (test_live_verify.FreshOnly.test_inspects_scope_exec_replaced_root_pid) ... ok
+test_no_polling_resmgr_fallback (test_live_verify.FreshOnly.test_no_polling_resmgr_fallback) ... ok
+test_no_transcript_replay_argument (test_live_verify.FreshOnly.test_no_transcript_replay_argument) ... ok
+test_requires_complete_exit_record_and_streams_live (test_live_verify.FreshOnly.test_requires_complete_exit_record_and_streams_live) ... ok
+test_stale_source_rejected_before_boot (test_live_verify.FreshOnly.test_stale_source_rejected_before_boot) ... ok
+test_busy_does_not_overwrite (test_model.RegisterModel.test_busy_does_not_overwrite) ... ok
+test_explicit_mask (test_model.RegisterModel.test_explicit_mask) ... ok
+test_factorials (test_model.RegisterModel.test_factorials) ... ok
+test_input_contract (test_model.RegisterModel.test_input_contract) ... ok
+test_irq_ack_preserves_other_sources (test_model.RegisterModel.test_irq_ack_preserves_other_sources) ... ok
+test_liveness_width (test_model.RegisterModel.test_liveness_width) ... ok
+test_mask_boundary (test_model.RegisterModel.test_mask_boundary) ... ok
+test_no_spurious_completion (test_model.RegisterModel.test_no_spurious_completion) ... ok
+test_source_label (test_model.RegisterModel.test_source_label) ... ok
+test_busy_reprobe_fails_closed (test_model.RestartDesign.test_busy_reprobe_fails_closed) ... ok
+test_double_attach_rejected (test_model.RestartDesign.test_double_attach_rejected) ... ok
+test_partial_acquisition_unwinds (test_model.RestartDesign.test_partial_acquisition_unwinds) ... ok
+test_reprobe_drains_stale_status (test_model.RestartDesign.test_reprobe_drains_stale_status) ... ok
+test_stop_idempotent (test_model.RestartDesign.test_stop_idempotent) ... ok
+test_dma_rejects_fractional_and_boolean (test_model.ReviewRegressions.test_dma_rejects_fractional_and_boolean) ... ok
+test_failed_setup_never_publishes (test_model.ReviewRegressions.test_failed_setup_never_publishes) ... ok
+test_publish_after_drain (test_model.ReviewRegressions.test_publish_after_drain) ... ok
+test_reprobe_preserves_unowned_status (test_model.ReviewRegressions.test_reprobe_preserves_unowned_status) ... ok
+test_codelab_structure (test_packaging.Packaging.test_codelab_structure) ... ok
+test_eight_accessible_diagrams_and_sources (test_packaging.Packaging.test_eight_accessible_diagrams_and_sources) ... ok
+test_local_links (test_packaging.Packaging.test_local_links) ... ok
+test_no_external_runtime_assets (test_packaging.Packaging.test_no_external_runtime_assets) ... ok
+test_policy_not_fake_validation (test_packaging.Packaging.test_policy_not_fake_validation) ... ok
+test_render_current (test_packaging.Packaging.test_render_current) ... ok
+test_six_rich_folder_contracts (test_packaging.Packaging.test_six_rich_folder_contracts) ... ok
+test_cap_failure_has_no_uncapped_retry (test_qemu_capped.CappedLauncherTests.test_cap_failure_has_no_uncapped_retry) ... ok
+test_exact_cap_and_argument_boundaries (test_qemu_capped.CappedLauncherTests.test_exact_cap_and_argument_boundaries) ... ok
+test_missing_command (test_qemu_capped.CappedLauncherTests.test_missing_command) ... ok
+test_actual_elf_bytes_not_only_escaped_markers (test_qsc_hygiene.QSCHygiene.test_actual_elf_bytes_not_only_escaped_markers) ... ok
+test_qsc_credential_paths_and_installer (test_qsc_hygiene.QSCHygiene.test_qsc_credential_paths_and_installer) ... ok
+test_actual_installed_qemu (test_qtest_live.QtestLive.test_actual_installed_qemu) ... skipped 'set EDU_LIVE_QTEST=1 for actual QEMU'
+test_requires_opt_in (test_qtest_live.QtestLive.test_requires_opt_in) ... ok
+test_compile_receipt_covers_exact_current_snapshots_only (test_step_sources.StepSources.test_compile_receipt_covers_exact_current_snapshots_only) ... ok
+test_snapshot_drift_rejected_before_live_gate (test_step_sources.StepSources.test_snapshot_drift_rejected_before_live_gate) ... ok
+test_solutions_stop_at_their_boundary (test_step_sources.StepSources.test_solutions_stop_at_their_boundary) ... ok
+test_starters_refuse_the_missing_boundary (test_step_sources.StepSources.test_starters_refuse_the_missing_boundary) ... ok
+test_step1_starter_host_syntax_only (test_step_sources.StepSources.test_step1_starter_host_syntax_only) ... ok
+test_twelve_snapshots_match_unchanged_e1 (test_step_sources.StepSources.test_twelve_snapshots_match_unchanged_e1) ... ok
+test_warning_inside_first_step_and_no_can_course (test_step_sources.StepSources.test_warning_inside_first_step_and_no_can_course) ... ok
+
+======================================================================
+ERROR: test_declarations_and_pinned_evidence_current (test_capability_ledger.CapabilityLedger.test_declarations_and_pinned_evidence_current)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/.openclaw/workspace/apps/qnx-edu-kit/tests/test_capability_ledger.py", line 8, in test_declarations_and_pinned_evidence_current
+    subprocess.run(['python3',str(ROOT/'tools/capability_ledger.py')],check=True,capture_output=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['python3', '/home/ubuntu/.openclaw/workspace/apps/qnx-edu-kit/tools/capability_ledger.py']' returned non-zero exit status 1.
+
+======================================================================
+FAIL: test_readme_status_use_canonical_ledger (test_capability_ledger.CapabilityLedger.test_readme_status_use_canonical_ledger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/.openclaw/workspace/apps/qnx-edu-kit/tests/test_capability_ledger.py", line 11, in test_readme_status_use_canonical_ledger
+    self.assertIn('docs/capabilities.md',(ROOT/name).read_text())
+AssertionError: 'docs/capabilities.md' not found in '# Status — 7 November 2026\n\n## Current bounded validation — 7 November 2026\n\nFresh stock generic build completed with 512 MiB guest RAM + 1 GiB disk-backed\nswap; host caps remain 100% CPU / 1 GiB / nice 15. Builder isolated from\nhost-queue.service; queue stayed active with zero restarts. Original diagnosis900\nreceipts are unchanged. [Build evidence](docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.md).\n\nFresh [clean learner step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md):\nwrong edit stage FAIL/1 despite app exit 0, corrected native PASS/0. Only the wrong\nMMIO readback check failed; all provenance, caps and QEMU cleanup checks passed.\nBoth logs preserve an unattributed startup Memory fault after Starting sshd.\nNo full-platform/SSH-health, broad portability or independent-review claim.\nLearner /dev/edu is separately assessed, never transferred from reference PASS.\nC6 remains STOPPED. Everything private; no deployment, contacts or spend.\n\n## Preserved earlier milestones (not current clean-path claims)\n\n## Historical unchanged E1 reference acceptance\n\n**PASS: fresh native reference functional acceptance and clean-checkout end-to-end verify.sh.**\n\n- Direct parent-owned acceptance returned0 with all six target markers, IRQ raise/wait/ack,64-byte byte-exact RAM→EDU→RAM DMA (polled; not DMA-IRQ proof), and actual shell echo10/cat3628800 through the IAT IRQ-driven resource manager.\n- Receipt validates CPU100000/100000, memory1073741824bytes, nice15. Guest1vCPU/512MiB; no other native guest ran concurrently.\n- Clean detached checkout `387ba38ce696c92bb3d8332ea7f01d5a0630cbfc` ran full `verify.sh`, exit0. Host suite55cases:53pass+2explicit optional/live integration skips. Fresh native steps1–6 allPASS; no saved transcript accepted as input. Checkout stayed clean.\n- Evidence: [direct receipt](docs/acceptance/native-20261107/receipt.json), [serial](docs/acceptance/native-20261107/serial.txt), [clean-checkout receipt](docs/acceptance/native-20261107/clean-checkout-receipt.json), [complete verify output](docs/acceptance/native-20261107/clean-checkout-verify.txt). Source/image hashes bound in each receipt.\n\nAll observations are **observed in this QEMU run · app budget, not a QNX benchmark**.\n\n## Recovery and remaining boundaries\n\nThe old worker was killed/stalled, the handoff file absent, and no owned QEMU remained. The coordinator took over directly without file-event waiting. No live processes needed killing to free the stale lease. The cap collector fix includes the exec-replaced QEMU root PID; the failed old null-cap receipt is not promoted to success. The original source-bound image worked; an unfinished dedicated-startup rebuild was not required or represented as completed.\n\nTarget is custom licensed SDP8 Generic BSP/QNX8, **not established QSTI provenance**. Functional PASS is not a certification, least-privilege/security-policy, physical-device, graceful-stop, comprehensive fault injection or two-fresh-learner acceptance claim. No licence/SDK/header/library/image/binary/QSC/credential material is committed. Guests stopped/reaped after each owned run, shared native lease free. Repos private; nothing published and no spending or outreach.\n\n## E2 host-only teaching scaffold — 7 November 2026\n\nSix incremental C solutions and bounded starter TODOs now derive from unchanged\nE1 native source (387ba38 acceptance). Codelab teaches PCI/BAR/factorial/IAT/\npolled DMA/IAT resmgr only. Source drift is rejected before check-step launches\na fresh native reference; no transcript replay or learner-binary claim.\nSee [build order](docs/e2-build-order.md). All six solution snapshots passed actual qcc -Werror and all six starters\ncompiled (TODOs remain). [Receipt](docs/acceptance/e2-qcc-20261107/receipt.json).\nPer-snapshot native execution and fresh learners remain pending; QSTI provenance unverified.\n\n## E2 recovery host/docs milestone — 11:06 UTC\n\nReconciled build-order text with existing twelve-snapshot qcc receipt; added step boundary/runtime checklist and regression binding all12 source hashes to that compile-only receipt. Fresh host suite62 cases:60pass,2explicit skips; local static render refreshed. No new guest or native snapshot execution; per-snapshot runtime and fresh learners remain pending. C6 focused attempt failed; its native lane is stopped.\n\n## Learner-owned step3 review milestone\n\nActual edited C was cross-compiled, imaged and freshly booted twice in serialized QEMU:\n- Wrong edit: write12345679/readedcba986, target exit0 and application PASS, independent stage exit1 (expected FAIL).\n- Correct edit: write12345678/readedcba987, target exit0, independent stage exit0 (PASS).\n- Exact edits, receipts and raw logs: docs/acceptance/learner-20261107/ (including NOTES.md); [learner journey](docs/learner-lab.md). Source, ELF, image, disk and driver hashes recorded; reference checker unchanged.\n- Effective host CPU100%/1GiB/nice15, guest1vCPU/512MiB. Guests stopped/reaped and lease released. C6 never started.\n\nObserved in this QEMU run · app budget, not a QNX benchmark. Local E1 BSP substrate adapted externally; clean learner BSP portability UNVERIFIED. A private debug-stripped licensed kernel copy avoided SDK relink OOM without increasing caps or changing SDK originals. Raw logs preserve a pre-learner SSH startup memory fault: no SSH health claim. No IRQ/DMA or /dev/edu learner PASS, QSTI provenance, malicious-output resistance or human validation. Await independent journey review before expansion.\n\n## Final conditional-gate host verification\n\nDetached clean checkout d419bce ran ./verify.sh --host-only exit0: 79 total / 77 PASS / 2 SKIP; site, ledger and redistribution checks PASS. [Source-bound parent receipt](docs/acceptance/clean-step3-20261107/parent-review.json) pins actual host log and OOM/compile/cleanup evidence. Host PASS does not resolve the clean native bootstrap BLOCKED/UNVERIFIED gate.\n'
+
+----------------------------------------------------------------------
+Ran 83 tests in 1.334s
+
+FAILED (failures=1, errors=1, skipped=2)
+make: *** [Makefile:5: host-check] Error 1

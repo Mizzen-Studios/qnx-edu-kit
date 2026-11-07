@@ -63,3 +63,7 @@ Observed in this QEMU run · app budget, not a QNX benchmark. Local E1 BSP subst
 ## Final conditional-gate host verification
 
 Detached clean checkout d419bce ran ./verify.sh --host-only exit0: 79 total / 77 PASS / 2 SKIP; site, ledger and redistribution checks PASS. [Source-bound parent receipt](docs/acceptance/clean-step3-20261107/parent-review.json) pins actual host log and OOM/compile/cleanup evidence. Host PASS does not resolve the clean native bootstrap BLOCKED/UNVERIFIED gate.
+
+### Scoped learner /dev/edu result — 7 November 2026
+
+Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.

@@ -213,3 +213,7 @@ Review failing operations and narrowly required abilities; do not solve EPERM by
 ![DMA ownership design](../docs/diagrams/dma.svg)
 
 The reference is specific to the tested x86 QEMU PC with no IOMMU and dma_mask=0xffffffff. Do not transfer its uncached physical-memory strategy to arbitrary hardware. [Learning notes](../docs/learning-notes.md) and [claat export scope](../docs/claat-export.md) separate local host rendering, actual upstream export and live target execution. No CAN module is part of this course.
+
+### Scoped learner /dev/edu result — 7 November 2026
+
+Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](../docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.
