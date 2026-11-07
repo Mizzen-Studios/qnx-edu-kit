@@ -1,6 +1,11 @@
 # Private capability review — 7 November 2026
 
-Offline inspection of EDU e9174bd73412c98fcf17b40a9e5b6d931ebc4dec. No guest, SDK, QEMU, network runtime, demo or native work performed. No publication.
+## Current completion gate — 20:03 UTC
+
+Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. This packaging follow-up does not rerun native evidence or broaden acceptance. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
+
+
+Historical initial offline inspection of EDU e9174bd73412c98fcf17b40a9e5b6d931ebc4dec. No guest, SDK, QEMU, network runtime, demo or native work performed. No publication.
 [Detailed appendix](docs/review/appendix.json) covers every nonempty line in README, STATUS, codelab and all site source pages, generated HTML projections, exact receipt/log SHA-256s and every receipt hash field. Candidate line mappings are NOT blanket acceptance: this bounded catalog governs. Archival commits are NOT tested commits.
 
 ## Bounded claim catalog
@@ -35,7 +40,7 @@ Run ./verify.sh --host-only, python3 tools/capability_ledger.py, python3 scripts
 
 ## Fresh-checkout follow-up (automated, not independent human review)
 
-See [new source-commit-bound receipts](docs/acceptance/fresh-checkout-20261107/NOTES.md) and provenance.json: wrong host1/correct host0, initial finish host1/corrected finish host0 on a freshly generated stock platform using existing legal SDK. Older missing bindings remain UNVERIFIED; no retrospective promotion. Startup process now attributed to sshd only in separately bound diagnostic image. Independent owner re-review still not done.
+See [new source-commit-bound receipts](docs/acceptance/fresh-checkout-20261107/NOTES.md) and provenance.json: wrong host1/correct host0, initial finish host1/corrected finish host0 on a freshly generated stock platform using existing legal SDK. Older missing bindings remain UNVERIFIED; no retrospective promotion. Startup process now attributed to sshd only in separately bound diagnostic image. Owner completion re-review subsequently completed conditionally; see current gate above.
 
 Private editorial draft: [shot list and narration](docs/private-demo.md), planned below three minutes. No recording/upload or new runtime claim.
 
@@ -53,10 +58,14 @@ receipt stays unchanged. A separate current host export receipt binds the new pr
 
 ## Council conditional gate and dry capture readiness
 
-Council re-review at01060c7c1aff834d6c0b016de7fd9f988f8f7e35 conditionally accepts only scoped recorded evidence; native features FROZEN. Earlier references to an independent review still pending describe their dated milestones. Human learning/second independent SDK remain UNVERIFIED. Current route-path receipt checks newer instructions at3a4821b, host-only: missing legal SDK/BSP/buildfile/disk is BLOCKED, not native/portability PASS.
+Council re-review at01060c7c1aff834d6c0b016de7fd9f988f8f7e35 conditionally accepts only scoped recorded evidence; native features FROZEN. Earlier references to an independent review still pending describe their dated milestones. Human learning/second independent SDK remain UNVERIFIED. Historical route-path receipt checked instructions at3a4821b, host-only: missing legal SDK/BSP/buildfile/disk is BLOCKED, not native/portability PASS.
 
-Current dry pack docs/proof-capture/SCRIPT.md maps every narration line to a bounded REVIEW claim, exact frozen01060c7 files and planned frame;211words/160planned seconds. No recording/audio without separate Olly OK. Evidence pins/failures preserved, no native feature/tests expansion, no C6/sshd cause chase/heartbeat. Conditional acceptance is not full-platform health, safety, timing or availability acceptance. Structural lint/report does not certify arbitrary prose semantics.
+Historical 17:08 dry pack docs/proof-capture/SCRIPT.md mapped every narration line to a bounded REVIEW claim, exact frozen01060c7 files and planned frame;211words/160planned seconds. No recording/audio without separate Olly OK. Evidence pins/failures preserved, no native feature/tests expansion, no C6/sshd cause chase/heartbeat. Conditional acceptance is not full-platform health, safety, timing or availability acceptance. Structural lint/report does not certify arbitrary prose semantics.
 
 Supported stock-platform helper and explicit split-host/swap/isolated-service prerequisites are in the [canonical route](docs/learner-route.md). Existing installed SDK reuse only; no installer or second-SDK claim. Videos deferred until final freeze, final verification, independent gate and separate Olly OK; not a current blocker.
 
 Supported canonical route observed on one existing licensed SDK: [supported-bootstrap result](docs/acceptance/bootstrap-final-20261107/NOTES.md). Fresh stock platform, wrong stageFAIL/app0, correctedPASS and own /dev/edu write10/read3628800+IRQack. Automated reuse only, not a second SDK or human gate. Old missing-host-SDK negative preserved. All guests reaped; no platform-health claim.
+
+## Current private packet binding
+
+REVIEW appendix and lightweight demo asset binding: ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, the exact conditionally accepted completion tip. recorded: false. Historical runtime source/ELF/image/disk pins are not rewritten. The bootstrap-final receipts supersede the earlier missing-host-SDK result for the tested existing-SDK owner-lab route only. No new installation, second SDK, human validation or full-platform health claim.

@@ -1,0 +1,134 @@
+{
+  "scope": "private local bytes intercepted in Playwright; no server or outbound network; no video/audio/screenshots; no human timed-comprehension validation; initial snap file navigation ERR_ACCESS_DENIED preserved as this note",
+  "recorded": false,
+  "rows": [
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/index.html",
+      "width": 1280,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/codelab/codelab.html",
+      "width": 1280,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/index.html",
+      "width": 768,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/codelab/codelab.html",
+      "width": 768,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/index.html",
+      "width": 520,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/codelab/codelab.html",
+      "width": 520,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/index.html",
+      "width": 360,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93"
+    },
+    {
+      "repo": "qnx-edu-kit",
+      "file": "docs/site/codelab/codelab.html",
+      "width": 360,
+      "checks": {
+        "no_horizontal_overflow": true,
+        "no_remote_requests": true,
+        "no_page_errors": true,
+        "canonical_route_link": true,
+        "canonical_navigation": true
+      },
+      "summary": null,
+      "errors": [],
+      "requests": [],
+      "page_sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19"
+    }
+  ]
+}

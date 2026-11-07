@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/site'
 CSS = '''
 :root{color-scheme:light;--ink:#181c1e;--paper:#fbf8f4;--accent:#6344aa;--line:#c0c0bb}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,sans-serif;line-height:1.65}
+*{box-sizing:border-box}body{overflow-wrap:anywhere;margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,sans-serif;line-height:1.65}
 header{padding:1rem 4vw;border-bottom:3px solid var(--accent)}header a{margin-right:1.5rem}main{max-width:78ch;margin:2rem auto;padding:0 1.25rem 4rem}
 h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12}h2{margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem;scroll-margin-top:1rem}h3{margin-top:2rem}
 a{color:var(--accent);text-underline-offset:.18em}a:focus-visible,summary:focus-visible{outline:3px solid #6344aa;outline-offset:4px}
@@ -78,7 +78,7 @@ def render(source):
     if code:raise ValueError('unclosed code fence: '+str(source))
     depth=len(source.relative_to(ROOT).parts)-1
     base='../'*depth
-    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · private teaching draft</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'codelab/codelab.html">Codelab</a><span>Private draft · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
+    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · private teaching draft</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'docs/learner-route.html">Start learner route</a><a href="'+base+'codelab/codelab.html">Reference appendix</a><span>Private draft · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
 
 def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))

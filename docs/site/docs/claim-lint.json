@@ -13,357 +13,362 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "df284ba7740f3a373c5b4e5723f438f7108702891a43f9b4233f5d90b7e8b4ee",
+      "sha256": "de3e372eba6159500eabbe8238dcab57758ef7655d49f6e1bdc94e901af675aa",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "STATUS.md",
-      "sha256": "3d9a67e5910fc03381c19796dad8f32fa52d2557649ebf50dbd91728e815827f",
+      "sha256": "401dd6f32dcc64146ab757079fe22c675b63cfe2ca7ddd9d99a2685c48693053",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "3934f45fab5ab556753015209e3dbe07937f858c091af0919a470415fb79769f",
+      "sha256": "e16a8f7b24d6953b7654d0c1c4830fc448ae32b28bf17aa943ce37da0024a4d2",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/private-demo.md",
-      "sha256": "6586dd2a4c0c568645e26d8aed626ac2f54d6b3184cf539ca6d33b4aaa738d28",
+      "sha256": "2708003b4d61415f2649b87901aba8645ad296d5c6f56bd7eeff6a45aad1a76d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "fd6bc7f4c604c2355c971e8865f8380142619b469de716bfa20f50c0831f5a05",
+      "sha256": "f01ed69dbe814a0527964a4a184bd19ef3c9ef2afbd726cc1185ca0c6abaee2b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "5d24430973aded142ff58ab87791e4cc2adfe493f8726b118a96852a035069e2",
+      "sha256": "2053f3003acfb2f61c03b7ab9fe206bdb54999dab265a628f262a7c3539aed63",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/README.html",
-      "sha256": "3f3068bd7612f1370433ecf4a123c6e16d948aa04af7e52ee959e28bc63396e5",
+      "sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "a6fdd826a098de8a665e28f656f6849b08621f0d0e1f56e41d28e3de014a9464",
+      "sha256": "a4ecc3fcf3fc872d71306054e94ee3b29c1adffe9042af6e0b26d7e6566d8cd4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "33a8368eafd6550dddd2e7239db1a0ef14da050e7376db5e74c30031cfba87f1",
+      "sha256": "43a85aaf56bf1323a406b94416827273e5eb7f80f99da4e30b131e448d1cff7b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/codelab/codelab.html",
-      "sha256": "4fa5597bf76cfc9e14ad5cdc077b8b411b738d89ba0d97292fafeb8f12b7a25a",
+      "sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
-      "sha256": "d0050b1fe3bf461b06a2cd8fab7b2f9732b432b7aa05f6f7001a0aa1ee01033f",
+      "sha256": "16b92772f07d26e4f3967d7b3148cf298ebc9f3f52b562ace302fb38e41e10e8",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
-      "sha256": "307633fcfd8225600a34209806ab620647ec36249a2575c3a7575541e61a064a",
+      "sha256": "b1fc14381df7576ea84d7e33176253b3a8cac6845082be9a6c55963e0627aee0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
-      "sha256": "dc9a36cde4055b7b2b4ea1e542f966a58cf52b1b94fcbda34126da6297decdd6",
+      "sha256": "5448c660bb4144d6ccb429229059bfd5750e6128d5b72ccfa42a42ab1b39a86e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
-      "sha256": "347a9b0737085a0b695ebc3f8d6070e15a031c06283256e2781d76f33a1f1936",
+      "sha256": "fd9af19d21da03d43836d3b4119d4ce5d9337d89c0fc36a5d6ea69ef3c346210",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
-      "sha256": "ed8e832cff6231c09437e16225872b7de4f3fec5a551b5572a7fed0c2e211cf3",
+      "sha256": "b4ee48e73fed497dd51ba01e3b565fa15cf1a624a051de1a7be42167589dc1c7",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
-      "sha256": "8fa2c10ae867d7fc6ea423d271fb2043dcfd38e09063c75aa8e438d5624ae401",
+      "sha256": "fe0e721d1c3db0527f0c5f006496956ebf78a4797ec2ae8493e3af5c1d906caa",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
-      "sha256": "f3f71a6935a5babc31191901d4c036a9698e81883ae6d1f7388f6acbd1055f76",
+      "sha256": "7a3ec16778f813844003c8222106928b25aa36ac52111ae5b8d5ae909b0d9516",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
-      "sha256": "6f18727bd9efcc2839a581915a319c157be2152c0bc6e521927d56f3ac2db56c",
+      "sha256": "481de3a20d9847501da9ada7fc755f3fdc57b1c30dce738b549f11b045438b05",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
-      "sha256": "dd759e5971a869e5f0817ff091e1209100798bc78d3e29ab57f987325d45f8df",
+      "sha256": "81597312ebb43a8650dd35cb685817dde4ea5dd1252007fd7829002e02f6aaed",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
-      "sha256": "48a85f4b972c9a75ce9794819da2b49eebea5b13542cd42931418248a24636fc",
+      "sha256": "57963f86bd61a873c4b6ea779b99f5b2029f1aa0fc7bc8fea34087d45d3ffe1e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
-      "sha256": "4a279ec7697281817e169532779c200acfaf684992c083d1fd211bd55da6033d",
+      "sha256": "396bf81503e355b41b62a558370ab5dd4a96edc4d996404913a0c9d8926aa2d5",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
-      "sha256": "f46ce8ecba848b00b3a3e2cd5d28dcc657ba2d2011cbb8f7153698332ed7bba4",
+      "sha256": "0a22559bf94927bb6b9df821a283f898f4fd60b5319376f3b044d9058566bf16",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
+      "sha256": "24bccc10ba3301131c350a6caf79dae21acdff0355626996ee112102d78d474a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
-      "sha256": "5a36cf4c623dd9ee23bcf79833b5dc970d7611d12d92d9caa32c2bb464afc534",
+      "sha256": "3f0ac0fa556db2ba0616b2389d08f0d001ea25ac1dbfa2f449b9627033292add",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
-      "sha256": "a13c6c20d4205b1cd4f60ced14adb6bfe54ae1ed3965e67f4c76833e65a63a19",
+      "sha256": "33a841a55bb36fc2726b569a00d7bea065a360247756fa80b9c7181c33fc20ef",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/capabilities.html",
-      "sha256": "bfb937f55a38cccee0a511c26f7d3dfcaa272c22eb2b205c00cabaab7b76e15b",
+      "sha256": "e87052cc11293f3a119fd984b4f3b4818e63cf0ff888606f96f1638e35cbe545",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/claat-export.html",
-      "sha256": "04dbe9ab767ab3e8c86109f3907cf999b73ca30c4afa26ed490020b771fbd65c",
+      "sha256": "37ffdf7dd60d86f7a215ae108085e4da85d3ad184a610eb46d9f81b980adb58b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/claim-report.html",
-      "sha256": "28997738f5b49cb735e2de201977795f2d866be12ae9816d0de3500a092aeec6",
+      "sha256": "f585b2c1f0cfb7c93a3ae418e3f6850002496f992c3aa1ffef4a212d9f516b23",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/clean-step3-setup.html",
-      "sha256": "a3071b514774c50749e63ec7b6c6ac5b7fe268d2ec355799891d69b2010ff1cd",
+      "sha256": "68a8a089fb1b97b0804d8fe8310d2b472928aed6f254393e107aeeabbf762114",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/e2-build-order.html",
-      "sha256": "c076f50fc8e1a01f0896b587c9571a796f472c5dac8cea02952a874e6da36773",
+      "sha256": "26036b0ef2caeb57b685ea4048ce622ee3f63b2fbcdc958fe7c41583a0153874",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/e2-results-20261107.html",
-      "sha256": "3a56dd35936fd8de646263b538dd66931f3a1fc5d53c9c61cedfe324876cf08a",
+      "sha256": "9481a8a3c7fdd14b5abd0b13e98c77829f34f1405c0656e5d751d061aa511eac",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/feature-gates.html",
-      "sha256": "83b951caf100f7d9bed6b93d4d8b02334d368b35f081cf954b531fca0d3375ec",
+      "sha256": "11e8e7bf0b8b4660c914e69885a354733290dbdf04777cde54fe95f138b22e5b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/followup10-20261106.html",
-      "sha256": "03e320946724755a5bc15799e2d6e39f4ed444c6fe4b6857a4a3872c1af9bdfa",
+      "sha256": "58687c8bac712a6946f1e17b1b300c30ff89e548e6c530a47acb03083cbbf804",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/followup9-20261106.html",
-      "sha256": "a74ac08bfba2f8fa794bc61e7dfa0a98808edbc8a9584ce7225cc8e40085e132",
+      "sha256": "dfb59285aeb5d6f2eaf82dff0280659bd9b3d86763751bcc46681547f31e235a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/learner-dev-edu.html",
-      "sha256": "a1bcba43195d777d1bea69bd39a11191c5b22a5a984310a3be1a0d7b03968658",
+      "sha256": "cb5968a76192ccb70e4f63db7795a242e5674a94e801e3b057428b56417539eb",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/learner-lab.html",
-      "sha256": "ba912d4c68ecbd433ce57de8c1fac04c944df1fdd1dd5324c5a5574c24e10e75",
+      "sha256": "a4f9b2602f33d45fadbb0896f6f0375d6d2a9b88e1b55bea359b009cd43b7fc5",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "5e22106ad8e27290c163389b0c1448148b9852303f7f45830aa26caf8cfaf7c0",
+      "sha256": "562a05457f8c7cc53a559310b3279485c7ba5dbb388a0c248bd27fe6c76eaadc",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/learning-notes.html",
-      "sha256": "9cf50b9b5cfed4a4deb92fb2772b35d687358e24c05533105771189f029b4d2d",
+      "sha256": "b3a47d0044d274f9ab4c8b06c1eb54c61bf26c3c1fc0904813ce835c2b7760e3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/live-verification.html",
-      "sha256": "8fe2ead9454bbe5193bec10d686abefe29d1419ea80d68d27026daf6123403cd",
+      "sha256": "cbf05005a8f5e37b18ff72fc4e2b1f709e8e18442d8730723571de2605e86461",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/native-dma.html",
-      "sha256": "8677c1d957694f5274c0ec54f25b9dfedd205cd10105dcc236cb94ad91867b01",
+      "sha256": "d82d7703f62164f7ce0296795fa23cffc0c8bb2d46fe6dd2614cf05660d16ebd",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/native-recovery-20261104.html",
-      "sha256": "f9a2dfa8c72a1ce58896d152739297d3f97e6eb4bb45145495dd83646cfd1e9a",
+      "sha256": "9ce6302837f8c60c53f83593632e92f9d7cca9caae51dad3c28428e52ea8f7d5",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/native-resmgr.html",
-      "sha256": "c10d0a7da84ddb3fe4e8d2a8bb20b5bc68e3634b6d120dc554a338e7e84cb41d",
+      "sha256": "8546c0c9fb3b4a17ea1c8621ff3389eaf8e260d15314db6df01809190a7bc6e9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/platform-gates-20261103.html",
-      "sha256": "558a9e4e1d5ebf67c8be288d3fa802cf80cda8da0f6b36b59a2b4e2dc313356b",
+      "sha256": "7f3bca1ab47c0d5fd930ef93c5562e31fdeaa029d47ebe75906998f779f80d0c",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/private-demo.html",
-      "sha256": "9f9ad1bd6a4958e19a906b0b800ffac369d9aa706c442b6e5b3a62eb2283344d",
+      "sha256": "11cd336fbe14c16502671e8d5a0d9ca58f52aa840bfa2241fab6c4663150cd51",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "a3211c95206bebe6943095120c4a7cbf1e5e6648731a4ed9abf2817523bc1c2f",
+      "sha256": "ade2731655fdaf6e80ccdb8c9fc42e3e98ffbaf508122d1c85b9a5962704ba76",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/qemu-recovery-safety.html",
-      "sha256": "eb76b6a3a1d9276598386d681906c4107ba2a8adc1127d8f48b751361424611a",
+      "sha256": "fd505dbd95f7daea93bca3f82a888aa37c5881b07a85dfb0fb4cfba26e6e940f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/recovery-20261106.html",
-      "sha256": "a4f11ca8a5d7cb932528111e7c1c96ae277e58fd8575560b3a4d0c31666076a1",
+      "sha256": "60c3d4d20b6c4a00d6e009f0e57053641f08f8127a5c46bdb5201fd37b3ca9ff",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/register-evidence.html",
-      "sha256": "fe17da06d7c6d39f1f25ee816946812bf99144129139c6288d40163fd46d397f",
+      "sha256": "c88df2cf1bd7ca321976c91c36248bd0ac6ca702998f3ffab99afd44714e66a0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/restart-policy.html",
-      "sha256": "f363e8c76f5ca71d4ceef40371e511834c1deb4a0aeaad5df0ac0367d33de4b0",
+      "sha256": "46e1e4ecd5c21aae04d736c5412853c49c41bf6e92e2a63601e6faddd5c8e826",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/sdk-install-result-20261104.html",
-      "sha256": "a33908e9b101f5e6c969f9cc8ff25132e53a1fb8b43683810e68591ef08ef69e",
+      "sha256": "e02f03b47deec0db5e4824139fd579c55905d0d5027736fbbcd6490c3213709c",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/security-policy.html",
-      "sha256": "46aefbaa4e44df4be3e4644d8dbdcc8a000370d36f454c8b066a7d304aefe49f",
+      "sha256": "67de35cd60337e9347805959b5cf92a661fc63a73974e193510bafd48da97039",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/site-design.html",
-      "sha256": "6fedd00786c0e34b072c6bd7b22a461e6d552ea35a375a5b16aa611ea9c05862",
+      "sha256": "a5886d8665b0a2b38d80a72735d5b90567a60e155fa3d6d8c4803e3f1fbb56c9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/tcg-feasibility.html",
-      "sha256": "25b8863a5d15f29938418b5d82558c5af01d06ef7006545db3a250103ac4b097",
+      "sha256": "88b04125ebea55bf0b7cfb969a1468119b0cb4b011b93d2c3e7de1c24f8a9633",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/tcg-guest-feasibility.html",
-      "sha256": "eba8e932430b4f5813cd2e4923c49aeb22cd902a9d2a35343ff2cda1cdce817b",
+      "sha256": "32e41cc7f1bb34dff14408d6587e0de6c34c4f6cc1d74b7125ad986f652b4fa9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/test-results.html",
-      "sha256": "c08c378e5206bb5e2d9033e5e9e0787fbe82311bf4eca58aa0577f530105ab88",
+      "sha256": "5ff026c3e9ee698b56134bb6816ceea9586c3beccab7696854e01f2b075321b1",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/verification-checklist.html",
-      "sha256": "7608bf34333a120c4115792a196dd2b74820f8853d3b36e86b8dbda7d0bfa0d7",
+      "sha256": "4967abdb453945ee1da10886e83da2d57bfce74432715f521d26b143750a6f1d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
-      "sha256": "038620c8a6fd27029d608d38498fa5e86bf6f279ef59fbf66dc97a59a916aa2c",
+      "sha256": "20fdd4cba0815010250e93c08d42875798fdf030ce75b1aeb91880e73c59a66b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/x86-user-feasibility.html",
-      "sha256": "92224ca6298b30b4e300cc68555ceee824e2a9f3111fef1f76437bef69bca67e",
+      "sha256": "185ce0d2a87930db4db5d63322513772a8e41e48aef55caa29e95af19ce8c5f3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/index.html",
-      "sha256": "3f3068bd7612f1370433ecf4a123c6e16d948aa04af7e52ee959e28bc63396e5",
+      "sha256": "24911ea4fe3c355cd6b7fd24878fccc1beb7d8ab2e3ee4bb42799191ef7ced93",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/README.html",
-      "sha256": "5252cbdbbaf39f047792db85de0d7bba70932e471ff995391fa0474d3943175b",
+      "sha256": "65f1b2ed61f386551876c8239ffc21f22b93b4737359a4e28bcc62f74a3e4c9b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step1/solution/README.html",
-      "sha256": "7beac861440b209791400bae70b1bd504e8210b7c22c4af8209253a45794c5b0",
+      "sha256": "1fd2a6274b4ab9fb385f56e29c4274ea4e90d5252581acdda10eef20f316e825",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step1/starter/README.html",
-      "sha256": "2d2db2fea0f5afc215fcd73de2a6a2dffddc186afe85a7fb74ccb4c46eff575f",
+      "sha256": "65ddb9e8be84c9f42143eef211bcdc498419446e47fa62d276da995b882421ee",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step2/solution/README.html",
-      "sha256": "6b580951b77ba77dff3377a0ece2311017ff6dcbaea3eb242aa83a9fc6ee4ee4",
+      "sha256": "645bcfbf6de3b29651faf284f884bed351235d267237067d054a823ed8d68e80",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step2/starter/README.html",
-      "sha256": "b08f1705ffdfe321d89f913ebc574b554ae89d8f0f6dc51c60a5456f08197e29",
+      "sha256": "06bfd3348a2e68d27cc1331c32826baf4d5d86739c33c422d379c2dd5352f6a3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step3/solution/README.html",
-      "sha256": "c173c25c38909e3112a9a51ba5552d0fd11c5e972ddd8cf3bb079867ce3083ff",
+      "sha256": "48f62d4943dfdc12709ffeb54705ca5fd5b2ca67c0550e976ab28e1392fdf4ab",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step3/starter/README.html",
-      "sha256": "405f1ce20f6f22852d272eed964ca86b2bb0ebb206a6366ac42c63188c44912b",
+      "sha256": "43bf3eb5b9f718278fd23c4f450835c6ffd8f8a29a0c45aa6e159e66d59a030e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step4/solution/README.html",
-      "sha256": "d7e58f011cdaedb92445763fe8f631e158cb050de81bc57049654ca6ef445e32",
+      "sha256": "8107c6cdb1a6366f50fefe29a3375d7202afa493fba1492efba95b1828e6a2d9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step4/starter/README.html",
-      "sha256": "d70c7a941c4c83a4c49c3a18d52edb0410e85b7c34c06b5fcf9e5580c5838574",
+      "sha256": "1df6cb00dfc281e3f613234474dcc3b7ea161f2f41cd2cbc665db375f66e4c6d",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step5/solution/README.html",
-      "sha256": "88e26796e776f3b52e09b44df98996173a83036722859855af135ad19ed0dd7a",
+      "sha256": "59e236eb4047e3da39646f2788efe5db96e264f304fbe7390ffb688630d45c08",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step5/starter/README.html",
-      "sha256": "ed161df58f05d75f6df5c4db1299ee93dd2b44319a58100d22308f7a0dca6da8",
+      "sha256": "d98c74b2b24cb95c54e4f8bead26a65383e25e9dd391f183b3beae71ee1c67b6",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step6/solution/README.html",
-      "sha256": "d03129c8df82276be770f2d8a179d1f8cfa5af57515b6fd71e3468ff3b345a4f",
+      "sha256": "2e86feea91acb7ddbf68290fea279fd4453fcc48520a6bd8c1284cc4e8d9d6cf",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/steps/step6/starter/README.html",
-      "sha256": "3e8b0a6de04a300873963fb63cf1facd9d34a6dddf63410027b795faf7c134d1",
+      "sha256": "25554ed3b4db697c33e71e8eddf32acdc9c3d01fe79bcda16274294454913759",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     }
   ],
@@ -390,12 +395,12 @@
     },
     {
       "source": "README.md",
-      "target": "docs/clean-step3-setup.md",
+      "target": "docs/learner-route.md",
       "exists": true
     },
     {
       "source": "README.md",
-      "target": "docs/learner-dev-edu.md",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
       "exists": true
     },
     {
@@ -495,6 +500,16 @@
     },
     {
       "source": "README.md",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
       "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
       "exists": true
     },
@@ -615,17 +630,12 @@
     },
     {
       "source": "codelab/codelab.md",
-      "target": "../codelab/codelab.md",
+      "target": "../docs/learner-route.md",
       "exists": true
     },
     {
       "source": "codelab/codelab.md",
-      "target": "../docs/capabilities.md",
-      "exists": true
-    },
-    {
-      "source": "codelab/codelab.md",
-      "target": "../REVIEW.md",
+      "target": "../docs/acceptance/bootstrap-final-20261107/NOTES.md",
       "exists": true
     },
     {
@@ -835,6 +845,11 @@
     },
     {
       "source": "docs/site/README.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
       "target": "codelab/codelab.html",
       "exists": true
     },
@@ -860,12 +875,12 @@
     },
     {
       "source": "docs/site/README.html",
-      "target": "docs/clean-step3-setup.html",
+      "target": "docs/learner-route.html",
       "exists": true
     },
     {
       "source": "docs/site/README.html",
-      "target": "docs/learner-dev-edu.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -975,6 +990,11 @@
     },
     {
       "source": "docs/site/REVIEW.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
       "target": "codelab/codelab.html",
       "exists": true
     },
@@ -1010,7 +1030,22 @@
     },
     {
       "source": "docs/site/STATUS.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
       "target": "codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -1090,7 +1125,7 @@
     },
     {
       "source": "docs/site/codelab/codelab.html",
-      "target": "../codelab/codelab.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1100,12 +1135,12 @@
     },
     {
       "source": "docs/site/codelab/codelab.html",
-      "target": "../docs/capabilities.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
       "source": "docs/site/codelab/codelab.html",
-      "target": "../REVIEW.html",
+      "target": "../docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -1315,12 +1350,22 @@
     },
     {
       "source": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1350,12 +1395,22 @@
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
+      "target": "../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.html",
       "target": "../../../../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
       "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/NOTES.html",
+      "target": "../../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1370,6 +1425,11 @@
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
+      "target": "../../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/native-clean/final-topology/NOTES.html",
       "target": "../../../../../codelab/codelab.html",
       "exists": true
     },
@@ -1380,6 +1440,11 @@
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
+      "target": "../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/NOTES.html",
       "target": "../../../../codelab/codelab.html",
       "exists": true
     },
@@ -1390,6 +1455,11 @@
     },
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
+      "target": "../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
       "target": "../../../../codelab/codelab.html",
       "exists": true
     },
@@ -1400,12 +1470,22 @@
     },
     {
       "source": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/fresh-checkout-20261107/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1416,6 +1496,11 @@
     {
       "source": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-20261107/build-memory-note.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1426,6 +1511,11 @@
     {
       "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1450,12 +1540,37 @@
     },
     {
       "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
+      "target": "../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/learner-finish-clean-20261107/initial-failure/NOTES.html",
       "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/packaging-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1466,6 +1581,11 @@
     {
       "source": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1476,6 +1596,11 @@
     {
       "source": "docs/site/docs/capabilities.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1530,12 +1655,22 @@
     },
     {
       "source": "docs/site/docs/claat-export.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claat-export.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/claim-report.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/claim-report.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1576,6 +1711,11 @@
     {
       "source": "docs/site/docs/clean-step3-setup.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/clean-step3-setup.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1635,6 +1775,11 @@
     },
     {
       "source": "docs/site/docs/e2-build-order.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-build-order.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -1666,6 +1811,11 @@
     {
       "source": "docs/site/docs/e2-results-20261107.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/e2-results-20261107.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1705,6 +1855,11 @@
     },
     {
       "source": "docs/site/docs/feature-gates.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/feature-gates.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -1725,12 +1880,22 @@
     },
     {
       "source": "docs/site/docs/followup10-20261106.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup10-20261106.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/followup9-20261106.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/followup9-20261106.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1741,6 +1906,11 @@
     {
       "source": "docs/site/docs/learner-dev-edu.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-dev-edu.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1785,6 +1955,11 @@
     },
     {
       "source": "docs/site/docs/learner-lab.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-lab.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -1815,6 +1990,11 @@
     },
     {
       "source": "docs/site/docs/learner-route.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -1840,12 +2020,22 @@
     },
     {
       "source": "docs/site/docs/learning-notes.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learning-notes.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/live-verification.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/live-verification.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1865,12 +2055,22 @@
     },
     {
       "source": "docs/site/docs/native-dma.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-dma.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/native-recovery-20261104.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-recovery-20261104.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1881,6 +2081,11 @@
     {
       "source": "docs/site/docs/native-resmgr.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/native-resmgr.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1891,6 +2096,11 @@
     {
       "source": "docs/site/docs/platform-gates-20261103.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/platform-gates-20261103.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1906,6 +2116,11 @@
     {
       "source": "docs/site/docs/private-demo.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/private-demo.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1940,12 +2155,22 @@
     },
     {
       "source": "docs/site/docs/proof-capture/SCRIPT.html",
+      "target": "../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/proof-capture/SCRIPT.html",
       "target": "../../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/qemu-recovery-safety.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/qemu-recovery-safety.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1965,12 +2190,22 @@
     },
     {
       "source": "docs/site/docs/recovery-20261106.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/recovery-20261106.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/register-evidence.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/register-evidence.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -1995,12 +2230,22 @@
     },
     {
       "source": "docs/site/docs/restart-policy.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/restart-policy.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/sdk-install-result-20261104.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/sdk-install-result-20261104.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2020,12 +2265,22 @@
     },
     {
       "source": "docs/site/docs/security-policy.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/security-policy.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/site-design.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/site-design.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2036,6 +2291,11 @@
     {
       "source": "docs/site/docs/tcg-feasibility.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-feasibility.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2060,12 +2320,22 @@
     },
     {
       "source": "docs/site/docs/tcg-guest-feasibility.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/tcg-guest-feasibility.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/docs/test-results.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/test-results.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2081,6 +2351,11 @@
     {
       "source": "docs/site/docs/verification-checklist.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/verification-checklist.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2101,6 +2376,11 @@
     {
       "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
       "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/write-first-qnx8-pci-driver-qemu.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2130,12 +2410,22 @@
     },
     {
       "source": "docs/site/docs/x86-user-feasibility.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/x86-user-feasibility.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
     {
       "source": "docs/site/index.html",
       "target": "index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
+      "target": "docs/learner-route.html",
       "exists": true
     },
     {
@@ -2165,12 +2455,12 @@
     },
     {
       "source": "docs/site/index.html",
-      "target": "docs/clean-step3-setup.html",
+      "target": "docs/learner-route.html",
       "exists": true
     },
     {
       "source": "docs/site/index.html",
-      "target": "docs/learner-dev-edu.html",
+      "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "exists": true
     },
     {
@@ -2280,6 +2570,11 @@
     },
     {
       "source": "docs/site/steps/README.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/README.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -2291,6 +2586,11 @@
     {
       "source": "docs/site/steps/step1/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2311,6 +2611,11 @@
     {
       "source": "docs/site/steps/step1/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step1/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2331,6 +2636,11 @@
     {
       "source": "docs/site/steps/step2/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2351,6 +2661,11 @@
     {
       "source": "docs/site/steps/step2/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step2/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2371,6 +2686,11 @@
     {
       "source": "docs/site/steps/step3/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2391,6 +2711,11 @@
     {
       "source": "docs/site/steps/step3/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step3/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2411,6 +2736,11 @@
     {
       "source": "docs/site/steps/step4/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2431,6 +2761,11 @@
     {
       "source": "docs/site/steps/step4/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step4/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2451,6 +2786,11 @@
     {
       "source": "docs/site/steps/step5/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2471,6 +2811,11 @@
     {
       "source": "docs/site/steps/step5/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step5/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2491,6 +2836,11 @@
     {
       "source": "docs/site/steps/step6/solution/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/solution/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2511,6 +2861,11 @@
     {
       "source": "docs/site/steps/step6/starter/README.html",
       "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/steps/step6/starter/README.html",
+      "target": "../../../docs/learner-route.html",
       "exists": true
     },
     {
@@ -2533,10 +2888,11 @@
     "kind": "private-proof-capture-DRY-PACK",
     "status": "PASS",
     "errors": [],
-    "frozen_commit": "01060c7c1aff834d6c0b016de7fd9f988f8f7e35",
+    "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
     "narration_words": 211,
     "planned_seconds": 160,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",
+    "recorded": false,
     "recording_performed": false,
     "audio_performed": false,
     "publication_performed": false,

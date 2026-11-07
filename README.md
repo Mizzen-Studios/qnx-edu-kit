@@ -11,20 +11,18 @@ Do not start with make check-reference-step*: those are reference runs, never
 your completion. Missing legal setup is BLOCKED, not solved by host checks.
 
 
-Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
+Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)
 now records intended wrong-edit FAIL despite app exit 0, followed by corrected
 native PASS. No reference receipt transfers.
 
-**Clean path demonstrated on one pinned configuration; owner gate not independently reassessed.**
-[Setup](docs/clean-step3-setup.md): unmodified stock generic kernel, 512 MiB SDK guest
-plus 1 GiB disk-backed guest swap, unchanged 100% CPU / 1 GiB host / nice 15 caps.
-The prior OOM receipts remain preserved. Both native logs retain an unattributed
-startup Memory fault after Starting sshd: no healthy-SSH/all-services claim.
-Broad portability and human learner validation remain UNVERIFIED.
-The distinct [learner /dev/edu finish](docs/learner-dev-edu.md) has one scoped normal-I/O result, not independent learner acceptance.
+## Current completion gate — 20:03 UTC
+
+Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. This packaging follow-up does not rerun native evidence or broaden acceptance. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
+
+Start only with the **[canonical learner route](docs/learner-route.md)**. Its [supported-bootstrap receipts](docs/acceptance/bootstrap-final-20261107/NOTES.md) bind wrong stage FAIL/app0, corrected PASS and own /dev/edu write10/read3628800 + IRQack. The startup failing component is sshd; internal cause remains UNVERIFIED. Historical setup/lesson pages are reference material, not alternative entry routes.
 
 ## Criteria map
 
@@ -60,7 +58,7 @@ Host mode runs guard and framework tests, then explicitly SKIPs live checks. Ful
 | macOS / Windows | UNTESTED; no verified Docker path provided |
 | Last live verification | 7 November 2026; all-six-step native functional PASS at 387ba38; QSTI provenance and fresh learners NOT verified |
 
-## API acceptance (not yet passed)
+## API scope — observed slices and unvalidated robustness
 
 | Area | Planned evidence | file:function | Status |
 |---|---|---|---|
@@ -74,7 +72,7 @@ Original native/edu_probe.c now uses installed QNX headers and compiles against 
 
 ## Release gates and limitations
 
-See [verification checklist](docs/verification-checklist.md), [host test evidence](docs/test-results.md) and [learning notes](docs/learning-notes.md). Every edu register must be verified against a live device in the pinned QEMU before any register tutorial or publication. Eight accessible SVG design diagrams, Mermaid sources, six rich starter/solution specifications, a local static site and host lifecycle tests are now available. Full SDK/API review, actual secpol, production driver/resmgr, DMA IRQ/error injection/restart/trace, two fresh target learner runs and mandatory on-QNX capture remain PENDING. No 45-minute completion claim is validated.
+See [verification checklist](docs/verification-checklist.md), [host test evidence](docs/test-results.md) and [learning notes](docs/learning-notes.md). Every edu register must be verified against a live device in the pinned QEMU before any register tutorial or publication. Eight accessible SVG design diagrams, Mermaid sources, six rich starter/solution specifications, a local static site and host lifecycle tests are now available. Full SDK/API review, actual secpol, production driver/resmgr, DMA IRQ/error injection/restart/trace, independent human learner and second-SDK validation remain UNVERIFIED. Video/audio stay deferred and separately gated, not a current blocker. No 45-minute completion claim is validated.
 
 CI is host-only, not Stage-1 QNX acceptance. CI downloads no QEMU, SDK or target image. Local owner-authorized feasibility testing used apt QEMU and official checksum-verified Alpine Linux artifacts outside this repository; see [TCG feasibility](docs/tcg-feasibility.md). A licensed SDK and private target image now exist outside this repository; neither is redistributed. Redistribution guard scans ignored/untracked files, names, signatures and selected markers; it is conservative, not a complete licence/content detector. SDKs, binaries, archives and images must stay outside this repo (also outside ignored folders). Python stdlib only; no dependencies are installed.
 
@@ -84,7 +82,7 @@ Original foundation under [Apache-2.0](LICENSE). QEMU edu documentation/source a
 
 Repository stays private. No Pages, upstream PR, video, account creation, submission or spending is authorized by this milestone.
 
-## Local learning materials
+## Companion/reference material — not alternative learner entry routes
 
 - [Write your first QNX 8.0 PCI driver in QEMU](docs/write-first-qnx8-pci-driver-qemu.md): expanded private draft, real build/crash-diagnostic checkpoint and observed BAR/IRQ/polled-DMA/resource-manager checkpoints and remaining learner gates.
 
@@ -98,7 +96,7 @@ For stale-output checking use python3 scripts/render_site.py --check. Actual pin
 
 ### Scoped learner /dev/edu result — 7 November 2026
 
-Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.
+Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. Owner completion review is CONDITIONAL, receipt-inspected not re-run; no safety/timing acceptance; C6 stays STOPPED.
 
 Supported stock-platform helper and explicit split-host/swap/isolated-service prerequisites are in the [canonical route](docs/learner-route.md). Existing installed SDK reuse only; no installer or second-SDK claim. Videos deferred until final freeze, final verification, independent gate and separate Olly OK; not a current blocker.
 

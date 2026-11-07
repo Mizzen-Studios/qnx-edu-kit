@@ -1,0 +1,30 @@
+{
+  "tool_release": "v2.2.6",
+  "tool_url": "https://github.com/googlecodelabs/tools/releases/download/v2.2.6/claat-linux-amd64",
+  "tool_sha256": "b7415471bd823562ebd9e6015e267a12fbf9340dfe839f8e2a175b6c7c0f397a",
+  "embedded_version": "2.2.5-2023-06-15T18:32:06Z-872cbcf",
+  "runner": [
+    "/usr/bin/qemu-x86_64-static"
+  ],
+  "source_sha256": "2053f3003acfb2f61c03b7ab9fe206bdb54999dab265a628f262a7c3539aed63",
+  "prepared_source_sha256": "e375282411742051dbbb3dde9f3c4e8066823131e99fa3610cf65ee3c8911b49",
+  "checks": {
+    "core_steps": 6,
+    "starter_solution_folders": 12,
+    "svg_assets": 8,
+    "source_snapshots": 12,
+    "first_step_warnings": "PASS",
+    "local_links": "PASS",
+    "external_runtime_references": [
+      "//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono",
+      "//fonts.googleapis.com/icon?family=Material+Icons",
+      "//support.google.com/inapp/api.js",
+      "https://storage.googleapis.com/claat-public/codelab-elements.css",
+      "https://storage.googleapis.com/claat-public/codelab-elements.js",
+      "https://storage.googleapis.com/claat-public/custom-elements.min.js",
+      "https://storage.googleapis.com/claat-public/native-shim.js",
+      "https://storage.googleapis.com/claat-public/prettify.js"
+    ]
+  },
+  "scope": "host export only; NOT full fresh-learner QNX acceptance"
+}

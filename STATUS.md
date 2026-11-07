@@ -1,10 +1,18 @@
 # Status — 7 November 2026
 
+Start only with the [canonical learner route](docs/learner-route.md).
+
+## Current completion gate — 20:03 UTC
+
+Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. This packaging follow-up does not rerun native evidence or broaden acceptance. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
+
+Current native result: [bootstrap-final](docs/acceptance/bootstrap-final-20261107/NOTES.md), wrong FAIL/app0 → correct PASS → own /dev/edu 10→3628800, IRQ completion1/ack0. Earlier sections below are dated history, not current blockers.
+
 [Private evidence review](REVIEW.md) records exact bindings and unresolved gaps.
 
 [Capability ledger](docs/capabilities.md) records scoped evidence and exclusions.
 
-## Current bounded validation — 7 November 2026
+## Historical bounded validation — 7 November 2026
 
 Fresh stock generic build completed with 512 MiB guest RAM + 1 GiB disk-backed
 swap; host caps remain 100% CPU / 1 GiB / nice 15. Builder isolated from
@@ -14,7 +22,7 @@ receipts are unchanged. [Build evidence](docs/acceptance/clean-step3-20261107/sw
 Fresh [clean learner step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md):
 wrong edit stage FAIL/1 despite app exit 0, corrected native PASS/0. Only the wrong
 MMIO readback check failed; all provenance, caps and QEMU cleanup checks passed.
-Both logs preserve an unattributed startup Memory fault after Starting sshd.
+These historical logs preserve the startup Memory fault; later diagnosis attributes the process to sshd, internal cause UNVERIFIED.
 No full-platform/SSH-health, broad portability or independent-review claim.
 Learner /dev/edu is separately assessed, never transferred from reference PASS.
 C6 remains STOPPED. Everything private; no deployment, contacts or spend.
@@ -68,6 +76,6 @@ Detached clean checkout d419bce ran ./verify.sh --host-only exit0: 79 total / 77
 
 ### Scoped learner /dev/edu result — 7 November 2026
 
-Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. No independent re-review or safety/timing acceptance; C6 stays STOPPED.
+Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. Current owner gate is CONDITIONAL, receipt-inspected not re-run; no safety/timing acceptance; C6 stays STOPPED.
 
 Supported canonical route observed on one existing licensed SDK: [supported-bootstrap result](docs/acceptance/bootstrap-final-20261107/NOTES.md). Fresh stock platform, wrong stageFAIL/app0, correctedPASS and own /dev/edu write10/read3628800+IRQack. Automated reuse only, not a second SDK or human gate. Old missing-host-SDK negative preserved. All guests reaped; no platform-health claim.
