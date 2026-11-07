@@ -64,7 +64,7 @@ def build():
  for p in sorted((ROOT/'docs/site').rglob('*.html')):
   rel=p.relative_to(ROOT/'docs/site'); src=ROOT/rel.with_suffix('.md') if rel.as_posix()!='index.html' else ROOT/'README.md'
   site.append(dict(path=str(p.relative_to(ROOT)),sha256=sha(p),source=str(src.relative_to(ROOT)),coverage='same source line inventory; generated projection, not independent evidence'))
- return dict(schema='qnx-private-review.v1',reviewed_tip='2dd61762bb6cbc00c75ab4c9f49619883d9330e5',accepted_conditional_tip='ada5d0ff03533a2fec0983f3fedbd9bada9df8a9',labels=['observed in this QEMU run','host-only','UNKNOWN','UNVERIFIED'],evidence=e,source_surfaces=surfaces,site_projection=site,claim_catalog=dict(path='REVIEW.md',sha256=sha(ROOT/'REVIEW.md')))
+ return dict(schema='qnx-private-review.v1',reviewed_tip='5876304a82d1c07ecde7401a9c522ef28ec268de',accepted_conditional_tip='ada5d0ff03533a2fec0983f3fedbd9bada9df8a9',labels=['observed in this QEMU run','host-only','UNKNOWN','UNVERIFIED'],evidence=e,source_surfaces=surfaces,site_projection=site,claim_catalog=dict(path='REVIEW.md',sha256=sha(ROOT/'REVIEW.md')))
 if __name__=='__main__':
  import argparse
  a=argparse.ArgumentParser();a.add_argument('--check',action='store_true');opts=a.parse_args();out=ROOT/'docs/review/appendix.json';value=json.dumps(build(),separators=(',',':'))+'\n'

@@ -1,8 +1,8 @@
 {
-  "instruction_commit": "2dd61762bb6cbc00c75ab4c9f49619883d9330e5",
-  "instruction_sha256": "164fc0a9d70da3bf0aa6b013045cc02cc4f0f13a58c884aa3ae61c8ef11c0fd2",
+  "instruction_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
+  "instruction_sha256": "d8e79d0b69fd766dcfabf116084624e7830dde6846fc0e7bf4718575dcd02d8d",
   "fresh_clone": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-portability-2105/new-user-checkout",
-  "fresh_external_work": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-portability-2105/learner-work",
+  "fresh_external_work": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-portability-2105/final-attempt/learner-work",
   "host_exit": 2,
   "preflight_exit": 2,
   "boundary": "ARM host SDK unavailable: explicit negative only; existing x86 SDK inspected separately; no native or second SDK PASS",
@@ -54,6 +54,6 @@
   ],
   "sdk_or_native_run": false,
   "initial_failure_preserved": true,
-  "host.log_sha256": "4625480ced8c537c86b922d33e598b7520d78fa6cac32c69ed18bbaedf3c46c1",
+  "host.log_sha256": "31e8620aea5d97e258e85c04d764ddec91c97ffbca19fec26087224374914a8e",
   "preflight-initial.log_sha256": "3e386fc7fabfca4bd5486872c654b7ff417c1e4e0d79e0319ea43764f6eb316b"
 }

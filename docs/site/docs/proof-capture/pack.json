@@ -1,6 +1,6 @@
 {
   "schema": "private-dry-pack.v1",
-  "frozen_commit": "2dd61762bb6cbc00c75ab4c9f49619883d9330e5",
+  "frozen_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
   "capture_authorization": "NOT_GRANTED: separate Olly OK required",
   "lines": [
     {

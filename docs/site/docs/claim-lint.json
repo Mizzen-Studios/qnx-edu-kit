@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "a12dbf19572fd1d3ce2bd347e8bc7bf3a700b9275337e06749bbe6007fca124d",
+      "sha256": "45146349ce347201fdcf1b4d66743d5b271faac4680489f0bffdb58787c623fd",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "16a8f8f224962e05700d250e68bcefc72fcd796c667256a21b313dd6eca45719",
+      "sha256": "b6a0e365b3ee2bed2f834b265c2364a47e65f90de104f3dce150523ddffe6763",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "8718bd2338b6c868e7870612723a00793e2b78e59c139cba856b2104511e065f",
+      "sha256": "b60d1683713b2b89618e6265613e7160021ab7e4e39b615fc0ee3b4a25fde3fd",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -2888,7 +2888,7 @@
     "kind": "private-proof-capture-DRY-PACK",
     "status": "PASS",
     "errors": [],
-    "frozen_commit": "2dd61762bb6cbc00c75ab4c9f49619883d9330e5",
+    "frozen_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
     "narration_words": 211,
     "planned_seconds": 160,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",
