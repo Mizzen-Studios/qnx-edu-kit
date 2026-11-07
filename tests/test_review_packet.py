@@ -16,7 +16,8 @@ class ReviewPacket(unittest.TestCase):
   d=packet.build()
   for name in ['reference','reference-clean','compile','step3-wrong','step3-correct','finish','stock-build','export']:
    self.assertTrue(d['evidence'][name]['tested_source_commit'].startswith('UNVERIFIED'))
-  self.assertTrue(d['evidence']['export']['current_source_matches_receipt'])
+  self.assertFalse(d['evidence']['export']['current_source_matches_receipt'])
+  self.assertTrue(d['evidence']['route-export']['current_source_matches_receipt'])
  def test_raw_success_and_negative_control_not_interchanged(self):
   d=packet.build()
   def receipt(k):return json.loads((ROOT/d['evidence'][k]['path']).read_text())

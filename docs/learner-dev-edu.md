@@ -1,5 +1,7 @@
 # Learner-owned /dev/edu finish
 
+**Companion/reference details: start with the [canonical learner route](learner-route.md), integrating step3 then your own /dev/edu.**
+
 This stage is separate from `check-reference-step6` and `native/edu_accept.c`.
 It builds an edited step6 starter and assesses actual normal device I/O on a fresh
 boot. Reference receipts and step3 manifests cannot satisfy this stage.

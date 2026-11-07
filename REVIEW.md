@@ -38,3 +38,15 @@ Run ./verify.sh --host-only, python3 tools/capability_ledger.py, python3 scripts
 See [new source-commit-bound receipts](docs/acceptance/fresh-checkout-20261107/NOTES.md) and provenance.json: wrong host1/correct host0, initial finish host1/corrected finish host0 on a freshly generated stock platform using existing legal SDK. Older missing bindings remain UNVERIFIED; no retrospective promotion. Startup process now attributed to sshd only in separately bound diagnostic image. Independent owner re-review still not done.
 
 Private editorial draft: [shot list and narration](docs/private-demo.md), planned below three minutes. No recording/upload or new runtime claim.
+
+## Canonical route follow-up — host-only, native feature freeze
+
+README/site and codelab now lead with the integrated predict → edit → observe →
+diagnose → explain route: step3 then learner-owned /dev/edu. Six historical
+lessons are reference appendix material. Exact commands/instruction hashes and
+independent-workdir results: docs/acceptance/route-paths-20261107/receipt.json.
+Unavailable legal SDK/BSP inputs on that independent host remain BLOCKED, not
+PASS. No guest/native rerun, SDK install/activation, second-SDK portability,
+human acceptance or runtime proof promotion. Historical failures/pins unchanged.
+The historical claat source no longer matches current instructions; its original
+receipt stays unchanged. A separate current host export receipt binds the new prose.

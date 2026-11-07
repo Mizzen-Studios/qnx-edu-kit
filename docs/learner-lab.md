@@ -1,5 +1,7 @@
 # Learner-owned step3: BAR complement
 
+**Companion/reference details: start with the [canonical learner route](learner-route.md), integrating step3 then your own /dev/edu.**
+
 This first vertical slice builds and boots **your edited C file**, separately from
 reference verification. No reference receipt or transcript is an input mode.
 Scope: PCI attachment, BAR0 mapping, ID and complement register only. Not IRQ,
@@ -53,7 +55,7 @@ step3 or reference manifests.
    cached reference binary. Copy that entire build directory externally to the
    QEMU host if necessary. The run command checks the current source hash too.
 4. Serialize **all** SDK/native work under the same exclusive lease. On this
-   validation host the lock is `/home/ubuntu/qnx-host/native-test.lock`. Stop and
+   validation host the lock is `$EDU_NATIVE_LOCK (your chosen external shared lock)`. Stop and
    reap the SDK guest before native boot. Set `EDU_NATIVE_LEASE=granted` only
    while actually holding that lock. The runner checks that the named lock is
    held, but the caller is responsible for owning it, not another process.

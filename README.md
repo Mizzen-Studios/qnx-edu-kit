@@ -1,5 +1,16 @@
 # edu-kit — learner-owned QNX fault-to-fix lab
 
+## Start here: predict → edit → observe → diagnose → explain
+
+Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
+SDK/BSP/QEMU paths and preflight; predict/edit step3, observe the wrong-write
+failure, diagnose/fix/rebuild and explain it; then edit your own step6 starter
+and observe normal write10/read3628800 through /dev/edu. Setup/build/run commands
+and stop gates are integrated in order, not a scavenger hunt.
+Do not start with make check-reference-step*: those are reference runs, never
+your completion. Missing legal setup is BLOCKED, not solved by host checks.
+
+
 Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
@@ -24,7 +35,7 @@ The distinct [learner /dev/edu finish](docs/learner-dev-edu.md) has one scoped n
 | Impact | reproducible teaching without hardware | two clean-machine learner runs PENDING |
 | Innovation | verified PCI/IRQ/DMA learning path | no novelty/first/smallest/correctness claim established |
 
-## Host-only quick start
+## Maintainer host checks — not the learner route
 
 Host, repository root (Python 3 and POSIX shell, GNU make):
 

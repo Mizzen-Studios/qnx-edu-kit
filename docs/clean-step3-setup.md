@@ -1,5 +1,7 @@
 # Clean learner-owned bootstrap — tested narrow configuration
 
+**Companion/reference details: start with the [canonical learner route](learner-route.md), integrating step3 then your own /dev/edu.**
+
 Fresh clean-platform step3 now has **wrong-edit intended FAIL and corrected native
 PASS**, with source/binary/image/disk provenance. [Receipts](acceptance/clean-step3-20261107/native-clean/NOTES.md).
 This is one automated run on the configuration below, not independent re-review,
@@ -90,7 +92,7 @@ unchanged. Both runs bind source, binary, image, disk, build/run driver and star
 
 Stop/reap the SDK guest before target QEMU. Hold the exclusive lease throughout
 each phase, and only set EDU_NATIVE_LEASE=granted while owning it. Actual validation
-lock: /home/ubuntu/qnx-host/native-test.lock. Never interrupt another project.
+lock: $EDU_NATIVE_LOCK (your chosen external shared lock). Never interrupt another project.
 
 ## Remaining limits and chronology
 

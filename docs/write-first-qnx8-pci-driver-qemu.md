@@ -1,5 +1,7 @@
 # Write your first QNX 8.0 PCI driver in QEMU
 
+**Companion/reference details: start with the [canonical learner route](learner-route.md), integrating step3 then your own /dev/edu.**
+
 **Private working draft, 6 November 2026. Not a completed or runnable learner tutorial.**
 No completion-time, first-ever, safety-certification or performance claim. The experimental native probe compiles and now demonstrates BAR mapping and factorial polling after requesting per-thread I/O level1; native one-shot interrupt completion and a 64-byte polled DMA round-trip now pass; normal resource-manager I/O now passes, while robustness and full learner acceptance remain pending. Host models and qtest prove neither QNX PCI API correctness nor a working /dev/edu.
 
@@ -17,7 +19,7 @@ For an existing operator-reviewed QEMU command, this host uses a transient scope
 
 	systemd-run --user --scope --quiet -p CPUQuota=100% -p MemoryMax=1G nice -n 15 qemu-system-x86_64 ...
 
-The ellipsis is deliberately NOT a runnable image recipe: BSP/image setup remains an acceptance gate. Native probe uses 1 vCPU and 512MiB guest RAM; SDK build guest uses a separate 200% CPU / 4GiB host-memory scope. Inspect actual cgroup cpu.max/memory.max. Use bounded runtime/logs and terminate only the owned VM. Never lift caps to make a slow test pass.
+The ellipsis is deliberately NOT a runnable image recipe: BSP/image setup remains an acceptance gate. Native probe uses 1 vCPU and 512MiB guest RAM; the historical SDK 200% CPU / 4GiB scope is superseded: all SDK/native QEMU now use 100% CPU / 1GiB / nice15. Inspect actual cgroup cpu.max/memory.max. Use bounded runtime/logs and terminate only the owned VM. Never lift caps to make a slow test pass.
 
 ## 1. Build the experimental diagnostic
 
