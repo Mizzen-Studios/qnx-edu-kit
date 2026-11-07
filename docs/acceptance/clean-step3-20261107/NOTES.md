@@ -66,3 +66,7 @@ the documented fresh snippet integration/PCI-ready startup also needs actual
 execution. This slice stops here; no larger caps, private kernel stripping,
 licensing/package changes or automatic retry. C6 remains STOPPED, no heartbeat,
 DMA/IRQ/secpol/resmgr/course expansion, publication, contacts or spend.
+
+## Final parent host integration
+
+After acceptance-note rendering/link repair and the final QNX8-layout preflight regression, a detached clean checkout at d419bce01d35d3c92ed55b80b7f9faa854cb6ca3 ran ./verify.sh --host-only: 79 total, **77 PASS / 2 SKIP / 0 failures**, exit0, checkout unchanged. parent-review.json pins the exact source tree, raw parent-host-final.log and inspected compile/OOM/cleanup evidence. This supersedes only intermediate host/site failures, never the clean native bootstrap blocker. No native boot or portable acceptance inferred.

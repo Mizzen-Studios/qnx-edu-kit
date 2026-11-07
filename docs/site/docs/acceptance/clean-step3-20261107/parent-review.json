@@ -1,0 +1,34 @@
+{
+  "scope": "Parent recorded-evidence inspection and clean-checkout HOST verification only; clean native bootstrap remains blocked",
+  "source_commit": "d419bce01d35d3c92ed55b80b7f9faa854cb6ca3",
+  "source_tree": "d33d8ffb87cb80a60e3acdb4400d84182f852df5",
+  "host_command": "./verify.sh --host-only",
+  "host_exit": 0,
+  "host_tests": {
+    "total": 79,
+    "passed": 77,
+    "skipped": 2,
+    "failed": 0
+  },
+  "checkout": "detached clean worktree; status empty after verification",
+  "evidence_source_commit": "58e7caee0ffe9dde197baf87ee38b0c767106f5d",
+  "evidence_inspection": "Exact C hashes match compile receipt; kernel OOM victim and service oom-kill agree; normal build exit unavailable, not fabricated",
+  "files": {
+    "docs/acceptance/clean-step3-20261107/compiler.json": "1ec5c65a8118fb0d0e05a55f3cfce6484995a2a6565194831983348e2578e54b",
+    "docs/acceptance/clean-step3-20261107/wrong.c": "ff8684c7a45eac8353b9367ccec2d3805ef3ca7270f12c1781b0c061d9af4b1b",
+    "docs/acceptance/clean-step3-20261107/correct.c": "1aa31a582a8fdfb4f9bb5f8a987f4667f3adcce30652b0bb68f89933ba5fd208",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/outcome.json": "06a3822642683b82358d493bf4af0070d843050bbfd92064ace522750fd84392",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/driver.sh": "033550baac02ff0c0954f44163e202e98d68654c2dc1885e619a938dee6fc648",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/dmesg-after.log": "0d09ffbcaa0e956bca587b205e6f2e17203fd7c7cd9d17361d0ad863778465fe",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/resources.log": "c6c8ad72a24101e4d38808fbd7c432cf3c2b7ad11a9b5fedfe1b76f4a099a39e",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/service-exit.log": "56e76e33f34290c0f3e3d1dd1a14c9395bdac69c85c8d776b46814c4c1e072c4",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/sdk-caps.json": "acac4cd61e3340c0d31d9b7fccd6ce5e267ba9b9c8087dac30728df1b35d0c03",
+    "docs/acceptance/clean-step3-20261107/diagnosis900/sdk-stop.json": "038ab309b998d9f4b6e07447d55601c574d31fa0f4ad5f22ef22bdf8279d4e7e",
+    "docs/acceptance/clean-step3-20261107/parent-host-final.log": "1fd036d836062e8c578253c5117ae433b0d9d2a94b88f23d5bab38bb0e9cab99"
+  },
+  "clean_native": "NOT_RUN",
+  "portability": "UNVERIFIED",
+  "blocker": "Guest OOM during stock kernel linking at512MiB; no fresh IFS/matching disk for integration or target tests",
+  "c6": "FAIL/stopped",
+  "cleanup": "SDK stopped/reaped and free flock; independently checked by parent"
+}

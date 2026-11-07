@@ -55,3 +55,7 @@ Actual edited C was cross-compiled, imaged and freshly booted twice in serialize
 - Effective host CPU100%/1GiB/nice15, guest1vCPU/512MiB. Guests stopped/reaped and lease released. C6 never started.
 
 Observed in this QEMU run · app budget, not a QNX benchmark. Local E1 BSP substrate adapted externally; clean learner BSP portability UNVERIFIED. A private debug-stripped licensed kernel copy avoided SDK relink OOM without increasing caps or changing SDK originals. Raw logs preserve a pre-learner SSH startup memory fault: no SSH health claim. No IRQ/DMA or /dev/edu learner PASS, QSTI provenance, malicious-output resistance or human validation. Await independent journey review before expansion.
+
+## Final conditional-gate host verification
+
+Detached clean checkout d419bce ran ./verify.sh --host-only exit0: 79 total / 77 PASS / 2 SKIP; site, ledger and redistribution checks PASS. [Source-bound parent receipt](docs/acceptance/clean-step3-20261107/parent-review.json) pins actual host log and OOM/compile/cleanup evidence. Host PASS does not resolve the clean native bootstrap BLOCKED/UNVERIFIED gate.
