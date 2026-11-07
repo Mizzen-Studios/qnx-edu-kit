@@ -1,0 +1,8 @@
+{
+  "pid": 167693,
+  "cpu": "100000 100000",
+  "memory": "1073741824",
+  "nice": 15,
+  "memory_current": "1073627136",
+  "memory_events": "low 0\nhigh 0\nmax 1712\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+}

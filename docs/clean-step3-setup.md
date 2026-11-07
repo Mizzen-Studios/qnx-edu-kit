@@ -104,3 +104,5 @@ after Starting sshd**, before the learner. This scope does not establish healthy
 SSH or all-platform service health, and that fault is not claimed fixed.
 The separate [/dev/edu learner finish](learner-dev-edu.md) is not a reference PASS
 transfer. C6 remains STOPPED; no safety, timing or production-driver claims.
+
+Startup diagnosis attributes the observed failure to **sshd** in a separately traced image; internal cause remains UNVERIFIED. [Separate baseline/diagnostic bindings](acceptance/startup-diagnosis-20261107/NOTES.md). No SSH/platform health claim.

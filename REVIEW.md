@@ -20,7 +20,7 @@ Receipt IDs resolve to exact paths/full hashes in the appendix; missing bindings
 | QEMU register/INTx/DMA reference behavior | **observed in this QEMU run**, NOT QNX: qtest raw log records executable/probe hashes and BASE 7afd82275940f45e0b0b0105205a58c255cb713c. Distro executable not proven identical to upstream source pin. API walkthroughs are instructions/design unless supported by narrow native claims above. |
 | SDP installation/version, host identity/KVM/environment/hello history | Installation narrative docs/sdk-install-result-20261104.md and feasibility pages; underlying external SDK logs not inspected here. Exact install/host identity/activation/hello bindings **UNVERIFIED** in this packet. QSTI provenance **UNVERIFIED**; macOS/Windows untested. |
 | Teaching impact, portability, full learner journey,44/45-minute completion, novelty/first/smallest, full lifecycle, DMA IRQ/errors/restart/trace, least privilege/secpol, physical hardware/production correctness | **UNVERIFIED**: estimates/plans/source contracts, no qualifying receipts. No capability promotion. |
-| Startup Memory fault origin; healthy SSH/platform | Cause **UNKNOWN**; fault visible in raw reference/learner serial. Healthy-SSH/platform **UNVERIFIED**. |
+| Startup Memory fault origin; healthy SSH/platform | Fresh unchanged baseline reproduced; separately traced image attributes process to **sshd**, with sshd.core/no sshd in pidin. Internal root cause and healthy-SSH/platform **UNVERIFIED**. See docs/acceptance/startup-diagnosis-20261107/NOTES.md. |
 | C6 safety/heartbeat and SocketCAN | **UNVERIFIED**. C6 **STOPPED, no retries**. SocketCAN ABI historically failed; no EDU receipt establishes SocketCAN. No safety, timing or availability claims. |
 
 ## Corrections and chronology

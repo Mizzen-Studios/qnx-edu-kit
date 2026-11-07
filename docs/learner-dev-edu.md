@@ -36,3 +36,5 @@ Hashes are cooperative build provenance, not malicious-learner attestation.
 No C6 work, publication or deployment is performed.
 
 The clean target still logs an unattributed Memory fault after Starting sshd. No healthy-SSH/full-platform claim. The earlier NO_UNMASK and routing hypotheses failed and remain in the receipt history.
+
+Startup diagnosis attributes the observed failure to **sshd** in a separately traced image; internal cause remains UNVERIFIED. [Separate baseline/diagnostic bindings](acceptance/startup-diagnosis-20261107/NOTES.md). No SSH/platform health claim.
