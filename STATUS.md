@@ -21,5 +21,6 @@ Six incremental C solutions and bounded starter TODOs now derive from unchanged
 E1 native source (387ba38 acceptance). Codelab teaches PCI/BAR/factorial/IAT/
 polled DMA/IAT resmgr only. Source drift is rejected before check-step launches
 a fresh native reference; no transcript replay or learner-binary claim.
-See [build order](docs/e2-build-order.md). Per-snapshot qcc/target runs and
-fresh learners remain pending; QSTI provenance unverified.
+See [build order](docs/e2-build-order.md). All six solution snapshots passed actual qcc -Werror and all six starters
+compiled (TODOs remain). [Receipt](docs/acceptance/e2-qcc-20261107/receipt.json).
+Per-snapshot native execution and fresh learners remain pending; QSTI provenance unverified.

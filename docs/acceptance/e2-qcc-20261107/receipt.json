@@ -1,0 +1,62 @@
+{
+  "status": "PASS compilation only; not native execution or learner completion",
+  "sdk_job": "1794043253080463557",
+  "exit_code": 0,
+  "caps": {
+    "cpu_max": "100000 100000",
+    "memory_max": "1073741824",
+    "nice": 15,
+    "guest_vcpu": 1,
+    "guest_memory_mib": 512
+  },
+  "sources": [
+    {
+      "path": "steps/step1/solution/main.c",
+      "sha256": "af014028a59c8fd6b50c3af84068ec8104ccd7d497b54675068640d7a6dc610a"
+    },
+    {
+      "path": "steps/step1/starter/main.c",
+      "sha256": "901ad4a798ad5dc7a7fd86f53aaad99f489c6a0b4dab00476cc4650e18c57d71"
+    },
+    {
+      "path": "steps/step2/solution/main.c",
+      "sha256": "a01ad55a5bfef0da4f91be10cbba50e05f19250c4e20fb9b61b1b077267f503b"
+    },
+    {
+      "path": "steps/step2/starter/main.c",
+      "sha256": "90293ed2581626b4b33b7b1dd080c9afa48ef99830bcfdf750714339d4845b34"
+    },
+    {
+      "path": "steps/step3/solution/main.c",
+      "sha256": "6be360ec8677b397f129efa6ba8be7490011349a6f3ee3617fdad3530cba0841"
+    },
+    {
+      "path": "steps/step3/starter/main.c",
+      "sha256": "b620cc941344e0b9736eb35144cb575754a0919995d3fd7a04f0368a64b3c032"
+    },
+    {
+      "path": "steps/step4/solution/main.c",
+      "sha256": "15db3164e2ac85e85911d26bacc040fde73b2f50f1f7beb21349b418cd7b175a"
+    },
+    {
+      "path": "steps/step4/starter/main.c",
+      "sha256": "aec59738cbe89646c2150baa5e5f53d635455d45adbd4f0462e88a2337a215dc"
+    },
+    {
+      "path": "steps/step5/solution/main.c",
+      "sha256": "eb41c8253fa5b81e0f4fd1c4bf2f2a43fd84079cd78461a2b23dbebd43018e47"
+    },
+    {
+      "path": "steps/step5/starter/main.c",
+      "sha256": "e1854ac3f1e0251aa2824a3bdc5bb74a782074bf67fe5f8e64f2f79eff262783"
+    },
+    {
+      "path": "steps/step6/solution/main.c",
+      "sha256": "ee3164cce9fca284c7394b9b4c12e24f7145686f97bd76cc720c3f086f02233e"
+    },
+    {
+      "path": "steps/step6/starter/main.c",
+      "sha256": "26437c8f25d7a0c0e0284bfef1b609d550cac81c2da0a068723fa252f403b42c"
+    }
+  ]
+}
