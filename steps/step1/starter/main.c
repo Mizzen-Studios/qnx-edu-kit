@@ -1,4 +1,10 @@
-/* Step 1 exercise: implement the contract in README.md.
- * Deliberately fails closed until replaced by your solution. */
+/* Step 1: readable E1-derived snapshot; regenerate with tools/step_sources.py. */
 #include <stdio.h>
-int main(void) { fputs("BLOCKED: learner implementation required\n", stderr); return 2; }
+#include <sys/utsname.h>
+#include <string.h>
+int main(void) {
+    /* TODO: use uname, require QNX 8.0, print target identity.
+     * Do not report acceptance until the actual target is checked. */
+    fputs("BLOCKED: step1 target identity TODO\n",stderr);
+    return 2;
+}

@@ -1,6 +1,6 @@
 # edu-kit — teaching kit for QNX® 8.0
 
-Private development milestone. **Experimental native QNX components; not a completed driver or runnable learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
+Private development milestone. **Experimental native QNX components; not a production driver or fully reproduced learner tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle/learner acceptance remains pending. No performance or functional evaluation of QNX is published here.
 
 ## Criteria map
 
@@ -17,11 +17,11 @@ Host, repository root (Python 3 and POSIX shell, GNU make):
 
 ```sh
 ./verify.sh --host-only
-make check-step1    # intentionally BLOCKED, nonzero
-./verify.sh         # intentionally BLOCKED, nonzero
+make check-step1    # BLOCKED without external bundle + exclusive lease
+./verify.sh         # fresh native gate; BLOCKED without bundle + lease
 ```
 
-Host mode runs guard and framework tests, then explicitly SKIPs six live checks. Full verify never returns success in this milestone. Each check-step1 through check-step6 exits 2; make may report its own error status. make deploy is blocked and copies nothing. No DRYRUN pretends to build/deploy.
+Host mode runs guard and framework tests, then explicitly SKIPs live checks. Full verify and check-step1 through check-step6 can pass only on a fresh source/image-bound native reference boot with an authorized external bundle and exclusive lease. Missing inputs exit 2; make may report its own error status. make deploy is blocked and copies nothing. No DRYRUN pretends to build/deploy.
 
 ## Build environment
 
@@ -34,7 +34,7 @@ Host mode runs guard and framework tests, then explicitly SKIPs six live checks.
 | Target | QNX 8 boots under TCG; EDU BAR/ID/factorial, IRQ raise/wait/ack and 64-byte DMA round-trip observed |
 | Toolchain | qcc -Vgcc_ntox86_64 compiled the original native/edu_probe.c with -Wall -Wextra -Werror |
 | macOS / Windows | UNTESTED; no verified Docker path provided |
-| Last live verification | 6 November 2026; BAR/IRQ/basic DMA checkpoint; full tutorial/driver acceptance NOT passed |
+| Last live verification | 7 November 2026; all-six-step native functional PASS at 387ba38; QSTI provenance and fresh learners NOT verified |
 
 ## API acceptance (not yet passed)
 
@@ -46,11 +46,11 @@ Host mode runs guard and framework tests, then explicitly SKIPs six live checks.
 | Resource manager | real /dev/edu I/O and errors | native/edu_resmgr.c and native/edu_accept.c | normal I/O PASS; lifecycle/policy PENDING |
 | DMA | mask, transfer and IRQ evidence | native/edu_dma.h | 64-byte polled round-trip PASS; DMA IRQ/error injection PENDING |
 
-Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders currently contain task/acceptance specifications, not compilable exercises. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
+Original native/edu_probe.c now uses installed QNX headers and compiles against libpci; it is an experimental diagnostic, not a resource manager or completed exercise. No QNX declarations, compatibility shims, fake target functions or made-up signatures are supplied. Starter/solution folders now contain readable E1-derived incremental C snapshots and bounded TODOs; see [E2 build order](docs/e2-build-order.md). Individual snapshot qcc/target runs remain pending. A source-pinned host behavioral model and transactional re-probe design tests are included in host/edu_model.py and tests/test_model.py. They are explicitly NOT QNX, do not perform MMIO/DMA, and cannot substitute for live checks.
 
 ## Release gates and limitations
 
-See [verification checklist](docs/verification-checklist.md), [host test evidence](docs/test-results.md) and [learning notes](docs/learning-notes.md). Every edu register must be verified against a live device in the pinned QEMU before any register tutorial or publication. Eight accessible SVG design diagrams, Mermaid sources, six rich starter/solution specifications, a local static site and host lifecycle tests are now available. Full SDK/API review, actual secpol, production driver/resmgr, DMA IRQ/error injection/restart/trace, upstream claat export, two fresh target learner runs and mandatory on-QNX capture remain PENDING. No 45-minute completion claim is validated.
+See [verification checklist](docs/verification-checklist.md), [host test evidence](docs/test-results.md) and [learning notes](docs/learning-notes.md). Every edu register must be verified against a live device in the pinned QEMU before any register tutorial or publication. Eight accessible SVG design diagrams, Mermaid sources, six rich starter/solution specifications, a local static site and host lifecycle tests are now available. Full SDK/API review, actual secpol, production driver/resmgr, DMA IRQ/error injection/restart/trace, two fresh target learner runs and mandatory on-QNX capture remain PENDING. No 45-minute completion claim is validated.
 
 CI is host-only, not Stage-1 QNX acceptance. CI downloads no QEMU, SDK or target image. Local owner-authorized feasibility testing used apt QEMU and official checksum-verified Alpine Linux artifacts outside this repository; see [TCG feasibility](docs/tcg-feasibility.md). A licensed SDK and private target image now exist outside this repository; neither is redistributed. Redistribution guard scans ignored/untracked files, names, signatures and selected markers; it is conservative, not a complete licence/content detector. SDKs, binaries, archives and images must stay outside this repo (also outside ignored folders). Python stdlib only; no dependencies are installed.
 
@@ -70,4 +70,4 @@ Repository stays private. No Pages, upstream PR, video, account creation, submis
 - [Eight diagram sources](docs/diagrams/environment.mmd) and [learning support](docs/learning-notes.md).
 
 Host · repository root: run python3 scripts/render_site.py, then open docs/site/index.html.
-For stale-output checking use python3 scripts/render_site.py --check. Upstream claat is unavailable; this local renderer does not claim to be claat.
+For stale-output checking use python3 scripts/render_site.py --check. Actual pinned upstream claat export is separately verified; see [export scope](docs/claat-export.md). This local renderer does not claim to be claat.

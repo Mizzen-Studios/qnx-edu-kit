@@ -1,5 +1,6 @@
 .PHONY: host-check verify deploy check-step1 check-step2 check-step3 check-step4 check-step5 check-step6
 host-check:
+	PYTHONDONTWRITEBYTECODE=1 python3 tools/step_sources.py --check
 	./scripts/check-no-sdk.sh
 	PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 verify:

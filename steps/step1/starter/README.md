@@ -1,26 +1,21 @@
-# Step 1: starter specification
+# Step 1: Setup and evidence — starter
 
-Task only, not compilable source.
+## Goal and source boundary
 
-## Goal
+Use uname to distinguish a real QNX process from a host build. Keep the licensed SDK, IFS, disk and build outputs outside the checkout. Record the authorized SDP 8.0 toolchain, x86_64 target, QEMU 8.2.2 TCG and image checksum. A host model is not a target.
 
-Establish reproducible host and evidence boundaries.
+main.c preserves earlier gates and contains a bounded TODO for this boundary. It refuses completion with a nonzero result; it does not publish a fake target PASS. Step6 retains reference handler scaffolding but deliberately omits resource-manager registration. Complete the TODO in a separate learner workspace.
 
-## Inputs and work
+## Compile contract
 
-- Record host architecture, Python, make and QEMU version. ARM64 TCG is approved; KVM is not required.
-- Keep SDKs, images and binaries outside the checkout, even ignored folders. Record authorized SDP build, QSTI version and image provenance when available.
+From repository root in an authorized initialized SDP environment, use qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -o "$EDU_OUT/step1-starter" steps/step1/starter/main.c -lpci. EDU_OUT must be an existing absolute directory outside the checkout. The starter may report expected unused scaffolding warnings until completed. See [build order](../../../docs/e2-build-order.md) before running anything.
 
 ## Required acceptance evidence
 
-A clean clone runs host checks without third-party Python packages; full verification remains blocked.
+Reference expected marker: EDU STEP1 PASS QNX target process. Earlier boundaries must complete without using later hardware operations. Record target identity, source hashes, image checksum, errors and full transcript. Historical E1 artifacts document reference observations, not a new learner run.
 
 ## Gate
 
-Host: make check-step1 launches a fresh source/image-bound accumulated target run when the external bundle and exclusive lease are supplied. Without them it remains BLOCKED (exit 2). Preserve raw target transcript, versions, source revision and errors. Host-model results do not replace this gate.
+Host: make check-step1 checks that all teaching snapshots still derive from native source, then requests a fresh accumulated E1 reference run. Missing external bundle or lease is BLOCKED (exit 2). The manifest binds native source and image; saved fixtures never satisfy this gate. An edited learner source is intentionally refused by the reference checker: rebuild and separately validate your own target image instead of presenting reference acceptance as yours. No helper here creates a learner IFS or installs SDK files.
 
 [Return to codelab](../../../codelab/codelab.md).
-
-## Source entry
-
-main.c deliberately returns2 until the learner implements the documented contract. Compare the original solution only after attempting the exercise.
