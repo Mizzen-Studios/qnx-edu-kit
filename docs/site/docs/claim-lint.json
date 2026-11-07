@@ -2682,6 +2682,21 @@
       "scope": "historical host suite at its own revision; never native proof or automatically current count"
     },
     {
+      "receipt": "docs/acceptance/onboarding-20261107/receipt.json",
+      "sha256": "d19a87112c5c9212e7d6a4538b8012b7a6017a4261845fa105c7ab33364c4643",
+      "tested_commit": "ba5f6537e8e1ce26eec47edf6ae50042fb03e4b7",
+      "counts": {
+        "command": "./verify.sh --host-only",
+        "exit_code": 0,
+        "total": 87,
+        "passed": 85,
+        "skipped": 2,
+        "log": "host.log",
+        "sha256": "4d0ce2b0c1e59250cf40d8923972fc0ddf2ebd36a5c685bc998bfddb897c14af"
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
       "receipt": "docs/acceptance/private-demo-20261107/receipt.json",
       "sha256": "66c3892b27b87f1e352a642db41bd5aae65225888aba256718d8319c444396d2",
       "tested_commit": "f6215d6500e2b8a63ae39de94f9f7611a1b53209",

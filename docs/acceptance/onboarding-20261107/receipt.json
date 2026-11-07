@@ -1,0 +1,30 @@
+{
+  "kind": "council-onboarding-host-only",
+  "tested_commit": "ba5f6537e8e1ce26eec47edf6ae50042fb03e4b7",
+  "worktree_before_test": "clean",
+  "scope": "host-only checks and dry-pack structure, no new native acceptance; native feature freeze",
+  "host_tests": {
+    "command": "./verify.sh --host-only",
+    "exit_code": 0,
+    "total": 87,
+    "passed": 85,
+    "skipped": 2,
+    "log": "host.log",
+    "sha256": "4d0ce2b0c1e59250cf40d8923972fc0ddf2ebd36a5c685bc998bfddb897c14af"
+  },
+  "unit_test_count_change": 0,
+  "dry_pack": {
+    "frozen_commit": "01060c7c1aff834d6c0b016de7fd9f988f8f7e35",
+    "words": 211,
+    "planned_seconds": 160,
+    "status": "PASS"
+  },
+  "capture_authorization": "NOT_GRANTED: separate Olly OK required",
+  "capture_performed": false,
+  "audio_performed": false,
+  "new_native_execution": false,
+  "C6": "FAIL/STOPPED",
+  "SocketCAN": "UNVERIFIED",
+  "conditional_acceptance": "scoped evidence only; human learning and second SDK unvalidated",
+  "legal_onboarding": "BLOCKED independent supplied SDP path absent; compatible BSP and matching buildfile/disk absent; see route-paths-20261107/receipt.json"
+}
