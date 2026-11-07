@@ -7,18 +7,22 @@ independent human acceptance. C6 STOPPED; SocketCAN UNVERIFIED. No publication.
 
 ## 0. Choose legal inputs and preflight
 
-Use Bash and Python3 from any working directory. Replace these absolute placeholders
-with your chosen paths. Keep SDKs, ELFs, IFS and disks outside every checkout,
-including ignored folders. Snippet paths must have no spaces.
+Use Bash and Python3 on a licensed **Linux x86_64 single host** where possible.
+Clone anywhere and cd into that clone. Override EDU_SDP_ENV with your legal SDK.
+All other paths have external user-owned defaults; choose a new EDU_WORK for each
+attempt. No SDK/artifacts inside any checkout; snippet paths must have no spaces.
 
 ```sh
-export EDU_REPO=/absolute/path/to/qnx-edu-kit
-export EDU_WORK=/absolute/external/edu-learner
-export EDU_SDP_ENV=/absolute/licensed/qnx800/qnxsdp-env.sh
-export EDU_PLATFORM=/absolute/external/new-clean-platform
-export EDU_ACTIVE=/absolute/external/learner-active
-export EDU_QEMU=/absolute/path/to/qemu-system-x86_64
-export EDU_NATIVE_LOCK=/absolute/external/native-test.lock
+export EDU_REPO="${EDU_REPO:-$(pwd -P)}"
+export EDU_WORK="${EDU_WORK:-$HOME/edu-learner-$(date -u +%Y%m%dT%H%M%SZ)}"
+export EDU_SDP_ENV="${EDU_SDP_ENV:-$HOME/qnx800/qnxsdp-env.sh}"
+export EDU_PLATFORM="${EDU_PLATFORM:-$EDU_WORK/platform}"
+export EDU_ACTIVE="${EDU_ACTIVE:-$EDU_WORK/active}"
+export EDU_QEMU="${EDU_QEMU:-$(command -v qemu-system-x86_64)}"
+export EDU_NATIVE_LOCK="${EDU_NATIVE_LOCK:-$HOME/.local/state/edu-native-test.lock}"
+export EDU_SOURCE="$EDU_WORK/step3/main.c"
+export EDU_SNIPPET="$EDU_REPO/scripts/learner-step3.build.in"
+mkdir -p "$EDU_WORK" "$(dirname "$EDU_NATIVE_LOCK")"
 export PATH="$(dirname "$EDU_QEMU"):$PATH"
 python3 "$EDU_REPO/scripts/learner_lab.py" --help
 python3 "$EDU_REPO/scripts/learner_clean_preflight.py" --sdp-env "$EDU_SDP_ENV" --fresh-work "$EDU_PLATFORM"
@@ -77,29 +81,30 @@ mkqnximage0.5.0.00132T202605281115L, QEMU8.2.2 pc TCG. Missing compatible legal
 SDP/BSP or matching disk means **BLOCKED**, not second-install portability PASS.
 Existing SDK reuse is not a fresh SDK install.
 
-On the SDK host under the shared SDK lease, source the trusted SDP and preseed
-only to resolve the later application snippet files. The preseed image is NOT
-learner completion. Keep launchers outside the empty platform directory.
+### Default: single licensed Linux x86_64 host
+
+Finish your step3 edit first; preflight must pass. The helper uses EDU_SOURCE and
+EDU_SNIPPET from section0 and creates the preseed, fresh platform and snippets.
+The preseed is NOT learner completion. It does not launch a Linux VM.
+
 
 ```sh
-source "$EDU_SDP_ENV"
-mkdir -p "$EDU_ACTIVE"
-qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$EDU_ACTIVE/learner_bin" "$EDU_WORK/step3/main.c" -lpci
-printf '#!/bin/sh\nexit 2\n' > "$EDU_ACTIVE/learner-start.sh"
-mkdir "$EDU_PLATFORM"
-cd "$EDU_PLATFORM"
-mkqnximage --type=qemu --arch=x86_64 --build --ssh-ident=none
-mkdir -p local/snippets
-sed "s|@OUT@|$EDU_ACTIVE|g" "$EDU_REPO/scripts/learner-step3.build.in" > local/snippets/ifs_files.learner
-printf 'waitfor /dev/pci/server_id_1 30\nsh /proc/boot/learner-start.sh\n' > local/snippets/post_start.learner
-mkqnximage --build
+flock "$EDU_NATIVE_LOCK" bash "$EDU_REPO/scripts/learner_bootstrap.sh"
 ```
+
+No SDK VM, guest swap, shared mount or host-queue service is required on an ordinary
+single host. Stop on build failure and preserve logs; never substitute owner images.
+Skip the optional section below and continue at "Now replace the preseed".
+
+### Optional: constrained split-host SDK VM only
+
+The following is environment-specific, NOT a single-host requirement.
 
 Keep the stock kernel unmodified. On the constrained SDK guest, arrange authorized
 1GiB disk-backed guest swap and an isolated transient guest build service before
 linking:512MiB without swap previously OOMed. Do not lift caps or strip the kernel.
 Stop on OOM, transport loss or nonterminal service status. The following explicit preparation is required; historical launchers are not shortcuts.
-### Split-host mapping and isolated service (before the commands above)
+#### Split-host mapping and isolated service
 
 Choose EDU_SHARED_HOST (external directory on the QEMU host) and EDU_SHARED_GUEST
 (the same directory as mounted inside Linux). Prove the mapping by writing a nonce

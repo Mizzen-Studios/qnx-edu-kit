@@ -1,0 +1,1 @@
+Initial external runner inspection shell syntax exit2; no VM or mutation. Corrected read succeeded. Prior negative receipts unchanged.
