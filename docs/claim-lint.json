@@ -3140,6 +3140,17 @@
       "scope": "historical host suite at its own revision; never native proof or automatically current count"
     },
     {
+      "receipt": "docs/acceptance/packaging-20261107/receipt.json",
+      "sha256": "2b981ece62f5a198eec1994b1d643d7e210667168b5037380fd0a4f0b279a7c3",
+      "tested_commit": "86701bfe6e0b479e73554283fc6763787f89fb01",
+      "counts": {
+        "tests_total": 87,
+        "passed": 85,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
       "receipt": "docs/acceptance/private-demo-20261107/receipt.json",
       "sha256": "66c3892b27b87f1e352a642db41bd5aae65225888aba256718d8319c444396d2",
       "tested_commit": "f6215d6500e2b8a63ae39de94f9f7611a1b53209",
