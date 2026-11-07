@@ -1,0 +1,7 @@
+# Portable route and bounded diagnostics — 21:05 follow-up
+
+Canonical instruction commit 5876304a82d1c07ecde7401a9c522ef28ec268de; SHA256 d8e79d0b69fd766dcfabf116084624e7830dde6846fc0e7bf4718575dcd02d8d. Single licensed Linux x86_64 host defaults; split SDK VM prerequisites optional. Fresh clone in a new non-owner work path checked all nine shell blocks, initialized both learner stages, and stopped with explicit SDK-boundary preflight2 on ARM. No runtime portability inferred. Initial stale appendix/site host failures and original missing-SDK negative retained; reconciled clean committed host suite87 total/85pass/2skip. See fresh-clone-host.json.
+
+The accepted owner gate remains CONDITIONAL at ada5d0ff03533a2fec0983f3fedbd9bada9df8a9 (receipt-inspected, not rerun). Current instruction/review/dry-pack bindings are packaging-only; historical runtime source/ELF/IFS/disk hashes unchanged. recorded:false. No capture, publication, native feature changes or sshd fixes. C6STOPPED; SocketCANUNVERIFIED.
+
+SDK inspection uses only guestctl-capped.py with exclusive native-test.lock, CPU100%/1GiB/nice15, guest1vCPU/512MiB. Original queued inspection is never resubmitted on transport timeout. No account login, entitlement synchronization, activation, licence change or SDK files in git. Second-install legality must be established rather than inferred from an existing installation. Renewed baseline/traced observations will be bound separately; internal sshd cause remains UNVERIFIED.

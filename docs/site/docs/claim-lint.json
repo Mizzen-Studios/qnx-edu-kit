@@ -3151,6 +3151,17 @@
       "scope": "historical host suite at its own revision; never native proof or automatically current count"
     },
     {
+      "receipt": "docs/acceptance/portability-20261107/fresh-clone-host.json",
+      "sha256": "0aef3bb6a1a9e4d05e6c397e57182f43154826e51e91f89928f2e7aae42bf297",
+      "tested_commit": "3be7bc66953db1e57c808c3624920d4e2b3d2ba4",
+      "counts": {
+        "tests_total": 87,
+        "passed": 85,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
       "receipt": "docs/acceptance/portability-20261107/host-receipt.json",
       "sha256": "ef22b4723b26871a959a533936ca9a8f53128461301d52504731106290a70fb9",
       "tested_commit": "7e9a6354fdf4c6d6f2486bdd104fb3dc91ffdf54",
