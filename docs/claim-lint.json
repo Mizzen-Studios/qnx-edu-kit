@@ -48,12 +48,12 @@
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "2e9bf73da95cbaaad76c0e8d9a8167b21a21141d30ce8a246f8c5863820f7de0",
+      "sha256": "7af5abcd7c9e5163337910353ec425c9625368a60b9649eb1626964ba520c890",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "2391f5fa3f38f27a36db5ef967fa2f587178f6dc1df5c9ec0df51dc8aaaea68e",
+      "sha256": "ee3c910a29bdd370bbda90efb6d4869ba645fddb2555cffdda9dd5d6e773a947",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -128,7 +128,7 @@
     },
     {
       "path": "docs/site/docs/acceptance/portability-20261107/NOTES.html",
-      "sha256": "b00c917d205be76d5245dab0f98e522935ce89e8fa39da7e81384cebbdcbad50",
+      "sha256": "a12ac19fdd0c9a3ff455bcc360b15af54e5e61de9f202d65da1ba0485bee022a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -1039,6 +1039,11 @@
       "exists": true
     },
     {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/portability-20261107/NOTES.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/STATUS.html",
       "target": "index.html",
       "exists": true
@@ -1131,6 +1136,11 @@
     {
       "source": "docs/site/STATUS.html",
       "target": "docs/acceptance/bootstrap-final-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/portability-20261107/NOTES.html",
       "exists": true
     },
     {
