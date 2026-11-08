@@ -35,6 +35,15 @@ class SessionTests(unittest.TestCase):
         with self.assertRaises(ValueError):cockpit.create(self.work)
         self.assertEqual(cockpit.session(self.work)[1]['notes']['step3']['prediction'],'<script>alert(1)</script>')
 
+    def test_permission_notes_export_without_native_badge(self):
+        self.predict(stage='permission',text='IO deny should report EPERM; allow only subrange0')
+        out=Path(self.temp.name)/'permission-pack'
+        cockpit.export(self.work,out)
+        data=json.loads((out/'session.json').read_text())
+        self.assertIn('EPERM',data['notes']['permission']['prediction'])
+        self.assertEqual(data['attempts'],[])
+        self.assertIn('not pathname policy',(out/'cockpit.html').read_text())
+
     def test_reference_notes_cannot_import(self):
         file=Path(self.temp.name)/'reference.json'
         file.write_text(json.dumps(dict(session_id='reference',stage='step3',prediction='PASS')))
