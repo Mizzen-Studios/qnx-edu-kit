@@ -1,0 +1,5 @@
+QNX_HOST=/home/qnx/qnx800/host/linux/x86_64
+QNX_TARGET=/home/qnx/qnx800/target/qnx
+MAKEFLAGS=-I/home/qnx/qnx800/target/qnx/usr/include
+Warning: Host file 'lib/libexpat.so.2' missing.
+cc: caught signal: 15

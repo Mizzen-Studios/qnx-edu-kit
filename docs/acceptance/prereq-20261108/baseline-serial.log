@@ -1,0 +1,53 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+# ---> Starting devb
+---> Mounting file systems
+Path=0 - Intel 82371SB
+ target=0 lun=0     Direct-Access(0) -          QEMU HARDDISK    Rev: 2.5+
+Path=1 - Intel 82371SB
+ target=0 lun=0            CD-ROM(5) - QEMU     QEMU DVD-ROM     Rev: 2.5+
+---> Mounting file systems
+---> Starting Networking
+---> Starting sshd
+Memory fault (core dumped) 
+---> Starting misc
+CANOPY_SLM_IMAGE_READY
+unaStartup complete
+me -a; for n in secpolcompile secpolpush secpolgenerate secpolmonitor sloQNXg noname 8.0.02 2026/06/05-16:26:03EDT x86pci x86_64n
+fo slogger2 slog2c; do command -v $n; done; pidin ar; ls /proc/boot/*secpol* /dev/secpol* /dev/shmem/slogger2*; echo INVENTORY_DONE
+QNX noname 8.0.0 2026/06/05-16:26:03EDT x86pc x86_64
+/system/bin/secpolmonitor
+/proc/boot/slog2info
+/proc/boot/slogger2
+     pid Arguments
+       1 procnto-smp-instr -mr -d 0777 -u 0777 
+   16387 slogger2 
+   28676 pci-server --aspace-enable --config=/proc/boot/pci_server.cfg 
+   49157 devc-ser8250 -e 
+   57351 ksh ksh 
+   61446 fsevmgr 
+   65544 devb-eide blk cache=64M,auto=partition,vnode=2000,ncache=2000,commit=low 
+  131081 random -s /data/var/random/rnd-seed 
+  143370 pipe 
+  155659 devc-pty 
+  159756 dumper -d /data/var/dumper -M 1000 -D cores 
+  163853 io-sock -m phy -m pci -m usb -d vtnet_pci 
+  217105 dhcpcd: [manager] [ip4] [ip6] -bq -f /system/etc/dhcpcd/dhcpcd.conf -c /system/etc/dhcpcd/dhcpcd-run-hooks 
+  245774 qconn 
+  249871 mqueue 
+  270338 pidin ar 
+ls: /dev/secpol*: No such file or directory
+    /proc/boot/libsecpol.so.1
+
+/dev/shmem/slogger2:
+console.16387       dhcpcd.213007   io_sock.163853..0
+devb_eide.65544     dumper.159756   pci_server.28676
+devb_eide.65544..0  fsevmgr.61446   pci_server.28676..0
+devb_eide.65544..1  io_sock.163853  random.131081
+INVENTORY_DONE

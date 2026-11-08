@@ -1,0 +1,58 @@
+QNX_HOST=/home/qnx/qnx800/host/linux/x86_64
+QNX_TARGET=/home/qnx/qnx800/target/qnx
+MAKEFLAGS=-I/home/qnx/qnx800/target/qnx/usr/include
+SDK_POLICY_INVENTORY
+/home/qnx/qnx800/host/linux/x86_64/usr/bin/secpolcompile
+/home/qnx/qnx800/host/linux/x86_64/usr/bin/secpolcompile
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol-gen.so
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpolev.so
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpolev.so.1.sym
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol.so.1.sym
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpolev.so.1
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol-gen.so.1.sym
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol.so
+/home/qnx/qnx800/target/qnx/x86_64/lib/dll/secpol-preload.so
+/home/qnx/qnx800/target/qnx/x86_64/lib/dll/secpol-preload.so.sym
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol.so.1
+/home/qnx/qnx800/target/qnx/x86_64/lib/libsecpol-gen.so.1
+/home/qnx/qnx800/target/qnx/x86_64/usr/lib/pam_secpol.so
+/home/qnx/qnx800/target/qnx/x86_64/usr/lib/pam_secpol.so.2
+/home/qnx/qnx800/target/qnx/x86_64/usr/lib/pam_secpol.so.2.sym
+/home/qnx/qnx800/target/qnx/x86_64/usr/bin/secpolcompile
+/home/qnx/qnx800/target/qnx/x86_64/usr/bin/secpolcompile.sym
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolmonitor
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpollaunch
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpol
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolgenerate
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpollaunch.sym
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolpush.sym
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolmonitor.sym
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolgenerate.sym
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpolpush
+/home/qnx/qnx800/target/qnx/x86_64/bin/secpol.sym
+HEADERS
+137:#define PROCMGR_AID_IO					31u		/* SR: level */
+188:#define PROCMGR_AOP_DENY				0x00010000u
+189:#define PROCMGR_AOP_ALLOW				0x00020000u
+191:#define PROCMGR_AOP_LOCK				0x00080000u
+197:#define PROCMGR_ADN_ROOT				0x10000000u
+236:	DEFINE_ABILITY( PROCMGR_AID_IO, "IO", "io", (ABLE_ALLOW_ROOT)) \
+SLOG_HEADER
+46:#define SLOG2_INFO      5   /* Information. eg: Printing page 3 */
+68:  * Flags supported by slog2_register()
+113:} slog2_buffer_config_t;
+124:    int                   num_buffers;
+129:    /** Buffer configuration for num_buffers */
+130:    slog2_buffer_config_t buffer_config[ SLOG2_MAX_BUFFERS ];
+195: *               if slog2_set_default_buffer(...) was previously called
+218: *               if slog2_set_default_buffer(...) was previously called
+263: *               if slog2_set_default_buffer(...) was previously called
+297: *               if slog2_set_default_buffer(...) was previously called
+303:int slog2c( slog2_buffer_t __buffer,
+339: * slog2_register() by passing the SLOG2_LIMIT_RETRIES flag and setting the
+349:int slog2_register( const slog2_buffer_set_config_t *__config,
+386:slog2_buffer_t slog2_set_default_buffer( slog2_buffer_t __buffer );
+BUILD_INPUT
+-rw-r--r-- 1 root root 5610 Nov  6 17:19 /home/qnx/qnx-work/edu-followup10/ifs.slm.build
+INVENTORY_COMPLETE
+Running as unit: prereq-build-20261108.service; invocation ID: 7100899bb20642f09efc33674b289523
