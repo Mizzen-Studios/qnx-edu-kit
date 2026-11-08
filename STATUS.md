@@ -1,12 +1,12 @@
 # Status — 7 November 2026
 
-## Current upgrade — 8 November 2026, integration in progress
+## Current upgrade — 8 November 2026, implemented; final verification in progress
 
 Olly approved the substantive [upgrade package](docs/upgrade-acceptance-20261108.md); the earlier feature-freeze statements below are preserved history, not the current instruction. Previous independent acceptance remains conditional and does not transfer to these new features.
 
 [Fresh prerequisite receipts](docs/acceptance/prereq-20261108/NOTES.md): same-ELF IO ability deny/allow in separate runs, bounded structured slog2 capture and actual co-located observer death/separate recorder survival were observed in the bound QEMU run. **Pathname policy BLOCKED**: installed tools alone do not establish attach/connect enforcement or loaded policy identities. Ability control is not /dev path policy or least-privilege proof.
 
-The [own-session cockpit](docs/learner-cockpit.md) is implemented with persisted notes, fixed CLI commands, own-source build/run orchestration and local evidence export. Host/browser checks remain HOST-only. Fresh actual wrapper runs are now [receipt-backed](docs/acceptance/wrapper-20261108/NOTES.md): wrong-step FAIL despite app0, corrected PASS, own /dev/edu10→3628800 with IRQ completion1/ack0; all nine attempts retained. The [ability-only stage](docs/ability-lesson.md) has same-ELF separate-process deny EPERM versus narrowed IO0..0 allow proof; it is not pathname policy. Export validation and draft/current-source review fixes are being closed before final verification.
+The [own-session cockpit](docs/learner-cockpit.md) is implemented with persisted notes, fixed CLI commands, own-source build/run orchestration and local evidence export. Host/browser checks remain HOST-only. Fresh actual wrapper runs are now [receipt-backed](docs/acceptance/wrapper-20261108/NOTES.md): wrong-step FAIL despite app0, corrected PASS, own /dev/edu10→3628800 with IRQ completion1/ack0; all nine attempts retained. The [ability-only stage](docs/ability-lesson.md) has same-ELF separate-process deny EPERM versus narrowed IO0..0 allow proof; it is not pathname policy. [Integrity review fixes](docs/acceptance/review-fixes-20261108/NOTES.md) now validate exports by action/assets, qualify historical-source PASS, and require explicit draft conflict resolution. Final independent recheck is pending. Single-host readiness remains BLOCKED in this split-host licensed environment; no fresh-install, second-SDK or human-learning acceptance.
 
 C6/native safety STOPPED; SocketCAN UNVERIFIED. No heartbeat, actuation, recording, publication or deployment. recorded:false. Videos remain deferred until all features and final verification, with the separate recording gate preserved. sshd internal cause UNVERIFIED; no platform-health, safety, timing or continuous-availability claim.
 

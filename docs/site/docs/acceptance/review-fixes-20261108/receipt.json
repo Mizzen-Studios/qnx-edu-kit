@@ -1,0 +1,25 @@
+{
+  "baseline": "bbefa51dd",
+  "host_tests": 31,
+  "browser_widths": [
+    1280,
+    768,
+    520,
+    360
+  ],
+  "native_rerun": false,
+  "files": {
+    "scripts/learner_session.py": "dd374b08e9c8dc27b78ef881a6b654e28f6b63d264de272b03d9ae8313937f77",
+    "scripts/learner_lab.py": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+    "tests/test_learner_session.py": "f0dbfeeeb06f003974095d34860192b1791f37c083471a3d1c2e0e0f35952fd1",
+    "tests/browser_learner_session.cjs": "424880e498f9dff22f2838167b3cbc3ad557e7b46c00ad008e08466f03660ff8",
+    "docs/acceptance/review-fixes-20261108/NOTES.md": "38f4ad6117b8cc7042c57549f6ceb8df706d82e32b2b1a98864db6f84a124fd0",
+    "docs/acceptance/review-fixes-20261108/actual-export.json": "4782ab6cf2d447b7de67481fbfdfd23a26f098279993ddaf23e21e162e4606e5",
+    "docs/acceptance/review-fixes-20261108/browser-initial-harness.log": "f8771852d964d780b672d6871a839e228036e653b645d7c5000e8ee731232792",
+    "docs/acceptance/review-fixes-20261108/browser-second-harness.log": "919bbbed982e7271d88a8cf05476917c6f679e5d8d342318d364f97948424422",
+    "docs/acceptance/review-fixes-20261108/browser.log": "f4f8598a208bf52478d0c4451ad7f927ceecf6dcf1205cbb2978f483bc3cb050",
+    "docs/acceptance/review-fixes-20261108/host.log": "4abfa009ef20fa7a33aadc39ea77583b3b66b12def7006d5f9453b66156ce5b9",
+    "docs/acceptance/review-fixes-20261108/initial-repros.log": "ced363c1c058573737937d2752b3b383512d2c3025ae575a647aecaf9d74a601",
+    "docs/acceptance/review-fixes-20261108/verify_actual.py": "64493a61be4416924ae997dd738a89348868ea1a73e5502699c762b115738568"
+  }
+}

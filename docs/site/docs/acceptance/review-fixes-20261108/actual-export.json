@@ -1,0 +1,77 @@
+{
+  "original_pack": "/home/ubuntu/qnx-host/guest/shared/wrapper-20261108-export",
+  "original_manifest_sha256": "93da42cf3ffeadea342ea9da4585b35b8e62e0a8b2e446ac8be3fc51f130173c",
+  "original_files": 55,
+  "original_all_hashes_match": true,
+  "attempts": [
+    {
+      "id": "0001-step3-build",
+      "status": "BLOCKED",
+      "validation": "PASS",
+      "disk_bound": false
+    },
+    {
+      "id": "0002-step3-build",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": false
+    },
+    {
+      "id": "0003-step6-build",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": false
+    },
+    {
+      "id": "0004-step3-run",
+      "status": "FAIL",
+      "validation": "PASS",
+      "disk_bound": true
+    },
+    {
+      "id": "0005-step6-run",
+      "status": "FAIL",
+      "validation": "PASS",
+      "disk_bound": true
+    },
+    {
+      "id": "0006-step3-build",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": false
+    },
+    {
+      "id": "0007-step6-build",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": false
+    },
+    {
+      "id": "0008-step3-run",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": true
+    },
+    {
+      "id": "0009-step6-run",
+      "status": "PASS",
+      "validation": "PASS",
+      "disk_bound": true
+    }
+  ],
+  "new_export": "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-reviewfix-actual-pack-final",
+  "new_manifest_sha256": "2a6bf8551cc5e60a2569fb591eae12e70fb35c660e4d2e2f4593ad94d6d4131e",
+  "new_files": 55,
+  "new_all_hashes_match": true,
+  "current_sources": {
+    "step3": {
+      "source_sha256": "2f37c2f234b10e78c9920372895b56e1efe7d4742cd099eb1f8a73ba46a8aaeb",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    },
+    "step6": {
+      "source_sha256": "64647c88597eff57f0723ffb2e479f90501f717065edd5a008827866fd8b76fe",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    }
+  },
+  "native_rerun": false
+}

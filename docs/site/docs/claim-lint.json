@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "13ef4c2f3ad6d4d831abdccae6bf7197b9ce1ee4895637137a2dea53fbcc7fc8",
+      "sha256": "7cebd8be817a864ac2c852534bb581ddd95347a953486bd2cc7234dcac882a90",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "6caa707f8d189368b5a4820321e7a10ebc24673ddf6ca1591524be24e547ada4",
+      "sha256": "4a6b09eef6058b5e09bca25f47242b837739d8a4b1f798388a368a3ff6d4c85f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -48,12 +48,12 @@
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "aa03be4a90d138642e705b54327e11b10deb2bb8cc1d29189e82a282b616e5cb",
+      "sha256": "6855c43bf77722bdff5c70282642f07c8938299eaea54e7d8df02dcb05c5efbe",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "4dda33ad9e64ae3fb8fbc4970fce28a1dc4f69477b4128bc27a2d5d66344716e",
+      "sha256": "10ee72daef7dd5f1a98993b902a7f8c048031a57b47e7c8de957d0964d63b089",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -144,6 +144,11 @@
     {
       "path": "docs/site/docs/acceptance/prereq-20261108/capability-checkpoint.html",
       "sha256": "2beaf4b7c18b91a0a835f4843ca7f828292bbd7aae398674a5cb091e111f4e22",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
+      "sha256": "7a2a67e669b563a876c0d51827d4ae52bf392a5235be9e1aee953afe9ee727ae",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -570,6 +575,11 @@
     },
     {
       "source": "STATUS.md",
+      "target": "docs/acceptance/review-fixes-20261108/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
       "target": "docs/learner-route.md",
       "exists": true
     },
@@ -676,6 +686,11 @@
     {
       "source": "REVIEW.md",
       "target": "docs/ability-lesson.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/review-fixes-20261108/NOTES.md",
       "exists": true
     },
     {
@@ -1130,6 +1145,11 @@
     },
     {
       "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/review-fixes-20261108/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
       "target": "docs/review/appendix.json",
       "exists": true
     },
@@ -1196,6 +1216,11 @@
     {
       "source": "docs/site/STATUS.html",
       "target": "docs/ability-lesson.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/review-fixes-20261108/NOTES.html",
       "exists": true
     },
     {
@@ -1790,6 +1815,21 @@
     },
     {
       "source": "docs/site/docs/acceptance/prereq-20261108/capability-checkpoint.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },
