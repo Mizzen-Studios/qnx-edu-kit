@@ -38,7 +38,7 @@ def create(work):
     for stage in ('step3', 'step6'):
         lab.init(work/stage, stage)
     data = dict(kind='edu-own-session-v1', id=str(uuid.uuid4()), created=time.time(),
-                notes={s:dict.fromkeys(FIELDS, '') for s in ('step3', 'step6')}, attempts=[])
+                notes={s:dict.fromkeys(FIELDS, '') for s in ('step3', 'step6', 'permission')}, attempts=[])
     save(work/'session.json', data)
     return render(work)
 
@@ -150,7 +150,7 @@ def export(work, dest):
     try:
         for name in ('session.json','cockpit.html'):
             shutil.copyfile(work/name,dest/name)
-        for stage in data['notes']:
+        for stage in ('step3','step6'):
             (dest/stage).mkdir()
             shutil.copyfile(work/stage/'main.c',dest/stage/'main.c')
         for record in data['attempts']:
@@ -186,6 +186,9 @@ def render(work):
                 'flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted '+cmd+' run'+suffix+' --stage '+stage+' --disk "$EDU_PLATFORM/output/disk-qemu"']
         fields = ''.join('<label>'+key.capitalize()+'<textarea aria-label="'+key.capitalize()+'" name="'+key+'">'+esc(data['notes'][stage][key])+'</textarea></label>' for key in FIELDS)
         sections.append('<section id="'+stage+'"><h2>'+stage+': '+title+'</h2><p>'+expected+'</p><p>Edit your own source in your editor: <code>'+esc(str(work/stage/'main.c'))+'</code>. Save prediction first; diagnose after observing, then fix, rebuild and explain.</p><form data-stage="'+stage+'">'+fields+'<button>Save local draft</button> <button type="button" data-download="'+stage+'">Download notes for CLI import</button></form><details><summary>Exact build / observe commands</summary><pre>'+esc('\n'.join(cmds))+'</pre></details></section>')
+    permission=data['notes'].get('permission',dict.fromkeys(FIELDS,''))
+    fields=''.join('<label>'+key.capitalize()+'<textarea aria-label="'+key.capitalize()+'" name="'+key+'">'+esc(permission[key])+'</textarea></label>' for key in FIELDS)
+    sections.append('<section id="permission"><h2>Ability-only permission experiment</h2><p>Supplemental notes only; not pathname policy or a native acceptance badge. Run the same ability_lesson ELF in separate deny/allow processes; IO subrange0..0, not default root. Preserve errno/transcripts and source/ELF/image/disk lineage. See docs/ability-lesson.md in your checkout.</p><form data-stage="permission">'+fields+'<button>Save local draft</button> <button type="button" data-download="permission">Download notes for CLI import</button></form></section>')
     rows=[]
     for r in data['attempts']:
         base='attempts/'+r['id']+'/'
