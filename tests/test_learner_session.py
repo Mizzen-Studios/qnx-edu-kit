@@ -44,6 +44,14 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(data['attempts'],[])
         self.assertIn('not pathname policy',(out/'cockpit.html').read_text())
 
+    def test_shared_can_supplement_is_not_native_acceptance(self):
+        folder=self.work/'supplemental';folder.mkdir()
+        (folder/'run.json').write_bytes((ROOT/'docs/acceptance/ability-20261108/run.json').read_bytes())
+        out=Path(self.temp.name)/'shared-only'
+        manifest=json.loads(cockpit.export(self.work,out).read_text())
+        self.assertEqual(json.loads((out/'session.json').read_text())['attempts'],[])
+        self.assertTrue(all(x['validation']=='CURRENT_STAGE_NOT_VALIDATED' for x in manifest['current_sources'].values()))
+
     def test_reference_notes_cannot_import(self):
         file=Path(self.temp.name)/'reference.json'
         file.write_text(json.dumps(dict(session_id='reference',stage='step3',prediction='PASS')))
