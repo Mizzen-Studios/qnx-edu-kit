@@ -2,6 +2,7 @@
 """Local learner notebook; browser never executes commands. CLI wraps learner_lab."""
 import argparse
 import html
+import fcntl
 import json
 from pathlib import Path
 import shlex
@@ -84,8 +85,14 @@ def attempt(work, stage, action, args):
         result = subprocess.run(command, stdout=out, stderr=subprocess.STDOUT)
     record.update(returncode=result.returncode, finished=time.time(),
                   status='PASS' if result.returncode == 0 else ('BLOCKED' if result.returncode == 2 else 'FAIL'))
-    if action == 'build' and result.returncode == 0:
-        shutil.copytree(work/stage/'bundle',folder/'bundle')
+    if action == 'build':
+        if (work/stage/'bundle').exists():
+            shutil.copytree(work/stage/'bundle',folder/'bundle')
+        if result.returncode == 0:
+            try:
+                lab.verify_inputs(folder/'main.c',folder/'bundle',stage)
+            except (OSError,ValueError,KeyError) as error:
+                record.update(status='BLOCKED',validation_error=str(error))
     if action == 'run' and not (folder/'native.json').is_file():
         record.update(status='BLOCKED', validation_error='native receipt absent')
     if action == 'run' and (folder/'native.json').is_file():
@@ -121,6 +128,11 @@ def validate_native(work, record, folder):
         raise ValueError('disk changed or missing')
     output = (folder/'native.log').read_text()
     checks = lab.oracle(output,manifest) if record['stage']=='step3' else lab.dev_edu_oracle(output,manifest)
+    required = set(checks) | {'bounded_completion','inputs_unchanged_after_boot','disk_unchanged','qemu_reaped'}
+    if set(receipt['checks']) != required or any(type(v) is not bool for v in receipt['checks'].values()):
+        raise ValueError('native receipt check set invalid')
+    if receipt.get('run_driver_sha256') != lab.sha(ROOT/'scripts/learner_lab.py'):
+        raise ValueError('native driver changed or absent')
     if any(receipt['checks'].get(k)!=v for k,v in checks.items()):
         raise ValueError('oracle disagrees with receipt')
     expected = all(checks.values()) and all(receipt['checks'].values()) and bool(receipt.get('caps'))
@@ -172,7 +184,7 @@ def render(work):
         cmds = [cmd+' notes'+suffix+' --file /path/to/downloaded-notes.json',
                 'flock "$EDU_NATIVE_LOCK" '+cmd+' build'+suffix+' --stage '+stage+' --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"',
                 'flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted '+cmd+' run'+suffix+' --stage '+stage+' --disk "$EDU_PLATFORM/output/disk-qemu"']
-        fields = ''.join('<label>'+key.capitalize()+'<textarea name="'+key+'">'+esc(data['notes'][stage][key])+'</textarea></label>' for key in FIELDS)
+        fields = ''.join('<label>'+key.capitalize()+'<textarea aria-label="'+key.capitalize()+'" name="'+key+'">'+esc(data['notes'][stage][key])+'</textarea></label>' for key in FIELDS)
         sections.append('<section id="'+stage+'"><h2>'+stage+': '+title+'</h2><p>'+expected+'</p><p>Edit your own source in your editor: <code>'+esc(str(work/stage/'main.c'))+'</code>. Save prediction first; diagnose after observing, then fix, rebuild and explain.</p><form data-stage="'+stage+'">'+fields+'<button>Save local draft</button> <button type="button" data-download="'+stage+'">Download notes for CLI import</button></form><details><summary>Exact build / observe commands</summary><pre>'+esc('\n'.join(cmds))+'</pre></details></section>')
     rows=[]
     for r in data['attempts']:
@@ -206,7 +218,14 @@ def main():
         elif a.action=='render': print(render(a.work))
         elif a.action=='notes': notes(a.work,a.file)
         elif a.action=='export': print(export(a.work,a.out))
-        else: return attempt(a.work,a.stage,a.action,a)
+        else:
+            work,_ = session(a.work)
+            with (work/'session.lock').open('a') as lock:
+                try:
+                    fcntl.flock(lock,fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError:
+                    raise ValueError('another session action is active')
+                return attempt(work,a.stage,a.action,a)
         return 0
     except (OSError,ValueError,KeyError,subprocess.SubprocessError) as e:
         print('BLOCKED:',e,file=sys.stderr);return 2

@@ -5,6 +5,8 @@ native feature freeze. No reference PASS transfers to your edits. Existing autom
 native observations are not fresh SDK installation, second-SDK portability or
 independent human acceptance. C6 STOPPED; SocketCAN UNVERIFIED. No publication.
 
+Use the [local own-source cockpit](learner-cockpit.md) to save your prediction, diagnosis and explanation, retain every build/run attempt and export your own source-bound pack. It uses this same CLI and stage oracles; it never executes shell commands from a browser or imports reference PASS as learner work. The parameterized single-host setup planner is documented there; native policy additions remain separately gated.
+
 ## 0. Choose legal inputs and preflight
 
 Use Bash and Python3 on a licensed **Linux x86_64 single host** where possible.

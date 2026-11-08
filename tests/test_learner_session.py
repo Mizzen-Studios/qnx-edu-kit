@@ -75,7 +75,8 @@ class SessionTests(unittest.TestCase):
         (folder/'native.log').write_text(output)
         oracle=cockpit.lab.oracle if stage=='step3' else cockpit.lab.dev_edu_oracle
         checks=oracle(output,manifest)
-        cockpit.save(folder/'native.json',dict(manifest,checks=checks,success=not wrong,caps={'fixture':True},disk_sha256=cockpit.lab.sha(disk)))
+        checks.update(dict.fromkeys(('bounded_completion','inputs_unchanged_after_boot','disk_unchanged','qemu_reaped'),True))
+        cockpit.save(folder/'native.json',dict(manifest,checks=checks,success=not wrong,caps={'fixture':True},disk_sha256=cockpit.lab.sha(disk),run_driver_sha256=cockpit.lab.sha(ROOT/'scripts/learner_lab.py')))
         record=dict(id=folder.name,stage=stage,action='run',status='FAIL' if wrong else 'PASS',label='nativefresh',started=2,source_sha256=build['source_sha256'],returncode=1 if wrong else 0,command=['--disk',str(disk)])
         data['attempts']=[build,record];cockpit.save(self.work/'session.json',data)
         return folder,record

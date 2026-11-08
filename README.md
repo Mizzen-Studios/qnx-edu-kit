@@ -2,7 +2,7 @@
 
 ## Start here: predict → edit → observe → diagnose → explain
 
-Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
+Use the **[local own-source cockpit](docs/learner-cockpit.md)** for persistent predictions, diagnosis, fixed CLI actions and private evidence export. Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
 SDK/BSP/QEMU paths and preflight; predict/edit step3, observe the wrong-write
 failure, diagnose/fix/rebuild and explain it; then edit your own step6 starter
 and observe normal write10/read3628800 through /dev/edu. Setup/build/run commands
