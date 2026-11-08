@@ -1,0 +1,46 @@
+{
+  "kind": "edu-choice-a-bounded-v1",
+  "source_commit": "c20c8c77307a5905e19b0f7476bab4f63298dcb1",
+  "outcome": "BLOCKED",
+  "native_acceptance": "NOT_RUN",
+  "wrong": "NOT_RUN",
+  "correct": "NOT_RUN",
+  "learner_export": "NOT_RUN",
+  "packages_newly_installed": [],
+  "existing_packages": {
+    "dbus-user-session": "1.14.10-4ubuntu4.1",
+    "libpam-systemd": "255.4-1ubuntu8.18",
+    "systemd": "255.4-1ubuntu8.18"
+  },
+  "planned_qemu_version": "1:8.2.2+ds-0ubuntu1.18",
+  "install_returncode": 100,
+  "blocker": "Existing interrupted dpkg: ca-certificates half-configured, man-db triggers pending. apt requires dpkg --configure -a. Global pending-package/trust-store repair not silently performed.",
+  "session_setup_changes": [],
+  "sdk_install_login_activation": false,
+  "caps": {
+    "outer_cpu": "100000 100000",
+    "outer_memory": "1073741824",
+    "nice": 15,
+    "vcpus": 1,
+    "guest_mib": 512
+  },
+  "files": {
+    "initial-inspection.log": "f0016a764be1c49c40447776320a690cd37a8139db5e3b7c84d7cf21629b7875",
+    "package-install.log": "a0eb4fe2fd90d7b2d10483da398d4f58b292d7cc0db0b31510c91b9956a45986",
+    "package-audit.log": "9d38a74ff9c101701fd042bc29093e5ea76b5e969b10066e04f676928c8028e9"
+  },
+  "cleanup": {
+    "checked_at": 1794169937.602388,
+    "outer_qemu_pid": 292014,
+    "outer_qemu_reaped": true,
+    "owner_pid": 292011,
+    "owner_reaped": true,
+    "outer_exit": {
+      "rc": 0,
+      "ended": 1794169926.3629768
+    },
+    "sole_lease_free": true,
+    "original_managed_handle": "tender-harbor",
+    "managed_handle_collection": "child visibility forbids collection; OS PIDs absent, successful stop and free flock verified"
+  }
+}

@@ -1,0 +1,87 @@
+uid=0(root) gid=0(root) groups=0(root)
+Linux x86_64
+PACKAGES
+dpkg-query: no packages found matching qemu-system-x86
+4{Package} 4{Version} 4{Status}
+4{Package} 4{Version} 4{Status}
+4{Package} 4{Version} 4{Status}
+USER
+qnx:x:1001:1001::/home/qnx:/bin/bash
+Failed to get user: User ID 1001 is not logged in or lingering
+○ user@1001.service - User Manager for UID 1001
+     Loaded: loaded (/usr/lib/systemd/system/user@.service; static)
+    Drop-In: /usr/lib/systemd/system/user@.service.d
+             └─10-login-barrier.conf, timeout.conf
+     Active: inactive (dead)
+       Docs: man:user@.service(5)
+
+○ user-runtime-dir@1001.service - User Runtime Directory /run/user/1001
+     Loaded: loaded (/usr/lib/systemd/system/user-runtime-dir@.service; static)
+     Active: inactive (dead)
+       Docs: man:user@.service(5)
+REPOSITORY ACCESS
+SDK_ENV_EXISTS
+PACKAGE PLAN
+Reading package lists...
+Building dependency tree...
+Reading state information...
+dbus-user-session is already the newest version (1.14.10-4ubuntu4.1).
+dbus-user-session set to manually installed.
+libpam-systemd is already the newest version (255.4-1ubuntu8.18).
+libpam-systemd set to manually installed.
+The following additional packages will be installed:
+  acl ipxe-qemu libasound2-data libasound2t64 libbrlapi0.8 libcacard0
+  libdaxctl1 libfdt1 libndctl6 libpixman-1-0 libpmem1 librdmacm1t64 libslirp0
+  liburing2 libusbredirparser1t64 qemu-system-common qemu-system-data seabios
+Suggested packages:
+  alsa-utils libasound2-plugins samba vde2
+Recommended packages:
+  alsa-ucm-conf alsa-topology-conf qemu-utils ipxe-qemu-256k-compat-efi-roms
+  ovmf qemu-system-gui qemu-system-modules-spice qemu-system-modules-opengl
+  qemu-block-extra cpu-checker
+The following NEW packages will be installed:
+  acl ipxe-qemu libasound2-data libasound2t64 libbrlapi0.8 libcacard0
+  libdaxctl1 libfdt1 libndctl6 libpixman-1-0 libpmem1 librdmacm1t64 libslirp0
+  liburing2 libusbredirparser1t64 qemu-system-common qemu-system-data
+  qemu-system-x86 seabios
+0 upgraded, 19 newly installed, 0 to remove and 9 not upgraded.
+1 not fully installed or removed.
+Inst acl (2.3.2-1build1.1 Ubuntu:24.04/noble-updates [amd64])
+Inst ipxe-qemu (1.21.1+git-20220113.fbbdc3926-0ubuntu2 Ubuntu:24.04/noble [all])
+Inst libasound2-data (1.2.11-1ubuntu0.3 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])
+Inst libasound2t64 (1.2.11-1ubuntu0.3 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
+Inst libbrlapi0.8 (6.6-4ubuntu5 Ubuntu:24.04/noble [amd64])
+Inst libcacard0 (1:2.8.0-3build4 Ubuntu:24.04/noble [amd64])
+Inst libdaxctl1 (77-2ubuntu2 Ubuntu:24.04/noble [amd64])
+Inst libndctl6 (77-2ubuntu2 Ubuntu:24.04/noble [amd64])
+Inst libpixman-1-0 (0.42.2-1build1 Ubuntu:24.04/noble [amd64])
+Inst libpmem1 (1.13.1-1.1ubuntu2 Ubuntu:24.04/noble [amd64])
+Inst librdmacm1t64 (50.0-2ubuntu0.2 Ubuntu:24.04/noble-updates [amd64])
+Inst libslirp0 (4.7.0-1ubuntu3.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
+Inst liburing2 (2.5-1build1 Ubuntu:24.04/noble [amd64])
+Inst libusbredirparser1t64 (0.13.0-2.1build1 Ubuntu:24.04/noble [amd64])
+Inst qemu-system-common (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [amd64])
+Inst qemu-system-data (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [all])
+Inst libfdt1 (1.7.0-2build1 Ubuntu:24.04/noble [amd64])
+Inst seabios (1.16.3-2 Ubuntu:24.04/noble [all])
+Inst qemu-system-x86 (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [amd64])
+Conf acl (2.3.2-1build1.1 Ubuntu:24.04/noble-updates [amd64])
+Conf ipxe-qemu (1.21.1+git-20220113.fbbdc3926-0ubuntu2 Ubuntu:24.04/noble [all])
+Conf libasound2-data (1.2.11-1ubuntu0.3 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])
+Conf libasound2t64 (1.2.11-1ubuntu0.3 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
+Conf libbrlapi0.8 (6.6-4ubuntu5 Ubuntu:24.04/noble [amd64])
+Conf libcacard0 (1:2.8.0-3build4 Ubuntu:24.04/noble [amd64])
+Conf libdaxctl1 (77-2ubuntu2 Ubuntu:24.04/noble [amd64])
+Conf libndctl6 (77-2ubuntu2 Ubuntu:24.04/noble [amd64])
+Conf libpixman-1-0 (0.42.2-1build1 Ubuntu:24.04/noble [amd64])
+Conf libpmem1 (1.13.1-1.1ubuntu2 Ubuntu:24.04/noble [amd64])
+Conf librdmacm1t64 (50.0-2ubuntu0.2 Ubuntu:24.04/noble-updates [amd64])
+Conf libslirp0 (4.7.0-1ubuntu3.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
+Conf liburing2 (2.5-1build1 Ubuntu:24.04/noble [amd64])
+Conf libusbredirparser1t64 (0.13.0-2.1build1 Ubuntu:24.04/noble [amd64])
+Conf qemu-system-common (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [amd64])
+Conf qemu-system-data (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [all])
+Conf libfdt1 (1.7.0-2build1 Ubuntu:24.04/noble [amd64])
+Conf seabios (1.16.3-2 Ubuntu:24.04/noble [all])
+Conf qemu-system-x86 (1:8.2.2+ds-0ubuntu1.18 Ubuntu:24.04/noble-updates [amd64])
+Conf ca-certificates (20260816ubuntu0.24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])

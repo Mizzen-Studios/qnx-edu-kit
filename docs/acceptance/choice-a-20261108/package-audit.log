@@ -1,0 +1,22 @@
+uid=0(root) gid=0(root) groups=0(root)
+The following packages are only half configured, probably due to problems
+configuring them the first time.  The configuration should be retried using
+dpkg --configure <package> or the configure menu option in dselect:
+ ca-certificates      Common CA certificates
+
+The following packages have been triggered, but the trigger processing
+has not yet been done.  Trigger processing can be requested using
+dselect or dpkg --configure --pending (or dpkg --triggers-only):
+ man-db               tools for reading manual pages
+
+ca-certificates 20260816ubuntu0.24.04.1 install ok half-configured
+dbus-user-session 1.14.10-4ubuntu4.1 install ok installed
+libpam-systemd 255.4-1ubuntu8.18 install ok installed
+systemd 255.4-1ubuntu8.18 install ok installed
+   552085      4 -rwx------   1 qnx      qnx           185 Nov  7 13:11 /home/qnx/edu-clean-swap-build.sh
+   263620 1048580 -rw-------   1 root     root     1073741824 Nov  7 09:30 /home/qnx/qnx-build.swap
+   552084       4 drwxr-xr-x   5 qnx      qnx            4096 Nov  7 15:23 /home/qnx/clean-step3-swap-20261107
+4026532074       0 -r--r--r--   1 root     root              0 Nov  8 20:22 /proc/swaps
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        23G   11G   12G  47% /
+/dev/vda1        23G   11G   12G  47% /
