@@ -162,6 +162,8 @@ def export(work, dest):
                 target.parent.mkdir(exist_ok=True)
                 if not target.exists():
                     shutil.copyfile(disk,target)
+        if (work/'supplemental').is_dir():
+            shutil.copytree(work/'supplemental',dest/'supplemental',symlinks=False)
         files = {str(p.relative_to(dest)):lab.sha(p) for p in sorted(dest.rglob('*')) if p.is_file()}
         save(dest/'pack.json',dict(kind='edu-own-pack-v1',session_id=data['id'], files=files,
              reference_imports='unsupported; recorded reference is not learner work',
