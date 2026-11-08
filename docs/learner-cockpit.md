@@ -42,7 +42,7 @@ Every command attempt has an append-only numbered directory, source snapshot and
 command output. Successful builds retain their bundle before later builds replace
 the active one. Intended failures, setup blocks and interrupted attempts remain.
 The existing learner_lab.py CLI, native mechanisms and stage oracles are unchanged.
-No policy module is added; native policy/logging probes are separately gated.
+A supplemental [ability-only lesson](ability-lesson.md) now has permission prediction/diagnosis/explanation notes in the notebook/export. It is not pathname policy, and notes do not create a native acceptance badge. Actual native permission transcripts remain separately bound evidence.
 
 ## Legal single-host setup plan
 
