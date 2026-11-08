@@ -38,3 +38,18 @@ IO subrange0 for IO_LEVEL_1; library libc. SDK headers/implementation are not sh
 Implementation status: original source and notebook notes are available. The earlier
 prerequisite demonstrated deny versus default root only. The new narrowed allow
 configuration now has its own [fresh native receipt](acceptance/ability-20261108/receipt.json): deny rc-1/EPERM, allow IO0..0 rc0, both exit0, same ELF separate processes. Do not substitute the older default-root proof.
+
+### Shared-run provenance (offline inspection)
+
+The archived run.json is byte-identical shared CAN incident-run metadata, not an
+ability acceptance receipt. Its success field means CAN restart/traffic only.
+native-transcript.txt is the original mixed containment/ability/CAN slog2 capture,
+not a full boot log; no transcript has been reconstructed. provenance.json types
+and hashes both files. The original receipt records the same ELF digest and
+separate-process results; shared run metadata does not independently bind that ELF.
+
+Run python3 scripts/ability_provenance.py to recompute the ability observations.
+Both capability-ledger and review-packet consumers fail closed on wrong evidence
+type, altered shared bytes, run/image/disk mismatch or wrong-typed results. They
+never use shared CAN success to grant ability PASS. This is offline validation,
+not new execution or a new acceptance award.

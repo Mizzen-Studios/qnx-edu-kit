@@ -4,6 +4,9 @@ import argparse, hashlib, json, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def render(root=ROOT):
+ sys.path.insert(0,str(ROOT/'scripts'))
+ from ability_provenance import validate
+ validate(root/'docs/acceptance/ability-20261108')
  d=json.loads((root/'docs/capabilities.json').read_text());seen=set()
  if d['schema']!='qnx-capabilities.v1':raise ValueError('unknown schema')
  lines=['# Capability ledger','',d['project'],'',d['boundary'],'','Canonical declarations: docs/capabilities.json. Generated view; ledger checks are not runtime acceptance.','','**Native observations: observed in this QEMU run · app budget, not a QNX benchmark.**','','| Capability | Domain | Level | Status | Bounded claim | Evidence |','|---|---|---|---|---|---|']

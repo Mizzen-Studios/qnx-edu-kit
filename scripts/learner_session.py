@@ -137,6 +137,8 @@ def validate_native(work, record, folder):
     if any(receipt['checks'].get(k)!=v for k,v in checks.items()):
         raise ValueError('oracle disagrees with receipt')
     expected = all(checks.values()) and all(receipt['checks'].values()) and bool(receipt.get('caps'))
+    if type(receipt.get('success')) is not bool or type(record.get('returncode')) is not int:
+        raise ValueError('native status/exit wrong type')
     if receipt['success'] != expected or record['returncode'] != (0 if expected else 1):
         raise ValueError('native status/exit mismatch')
     return bundle, disk

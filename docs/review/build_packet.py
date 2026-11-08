@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Offline review inventory: no runtime, SDK, or network actions."""
-import hashlib,json,re,subprocess
+import hashlib,json,re,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -17,6 +17,9 @@ def rec(path,label,logs=(),commit=None,note=''):
  walk(d)
  return dict(path=path,sha256=sha(p),label=label,receipt_hash_fields=hashes,raw_logs=[dict(path=l,sha256=sha(ROOT/l)) for l in logs],tested_source_commit=commit or 'UNVERIFIED: receipt binds source bytes, not a tested repository commit',archival_commit=git('log','--diff-filter=A','--format=%H','--',path).splitlines()[-1],note=note)
 def build():
+ sys.path.insert(0,str(ROOT/'scripts'))
+ from ability_provenance import validate
+ validate(ROOT/'docs/acceptance/ability-20261108')
  b='docs/acceptance/'; n=b+'native-20261107/'; c=b+'clean-step3-20261107/'; f=b+'learner-finish-clean-20261107/'
  e={
  'reference':rec(n+'receipt.json','observed in this QEMU run',[n+'serial.txt'],note='Image and four source hashes present. Binary/disk hashes and tested commit absent: UNVERIFIED binding. Do not infer them from later source or commit.'),
@@ -49,7 +52,7 @@ def build():
   e['bootstrap-'+key]=rec('docs/acceptance/bootstrap-final-20261107/'+key+'-native.json','observed in this QEMU run',['docs/acceptance/bootstrap-final-20261107/'+key+'-native.log'],note='New documented bootstrap on existing SDK; exact instruction/source revisions in receipt.json, no second-SDK/human claim.')
  e['bootstrap-provenance']=dict(path='docs/acceptance/bootstrap-final-20261107/receipt.json',sha256=sha(ROOT/'docs/acceptance/bootstrap-final-20261107/receipt.json'),label='observed build and QEMU run; existing SDK only')
  e['prereq-native']=rec('docs/acceptance/prereq-20261108/receipt.json','observed in this QEMU run',['docs/acceptance/prereq-20261108/native-serial.log'],commit='cae0f6f8bfa22c529d1727959fb7b9fc6a1ce230',note='Same ELF separate ability-control runs, finite slog2 and co-located observer death. Not pathname enforcement, CAN-driver isolation or least privilege. Raw SDK log hashes preserved separately from redacted projections.')
- e['ability-native']=rec('docs/acceptance/ability-20261108/receipt.json','observed in this QEMU run',commit='6b4949c2b8d0fc3f091ae9142e1587dafc08607c',note='Same ELF denied EPERM versus IO subrange0..0 allow; separate processes; not pathname policy. Exact ELF/IFS/disk bound in receipt.')
+ e['ability-native']=rec('docs/acceptance/ability-20261108/receipt.json','observed in this QEMU run',['docs/acceptance/ability-20261108/native-transcript.txt','docs/acceptance/ability-20261108/run.json','docs/acceptance/ability-20261108/provenance.json'],commit='6b4949c2b8d0fc3f091ae9142e1587dafc08607c',note='Same ELF denied EPERM versus IO subrange0..0 allow; separate processes; not pathname policy. Exact ELF/IFS/disk bound in receipt.')
  for key in ['wrong','correct','finish']:
   e['wrapper-'+key]=rec('docs/acceptance/wrapper-20261108/'+key+'-native.json','observed in this QEMU run',note='Own notebook workspace source bytes and build/run driver digests bound directly in native receipt. Source snapshots archived at bbefa51dd6dbcc3ac80870fee3412f49eccdbccc after execution; archival commit is NOT asserted as pre-build source revision. Existing SDK reuse only; failures retained.')
  e['notebook-host-fixes']=rec('docs/acceptance/review-fixes-20261108/receipt.json','host-only',['docs/acceptance/review-fixes-20261108/host.log','docs/acceptance/review-fixes-20261108/browser.log'],commit='9ee5eaf',note='Action/assets export validation, source mismatch qualification and explicit draft conflicts. Actual existing native artifacts revalidated, not a native rerun.')
