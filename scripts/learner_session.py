@@ -163,6 +163,8 @@ def export(work, dest):
                 if not target.exists():
                     shutil.copyfile(disk,target)
         if (work/'supplemental').is_dir():
+            if (work/'supplemental').is_symlink() or any(p.is_symlink() for p in (work/'supplemental').rglob('*')):
+                raise ValueError('supplemental symlinks unsupported')
             shutil.copytree(work/'supplemental',dest/'supplemental',symlinks=False)
         files = {str(p.relative_to(dest)):lab.sha(p) for p in sorted(dest.rglob('*')) if p.is_file()}
         save(dest/'pack.json',dict(kind='edu-own-pack-v1',session_id=data['id'], files=files,
