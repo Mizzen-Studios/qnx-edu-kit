@@ -1,0 +1,2 @@
+Error: current validation stale
+    at /target/apps/qnx-edu-kit/tests/browser_learner_session.cjs:58:98

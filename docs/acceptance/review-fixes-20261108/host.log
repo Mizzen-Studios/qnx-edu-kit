@@ -1,0 +1,36 @@
+test_existing_work_refused (test_learner_clean_bootstrap.CleanBootstrapTests.test_existing_work_refused) ... ok
+test_missing_licensed_component_blocks (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_licensed_component_blocks) ... ok
+test_missing_sdk_is_blocked_not_native_pass (test_learner_clean_bootstrap.CleanBootstrapTests.test_missing_sdk_is_blocked_not_native_pass) ... ok
+test_probe_does_not_launch_or_install (test_learner_clean_bootstrap.CleanBootstrapTests.test_probe_does_not_launch_or_install) ... ok
+test_real_qnx8_layout_is_accepted_without_usr_prefix (test_learner_clean_bootstrap.CleanBootstrapTests.test_real_qnx8_layout_is_accepted_without_usr_prefix) ... ok
+test_finish_and_bar_manifests_are_not_interchangeable (test_learner_dev_edu.FinishTests.test_finish_and_bar_manifests_are_not_interchangeable) ... ok
+test_finish_initializes_actual_todo_and_preserves_edits (test_learner_dev_edu.FinishTests.test_finish_initializes_actual_todo_and_preserves_edits) ... ok
+test_finish_requires_bound_normal_io_and_irq (test_learner_dev_edu.FinishTests.test_finish_requires_bound_normal_io_and_irq) ... ok
+test_finish_wrapper_uses_real_device_io (test_learner_dev_edu.FinishTests.test_finish_wrapper_uses_real_device_io) ... ok
+test_actual_readback_and_exit_required (test_learner_lab.LearnerTests.test_actual_readback_and_exit_required) ... ok
+test_build_compiles_snapshot_and_rebuilds_image (test_learner_lab.LearnerTests.test_build_compiles_snapshot_and_rebuilds_image) ... ok
+test_checkout_outputs_forbidden (test_learner_lab.LearnerTests.test_checkout_outputs_forbidden) ... ok
+test_identified_qemu_is_killed_on_cap_rejection (test_learner_lab.LearnerTests.test_identified_qemu_is_killed_on_cap_rejection) ... ok
+test_init_copies_todo_and_preserves_edits (test_learner_lab.LearnerTests.test_init_copies_todo_and_preserves_edits) ... ok
+test_native_refuses_free_lock (test_learner_lab.LearnerTests.test_native_refuses_free_lock) ... ok
+test_reference_manifest_refused (test_learner_lab.LearnerTests.test_reference_manifest_refused) ... ok
+test_standalone_sdk_copy_allows_external_build (test_learner_lab.LearnerTests.test_standalone_sdk_copy_allows_external_build) ... ok
+test_tampered_inputs_refused (test_learner_lab.LearnerTests.test_tampered_inputs_refused) ... ok
+test_build_only_export_revalidates_binary (test_learner_session.SessionTests.test_build_only_export_revalidates_binary) ... ok
+test_current_edit_keeps_history_but_not_current_pass (test_learner_session.SessionTests.test_current_edit_keeps_history_but_not_current_pass) ... ok
+test_dev_edu_irq_ack_is_separate_required_check (test_learner_session.SessionTests.test_dev_edu_irq_ack_is_separate_required_check) ... ok
+test_existing_oracle_wrong_fails_despite_app_zero_correct_passes (test_learner_session.SessionTests.test_existing_oracle_wrong_fails_despite_app_zero_correct_passes) ... ok
+test_invalid_metadata_and_missing_receipt_fail_closed (test_learner_session.SessionTests.test_invalid_metadata_and_missing_receipt_fail_closed) ... ok
+test_metadata_cannot_bypass_native_validation (test_learner_session.SessionTests.test_metadata_cannot_bypass_native_validation) ... ok
+test_own_source_notes_and_no_overwrite (test_learner_session.SessionTests.test_own_source_notes_and_no_overwrite) ... ok
+test_pack_has_own_source_binary_image_disk_and_tamper_fails (test_learner_session.SessionTests.test_pack_has_own_source_binary_image_disk_and_tamper_fails) ... ok
+test_permission_notes_export_without_native_badge (test_learner_session.SessionTests.test_permission_notes_export_without_native_badge) ... ok
+test_prediction_gate_and_blocked_run_retained (test_learner_session.SessionTests.test_prediction_gate_and_blocked_run_retained) ... ok
+test_reference_notes_cannot_import (test_learner_session.SessionTests.test_reference_notes_cannot_import) ... ok
+test_setup_no_sdk_execution_without_explicit_probe (test_learner_session.SessionTests.test_setup_no_sdk_execution_without_explicit_probe) ... ok
+test_zero_exit_without_native_receipt_never_passes (test_learner_session.SessionTests.test_zero_exit_without_native_receipt_never_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.163s
+
+OK

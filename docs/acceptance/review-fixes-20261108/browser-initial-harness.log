@@ -1,0 +1,8 @@
+locator.isVisible: Error: strict mode violation: getByText('HISTORICAL — SOURCE MISMATCH') resolved to 2 elements:
+    1) <li>…</li> aka getByText('0001-build: PASS [HOST] —')
+    2) <li>…</li> aka getByText('0002-run: PASS [nativefresh')
+
+Call log:
+    - checking visibility of getByText('HISTORICAL — SOURCE MISMATCH')
+
+    at /target/apps/qnx-edu-kit/tests/browser_learner_session.cjs:59:74

@@ -68,10 +68,11 @@ class SessionTests(unittest.TestCase):
     def native_fixture(self,wrong=False,stage='step3'):
         _,data=cockpit.session(self.work)
         source=self.work/stage/'main.c'
-        build=dict(id='0001-build',stage=stage,action='build',status='PASS',label='HOST',started=1,source_sha256=cockpit.lab.sha(source))
+        build=dict(id='0001-build',stage=stage,action='build',status='PASS',label='HOST',started=1,returncode=0,source_sha256=cockpit.lab.sha(source))
         folder=self.work/'attempts'/'0002-run';folder.mkdir(parents=True)
         shutil=__import__('shutil');shutil.copyfile(source,folder/'main.c')
         bundle=self.work/'attempts'/build['id']/'bundle';bundle.mkdir(parents=True)
+        shutil.copyfile(source,bundle.parent/'main.c')
         files={'learner-source.c':source.read_bytes(),'learner_bin':b'ELF host fixture','learner.ifs':b'host fixture','learner-start.sh':b'host fixture'}
         for name,value in files.items():(bundle/name).write_bytes(value)
         manifest=dict(kind=cockpit.lab.manifest_kind(stage),source_sha256=cockpit.lab.sha(source),binary_sha256=cockpit.lab.sha(bundle/'learner_bin'),image_sha256=cockpit.lab.sha(bundle/'learner.ifs'),startup_sha256=cockpit.lab.sha(bundle/'learner-start.sh'))
@@ -108,6 +109,60 @@ class SessionTests(unittest.TestCase):
         (folder/'native.log').write_text('reference PASS')
         with self.assertRaises(ValueError):cockpit.export(self.work,Path(self.temp.name)/'bad-pack')
         self.assertTrue((Path(self.temp.name)/'bad-pack/INCOMPLETE.txt').exists())
+
+    def test_build_only_export_revalidates_binary(self):
+        self.native_fixture()
+        _,data=cockpit.session(self.work)
+        data['attempts']=data['attempts'][:1]
+        cockpit.save(self.work/'session.json',data)
+        cockpit.export(self.work,Path(self.temp.name)/'good-build')
+        (self.work/'attempts/0001-build/bundle/learner_bin').write_text('CORRUPT')
+        with self.assertRaisesRegex(ValueError,'binary_sha256'):
+            cockpit.export(self.work,Path(self.temp.name)/'bad-build')
+
+    def test_metadata_cannot_bypass_native_validation(self):
+        folder,record=self.native_fixture()
+        _,original=cockpit.session(self.work)
+        import copy
+        for key,value in [('label','HOST'),('status','BLOCKED'),('action','build')]:
+            with self.subTest(key=key):
+                data=copy.deepcopy(original);data['attempts'][1][key]=value
+                cockpit.save(self.work/'session.json',data)
+                with self.assertRaisesRegex(ValueError,'mismatch'):
+                    cockpit.export(self.work,Path(self.temp.name)/('bad-'+key))
+        data=copy.deepcopy(original);data['attempts'][1]['label']='HOST'
+        cockpit.save(self.work/'session.json',data)
+        (folder/'native.log').write_text('CORRUPT')
+        with self.assertRaises(ValueError):
+            cockpit.export(self.work,Path(self.temp.name)/'corrupt-host')
+
+    def test_invalid_metadata_and_missing_receipt_fail_closed(self):
+        folder,record=self.native_fixture()
+        _,original=cockpit.session(self.work)
+        import copy
+        for key,value in [('action','other'),('stage','other'),('status','other'),('returncode',True)]:
+            with self.subTest(key=key):
+                data=copy.deepcopy(original);data['attempts'][1][key]=value
+                cockpit.save(self.work/'session.json',data)
+                with self.assertRaises((ValueError,KeyError)):
+                    cockpit.export(self.work,Path(self.temp.name)/('invalid-'+key))
+        cockpit.save(self.work/'session.json',original)
+        (folder/'native.json').unlink()
+        with self.assertRaises(OSError):
+            cockpit.export(self.work,Path(self.temp.name)/'missing-json')
+
+    def test_current_edit_keeps_history_but_not_current_pass(self):
+        folder,record=self.native_fixture()
+        (self.work/'step3/main.c').write_text('a newer edit')
+        cockpit.render(self.work)
+        page=(self.work/'cockpit.html').read_text()
+        self.assertIn('0002-run: PASS',page)
+        self.assertIn('HISTORICAL — SOURCE MISMATCH',page)
+        self.assertIn('step3: CURRENT_STAGE_NOT_VALIDATED',page)
+        manifest=json.loads(cockpit.export(self.work,Path(self.temp.name)/'historic').read_text())
+        self.assertEqual(manifest['current_sources']['step3']['validation'],'CURRENT_STAGE_NOT_VALIDATED')
+        self.assertEqual(manifest['current_sources']['step3']['source_sha256'],cockpit.lab.sha(self.work/'step3/main.c'))
+        self.assertTrue(any(k.startswith('disks/') for k in manifest['files']))
 
     def test_dev_edu_irq_ack_is_separate_required_check(self):
         folder,record=self.native_fixture(stage='step6')
