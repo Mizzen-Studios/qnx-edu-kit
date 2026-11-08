@@ -53,3 +53,9 @@ Both capability-ledger and review-packet consumers fail closed on wrong evidence
 type, altered shared bytes, run/image/disk mismatch or wrong-typed results. They
 never use shared CAN success to grant ability PASS. This is offline validation,
 not new execution or a new acceptance award.
+
+The literal shared CAN run.json substituted as receipt.json is a negative fixture:
+CLI validation, capability catalog and review appendix all reject it. Notebook
+export does not import these ability receipts as native stage attempts: permission
+notes and optional supplemental files are unqualified supporting material, never
+step3/step6 PASS. Their inclusion cannot grant current-source validation.

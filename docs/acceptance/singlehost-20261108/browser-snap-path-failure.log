@@ -1,0 +1,7 @@
+page.goto: net::ERR_ACCESS_DENIED at file:///home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-browser-20261108/own/cockpit.html
+Call log:
+  - navigating to "file:///home/ubuntu/.openclaw/workspace/.openclaw/tmp/edu-browser-20261108/own/cockpit.html", waiting until "load"
+
+    at /home/ubuntu/.openclaw/workspace/apps/qnx-edu-kit/tests/browser_learner_session.cjs:18:14 {
+  name: 'Error'
+}

@@ -63,7 +63,7 @@
     },
     {
       "path": "docs/site/docs/ability-lesson.html",
-      "sha256": "5dc438ceb93a6ed44fb5504617c56cd3d4b41f2f59a251058654ff001f47ae67",
+      "sha256": "95b9e2fc24824879a85b16781986eb14865e0c43f593b60144aa3575efa7134e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -223,7 +223,7 @@
     },
     {
       "path": "docs/site/docs/learner-cockpit.html",
-      "sha256": "25b96af1702274f9dc6f2454e11cb5df616554e0048beeae76bf8b57e53507d2",
+      "sha256": "c6a45375fc8d11fd98d221f8ae221111bae3d5b8d0073a84d84cff7ef38e6ad8",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -2304,6 +2304,11 @@
       "exists": true
     },
     {
+      "source": "docs/site/docs/learner-cockpit.html",
+      "target": "../docs/acceptance/wrapper-20261108/NOTES.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/docs/learner-dev-edu.html",
       "target": "../index.html",
       "exists": true
@@ -3627,6 +3632,17 @@
       "counts": {
         "total": 103,
         "passed": 101,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/singlehost-20261108/host-receipt.json",
+      "sha256": "4b5857fa5238d1efc6ab1fda0b737fc35e47efb105f305171cd3202c0f78993b",
+      "tested_commit": "ae3c2cc2f0a002f99ab0d08c629826ca70a46c0c",
+      "counts": {
+        "total": 104,
+        "passed": 102,
         "skipped": 2
       },
       "scope": "historical host suite at its own revision; never native proof or automatically current count"

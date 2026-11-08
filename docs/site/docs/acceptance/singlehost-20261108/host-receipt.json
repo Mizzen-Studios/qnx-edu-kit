@@ -1,0 +1,18 @@
+{
+  "tested_commit": "ae3c2cc2f0a002f99ab0d08c629826ca70a46c0c",
+  "scope": "committed host suite; SDK single-host capability outcome pending separately",
+  "host_tests": {
+    "total": 104,
+    "passed": 102,
+    "skipped": 2
+  },
+  "files": {
+    "browser-initial-failure.log": "77fbbc7c2583c5e53f5c11d5b49788503bbc3233751dd62b7106e750fa0faa47",
+    "browser.json": "f4f8598a208bf52478d0c4451ad7f927ceecf6dcf1205cbb2978f483bc3cb050",
+    "probe.sh": "8c421af9f2fd8da20f2eaf9545c02da506b6fffc115e7ae47af140c95f61df66",
+    "probe-context.json": "fb0050ae0d0bd63c1797a3a4d126200c0253381df5a04b8b82e59bdd5d4776d1",
+    "host-ae3c2cc.log": "6e4702a96f02c96afb3e19a3388c2bba12efa13599ed127fa758499d6c3bc9e1",
+    "browser-snap-path-failure.log": "6eb3460f02f98182a00f447c7fed0d1badb69c17d0fb8460c0a51ac45ff2abef"
+  },
+  "recorded": false
+}

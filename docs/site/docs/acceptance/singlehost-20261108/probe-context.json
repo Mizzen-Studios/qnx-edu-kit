@@ -1,0 +1,20 @@
+{
+  "tested_commit": "d1e78a7bbb8d40e3b9a1e7197db617a780374608",
+  "scripts": {
+    "learner_setup.py": "35e45a09119e98ff866fbfed940e56e407e838281176226546d6c9613361a0a9",
+    "learner_clean_preflight.py": "ce7b34699886c0aa700e67d4d9758f4b1c26602f5cdc97cce6257f2f7d84a4bb",
+    "learner_lab.py": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2"
+  },
+  "controller_sha256": "d91dcdef4068f6a3811c4ada2b02dd3fcbcd59517a42a7e3a2403cd1967af3ee",
+  "probe_sha256": "8c421af9f2fd8da20f2eaf9545c02da506b6fffc115e7ae47af140c95f61df66",
+  "qemu_pid": 272869,
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "1073741824",
+    "nice": 15
+  },
+  "existing_sdk_reused": true,
+  "new_install": false,
+  "new_activation": false,
+  "scope": "bounded read-only existing-host capability probe; not native acceptance"
+}

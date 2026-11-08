@@ -7,5 +7,9 @@
   "mixed_transcript_sha256": "a72b39ee4be1568e5d27e5c866d171db3040dfad6081de203caebb6c84aea933",
   "transcript_scope": "mixed containment, ability and CAN slog2; not a full boot log",
   "run_id": "native-18f7bd8066bf48ce94b1cd373450c201",
-  "elf_binding_scope": "same ELF digest recorded in original ability receipt; shared run metadata does not independently bind this ELF"
+  "elf_binding_scope": "same ELF digest recorded in original ability receipt; shared run metadata does not independently bind this ELF",
+  "shared_support": {
+    "run_metadata": "run.json",
+    "mixed_transcript": "native-transcript.txt"
+  }
 }

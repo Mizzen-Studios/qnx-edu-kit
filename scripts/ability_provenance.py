@@ -16,6 +16,8 @@ def validate(folder):
         raise ValueError('wrong ability provenance type')
     if meta.get('shared_run_type') != 'canopy-incident-capture' or meta.get('shared_success_scope') != 'CAN restart/traffic only; NOT ability acceptance':
         raise ValueError('shared success scope invalid')
+    if meta.get('shared_support') != {'run_metadata':'run.json','mixed_transcript':'native-transcript.txt'}:
+        raise ValueError('shared support names invalid')
     for name,key in [('run.json','shared_run_sha256'),('native-transcript.txt','mixed_transcript_sha256')]:
         if sha(folder/name) != meta.get(key): raise ValueError('changed shared evidence: '+name)
     if meta.get('transcript_scope') != 'mixed containment, ability and CAN slog2; not a full boot log':
