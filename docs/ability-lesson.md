@@ -37,4 +37,4 @@ IO subrange0 for IO_LEVEL_1; library libc. SDK headers/implementation are not sh
 
 Implementation status: original source and notebook notes are available. The earlier
 prerequisite demonstrated deny versus default root only. The new narrowed allow
-configuration needs its own fresh native receipt; do not substitute that older proof.
+configuration now has its own [fresh native receipt](acceptance/ability-20261108/receipt.json): deny rc-1/EPERM, allow IO0..0 rc0, both exit0, same ELF separate processes. Do not substitute the older default-root proof.

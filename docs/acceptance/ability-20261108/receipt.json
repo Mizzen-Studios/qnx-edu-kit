@@ -1,0 +1,27 @@
+{
+  "source_revision": "6b4949c",
+  "source_sha256": "07ea4a6bd8293217755b9c43325dd7e90375b00e649e8fe309723f313bc396c0",
+  "same_elf_sha256": "c527c865ab357387ae009b1d63cb4c2de92b72d303e74e70a7089ee9775b8739",
+  "image_sha256": "764e7e9f3ffcb74e851dce896a513c85abe16589d918937f3ba5157891882a22",
+  "disk_sha256": "59269af3ae940d2e520271e8b2e989cc8de5918c8e6cf283bc88cfd734c30951",
+  "run": "native-18f7bd8066bf48ce94b1cd373450c201",
+  "deny": {
+    "rc": -1,
+    "errno": 1,
+    "process_exit": 0,
+    "configuration": "both domains all unlocked abilities deny+lock"
+  },
+  "allow": {
+    "rc": 0,
+    "errno": 0,
+    "process_exit": 0,
+    "configuration": "IO allow+subrange0..0+lock both domains, all other unlocked abilities deny+lock"
+  },
+  "ability_only": true,
+  "pathname_policy": "BLOCKED; not demonstrated",
+  "least_privilege_scope": "Least supported IO level for ThreadCtl IO_LEVEL_1, not default root or full platform minimality",
+  "same_elf_separate_processes": true,
+  "stopped_reaped": true,
+  "build_log_original_sha256": "06953d387a386dce6786aa486903854f1a7383093b2f1532f5c3bf51507f69e7",
+  "external_originals": "Existing capture host incident-20261108, no licensed artifacts committed"
+}
