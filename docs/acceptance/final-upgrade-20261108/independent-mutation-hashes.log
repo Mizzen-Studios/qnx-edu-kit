@@ -1,0 +1,8 @@
+build_only_binary REJECTED: binary_sha256 mismatch: rebuild your edited source
+native_label REJECTED: native action/label/status mismatch
+native_status REJECTED: native action/label/status mismatch
+native_action REJECTED: build action/label/assets mismatch
+native_label_corrupt_log REJECTED: oracle disagrees with receipt
+source_edit historical pack ACCEPTED; current edit NOT VALIDATED; disk retained
+qnx-edu-kit 12 receipt-bound files SHA256 MATCH
+canopy-qnx 26 receipt-bound files SHA256 MATCH

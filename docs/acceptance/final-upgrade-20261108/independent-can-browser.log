@@ -1,0 +1,31 @@
+{
+  "capture": "none",
+  "rows": [
+    {
+      "width": 1280,
+      "height": 900,
+      "status": "PASS",
+      "checks": [
+        "actual native v2 four queries",
+        "control evidence expansion",
+        "surviving unrelated control UNKNOWN",
+        "missing control isolation UNKNOWN",
+        "v1 rejected UNKNOWN",
+        "no overflow/errors/external requests"
+      ]
+    },
+    {
+      "width": 360,
+      "height": 900,
+      "status": "PASS",
+      "checks": [
+        "actual native v2 four queries",
+        "control evidence expansion",
+        "surviving unrelated control UNKNOWN",
+        "missing control isolation UNKNOWN",
+        "v1 rejected UNKNOWN",
+        "no overflow/errors/external requests"
+      ]
+    }
+  ]
+}

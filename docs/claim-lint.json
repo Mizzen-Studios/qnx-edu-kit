@@ -2,7 +2,7 @@
   "status": "PASS",
   "errors": [],
   "scope": "Offline structural lint + explicit REVIEW mapping; not a universal semantic claim verifier",
-  "acceptance": "Previous council CONDITIONAL evidence; Nov8 upgrades in progress, new independent gate pending; human learning and second SDK UNVERIFIED",
+  "acceptance": "Previous council CONDITIONAL evidence; Nov8 scoped host/native observations and integrity recheck recorded; new council gate pending; human learning and second SDK UNVERIFIED",
   "capture": "DRY ONLY; separate Olly OK required for recording/audio",
   "boundaries": [
     "existing licensed SDK reused, not fresh install",
@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "7cebd8be817a864ac2c852534bb581ddd95347a953486bd2cc7234dcac882a90",
+      "sha256": "ab6266f5ba4836850a9d6029fa45fb4e2eda8937a48c6e908c7c68183aacf474",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "4a6b09eef6058b5e09bca25f47242b837739d8a4b1f798388a368a3ff6d4c85f",
+      "sha256": "6895c361a53a2f27d919c4d89ccc8d816e9a3978a956d07a5e3f0dab552486f8",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -48,12 +48,12 @@
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "6855c43bf77722bdff5c70282642f07c8938299eaea54e7d8df02dcb05c5efbe",
+      "sha256": "0da91abcb08db401c73f9c5ca028ad8a611716bc7c88469ae58c7a975dc6afb3",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "10ee72daef7dd5f1a98993b902a7f8c048031a57b47e7c8de957d0964d63b089",
+      "sha256": "c9a334e7dd7a320c99003efdcd3747ee701b1d37e7476e96b712f531e721a939",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -99,6 +99,16 @@
     {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
       "sha256": "7a3ec16778f813844003c8222106928b25aa36ac52111ae5b8d5ae909b0d9516",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/final-upgrade-20261108/NOTES.html",
+      "sha256": "26bc267ad01a11131637c19816c3b693642e861b5478afddbd53a4384548057d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/final-upgrade-20261108/independent-REPORT.html",
+      "sha256": "b688bfff5e0c159873f417c86d1dcd1a5c90baefc737ae1f50df2349b75daec1",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -580,6 +590,11 @@
     },
     {
       "source": "STATUS.md",
+      "target": "docs/acceptance/final-upgrade-20261108/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
       "target": "docs/learner-route.md",
       "exists": true
     },
@@ -691,6 +706,11 @@
     {
       "source": "REVIEW.md",
       "target": "docs/acceptance/review-fixes-20261108/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/final-upgrade-20261108/NOTES.md",
       "exists": true
     },
     {
@@ -1150,6 +1170,11 @@
     },
     {
       "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/final-upgrade-20261108/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
       "target": "docs/review/appendix.json",
       "exists": true
     },
@@ -1221,6 +1246,11 @@
     {
       "source": "docs/site/STATUS.html",
       "target": "docs/acceptance/review-fixes-20261108/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/final-upgrade-20261108/NOTES.html",
       "exists": true
     },
     {
@@ -1671,6 +1701,36 @@
     {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/swap-attempt/PLAN.html",
       "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/independent-REPORT.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/independent-REPORT.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/final-upgrade-20261108/independent-REPORT.html",
+      "target": "../../../codelab/codelab.html",
       "exists": true
     },
     {
@@ -3464,6 +3524,17 @@
         "passed": 77,
         "skipped": 2,
         "failed": 0
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/final-upgrade-20261108/receipt.json",
+      "sha256": "ec558e6cc9ad0f4b1e6a97a9b777208b5a50a539c8c8188610788b62d2ed41b0",
+      "tested_commit": "fce2645907e1d066dfe59ed39f49cf7b7a43e604",
+      "counts": {
+        "total": 100,
+        "passed": 98,
+        "skipped": 2
       },
       "scope": "historical host suite at its own revision; never native proof or automatically current count"
     },

@@ -1,0 +1,46 @@
+{
+  "schema": "private-upgrade-final/1",
+  "tested_commit": "fce2645907e1d066dfe59ed39f49cf7b7a43e604",
+  "scope": "Clean committed checkout HOST-only; native evidence remains at its own original source/image bindings",
+  "host_tests": {
+    "total": 100,
+    "passed": 98,
+    "skipped": 2
+  },
+  "existing_sdk_reused": true,
+  "recorded": false,
+  "native_rerun": false,
+  "independent_implementation_review": {
+    "edu": "0610fda2ffda125d3e3b4888c74c70ecbcf7eb69",
+    "canopy": "32a4ae17b8401e30590437a68f86f403f802c315",
+    "result": "PASS for four assigned integrity findings; not council acceptance or full audit"
+  },
+  "boundaries": [
+    "C6 STOPPED",
+    "SocketCAN UNVERIFIED",
+    "sshd internal cause UNVERIFIED",
+    "no platform health/safety/timing/continuous availability claim",
+    "path policy BLOCKED; ability control only",
+    "single-host readiness not proven in current split-host environment",
+    "no second SDK/fresh-install/human-learning acceptance"
+  ],
+  "files": {
+    "docs/acceptance/final-upgrade-20261108/clean-host.log": "5e47b3e61b4ff3539820d357e16bf20470fe313ffd010d8787d630418fa23dd3",
+    "docs/acceptance/final-upgrade-20261108/independent-REPORT.md": "0892abb0ccdcc329d52a436cc1ae09d13cdcb3b614c5141335c299aa448249ff",
+    "docs/acceptance/final-upgrade-20261108/independent-can-browser.log": "afd3d966ee5b58d537d9dcd4f8384aeec03db139dbf0ede4fb2e01374685e151",
+    "docs/acceptance/final-upgrade-20261108/independent-can-host.log": "d72b77e0c13f752f171e2fc539447cb660b1275ab8bed2887c5cb85e3de823ee",
+    "docs/acceptance/final-upgrade-20261108/independent-edu-browser.log": "f4f8598a208bf52478d0c4451ad7f927ceecf6dcf1205cbb2978f483bc3cb050",
+    "docs/acceptance/final-upgrade-20261108/independent-edu-host.log": "2a5b687202e2e71464cafbeb6f81aac83d22553c59863eee611acfd9f237281a",
+    "docs/acceptance/final-upgrade-20261108/independent-mutation-hashes.log": "c7b55befee99c1de5ac87d3f0f7cce6b243869b8ff4ca635ff042ecccb85c2a8",
+    "docs/acceptance/final-upgrade-20261108/initial-packaging-failure.log": "17f384e4c39e347dd319bbb950c78fed2fba08e6f8be45e247178ff6bcc4b832"
+  },
+  "commands": [
+    "./verify.sh --host-only",
+    "python3 tools/claim_lint.py",
+    "python3 docs/review/build_packet.py --check",
+    "python3 scripts/render_site.py --check",
+    "python3 tools/proof_capture.py"
+  ],
+  "clean_checkout": "git clone --no-local from private local checkout into a separate previously absent directory; full real history retained",
+  "native_evidence": "Original native receipts remain separately source/ELF/IFS/disk bound; HOST verification never transfers native acceptance"
+}
