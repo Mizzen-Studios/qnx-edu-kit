@@ -72,6 +72,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/choice-a-20261108/NOTES.html",
+      "sha256": "006959d61b028e16d60575b8eae849a44aaa2f94f479a11baf1024a2ce2b6ffa",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
       "sha256": "b1fc14381df7576ea84d7e33176253b3a8cac6845082be9a6c55963e0627aee0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -243,7 +248,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "bcdaccce107c3163bc40244d5a50d8c7dd59e04058cc07a0e99ec511f4772135",
+      "sha256": "fdfd96e7ce9e7d777e7f6156accb6695eb4b03fb41b870ce821d04a0da477c69",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -314,6 +319,11 @@
     {
       "path": "docs/site/docs/security-policy.html",
       "sha256": "67de35cd60337e9347805959b5cf92a661fc63a73974e193510bafd48da97039",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/singlehost-prerequisites.html",
+      "sha256": "4d2d5209c6270d85a51aa8381f56a43fd09ec6065780ed503481dcf508a500a6",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -1604,6 +1614,21 @@
       "exists": true
     },
     {
+      "source": "docs/site/docs/acceptance/choice-a-20261108/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261108/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261108/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/docs/acceptance/clean-step3-20261107/NOTES.html",
       "target": "../../../index.html",
       "exists": true
@@ -2430,6 +2455,11 @@
     },
     {
       "source": "docs/site/docs/learner-route.html",
+      "target": "../docs/singlehost-prerequisites.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
       "target": "../codelab/codelab.html",
       "exists": true
     },
@@ -2701,6 +2731,26 @@
     {
       "source": "docs/site/docs/security-policy.html",
       "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/singlehost-prerequisites.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/singlehost-prerequisites.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/singlehost-prerequisites.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/singlehost-prerequisites.html",
+      "target": "../docs/learner-route.html",
       "exists": true
     },
     {
