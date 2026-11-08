@@ -183,7 +183,7 @@
     },
     {
       "path": "docs/site/docs/capabilities.html",
-      "sha256": "ea67839901ebadb22c116f1fb22742b9148437b229dd6f71492baa56ac4c3e6e",
+      "sha256": "a944e167a20938064959796e65d1ed5adf1f41162d206d42879382dc338165a0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -2040,7 +2040,7 @@
     },
     {
       "source": "docs/site/docs/capabilities.html",
-      "target": "../docs/acceptance/wrapper-20261108/setup-split-host-blocked.json",
+      "target": "../docs/acceptance/singlehost-20261108/receipt.json",
       "exists": true
     },
     {
@@ -3663,6 +3663,17 @@
       "counts": {
         "total": 104,
         "passed": 102,
+        "skipped": 2
+      },
+      "scope": "historical host suite at its own revision; never native proof or automatically current count"
+    },
+    {
+      "receipt": "docs/acceptance/singlehost-20261108/receipt.json",
+      "sha256": "fb4fbb0c0b96c46640f5131b47e66d785f4869788658f7e211e3c21b03ab75c9",
+      "tested_commit": "b825fb5886322fcda9966cca11e974b514b8763c",
+      "counts": {
+        "total": 108,
+        "passed": 106,
         "skipped": 2
       },
       "scope": "historical host suite at its own revision; never native proof or automatically current count"

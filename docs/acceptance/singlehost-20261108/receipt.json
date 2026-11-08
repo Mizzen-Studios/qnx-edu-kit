@@ -1,0 +1,52 @@
+{
+  "tested_commit": "b825fb5886322fcda9966cca11e974b514b8763c",
+  "host_tests": {
+    "total": 108,
+    "passed": 106,
+    "skipped": 2
+  },
+  "status": "BLOCKED",
+  "blockers": [
+    "existing licensed x86_64 SDK host lacks existing QEMU executable",
+    "licensed user systemd user bus absent"
+  ],
+  "native_acceptance": "NOT_RUN",
+  "portability": "UNVERIFIED",
+  "sdk_probe_returncode": 2,
+  "existing_sdk_reused": true,
+  "new_install": false,
+  "new_activation": false,
+  "source_hashes": {
+    "scripts/ability_provenance.py": "ed7d3d691c4fcb81b6d21431e68393e61fa73d6d5d81375cf53161e4ae0d80e2",
+    "scripts/learner_setup.py": "35e45a09119e98ff866fbfed940e56e407e838281176226546d6c9613361a0a9",
+    "scripts/learner_session.py": "51f77b95f119551b5daa96a0ff34d8e8aeff21a151f71e27e637baaef28d8329",
+    "scripts/learner_lab.py": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+    "docs/learner-route.md": "d24bfde43c1267d16b086a54f304804c07b9404340517dad6dc02f448557afee",
+    "tests/test_ability_provenance.py": "6734bec862339af2afe26bb008937b8d5a3f090abbdad4000fbeaea5b8fc7e12",
+    "tests/test_learner_session.py": "e63ce55a599a0bed295792fd144781ca28a8845d8b245de42fcc38dcf05faaeb"
+  },
+  "files": {
+    "browser-initial-failure.log": "77fbbc7c2583c5e53f5c11d5b49788503bbc3233751dd62b7106e750fa0faa47",
+    "probe.log": "b08292bd55c112f9213a7daa5f75a6ee8b2beab189e75dc5213beb5b212429cf",
+    "browser.json": "f4f8598a208bf52478d0c4451ad7f927ceecf6dcf1205cbb2978f483bc3cb050",
+    "probe.sh": "8c421af9f2fd8da20f2eaf9545c02da506b6fffc115e7ae47af140c95f61df66",
+    "setup-result.json": "15236e426cf85111caf4f4ab525445089b2731f873336e3259c46ad3423e0488",
+    "probe-context.json": "fb0050ae0d0bd63c1797a3a4d126200c0253381df5a04b8b82e59bdd5d4776d1",
+    "entry-host-boundary.json": "1036f036a2c5b06e5f296d484c269fd56915566fbcb9c25bef6cda671c82515a",
+    "entry-initial-failure.log": "98863792822737503cb2a28e20f67227a0ba2ebbb7c25810cc595a02ec50f75e",
+    "host-b825fb5.log": "e15d96532f2ffd58b80b08582637cfa053b48ac6cc64a37db150c3a62f9c475c",
+    "host-ae3c2cc.log": "6e4702a96f02c96afb3e19a3388c2bba12efa13599ed127fa758499d6c3bc9e1",
+    "host-receipt.json": "4b5857fa5238d1efc6ab1fda0b737fc35e47efb105f305171cd3202c0f78993b",
+    "browser-snap-path-failure.log": "6eb3460f02f98182a00f447c7fed0d1badb69c17d0fb8460c0a51ac45ff2abef",
+    "initial-collection-timeout.log": "937b9caa87cc0874a040d0b67f78bc72e9ac418dca981b9921ca998652490e69",
+    "stop.log": "c68328a1db1a5e84f064c530f569a63395faeff4eb3e1f71815552f0ad08f4d0",
+    "NOTES.md": "ae32663d729886636d2ed77dbac7e42f47de50cd2b5000488558aed2d7182ff3"
+  },
+  "qemu_stopped_reaped": true,
+  "lease": "FREE verified flock-n rc0",
+  "qemu_pid": 272869,
+  "owner_wrapper_exit": 0,
+  "shutdown_controller_exit": 0,
+  "recorded": false,
+  "scope": "actual source-bound existing-SDK single-host capability attempt plus committed host verification; no new native QNX boot or council acceptance"
+}
