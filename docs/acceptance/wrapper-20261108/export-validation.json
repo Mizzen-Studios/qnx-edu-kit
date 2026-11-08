@@ -1,0 +1,58 @@
+{
+  "session": "3a2db01e-5f46-4046-be45-6dd99bddaf21",
+  "files": 55,
+  "all_hashes_match": true,
+  "attempts": [
+    {
+      "id": "0001-step3-build",
+      "status": "BLOCKED",
+      "label": "HOST"
+    },
+    {
+      "id": "0002-step3-build",
+      "status": "PASS",
+      "label": "HOST"
+    },
+    {
+      "id": "0003-step6-build",
+      "status": "PASS",
+      "label": "HOST"
+    },
+    {
+      "id": "0004-step3-run",
+      "status": "FAIL",
+      "label": "nativefresh"
+    },
+    {
+      "id": "0005-step6-run",
+      "status": "FAIL",
+      "label": "nativefresh"
+    },
+    {
+      "id": "0006-step3-build",
+      "status": "PASS",
+      "label": "HOST"
+    },
+    {
+      "id": "0007-step6-build",
+      "status": "PASS",
+      "label": "HOST"
+    },
+    {
+      "id": "0008-step3-run",
+      "status": "PASS",
+      "label": "nativefresh"
+    },
+    {
+      "id": "0009-step6-run",
+      "status": "PASS",
+      "label": "nativefresh"
+    }
+  ],
+  "permission_notes": {
+    "prediction": "Same ELF: all abilities denied should yield EPERM, IO subrange0 alone should permit IO_LEVEL_1; default root is not minimum.",
+    "diagnosis": "Fresh same ELF deny run returned ThreadCtl -1 errno1 EPERM. Separate allow run with IO subrange0..0 and all others deny-lock returned0 errno0. Both setup succeeded and exited0.",
+    "explanation": "IO ability0 enables only least-supported IO_LEVEL_1 request; not default-root minimum and not pathname attach/connect policy. Same image and executable, separate processes because locked denial cannot be reversed."
+  },
+  "licensed_local_only": true
+}

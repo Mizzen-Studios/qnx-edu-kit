@@ -1,0 +1,9 @@
+job 1794157546765486524
+Running as unit: wrapper-build-20261108c.service; invocation ID: 15c38777d576423b9174a367e60a2b2e
+MainPID=0
+Result=success
+ExecMainStatus=0
+ActiveState=inactive
+NRestarts=0
+ActiveState=active
+
