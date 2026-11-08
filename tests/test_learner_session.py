@@ -98,6 +98,18 @@ class SessionTests(unittest.TestCase):
         cockpit.save(folder/'native.json',receipt)
         with self.assertRaisesRegex(ValueError,'status/exit'):cockpit.validate_native(self.work,record,folder)
 
+    def test_bool_success_and_bool_exit_rejected(self):
+        folder,record=self.native_fixture()
+        path=folder/'native.json'
+        original=path.read_text()
+        receipt=json.loads(original);receipt['success']=1
+        cockpit.save(path,receipt)
+        with self.assertRaisesRegex(ValueError,'wrong type'):
+            cockpit.validate_native(self.work,record,folder)
+        path.write_text(original);record['returncode']=False
+        with self.assertRaisesRegex(ValueError,'wrong type'):
+            cockpit.validate_native(self.work,record,folder)
+
     def test_pack_has_own_source_binary_image_disk_and_tamper_fails(self):
         folder,record=self.native_fixture()
         cockpit.render(self.work)

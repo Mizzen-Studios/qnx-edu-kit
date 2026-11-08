@@ -95,7 +95,8 @@ node tests/browser_learner_session.cjs /new/external/qa-directory
 ~~~
 
 Set EDU_QA_CHROMIUM to your existing browser executable if needed. Desktop/mobile
-viewport QA is not a human learner or physical mobile-device validation. Fresh
-SDK/native validation of this wrapper belongs to the parent after the exclusive
-probe lease is free. No least-privilege, safety, timing, lifecycle, full-platform
+viewport QA is not a human learner or physical mobile-device validation. The Nov8 own-wrapper native observations are archived in
+[wrapper receipts](acceptance/wrapper-20261108/NOTES.md); historical observations
+do not validate your new source. Single-host readiness is a separate existing-host
+capability gate; a split-host PASS cannot satisfy it. No least-privilege, safety, timing, lifecycle, full-platform
 health, independent human acceptance or broad portability claim follows.

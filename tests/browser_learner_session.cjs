@@ -9,7 +9,7 @@ const cp=require('child_process');
  fs.mkdirSync(scratch,{recursive:true});
  const work=path.join(scratch,'own');
  cp.execFileSync('python3',[path.join(root,'scripts/learner_session.py'),'init','--work',work]);
- const browser=await chromium.launch({headless:true,executablePath:process.env.EDU_QA_CHROMIUM||'/usr/bin/chromium-browser',args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.EDU_QA_CHROMIUM||'/usr/bin/chromium-browser',downloadsPath:path.join(scratch,'downloads'),args:['--no-sandbox']});
  const receipts=[];
  try{
  for(const width of [1280,768,520,360]){

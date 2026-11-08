@@ -20,8 +20,10 @@ def validate(folder):
         if sha(folder/name) != meta.get(key): raise ValueError('changed shared evidence: '+name)
     if meta.get('transcript_scope') != 'mixed containment, ability and CAN slog2; not a full boot log':
         raise ValueError('transcript scope invalid')
-    if type(receipt.get('ability_only')) is not bool or receipt['ability_only'] is not True or receipt.get('same_elf_separate_processes') is not True:
+    if type(receipt.get('ability_only')) is not bool or receipt['ability_only'] is not True or type(receipt.get('same_elf_separate_processes')) is not bool or receipt.get('same_elf_separate_processes') is not True:
         raise ValueError('ability receipt type invalid')
+    if type(run.get('success')) is not bool or run.get('guest_stopped_reaped') is not True or receipt.get('stopped_reaped') is not True:
+        raise ValueError('shared runtime metadata type/state invalid')
     if receipt.get('run') != run.get('run_id') or receipt.get('run') != meta.get('run_id'):
         raise ValueError('run identity mismatch')
     for key in ('image_sha256','disk_sha256'):

@@ -1,5 +1,4 @@
 {
-  "tested_commit": "25d177a16d270015da851f8380b2319f79ad3671",
   "scope": "host-only working tree source hashes; no native rerun or new council acceptance",
   "host_tests": {
     "total": 103,
@@ -14,5 +13,7 @@
     "tests/test_ability_provenance.py": "718f15b4d448070d27ccbe5d94b2537f83d69bd07b3f2127f30264f05b6b407f"
   },
   "host_log_sha256": "e932492ec70f3ce097ce4623fd4c327fc23ef6a693687235c1e5eb00e6448284",
-  "original_ability_run_and_transcript_unchanged": true
+  "original_ability_run_and_transcript_unchanged": true,
+  "baseline_commit": "25d177a16d270015da851f8380b2319f79ad3671",
+  "tested_commit": "UNVERIFIED as a clean committed checkout: working tree after baseline; exact implementation bytes bound below"
 }
