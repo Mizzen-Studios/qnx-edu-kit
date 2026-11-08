@@ -1,5 +1,18 @@
 # Status — 7 November 2026
 
+## Current upgrade — 8 November 2026, integration in progress
+
+Olly approved the substantive [upgrade package](docs/upgrade-acceptance-20261108.md); the earlier feature-freeze statements below are preserved history, not the current instruction. Previous independent acceptance remains conditional and does not transfer to these new features.
+
+[Fresh prerequisite receipts](docs/acceptance/prereq-20261108/NOTES.md): same-ELF IO ability deny/allow in separate runs, bounded structured slog2 capture and actual co-located observer death/separate recorder survival were observed in the bound QEMU run. **Pathname policy BLOCKED**: installed tools alone do not establish attach/connect enforcement or loaded policy identities. Ability control is not /dev path policy or least-privilege proof.
+
+The [own-session cockpit](docs/learner-cockpit.md) is implemented with persisted notes, fixed CLI commands, own-source build/run orchestration and local evidence export. Host/browser checks are HOST-only; fresh native wrapper validation and supported ability-stage integration are underway.
+
+C6/native safety STOPPED; SocketCAN UNVERIFIED. No heartbeat, actuation, recording, publication or deployment. recorded:false. Videos remain deferred until all features and final verification, with the separate recording gate preserved. sshd internal cause UNVERIFIED; no platform-health, safety, timing or continuous-availability claim.
+
+## Preserved prior review and milestone history
+
+
 Start only with the [canonical learner route](docs/learner-route.md).
 
 ## Current completion gate — 20:03 UTC

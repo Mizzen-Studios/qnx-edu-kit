@@ -1,5 +1,5 @@
-QNX_HOST=/home/qnx/qnx800/host/linux/x86_64
-QNX_TARGET=/home/qnx/qnx800/target/qnx
+[SDK environment assignment omitted; exact original preserved externally]
+[SDK environment assignment omitted; exact original preserved externally]
 MAKEFLAGS=-I/home/qnx/qnx800/target/qnx/usr/include
 SDK_POLICY_INVENTORY
 /home/qnx/qnx800/host/linux/x86_64/usr/bin/secpolcompile

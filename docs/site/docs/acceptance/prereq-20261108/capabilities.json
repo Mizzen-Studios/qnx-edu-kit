@@ -1,0 +1,35 @@
+{
+  "installed_sdk": {
+    "secpolcompile": true,
+    "secpolpush": true,
+    "secpolmonitor": true,
+    "secpolgenerate": true,
+    "libslog2_header": true
+  },
+  "native_existing_image": "pending",
+  "path_policy": "UNVERIFIED: tool inventory alone proves no enforcement; need loaded policy identities attach/connect and same ELF deny/allow",
+  "recommended_collector_contract": {
+    "schema": "canopy-prereq-v1",
+    "sequence": "integer 0..2",
+    "event": "bounded_probe",
+    "native_metadata": [
+      "epoch_ms",
+      "buffer_set.pid",
+      "buffer",
+      "tid",
+      "event_code",
+      "severity"
+    ],
+    "bounds": {
+      "producer_records": 3,
+      "buffer_pages": 1,
+      "retries": 3
+    },
+    "status": "source committed; native capture pending"
+  },
+  "source_commits": {
+    "edu": "cae0f6f",
+    "can": "66fc28a"
+  },
+  "messaging": "No sessions_send tool available; receipts exposed for parent inspection"
+}

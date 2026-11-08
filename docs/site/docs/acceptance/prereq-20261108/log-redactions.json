@@ -1,0 +1,26 @@
+{
+  "reason": "Conservative redistribution guard rejects SDK environment assignment markers; no guard exception added. Raw originals and original receipt bindings preserved; committed projections explicitly redacted, not fresh raw receipts.",
+  "files": [
+    {
+      "path": "build-first-interrupted.log",
+      "original_sha256": "bc4e38872942dc6c4e0aa619adaf5c9b9bfb1662f6253a2ea98ef9f345e8d3d9",
+      "committed_redacted_sha256": "64ce3899130b1de5740efb454763def47cc9bb874f26d59084acc43a5bb58027",
+      "change": "SDK environment assignment lines only; other log bytes unchanged",
+      "original_external": ".openclaw/tmp/prereq-sdk-raw-preserved/qnx-edu-kit/build-first-interrupted.log"
+    },
+    {
+      "path": "sdk-build-final.log",
+      "original_sha256": "171193b486e033a0b17a52a8dedf1fd9e2a199f604c99a65917f01188732584d",
+      "committed_redacted_sha256": "cbd9cc1d3933fb1c7238f344f2e93834b8a747e25129bc0bae9d315a19d52b08",
+      "change": "SDK environment assignment lines only; other log bytes unchanged",
+      "original_external": ".openclaw/tmp/prereq-sdk-raw-preserved/qnx-edu-kit/sdk-build-final.log"
+    },
+    {
+      "path": "sdk-first-raw.log",
+      "original_sha256": "91176affc567b4b2b62745221f8a3273386745302685d45f4da54b3e34982a56",
+      "committed_redacted_sha256": "fc53bd0d64c46618d6447342c47090890d6c1f7576313080f43c37e5bd7732f5",
+      "change": "SDK environment assignment lines only; other log bytes unchanged",
+      "original_external": ".openclaw/tmp/prereq-sdk-raw-preserved/qnx-edu-kit/sdk-first-raw.log"
+    }
+  ]
+}

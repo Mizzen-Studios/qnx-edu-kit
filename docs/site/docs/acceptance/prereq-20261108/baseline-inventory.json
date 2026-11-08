@@ -1,0 +1,12 @@
+{
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "1073741824",
+    "nice": 15
+  },
+  "success": true,
+  "image_sha256": "84fc4eda34654854333cf71320b375f2eedae405a3849475623c179443f616f1",
+  "disk_sha256": "59269af3ae940d2e520271e8b2e989cc8de5918c8e6cf283bc88cfd734c30951",
+  "inventory": "\nunaStartup complete\r\nme -a; for n in secpolcompile secpolpush secpolgenerate secpolmonitor sloQNXg noname 8.0.02 2026/06/05-16:26:03EDT x86pci x86_64n\r\nfo slogger2 slog2c; do command -v $n; done; pidin ar; ls /proc/boot/*secpol* /dev/secpol* /dev/shmem/slogger2*; echo INVENTORY_DONE\r\r\nQNX noname 8.0.0 2026/06/05-16:26:03EDT x86pc x86_64\r\n/system/bin/secpolmonitor\r\n/proc/boot/slog2info\r\n/proc/boot/slogger2\r\n     pid Arguments\r\n       1 procnto-smp-instr -mr -d 0777 -u 0777 \r\n   16387 slogger2 \r\n   28676 pci-server --aspace-enable --config=/proc/boot/pci_server.cfg \r\n   49157 devc-ser8250 -e \r\n   57351 ksh ksh \r\n   61446 fsevmgr \r\n   65544 devb-eide blk cache=64M,auto=partition,vnode=2000,ncache=2000,commit=low \r\n  131081 random -s /data/var/random/rnd-seed \r\n  143370 pipe \r\n  155659 devc-pty \r\n  159756 dumper -d /data/var/dumper -M 1000 -D cores \r\n  163853 io-sock -m phy -m pci -m usb -d vtnet_pci \r\n  217105 dhcpcd: [manager] [ip4] [ip6] -bq -f /system/etc/dhcpcd/dhcpcd.conf -c /system/etc/dhcpcd/dhcpcd-run-hooks \r\n  245774 qconn \r\n  249871 mqueue \r\n  270338 pidin ar \r\nls: /dev/secpol*: No such file or directory\r\n    /proc/boot/libsecpol.so.1\r\n\r\n/dev/shmem/slogger2:\r\nconsole.16387       dhcpcd.213007   io_sock.163853..0\r\ndevb_eide.65544     dumper.159756   pci_server.28676\r\ndevb_eide.65544..0  fsevmgr.61446   pci_server.28676..0\r\ndevb_eide.65544..1  io_sock.163853  random.131081\r\nINVENTORY_DONE",
+  "stopped_reaped": true
+}
