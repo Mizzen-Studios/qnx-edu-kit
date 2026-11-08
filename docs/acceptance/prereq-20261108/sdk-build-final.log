@@ -1,0 +1,13 @@
+QNX_HOST=/home/qnx/qnx800/host/linux/x86_64
+QNX_TARGET=/home/qnx/qnx800/target/qnx
+MAKEFLAGS=-I/home/qnx/qnx800/target/qnx/usr/include
+Warning: Host file 'lib/libexpat.so.2' missing.
+97a058263013bca45c8d990ab0456d0b0cabf9407db1f15264bff785bbab4743  /mnt/host/prereq-20261108/prereq_ability.c
+074b043ba12e6e1125dd33491725019317eb886ada072020e8869f5695b1d6e4  /mnt/host/prereq-20261108/prereq_containment.c
+8f685d7838bc5ede8b97d0ddda93c8e242a40ee0417b7c6319ee7cbd89b6c1d5  /mnt/host/prereq-20261108/prereq_slog.c
+ae1e0140ec974e6048ac9a6e79abcfa193250c0215f4746a7fd0831298302b49  /mnt/host/prereq-20261108/prereq_ability
+246073594c840df04d9e7584b2662bfad15c018ed19ae44d0ee8ca42d05b5fb5  /mnt/host/prereq-20261108/prereq_containment
+05ca0c56e32c12785d6e2757e69d764687083855cb365b2d8e60c9e56a9f18a5  /mnt/host/prereq-20261108/prereq_slog
+b13b0b84e2242d30d72b0142a339b99f881171a06bcfd10f3f13049b211b12da  /mnt/host/prereq-20261108/probes.build
+f1d4fdfb34e553a1abd70e4edaace432b3a91f538583c7f262081e0d60a90268  /mnt/host/prereq-20261108/probes.ifs
+BUILD_COMPLETE

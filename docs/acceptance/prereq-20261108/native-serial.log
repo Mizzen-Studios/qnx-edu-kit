@@ -1,0 +1,78 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+# ---> Starting devb
+---> Mounting file systems
+Path=0 - Intel 82371SB
+ target=0 lun=0     Direct-Access(0) -          QEMU HARDDISK    Rev: 2.5+
+Path=1 - Intel 82371SB
+ target=0 lun=0            CD-ROM(5) - QEMU     QEMU DVD-ROM     Rev: 2.5+
+---> Mounting file systems
+---> Starting Networking
+---> Starting sshd
+Memory fault (core dumped) 
+---> Starting misc
+CANOPY_SLM_IMAGE_READY
+unameStartup complete
+ -a; for n in secpolcompile secpolpush secpolgenerate secpolmonitor slQNXo nonameg 8.0.0 2026/06/05-16:26:03EDT2 x86pc ix86_64
+nfo slogger2 slog2c; do command -v $n; done; pidin ar; ls /proc/boot/*secpol* /dev/secpol* /dev/shmem/slogger2*; echo INVENTORY_DONE
+QNX noname 8.0.0 2026/06/05-16:26:03EDT x86pc x86_64
+/system/bin/secpolmonitor
+/proc/boot/slog2info
+/proc/boot/slogger2
+     pid Arguments
+       1 procnto-smp-instr -mr -d 0777 -u 0777 
+   16387 slogger2 
+   28676 pci-server --aspace-enable --config=/proc/boot/pci_server.cfg 
+   49157 devc-ser8250 -e 
+   57351 ksh ksh 
+   61446 fsevmgr 
+   65544 devb-eide blk cache=64M,auto=partition,vnode=2000,ncache=2000,commit=low 
+  131081 random -s /data/var/random/rnd-seed 
+  143370 pipe 
+  155659 devc-pty 
+  159756 dumper -d /data/var/dumper -M 1000 -D cores 
+  163853 io-sock -m phy -m pci -m usb -d vtnet_pci 
+  217105 dhcpcd: [manager] [ip4] [ip6] -bq -f /system/etc/dhcpcd/dhcpcd.conf -c /system/etc/dhcpcd/dhcpcd-run-hooks 
+  245774 qconn 
+  249871 mqueue 
+  270338 pidin ar 
+ls: /dev/secpol*: No such file or directory
+    /proc/boot/libsecpol.so.1
+
+/dev/shmem/slogger2:
+console.16387       dhcpcd.213007   io_sock.163853..0
+devb_eide.65544     dumper.159756   pci_server.28676
+devb_eide.65544..0  fsevmgr.61446   pci_server.28676..0
+devb_eide.65544..1  io_sock.163853  random.131081
+INVENTORY_DONE
+# /proc/boot/prereq_ability deny; echo ABILITY_DENY_RC=$?; /proc/boot/prereq_ability; echo ABILITY_DEFAULT_RC=$?; /proc/boot/prereq_containment; echo CONTAINMENT_RC=$?; echo PROBES_DONE
+ABILITY mode=deny operation=ThreadCtl_IO_LEVEL_1 rc=-1 errno=1
+ABILITY_DENY_RC=0
+ABILITY mode=default operation=ThreadCtl_IO_LEVEL_1 rc=0 errno=0
+ABILITY_DEFAULT_RC=0
+RECORDER captured=COLOCATED sample=0 pid=307216
+RECORDER captured=COLOCATED sample=1 pid=307216
+RECORDER captured=COLOCATED sample=2 pid=307216
+RECORDER captured=COLOCATED_READY
+SEPARATE_RECORDER before_kill pid=303106 target=307216
+NEGATIVE_CONTROL signal=9 eof=256 colocated_post_kill=0
+SEPARATE_RECORDER after_kill=0 pid=303106
+SEPARATE_RECORDER after_kill=1 pid=303106
+SEPARATE_RECORDER after_kill=2 pid=303106
+CONTAINMENT_RC=0
+PROBES_DONE
+# /proc/boot/prereq_slog; echo SLOG_PRODUCER_RC=$?; /proc/boot/slog2info -b canopy_prereq -f -S -t; echo SLOG_CAPTURE_RC=$?; echo SLOG_DONE
+SLOG_PRODUCER records=3 pages=1 retries=3
+SLOG_PRODUCER_RC=0
+1794154180.244           canopy_prereq.319490               events*   1    410      SLOG2_INFO  {"schema":"canopy-prereq-v1","sequence":0,"event":"bounded_probe"}
+1794154180.244           canopy_prereq.319490               events    1    411      SLOG2_INFO  {"schema":"canopy-prereq-v1","sequence":1,"event":"bounded_probe"}
+1794154180.244           canopy_prereq.319490               events    1    412      SLOG2_INFO  {"schema":"canopy-prereq-v1","sequence":2,"event":"bounded_probe"}
+SLOG_CAPTURE_RC=0
+SLOG_DONE
+# 

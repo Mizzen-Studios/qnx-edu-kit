@@ -1,0 +1,9 @@
+RECORDER captured=COLOCATED sample=0 pid=245230
+RECORDER captured=COLOCATED sample=1 pid=245230
+RECORDER captured=COLOCATED sample=2 pid=245230
+RECORDER captured=COLOCATED_READY
+SEPARATE_RECORDER before_kill pid=245229 target=245230
+NEGATIVE_CONTROL signal=9 eof=1 colocated_post_kill=0
+SEPARATE_RECORDER after_kill=0 pid=245229
+SEPARATE_RECORDER after_kill=1 pid=245229
+SEPARATE_RECORDER after_kill=2 pid=245229

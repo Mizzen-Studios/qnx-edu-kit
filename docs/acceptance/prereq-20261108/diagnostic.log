@@ -1,0 +1,12 @@
+job 1794154052870229622
+MainPID=0
+Result=success
+ExecMainStatus=0
+ActiveState=inactive
+   1097    1094 S    grep -E mkifs|ntox86|prereq
+               total        used        free      shared  buff/cache   available
+Mem:             457         120         247           0         109         336
+Swap:           1023          13        1010
+NAME                    TYPE  SIZE USED PRIO
+/var/tmp/edu-build.swap file 1024M  14M   -2
+
