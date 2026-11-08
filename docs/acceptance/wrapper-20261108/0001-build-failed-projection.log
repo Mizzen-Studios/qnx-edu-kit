@@ -1,0 +1,39 @@
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c: In function 'main':
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:76:12: warning: missing terminating " character
+   76 |     printf("LEARNER_MMIO id=%08x write=%08x read=%08x
+      |            ^
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:76:12: error: missing terminating " character
+   76 |     printf("LEARNER_MMIO id=%08x write=%08x read=%08x
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:77:1: warning: missing terminating " character
+   77 | ",id,written,observed);
+      | ^
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:77:1: error: missing terminating " character
+   77 | ",id,written,observed);
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:78:46: error: expected ')' before ';' token
+   78 |     rc=(id!=0x010000ed || observed!=~written);
+      |                                              ^
+      |                                              )
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:76:11: note: to match this '('
+   76 |     printf("LEARNER_MMIO id=%08x write=%08x read=%08x
+      |           ^
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:78:7: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   78 |     rc=(id!=0x010000ed || observed!=~written);
+      |     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       |
+      |       int
+In file included from /mnt/host/wrapper-20261108/step3/bundle/learner-source.c:9:
+/home/qnx/qnx800/target/qnx/usr/include/stdio.h:176:31: note: expected 'const char *' but argument is of type 'int'
+  176 | extern int printf(const char *__format, ...) __attribute__((__format__(__printf__, 1, 2)));
+      |                   ~~~~~~~~~~~~^~~~~~~~
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:87:15: error: expected ';' before '}' token
+   87 |     return rc;
+      |               ^
+      |               ;
+   88 | }
+      | ~              
+/mnt/host/wrapper-20261108/step3/bundle/learner-source.c:73:5: error: label 'done' used but not defined
+   73 |     if(r==MAP_FAILED) goto done;
+      |     ^~
+BLOCKED: Command '['bash', '-c', 'set -eo pipefail; source "$1"; qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$2" "$3" -lpci', 'learner-build', '/home/qnx/qnx800/qnxsdp-env.sh', '/mnt/host/wrapper-20261108/step3/bundle/learner_bin', '/mnt/host/wrapper-20261108/step3/bundle/learner-source.c']' returned non-zero exit status 1.
