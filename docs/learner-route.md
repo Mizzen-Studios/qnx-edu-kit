@@ -10,6 +10,7 @@ Use the [local own-source cockpit](learner-cockpit.md) to save your prediction, 
 ## 0. Choose legal inputs and preflight
 
 Use Bash and Python3 on a licensed **Linux x86_64 single host** where possible.
+See [free distro QEMU and real user-session prerequisites](singlehost-prerequisites.md); stop if normal host approval/privileges are unavailable.
 Clone anywhere and cd into that clone. Override EDU_SDP_ENV with your legal SDK.
 All other paths have external user-owned defaults; choose a new EDU_WORK for each
 attempt. No SDK/artifacts inside any checkout; snippet paths must have no spaces.
@@ -51,7 +52,7 @@ systemctl --user show-environment >/dev/null
 
 Presence is not proof of effective resource caps. Serialize all SDK/native QEMU
 phases under the same exclusive lock: host100%CPU/1GiB/nice15,
-guest1vCPU/512MiB. Stop/reap SDK QEMU before native QEMU. Do not use old uncapped
+guest1vCPU/512MiB. On split hosts stop/reap SDK QEMU before native QEMU. On a single host keep the existing SDK host running between build and inner native run; only the inner QEMU must be stopped/reaped per attempt. Do not use old uncapped
 guestctl. Set EDU_NATIVE_LEASE=granted only while actually owning the lock.
 
 Before notebook initialization, optionally run the read-only setup planner with
@@ -212,7 +213,7 @@ must also match. Never substitute a historical binary or edit manifest hashes.
 
 ## 3. Observe, diagnose, fix and explain step3
 
-Stop/reap the SDK guest; hold the exclusive native lease on the QEMU host:
+On split hosts stop/reap the SDK guest; on a single host keep it running. Hold the exclusive native lease on the QEMU execution host:
 
 ```sh
 flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_session.py" run --work "$EDU_WORK" --stage step3 --disk "$EDU_PLATFORM/output/disk-qemu"
