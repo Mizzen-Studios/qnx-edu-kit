@@ -1,0 +1,240 @@
+
+[   42.472407] systemd[1]: Hostname set to <qnx-linux-fallback>.
+[   52.494474] systemd[1]: Queued start job for default target graphical.target.
+[   52.761106] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-modprobe.slice[0m - Slice /system/modprobe.
+[   52.781143] systemd[1]: Created slice system-serial\x2dgetty.slice - Slice /system/serial-getty.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-serial\x2dget…slice[0m - Slice /system/serial-getty.
+[   52.793988] systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-systemd\x2dfs…slice[0m - Slice /system/systemd-fsck.
+[   52.804353] systemd[1]: Created slice user.slice - User and Session Slice.
+[[0;32m  OK  [0m] Created slice [0;1;39muser.slice[0m - User and Session Slice.
+[   52.811136] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39msystemd-ask-password-wall.…[0md Requests to Wall Directory Watch.
+[   52.831988] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[[0;32m  OK  [0m] Set up automount [0;1;39mproc-sys-fs-binfm…[0mormats File System Automount Point.
+[   52.837746] systemd[1]: Expecting device dev-disk-by\x2dlabel-BOOT.device - /dev/disk/by-label/BOOT...
+         Expecting device [0;1;39mdev-disk-by\x2dla…device[0m - /dev/disk/by-label/BOOT...
+[   52.840762] systemd[1]: Expecting device dev-disk-by\x2dlabel-UEFI.device - /dev/disk/by-label/UEFI...
+         Expecting device [0;1;39mdev-disk-by\x2dla…device[0m - /dev/disk/by-label/UEFI...
+[   52.842901] systemd[1]: Expecting device dev-ttyS0.device - /dev/ttyS0...
+         Expecting device [0;1;39mdev-ttyS0.device[0m - /dev/ttyS0...
+[   52.845223] systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[[0;32m  OK  [0m] Reached target [0;1;39mintegritysetup.targ…[0m Local Integrity Protected Volumes.
+[   52.848092] systemd[1]: Reached target slices.target - Slice Units.
+[[0;32m  OK  [0m] Reached target [0;1;39mslices.target[0m - Slice Units.
+[   52.850036] systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+[[0;32m  OK  [0m] Reached target [0;1;39msnapd.mounts-pre.target[0m - Mounting snaps.
+[   52.851957] systemd[1]: Reached target snapd.mounts.target - Mounted snaps.
+[[0;32m  OK  [0m] Reached target [0;1;39msnapd.mounts.target[0m - Mounted snaps.
+[   52.858994] systemd[1]: Reached target swap.target - Swaps.
+[[0;32m  OK  [0m] Reached target [0;1;39mswap.target[0m - Swaps.
+[   52.861196] systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[[0;32m  OK  [0m] Reached target [0;1;39mveritysetup.target[0m - Local Verity Protected Volumes.
+[   52.869466] systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[[0;32m  OK  [0m] Listening on [0;1;39mdm-event.socket[0m - Device-mapper event daemon FIFOs.
+[   52.878724] systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mlvm2-lvmpolld.socket[0m - LVM2 poll daemon socket.
+[   52.885310] systemd[1]: Listening on multipathd.socket - multipathd control socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mmultipathd.socket[0m - multipathd control socket.
+[   52.893176] systemd[1]: Listening on syslog.socket - Syslog Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msyslog.socket[0m - Syslog Socket.
+[   52.898317] systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-fsckd.socket[0m …fsck to fsckd communication Socket.
+[   52.902665] systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-initctl.socke…[0m- initctl Compatibility Named Pipe.
+[   52.909003] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-journald-dev-…socket[0m - Journal Socket (/dev/log).
+[   52.915059] systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-journald.socket[0m - Journal Socket.
+[   52.921795] systemd[1]: Listening on systemd-networkd.socket - Network Service Netlink Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-networkd.socket[0m - Network Service Netlink Socket.
+[   52.925024] systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   52.930960] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-udevd-control.socket[0m - udev Control Socket.
+[   52.936127] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-udevd-kernel.socket[0m - udev Kernel Socket.
+[   53.003406] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+         Mounting [0;1;39mdev-hugepages.mount[0m - Huge Pages File System...
+[   53.078366] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+         Mounting [0;1;39mdev-mqueue.mount[0m - POSIX Message Queue File System...
+[   53.198769] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+         Mounting [0;1;39msys-kernel-debug.mount[0m - Kernel Debug File System...
+[   53.376517] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+         Mounting [0;1;39msys-kernel-tracing.mount[0m - Kernel Trace File System...
+[   53.936074] systemd[1]: Starting systemd-journald.service - Journal Service...
+         Starting [0;1;39msystemd-journald.service[0m - Journal Service...
+[   54.225328] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+         Starting [0;1;39mkeyboard-setup.service[0m - Set the console keyboard layout...
+[   54.539193] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+         Starting [0;1;39mkmod-static-nodes.service[0m…eate List of Static Device Nodes...
+[   54.872380] systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+         Starting [0;1;39mlvm2-monitor.service[0m - Mo…ing dmeventd or progress polling...
+[   55.281341] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+         Starting [0;1;39mmodprobe@configfs.service[0m - Load Kernel Module configfs...
+[   55.850518] systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+         Starting [0;1;39mmodprobe@dm_mod.service[0m - Load Kernel Module dm_mod...
+[   56.397107] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+         Starting [0;1;39mmodprobe@drm.service[0m - Load Kernel Module drm...
+[   57.051818] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+         Starting [0;1;39mmodprobe@efi_pstore.servi…[0m - Load Kernel Module efi_pstore...
+[   57.786803] systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+         Starting [0;1;39mmodprobe@fuse.service[0m - Load Kernel Module fuse...
+[   59.516309] systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+         Starting [0;1;39mmodprobe@loop.service[0m - Load Kernel Module loop...
+[   59.659134] systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+[   60.003432] systemd-journald[308]: Collecting audit messages is disabled.
+[   61.233129] systemd[1]: Starting systemd-fsck-root.service - File System Check on Root Device...
+         Starting [0;1;39msystemd-fsck-root.service[0m…File System Check on Root Device...
+[   63.122439] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+         Starting [0;1;39msystemd-modules-load.service[0m - Load Kernel Modules...
+[   63.265177] systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   63.372027] systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   64.627951] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+         Starting [0;1;39msystemd-udev-trigger.service[0m - Coldplug All udev Devices...
+[   66.116338] systemd[1]: Started systemd-journald.service - Journal Service.
+[[0;32m  OK  [0m] Started [0;1;39msystemd-journald.service[0m - Journal Service.
+[[0;32m  OK  [0m] Mounted [0;1;39mdev-hugepages.mount[0m - Huge Pages File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mdev-mqueue.mount[0m - POSIX Message Queue File System.
+[[0;32m  OK  [0m] Mounted [0;1;39msys-kernel-debug.mount[0m - Kernel Debug File System.
+[[0;32m  OK  [0m] Mounted [0;1;39msys-kernel-tracing.mount[0m - Kernel Trace File System.
+[[0;32m  OK  [0m] Finished [0;1;39mkeyboard-setup.service[0m - Set the console keyboard layout.
+[[0;32m  OK  [0m] Finished [0;1;39mkmod-static-nodes.service[0m…Create List of Static Device Nodes.
+[[0;32m  OK  [0m] Finished [0;1;39mlvm2-monitor.service[0m - Mo…using dmeventd or progress polling.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@configfs.service[0m - Load Kernel Module configfs.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@dm_mod.service[0m - Load Kernel Module dm_mod.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@drm.service[0m - Load Kernel Module drm.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@efi_pstore.service[0m - Load Kernel Module efi_pstore.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@fuse.service[0m - Load Kernel Module fuse.
+[[0;32m  OK  [0m] Finished [0;1;39mmodprobe@loop.service[0m - Load Kernel Module loop.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-modules-load.service[0m - Load Kernel Modules.
+         Mounting [0;1;39msys-fs-fuse-connections.mount[0m - FUSE Control File System...
+         Mounting [0;1;39msys-kernel-config.mount[0m - Kernel Configuration File System...
+[[0;32m  OK  [0m] Started [0;1;39msystemd-fsckd.service[0m - Fi…stem Check Daemon to report status.
+         Starting [0;1;39msystemd-sysctl.service[0m - Apply Kernel Variables...
+         Starting [0;1;39msystemd-tmpfiles-setup-de…[0m Device Nodes in /dev gracefully...
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-fsck-root.service[0m - File System Check on Root Device.
+         Starting [0;1;39msystemd-remount-fs.servic…[0munt Root and Kernel File Systems...
+[[0;32m  OK  [0m] Mounted [0;1;39msys-fs-fuse-connections.mount[0m - FUSE Control File System.
+[[0;32m  OK  [0m] Mounted [0;1;39msys-kernel-config.mount[0m - Kernel Configuration File System.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-sysctl.service[0m - Apply Kernel Variables.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-tmpfiles-setup-de…[0mic Device Nodes in /dev gracefully.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-remount-fs.servic…[0mmount Root and Kernel File Systems.
+         Starting [0;1;39mmultipathd.service[0m - Devi…pper Multipath Device Controller...
+         Starting [0;1;39msystemd-journal-flush.ser…[0msh Journal to Persistent Storage...
+         Starting [0;1;39msystemd-random-seed.service[0m - Load/Save OS Random Seed...
+         Starting [0;1;39msystemd-tmpfiles-setup-de…[0meate Static Device Nodes in /dev...
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-udev-trigger.service[0m - Coldplug All udev Devices.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-random-seed.service[0m - Load/Save OS Random Seed.
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-tmpfiles-setup-de…[0mCreate Static Device Nodes in /dev.
+         Starting [0;1;39msystemd-udevd.service[0m - R…ager for Device Events and Files...
+[[0;32m  OK  [0m] Finished [0;1;39msystemd-journal-flush.ser…[0mlush Journal to Persistent Storage.
+[[0;32m  OK  [0m] Started [0;1;39mmultipathd.service[0m - Devic…Mapper Multipath Device Controller.
+[[0;32m  OK  [0m] Reached target [0;1;39mlocal-fs-pre.target[0m…Preparation for Local File Systems.
+[[0;32m  OK  [0m] Started [0;1;39msystemd-udevd.service[0m - Ru…anager for Device Events and Files.
+[[0;32m  OK  [0m] Started [0;1;39msystemd-ask-password-conso…[0mequests to Console Directory Watch.
+[[0;32m  OK  [0m] Reached target [0;1;39mcryptsetup.target[0m - Local Encrypted Volumes.
+[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (3 of 3) Job dev-ttyS0.device/start running (54s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…ice/start running (55s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 3) Job dev-disk-by\x2dlabel-B…ice/start running (59s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 3) Job dev-disk-by\x2dlabel-B…start running (1min 1s / 1min 30s)
+M[K[     [0;31m*[0m] (2 of 3) Job dev-disk-by\x2dlabel-U…start running (1min 3s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 3) Job dev-disk-by\x2dlabel-U…start running (1min 3s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 3) Job dev-disk-by\x2dlabel-U…start running (1min 5s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 17s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 17s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 18s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 18s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 19s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 19s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 20s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 20s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 21s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (3 of 3) Job dev-ttyS0.device/start running (1min 21s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (3 of 3) Job dev-ttyS0.device/start running (1min 22s / 1min 30s)
+M[K[     [0;31m*[0m] (3 of 3) Job dev-ttyS0.device/start running (1min 22s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 22s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 23s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 23s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 24s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 24s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 3) Job dev-disk-by\x2dlabel-U…tart running (1min 24s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 25s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 25s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (3 of 3) Job dev-ttyS0.device/start running (1min 26s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 26s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 27s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 3) Job dev-disk-by\x2dlabel-B…tart running (1min 27s / 1min 30s)
+M[K[[0;32m  OK  [0m] Found device [0;1;39mdev-ttyS0.device[0m - /dev/ttyS0.
+[K[    [0;31m*[0;1;31m*[0m] (1 of 2) Job dev-disk-by\x2dlabel-B…tart running (1min 30s / 1min 30s)
+M[K[[0;1;31m TIME [0m] Timed out waiting for device [0;1;39mdev-d…T.device[0m - /dev/disk/by-label/BOOT.
+[K[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39msystemd-fsck…[0mm Check on /dev/disk/by-label/BOOT.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39mboot.mount[0m - /boot.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39munattended-u…ice[0m - Unattended Upgrades Shutdown.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39mlocal-fs.target[0m - Local File Systems.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39mboot-efi.mount[0m - /boot/efi.
+[[0;1;31m TIME [0m] Timed out waiting for device [0;1;39mdev-d…I.device[0m - /dev/disk/by-label/UEFI.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39msystemd-fsck…[0mm Check on /dev/disk/by-label/UEFI.
+[[0;32m  OK  [0m] Stopped [0;1;39msystemd-ask-password-conso…[0mequests to Console Directory Watch.
+[[0;32m  OK  [0m] Stopped [0;1;39msystemd-ask-password-wall.…[0md Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Reached target [0;1;39mtimers.target[0m - Timer Units.
+[[0;32m  OK  [0m] Listening on [0;1;39msystemd-sysext.socket[0m…tension Image Management (Varlink).
+[[0;32m  OK  [0m] Reached target [0;1;39mcloud-init.target[0m - Cloud-init target.
+         Starting [0;1;39mconsole-setup.service[0m - Set console font and keymap...
+         Starting [0;1;39mfinalrd.service[0m - Create …time dir for shutdown pivot root...
+[[0;32m  OK  [0m] Closed [0;1;39msyslog.socket[0m - Syslog Socket.
+[[0;32m  OK  [0m] Reached target [0;1;39mgetty.target[0m - Login Prompts.
+[[0;32m  OK  [0m] Reached target [0;1;39mgetty-pre.target[0m - Preparation for Logins.
+         Starting [0;1;39msetvtrgb.service[0m - Set console scheme...
+[[0;32m  OK  [0m] Reached target [0;1;39mpaths.target[0m - Path Units.
+[[0;32m  OK  [0m] Reached target [0;1;39msockets.target[0m - Socket Units.
+[[0;32m  OK  [0m] Listening on [0;1;39mdbus.socket[0m - D-Bus System Message Bus Socket.
+         Starting [0;1;39mapparmor.service[0m - Load AppArmor profiles...
+         Starting [0;1;39mdbus.service[0m - D-Bus System Message Bus...
+[[0;32m  OK  [0m] Started [0;1;39memergency.service[0m - Emergency Shell.
+[[0;32m  OK  [0m] Reached target [0;1;39memergency.target[0m - Emergency Mode.
+         Starting [0;1;39mplymouth-read-write.servi…[0mymouth To Write Out Runtime Data...
+         Starting [0;1;39msystemd-binfmt.service[0m - Set Up Additional Binary Formats...
+         Starting [0;1;39msystemd-tmpfiles-setup.se…[0me Volatile Files and Directories...
+         Starting [0;1;39mufw.service[0m - Uncomplicated firewall...
+[[0;32m  OK  [0m] Finished [0;1;39mconsole-setup.service[0m - Set console font and keymap.
+[[0;32m  OK  [0m] Finished [0;1;39mfinalrd.service[0m - Create …untime dir for shutdown pivot root.
+[[0;32m  OK  [0m] Finished [0;1;39msetvtrgb.service[0m - Set console scheme.
+[[0;32m  OK  [0m] Finished [0;1;39mplymouth-read-write.servi…[0mPlymouth To Write Out Runtime Data.
+[[0;32m  OK  [0m] Started [0;1;39mdbus.service[0m - D-Bus System Message Bus.
+You are in emergency mode. After logging in, type "journalctl -xb" to view
+system logs, "systemctl reboot" to reboot, or "exit"
+to continue bootup.
+Press Enter for maintenance
+(or press Control-D to continue): [  231.360350] cloud-init[594]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init-local' at Sun, 08 Nov 2026 21:05:06 +0000. Up 230.22 seconds.
+[  252.779795] cloud-init[617]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init' at Sun, 08 Nov 2026 21:05:28 +0000. Up 251.89 seconds.
+[  253.273678] cloud-init[617]: ci-info: ++++++++++++++++++++++++++++++++++++++Net device info++++++++++++++++++++++++++++++++++++++
+[  253.280810] cloud-init[617]: ci-info: +--------+------+----------------------------+---------------+--------+-------------------+
+[  253.294922] cloud-init[617]: ci-info: | Device |  Up  |          Address           |      Mask     | Scope  |     Hw-Address    |
+[  253.300878] cloud-init[617]: ci-info: +--------+------+----------------------------+---------------+--------+-------------------+
+[  253.308855] cloud-init[617]: ci-info: | enp0s2 | True |         10.0.2.15          | 255.255.255.0 | global | 52:54:00:12:34:56 |
+[  253.316769] cloud-init[617]: ci-info: | enp0s2 | True | fec0::5054:ff:fe12:3456/64 |       .       |  site  | 52:54:00:12:34:56 |
+[  253.323319] cloud-init[617]: ci-info: | enp0s2 | True | fe80::5054:ff:fe12:3456/64 |       .       |  link  | 52:54:00:12:34:56 |
+[  253.329293] cloud-init[617]: ci-info: |   lo   | True |         127.0.0.1          |   255.0.0.0   |  host  |         .         |
+[  253.334994] cloud-init[617]: ci-info: |   lo   | True |          ::1/128           |       .       |  host  |         .         |
+[  253.340889] cloud-init[617]: ci-info: +--------+------+----------------------------+---------------+--------+-------------------+
+[  253.346849] cloud-init[617]: ci-info: ++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++
+[  253.352491] cloud-init[617]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[  253.358410] cloud-init[617]: ci-info: | Route | Destination | Gateway  |     Genmask     | Interface | Flags |
+[  253.362909] cloud-init[617]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[  253.368679] cloud-init[617]: ci-info: |   0   |   0.0.0.0   | 10.0.2.2 |     0.0.0.0     |   enp0s2  |   UG  |
+[  253.372958] cloud-init[617]: ci-info: |   1   |   10.0.2.0  | 0.0.0.0  |  255.255.255.0  |   enp0s2  |   U   |
+[  253.378658] cloud-init[617]: ci-info: |   2   |   10.0.2.2  | 0.0.0.0  | 255.255.255.255 |   enp0s2  |   UH  |
+[  253.395705] cloud-init[617]: ci-info: |   3   |   10.0.2.3  | 0.0.0.0  | 255.255.255.255 |   enp0s2  |   UH  |
+[  253.399991] cloud-init[617]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[  253.405524] cloud-init[617]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+[  253.410936] cloud-init[617]: ci-info: +-------+-------------+---------+-----------+-------+
+[  253.415678] cloud-init[617]: ci-info: | Route | Destination | Gateway | Interface | Flags |
+[  253.420869] cloud-init[617]: ci-info: +-------+-------------+---------+-----------+-------+
+[  253.427571] cloud-init[617]: ci-info: |   0   |  fe80::/64  |    ::   |   enp0s2  |   U   |
+[  253.431991] cloud-init[617]: ci-info: |   1   |  fec0::/64  |    ::   |   enp0s2  |   Ue  |
+[  253.437936] cloud-init[617]: ci-info: |   2   |     ::/0    | fe80::2 |   enp0s2  |  UGe  |
+[  253.443772] cloud-init[617]: ci-info: |   4   |    local    |    ::   |   enp0s2  |   U   |
+[  253.449487] cloud-init[617]: ci-info: |   5   |    local    |    ::   |   enp0s2  |   U   |
+[  253.453898] cloud-init[617]: ci-info: |   6   |  multicast  |    ::   |   enp0s2  |   U   |
+[  253.469671] cloud-init[617]: ci-info: +-------+-------------+---------+-----------+-------+

@@ -1,0 +1,37 @@
+{
+  "kind": "edu-choice-a-authorized-resume-v1",
+  "started_source_commit": "dc627feadc5f44cd939fb8e915b01aeac651381c",
+  "outcome": "BLOCKED",
+  "blocker": "New SDK-host boot emergency: BOOT and UEFI label device timeouts, local-fs dependency failed",
+  "dpkg_recovery": "AUTHORIZED_BUT_NOT_RUN",
+  "packages_installed": [],
+  "session_setup_changes": [],
+  "native_wrong": "NOT_RUN",
+  "native_correct": "NOT_RUN",
+  "learner_export": "NOT_RUN",
+  "queue_job": "1794171669919859671",
+  "queue_cancelled": true,
+  "queue_command_sha256": "0f7e331bb0b0b46f46749cc6e215624ba5b642602f2d9d0926506b215f5aff50",
+  "boot_tail_sha256": "87b6037bd97a0012d39f3b17d76f32b29c9edf70ba6492fdcc4764cc7bd83590",
+  "caps": {
+    "cpu": "100000 100000",
+    "memory": 1073741824,
+    "nice": 15,
+    "vcpus": 1,
+    "guest_mib": 512
+  },
+  "cleanup": {
+    "checked": 1794172064.6630902,
+    "qemu_pid": 298135,
+    "qemu_reaped": true,
+    "owner_pid": 298132,
+    "owner_reaped": true,
+    "lease_free": true,
+    "exit": {
+      "rc": 0,
+      "ended": 1794172047.945518
+    },
+    "stop": "ACPI timeout120s then authorized controller QMP quit; owner trap redundant stop found missing socket"
+  },
+  "sdk_install_login_activation": false
+}
