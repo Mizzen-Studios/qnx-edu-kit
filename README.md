@@ -2,7 +2,17 @@
 
 ## Start here: predict → edit → observe → diagnose → explain
 
-Use the **[local own-source cockpit](docs/learner-cockpit.md)** for persistent predictions, diagnosis, fixed CLI actions and private evidence export. Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
+**Create your own notebook now** (from this checkout, external fresh directory):
+
+```sh
+export EDU_WORK="$HOME/edu-learner-$(date -u +%Y%m%dT%H%M%SZ)"
+python3 scripts/learner_session.py init --work "$EDU_WORK"
+# Open the printed $EDU_WORK/cockpit.html locally; notes stay private.
+```
+
+The generated notebook has persistent predictions, diagnosis, exact CLI actions
+and private source-bound export. A browser cannot execute shell commands;
+import downloaded notes with the printed CLI. [Cockpit help](docs/learner-cockpit.md). Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
 SDK/BSP/QEMU paths and preflight; predict/edit step3, observe the wrong-write
 failure, diagnose/fix/rebuild and explain it; then edit your own step6 starter
 and observe normal write10/read3628800 through /dev/edu. Setup/build/run commands
@@ -18,9 +28,9 @@ reference-run and learner-run are separate. [Fresh clean-platform step3](docs/ac
 now records intended wrong-edit FAIL despite app exit 0, followed by corrected
 native PASS. No reference receipt transfers.
 
-## Current completion gate — 20:03 UTC
+## Current scope — 8 November 2026
 
-Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. This packaging follow-up does not rerun native evidence or broaden acceptance. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
+Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. That historical gate is not acceptance of the Nov8 upgrade. Nov8 ability-only and own-wrapper observations are source-bound; current provenance validation is offline. New council review remains pending. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
 
 Start only with the **[canonical learner route](docs/learner-route.md)**. Its [supported-bootstrap receipts](docs/acceptance/bootstrap-final-20261107/NOTES.md) bind wrong stage FAIL/app0, corrected PASS and own /dev/edu write10/read3628800 + IRQack. The startup failing component is sshd; internal cause remains UNVERIFIED. Historical setup/lesson pages are reference material, not alternative entry routes.
 
@@ -64,7 +74,7 @@ Host mode runs guard and framework tests, then explicitly SKIPs live checks. Ful
 |---|---|---|---|
 | PCI server | attach/BAR/detach transcript | native/edu_probe.c:main | experimental BAR/polling observed; full lifecycle PENDING |
 | IAT/InterruptWait | thread, INTx, ack, detach | native/edu_probe.c:main | one-shot raise/wait/ack PASS; robustness PENDING |
-| Abilities/secpol | deny/allow and least privilege | native/edu_resmgr.c and native/edu_accept.c | normal I/O PASS; lifecycle/policy PENDING |
+| Abilities/secpol | same ELF deny/IO0..0 allow | native/ability_lesson.c | ability-only observed; pathname policy BLOCKED; platform minimum UNVERIFIED |
 | Resource manager | real /dev/edu I/O and errors | native/edu_resmgr.c and native/edu_accept.c | normal I/O PASS; lifecycle/policy PENDING |
 | DMA | mask, transfer and IRQ evidence | native/edu_dma.h | 64-byte polled round-trip PASS; DMA IRQ/error injection PENDING |
 

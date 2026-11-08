@@ -1,7 +1,7 @@
 # Canonical learner route: predict → edit → observe → diagnose → explain
 
 **Start here: step3 first, then your own /dev/edu.** Private conditional acceptance;
-native feature freeze. No reference PASS transfers to your edits. Existing automated
+Nov8 scoped upgrades authorized; no new council acceptance. No reference PASS transfers to your edits. Existing automated
 native observations are not fresh SDK installation, second-SDK portability or
 independent human acceptance. C6 STOPPED; SocketCAN UNVERIFIED. No publication.
 

@@ -6,12 +6,12 @@ ROOT=Path(__file__).resolve().parents[1]
 def render(root=ROOT):
  sys.path.insert(0,str(ROOT/'scripts'))
  from ability_provenance import validate
- validate(root/'docs/acceptance/ability-20261108')
  d=json.loads((root/'docs/capabilities.json').read_text());seen=set()
  if d['schema']!='qnx-capabilities.v1':raise ValueError('unknown schema')
  lines=['# Capability ledger','',d['project'],'',d['boundary'],'','Canonical declarations: docs/capabilities.json. Generated view; ledger checks are not runtime acceptance.','','**Native observations: observed in this QEMU run · app budget, not a QNX benchmark.**','','| Capability | Domain | Level | Status | Bounded claim | Evidence |','|---|---|---|---|---|---|']
  for r in d['rows']:
   if r['id'] in seen or r['domain'] not in ('host','native') or r['status'] not in ('PASS','FAIL','UNVERIFIED'):raise ValueError('invalid/duplicate row')
+  if r['id']=='ability-stage':validate(root/'docs/acceptance/ability-20261108')
   seen.add(r['id']);p=(root/r['evidence']).resolve()
   if not p.is_relative_to(root.resolve()) or not p.is_file():raise ValueError('missing/unsafe evidence: '+r['id'])
   if r.get('evidence_sha256') and hashlib.sha256(p.read_bytes()).hexdigest()!=r['evidence_sha256']:raise ValueError('evidence drift: '+r['id'])
