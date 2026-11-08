@@ -1,7 +1,7 @@
 {
   "schema": "qnx-capabilities.v1",
   "project": "qnx-edu-kit learner-owned fault-to-fix lab",
-  "boundary": "Reference acceptance, compilation and learner execution are separate. No reference receipt or host model can satisfy learner-run acceptance. QSTI provenance and independent human learner validation remain unverified. No DMA-IRQ/secpol expansion in this slice. Supported canonical bootstrap separately observed on one existing SDK; historical route-path negative preserved. See docs/acceptance/bootstrap-final-20261107/receipt.json. No new-install/second-SDK/human acceptance.",
+  "boundary": "Nov8 approved bounded executable upgrades; historical rows retain their original receipts. HOST interface checks and native observations are distinct; new independent council gate pending. Existing licensed SDK only, current split-host readiness blocked, no new-install/second-SDK/human claim; path policy BLOCKED, ability control explicitly separate. C6/native safety STOPPED; SocketCAN UNVERIFIED; no safety/timing/availability/platform-health claims.",
   "rows": [
     {
       "id": "host-checks",
@@ -74,6 +74,54 @@
       "claim": "Fresh unmodified stock generic IFS/disk completed with512MiB guest+1GiB guest disk swap, unchanged hostcaps; isolated service exit0 and queue zero restarts. Previous guestOOM preserved.",
       "evidence": "docs/acceptance/clean-step3-20261107/swap-attempt/outcome.json",
       "evidence_sha256": "796c542db81c8bc87f597af916bc562b43f9e0bbd6be3aa87183c39dfea8ea96"
+    },
+    {
+      "id": "own-session-cockpit",
+      "domain": "host",
+      "level": "workflow",
+      "status": "PASS",
+      "claim": "Operable local notebook and CLI own-source orchestration; browser notes/export controls are host behavior, not human learning.",
+      "evidence": "docs/learner-cockpit.md"
+    },
+    {
+      "id": "own-wrapper-step3",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "PASS",
+      "claim": "Actual notebook wrapper wrong stage FAIL despite app0, corrected PASS; all attempts preserved and own source/build/native bindings retained.",
+      "evidence": "docs/acceptance/wrapper-20261108/correct-native.json"
+    },
+    {
+      "id": "own-wrapper-dev-edu",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "PASS",
+      "claim": "Actual own wrapper /dev/edu write10/read3628800 with IRQ completion1 and ack0; no reference import or all-platform acceptance.",
+      "evidence": "docs/acceptance/wrapper-20261108/finish-native.json"
+    },
+    {
+      "id": "ability-stage",
+      "domain": "native",
+      "level": "learner-run",
+      "status": "PASS",
+      "claim": "Same ELF separate processes: denied IO yields EPERM, narrowed IO subrange0..0 permits IO_LEVEL_1. Ability control only, not /dev pathname policy or platform minimum.",
+      "evidence": "docs/acceptance/ability-20261108/receipt.json"
+    },
+    {
+      "id": "pathname-policy",
+      "domain": "native",
+      "level": "runtime",
+      "status": "UNVERIFIED",
+      "claim": "BLOCKED: SDK tools available; loaded policy identity and attach/connect pathname enforcement not established.",
+      "evidence": "docs/acceptance/prereq-20261108/receipt.json"
+    },
+    {
+      "id": "single-host-readiness",
+      "domain": "host",
+      "level": "setup",
+      "status": "UNVERIFIED",
+      "claim": "Parameterized user-supplied legal paths and exact next-command planner implemented; current split SDK/QEMU environment correctly blocks combined single-host readiness, not portability PASS.",
+      "evidence": "docs/acceptance/wrapper-20261108/setup-split-host-blocked.json"
     }
   ]
 }

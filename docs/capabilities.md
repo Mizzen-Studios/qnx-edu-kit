@@ -2,7 +2,7 @@
 
 qnx-edu-kit learner-owned fault-to-fix lab
 
-Reference acceptance, compilation and learner execution are separate. No reference receipt or host model can satisfy learner-run acceptance. QSTI provenance and independent human learner validation remain unverified. No DMA-IRQ/secpol expansion in this slice. Supported canonical bootstrap separately observed on one existing SDK; historical route-path negative preserved. See docs/acceptance/bootstrap-final-20261107/receipt.json. No new-install/second-SDK/human acceptance.
+Nov8 approved bounded executable upgrades; historical rows retain their original receipts. HOST interface checks and native observations are distinct; new independent council gate pending. Existing licensed SDK only, current split-host readiness blocked, no new-install/second-SDK/human claim; path policy BLOCKED, ability control explicitly separate. C6/native safety STOPPED; SocketCAN UNVERIFIED; no safety/timing/availability/platform-health claims.
 
 Canonical declarations: docs/capabilities.json. Generated view; ledger checks are not runtime acceptance.
 
@@ -18,3 +18,9 @@ Canonical declarations: docs/capabilities.json. Generated view; ledger checks ar
 | clean-setup | native | setup | PASS | One pinned clean generic setup: stock kernel built using512MiB RAM+1GiB guest swap; native wrong intendedFAIL/correctedPASS. Startup Memoryfault preserved; no broad portability, SSH-health or independent-review claim. | [source](../docs/acceptance/clean-step3-20261107/native-clean/receipt.json) |
 | learner-step3-negative | native | learner-run | FAIL | Intentional wrong-but-compiling edit: stage FAIL although application prints PASS and exits0; expected negative control, not learner completion. | [source](../docs/acceptance/clean-step3-20261107/native-clean/final-topology/wrong-native.json) |
 | clean-stock-image-build | host | build | PASS | Fresh unmodified stock generic IFS/disk completed with512MiB guest+1GiB guest disk swap, unchanged hostcaps; isolated service exit0 and queue zero restarts. Previous guestOOM preserved. | [source](../docs/acceptance/clean-step3-20261107/swap-attempt/outcome.json) |
+| own-session-cockpit | host | workflow | PASS | Operable local notebook and CLI own-source orchestration; browser notes/export controls are host behavior, not human learning. | [source](../docs/learner-cockpit.md) |
+| own-wrapper-step3 | native | learner-run | PASS | Actual notebook wrapper wrong stage FAIL despite app0, corrected PASS; all attempts preserved and own source/build/native bindings retained. | [source](../docs/acceptance/wrapper-20261108/correct-native.json) |
+| own-wrapper-dev-edu | native | learner-run | PASS | Actual own wrapper /dev/edu write10/read3628800 with IRQ completion1 and ack0; no reference import or all-platform acceptance. | [source](../docs/acceptance/wrapper-20261108/finish-native.json) |
+| ability-stage | native | learner-run | PASS | Same ELF separate processes: denied IO yields EPERM, narrowed IO subrange0..0 permits IO_LEVEL_1. Ability control only, not /dev pathname policy or platform minimum. | [source](../docs/acceptance/ability-20261108/receipt.json) |
+| pathname-policy | native | runtime | UNVERIFIED | BLOCKED: SDK tools available; loaded policy identity and attach/connect pathname enforcement not established. | [source](../docs/acceptance/prereq-20261108/receipt.json) |
+| single-host-readiness | host | setup | UNVERIFIED | Parameterized user-supplied legal paths and exact next-command planner implemented; current split SDK/QEMU environment correctly blocks combined single-host readiness, not portability PASS. | [source](../docs/acceptance/wrapper-20261108/setup-split-host-blocked.json) |

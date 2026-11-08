@@ -18,12 +18,12 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "8094f4b1fa9ad9f9cb94ebb9bd4c5b05f171e70def8dc5513c2a155bd1574d7d",
+      "sha256": "13ef4c2f3ad6d4d831abdccae6bf7197b9ce1ee4895637137a2dea53fbcc7fc8",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "REVIEW.md",
-      "sha256": "e0ccc258061b3ba3a6f06a37dd317f64179e0dd1a1c2eac3feedbef13f388c99",
+      "sha256": "6caa707f8d189368b5a4820321e7a10ebc24673ddf6ca1591524be24e547ada4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -48,17 +48,22 @@
     },
     {
       "path": "docs/site/REVIEW.html",
-      "sha256": "449bff10fef617e557fd250d06cd9ffa316573613f348b66ac8159b7b4b7ff0b",
+      "sha256": "aa03be4a90d138642e705b54327e11b10deb2bb8cc1d29189e82a282b616e5cb",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "fdf1e2e874256f37818b16b7bea5b5e94bb06af03384be724182f2571408b03f",
+      "sha256": "4dda33ad9e64ae3fb8fbc4970fce28a1dc4f69477b4128bc27a2d5d66344716e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/codelab/codelab.html",
       "sha256": "651be8e03d2ec971aea8d4f76dda021806184727c5ce81ba26be7824c41ebc19",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/ability-lesson.html",
+      "sha256": "a04afce2e2337cecec3ba2f074e5043204b31bad8d2e57670a51d5a99fe29d81",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -152,8 +157,13 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/wrapper-20261108/NOTES.html",
+      "sha256": "b90736ef1cfa93ee25f3af4efefbfde1c6f24c40491ddb0ccd6693b7ed7df58e",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/capabilities.html",
-      "sha256": "e87052cc11293f3a119fd984b4f3b4818e63cf0ff888606f96f1638e35cbe545",
+      "sha256": "ea67839901ebadb22c116f1fb22742b9148437b229dd6f71492baa56ac4c3e6e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -198,7 +208,7 @@
     },
     {
       "path": "docs/site/docs/learner-cockpit.html",
-      "sha256": "2a2d6aee1bebed908c48a9010d391b4b0827a4d97497ffb68911c0233afd216c",
+      "sha256": "25b96af1702274f9dc6f2454e11cb5df616554e0048beeae76bf8b57e53507d2",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -550,6 +560,16 @@
     },
     {
       "source": "STATUS.md",
+      "target": "docs/acceptance/wrapper-20261108/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/ability-lesson.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
       "target": "docs/learner-route.md",
       "exists": true
     },
@@ -646,6 +666,16 @@
     {
       "source": "REVIEW.md",
       "target": "docs/learner-cockpit.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/acceptance/wrapper-20261108/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "REVIEW.md",
+      "target": "docs/ability-lesson.md",
       "exists": true
     },
     {
@@ -1090,6 +1120,16 @@
     },
     {
       "source": "docs/site/REVIEW.html",
+      "target": "docs/acceptance/wrapper-20261108/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
+      "target": "docs/ability-lesson.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/REVIEW.html",
       "target": "docs/review/appendix.json",
       "exists": true
     },
@@ -1146,6 +1186,16 @@
     {
       "source": "docs/site/STATUS.html",
       "target": "docs/learner-cockpit.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/wrapper-20261108/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
+      "target": "docs/ability-lesson.html",
       "exists": true
     },
     {
@@ -1459,6 +1509,26 @@
       "exists": true
     },
     {
+      "source": "docs/site/docs/ability-lesson.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/ability-lesson.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/ability-lesson.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/ability-lesson.html",
+      "target": "../docs/acceptance/ability-20261108/receipt.json",
+      "exists": true
+    },
+    {
       "source": "docs/site/docs/acceptance/bootstrap-final-20261107/NOTES.html",
       "target": "../../../index.html",
       "exists": true
@@ -1754,6 +1824,21 @@
       "exists": true
     },
     {
+      "source": "docs/site/docs/acceptance/wrapper-20261108/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/wrapper-20261108/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/wrapper-20261108/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
       "source": "docs/site/docs/capabilities.html",
       "target": "../index.html",
       "exists": true
@@ -1806,6 +1891,36 @@
     {
       "source": "docs/site/docs/capabilities.html",
       "target": "../docs/acceptance/clean-step3-20261107/swap-attempt/outcome.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/learner-cockpit.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/wrapper-20261108/correct-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/wrapper-20261108/finish-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/ability-20261108/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/prereq-20261108/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/capabilities.html",
+      "target": "../docs/acceptance/wrapper-20261108/setup-split-host-blocked.json",
       "exists": true
     },
     {
@@ -2081,6 +2196,11 @@
     {
       "source": "docs/site/docs/learner-cockpit.html",
       "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-cockpit.html",
+      "target": "../docs/ability-lesson.html",
       "exists": true
     },
     {

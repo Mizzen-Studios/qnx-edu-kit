@@ -1,0 +1,113 @@
+{
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "1073741824",
+    "nice": 15
+  },
+  "qemu_pid": 253539,
+  "collector_sha256": "99e8b785fa85e20cfd7650e2e869c401bf14bca3997a1bf470c4fa7a3ad1ccaf",
+  "qemu_command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "pc,accel=tcg",
+    "-cpu",
+    "max",
+    "-smp",
+    "1",
+    "-m",
+    "512",
+    "-display",
+    "none",
+    "-serial",
+    "stdio",
+    "-monitor",
+    "none",
+    "-no-reboot",
+    "-kernel",
+    "/home/ubuntu/qnx-host/guest/shared/incident-20261108/incident.ifs",
+    "-drive",
+    "file=/home/ubuntu/qnx-host/guest/shared/qnx-native/disk-edu-libc,format=raw,if=ide,snapshot=on",
+    "-nic",
+    "user,model=virtio-net-pci",
+    "-object",
+    "can-bus,id=canbus0",
+    "-device",
+    "kvaser_pci,canbus=canbus0",
+    "-device",
+    "edu,dma_mask=0xffffffff",
+    "-qtest",
+    "unix:/home/ubuntu/.openclaw/workspace/apps/canopy-qnx/.openclaw/native-20261108/capture1/qtest.sock,server=on,wait=off",
+    "-object",
+    "can-host-socketcan,id=hostcan0,if=vcan1,canbus=canbus0"
+  ],
+  "image_sha256": "764e7e9f3ffcb74e851dce896a513c85abe16589d918937f3ba5157891882a22",
+  "label": "observed in this QEMU run; app budget, not QNX benchmark",
+  "run_id": "native-18f7bd8066bf48ce94b1cd373450c201",
+  "captured_at": 1794156521.1387634,
+  "disk_sha256": "59269af3ae940d2e520271e8b2e989cc8de5918c8e6cf283bc88cfd734c30951",
+  "restarts": [
+    {
+      "run": 1,
+      "killed_pid": 278546,
+      "new_pid": 331794,
+      "main_pid_unchanged": true,
+      "observed_seconds_including_fixed_3s_settle": 3.5347404180211015,
+      "traffic": {
+        "rx_host": 100,
+        "rx_qnx": 100,
+        "tx_expected": 100,
+        "tx_host": 100,
+        "ordered_byte_exact": true
+      }
+    }
+  ],
+  "success": true,
+  "ssh_authenticated_continuity": "UNVERIFIED",
+  "pci_devices": [
+    {
+      "slot": 1,
+      "id": 1879081094,
+      "irq": 0
+    },
+    {
+      "slot": 2,
+      "id": 286331444,
+      "irq": 0
+    },
+    {
+      "slot": 3,
+      "id": 268442356,
+      "irq": 267
+    },
+    {
+      "slot": 4,
+      "id": 2214990056,
+      "irq": 267
+    },
+    {
+      "slot": 5,
+      "id": 300421684,
+      "irq": 266
+    },
+    {
+      "slot": 6,
+      "id": 4294967295,
+      "irq": 4294967295
+    },
+    {
+      "slot": 7,
+      "id": 4294967295,
+      "irq": 4294967295
+    }
+  ],
+  "routing": {
+    "original": 185272842,
+    "updated": 168495626,
+    "pirq_index": 3,
+    "irq": 10,
+    "only_kvaser_route_changed": true
+  },
+  "main_io_sock_pid": 163853,
+  "guest_stopped_reaped": true,
+  "raw_sha256": "1fe63c32e4bedf530646189d17288ea8987ccbea21e7740c73809d5f90ce961a"
+}
