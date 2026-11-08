@@ -52,6 +52,16 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(json.loads((out/'session.json').read_text())['attempts'],[])
         self.assertTrue(all(x['validation']=='CURRENT_STAGE_NOT_VALIDATED' for x in manifest['current_sources'].values()))
 
+    def test_readme_then_canonical_route_preserves_starters(self):
+        import re,os
+        route=(ROOT/'docs/learner-route.md').read_text()
+        command=re.search(r'if test -f "\$EDU_WORK/session.json"; then.*?\nfi',route,re.S).group()
+        before={stage:cockpit.lab.sha(self.work/stage/'main.c') for stage in ('step3','step6')}
+        result=subprocess.run(['bash','-c',command],env=dict(os.environ,EDU_REPO=str(ROOT),EDU_WORK=str(self.work)),capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(before,{stage:cockpit.lab.sha(self.work/stage/'main.c') for stage in before})
+        self.assertNotIn('learner_lab.py" init',route)
+
     def test_reference_notes_cannot_import(self):
         file=Path(self.temp.name)/'reference.json'
         file.write_text(json.dumps(dict(session_id='reference',stage='step3',prediction='PASS')))

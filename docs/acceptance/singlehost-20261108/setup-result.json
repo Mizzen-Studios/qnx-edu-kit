@@ -1,0 +1,65 @@
+{
+  "kind": "edu-singlehost-plan-v1",
+  "label": "HOST",
+  "checks": {
+    "linux_x86_64": true,
+    "trusted_sdk_env": true,
+    "legal_bsp_path": true,
+    "qemu_executable": false,
+    "fresh_platform": true,
+    "snippet_safe": true,
+    "host_utilities": true,
+    "sdk_preflight": true,
+    "user_scope_available": false
+  },
+  "native_acceptance": "NOT_RUN",
+  "portability": "UNVERIFIED",
+  "note": "BSP path existence is not compatibility or entitlement proof. Use an already installed compatible legal BSP. No licence prompts or installation.",
+  "sdk_preflight": {
+    "kind": "clean-step3-preflight-v1",
+    "platform": "QNX 8 x86_64 / QEMU pc TCG",
+    "checks": {
+      "sdp_env_exists": true,
+      "fresh_workspace": true,
+      "sdk_tools_present": true,
+      "licensed_components_present": true,
+      "python3": true
+    },
+    "portability": "UNVERIFIED",
+    "native_acceptance": "NOT_RUN",
+    "environment_returncode": 0,
+    "tools": {
+      "qcc": "/home/qnx/qnx800/host/linux/x86_64/usr/bin/qcc",
+      "mkifs": "/home/qnx/qnx800/host/linux/x86_64/usr/bin/mkifs",
+      "mkqnximage": "/home/qnx/qnx800/host/common/bin/mkqnximage"
+    },
+    "licensed_components": {
+      "x86_64/boot/sys/startup-x86": true,
+      "x86_64/boot/sys/procnto-smp-instr": true,
+      "x86_64/sbin/pci-server": true,
+      "x86_64/lib/libpci.so": true
+    },
+    "sdp_env_sha256": "cf2a534405000e2a4552e027a75f5a43e1562667fd12210c88763bc354325555",
+    "ready_for_clean_build_attempt": true,
+    "limits": "all SDK/native QEMU: shared flock; CPU 100%; memory 1 GiB; nice 15; 1 vCPU; 512 MiB guest"
+  },
+  "commands": [
+    "export EDU_REPO=/mnt/host/wrapper-20261108/repo",
+    "export EDU_WORK=/home/qnx/edu-singlehost-probe-20261108",
+    "export EDU_SDP_ENV=/home/qnx/qnx800/qnxsdp-env.sh",
+    "export EDU_BSP=/home/qnx/qnx800",
+    "export EDU_QEMU=/usr/bin/qemu-system-x86_64",
+    "export EDU_PLATFORM=/home/qnx/edu-singlehost-probe-20261108/platform",
+    "export EDU_ACTIVE=/home/qnx/edu-singlehost-probe-20261108/step3/bundle",
+    "export EDU_SOURCE=/home/qnx/edu-singlehost-probe-20261108/step3/main.c",
+    "export EDU_SNIPPET=/mnt/host/wrapper-20261108/repo/scripts/learner-step3.build.in",
+    "export EDU_NATIVE_LOCK=/home/qnx/edu-singlehost-probe-20261108/native.lock",
+    "export PATH=\"$(dirname \"$EDU_QEMU\"):$PATH\"",
+    "python3 \"$EDU_REPO/scripts/learner_session.py\" init --work \"$EDU_WORK\"",
+    "# Open $EDU_WORK/cockpit.html; predict, download/import notes, and edit $EDU_SOURCE.",
+    "# Verify selected BSP is installed for mkqnximage; this helper does not select/install a BSP.",
+    "flock \"$EDU_NATIVE_LOCK\" bash \"$EDU_REPO/scripts/learner_bootstrap.sh\"",
+    "# Preseed is not completion. Use notebook source-bound build/run commands. Stop on any failure."
+  ],
+  "ready_for_attempt": false
+}

@@ -167,6 +167,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/singlehost-20261108/NOTES.html",
+      "sha256": "2b3cbb9c5c689dba6bde5eb062f8462bb0196edeb619c2b2d32932aefe144fea",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/acceptance/startup-diagnosis-20261107/NOTES.html",
       "sha256": "33a841a55bb36fc2726b569a00d7bea065a360247756fa80b9c7181c33fc20ef",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -238,7 +243,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "b874d30e01ec0ebea1977c043a90f946ef1700605477184132130a8904e7c206",
+      "sha256": "bcdaccce107c3163bc40244d5a50d8c7dd59e04058cc07a0e99ec511f4772135",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -1905,6 +1910,21 @@
     },
     {
       "source": "docs/site/docs/acceptance/route-paths-20261107/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/singlehost-20261108/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/singlehost-20261108/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/singlehost-20261108/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },

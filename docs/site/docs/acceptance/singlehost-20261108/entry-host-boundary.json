@@ -1,0 +1,13 @@
+{
+  "kind": "clean-step3-preflight-v1",
+  "platform": "QNX 8 x86_64 / QEMU pc TCG",
+  "checks": {
+    "sdp_env_exists": false,
+    "fresh_workspace": true,
+    "python3": true
+  },
+  "portability": "UNVERIFIED",
+  "native_acceptance": "NOT_RUN",
+  "ready_for_clean_build_attempt": false,
+  "limits": "all SDK/native QEMU: shared flock; CPU 100%; memory 1 GiB; nice 15; 1 vCPU; 512 MiB guest"
+}

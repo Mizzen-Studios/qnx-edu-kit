@@ -19,12 +19,12 @@ export EDU_REPO="${EDU_REPO:-$(pwd -P)}"
 export EDU_WORK="${EDU_WORK:-$HOME/edu-learner-$(date -u +%Y%m%dT%H%M%SZ)}"
 export EDU_SDP_ENV="${EDU_SDP_ENV:-$HOME/qnx800/qnxsdp-env.sh}"
 export EDU_PLATFORM="${EDU_PLATFORM:-$EDU_WORK/platform}"
-export EDU_ACTIVE="${EDU_ACTIVE:-$EDU_WORK/active}"
+export EDU_ACTIVE="${EDU_ACTIVE:-$EDU_WORK/step3/bundle}"
 export EDU_QEMU="${EDU_QEMU:-$(command -v qemu-system-x86_64)}"
 export EDU_NATIVE_LOCK="${EDU_NATIVE_LOCK:-$HOME/.local/state/edu-native-test.lock}"
 export EDU_SOURCE="$EDU_WORK/step3/main.c"
 export EDU_SNIPPET="$EDU_REPO/scripts/learner-step3.build.in"
-mkdir -p "$EDU_WORK" "$(dirname "$EDU_NATIVE_LOCK")"
+mkdir -p "$(dirname "$EDU_NATIVE_LOCK")"
 export PATH="$(dirname "$EDU_QEMU"):$PATH"
 python3 "$EDU_REPO/scripts/learner_lab.py" --help
 python3 "$EDU_REPO/scripts/learner_clean_preflight.py" --sdp-env "$EDU_SDP_ENV" --fresh-work "$EDU_PLATFORM"
@@ -54,15 +54,31 @@ phases under the same exclusive lock: host100%CPU/1GiB/nice15,
 guest1vCPU/512MiB. Stop/reap SDK QEMU before native QEMU. Do not use old uncapped
 guestctl. Set EDU_NATIVE_LEASE=granted only while actually owning the lock.
 
+Before notebook initialization, optionally run the read-only setup planner with
+--work "$EDU_WORK" and --probe-sdk. It requires a fresh work directory. If you
+already used README init, do not rerun that planner against your existing work:
+retain this notebook and use the stock-platform preflight above (it checks the
+fresh EDU_PLATFORM, not the notebook directory). Never delete a notebook to make
+a setup probe pass. The single-host planner and split-host checks are alternatives,
+not a second initialization.
+
 ## 1. Predict and edit step3
 
 Write a prediction externally: complement32(12345679)=edcba986, but the fixed
 stage expects write12345678/readedcba987. The wrong variant must fail even if your
-application incorrectly returns0. Then initialize your own source:
+application incorrectly returns0. Then create your notebook only if README has not already initialized it:
 
 ```sh
-python3 "$EDU_REPO/scripts/learner_lab.py" init --stage step3 --work "$EDU_WORK/step3"
+if test -f "$EDU_WORK/session.json"; then
+  python3 "$EDU_REPO/scripts/learner_session.py" render --work "$EDU_WORK"
+else
+  python3 "$EDU_REPO/scripts/learner_session.py" init --work "$EDU_WORK"
+fi
 ```
+
+Open the printed cockpit.html. Save your prediction, download notes and run its
+notes import command before building. Record diagnosis/explanation there after
+each observation. Both starters already exist; never reinitialize them.
 
 Edit EDU_WORK/step3/main.c, not a solution/generated snapshot. Complete the BAR
 TODO: request per-thread I/O level1 only, obtain BAR metadata, require memory
@@ -158,6 +174,25 @@ MainPID=0; retain its log externally and hash it, do not commit proprietary
 compiler/platform output. If swap is absent, stop for authorized disk-swap setup;
 no automatic creation, installation or cap increase is provided. Reuse the same
 isolated-service pattern for each learner build. Set HOME for the licensed user.
+For this optional split route only, the native commands below are the single-host
+notebook form. Use these equivalent standalone actions inside the SDK guest and
+on the QEMU host respectively; do not invoke a notebook wrapper whose paths point
+at the other host. Preserve source and all numbered own receipts externally:
+
+```sh
+# SDK guest, existing isolated service (STAGE=step3 or step6, chosen source/bundle):
+python3 "$EDU_SHARED_GUEST/learner_lab.py" build --stage "$STAGE" --source "$EDU_SOURCE" --out "$EDU_ACTIVE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
+# Stop/reap SDK guest; transfer original own bundle and matching disk externally.
+# QEMU host, actual caller-held sole lock; pick a fresh receipt basename each time:
+flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_lab.py" run --stage "$STAGE" --source "$EDU_SOURCE" --bundle "$EDU_ACTIVE" --disk "$EDU_PLATFORM/output/disk-qemu" --receipt "$EDU_RECEIPT"
+```
+
+This split path retains the original direct source-bound oracle but does not
+pretend that cross-host standalone observations are notebook-invoked attempts.
+Keep notebook notes and standalone packs separately labeled; no reference receipt
+import, no single-host readiness claim. The ordinary single-host route below uses
+learner_session build/run and automatically archives attempts.
+
 The Linux controller is existing environment infrastructure, not supplied by this
 repository; its supported console/transport must run these commands as root and
 collect terminal service status. Stop/reap its VM before each native run.
@@ -165,11 +200,13 @@ collect terminal service status. Stop/reap its VM before each native run.
 Now replace the preseed with a freshly compiled source-bound bundle:
 
 ```sh
-flock "$EDU_NATIVE_LOCK" python3 "$EDU_REPO/scripts/learner_lab.py" build --stage step3 --source "$EDU_WORK/step3/main.c" --out "$EDU_ACTIVE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
+flock "$EDU_NATIVE_LOCK" python3 "$EDU_REPO/scripts/learner_session.py" build --work "$EDU_WORK" --stage step3 --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
 ```
 
 Preserve the entire bundle externally before replacing it with another variant.
-For split hosts, transfer that bundle and matching output/disk-qemu externally,
+For the optional split route, use the original standalone learner_lab build/run
+commands instead of notebook CLI orchestration across hosts unless your full
+notebook paths and scripts are mapped identically. Transfer that bundle and matching output/disk-qemu externally,
 and set EDU_ACTIVE/EDU_PLATFORM to the QEMU-host copies. The current edited source
 must also match. Never substitute a historical binary or edit manifest hashes.
 
@@ -178,14 +215,14 @@ must also match. Never substitute a historical binary or edit manifest hashes.
 Stop/reap the SDK guest; hold the exclusive native lease on the QEMU host:
 
 ```sh
-flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_lab.py" run --stage step3 --source "$EDU_WORK/step3/main.c" --bundle "$EDU_ACTIVE" --disk "$EDU_PLATFORM/output/disk-qemu" --receipt "$EDU_WORK/step3/wrong"
+flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_session.py" run --work "$EDU_WORK" --stage step3 --disk "$EDU_PLATFORM/output/disk-qemu"
 ```
 
 Expect host1 for the wrong edit; host2 is a setup/binding BLOCKED, not the intended
-learning failure. Read wrong.json and wrong.log: actual ID/write/read, target exit
+learning failure. Read the numbered attempts/*-step3-run/native.json and native.log: actual ID/write/read, target exit
 and device_readback check. Explain why edcba986 establishes the wrong write and
 why application exit0 cannot pass the fixed oracle. Fix write to12345678, rebuild
-with the same build command, then repeat run with receipt EDU_WORK/step3/correct.
+with the same build command, then repeat run with a new automatically numbered attempt; no overwrite.
 Require host0, readedcba987, QNX8 identification, matching source/binary/image/disk
 bindings, bounded completion and stopped/reaped QEMU. Stale hash means rebuild,
 not replay a saved log. Explain the changed observation and cleanup externally.
@@ -196,29 +233,45 @@ Predict: normal write10 plus cat returns3628800, with one IRQ completion and ack
 A node existing alone, reference PASS or printed constant does not suffice.
 
 ```sh
-python3 "$EDU_REPO/scripts/learner_lab.py" init --stage step6 --work "$EDU_WORK/finish"
+python3 "$EDU_REPO/scripts/learner_session.py" render --work "$EDU_WORK"
+export EDU_FINISH_SOURCE="$EDU_WORK/step6/main.c"
 ```
 
-Edit EDU_WORK/finish/main.c: complete dispatch setup, bounded handlers, per-open
+Edit EDU_WORK/step6/main.c: complete dispatch setup, bounded handlers, per-open
 snapshots and /dev/edu attachment. Correct the starter IAT lifetime: attach normally
 inside the write's factorial transaction (initial unmask before trigger), wait
 using _NTO_INTR_WAIT_FLAGS_UNMASK, acknowledge and detach before stdio/dispatch
 and on errors. Remove explicit InterruptUnmask after that wait; do not unmask
 twice. Do not attach at daemon startup or block an IST in dispatch. Earlier failed
-implementations remain preserved. This starter supplies IRQ/factorial scaffolding;
+implementations remain preserved. The notebook already created this starter; save/import your step6 prediction.
+This starter supplies IRQ/factorial scaffolding;
 it does not assess all earlier stages from scratch or authorize new native features.
 
 ## 5. Observe, diagnose and explain your /dev/edu
+
+The notebook builds to EDU_WORK/step6/bundle. Repoint the existing learner
+fragment before the step6 build (this changes no SDK/BSP installation):
+
+```sh
+export EDU_ACTIVE="$EDU_WORK/step6/bundle"
+# Preseed only, never completion: the following real notebook build replaces it.
+mkdir -p "$EDU_ACTIVE"
+cp "$EDU_WORK/step3/bundle/learner_bin" "$EDU_ACTIVE/learner_bin"
+printf '#!/bin/sh\nexit 2\n' > "$EDU_ACTIVE/learner-start.sh"
+sed "s|@OUT@|$EDU_ACTIVE|g" "$EDU_SNIPPET" > "$EDU_PLATFORM/local/snippets/ifs_files.learner"
+# Recompute the generated buildfile using the existing installed platform tools.
+flock "$EDU_NATIVE_LOCK" bash -c 'set -eo pipefail; source "$EDU_SDP_ENV"; cd "$EDU_PLATFORM"; mkqnximage --build'
+```
 
 Build inside the same legal SDK platform, then stop/reap SDK QEMU before the
 exclusive native run on the QEMU host (transfer fresh external bundle if split):
 
 ```sh
-python3 "$EDU_REPO/scripts/learner_lab.py" build --stage step6 --source "$EDU_WORK/finish/main.c" --out "$EDU_ACTIVE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
-flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_lab.py" run --stage step6 --source "$EDU_WORK/finish/main.c" --bundle "$EDU_ACTIVE" --disk "$EDU_PLATFORM/output/disk-qemu" --receipt "$EDU_WORK/finish/result"
+flock "$EDU_NATIVE_LOCK" python3 "$EDU_REPO/scripts/learner_session.py" build --work "$EDU_WORK" --stage step6 --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"
+flock "$EDU_NATIVE_LOCK" env EDU_NATIVE_LOCK="$EDU_NATIVE_LOCK" EDU_NATIVE_LEASE=granted python3 "$EDU_REPO/scripts/learner_session.py" run --work "$EDU_WORK" --stage step6 --disk "$EDU_PLATFORM/output/disk-qemu"
 ```
 
-Read result.json/result.log. The wrapper starts YOUR daemon, waits for /dev/edu,
+Read the new numbered attempts/*-step6-run/native.json and native.log. The wrapper starts YOUR daemon, waits for /dev/edu,
 writes10 by shell redirection and cats the actual text. Require host0,
 write_rc0/read_rc0/result3628800, IRQ completion1/input10/result3628800/ack00000000,
 QNX identification, matching build bindings, bounded completion and reaping.
