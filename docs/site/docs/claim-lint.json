@@ -82,6 +82,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
+      "sha256": "984a3ab8dedbbf9365c7decccadb44557806582cef53a485d30008dd65601d48",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/acceptance/choice-a-resume-20261108/NOTES.html",
       "sha256": "ed3f1aa7e4426896b7c391e8584fc3961e8c48714019774dc53eaddb6129abc4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -1650,6 +1655,21 @@
     },
     {
       "source": "docs/site/docs/acceptance/choice-a-20261108/RESUME.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },
