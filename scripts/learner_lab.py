@@ -158,6 +158,8 @@ def caps(pid):
     return cap
 
 def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
+    if type(timeout) is not int or not 1 <= timeout <= 900:
+        raise ValueError("native timeout must be 1..900 seconds; caps are unchanged")
     bundle = external(bundle)
     m = verify_inputs(source, bundle, stage)
     if not Path(disk).is_file():
@@ -242,7 +244,7 @@ def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
                     qemu_command=command, edu_pci_address="05.0",
                     disk_sha256=disk_hash, stop_reason=stop_reason,
                     serialization_lock=str(lock), lease='caller-held flock observed locked',
-                    run_driver_sha256=sha(Path(__file__)),
+                    run_driver_sha256=sha(Path(__file__)), timeout_seconds=timeout,
                     target_returncode=re.findall(r'LEARNER_RC=(\d+)',output),
                     observation='fresh custom QNX boot, not QSTI or hardware qualification',
                     substrate_note=os.environ.get('EDU_LEARNER_SUBSTRATE','learner supplied BSP; portability not inferred'))
@@ -263,7 +265,7 @@ def main():
     i = sub.add_parser('init'); i.add_argument('--work',required=True)
     b = sub.add_parser('build')
     for arg in ['source','out','sdp-env','buildfile','bsp-cwd']: b.add_argument('--'+arg,required=True)
-    r = sub.add_parser('run')
+    r = sub.add_parser('run'); r.add_argument('--timeout', type=int, default=180)
     for arg in ['source','bundle','disk','receipt']: r.add_argument('--'+arg,required=True)
     for command_parser in (i,b,r):
         command_parser.add_argument('--stage', choices=('step3','step6'), default='step3')
@@ -271,7 +273,7 @@ def main():
     try:
         if a.action=='init': print(init(a.work,a.stage)); return 0
         if a.action=='build': print(json.dumps(build(a.source,a.out,a.sdp_env,a.buildfile,a.bsp_cwd,a.stage),indent=2)); return 0
-        return run(a.source,a.bundle,a.disk,a.receipt,stage=a.stage)
+        return run(a.source,a.bundle,a.disk,a.receipt,timeout=a.timeout,stage=a.stage)
     except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as e:
         print('BLOCKED:',e,file=sys.stderr); return 2
 

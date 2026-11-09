@@ -116,6 +116,18 @@ class SessionTests(unittest.TestCase):
         cockpit.save(folder/'native.json',receipt)
         with self.assertRaisesRegex(ValueError,'status/exit'):cockpit.validate_native(self.work,record,folder)
 
+    def test_historical_driver_snapshot_is_hash_bound(self):
+        folder,record=self.native_fixture()
+        driver=folder/"run-driver.py"
+        driver.write_text("original observed driver bytes")
+        receipt=json.loads((folder/"native.json").read_text())
+        receipt["run_driver_sha256"]=cockpit.lab.sha(driver)
+        cockpit.save(folder/"native.json",receipt)
+        cockpit.validate_native(self.work,record,folder)
+        driver.write_text("tampered")
+        with self.assertRaisesRegex(ValueError,"driver changed"):
+            cockpit.validate_native(self.work,record,folder)
+
     def test_bool_success_and_bool_exit_rejected(self):
         folder,record=self.native_fixture()
         path=folder/'native.json'

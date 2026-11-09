@@ -1,0 +1,12 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+---> Starting devb
+# Unable to access /dev/hd0
+---> Mounting file systems
+---> Mounting file systems

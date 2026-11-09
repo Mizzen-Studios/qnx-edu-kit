@@ -77,7 +77,8 @@ def attempt(work, stage, action, args):
                     '--buildfile',args.buildfile, '--bsp-cwd',args.bsp_cwd]
     else:
         command += ['--bundle',str(work/stage/'bundle'), '--disk',args.disk,
-                    '--receipt',str(folder/'native')]
+                    '--receipt',str(folder/'native'), '--timeout',str(getattr(args,'timeout',180))]
+        shutil.copyfile(ROOT/'scripts/learner_lab.py',folder/'run-driver.py')
     record = dict(id=ident, stage=stage, action=action, started=time.time(),
                   source_sha256=lab.sha(source), command=command, label='HOST', status='INTERRUPTED')
     data['attempts'].append(record)
@@ -132,7 +133,10 @@ def validate_native(work, record, folder):
     required = set(checks) | {'bounded_completion','inputs_unchanged_after_boot','disk_unchanged','qemu_reaped'}
     if set(receipt['checks']) != required or any(type(v) is not bool for v in receipt['checks'].values()):
         raise ValueError('native receipt check set invalid')
-    if receipt.get('run_driver_sha256') != lab.sha(ROOT/'scripts/learner_lab.py'):
+    driver = folder/'run-driver.py'
+    if not driver.exists():
+        driver = ROOT/'scripts/learner_lab.py'  # Legacy unchanged-driver receipts only.
+    if driver.is_symlink() or receipt.get('run_driver_sha256') != lab.sha(driver):
         raise ValueError('native driver changed or absent')
     if any(receipt['checks'].get(k)!=v for k,v in checks.items()):
         raise ValueError('oracle disagrees with receipt')
@@ -297,7 +301,9 @@ def main():
         if name in ('build','run'): s.add_argument('--stage',choices=('step3','step6'),required=True)
         if name=='build':
             for opt in ('sdp-env','buildfile','bsp-cwd'): s.add_argument('--'+opt,required=True)
-        if name=='run': s.add_argument('--disk',required=True)
+        if name=='run':
+            s.add_argument('--disk',required=True)
+            s.add_argument('--timeout',type=int,default=180)
     a=p.parse_args()
     try:
         if a.action=='init': print(create(a.work))

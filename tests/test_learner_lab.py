@@ -29,6 +29,11 @@ class LearnerTests(unittest.TestCase):
                        self.output().replace('LEARNER_BIND source=s binary=b\n','')+'LEARNER_BIND source=s binary=b\n']:
             self.assertFalse(all(lab.oracle(output,m).values()))
 
+    def test_native_timeout_is_bounded_before_any_launch(self):
+        for value in (0, -1, 901, True, 1.5):
+            with self.assertRaisesRegex(ValueError, "1..900"):
+                lab.run("missing", "missing", "missing", "missing", timeout=value)
+
     def test_reference_manifest_refused(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)

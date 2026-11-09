@@ -83,7 +83,7 @@
     },
     {
       "path": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
-      "sha256": "6870a2a47d518ea2969a45569afdd329307bfe2763428bb1cd11f6680d60d1f6",
+      "sha256": "e6d3fe55eaaa2ab1f1c57c55774d671ce996f56ba10ca3c016f893c1c2e978fe",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -263,7 +263,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "fdfd96e7ce9e7d777e7f6156accb6695eb4b03fb41b870ce821d04a0da477c69",
+      "sha256": "427c7dddcc7bc9422d9740b7742913077e3c7a9796d32b1add589b14f6d365b9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {

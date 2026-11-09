@@ -11,3 +11,9 @@ Normal boot gate rc0: running, zero failed units, both required real mounts veri
 Started packaged user-runtime-dir@1001.service and user@1001.service for bounded session, both active/success. Existing licensed qnx user with HOME/home/qnx, XDG_RUNTIME_DIR/run/user/1001, DBUS_SESSION_BUS_ADDRESSunix:path=/run/user/1001/bus: systemctl --user show-environment rc0. No linger, permanent user-manager override or private dbus substitute.
 
 No repair backups/fsck applicable because no repair needed. Fresh own editable-source initialization now in progress; native remains NOT_RUN.
+
+## First native observation retained FAIL
+
+Fresh original starter edited independently: write12345679, require its actual complement, return0 for that wrong pair. Stock platform bootstrap and own source/ELF/IFS build PASS. First canonical nested native attempt at default180s FAIL/timeout before learner markers, appRCabsent—not the requested app0 negative control. Target reached filesystem mounting after /dev/hd0 access diagnostic; cause remains unverified pending longer bounded observation. Inner effective caps verified100000/100000,1073741824,nice15; QEMU reaped; input/disk hashes unchanged.
+
+Minimum launcher correction adds explicit --timeout1..900(default180), recording actual bound; no cap, oracle or device-topology change. Notebook archives exact run-driver bytes to preserve historical timeout provenance across this correction. Original first driver was hash-checked against its untouched receipt before snapshotting; no source/receipt histories rewritten. Host regression tests cover bound rejection and tampered snapshot rejection. One900s retry will test whether slow nested boot can reach learner; stop rather than cap increases or platform-repair churn if still blocked.

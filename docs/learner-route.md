@@ -292,3 +292,13 @@ qtest are comparison/reference material, never your edited-source acceptance.
 [capability limits](capabilities.md), [private review](../REVIEW.md).
 
 Videos are deferred until final feature freeze, final verification and independent gate, then separate Olly OK. They are not the current blocker.
+
+### Bounded slow nested-TCG observation
+
+The default native limit remains180seconds. On a slow same-host nested-TCG run,
+`learner_session.py run --timeout 900` selects a
+bounded1..900second window, without changing CPU/memory/nice/guest caps or the
+oracle. Preserve the first timeout receipt; it is not an app0 negative control.
+Each new attempt archives exact run-driver bytes; export checks their recorded
+hash and independently recomputes the unchanged native oracle. Older receipts
+without a driver snapshot require the unchanged current driver.
