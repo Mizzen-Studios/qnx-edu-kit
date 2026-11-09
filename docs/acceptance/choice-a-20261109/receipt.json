@@ -1,0 +1,86 @@
+{
+  "kind": "edu-choice-a-singlehost-final-v1",
+  "outcome": "BLOCKED_NATIVE_TIMEOUT",
+  "host_setup": "PASS",
+  "boot_repair": "NOT_NEEDED",
+  "fsck_backup": "NOT_APPLICABLE_NO_REPAIR",
+  "normal_boot": "running; no failed units",
+  "required_mounts": {
+    "/boot": "/dev/vda16 ext4",
+    "/boot/efi": "/dev/vda15 vfat"
+  },
+  "dpkg_configure_returncode": 0,
+  "package_install_returncode": 0,
+  "packages": {
+    "qemu-system-x86": "1:8.2.2+ds-0ubuntu1.18",
+    "dbus-user-session": "1.14.10-4ubuntu4.1",
+    "libpam-systemd": "255.4-1ubuntu8.18",
+    "systemd": "255.4-1ubuntu8.18"
+  },
+  "user_manager": "packaged user@1001.service and user-runtime-dir@1001.service active/success; real bus verified",
+  "source_start_commit": "c20c8c77307a5905e19b0f7476bab4f63298dcb1",
+  "code_correction_commit": "5e4a90a",
+  "session_id": "24e18f53-0f16-423b-a347-7d60db6efef0",
+  "build": "PASS",
+  "native_first": "FAIL_TIMEOUT_180",
+  "native_retry": "FAIL_TIMEOUT_900",
+  "app_zero_negative_control": "NOT_OBSERVED",
+  "corrected_native": "NOT_RUN",
+  "export": "PASS_FAILURE_EVIDENCE_ONLY_NOT_ACCEPTANCE",
+  "export_path": "/home/qnx/choice-a-failure-export-20261109",
+  "export_manifest_sha256": "5515fc0ab6f1eabc9ef729ccc8da3830efd3af8f965792f2a03703eb6c4b61fe",
+  "bindings": {
+    "source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "binary_sha256": "c12bc15cfe34dd80cde341f7ff961a32f747ac96ac3d73386a64e3886d8951a4",
+    "image_sha256": "1d0e942d482be647e142b7f5e6ac6ddd64e517f6263ab8a98ccf02a9bfc44f59",
+    "buildfile_sha256": "cff449bc48c0ee9ad0a27c6b17eb3d3979eda162cc5cb5ed40a99369ec6bb86b",
+    "startup_sha256": "8e745ddc5e840eddfc1276b89eaf3b4e7a36c3230893a62c24f7d60387897cf1",
+    "build_driver_sha256": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2"
+  },
+  "disk_sha256": "eda6a05e34d112f9973dd0c7336f8007a489042d31aa8a89edc13a7ec9e956b1",
+  "inner_caps": {
+    "pid": 7218,
+    "cpu": "100000 100000",
+    "memory": "1073741824",
+    "nice": 15
+  },
+  "outer_caps": {
+    "cpu": "100000 100000",
+    "memory": 1073741824,
+    "nice": 15,
+    "vcpus": 1,
+    "guest_mib": 512
+  },
+  "cleanup": {
+    "checked": 1794255503.175504,
+    "qemu_pid": 322930,
+    "qemu_reaped": true,
+    "owner_pid": 322927,
+    "owner_reaped": true,
+    "owner_managed_result": "collected exit0; redundant trap stop missing-socket retained",
+    "exit": {
+      "rc": 0,
+      "ended": 1794255476.3486025
+    },
+    "lease_free": true,
+    "inner_reaped": true
+  },
+  "sdk_install_login_activation": false,
+  "files": {
+    "stock-build-finish.log": "f6f0c00200d16480661c1d0652f2e5f1e4129c9122842c49aabfc202c1ac5fdb",
+    "normal-boot.log": "3d6657ee9deba9078be660f0462039bc427696ebb67681f04d5faa8adf5fe0d1",
+    "final-session.json": "39703a3b1b29ddba1b5f52ed6ab0a374183a4ccedb52561dd9e7ee01cd73dfdb",
+    "stock-build-launch.log": "a93cc39081aa73ec49d57e88e46dcec3828daac16b52cf8b244d481de12d051d",
+    "mount-inventory.log": "165282570c78f89191c318b8c273a07bb5fd3bb32898d29d54b49eb148b11aae",
+    "package-session.log": "ad562374ee6ad49646155a4605c17c3304f335bf952a1b9027844207022e736e",
+    "REPRO.md": "63c5b80d09450e66c73270fb9cc431c5dbdeda0eaa5dd0b665595299752e523c",
+    "export-check.log": "28c987c06088424d51cf9a366d945f311f829c7fcd70ef284989b99e8d6bcbec",
+    "failure-export-pack.json": "5515fc0ab6f1eabc9ef729ccc8da3830efd3af8f965792f2a03703eb6c4b61fe",
+    "NOTES.md": "9fc03e4391df73ade01693326e71494a0bbcb3a6f0f9d7c110e958f6f940f5d1",
+    "extended-timeout/native.log": "76a103243f5e6482e6e6bfc77fdda0c2cbeb3a4daa08628a6791acdaab06ddae",
+    "extended-timeout/native.json": "77314de84830015b0e2e9a4fc6ca0a3b484facbd6048218137e7befc00747ebf",
+    "first-timeout/native.log": "ac5e1afba4bc41fde097c2953d0df6b711ecd47bfcc59cca2fd369ae57aef775",
+    "first-timeout/build-manifest.json": "16853e2e843e4ff2aae0bcb8eb932b6d06f7f9b0ecec4f769e39ee4fdd380e17",
+    "first-timeout/native.json": "d717400cbc9ba3268b7c5da5acdc44279c3e813b3144d1d122cd344243a62cbf"
+  }
+}

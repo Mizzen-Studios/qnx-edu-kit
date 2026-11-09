@@ -1,0 +1,106 @@
+{
+  "kind": "edu-own-session-v1",
+  "id": "24e18f53-0f16-423b-a347-7d60db6efef0",
+  "created": 1794253079.7386749,
+  "notes": {
+    "step3": {
+      "prediction": "",
+      "diagnosis": "First180s and single900s nested-TCG attempts timed out before learner markers; disk/IFS reached mount errors and sshd memoryfault. App RC absent, not a successful negative control.",
+      "explanation": "No corrected native PASS claimed. Preserve own source/build/ELF/IFS/disk and both timeout histories; split-host fallback remains supported. No cap increase or platform repair churn."
+    },
+    "step6": {
+      "prediction": "",
+      "diagnosis": "",
+      "explanation": ""
+    },
+    "permission": {
+      "prediction": "",
+      "diagnosis": "",
+      "explanation": ""
+    }
+  },
+  "attempts": [
+    {
+      "id": "0001-step3-build",
+      "stage": "step3",
+      "action": "build",
+      "started": 1794253764.079377,
+      "source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+      "command": [
+        "/usr/bin/python3",
+        "/home/qnx/choice-a-repo-20261108/scripts/learner_lab.py",
+        "build",
+        "--stage",
+        "step3",
+        "--source",
+        "/home/qnx/choice-a-learner-20261108/step3/main.c",
+        "--out",
+        "/home/qnx/choice-a-learner-20261108/step3/bundle",
+        "--sdp-env",
+        "/home/qnx/qnx800/qnxsdp-env.sh",
+        "--buildfile",
+        "/home/qnx/choice-a-learner-20261108/platform/output/build/ifs.build",
+        "--bsp-cwd",
+        "/home/qnx/choice-a-learner-20261108/platform"
+      ],
+      "label": "HOST",
+      "status": "PASS",
+      "returncode": 0,
+      "finished": 1794253874.1045923
+    },
+    {
+      "id": "0002-step3-run",
+      "stage": "step3",
+      "action": "run",
+      "started": 1794253945.3579164,
+      "source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+      "command": [
+        "/usr/bin/python3",
+        "/home/qnx/choice-a-repo-20261108/scripts/learner_lab.py",
+        "run",
+        "--stage",
+        "step3",
+        "--source",
+        "/home/qnx/choice-a-learner-20261108/step3/main.c",
+        "--bundle",
+        "/home/qnx/choice-a-learner-20261108/step3/bundle",
+        "--disk",
+        "/home/qnx/choice-a-learner-20261108/platform/output/disk-qemu",
+        "--receipt",
+        "/home/qnx/choice-a-learner-20261108/attempts/0002-step3-run/native"
+      ],
+      "label": "nativefresh",
+      "status": "FAIL",
+      "returncode": 1,
+      "finished": 1794254147.498796
+    },
+    {
+      "id": "0003-step3-run",
+      "stage": "step3",
+      "action": "run",
+      "started": 1794254288.1134658,
+      "source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+      "command": [
+        "/usr/bin/python3",
+        "/home/qnx/choice-a-repo-20261108/scripts/learner_lab.py",
+        "run",
+        "--stage",
+        "step3",
+        "--source",
+        "/home/qnx/choice-a-learner-20261108/step3/main.c",
+        "--bundle",
+        "/home/qnx/choice-a-learner-20261108/step3/bundle",
+        "--disk",
+        "/home/qnx/choice-a-learner-20261108/platform/output/disk-qemu",
+        "--receipt",
+        "/home/qnx/choice-a-learner-20261108/attempts/0003-step3-run/native",
+        "--timeout",
+        "900"
+      ],
+      "label": "nativefresh",
+      "status": "FAIL",
+      "returncode": 1,
+      "finished": 1794255236.964176
+    }
+  ]
+}

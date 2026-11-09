@@ -18,7 +18,7 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "ab6266f5ba4836850a9d6029fa45fb4e2eda8937a48c6e908c7c68183aacf474",
+      "sha256": "93e40b57e408275eca475bc1c52b4699ded7be87019cf0d20fe7e3cb2a0475bf",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
       "path": "docs/site/STATUS.html",
-      "sha256": "c9a334e7dd7a320c99003efdcd3747ee701b1d37e7476e96b712f531e721a939",
+      "sha256": "87c6e31b08852f338d09822790fac0b498f1453e5446b5d25768a5b997506c7f",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -83,7 +83,12 @@
     },
     {
       "path": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
-      "sha256": "e6d3fe55eaaa2ab1f1c57c55774d671ce996f56ba10ca3c016f893c1c2e978fe",
+      "sha256": "73c8270892e36e8544072739eb0703ec1ddd6972ed110abb3704f884781d83fa",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/acceptance/choice-a-20261109/REPRO.html",
+      "sha256": "778ba146dcf29a529e390fa5656c18e596a5f538d2ed4cdbe379477e78a8a4ec",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -586,6 +591,11 @@
     {
       "source": "README.md",
       "target": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "exists": true
+    },
+    {
+      "source": "STATUS.md",
+      "target": "docs/acceptance/choice-a-20261109/NOTES.md",
       "exists": true
     },
     {
@@ -1250,6 +1260,11 @@
     },
     {
       "source": "docs/site/STATUS.html",
+      "target": "docs/acceptance/choice-a-20261109/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/STATUS.html",
       "target": "docs/upgrade-acceptance-20261108.html",
       "exists": true
     },
@@ -1670,6 +1685,21 @@
     },
     {
       "source": "docs/site/docs/acceptance/choice-a-20261109/NOTES.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/REPRO.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/REPRO.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/choice-a-20261109/REPRO.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
     },

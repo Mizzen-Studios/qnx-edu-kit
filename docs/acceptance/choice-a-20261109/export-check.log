@@ -1,0 +1,4 @@
+/home/qnx/choice-a-failure-export-20261109/pack.json
+5515fc0ab6f1eabc9ef729ccc8da3830efd3af8f965792f2a03703eb6c4b61fe  /home/qnx/choice-a-failure-export-20261109/pack.json
+EXPORTED_FILES_VALIDATED 22
+{"step3": {"source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570", "validation": "CURRENT_STAGE_NOT_VALIDATED"}, "step6": {"source_sha256": "26437c8f25d7a0c0e0284bfef1b609d550cac81c2da0a068723fa252f403b42c", "validation": "CURRENT_STAGE_NOT_VALIDATED"}}

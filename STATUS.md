@@ -1,4 +1,8 @@
-# Status — 7 November 2026
+# Status — current bounded update 9 November 2026
+
+## Latest Choice A single-host wave: setup PASS, native BLOCKED
+
+[Nov9 receipts](docs/acceptance/choice-a-20261109/NOTES.md): same existing licensed SDK host booted normally with real /boot and /boot/efi mounts; no boot repair needed. Expressly approved dpkg recovery, free distro QEMU and real packaged systemd user bus succeeded. Fresh own source/ELF/IFS/disk build PASS. Canonical nested-TCG native observations timed out at180s and one bounded900s retry, before learner markers/appRC: wrongFAIL/app0 NOT_OBSERVED, correctedPASS NOT_RUN. Validated own failure-evidence export retained, not learner acceptance. Inner/outer caps unchanged; all QEMU reaped and lease free. No further work scheduled; supported fallback remains split-host. Earlier single-host setup blockers below are historical, not current package/session state.
 
 ## Current upgrade — 8 November 2026, implemented; scoped verification complete, council gate pending
 

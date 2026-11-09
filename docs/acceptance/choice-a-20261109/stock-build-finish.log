@@ -1,0 +1,54 @@
+Result=success
+ExecMainStatus=0
+ActiveState=inactive
+SubState=dead
+Generating system partition . . .
+Generating data partition . . .
+Generating ifs . . .
+Building boot partition . . .
+Building disk . . .
+Target type: qemu
+Architecture: x86_64
+Security: no
+Repositories:
+    
+    /home/qnx/qnx800/target/qnx
+
+Options with non-default values:
+
+
+For full list of options, run "mkqnximage --options"
+Generating output/build/mount_fs.sh
+Generating output/build/expandfs.sh
+Generating output/build/post_startup.sh
+Generating output/build/start_net.sh
+Generating output/build/startup.sh
+Generating output/build/passwd
+Generating output/build/group
+Generating output/build/shadow
+Generating output/build/ifs.build
+Generating output/build/system.build
+Generating output/build/data.build
+Generating output/build/qemu_options
+Building disk
+Generating system partition . . .
+Generating data partition . . .
+Generating ifs . . .
+Building boot partition . . .
+Building disk . . .
+Target type: qemu
+Architecture: x86_64
+Security: no
+Repositories:
+    
+    /home/qnx/qnx800/target/qnx
+
+Options with non-default values:
+
+
+For full list of options, run "mkqnximage --options"
+cff449bc48c0ee9ad0a27c6b17eb3d3979eda162cc5cb5ed40a99369ec6bb86b  output/build/ifs.build
+96b6379b235daf756c77c8dfe3079d4108ab663ffd1a277ce47c3192aaddf502  output/build/startup.sh
+ab8ca224c2954037766afe23003a4a50367f84664c3219bfe67ac760eeed1db7  local/snippets/ifs_files.learner
+fe4309def74c1119f778186180b2680f62ca11ea46f8d400e957f4d21162fd9d  local/snippets/post_start.learner
+eda6a05e34d112f9973dd0c7336f8007a489042d31aa8a89edc13a7ec9e956b1  output/disk-qemu

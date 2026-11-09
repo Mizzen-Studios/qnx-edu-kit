@@ -1,0 +1,22 @@
+
+non UEFI or UEFI+CSM boot
+ACPI table not found (0x4746434d)
+System behaves poorly without PCID support.
+overriding mask for controller 2, vector_base 0
+---> Starting slogger2
+---> Starting PCI Services
+---> Starting fsevmgr
+---> Starting devb
+# Unable to access /dev/hd0
+---> Mounting file systems
+---> Mounting file systems
+mount: Can't mount /boot (type qnx6) 
+mount: Possible reason: Invalid argument 
+Path=0 - Intel 82371SB
+ target=0 lun=0     Direct-Access(0) -          QEMU HARDDISK    Rev: 2.5+
+Path=1 - Intel 82371SB
+ target=0 lun=0            CD-ROM(5) - QEMU     QEMU DVD-ROM     Rev: 2.5+
+---> Starting Networking
+---> Starting sshd
+Memory fault (core dumped) 
+---> Starting misc

@@ -1,0 +1,40 @@
+{
+  "kind": "edu-own-pack-v1",
+  "session_id": "24e18f53-0f16-423b-a347-7d60db6efef0",
+  "files": {
+    "attempts/0001-step3-build/bundle/learner-source.c": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "attempts/0001-step3-build/bundle/learner-start.sh": "8e745ddc5e840eddfc1276b89eaf3b4e7a36c3230893a62c24f7d60387897cf1",
+    "attempts/0001-step3-build/bundle/learner.ifs": "1d0e942d482be647e142b7f5e6ac6ddd64e517f6263ab8a98ccf02a9bfc44f59",
+    "attempts/0001-step3-build/bundle/learner_bin": "c12bc15cfe34dd80cde341f7ff961a32f747ac96ac3d73386a64e3886d8951a4",
+    "attempts/0001-step3-build/bundle/manifest.json": "16853e2e843e4ff2aae0bcb8eb932b6d06f7f9b0ecec4f769e39ee4fdd380e17",
+    "attempts/0001-step3-build/command.log": "c2604a36b174272e05fb9d2866204f5914ac32751f6eca44a2841fb1b5607466",
+    "attempts/0001-step3-build/main.c": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "attempts/0002-step3-run/command.log": "0c188b7a6259e5b4c82dd29e38259a1bd9be35d981a7dbbb752e04f66b83baf1",
+    "attempts/0002-step3-run/main.c": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "attempts/0002-step3-run/native.json": "d717400cbc9ba3268b7c5da5acdc44279c3e813b3144d1d122cd344243a62cbf",
+    "attempts/0002-step3-run/native.log": "ac5e1afba4bc41fde097c2953d0df6b711ecd47bfcc59cca2fd369ae57aef775",
+    "attempts/0002-step3-run/run-driver.py": "a58809f9363639a14fbaa954d804f132a16911e26a796a04c77c606a711ab0b2",
+    "attempts/0003-step3-run/command.log": "7e8154f9717f5863dd6772ca0584bc78c2304613092fdedf3a6f8f91bef0c74c",
+    "attempts/0003-step3-run/main.c": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "attempts/0003-step3-run/native.json": "77314de84830015b0e2e9a4fc6ca0a3b484facbd6048218137e7befc00747ebf",
+    "attempts/0003-step3-run/native.log": "76a103243f5e6482e6e6bfc77fdda0c2cbeb3a4daa08628a6791acdaab06ddae",
+    "attempts/0003-step3-run/run-driver.py": "0cf37938f271a5e68842819c79460b446a79ee8615a51b7a08790d83d8b06713",
+    "cockpit.html": "6af8a0b5a807e6fbbe5d52c76d487af9d79615945a268b5ef56dd61d41aeee3f",
+    "disks/eda6a05e34d112f9973dd0c7336f8007a489042d31aa8a89edc13a7ec9e956b1": "eda6a05e34d112f9973dd0c7336f8007a489042d31aa8a89edc13a7ec9e956b1",
+    "session.json": "39703a3b1b29ddba1b5f52ed6ab0a374183a4ccedb52561dd9e7ee01cd73dfdb",
+    "step3/main.c": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+    "step6/main.c": "26437c8f25d7a0c0e0284bfef1b609d550cac81c2da0a068723fa252f403b42c"
+  },
+  "current_sources": {
+    "step3": {
+      "source_sha256": "9cacd9ec03b281c3ccde9faac0c21300b4f0b1b913e30d2f64a34162b9600570",
+      "validation": "CURRENT_STAGE_NOT_VALIDATED"
+    },
+    "step6": {
+      "source_sha256": "26437c8f25d7a0c0e0284bfef1b609d550cac81c2da0a068723fa252f403b42c",
+      "validation": "CURRENT_STAGE_NOT_VALIDATED"
+    }
+  },
+  "reference_imports": "unsupported; recorded reference is not learner work",
+  "privacy": "Local licensed artifacts. Review licences before sharing. No upload provided."
+}
