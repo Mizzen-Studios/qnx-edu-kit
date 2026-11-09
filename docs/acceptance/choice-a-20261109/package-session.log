@@ -1,0 +1,282 @@
+Mon Nov  9 19:24:18 UTC 2026
+uid=0(root) gid=0(root) groups=0(root)
+The following packages are only half configured, probably due to problems
+configuring them the first time.  The configuration should be retried using
+dpkg --configure <package> or the configure menu option in dselect:
+ ca-certificates      Common CA certificates
+
+The following packages have been triggered, but the trigger processing
+has not yet been done.  Trigger processing can be requested using
+dselect or dpkg --configure --pending (or dpkg --triggers-only):
+ man-db               tools for reading manual pages
+
+Setting up ca-certificates (20260816ubuntu0.24.04.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+4 added, 5 removed; done.
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for ca-certificates (20260816ubuntu0.24.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Processing triggers for ca-certificates-java (20240118) ...
+done.
+ca-certificates 20260816ubuntu0.24.04.1 install ok installed
+dbus-user-session 1.14.10-4ubuntu4.1 install ok installed
+libpam-systemd 255.4-1ubuntu8.18 install ok installed
+man-db 2.12.0-4build2 install ok installed
+systemd 255.4-1ubuntu8.18 install ok installed
+Reading package lists...
+Building dependency tree...
+Reading state information...
+dbus-user-session is already the newest version (1.14.10-4ubuntu4.1).
+dbus-user-session set to manually installed.
+libpam-systemd is already the newest version (255.4-1ubuntu8.18).
+libpam-systemd set to manually installed.
+The following additional packages will be installed:
+  acl ipxe-qemu libasound2-data libasound2t64 libbrlapi0.8 libcacard0
+  libdaxctl1 libfdt1 libndctl6 libpixman-1-0 libpmem1 librdmacm1t64 libslirp0
+  liburing2 libusbredirparser1t64 qemu-system-common qemu-system-data seabios
+Suggested packages:
+  alsa-utils libasound2-plugins samba vde2
+Recommended packages:
+  alsa-ucm-conf alsa-topology-conf qemu-utils ipxe-qemu-256k-compat-efi-roms
+  ovmf qemu-system-gui qemu-system-modules-spice qemu-system-modules-opengl
+  qemu-block-extra cpu-checker
+The following NEW packages will be installed:
+  acl ipxe-qemu libasound2-data libasound2t64 libbrlapi0.8 libcacard0
+  libdaxctl1 libfdt1 libndctl6 libpixman-1-0 libpmem1 librdmacm1t64 libslirp0
+  liburing2 libusbredirparser1t64 qemu-system-common qemu-system-data
+  qemu-system-x86 seabios
+0 upgraded, 19 newly installed, 0 to remove and 9 not upgraded.
+Need to get 17.2 MB of archives.
+After this operation, 86.2 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 acl amd64 2.3.2-1build1.1 [39.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 ipxe-qemu all 1.21.1+git-20220113.fbbdc3926-0ubuntu2 [1565 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libasound2-data all 1.2.11-1ubuntu0.3 [21.4 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libasound2t64 amd64 1.2.11-1ubuntu0.3 [398 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrlapi0.8 amd64 6.6-4ubuntu5 [31.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 libcacard0 amd64 1:2.8.0-3build4 [36.5 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 libdaxctl1 amd64 77-2ubuntu2 [21.4 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libndctl6 amd64 77-2ubuntu2 [62.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 libpixman-1-0 amd64 0.42.2-1build1 [279 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libpmem1 amd64 1.13.1-1.1ubuntu2 [84.8 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 librdmacm1t64 amd64 50.0-2ubuntu0.2 [70.7 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libslirp0 amd64 4.7.0-1ubuntu3.1 [63.8 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble/main amd64 liburing2 amd64 2.5-1build1 [21.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 libusbredirparser1t64 amd64 0.13.0-2.1build1 [16.5 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 qemu-system-common amd64 1:8.2.2+ds-0ubuntu1.18 [1255 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 qemu-system-data all 1:8.2.2+ds-0ubuntu1.18 [1796 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble/main amd64 libfdt1 amd64 1.7.0-2build1 [20.1 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble/main amd64 seabios all 1.16.3-2 [175 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 qemu-system-x86 amd64 1:8.2.2+ds-0ubuntu1.18 [11.2 MB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 17.2 MB in 5s (3432 kB/s)
+Selecting previously unselected package acl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 76187 files and directories currently installed.)
+Preparing to unpack .../00-acl_2.3.2-1build1.1_amd64.deb ...
+Unpacking acl (2.3.2-1build1.1) ...
+Selecting previously unselected package ipxe-qemu.
+Preparing to unpack .../01-ipxe-qemu_1.21.1+git-20220113.fbbdc3926-0ubuntu2_all.deb ...
+Unpacking ipxe-qemu (1.21.1+git-20220113.fbbdc3926-0ubuntu2) ...
+Selecting previously unselected package libasound2-data.
+Preparing to unpack .../02-libasound2-data_1.2.11-1ubuntu0.3_all.deb ...
+Unpacking libasound2-data (1.2.11-1ubuntu0.3) ...
+Selecting previously unselected package libasound2t64:amd64.
+Preparing to unpack .../03-libasound2t64_1.2.11-1ubuntu0.3_amd64.deb ...
+Unpacking libasound2t64:amd64 (1.2.11-1ubuntu0.3) ...
+Selecting previously unselected package libbrlapi0.8:amd64.
+Preparing to unpack .../04-libbrlapi0.8_6.6-4ubuntu5_amd64.deb ...
+Unpacking libbrlapi0.8:amd64 (6.6-4ubuntu5) ...
+Selecting previously unselected package libcacard0:amd64.
+Preparing to unpack .../05-libcacard0_1%3a2.8.0-3build4_amd64.deb ...
+Unpacking libcacard0:amd64 (1:2.8.0-3build4) ...
+Selecting previously unselected package libdaxctl1:amd64.
+Preparing to unpack .../06-libdaxctl1_77-2ubuntu2_amd64.deb ...
+Unpacking libdaxctl1:amd64 (77-2ubuntu2) ...
+Selecting previously unselected package libndctl6:amd64.
+Preparing to unpack .../07-libndctl6_77-2ubuntu2_amd64.deb ...
+Unpacking libndctl6:amd64 (77-2ubuntu2) ...
+Selecting previously unselected package libpixman-1-0:amd64.
+Preparing to unpack .../08-libpixman-1-0_0.42.2-1build1_amd64.deb ...
+Unpacking libpixman-1-0:amd64 (0.42.2-1build1) ...
+Selecting previously unselected package libpmem1:amd64.
+Preparing to unpack .../09-libpmem1_1.13.1-1.1ubuntu2_amd64.deb ...
+Unpacking libpmem1:amd64 (1.13.1-1.1ubuntu2) ...
+Selecting previously unselected package librdmacm1t64:amd64.
+Preparing to unpack .../10-librdmacm1t64_50.0-2ubuntu0.2_amd64.deb ...
+Unpacking librdmacm1t64:amd64 (50.0-2ubuntu0.2) ...
+Selecting previously unselected package libslirp0:amd64.
+Preparing to unpack .../11-libslirp0_4.7.0-1ubuntu3.1_amd64.deb ...
+Unpacking libslirp0:amd64 (4.7.0-1ubuntu3.1) ...
+Selecting previously unselected package liburing2:amd64.
+Preparing to unpack .../12-liburing2_2.5-1build1_amd64.deb ...
+Unpacking liburing2:amd64 (2.5-1build1) ...
+Selecting previously unselected package libusbredirparser1t64:amd64.
+Preparing to unpack .../13-libusbredirparser1t64_0.13.0-2.1build1_amd64.deb ...
+Unpacking libusbredirparser1t64:amd64 (0.13.0-2.1build1) ...
+Selecting previously unselected package qemu-system-common.
+Preparing to unpack .../14-qemu-system-common_1%3a8.2.2+ds-0ubuntu1.18_amd64.deb ...
+Unpacking qemu-system-common (1:8.2.2+ds-0ubuntu1.18) ...
+Selecting previously unselected package qemu-system-data.
+Preparing to unpack .../15-qemu-system-data_1%3a8.2.2+ds-0ubuntu1.18_all.deb ...
+Unpacking qemu-system-data (1:8.2.2+ds-0ubuntu1.18) ...
+Selecting previously unselected package libfdt1:amd64.
+Preparing to unpack .../16-libfdt1_1.7.0-2build1_amd64.deb ...
+Unpacking libfdt1:amd64 (1.7.0-2build1) ...
+Selecting previously unselected package seabios.
+Preparing to unpack .../17-seabios_1.16.3-2_all.deb ...
+Unpacking seabios (1.16.3-2) ...
+Selecting previously unselected package qemu-system-x86.
+Preparing to unpack .../18-qemu-system-x86_1%3a8.2.2+ds-0ubuntu1.18_amd64.deb ...
+Unpacking qemu-system-x86 (1:8.2.2+ds-0ubuntu1.18) ...
+Setting up libpixman-1-0:amd64 (0.42.2-1build1) ...
+Setting up libfdt1:amd64 (1.7.0-2build1) ...
+Setting up libcacard0:amd64 (1:2.8.0-3build4) ...
+Setting up acl (2.3.2-1build1.1) ...
+Setting up libasound2-data (1.2.11-1ubuntu0.3) ...
+Setting up libasound2t64:amd64 (1.2.11-1ubuntu0.3) ...
+Setting up libdaxctl1:amd64 (77-2ubuntu2) ...
+Setting up qemu-system-data (1:8.2.2+ds-0ubuntu1.18) ...
+Setting up seabios (1.16.3-2) ...
+Setting up libslirp0:amd64 (4.7.0-1ubuntu3.1) ...
+Setting up libusbredirparser1t64:amd64 (0.13.0-2.1build1) ...
+Setting up ipxe-qemu (1.21.1+git-20220113.fbbdc3926-0ubuntu2) ...
+Setting up libndctl6:amd64 (77-2ubuntu2) ...
+Setting up librdmacm1t64:amd64 (50.0-2ubuntu0.2) ...
+Setting up libbrlapi0.8:amd64 (6.6-4ubuntu5) ...
+Setting up liburing2:amd64 (2.5-1build1) ...
+Setting up libpmem1:amd64 (1.13.1-1.1ubuntu2) ...
+Setting up qemu-system-common (1:8.2.2+ds-0ubuntu1.18) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/qemu-kvm.service → /usr/lib/systemd/system/qemu-kvm.service.
+Setting up qemu-system-x86 (1:8.2.2+ds-0ubuntu1.18) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+dbus-user-session 1.14.10-4ubuntu4.1 install ok installed
+libpam-systemd 255.4-1ubuntu8.18 install ok installed
+qemu-system-x86 1:8.2.2+ds-0ubuntu1.18 install ok installed
+systemd 255.4-1ubuntu8.18 install ok installed
+QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)
+Copyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers
+# /usr/lib/systemd/system/user@.service
+#  SPDX-License-Identifier: LGPL-2.1-or-later
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=User Manager for UID %i
+Documentation=man:user@.service(5)
+After=user-runtime-dir@%i.service dbus.service systemd-oomd.service
+Requires=user-runtime-dir@%i.service
+IgnoreOnIsolate=yes
+
+[Service]
+User=%i
+PAMName=systemd-user
+Type=notify-reload
+ExecStart=/usr/lib/systemd/systemd --user
+Slice=user-%i.slice
+KillMode=mixed
+Delegate=pids memory cpu
+DelegateSubgroup=init.scope
+TasksMax=infinity
+TimeoutStopSec=120s
+KeyringMode=inherit
+OOMScoreAdjust=100
+MemoryPressureWatch=skip
+
+# /usr/lib/systemd/system/user@.service.d/10-login-barrier.conf
+#  SPDX-License-Identifier: LGPL-2.1-or-later
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+# Make sure user instances are started after logins are allowed. However this
+# is not desirable for user@0.service since root should be able to log in
+# earlier during the boot process especially if something goes wrong.
+After=systemd-user-sessions.service
+
+# /usr/lib/systemd/system/user@.service.d/timeout.conf
+# Avoid long hangs during shutdown if user services fail/hang due to X.org
+# going away too early
+[Service]
+TimeoutStopSec=5
+
+# /usr/lib/systemd/system/user-runtime-dir@.service
+#  SPDX-License-Identifier: LGPL-2.1-or-later
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=User Runtime Directory /run/user/%i
+Documentation=man:user@.service(5)
+After=dbus.service
+StopWhenUnneeded=yes
+IgnoreOnIsolate=yes
+
+[Service]
+ExecStart=/usr/lib/systemd/systemd-user-runtime-dir start %i
+ExecStop=/usr/lib/systemd/systemd-user-runtime-dir stop %i
+Type=oneshot
+RemainAfterExit=yes
+Slice=user-%i.slice
+Result=success
+ActiveState=active
+
+Result=success
+ActiveState=active
+HOME=/home/qnx
+LANG=C.UTF-8
+LOGNAME=qnx
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+SHELL=/bin/bash
+USER=qnx
+XDG_RUNTIME_DIR=/run/user/1001
+XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
+GSM_SKIP_SSH_AGENT_WORKAROUND=true
+SSH_AUTH_SOCK=/run/user/1001/gnupg/S.gpg-agent.ssh

@@ -1,0 +1,34 @@
+Mon Nov  9 19:22:32 UTC 2026
+uid=0(root) gid=0(root) groups=0(root)
+starting
+TARGET SOURCE     FSTYPE OPTIONS
+/boot  /dev/vda16 ext4   rw,relatime
+TARGET    SOURCE     FSTYPE OPTIONS
+/boot/efi /dev/vda15 vfat   rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+NAME     SIZE FSTYPE  LABEL           UUID                                 MOUNTPOINTS
+sr0      366K iso9660 cidata          2026-11-04-09-21-55-00               
+sr1     1024M                                                              
+vda       24G                                                              
+├─vda1    23G ext4    cloudimg-rootfs 59134bd0-a76f-4ea0-8e4a-770b2e1eafc2 /
+├─vda14    4M                                                              
+├─vda15  106M vfat    UEFI            0E9D-3FD8                            /boot/efi
+└─vda16  913M ext4    BOOT            b4f0deba-ce7d-45dc-9999-0427f2720320 /boot
+LABEL=cloudimg-rootfs	/	 ext4	discard,commit=30,errors=remount-ro	0 1
+LABEL=BOOT	/boot	ext4	defaults	0 2
+LABEL=UEFI	/boot/efi	vfat	umask=0077	0 1
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+JOB UNIT                                 TYPE  STATE
+145 snapd.autoimport.service             start waiting
+175 cloud-final.service                  start waiting
+158 snapd.seeded.service                 start running
+176 cloud-config.service                 start running
+173 cloud-init.target                    start waiting
+2   multi-user.target                    start waiting
+190 systemd-update-utmp-runlevel.service start waiting
+1   graphical.target                     start waiting
+585 update-notifier-download.service     start running
+181 snapd.service                        start running
+
+10 jobs listed.
