@@ -74,17 +74,30 @@ Bootstrap uses installed mkqnximage, fresh stock kernel/disk and learner-only sn
 
 ### Constrained guest prerequisites
 
-On512MiB SDK guest, inspect/reactivate only existing authorized1GiB disk swap: owner/size/free-space checks first; no overwrite/fstab/cap change, stop if absent. Platform/bundle on guest disk, not9p. Existing authorized guest root runs user-owned job via isolated transient service, HOME set for licensed user; keep queue separate:
+On512MiB SDK guest, inspect/reactivate only existing authorized1GiB disk swap: owner/size/free-space checks first; no overwrite/fstab/cap change, stop if absent. Choose EDU_SWAP, EDU_BUILD_USER, EDU_BUILD_HOME (existing licensed home), unique EDU_UNIT, user-owned EDU_JOB and external EDU_LOG. Guest root, authorized existing access only:
+
+~~~sh
+df -h "$(dirname "$EDU_SWAP")"
+stat "$EDU_SWAP"
+test "$(stat -c %s "$EDU_SWAP")" = 1073741824
+swapon --show
+if ! swapon --show=NAME --noheadings | grep -Fx "$EDU_SWAP"; then swapon "$EDU_SWAP"; fi
+free -m
+systemctl is-active host-queue.service
+systemctl show host-queue.service -p NRestarts
+~~~
+
+Stop on mismatch or unavailable authorization. Never create/resize swap here. Platform/bundle on guest disk, not9p. Existing authorized guest root runs user-owned job via isolated transient service, HOME set for licensed user; keep queue separate:
 
 ~~~sh
 # Guest root; chosen external job/log and existing licensed user:
-systemd-run --unit="$EDU_UNIT" --property="User=$EDU_BUILD_USER" --property=OOMPolicy=stop --property=RuntimeMaxSec=1830 --property="StandardOutput=file:$EDU_LOG" --property=StandardError=inherit /usr/bin/timeout --kill-after=15 1800 /bin/bash "$EDU_JOB"
+systemd-run --unit="$EDU_UNIT" --property="User=$EDU_BUILD_USER" --setenv="HOME=$EDU_BUILD_HOME" --property=OOMPolicy=stop --property=RuntimeMaxSec=1830 --property="StandardOutput=file:$EDU_LOG" --property=StandardError=inherit /usr/bin/timeout --kill-after=15 1800 /bin/bash "$EDU_JOB"
 # Wait for terminal state, not active/status0:
 systemctl show "$EDU_UNIT" -p ActiveState -p Result -p ExecMainStatus -p MainPID
 systemctl show host-queue.service -p ActiveState -p NRestarts
 ~~~
 
-Require inactive/Resultsuccess/ExecMainStatus0/MainPID0, queue active/no restart. EDU_JOB exports guest variables, set -eo pipefail, exact guest build sequence above. Retain logs externally; stop on OOM/failure/transport uncertainty. Do not substitute notebook build pointing to host paths.
+Require inactive/Resultsuccess/ExecMainStatus0/MainPID0, queue active/no restart. EDU_JOB exports guest variables (including licensed HOME), set -eo pipefail, exact guest build sequence above. Retain logs externally; stop on OOM/failure/transport uncertainty. Do not substitute notebook build pointing to host paths.
 
 ## 3. Transfer own bundle/disk, STOP/REAP guest, observe on HOST
 
