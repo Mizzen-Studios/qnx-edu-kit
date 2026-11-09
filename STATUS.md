@@ -1,16 +1,22 @@
 # Status — current bounded update 9 November 2026
 
-## Latest Choice A single-host wave: setup PASS, native BLOCKED
+## Current product lock — supported split-host, copy-only
 
-[Nov9 receipts](docs/acceptance/choice-a-20261109/NOTES.md): same existing licensed SDK host booted normally with real /boot and /boot/efi mounts; no boot repair needed. Expressly approved dpkg recovery, free distro QEMU and real packaged systemd user bus succeeded. Fresh own source/ELF/IFS/disk build PASS. Canonical nested-TCG native observations timed out at180s and one bounded900s retry, before learner markers/appRC: wrongFAIL/app0 NOT_OBSERVED, correctedPASS NOT_RUN. Validated own failure-evidence export retained, not learner acceptance. Inner/outer caps unchanged; all QEMU reaped and lease free. No further work scheduled; supported fallback remains split-host. Earlier single-host setup blockers below are historical, not current package/session state.
+Follow [the canonical route](docs/learner-route.md): licensed SDK guest builds → **STOP/REAP guest** → capped **HOST QEMU**, with one exclusive lease. Recorded [Nov8 wrapper journey](docs/acceptance/wrapper-20261108/NOTES.md) retains wrong FAIL despite app exit0, corrected PASS and original own export bindings. No native rerun at this documentation tip. HOST notes and standalone split receipts remain separately labeled.
 
-## Current upgrade — 8 November 2026, implemented; scoped verification complete, council gate pending
+Single-host **BLOCKED_NATIVE_TIMEOUT**: [immutable receipt](docs/acceptance/choice-a-20261109/receipt.json), root cause **UNVERIFIED**. No more single-host runs, timeout tuning or cap increases. No video; C6 STOPPED; private £0; independent review required.
+
+## Recorded Choice A wave — 9 November: setup PASS, native BLOCKED
+
+[Nov9 receipts](docs/acceptance/choice-a-20261109/NOTES.md): same existing licensed SDK host booted normally with real /boot and /boot/efi mounts; no boot repair needed. Expressly approved dpkg recovery, free distro QEMU and real packaged systemd user bus succeeded. Fresh own source/ELF/IFS/disk build PASS. Canonical nested-TCG native observations timed out at180s and one bounded900s retry, before learner markers/appRC: wrongFAIL/app0 NOT_OBSERVED, correctedPASS NOT_RUN. Validated own failure-evidence export retained, not learner acceptance. Inner/outer caps unchanged; all QEMU reaped and lease free. No further work scheduled; supported topology is split-host. Earlier single-host setup blockers below are historical, not current package/session state.
+
+## Recorded upgrade — 8 November 2026, implemented; scoped verification complete, council gate pending
 
 Olly approved the substantive [upgrade package](docs/upgrade-acceptance-20261108.md); the earlier feature-freeze statements below are preserved history, not the current instruction. Previous independent acceptance remains conditional and does not transfer to these new features.
 
 [Fresh prerequisite receipts](docs/acceptance/prereq-20261108/NOTES.md): same-ELF IO ability deny/allow in separate runs, bounded structured slog2 capture and actual co-located observer death/separate recorder survival were observed in the bound QEMU run. **Pathname policy BLOCKED**: installed tools alone do not establish attach/connect enforcement or loaded policy identities. Ability control is not /dev path policy or least-privilege proof.
 
-The [own-session cockpit](docs/learner-cockpit.md) is implemented with persisted notes, fixed CLI commands, own-source build/run orchestration and local evidence export. Host/browser checks remain HOST-only. Fresh actual wrapper runs are now [receipt-backed](docs/acceptance/wrapper-20261108/NOTES.md): wrong-step FAIL despite app0, corrected PASS, own /dev/edu10→3628800 with IRQ completion1/ack0; all nine attempts retained. The [ability-only stage](docs/ability-lesson.md) has same-ELF separate-process deny EPERM versus narrowed IO0..0 allow proof; it is not pathname policy. [Integrity review fixes](docs/acceptance/review-fixes-20261108/NOTES.md) now validate exports by action/assets, qualify historical-source PASS, and require explicit draft conflict resolution. Independent focused recheck PASS for all four assigned integrity findings; [final host verification and chronology](docs/acceptance/final-upgrade-20261108/NOTES.md) records exact tested revisions. This is not new council acceptance or a full audit. Single-host readiness remains BLOCKED in this split-host licensed environment; no fresh-install, second-SDK or human-learning acceptance.
+The [own-session cockpit](docs/learner-cockpit.md) is implemented with persisted notes, fixed CLI commands, own-source build/run orchestration and local evidence export. Host/browser checks remain HOST-only. Fresh actual wrapper runs are now [receipt-backed](docs/acceptance/wrapper-20261108/NOTES.md): wrong-step FAIL despite app0, corrected PASS, own /dev/edu10→3628800 with IRQ completion1/ack0; all nine attempts retained. The [ability-only stage](docs/ability-lesson.md) has same-ELF separate-process deny EPERM versus narrowed IO0..0 allow proof; it is not pathname policy. [Integrity review fixes](docs/acceptance/review-fixes-20261108/NOTES.md) now validate exports by action/assets, qualify historical-source PASS, and require explicit draft conflict resolution. Independent focused recheck PASS for all four assigned integrity findings; [final host verification and chronology](docs/acceptance/final-upgrade-20261108/NOTES.md) records exact tested revisions. This is not new council acceptance or a full audit. That earlier setup blocker is superseded by Nov9 BLOCKED_NATIVE_TIMEOUT above; no fresh-install, second-SDK or human-learning acceptance.
 
 C6/native safety STOPPED; SocketCAN UNVERIFIED. No heartbeat, actuation, recording, publication or deployment. recorded:false. Videos remain deferred until all features and final verification, with the separate recording gate preserved. sshd internal cause UNVERIFIED; no platform-health, safety, timing or continuous-availability claim.
 
@@ -19,11 +25,11 @@ C6/native safety STOPPED; SocketCAN UNVERIFIED. No heartbeat, actuation, recordi
 
 Start only with the [canonical learner route](docs/learner-route.md).
 
-## Current completion gate — 20:03 UTC
+## Historical completion gate — 7 November, 20:03 UTC
 
 Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. The 21:05 portability/diagnostics follow-up does not broaden acceptance. Canonical instruction tip 5876304a82d1c07ecde7401a9c522ef28ec268de is host-route packaging only; fresh-clone syntax/init and SDK-boundary negatives are not second-SDK portability proof. Renewed bounded diagnostic results are separately recorded in docs/acceptance/portability-20261107/. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
 
-Current native result: [bootstrap-final](docs/acceptance/bootstrap-final-20261107/NOTES.md), wrong FAIL/app0 → correct PASS → own /dev/edu 10→3628800, IRQ completion1/ack0. Earlier sections below are dated history, not current blockers.
+Recorded native result: [bootstrap-final](docs/acceptance/bootstrap-final-20261107/NOTES.md), wrong FAIL/app0 → correct PASS → own /dev/edu 10→3628800, IRQ completion1/ack0. Earlier sections below are dated history, not current blockers.
 
 [Private evidence review](REVIEW.md) records exact bindings and unresolved gaps.
 

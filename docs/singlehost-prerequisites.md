@@ -1,4 +1,6 @@
-# Existing licensed Linux x86_64 host prerequisites
+# Historical single-host package/session prerequisites
+
+**Not the supported learner entry.** Single-host **BLOCKED_NATIVE_TIMEOUT** ([Nov9 receipt](acceptance/choice-a-20261109/receipt.json)); root cause **UNVERIFIED**. No more single-host runs, timeout tuning or cap increases. Use [supported split-host](learner-route.md): SDK guest build → STOP/REAP guest → capped HOST QEMU. Commands below preserve the prior setup record, not a new execution instruction.
 
 This is not an SDK installer. Use your existing licensed SDP8 and compatible
 Generic x86_64 BSP. Do not log in, activate, copy another SDK or substitute an
@@ -33,12 +35,7 @@ systemctl --user show-environment >/dev/null
 ```
 
 The last command must succeed; variables alone are not proof of a running bus.
-Continue at [the canonical route](learner-route.md). The launcher verifies actual
-inner QEMU cpu.max<=100%, memory.max<=1GiB and nice>=15 and uses1vCPU/512MiB.
-Keep a real exclusive lock across the wave. On a single host no SDK VM needs
-stopping between build and native; stop/reap only the inner native VM after each
-attempt. In the constrained existing lab, the outer SDK VM stays capped and
-owned until the entire single-host attempt ends. No cap increase is permitted.
+Switch to [supported split-host](learner-route.md), not a nested native run. Host launcher verifies CPU100%, MemoryMax1GiB, nice15 and1vCPU/512MiB. Keep the real exclusive lease and STOP/REAP the SDK guest before HOST-native QEMU.
 
 A512MiB SDK host may require its already authorized1GiB disk swap for stock
 linking; inspect existing swap before reactivation, never create/resize silently.

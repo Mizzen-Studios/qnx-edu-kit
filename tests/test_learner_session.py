@@ -52,6 +52,15 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(json.loads((out/'session.json').read_text())['attempts'],[])
         self.assertTrue(all(x['validation']=='CURRENT_STAGE_NOT_VALIDATED' for x in manifest['current_sources'].values()))
 
+    def test_render_supported_split_host_handoff(self):
+        cockpit.render(self.work)
+        page=(self.work/'cockpit.html').read_text()
+        for text in ['Supported topology: split-host', 'STOP/REAP', 'SDK GUEST', 'HOST ONLY', 'BLOCKED_NATIVE_TIMEOUT', 'root cause UNVERIFIED', 'EDU_GUEST_SOURCE', 'EDU_HOST_SOURCE']:
+            self.assertIn(text,page)
+        self.assertNotIn('learner_session.py build',page)
+        self.assertNotIn('learner_session.py run',page)
+        self.assertIn('not imported notebook attempts',page)
+
     def test_readme_then_canonical_route_preserves_starters(self):
         import re,os
         route=(ROOT/'docs/learner-route.md').read_text()

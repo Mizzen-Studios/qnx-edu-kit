@@ -1,7 +1,7 @@
 {
   "schema": "qnx-capabilities.v1",
   "project": "qnx-edu-kit learner-owned fault-to-fix lab",
-  "boundary": "Nov8 approved bounded executable upgrades; historical rows retain their original receipts. HOST interface checks and native observations are distinct; new independent council gate pending. Existing licensed SDK only, current split-host readiness blocked, no new-install/second-SDK/human claim; path policy BLOCKED, ability control explicitly separate. C6/native safety STOPPED; SocketCAN UNVERIFIED; no safety/timing/availability/platform-health claims.",
+  "boundary": "Supported topology: split-host licensed SDK guest build, STOP/REAP guest, then capped HOST QEMU under sole lease. Recorded native rows retain original immutable source/ELF/IFS/disk bindings, not a current-tip rerun. Single-host BLOCKED_NATIVE_TIMEOUT (Nov9), root cause UNVERIFIED; no retries/tuning/cap increases. HOST notes and native observations distinct. No second-SDK/human/platform-health claim; pathname policy BLOCKED. C6 STOPPED; no video; private \u00a30; independent review pending.",
   "rows": [
     {
       "id": "host-checks",
@@ -80,7 +80,7 @@
       "domain": "host",
       "level": "workflow",
       "status": "PASS",
-      "claim": "Operable local notebook and CLI own-source orchestration; browser notes/export controls are host behavior, not human learning.",
+      "claim": "HOST local notes/export companion with labeled split guest-build/STOP-REAP/host-run handoff. Standalone split receipts are not automatically notebook attempts; not human acceptance.",
       "evidence": "docs/learner-cockpit.md"
     },
     {
@@ -88,7 +88,7 @@
       "domain": "native",
       "level": "learner-run",
       "status": "PASS",
-      "claim": "Actual notebook wrapper wrong stage FAIL despite app0, corrected PASS; all attempts preserved and own source/build/native bindings retained.",
+      "claim": "Recorded Nov8 split-host, explicit environment path mapping, not a current-tip rerun: Actual notebook wrapper wrong stage FAIL despite app0, corrected PASS; all attempts preserved and own source/build/native bindings retained.",
       "evidence": "docs/acceptance/wrapper-20261108/correct-native.json"
     },
     {
@@ -96,7 +96,7 @@
       "domain": "native",
       "level": "learner-run",
       "status": "PASS",
-      "claim": "Actual own wrapper /dev/edu write10/read3628800 with IRQ completion1 and ack0; no reference import or all-platform acceptance.",
+      "claim": "Recorded Nov8 split-host, explicit environment path mapping, not a current-tip rerun: Actual own wrapper /dev/edu write10/read3628800 with IRQ completion1 and ack0; no reference import or all-platform acceptance.",
       "evidence": "docs/acceptance/wrapper-20261108/finish-native.json"
     },
     {
@@ -120,8 +120,9 @@
       "domain": "host",
       "level": "setup",
       "status": "UNVERIFIED",
-      "claim": "BLOCKED by actual existing licensed x86_64 host probe rc2: SDK tools/components present, QEMU executable absent and user scope bus unavailable. Split route remains explicit; no install/copy/activation or native wrong/correct/finish attempted after gate.",
-      "evidence": "docs/acceptance/singlehost-20261108/receipt.json"
+      "claim": "BLOCKED_NATIVE_TIMEOUT: Nov9 package/user-bus setup PASS and own build PASS; native timeouts before learner markers/appRC. Root cause UNVERIFIED. Wrong FAIL/app0 not observed; corrected PASS not run. No retries/tuning/cap increases.",
+      "evidence": "docs/acceptance/choice-a-20261109/receipt.json",
+      "evidence_sha256": "c77c0006426b3c0f286007b7211537da3af06dbc1a05d0f5902a29b910cd6b23"
     }
   ]
 }

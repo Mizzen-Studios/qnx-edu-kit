@@ -1,5 +1,9 @@
 # edu-kit — learner-owned QNX fault-to-fix lab
 
+**Supported topology: split-host.** Licensed Linux x86_64 SDK guest builds → **STOP/REAP guest** → native QNX on capped **HOST QEMU** under the sole lease. [Canonical route](docs/learner-route.md).
+
+Single-host **BLOCKED_NATIVE_TIMEOUT** ([Nov9 receipt](docs/acceptance/choice-a-20261109/receipt.json)); root cause **UNVERIFIED**. No more single-host runs, timeout tuning or cap increases. No current-tip native rerun. C6 STOPPED; private £0; no video.
+
 ## Start here: predict → edit → observe → diagnose → explain
 
 **Create your own notebook now** (from this checkout, external fresh directory):
@@ -10,8 +14,8 @@ python3 scripts/learner_session.py init --work "$EDU_WORK"
 # Open the printed $EDU_WORK/cockpit.html locally; notes stay private.
 ```
 
-The generated notebook has persistent predictions, diagnosis, exact CLI actions
-and private source-bound export. A browser cannot execute shell commands;
+The generated notebook has persistent predictions, diagnosis, labeled split-host handoff commands
+and private HOST notes export. A browser cannot execute shell commands;
 import downloaded notes with the printed CLI. [Cockpit help](docs/learner-cockpit.md). Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
 SDK/BSP/QEMU paths and preflight; predict/edit step3, observe the wrong-write
 failure, diagnose/fix/rebuild and explain it; then edit your own step6 starter
@@ -21,14 +25,14 @@ Do not start with make check-reference-step*: those are reference runs, never
 your completion. Missing legal setup is BLOCKED, not solved by host checks.
 
 
-Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line now passes on the native target; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
+Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line passed in recorded split-host observations, not a rerun at this tip; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)
 now records intended wrong-edit FAIL despite app exit 0, followed by corrected
 native PASS. No reference receipt transfers.
 
-## Current scope — 8 November 2026
+## Recorded scope — 8 November 2026 (history)
 
 Owner independent completion gate: **CONDITIONAL, receipt-inspected, not re-run**, at accepted tip ada5d0ff03533a2fec0983f3fedbd9bada9df8a9. That historical gate is not acceptance of the Nov8 upgrade. Nov8 ability-only and own-wrapper observations are source-bound; current provenance validation is offline. New council review remains pending. Existing licensed SDK reuse and owner-lab paths only; no fresh install, second SDK, human learner or platform-health validation. CANopy native evidence was not rerun. sshd internal cause UNVERIFIED; C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Everything private.
 

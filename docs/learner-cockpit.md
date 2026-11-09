@@ -20,13 +20,9 @@ use the displayed fixed notes import command. Notes are session-bound; a draft
 alone is not in the evidence pack. CLI import is the durable notebook authority.
 Browser storage is convenience only and may vary with file URL/browser settings.
 
-Edit your main.c in your editor. Follow canonical setup and the notebook's exact
-source-bound build/run commands, under the same shared native lock. Replace the
-notes file placeholder with your actual download. Building requires a saved
-prediction, not a supplied answer. Read the raw log and individual checks; record
-your diagnosis; edit, rebuild, run again and explain. Refresh the notebook after
-CLI actions. Blank diagnosis/explanation are allowed while you are still working;
-no overall completion badge is fabricated from notes.
+Edit your main.c in your editor. Supported topology is **split-host**: existing licensed SDK guest builds, **STOP/REAP guest**, then capped HOST QEMU under the sole lease. Follow the [canonical route](learner-route.md), not identical-path local notebook build/run commands. Generated handoff commands use separate guest/host variables; verify transfer hashes. Predict before building, inspect raw checks, diagnose, fix and explain.
+
+The notebook remains a HOST notes/export companion. Standalone split receipts do not automatically become notebook attempts; there is no receipt import. The recorded Nov8 wrapper used explicit environment mapping, not a portable same-path promise. Refresh after local CLI actions; notes alone never fabricate completion.
 
 - Step3 wrong write12345679 must fail the existing fixed oracle even if app exit0.
   Correct write12345678 must observe edcba987; printing PASS does not suffice.
@@ -44,28 +40,9 @@ the active one. Intended failures, setup blocks and interrupted attempts remain.
 The existing learner_lab.py CLI, native mechanisms and stage oracles are unchanged.
 A supplemental [ability-only lesson](ability-lesson.md) now has permission prediction/diagnosis/explanation notes in the notebook/export. It is not pathname policy, and notes do not create a native acceptance badge. Actual native permission transcripts remain separately bound evidence.
 
-## Legal single-host setup plan
+## Single-host is blocked, not a learner entry route
 
-Run on your already licensed Linux x86_64 host. Supply your own paths:
-
-~~~sh
-python3 scripts/learner_setup.py --sdp-env "$EDU_SDP_ENV" --bsp "$EDU_BSP" --qemu "$EDU_QEMU" --work "$EDU_WORK"
-~~~
-
-The initial plan is read-only and BLOCKED until SDK probing is explicitly enabled.
-After trusting your SDK environment script, repeat with --probe-sdk. It invokes
-the existing learner_clean_preflight.py, validates host utilities/user-scope access,
-and prints exact exports and learner_bootstrap.sh commands. It does not invoke
-QEMU, build, install, activate or prompt for a licence. Choose the work path before
-session initialization; existing work is deliberately refused by the setup plan.
-
-EDU_BSP is an inventory/compatibility checkpoint, not a mkqnximage BSP selector.
-The chosen compatible BSP must already be installed into your licensed SDK's
-mkqnximage environment. An arbitrary BSP directory existing does not prove that.
-The original stock bootstrap remains the build authority and stops on errors.
-Do not copy an owner's image, run commands from a BLOCKED plan, or infer a fresh
-SDK install / second-SDK portability PASS. Existing canonical narrow versions and
-CPU/memory/lease stop gates remain in force. Preseed is not learner completion.
+**BLOCKED_NATIVE_TIMEOUT**, [Nov9 receipt](acceptance/choice-a-20261109/receipt.json); root cause **UNVERIFIED**. Package/user-bus setup passed but native attempts did not reach learner markers/appRC. No more single-host runs, timeout tuning or cap increases. The retained read-only learner_setup.py planner is historical tooling, not the supported route or proof of native readiness. No SDK installation/login/activation or second-SDK claim.
 
 ## Local own-pack export
 
@@ -97,6 +74,5 @@ node tests/browser_learner_session.cjs /new/external/qa-directory
 Set EDU_QA_CHROMIUM to your existing browser executable if needed. Desktop/mobile
 viewport QA is not a human learner or physical mobile-device validation. The Nov8 own-wrapper native observations are archived in
 [wrapper receipts](acceptance/wrapper-20261108/NOTES.md); historical observations
-do not validate your new source. Single-host readiness is a separate existing-host
-capability gate; a split-host PASS cannot satisfy it. No least-privilege, safety, timing, lifecycle, full-platform
+do not validate your new source or constitute a rerun at this tip. Single-host remains BLOCKED_NATIVE_TIMEOUT; a split-host PASS cannot satisfy it. C6 STOPPED; no video; private £0. No least-privilege, safety, timing, lifecycle, full-platform
 health, independent human acceptance or broad portability claim follows.
