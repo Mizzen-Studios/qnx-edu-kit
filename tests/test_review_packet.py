@@ -19,7 +19,8 @@ class ReviewPacket(unittest.TestCase):
   self.assertFalse(d['evidence']['export']['current_source_matches_receipt'])
   self.assertFalse(d['evidence']['route-export']['current_source_matches_receipt'])
   self.assertFalse(d['evidence']['bootstrap-export']['current_source_matches_receipt'])
-  self.assertTrue(d['evidence']['packaging-export']['current_source_matches_receipt'])
+  # Current tutorial differs; never promote the immutable old claat export.
+  self.assertFalse(d['evidence']['packaging-export']['current_source_matches_receipt'])
  def test_raw_success_and_negative_control_not_interchanged(self):
   d=packet.build()
   def receipt(k):return json.loads((ROOT/d['evidence'][k]['path']).read_text())

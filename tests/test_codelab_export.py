@@ -13,6 +13,13 @@ spec.loader.exec_module(export)
 
 
 class CodelabExport(unittest.TestCase):
+    def test_canonical_tutorial_copy_and_receipt_filenames(self):
+        subprocess.run(['python3', str(ROOT/'tools/tutorial_copy.py')], check=True, capture_output=True)
+        text=(ROOT/'codelab/codelab.md').read_text()
+        for marker in ['FAIL despite application exit0', 'STOP/REAP', 'EDU_GUEST_SOURCE', 'EDU_HOST_SOURCE', 'BLOCKED_NATIVE_TIMEOUT', 'wrong-native.log', 'correct-native.log', 'finish-native.log', 'PREFIX.json and PREFIX.log']:
+            self.assertIn(marker,text)
+        self.assertNotIn('PREFIX.native.json',text)
+
     def test_prepare_preserves_content_except_relative_paths(self):
         original = (ROOT / 'codelab/codelab.md').read_text()
         with tempfile.TemporaryDirectory() as tmp:

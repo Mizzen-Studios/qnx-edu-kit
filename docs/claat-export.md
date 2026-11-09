@@ -1,5 +1,7 @@
 # Official claat local export (private draft)
 
+**Nov9 tutorial-copy update:** current codelab differs from the immutable historical export receipts. Current static-site/host checks are not a fresh official claat export or native run. Historical export hashes remain unchanged; current source match is correctly false.
+
 ## Reproduce
 
 Python 3 standard library, Linux, network only for the explicit first download:

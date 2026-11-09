@@ -103,8 +103,8 @@ Edited step6 starter on the same fresh stock generic platform passed actual norm
 
 Supported canonical route observed on one existing licensed SDK: [supported-bootstrap result](docs/acceptance/bootstrap-final-20261107/NOTES.md). Fresh stock platform, wrong stageFAIL/app0, correctedPASS and own /dev/edu write10/read3628800+IRQack. Automated reuse only, not a second SDK or human gate. Old missing-host-SDK negative preserved. All guests reaped; no platform-health claim.
 
-## 21:05 follow-up boundaries
+## Historical 7 November 21:05 follow-up — superseded topology
 
-Single licensed Linux x86_64 host is the default route; constrained split-host VM/swap/service instructions are optional. Existing SDK reused; a clean second installation remains BLOCKED unless cached free NC entitlement and complete legal offline inputs can be established without login or licensing interaction. No native feature/sshd fix, capture or publication. Historical runtime pins and the 20:03 accepted conditional gate remain unchanged.
+**Historical statement, NOT current instructions:** a single licensed Linux x86_64 host was then the default and split-host optional. Superseded: supported topology is now **split-host**, SDK guest build → STOP/REAP guest → capped HOST QEMU; single-host BLOCKED_NATIVE_TIMEOUT, root cause UNVERIFIED. Existing SDK reused; a clean second installation remains BLOCKED unless cached free NC entitlement and complete legal offline inputs can be established without login or licensing interaction. No native feature/sshd fix, capture or publication. Historical runtime pins and the 20:03 accepted conditional gate remain unchanged.
 
 21:05 bounded follow-up result: fresh non-owner-path host87/85pass/2skip; canonical instructions5876304. Second SDK BLOCKED at read-only metadata/entitlement boundary, no install/login/licence change. Renewed unchanged baseline and separate traced image reproduce sshd Memory fault/core; internal cause UNVERIFIED, no fix or platform-health claim. No new slog2/backtrace. Guests stopped/reaped, lease free. [Exact follow-up receipts](docs/acceptance/portability-20261107/NOTES.md).

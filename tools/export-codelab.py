@@ -56,7 +56,7 @@ def prepare(root, stage):
         for path in (root / folder).rglob('*'):
             if not path.is_file() or 'site' in path.relative_to(root).parts:
                 continue
-            if path.suffix not in ('.md', '.svg', '.mmd', '.txt', '.json', '.c', '.h'):
+            if path.suffix not in ('.md', '.svg', '.mmd', '.txt', '.json', '.c', '.h') and path.relative_to(root).as_posix() not in {'docs/acceptance/wrapper-20261108/'+name for name in ('wrong-native.log', 'correct-native.log', 'finish-native.log')}:
                 continue
             if path.is_symlink() or not inside(path.resolve(), root):
                 raise ValueError('unsafe source asset: ' + str(path))

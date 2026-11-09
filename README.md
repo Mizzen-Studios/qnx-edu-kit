@@ -1,8 +1,11 @@
-# edu-kit — learner-owned QNX fault-to-fix lab
+# edu-kit — learn QNX by making a convincing wrong edit
 
-**Supported topology: split-host.** Licensed Linux x86_64 SDK guest builds → **STOP/REAP guest** → native QNX on capped **HOST QEMU** under the sole lease. [Canonical route](docs/learner-route.md).
-
-Single-host **BLOCKED_NATIVE_TIMEOUT** ([Nov9 receipt](docs/acceptance/choice-a-20261109/receipt.json)); root cause **UNVERIFIED**. No more single-host runs, timeout tuning or cap increases. No current-tip native rerun. C6 STOPPED; private £0; no video.
+A learner-owned PCI-to-/dev/edu lab: **wrong edit FAIL despite application exit0 → corrected PASS → shell write10/read3628800**.
+**QNX proven:** recorded source/ELF/IFS/disk-bound [wrong, correct and own finish logs](docs/acceptance/wrapper-20261108/NOTES.md), not a fresh run at this tip.
+**HOST only:** editable notebook, provenance/export checks and CI; these cannot certify your QNX edits or human learning.
+**How to build:** [cold-reader codelab, prerequisites and exact commands](codelab/codelab.md) — existing licensed SDK guest build → **STOP/REAP guest** → capped HOST QEMU, one lease.
+Single-host **BLOCKED_NATIVE_TIMEOUT** ([receipt](docs/acceptance/choice-a-20261109/receipt.json)); cause **UNVERIFIED**. No retries/tuning/cap increases.
+Private £0; C6 STOPPED; no recording/publication/SDK login. SSH/platform health and independent learner acceptance remain UNVERIFIED.
 
 ## Start here: predict → edit → observe → diagnose → explain
 
