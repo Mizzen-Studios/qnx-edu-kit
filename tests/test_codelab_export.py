@@ -20,6 +20,16 @@ class CodelabExport(unittest.TestCase):
             self.assertIn(marker,text)
         self.assertNotIn('PREFIX.native.json',text)
 
+    def test_dry_pack_preserves_original_native_pins(self):
+        old=json.loads(subprocess.check_output(['git','show','21f583df0a5402953efe63344a5d23ec84798ceb:docs/proof-capture/pack.json'],cwd=ROOT,text=True))
+        current=json.loads((ROOT/'docs/proof-capture/pack.json').read_text())
+        self.assertEqual(current['frozen_commit'],old['frozen_commit'])
+        for row in old['lines']:
+            now=next(r for r in current['lines'] if r['id']==row['id'])
+            for asset in row['assets']:self.assertIn(asset,now['assets'])
+        self.assertFalse(current['recorded'])
+        self.assertEqual(current['lines'][0]['id'],'L03')
+
     def test_prepare_preserves_content_except_relative_paths(self):
         original = (ROOT / 'codelab/codelab.md').read_text()
         with tempfile.TemporaryDirectory() as tmp:

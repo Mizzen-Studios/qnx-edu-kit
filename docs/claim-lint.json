@@ -33,7 +33,7 @@
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "3d64d75e25b01016da17ef1419f5c8b73f2450defaeade9593226c64f84eb24a",
+      "sha256": "e62bff3741c6fc8cac3d21dd4e6e1cc336397fdf94fbf6357993d3143799b28a",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -308,7 +308,7 @@
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "9f4af09dff335318c38ff04b1e6cb76465c26c84cac024141999168502e943f2",
+      "sha256": "5e7783a57ebcdcc3fcdd9eaabe20e15dcaa76f3b3fe0e638af42ab32a211b469",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -3774,9 +3774,9 @@
     "status": "PASS",
     "errors": [],
     "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-    "packet_source_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
-    "narration_words": 211,
-    "planned_seconds": 160,
+    "packet_source_commit": "502ac43e010af98a89fd026fa5241f245706f570",
+    "narration_words": 284,
+    "planned_seconds": 175,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",
     "recorded": false,
     "recording_performed": false,
@@ -3785,50 +3785,12 @@
     "claim_mapping_review": "explicit human-authored mapping to REVIEW; hashes check presence/identity, not semantic truth",
     "lines": [
       {
-        "id": "L01",
-        "words": 31,
-        "start": 0,
-        "end": 20,
-        "claim": "Automated learner-owned C reproduction using reused SDK only, not fresh install, second SDK or human validation.",
-        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/provenance.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
-        "label": "host-only provenance",
-        "assets": [
-          {
-            "path": "docs/acceptance/fresh-checkout-20261107/provenance.json",
-            "sha256": "f09afc939f11365e4fe28f485165acc44d7d204a7df3f7a6d32dbab4e25d6440"
-          }
-        ]
-      },
-      {
-        "id": "L02",
-        "words": 41,
-        "start": 20,
-        "end": 45,
-        "claim": "Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.",
-        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/preflight.json, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt, docs/acceptance/fresh-checkout-20261107/sdk-caps.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
-        "label": "recorded SDK build boundary",
-        "assets": [
-          {
-            "path": "docs/acceptance/fresh-checkout-20261107/preflight.json",
-            "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed"
-          },
-          {
-            "path": "docs/acceptance/fresh-checkout-20261107/platform-hashes.txt",
-            "sha256": "5ca743be667db1586f11b08492721d2ec1e058198dc4ae78898a6a40f0845dc7"
-          },
-          {
-            "path": "docs/acceptance/fresh-checkout-20261107/sdk-caps.json",
-            "sha256": "6cfb79499436f343f28ca22beb03ea274e8d0cbe1b00976029334bcb1c42ed2c"
-          }
-        ]
-      },
-      {
         "id": "L03",
-        "words": 24,
-        "start": 45,
-        "end": 75,
+        "words": 37,
+        "start": 0,
+        "end": 25,
         "claim": "Wrong step3 edit: applicationPASS/exit0 but independent stageFAIL from actual readback.",
-        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/wrong-native.json, docs/acceptance/fresh-checkout-20261107/wrong-native.log, docs/acceptance/fresh-checkout-20261107/step3/wrong.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/wrong-native.json, docs/acceptance/fresh-checkout-20261107/wrong-native.log, docs/acceptance/fresh-checkout-20261107/step3/wrong.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry. Also show separately labeled Nov8 wrapper pairs under docs/acceptance/wrapper-20261108/: wrong-native.json, wrong-native.log. Keep each transcript beside its own original receipt/build binding; never mix builds or label these current execution.",
         "label": "recorded native QEMU observation",
         "assets": [
           {
@@ -3842,16 +3804,26 @@
           {
             "path": "docs/acceptance/fresh-checkout-20261107/step3/wrong.c",
             "sha256": "c834e1c45aa6a994f1a1aa69888a6d87fa98c786ae28bed620eb799134e903c4"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/wrong-native.json",
+            "sha256": "8236c4f21222835ea7bf3f73916fe15e3ecac9fcf94e8b8158cebe87ad66be43",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/wrong-native.log",
+            "sha256": "ab4b9196603b441edb389eb355240d4c68baf22f154e4b23e29eb488796df6ee",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
           }
         ]
       },
       {
         "id": "L04",
-        "words": 28,
-        "start": 75,
-        "end": 100,
+        "words": 36,
+        "start": 25,
+        "end": 45,
         "claim": "Correct step3 edit stagePASS with cooperative source/ELF/IFS/disk hash binding.",
-        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/correct-native.json, docs/acceptance/fresh-checkout-20261107/correct-native.log, docs/acceptance/fresh-checkout-20261107/step3/correct.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/correct-native.json, docs/acceptance/fresh-checkout-20261107/correct-native.log, docs/acceptance/fresh-checkout-20261107/step3/correct.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry. Also show separately labeled Nov8 wrapper pairs under docs/acceptance/wrapper-20261108/: correct-native.json, correct-native.log. Keep each transcript beside its own original receipt/build binding; never mix builds or label these current execution.",
         "label": "recorded native QEMU observation",
         "assets": [
           {
@@ -3865,16 +3837,26 @@
           {
             "path": "docs/acceptance/fresh-checkout-20261107/step3/correct.c",
             "sha256": "2f37c2f234b10e78c9920372895b56e1efe7d4742cd099eb1f8a73ba46a8aaeb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/correct-native.json",
+            "sha256": "36477b8427a250c82258f33748cc62e179fef124d8b4989eaf67cacc67af8148",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/correct-native.log",
+            "sha256": "eebd9e28ab155e4a9c97368e71827144cf163610617a642c1c732afd2323a923",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
           }
         ]
       },
       {
         "id": "L05",
-        "words": 49,
-        "start": 100,
-        "end": 135,
+        "words": 48,
+        "start": 45,
+        "end": 80,
         "claim": "Initial edited manager failure preserved; corrected own manager shell write10/read3628800 and IRQcompletion/ack0, no reference checker.",
-        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/finish-native.json, docs/acceptance/fresh-checkout-20261107/finish-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected/manifest.json, docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/finish-native.json, docs/acceptance/fresh-checkout-20261107/finish-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.log, docs/acceptance/fresh-checkout-20261107/finish-corrected/manifest.json, docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry. Also show separately labeled Nov8 wrapper pairs under docs/acceptance/wrapper-20261108/: first-finish-native.json, first-finish-native.log, finish-native.json, finish-native.log, export-manifest.json, export-validation.json. Keep each transcript beside its own original receipt/build binding; never mix builds or label these current execution.",
         "label": "recorded native QEMU observation",
         "assets": [
           {
@@ -3900,14 +3882,108 @@
           {
             "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c",
             "sha256": "64647c88597eff57f0723ffb2e479f90501f717065edd5a008827866fd8b76fe"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/first-finish-native.json",
+            "sha256": "683c6ace21e774c697775f45ce24b4cec0b0511c6ee44680099b94ee8270c7e7",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/first-finish-native.log",
+            "sha256": "b4fc360803703f5b92373771d99e786a23c844c266ecdaf3671199c2df340f79",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/finish-native.json",
+            "sha256": "b2bcad7125ea0112d469bf00a35d5b2a5e21b2a8c52207e363d30e88200cb372",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/finish-native.log",
+            "sha256": "3682db231ff3c962f2517ddd94a9e0c40b46518a45b4a76470ba142cc1421cfa",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/export-manifest.json",
+            "sha256": "93da42cf3ffeadea342ea9da4585b35b8e62e0a8b2e446ac8be3fc51f130173c",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          },
+          {
+            "path": "docs/acceptance/wrapper-20261108/export-validation.json",
+            "sha256": "4efcdea324d79fe909eb3c2cd9aea5e49bc2440348d1f48c082d3b95613aee6f",
+            "commit": "21f583df0a5402953efe63344a5d23ec84798ceb"
+          }
+        ]
+      },
+      {
+        "id": "T01",
+        "words": 53,
+        "start": 80,
+        "end": 115,
+        "claim": "Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.",
+        "frame": "Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.",
+        "label": "HOST-only tutorial copy, not native execution",
+        "assets": [
+          {
+            "path": "codelab/codelab.md",
+            "sha256": "79d2b6ce09d41a6075cf338302d6028de2bb6960a4e4da35759c85deb0b42d26",
+            "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          },
+          {
+            "path": "README.md",
+            "sha256": "85b612cde34606f8cc2b0f5ecbbd10535d8a679811dc523ce3af01408f250e01",
+            "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          },
+          {
+            "path": "docs/learner-route.md",
+            "sha256": "e45eb9f4203306b1e839e09d361672152cb8489d991a2f4f66bc2d4741b46054",
+            "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          }
+        ]
+      },
+      {
+        "id": "L02",
+        "words": 41,
+        "start": 115,
+        "end": 135,
+        "claim": "Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/preflight.json, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt, docs/acceptance/fresh-checkout-20261107/sdk-caps.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "recorded SDK build boundary",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/preflight.json",
+            "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/platform-hashes.txt",
+            "sha256": "5ca743be667db1586f11b08492721d2ec1e058198dc4ae78898a6a40f0845dc7"
+          },
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/sdk-caps.json",
+            "sha256": "6cfb79499436f343f28ca22beb03ea274e8d0cbe1b00976029334bcb1c42ed2c"
+          }
+        ]
+      },
+      {
+        "id": "L01",
+        "words": 31,
+        "start": 135,
+        "end": 150,
+        "claim": "Automated learner-owned C reproduction using reused SDK only, not fresh install, second SDK or human validation.",
+        "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/provenance.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
+        "label": "host-only provenance",
+        "assets": [
+          {
+            "path": "docs/acceptance/fresh-checkout-20261107/provenance.json",
+            "sha256": "f09afc939f11365e4fe28f485165acc44d7d204a7df3f7a6d32dbab4e25d6440"
           }
         ]
       },
       {
         "id": "L06",
         "words": 38,
-        "start": 135,
-        "end": 160,
+        "start": 150,
+        "end": 175,
         "claim": "Unchanged baseline reproduces startup fault; separate traced image attributes sshd, internal cause and platformhealthUNVERIFIED.",
         "frame": "Local sanitized file view: docs/acceptance/startup-diagnosis-20261107/baseline.json, docs/acceptance/startup-diagnosis-20261107/baseline.log, docs/acceptance/startup-diagnosis-20261107/traced.json, docs/acceptance/startup-diagnosis-20261107/traced.log. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
         "label": "recorded native QEMU observation",
@@ -3936,19 +4012,19 @@
     "unbound_claim": {
       "rejected": true,
       "errors": [
-        "L01: unbound claim/frame"
+        "L03: unbound claim/frame"
       ]
     },
     "missing_asset": {
       "rejected": true,
       "errors": [
-        "L01: missing/unsafe asset docs/INTENTIONAL-MISSING-ASSET"
+        "L03: missing/unsafe asset docs/INTENTIONAL-MISSING-ASSET"
       ]
     },
     "changed_digest": {
       "rejected": true,
       "errors": [
-        "L01: changed frozen asset docs/acceptance/fresh-checkout-20261107/provenance.json"
+        "L03: changed frozen asset docs/acceptance/fresh-checkout-20261107/wrong-native.json"
       ]
     }
   },

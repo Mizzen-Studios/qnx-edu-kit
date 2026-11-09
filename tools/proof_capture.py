@@ -20,7 +20,7 @@ def validate(pack):
   for asset in row['assets']:
    path=asset['path']; p=ROOT/path
    if p.resolve().is_relative_to(ROOT) is False or not p.is_file(): errors.append(ident+': missing/unsafe asset '+path); continue
-   try: frozen=subprocess.check_output(['git','show',pack['frozen_commit']+':'+path],cwd=ROOT,stderr=subprocess.DEVNULL)
+   try: frozen=subprocess.check_output(['git','show',asset.get('commit',pack['frozen_commit'])+':'+path],cwd=ROOT,stderr=subprocess.DEVNULL)
    except subprocess.CalledProcessError: errors.append(ident+': asset absent at frozen commit '+path); continue
    if sha(frozen)!=asset['sha256'] or sha(p.read_bytes())!=asset['sha256']: errors.append(ident+': changed frozen asset '+path)
   lines.append({'id':ident,'words':count,'start':row['start'],'end':row['end'],'claim':row['claim'],'frame':row['frame'],'label':row['label'],'assets':row['assets']})
@@ -29,9 +29,9 @@ def validate(pack):
  if pack.get('capture_authorization')!='NOT_GRANTED: separate Olly OK required': errors.append('capture gate invalid')
  return {'kind':'private-proof-capture-DRY-PACK','status':'FAIL' if errors else 'PASS','errors':errors,'frozen_commit':pack['frozen_commit'],'packet_source_commit':pack.get('packet_source_commit',pack['frozen_commit']),'narration_words':words,'planned_seconds':previous,'duration_verified':'editorial plan only; no rehearsal/recorded duration','recorded':False,'recording_performed':False,'audio_performed':False,'publication_performed':False,'claim_mapping_review':'explicit human-authored mapping to REVIEW; hashes check presence/identity, not semantic truth','lines':lines}
 def script(pack,report):
- out=['# Private proof-capture DRY PACK', '', 'No recording or audio capture. Separate Olly OK required. No publication/upload authorized.', '', 'Accepted-tip asset binding: '+pack['frozen_commit'], 'Current packet instruction-source binding (not runtime acceptance): '+pack.get('packet_source_commit',pack['frozen_commit']), 'recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.', 'Exact whitespace narration word count: '+str(report['narration_words'])+'; planned '+str(report['planned_seconds'])+' seconds (not measured).', 'C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.', '']
+ out=['# Private proof-capture DRY PACK', '', 'No recording or audio capture. Separate Olly OK required. No publication/upload authorized.', '', 'Default historical asset binding (not current acceptance): '+pack['frozen_commit'], 'Instruction-copy freeze (not runtime acceptance): '+pack.get('packet_source_commit',pack['frozen_commit']), 'recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.', 'Exact whitespace narration word count: '+str(report['narration_words'])+'; planned '+str(report['planned_seconds'])+' seconds (not measured).', 'C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.', '']
  for x in pack['lines']:
-  out.extend(['## '+x['id']+' — '+str(x['start'])+'–'+str(x['end'])+' seconds · '+x['label'],'Claim: '+x['claim'],'Planned frame: '+x['frame'],'Narration: '+x['narration'],'Frozen files: '+', '.join(a['path']+' SHA256 '+a['sha256'] for a in x['assets']),'REVIEW boundary: '+x['review_quote'],''])
+  out.extend(['## '+x['id']+' — '+str(x['start'])+'–'+str(x['end'])+' seconds · '+x['label'],'Claim: '+x['claim'],'Planned frame: '+x['frame'],'Narration: '+x['narration'],'Frozen files: '+', '.join(a['path']+' SHA256 '+a['sha256']+' @ '+a.get('commit',pack['frozen_commit']) for a in x['assets']),'REVIEW boundary: '+x['review_quote'],''])
  return '\n'.join(out)+'\n'
 def main():
  a=argparse.ArgumentParser();a.add_argument('--write',action='store_true');args=a.parse_args()
