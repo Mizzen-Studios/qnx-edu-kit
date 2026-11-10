@@ -141,7 +141,7 @@
       "id": "T01",
       "start": 80,
       "end": 115,
-      "narration": "Follow the cold-reader codelab: predict the wrong edit, build using your existing licensed SDK guest, transfer matching hashed bytes, stop and reap that guest, then observe on capped host QEMU under the sole lease. Notebook and CI checks are host only. Single-host is blocked by native timeout, cause unverified; no retry or tuning.",
+      "narration": "Follow the cold-reader codelab: predict the wrong edit, use the existing licensed SDK guest, stop and reap it, then run capped host QEMU under one lease only if a valid image exists. Notebook and CI are host only. Current SDK gate is blocked; the earlier single-host timeout remains unverified. No tuning or retry.",
       "claim": "Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.",
       "frame": "Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.",
       "label": "HOST-only tutorial copy, not native execution",
@@ -149,18 +149,18 @@
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "79d2b6ce09d41a6075cf338302d6028de2bb6960a4e4da35759c85deb0b42d26",
-          "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          "sha256": "f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b",
+          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
         },
         {
           "path": "README.md",
-          "sha256": "85b612cde34606f8cc2b0f5ecbbd10535d8a679811dc523ce3af01408f250e01",
-          "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          "sha256": "de842d89a1718c6eedea242653ae75594844c2690990007fed6a552c3f07ee06",
+          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "e45eb9f4203306b1e839e09d361672152cb8489d991a2f4f66bc2d4741b46054",
-          "commit": "502ac43e010af98a89fd026fa5241f245706f570"
+          "sha256": "18a94e983c82a6984cc2bed800de68396252b333704c93eb41a4f70554fad170",
+          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "id": "L02",
       "start": 115,
       "end": 135,
-      "narration": "The run reused an existing licensed SDK and generated a new stock generic platform outside the repository. The build used guest disk swap. SDK and target guests ran serially under the stated CPU and memory caps; no proprietary artifacts are distributed.",
+      "narration": "That historical run reused an existing licensed SDK and generated a stock platform outside the repository, with then-existing guest swap. The new bounded attempt changes no swap or platform. SDK and target guests remain serial under fixed caps; no proprietary artifacts are distributed.",
       "claim": "Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.",
       "frame": "Local sanitized file view: docs/acceptance/fresh-checkout-20261107/preflight.json, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt, docs/acceptance/fresh-checkout-20261107/sdk-caps.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
       "label": "recorded SDK build boundary",
@@ -208,11 +208,11 @@
       "id": "L06",
       "start": 150,
       "end": 175,
-      "narration": "Startup sshd failure and full-platform health remain unverified; this is not a diagnosis of the later single-host timeout. That timeout cause is also unverified. C6 stays stopped. No recording, audio or publication is authorized; independent review remains required.",
-      "claim": "Unchanged baseline reproduces startup fault; separate traced image attributes sshd, internal cause and platformhealthUNVERIFIED.",
-      "frame": "Local sanitized file view: docs/acceptance/startup-diagnosis-20261107/baseline.json, docs/acceptance/startup-diagnosis-20261107/baseline.log, docs/acceptance/startup-diagnosis-20261107/traced.json, docs/acceptance/startup-diagnosis-20261107/traced.log. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.",
-      "label": "recorded native QEMU observation",
-      "review_quote": "Internal root cause and healthy-SSH/platform",
+      "narration": "The new wrong edit compiled and linked, but stock image generation was OOM-killed. No valid image, no new native run, no new pulse, logging or trace proof. SSH health and the single-host timeout cause remain unverified. C6 stays stopped. No recording, audio or publication; independent review required.",
+      "claim": "Nov10 SDK compile/link observed; BLOCKED_STOCK_MKIFS_OOM before native. Historical SSH/platform uncertainty unchanged.",
+      "frame": "Show Nov10 receipt.json, build-unit.txt and kernel-oom.txt under docs/acceptance/features-20261110: SDK build evidence only, never native execution. Zero-byte IFS is not a valid image. Then separately labeled historical startup-diagnosis assets, never combined into a new run.",
+      "label": "measured SDK gate BLOCKED; historical native diagnosis separately labeled",
+      "review_quote": "No new native PASS.",
       "assets": [
         {
           "path": "docs/acceptance/startup-diagnosis-20261107/baseline.json",
@@ -229,6 +229,21 @@
         {
           "path": "docs/acceptance/startup-diagnosis-20261107/traced.log",
           "sha256": "8250b3fc1c34e70b7d8bc8554c43d3c98fda3a9857f7d8d4c6576f62d7e5235c"
+        },
+        {
+          "path": "docs/acceptance/features-20261110/receipt.json",
+          "sha256": "a46001b78b1b9d96db12e7eb7d2da8e54515513108433492a9cce94c226fb88e",
+          "commit": "ee73b0fc54f55e6204eed89edbbd60794378b970"
+        },
+        {
+          "path": "docs/acceptance/features-20261110/build-unit.txt",
+          "sha256": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
+          "commit": "79f69d800c24b36c6fe44afb5952df1de5e06631"
+        },
+        {
+          "path": "docs/acceptance/features-20261110/kernel-oom.txt",
+          "sha256": "38b7ac914aef4d7c50bcab28fee6e83b5036b5664f81327def7ded8a3c67d3d2",
+          "commit": "79f69d800c24b36c6fe44afb5952df1de5e06631"
         }
       ]
     }
@@ -237,8 +252,8 @@
   "recorded": false,
   "gate": "CONDITIONAL: owner receipt-inspected, not re-run, 2026-11-07 20:03 UTC",
   "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "502ac43e010af98a89fd026fa5241f245706f570",
-  "prior_packet_source_commit": "5876304a82d1c07ecde7401a9c522ef28ec268de",
-  "current_copy_scope": "Nov9 docs-only split-host codelab. No current native rerun or renewed acceptance; original receipt/build pins unchanged.",
-  "native_pin_preservation": "All original assets retain their prior default commit and SHA256; added wrapper assets pinned at21f583df with their original immutable build bindings. Each observation remains separate."
+  "packet_source_commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d",
+  "prior_packet_source_commit": "502ac43e010af98a89fd026fa5241f245706f570",
+  "current_copy_scope": "Nov10 post-receipt docs/dry script only: one SDK gate BLOCKED_STOCK_MKIFS_OOM, no new native acceptance. Current tutorial binding is instruction copy, not runtime evidence.",
+  "native_pin_preservation": "All original native assets retain exactly their prior commits and SHA256. Only tutorial-copy bindings change; three new blocked SDK evidence assets are added separately, never native PASS."
 }

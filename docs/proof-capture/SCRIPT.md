@@ -3,9 +3,9 @@
 No recording or audio capture. Separate Olly OK required. No publication/upload authorized.
 
 Default historical asset binding (not current acceptance): ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
-Instruction-copy freeze (not runtime acceptance): 502ac43e010af98a89fd026fa5241f245706f570
+Instruction-copy freeze (not runtime acceptance): b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d
 recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.
-Exact whitespace narration word count: 284; planned 175 seconds (not measured).
+Exact whitespace narration word count: 295; planned 175 seconds (not measured).
 C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.
 
 ## L03 — 0–25 seconds · recorded native QEMU observation
@@ -32,14 +32,14 @@ REVIEW boundary: wrong host1/correct host0, initial finish host1/corrected finis
 ## T01 — 80–115 seconds · HOST-only tutorial copy, not native execution
 Claim: Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.
 Planned frame: Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.
-Narration: Follow the cold-reader codelab: predict the wrong edit, build using your existing licensed SDK guest, transfer matching hashed bytes, stop and reap that guest, then observe on capped host QEMU under the sole lease. Notebook and CI checks are host only. Single-host is blocked by native timeout, cause unverified; no retry or tuning.
-Frozen files: codelab/codelab.md SHA256 79d2b6ce09d41a6075cf338302d6028de2bb6960a4e4da35759c85deb0b42d26 @ 502ac43e010af98a89fd026fa5241f245706f570, README.md SHA256 85b612cde34606f8cc2b0f5ecbbd10535d8a679811dc523ce3af01408f250e01 @ 502ac43e010af98a89fd026fa5241f245706f570, docs/learner-route.md SHA256 e45eb9f4203306b1e839e09d361672152cb8489d991a2f4f66bc2d4741b46054 @ 502ac43e010af98a89fd026fa5241f245706f570
+Narration: Follow the cold-reader codelab: predict the wrong edit, use the existing licensed SDK guest, stop and reap it, then run capped host QEMU under one lease only if a valid image exists. Notebook and CI are host only. Current SDK gate is blocked; the earlier single-host timeout remains unverified. No tuning or retry.
+Frozen files: codelab/codelab.md SHA256 f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d, README.md SHA256 de842d89a1718c6eedea242653ae75594844c2690990007fed6a552c3f07ee06 @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d, docs/learner-route.md SHA256 18a94e983c82a6984cc2bed800de68396252b333704c93eb41a4f70554fad170 @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d
 REVIEW boundary: BLOCKED_NATIVE_TIMEOUT
 
 ## L02 — 115–135 seconds · recorded SDK build boundary
 Claim: Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.
 Planned frame: Local sanitized file view: docs/acceptance/fresh-checkout-20261107/preflight.json, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt, docs/acceptance/fresh-checkout-20261107/sdk-caps.json. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.
-Narration: The run reused an existing licensed SDK and generated a new stock generic platform outside the repository. The build used guest disk swap. SDK and target guests ran serially under the stated CPU and memory caps; no proprietary artifacts are distributed.
+Narration: That historical run reused an existing licensed SDK and generated a stock platform outside the repository, with then-existing guest swap. The new bounded attempt changes no swap or platform. SDK and target guests remain serial under fixed caps; no proprietary artifacts are distributed.
 Frozen files: docs/acceptance/fresh-checkout-20261107/preflight.json SHA256 b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/platform-hashes.txt SHA256 5ca743be667db1586f11b08492721d2ec1e058198dc4ae78898a6a40f0845dc7 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/sdk-caps.json SHA256 6cfb79499436f343f28ca22beb03ea274e8d0cbe1b00976029334bcb1c42ed2c @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
 REVIEW boundary: Stock generic build
 
@@ -50,10 +50,10 @@ Narration: This private EDU lab binds learner-owned C edits to saved QNX observa
 Frozen files: docs/acceptance/fresh-checkout-20261107/provenance.json SHA256 f09afc939f11365e4fe28f485165acc44d7d204a7df3f7a6d32dbab4e25d6440 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
 REVIEW boundary: automated, not independent human review
 
-## L06 — 150–175 seconds · recorded native QEMU observation
-Claim: Unchanged baseline reproduces startup fault; separate traced image attributes sshd, internal cause and platformhealthUNVERIFIED.
-Planned frame: Local sanitized file view: docs/acceptance/startup-diagnosis-20261107/baseline.json, docs/acceptance/startup-diagnosis-20261107/baseline.log, docs/acceptance/startup-diagnosis-20261107/traced.json, docs/acceptance/startup-diagnosis-20261107/traced.log. Show receipt checks/observed markers and binding fields; cuts labelled recorded evidence, never live telemetry.
-Narration: Startup sshd failure and full-platform health remain unverified; this is not a diagnosis of the later single-host timeout. That timeout cause is also unverified. C6 stays stopped. No recording, audio or publication is authorized; independent review remains required.
-Frozen files: docs/acceptance/startup-diagnosis-20261107/baseline.json SHA256 64c151b9e7bf93f9cb03c0d471d145e95d3eda34bfb7c0850f9279c8a3529108 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/baseline.log SHA256 b8a49a701c109c41ac4e6b7deeabad885dd45d4d84299afb9ee2609764cadde6 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/traced.json SHA256 09b26787145787d915bad34b2c705d0567afed5e4f8c1a532c1731de7e6a0894 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/traced.log SHA256 8250b3fc1c34e70b7d8bc8554c43d3c98fda3a9857f7d8d4c6576f62d7e5235c @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
-REVIEW boundary: Internal root cause and healthy-SSH/platform
+## L06 — 150–175 seconds · measured SDK gate BLOCKED; historical native diagnosis separately labeled
+Claim: Nov10 SDK compile/link observed; BLOCKED_STOCK_MKIFS_OOM before native. Historical SSH/platform uncertainty unchanged.
+Planned frame: Show Nov10 receipt.json, build-unit.txt and kernel-oom.txt under docs/acceptance/features-20261110: SDK build evidence only, never native execution. Zero-byte IFS is not a valid image. Then separately labeled historical startup-diagnosis assets, never combined into a new run.
+Narration: The new wrong edit compiled and linked, but stock image generation was OOM-killed. No valid image, no new native run, no new pulse, logging or trace proof. SSH health and the single-host timeout cause remain unverified. C6 stays stopped. No recording, audio or publication; independent review required.
+Frozen files: docs/acceptance/startup-diagnosis-20261107/baseline.json SHA256 64c151b9e7bf93f9cb03c0d471d145e95d3eda34bfb7c0850f9279c8a3529108 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/baseline.log SHA256 b8a49a701c109c41ac4e6b7deeabad885dd45d4d84299afb9ee2609764cadde6 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/traced.json SHA256 09b26787145787d915bad34b2c705d0567afed5e4f8c1a532c1731de7e6a0894 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/startup-diagnosis-20261107/traced.log SHA256 8250b3fc1c34e70b7d8bc8554c43d3c98fda3a9857f7d8d4c6576f62d7e5235c @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/features-20261110/receipt.json SHA256 a46001b78b1b9d96db12e7eb7d2da8e54515513108433492a9cce94c226fb88e @ ee73b0fc54f55e6204eed89edbbd60794378b970, docs/acceptance/features-20261110/build-unit.txt SHA256 47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608 @ 79f69d800c24b36c6fe44afb5952df1de5e06631, docs/acceptance/features-20261110/kernel-oom.txt SHA256 38b7ac914aef4d7c50bcab28fee6e83b5036b5664f81327def7ded8a3c67d3d2 @ 79f69d800c24b36c6fe44afb5952df1de5e06631
+REVIEW boundary: No new native PASS.
 

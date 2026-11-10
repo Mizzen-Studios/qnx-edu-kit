@@ -41,6 +41,26 @@ class CodelabExport(unittest.TestCase):
         self.assertFalse(current['recorded'])
         self.assertEqual(current['lines'][0]['id'],'L03')
 
+    def test_new_gate_receipt_never_promotes_native_and_keeps_evidence_hashes(self):
+        import hashlib
+        base=ROOT/'docs/acceptance/features-20261110'
+        receipt=json.loads((base/'receipt.json').read_text())
+        self.assertEqual(receipt['outcome'],'BLOCKED_STOCK_MKIFS_OOM')
+        self.assertFalse(receipt['image_is_valid'])
+        self.assertEqual(receipt['image_bytes'],0)
+        self.assertEqual(receipt['attempts'],1)
+        self.assertTrue(all(v.startswith('NOT_RUN') for v in receipt['native'].values()))
+        self.assertTrue(receipt['cleanup']['qemu_reaped'])
+        self.assertTrue(receipt['cleanup']['lease_free'])
+        for name,digest in receipt['evidence'].items():
+            self.assertEqual(hashlib.sha256((base/name).read_bytes()).hexdigest(),digest,name)
+        old=json.loads(subprocess.check_output(['git','show','a4189e8e5262bc717b5b10ad876c38dd8629a5aa:docs/proof-capture/pack.json'],cwd=ROOT,text=True))
+        current=json.loads((ROOT/'docs/proof-capture/pack.json').read_text())
+        for row in old['lines']:
+            if row['id']=='T01': continue  # instruction-copy freeze, never runtime
+            now=next(r for r in current['lines'] if r['id']==row['id'])
+            for asset in row['assets']:self.assertIn(asset,now['assets'])
+
     def test_prepare_preserves_content_except_relative_paths(self):
         original = (ROOT / 'codelab/codelab.md').read_text()
         with tempfile.TemporaryDirectory() as tmp:
