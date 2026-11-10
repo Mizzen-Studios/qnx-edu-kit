@@ -26,7 +26,8 @@ class CodelabExport(unittest.TestCase):
         self.assertLess(route.index('10→3628800'),route.index('## Prerequisite gate'))
         self.assertIn('stop: BLOCKED',route)
         self.assertIn('not a second IST or worker',route)
-        self.assertIn('NOT_RUN pending the serialized gate',route)
+        self.assertIn('every new native acceptance stage are NOT_RUN',route)
+        self.assertIn('BLOCKED_STOCK_MKIFS_OOM',route)
         self.assertIn('Do not activate/create/resize swap',route)
         self.assertNotIn('then swapon',route)
 

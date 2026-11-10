@@ -1,5 +1,9 @@
 # Status — current bounded update 9 November 2026
 
+## Nov10 feature gate: stopped at stock image build
+
+[Measured bounded receipt](docs/acceptance/features-20261110/NOTES.md): **BLOCKED_STOCK_MKIFS_OOM**. Own wrong-step3 source compiled and linked serially in the existing licensed SDK; stock platform image generation then OOM-killed a mkifs child (PID1617, anon RSS328616KiB). ifs.bin is zero bytes, not a bootable image. No HOST native run followed. Step6 compilation, new IRQ→private pulse→publication, bounded slog2 runtime capture and optional trace remain **NOT_RUN / UNVERIFIED**. Same caps; no swap/platform/package changes; SDK stopped/reaped and lease free. Historical Nov8 wrong/correct/finish receipts are unchanged, not proof of this new code. No new native PASS. Stop for independent owner review.
+
 ## Current product lock — supported split-host, copy-only
 
 Follow [the canonical route](docs/learner-route.md): licensed SDK guest builds → **STOP/REAP guest** → capped **HOST QEMU**, with one exclusive lease. Recorded [Nov8 wrapper journey](docs/acceptance/wrapper-20261108/NOTES.md) retains wrong FAIL despite app exit0, corrected PASS and original own export bindings. No native rerun at this documentation tip. HOST notes and standalone split receipts remain separately labeled.

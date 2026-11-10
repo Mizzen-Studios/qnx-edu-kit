@@ -1,5 +1,7 @@
 # Private demo preparation — DRY PACK only
 
+Current feature wave is **BLOCKED_STOCK_MKIFS_OOM**, not native acceptance. Own wrong-step3 SDK compile/link observed; no valid IFS, no new native run. [Exact Nov10 receipt](acceptance/features-20261110/NOTES.md). Any native frames below are separately labeled historical observations; added pulse/log/trace remain NOT_RUN.
+
 Canonical [line-by-line script, claims, frozen files and planned frames](proof-capture/SCRIPT.md), [pack](proof-capture/pack.json), [report](proof-capture/report.json). Exact narration count **211 words**, planned **160seconds (2:40)**. Editorial arithmetic only; no measured or rehearsed duration or target-timing claim.
 
 Run from any workdir: `python3 /your/checkout/tools/proof_capture.py`. Missing assets, changed frozen hashes, absent claim/REVIEW mapping or stale script/report fail. Current packet asset binding is toada5d0ff03533a2fec0983f3fedbd9bada9df8a9; no old receipt repinned. Structural identity checks do not automatically establish semantic truth.

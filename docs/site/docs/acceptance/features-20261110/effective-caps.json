@@ -1,0 +1,7 @@
+{
+  "qemu_pid": 384632,
+  "cgroup": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-rf1559b2835e546508e9bca913a615dd8.scope",
+  "cpu.max": "100000 100000",
+  "memory.max": "1073741824",
+  "nice": "15"
+}

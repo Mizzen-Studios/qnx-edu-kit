@@ -1,0 +1,11 @@
+/home/qnx/edu-features-20261110/active/learner.o 7512 bytes
+/home/qnx/edu-features-20261110/active/learner_bin 14696 bytes
+/home/qnx/edu-features-20261110/active/learner-start.sh 17 bytes
+/home/qnx/edu-features-20261110/own-step3-wrong.c 4957 bytes
+/home/qnx/edu-features-20261110/platform/output/data.part 64110592 bytes
+/home/qnx/edu-features-20261110/platform/output/system.part 78893056 bytes
+/home/qnx/edu-features-20261110/platform/output/ifs.bin 0 bytes
+/home/qnx/edu-features-20261110/platform/output/options 2541 bytes
+/home/qnx/edu-features-20261110/platform/local/valgrind.files 349 bytes
+/home/qnx/edu-features-20261110/platform/local/options 2541 bytes
+/home/qnx/edu-features-20261110/platform/local/ssh-ident 784 bytes

@@ -1,0 +1,1 @@
+/home/qnx/edu-features-20261110/active/learner_bin: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /usr/lib/ldqnx-64.so.2, BuildID[md5/uuid]=bde23c97edb0d4992d877955bc8043c6, with debug_info, not stripped

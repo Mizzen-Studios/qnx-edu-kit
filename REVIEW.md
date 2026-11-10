@@ -1,5 +1,9 @@
 # Private capability review — 7 November 2026
 
+## Nov10 feature gate: stopped at stock image build
+
+[Measured bounded receipt](docs/acceptance/features-20261110/NOTES.md): **BLOCKED_STOCK_MKIFS_OOM**. Own wrong-step3 source compiled and linked serially in the existing licensed SDK; stock platform image generation then OOM-killed a mkifs child (PID1617, anon RSS328616KiB). ifs.bin is zero bytes, not a bootable image. No HOST native run followed. Step6 compilation, new IRQ→private pulse→publication, bounded slog2 runtime capture and optional trace remain **NOT_RUN / UNVERIFIED**. Same caps; no swap/platform/package changes; SDK stopped/reaped and lease free. Historical Nov8 wrong/correct/finish receipts are unchanged, not proof of this new code. No new native PASS. Stop for independent owner review.
+
 ## Current topology lock — 9 November 2026, copy-only
 
 Supported topology: **split-host** licensed SDK guest build → **STOP/REAP guest** → capped **HOST QEMU**, sole lease throughout. Follow [canonical route](docs/learner-route.md). Single-host **BLOCKED_NATIVE_TIMEOUT**, [original Nov9 receipt](docs/acceptance/choice-a-20261109/receipt.json); root cause **UNVERIFIED**. No more single-host runs, timeout tuning or cap increases. Recorded Nov7/Nov8 native receipts and export bindings remain immutable, not current-tip reruns. HOST notes are separate from standalone split receipts. C6 STOPPED; no video; private £0; independent review required.

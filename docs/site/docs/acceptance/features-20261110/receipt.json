@@ -1,0 +1,74 @@
+{
+  "kind": "edu-features-bounded-split-host-v1",
+  "observed_at_utc": "2026-11-10T10:37:53.338572+00:00",
+  "outcome": "BLOCKED_STOCK_MKIFS_OOM",
+  "source_commit": "a4189e8e5262bc717b5b10ad876c38dd8629a5aa",
+  "topology": "existing licensed Linux SDK guest build -> STOP/REAP -> HOST native; HOST phase NOT_RUN because no valid IFS",
+  "attempts": 1,
+  "sdk_compile_wrong_step3": "PASS: before_compile -> after_compile reached",
+  "sdk_link_wrong_step3": "PASS: after_link reached; QNX x86_64 ELF preserved",
+  "step6_compile": "NOT_RUN",
+  "stock_platform": "BLOCKED at Generating ifs: mkifs child OOM-killed; no valid IFS or disk-qemu",
+  "image_bytes": 0,
+  "image_is_valid": false,
+  "unit_result": "oom-kill",
+  "unit_exec_main_status": 15,
+  "oom": {
+    "pid": 1617,
+    "task": "x86_64-pc-nto-q",
+    "uid": 1001,
+    "anon_rss_kib": 328616,
+    "file_rss_kib": 1736,
+    "total_vm_kib": 588924,
+    "exact_relink_input": "UNVERIFIED: not captured in this EDU attempt; do not borrow CAN command attribution"
+  },
+  "resources": {
+    "cpu_max": "100000 100000",
+    "memory_max_bytes": 1073741824,
+    "nice": 15,
+    "guest_cpus": 1,
+    "guest_memory_mib": 512,
+    "swap": "none; no changes",
+    "before_stock_available_mib": 313
+  },
+  "native": {
+    "wrong_fail_app0": "NOT_RUN",
+    "corrected_step3": "NOT_RUN; corrected source not created",
+    "step6_pulse_slog2": "NOT_RUN",
+    "optional_trace": "NOT_RUN; installed image tool availability UNVERIFIED"
+  },
+  "preserved_private_artifacts": {
+    "guest_root": "/home/qnx/edu-features-20261110",
+    "host_private_copy": "/home/ubuntu/qnx-host/guest/shared/features-edu-20261110/preserved",
+    "object_sha256": "165196fdc03e418a97d4fda4bf8b5dee77ea7061769664d64ed0e32845d00461",
+    "elf_sha256": "25b2ab850402a9e0a932ff675035208d76ce60ca80455f77e3302f2c0f08be98",
+    "partitions": "original guest disk retains partial data.part/system.part; hashes in artifact-hashes.txt; neither is a completed bootable disk"
+  },
+  "cleanup": {
+    "build_lane_stopped": true,
+    "build_processes_after_stop": "none observed",
+    "qemu_reaped": true,
+    "owner_result_collected": "exit0",
+    "lease_free": true,
+    "platform_or_package_or_swap_changes": false,
+    "prior_CAN_units": "snapd.socket, apport.service, udisks2.service all ActiveState=active observed; no changes by EDU"
+  },
+  "evidence": {
+    "artifact-hashes.txt": "38aeaaff5bfe21b9d22425261b6ac7be2788d7cfa82cdb00de3de8a80434dbe1",
+    "artifact-inventory.txt": "7a30717f475d8a2aef0f42098e0bb6c011962b4f41e034b3953622ec79168f44",
+    "build-plan.sh": "a0c47cd027ffcd54f608e150a720c173d3bc77ce92f25239ec292cb2a18370c9",
+    "build-processes-after-stop.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-unit-final.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
+    "build-unit.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
+    "build.log": "6a1ee62c89194debf3c0efc931839d3586ba4093fdc3372f5d85605ccd711174",
+    "dispatch.log": "4e595eab6e01065c773e7c84da7a1ec316254c1e60238b3471fb483ddf655c60",
+    "dispatch.sh": "c5966f2c2913f62c9f191b31994c737387b55c8ed2193707b0bb7942f91f2d43",
+    "effective-caps.json": "0f9e110bbc91328d86de5f9275a3d7d9d2fd58cc064351fd51ea2aa9fd5d6315",
+    "elf-type.txt": "bc21bdfbe1214213a28745877391274da95df368e4f8367bc7741b914391162e",
+    "kernel-oom.txt": "38b7ac914aef4d7c50bcab28fee6e83b5036b5664f81327def7ded8a3c67d3d2",
+    "memory-after.txt": "fc72570aaf11bd862ff4e50a883613a49710a88141f42dd44392af84539bbd2a",
+    "observe.sh": "778edc4c71195cae3d3e6a0b694dcdcbcf2a2bb67b5f5794425b213e1fa41a56",
+    "preserve.sh": "650dda5f74305e381cb0524764cc2e57d2997b10f31436c377a46edefe1dfc9b",
+    "step3-wrong.c": "7868b7dfa3fc1d3f21600bc4231430d5c40f082f63999fd4b57d3485f945a19c"
+  }
+}
