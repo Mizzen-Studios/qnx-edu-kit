@@ -6,6 +6,7 @@
 #include <sys/dispatch.h>
 #include <sys/mman.h>
 #include <sys/neutrino.h>
+#include <sys/slog2.h>
 #include <pci/pci.h>
 #include <errno.h>
 #include <inttypes.h>
@@ -19,6 +20,8 @@
 #define MAP_BYTES 0x1000U
 #define INPUT_MAX 3U
 #define RESULT_MAX 16U
+#define EDU_PULSE_CODE (_PULSE_CODE_MINAVAIL + 1)
+#define EDU_LOG_LIMIT 8U
 #define DEADLINE_NS UINT64_C(1000000000)
 
 /* Only main's dispatch thread accesses PCI, registers or these objects. */
@@ -28,6 +31,62 @@ static size_t latest_len;
 static int failed;
 static int irq_id = -1;
 static unsigned irq_completions;
+static int pulse_chid = -1, pulse_coid = -1;
+static slog2_buffer_t event_buffer;
+static unsigned event_count;
+
+/* One page and at most eight writes for the entire process, never a log loop.
+ * Logging failure is an observation failure, not evidence of completed I/O. */
+static int edu_event(uint16_t code, const char *text)
+{
+    if (event_count >= EDU_LOG_LIMIT) return EOK;
+    if (slog2c(event_buffer, code, SLOG2_INFO, text) < 0) return EIO;
+    ++event_count;
+    return EOK;
+}
+
+static int setup_events(void)
+{
+    slog2_buffer_set_config_t config = {0};
+    config.buffer_set_name = "edu_learner";
+    config.num_buffers = 1;
+    config.verbosity_level = SLOG2_INFO;
+    config.buffer_config[0].buffer_name = "events";
+    config.buffer_config[0].num_pages = 1;
+    config.max_retries = 3;
+    if (slog2_register(&config, &event_buffer, SLOG2_LIMIT_RETRIES) < 0) return EIO;
+    pulse_chid = ChannelCreate(_NTO_CHF_PRIVATE);
+    if (pulse_chid < 0) return errno;
+    pulse_coid = ConnectAttach(0, 0, pulse_chid, _NTO_SIDE_CHANNEL, 0);
+    if (pulse_coid < 0) return errno;
+    puts("EDU RESMGR SLOG2 configured pages=1 limit=8");
+    return edu_event(1, "EDU_EVENT ready channel=private budget=8 pages=1");
+}
+
+/* Explicit, intra-process teaching handoff. The SAME dispatch/IAT owner sends
+ * and receives one pulse after the real own-bit IRQ/ack. This is not a second
+ * IST, asynchronous resmgr worker, timing proof or a replacement for IRQ ack. */
+static int irq_to_dispatch(unsigned sequence, unsigned input, uint32_t result)
+{
+    struct _pulse pulse;
+    uint64_t receive_limit = DEADLINE_NS;
+    char text[128];
+    if (MsgSendPulse(pulse_coid, -1, EDU_PULSE_CODE, (int)sequence) < 0)
+        return errno;
+    if (TimerTimeout(CLOCK_MONOTONIC, _NTO_TIMEOUT_RECEIVE, NULL,
+                     &receive_limit, NULL) < 0) return errno;
+    if (MsgReceivePulse(pulse_chid, &pulse, sizeof(pulse), NULL) < 0)
+        return errno;
+    if (pulse.code != EDU_PULSE_CODE || pulse.value.sival_int != (int)sequence)
+        return EBADMSG;
+    snprintf(text, sizeof(text),
+             "EDU_EVENT pulse sequence=%u input=%u result=%" PRIu32,
+             sequence, input, result);
+    if (edu_event(3, text) != EOK) return EIO;
+    printf("EDU RESMGR PULSE sequence=%u input=%u result=%" PRIu32
+           " sent=1 received=1 owner=same-thread\n", sequence, input, result);
+    return EOK;
+}
 
 typedef struct {
     iofunc_ocb_t base; /* Must be first: library uses the standard OCB. */
@@ -89,6 +148,14 @@ static int factorial(unsigned value, uint32_t *result)
         }
         if (complete) {
             *result = regs[2];
+            char text[128];
+            snprintf(text, sizeof(text),
+                     "EDU_EVENT irq sequence=%u input=%u result=%" PRIu32 " ack=%08" PRIx32,
+                     irq_completions + 1U, value, *result, regs[0x24/4]);
+            int handoff_error = edu_event(2, text);
+            if (handoff_error == EOK)
+                handoff_error = irq_to_dispatch(irq_completions + 1U, value, *result);
+            if (handoff_error != EOK) { failed = 1; return handoff_error; }
             printf("EDU RESMGR IRQ completion=%u input=%u result=%" PRIu32 " ack=%08" PRIx32 "\n",
                    ++irq_completions, value, *result, regs[0x24/4]);
             return EOK;
@@ -270,6 +337,10 @@ int main(void)
     irq_id = InterruptAttachThread(irq, _NTO_INTR_FLAGS_TRK_MSK);
     if (irq_id < 0) { perror("InterruptAttachThread"); goto done; }
     printf("EDU RESMGR IAT attached irq=%d id=%d\n", irq, irq_id);
+    if (setup_events() != EOK) {
+        fputs("EDU pulse/slog2 setup failed\n", stderr);
+        goto done;
+    }
     /* TODO: dispatch/iofunc setup; bounded edu_write/edu_read;
      * publish /dev/edu last and allocate per-open snapshots.
      * Handlers above are the reference scaffolding, not proof of readiness. */
@@ -285,6 +356,8 @@ done:
     if (dispatch != NULL)
         dispatch_destroy(dispatch);
     if (irq_id >= 0) InterruptDetach(irq_id);
+    if (pulse_coid >= 0) ConnectDetach(pulse_coid);
+    if (pulse_chid >= 0) ChannelDestroy(pulse_chid);
     if (regs != MAP_FAILED) regs[0x64/4] = 0xffffffffU;
     if (regs != MAP_FAILED)
         munmap((void *)regs, MAP_BYTES);

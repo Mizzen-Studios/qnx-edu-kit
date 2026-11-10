@@ -34,12 +34,35 @@ def manifest_kind(stage):
         raise ValueError('unknown learner stage')
     return 'learner-step3-v1' if stage == 'step3' else 'learner-dev-edu-v1'
 
+def observation_start(source_hash):
+    # Installed image tools only. No mkifs additions or package/component setup.
+    return ('trace_pid=\n'
+        'if command -v tracelogger >/dev/null 2>&1 && command -v od >/dev/null 2>&1; then\n'
+        '  tracelogger -s1 -S64K -k1 -b1 -A EDU_SOURCE='+source_hash+' -f /tmp/edu-slice.kev >/tmp/edu-trace.log 2>&1 &\n'
+        '  trace_pid=$!\n'
+        'else echo LEARNER_TRACE OMITTED tools_absent; fi\n')
+
+def observation_finish():
+    return ('echo LEARNER_SLOG2_BEGIN\n'
+        'slog2info -b edu_learner\nslog_rc=$?\n'
+        'echo LEARNER_SLOG2_END rc=$slog_rc\n'
+        'if test -n "$trace_pid"; then\n'
+        '  wait "$trace_pid"; trace_rc=$?\n'
+        '  if test "$trace_rc" = 0 && test -s /tmp/edu-slice.kev; then\n'
+        '    echo LEARNER_TRACE_BEGIN format=hex\n'
+        '    od -An -tx1 -v /tmp/edu-slice.kev\n'
+        '    echo LEARNER_TRACE_END rc=0\n'
+        '  else echo LEARNER_TRACE UNVERIFIED rc=$trace_rc; cat /tmp/edu-trace.log; fi\n'
+        'fi\n')
+
 def startup(stage, source_hash, binary_hash):
     binding = f'echo LEARNER_BIND source={source_hash} binary={binary_hash}\n'
+    begin = '#!/bin/sh\n'+binding+observation_start(source_hash)
     if stage == 'step3':
-        return '#!/bin/sh\n'+binding+'/proc/boot/learner_bin\necho LEARNER_RC=$?\n'
+        return (begin+'/proc/boot/learner_bin\napp_rc=$?\n'+observation_finish()+
+                'echo LEARNER_RC=$app_rc\n')
     manifest_kind(stage)
-    return ('#!/bin/sh\n'+binding+
+    return (begin+
         'echo "EDU TARGET $(uname -s) $(uname -r) $(uname -m)"\n'
         '/proc/boot/learner_bin &\nlearner_pid=$!\n'
         'if ! waitfor /dev/edu 30; then kill "$learner_pid"; wait "$learner_pid"; echo LEARNER_RC=2; exit 2; fi\n'
@@ -47,9 +70,44 @@ def startup(stage, source_hash, binary_hash):
         'observed=$(cat /dev/edu)\nread_rc=$?\n'
         'echo "LEARNER_DEV_EDU write_rc=$write_rc read_rc=$read_rc result=$observed"\n'
         'result_rc=1\n'
-        'if test "$write_rc" = 0 && test "$read_rc" = 0 && test "$observed" = 3628800; then result_rc=0; fi\n'
+        'if test "$write_rc" = 0 && test "$read_rc" = 0 && test "$observed" = 3628800; then result_rc=0; fi\n'+
+        observation_finish()+
         'kill "$learner_pid"\nwait "$learner_pid"\necho LEARNER_DAEMON_EXIT=$?\n'
         'echo LEARNER_RC=$result_rc\n')
+
+def observability_checks(output, manifest):
+    mode = manifest.get('observability')
+    if mode is None: return {} # Immutable historical manifests retain their scope.
+    clean = output.replace('\r', '')
+    sections = re.findall(r'^LEARNER_SLOG2_BEGIN\n(.*?)^LEARNER_SLOG2_END rc=0$', clean, re.M|re.S)
+    logs = sections[0] if len(sections) == 1 else ''
+    checks = {'finite_slog2':len(sections) == 1 and bool(logs.strip())}
+    if mode == 'pulse-slog2-v1':
+        checks.update(
+            pulse_handoff=re.findall(r'^EDU RESMGR PULSE sequence=(\d+) input=(\d+) result=(\d+) sent=1 received=1 owner=same-thread$',clean,re.M) == [('1','10','3628800')],
+            bounded_slog2_config=clean.splitlines().count('EDU RESMGR SLOG2 configured pages=1 limit=8') == 1,
+            slog2_irq=re.findall(r'EDU_EVENT irq sequence=(\d+) input=(\d+) result=(\d+) ack=([0-9a-f]{8})$',logs,re.M) == [('1','10','3628800','00000000')],
+            slog2_pulse=re.findall(r'EDU_EVENT pulse sequence=(\d+) input=(\d+) result=(\d+)$',logs,re.M) == [('1','10','3628800')])
+    elif mode == 'slog2-v1':
+        actual = re.findall(r'^LEARNER_MMIO id=([0-9a-f]{8}) write=([0-9a-f]{8}) read=([0-9a-f]{8})$',clean,re.M)
+        logged = re.findall(r'EDU_EVENT mmio id=([0-9a-f]{8}) write=([0-9a-f]{8}) read=([0-9a-f]{8})$',logs,re.M)
+        checks['slog2_actual_mmio'] = len(actual) == 1 and logged == actual
+    else: checks['known_observability_mode'] = False
+    return checks
+
+def trace_observation(output):
+    clean = output.replace('\r', '')
+    parts = re.findall(r'^LEARNER_TRACE_BEGIN format=hex\n(.*?)^LEARNER_TRACE_END rc=0$',clean,re.M|re.S)
+    if not parts:
+        return {'status':'OMITTED' if 'LEARNER_TRACE OMITTED tools_absent' in clean else 'UNVERIFIED',
+                'coverage':'UNVERIFIED; no timing/performance claim'}, None
+    if len(parts) != 1 or not re.fullmatch(r'[0-9a-f\s]+',parts[0]):
+        raise ValueError('ambiguous or corrupt optional trace envelope')
+    try: data = bytes.fromhex(parts[0])
+    except ValueError as error: raise ValueError('corrupt optional trace bytes') from error
+    if not 0 < len(data) <= 65536: raise ValueError('optional trace outside64KiB bound')
+    return {'status':'CAPTURED', 'bytes':len(data), 'sha256':hashlib.sha256(data).hexdigest(),
+            'coverage':'UNVERIFIED; kernel slice not decoded, no timing/performance claim'}, data
 
 def dev_edu_oracle(output, manifest):
     clean = output.replace('\r', '')
@@ -62,7 +120,8 @@ def dev_edu_oracle(output, manifest):
         'qnx_target':bool(re.search(r'^EDU TARGET QNX 8[.]0(?:[.]\d+)? ',clean,re.M)),
         'normal_io':re.findall(r'^LEARNER_DEV_EDU write_rc=(\d+) read_rc=(\d+) result=(\d+)$',clean,re.M) == [('0','0','3628800')],
         'irq_completion':re.findall(r'^EDU RESMGR IRQ completion=(\d+) input=(\d+) result=(\d+) ack=([0-9a-f]{8})$',clean,re.M) == [('1','10','3628800','00000000')],
-        'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$',clean,re.M) == ['0']}
+        'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$',clean,re.M) == ['0'],
+        **observability_checks(clean, manifest)}
 
 def init(work, stage="step3"):
     manifest_kind(stage)
@@ -98,7 +157,7 @@ def build(source, out, env, buildfile, cwd, stage="step3"):
     script = out/'learner-start.sh'
     build_hash = sha(buildfile)
     command = ['bash', '-c',
-        'set -eo pipefail; source "$1"; qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$2" "$3" -lpci',
+        'set -eo pipefail; source "$1"; qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$2" "$3" -lpci -lslog2',
         'learner-build', str(Path(env).resolve()), str(binary), str(snapshot)]
     subprocess.run(command, check=True)
     if not binary.read_bytes().startswith(b'\x7fELF'):
@@ -112,7 +171,7 @@ def build(source, out, env, buildfile, cwd, stage="step3"):
         raise ValueError('mkifs did not produce a nonempty image')
     if sha(source) != source_hash or sha(buildfile) != build_hash:
         raise ValueError('inputs changed during build')
-    manifest = {'kind':kind, 'source_sha256':source_hash,
+    manifest = {'kind':kind, 'observability':'pulse-slog2-v1' if stage == 'step6' else 'slog2-v1', 'source_sha256':source_hash,
         'binary_sha256':binary_hash, 'image_sha256':sha(image),
         'buildfile_sha256':build_hash, 'startup_sha256':sha(script),
         'source_path':str(source), 'built_at':time.time(),
@@ -131,7 +190,8 @@ def oracle(output, manifest):
         'ordering':events == ['LEARNER_BIND','LEARNER_MMIO','LEARNER_RC'],
         'qnx_target':bool(re.search(r'^EDU TARGET QNX 8[.]0(?:[.]\d+)? ', clean, re.M)),
         'device_readback':rows == [('010000ed','12345678','edcba987')],
-        'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$', clean, re.M) == ['0']}
+        'exit_zero':re.findall(r'^LEARNER_RC=(\d+)$', clean, re.M) == ['0'],
+        **observability_checks(clean, manifest)}
     return checks
 
 def verify_inputs(source, bundle, stage="step3"):
@@ -238,11 +298,16 @@ def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
     checks['inputs_unchanged_after_boot'] = verify_inputs(source, bundle, stage) == m
     checks['disk_unchanged'] = sha(disk) == disk_hash
     checks['qemu_reaped'] = owned_pid is not None and not (Path('/proc')/str(owned_pid)).exists()
+    try:
+        trace, trace_bytes = trace_observation(output)
+    except ValueError as error:
+        trace, trace_bytes = {'status':'UNVERIFIED','error':str(error)}, None
+        checks['optional_trace_envelope'] = False
     success = bool(cap) and all(checks.values())
     evidence = dict(m, started=start, finished=time.time(), caps=cap, checks=checks,
                     success=success, qemu_wrapper_returncode=proc.returncode,
                     qemu_command=command, edu_pci_address="05.0",
-                    disk_sha256=disk_hash, stop_reason=stop_reason,
+                    disk_sha256=disk_hash, stop_reason=stop_reason, optional_trace=trace,
                     serialization_lock=str(lock), lease='caller-held flock observed locked',
                     run_driver_sha256=sha(Path(__file__)), timeout_seconds=timeout,
                     target_returncode=re.findall(r'LEARNER_RC=(\d+)',output),
@@ -251,6 +316,8 @@ def run(source, bundle, disk, receipt, timeout=180, stage="step3"):
     receipt = Path(receipt)
     receipt.parent.mkdir(parents=True,exist_ok=True)
     receipt.with_suffix('.log').write_text(output)
+    if trace_bytes is not None:
+        receipt.with_suffix('.trace.kev').write_bytes(trace_bytes)
     receipt.with_suffix('.json').write_text(json.dumps(evidence,indent=2)+'\n')
     print(output)
     if not success:

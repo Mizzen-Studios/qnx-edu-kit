@@ -29,6 +29,14 @@ class LearnerTests(unittest.TestCase):
                        self.output().replace('LEARNER_BIND source=s binary=b\n','')+'LEARNER_BIND source=s binary=b\n']:
             self.assertFalse(all(lab.oracle(output,m).values()))
 
+    def test_new_bar_build_requires_finite_actual_slog2(self):
+        manifest={'source_sha256':'s','binary_sha256':'b','observability':'slog2-v1'}
+        log=('LEARNER_SLOG2_BEGIN\nclock EDU_EVENT mmio id=010000ed write=12345678 read=edcba987\nLEARNER_SLOG2_END rc=0\n')
+        self.assertFalse(all(lab.oracle(self.output(),manifest).values()))
+        self.assertTrue(all(lab.oracle(self.output()+log,manifest).values()))
+        self.assertFalse(all(lab.oracle(self.output()+log.replace('write=12345678','write=12345679'),manifest).values()))
+        self.assertFalse(all(lab.oracle(self.output()+log+log,manifest).values()))
+
     def test_native_timeout_is_bounded_before_any_launch(self):
         for value in (0, -1, 901, True, 1.5):
             with self.assertRaisesRegex(ValueError, "1..900"):
@@ -62,7 +70,8 @@ class LearnerTests(unittest.TestCase):
                     self.assertEqual((out/'learner-source.c').read_text(),'learner source')
                     (out/'learner_bin').write_bytes(b'\x7fELFtarget')
                 else:
-                    self.assertIn('LEARNER_RC=$?',(out/'learner-start.sh').read_text())
+                    self.assertIn('app_rc=$?',(out/'learner-start.sh').read_text())
+                    self.assertIn('LEARNER_RC=$app_rc',(out/'learner-start.sh').read_text())
                     (out/'learner.ifs').write_bytes(b'new image')
             with patch.object(lab.subprocess,'run',side_effect=execute):
                 m = lab.build(source,out,p/'env.sh',buildfile,p)

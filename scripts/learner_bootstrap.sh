@@ -9,7 +9,7 @@ done
 if test -e "$EDU_PLATFORM"; then echo 'fresh platform path already exists; refusing reuse' >&2; exit 2; fi
 source "$EDU_SDP_ENV"
 mkdir -p "$EDU_ACTIVE"
-qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$EDU_ACTIVE/learner_bin" "$EDU_SOURCE" -lpci
+qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$EDU_ACTIVE/learner_bin" "$EDU_SOURCE" -lpci -lslog2
 printf '#!/bin/sh
 exit 2
 ' > "$EDU_ACTIVE/learner-start.sh"

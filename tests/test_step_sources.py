@@ -14,14 +14,16 @@ spec.loader.exec_module(steps)
 
 
 class StepSources(unittest.TestCase):
-    def test_twelve_snapshots_match_unchanged_e1(self):
+    def test_snapshots_match_generator_and_preserve_historical_boundary(self):
         for name, expected in steps.snapshots().items():
             self.assertEqual((ROOT/name).read_text(), expected, name)
         receipt = json.loads((ROOT/'docs/acceptance/native-20261107/receipt.json').read_text())
         for name, expected in receipt['sources'].items():
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(), expected)
+            actual=hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+            if name=='native/edu_resmgr.c': self.assertNotEqual(actual,expected)
+            else: self.assertEqual(actual,expected)
 
-    def test_compile_receipt_covers_exact_current_snapshots_only(self):
+    def test_historical_compile_receipt_does_not_certify_new_step6(self):
         receipt = json.loads((ROOT/'docs/acceptance/e2-qcc-20261107/receipt.json').read_text())
         self.assertEqual(receipt['exit_code'], 0)
         self.assertIn('not native execution', receipt['status'])
@@ -29,7 +31,9 @@ class StepSources(unittest.TestCase):
         self.assertEqual(set(recorded), set(steps.snapshots()))
         self.assertEqual(len(receipt['sources']), 12)
         for name, digest in recorded.items():
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(), digest, name)
+            actual=hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+            if name.startswith('steps/step6/'): self.assertNotEqual(actual,digest,name)
+            else: self.assertEqual(actual,digest,name)
 
     def test_solutions_stop_at_their_boundary(self):
         for n in range(1, 5):
