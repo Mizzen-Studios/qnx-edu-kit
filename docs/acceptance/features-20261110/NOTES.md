@@ -7,3 +7,5 @@ No wrong FAIL/app0 observation, corrected source, corrected PASS, step6 pulse/sl
 Original own source/object/ELF and partial partitions stay on the existing SDK disk; source/object/ELF copied privately to the authorized host share. Hashes only, no binaries/images/SDK contents in git. Bootable disk-qemu was not produced. SDK service stopped, all QEMU reaped and owner result collected exit0; lease independently tested free. CAN transient units were observed active after boot; EDU changed no units.
 
 See receipt.json for evidence hashes, exact source SHA, resources and NOT_RUN stages. Dispatch/observer/preservation scripts record the actual commands. Prior short boot-readiness waits expired without any dispatch; the same single boot subsequently became ready. The build was dispatched exactly once as the existing licensed qnx user in an isolated system service.
+
+Redistribution guard review: four SDK environment-export banner lines are omitted from committed build.log; original log stays private with raw hash in receipt.json. Commands, phase/resource rows and OOM evidence are unchanged. Guard itself is unchanged.

@@ -60,7 +60,7 @@
     "build-processes-after-stop.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "build-unit-final.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
     "build-unit.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
-    "build.log": "6a1ee62c89194debf3c0efc931839d3586ba4093fdc3372f5d85605ccd711174",
+    "build.log": "422415b6e14f4476398ced3c60c3ef3b5e40f45a23b433a6234bde70fc50318b",
     "dispatch.log": "4e595eab6e01065c773e7c84da7a1ec316254c1e60238b3471fb483ddf655c60",
     "dispatch.sh": "c5966f2c2913f62c9f191b31994c737387b55c8ed2193707b0bb7942f91f2d43",
     "effective-caps.json": "0f9e110bbc91328d86de5f9275a3d7d9d2fd58cc064351fd51ea2aa9fd5d6315",
@@ -70,5 +70,9 @@
     "observe.sh": "778edc4c71195cae3d3e6a0b694dcdcbcf2a2bb67b5f5794425b213e1fa41a56",
     "preserve.sh": "650dda5f74305e381cb0524764cc2e57d2997b10f31436c377a46edefe1dfc9b",
     "step3-wrong.c": "7868b7dfa3fc1d3f21600bc4231430d5c40f082f63999fd4b57d3485f945a19c"
+  },
+  "log_sanitization": {
+    "raw_private_build_log_sha256": "6a1ee62c89194debf3c0efc931839d3586ba4093fdc3372f5d85605ccd711174",
+    "change": "Four SDK environment-export banner lines omitted; no build/resource/OOM rows altered. Original remains on private authorized share."
   }
 }
