@@ -1,12 +1,22 @@
 # Canonical learner tutorial — wrong edit, real failure, own /dev/edu
 
+## Start with the trap: exit0 is not completion
+
+You will edit your own step3 starter, deliberately write12345679 and observe edcba986. That complement can satisfy your application and exit0, yet the independent fixed stage requires12345678→edcba987: **FAIL despite application exit0**. Correct the edit and rebuild for PASS. Then implement your own step6 manager and use normal shell write/read,10→3628800 with IRQ completion/ack. Explain why the first observation failed before fixing it. This is a learner task, not a reference-checker walkthrough.
+
+## Prerequisite gate — existing licensed SDK, not the hook
+
+**Without an existing licensed SDP8.0 and compatible installed BSP, stop: BLOCKED.** No SDK installation, login, activation, second SDK or old-binary substitution. Lab operations are prerequisites to observing your edit, not the lesson itself.
+
 **Licensed Linux x86_64 SDK guest builds → STOP and REAP guest → native QNX on capped HOST QEMU.** Hold the sole host lease across this sequence. Never run native QEMU inside the SDK guest.
 
 Single-host: **BLOCKED_NATIVE_TIMEOUT**, [Nov9 receipt](acceptance/choice-a-20261109/receipt.json). Package/user-bus setup passed, but native attempts timed out before learner markers/appRC. Root cause **UNVERIFIED**; nested emulation is not established as the cause. No more single-host retries, timeout tuning or cap increases. C6 STOPPED; private £0; no video/publication/SDK login or activation.
 
-## Start with the trap: exit0 is not completion
+### New pulse/log scaffold — not yet native acceptance
 
-You will edit your own step3 starter, deliberately write12345679 and observe edcba986. That complement can satisfy your application and exit0, yet the independent fixed stage requires12345678→edcba987: **FAIL despite application exit0**. Correct the edit and rebuild for PASS. Then implement your own step6 manager and use normal shell write/read,10→3628800 with IRQ completion/ack. Explain why the first observation failed before fixing it. This is a learner task, not a reference-checker walkthrough.
+The current step6 starter teaches real IRQ own-bit check/ack → private channel MsgSendPulse → MsgReceivePulse → result publication. This is a **same-dispatch/IAT-owner** intra-process bridge, **not a second IST or worker**. Device ack, kernel unmasking and dispatch ownership are distinct: a pulse does not acknowledge hardware.
+
+Slog2 is bounded to one page, at most8 lifetime records and3 retries per write; the wrapper takes a finite slog2info snapshot. **New scaffold SDK compile and native acceptance are NOT_RUN pending the serialized gate.** Nov8 receipts below do not prove this added pulse. Optional tracelogger uses installed image tools only, bounded1second/64KiB; absent tools are OMITTED and decoded event coverage remains UNVERIFIED. No performance claim.
 
 Read the original recorded evidence before touching setup: [wrong serial log](acceptance/wrapper-20261108/wrong-native.log), [correct serial log](acceptance/wrapper-20261108/correct-native.log), [own finish serial log](acceptance/wrapper-20261108/finish-native.log). These are **Nov8 observations from their original builds**, not outputs produced by this tutorial edit or host CI. Use their paired receipts below to follow the original source/ELF/IFS/startup/disk/driver bindings. Your new source needs its own build and observation; copying these logs cannot complete a stage.
 
@@ -30,9 +40,9 @@ On **QEMU host**, choose fresh external notebook:
 ```sh
 export EDU_REPO="$(pwd -P)"
 export EDU_WORK="${EDU_WORK:-$HOME/edu-learner-$(date -u +%Y%m%dT%H%M%SZ)}"
-export EDU_NATIVE_LOCK="$HOME/.local/state/edu-native-test.lock"
+export EDU_NATIVE_LOCK="$HOME/qnx-host/native-test.lock" # SAME existing controller lock
 export EDU_QEMU="$(command -v qemu-system-x86_64)"
-mkdir -p "$(dirname "$EDU_NATIVE_LOCK")"
+# Use the existing controller actual lock path; never a second independent lease.
 export PATH="$(dirname "$EDU_QEMU"):$PATH"
 "$EDU_QEMU" --version
 command -v flock systemd-run
@@ -107,6 +117,27 @@ printf("LEARNER_MMIO id=%08x write=%08x read=%08x\n", id, written, observed);
 
 Use real variables from your implementation. Require EDU ID010000ed; reject wrong ID/BAR bounds.
 
+New step3 builds also require a finite slog2 record of these **same actual values**, not a constant expected row. Include sys/slog2.h in your own source. Driver links installed libslog2; missing support is BLOCKED, not a component-install instruction:
+
+```c
+slog2_buffer_set_config_t log_config = {0};
+slog2_buffer_t events;
+log_config.num_buffers = 1;
+log_config.buffer_set_name = "edu_learner";
+log_config.verbosity_level = SLOG2_INFO;
+log_config.buffer_config[0].buffer_name = "events";
+log_config.buffer_config[0].num_pages = 1;
+log_config.max_retries = 3;
+if (slog2_register(&log_config, &events, SLOG2_LIMIT_RETRIES) < 0) goto done;
+char event_text[128];
+snprintf(event_text, sizeof(event_text),
+         "EDU_EVENT mmio id=%08x write=%08x read=%08x", id, written, observed);
+if (slog2c(events, 1, SLOG2_INFO, event_text) < 0) goto done;
+```
+
+One logging call per step3 run. Keep failure cleanup returning failure if logging fails. Your application can still exit0 for its own complement test while the independent fixed stage correctly rejects the wrong write.
+
+
 Predict wrong12345679→edcba986. Program may check that complement and exit0, but fixed stage requires12345678→edcba987. Wrong observation must FAIL despite app0; printing PASS is insufficient. Save prediction, then diagnosis/explanation after observing.
 
 ## 2. Build only inside existing licensed SDK guest
@@ -139,7 +170,9 @@ Bootstrap uses installed mkqnximage, fresh stock kernel/disk and learner-only sn
 
 ### Constrained guest prerequisites
 
-On512MiB SDK guest, inspect/reactivate only existing authorized1GiB disk swap: owner/size/free-space checks first; no overwrite/fstab/cap change, stop if absent. Choose EDU_SWAP, EDU_BUILD_USER, EDU_BUILD_HOME (existing licensed home), unique EDU_UNIT, user-owned EDU_JOB and external EDU_LOG. Guest root, authorized existing access only. A root queue command does not inherit the licensed user's shell: set these values explicitly to the same handoff and existing user/home (examples qnx and /home/qnx), and the already-created job/log. EDU_SWAP must name an **existing authorized swap file**, not a proposed file to create:
+On512MiB SDK guest, inspect existing memory/swap/residents **read-only**. Do not activate/create/resize swap, change packages or repair the platform. Compilation (-O0 -g0), linking and mkifs run separately and serially, with before/after free-memory and largest-resident snapshots. No performance benchmark or memory increase is implied. Stop/report OOM or any remaining gate block instead of tuning resources.
+
+Choose existing licensed user/home, unique service unit and the user-owned job/log already created above. Guest root queue does not inherit the licensed user's shell; set the same handoff and real paths explicitly:
 
 ```sh
 set -euo pipefail
@@ -149,26 +182,15 @@ export EDU_BUILD_HOME=/home/qnx
 export EDU_JOB="$EDU_BUILD_HOME/edu-builds/$EDU_HANDOFF/build-step3.sh"
 export EDU_LOG="$EDU_BUILD_HOME/edu-builds/$EDU_HANDOFF/build-step3.log"
 export EDU_UNIT="edu-build-$EDU_HANDOFF"
-export EDU_SWAP='/absolute/path/to/existing/authorized/1GiB-swapfile'
 test "$(stat -c %U "$EDU_JOB")" = "$EDU_BUILD_USER"
-test "$(stat -c %U "$EDU_SWAP")" = root
-```
-
-Stop if the verified existing user, owner or path differs; adapt paths deliberately, never create accounts/swap or bypass authorization. Then inspect:
-
-
-```sh
-df -h "$(dirname "$EDU_SWAP")"
-stat "$EDU_SWAP"
-test "$(stat -c %s "$EDU_SWAP")" = 1073741824
-swapon --show
-if ! swapon --show=NAME --noheadings | grep -Fx "$EDU_SWAP"; then swapon "$EDU_SWAP"; fi
 free -m
+swapon --show
+ps -eo pid,comm,rss,stat --sort=-rss | sed -n '1,12p'
 systemctl is-active host-queue.service
 systemctl show host-queue.service -p NRestarts
 ```
 
-Stop on mismatch or unavailable authorization. Never create/resize swap here. Platform/bundle on guest disk, not9p. Existing authorized guest root runs user-owned job via isolated transient service, HOME set for licensed user; keep queue separate:
+Stop on authorization/user/job mismatch or insufficient resources. Platform/bundle stay on guest disk, not9p. Existing authorized queue dispatches the isolated service, HOME set for licensed user:
 
 ```sh
 # Guest root; chosen external job/log and existing licensed user:

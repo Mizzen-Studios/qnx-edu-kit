@@ -20,6 +20,16 @@ class CodelabExport(unittest.TestCase):
             self.assertIn(marker,text)
         self.assertNotIn('PREFIX.native.json',text)
 
+    def test_trap_result_before_existing_sdk_gate(self):
+        route=(ROOT/'docs/learner-route.md').read_text()
+        self.assertLess(route.index('FAIL despite application exit0'),route.index('## Prerequisite gate'))
+        self.assertLess(route.index('10→3628800'),route.index('## Prerequisite gate'))
+        self.assertIn('stop: BLOCKED',route)
+        self.assertIn('not a second IST or worker',route)
+        self.assertIn('NOT_RUN pending the serialized gate',route)
+        self.assertIn('Do not activate/create/resize swap',route)
+        self.assertNotIn('then swapon',route)
+
     def test_dry_pack_preserves_original_native_pins(self):
         old=json.loads(subprocess.check_output(['git','show','21f583df0a5402953efe63344a5d23ec84798ceb:docs/proof-capture/pack.json'],cwd=ROOT,text=True))
         current=json.loads((ROOT/'docs/proof-capture/pack.json').read_text())

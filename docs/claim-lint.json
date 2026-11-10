@@ -1,6 +1,9 @@
 {
-  "status": "PASS",
-  "errors": [],
+  "status": "FAIL",
+  "errors": [
+    "T01: changed frozen asset codelab/codelab.md",
+    "T01: changed frozen asset docs/learner-route.md"
+  ],
   "scope": "Offline structural lint + explicit REVIEW mapping; not a universal semantic claim verifier",
   "acceptance": "Previous council CONDITIONAL evidence; Nov8 scoped host/native observations and integrity recheck recorded; new council gate pending; human learning and second SDK UNVERIFIED",
   "capture": "DRY ONLY; separate Olly OK required for recording/audio",
@@ -38,7 +41,7 @@
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "79d2b6ce09d41a6075cf338302d6028de2bb6960a4e4da35759c85deb0b42d26",
+      "sha256": "e9757b8c919aac91d91886d40e756ae28e48a363e79f968e18124c6774787156",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -58,7 +61,7 @@
     },
     {
       "path": "docs/site/codelab/codelab.html",
-      "sha256": "1bd814b45740c55f13f2eac8080112794bdec754566fb58d18b77291a42ec3c2",
+      "sha256": "f140cbdaa4e474d3437395355f44e494c6a12318fead787f527e632107b48445",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -268,7 +271,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "e2e28f608fdf67d40b3bab1ebcc813f778e96c1624510e2c744c68d663e2fcee",
+      "sha256": "bb0876e98a83559bf2809f9750009da1ad35d67e52aaf76c6c0cdada328c5b39",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -3771,8 +3774,11 @@
   ],
   "dry_pack": {
     "kind": "private-proof-capture-DRY-PACK",
-    "status": "PASS",
-    "errors": [],
+    "status": "FAIL",
+    "errors": [
+      "T01: changed frozen asset codelab/codelab.md",
+      "T01: changed frozen asset docs/learner-route.md"
+    ],
     "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
     "packet_source_commit": "502ac43e010af98a89fd026fa5241f245706f570",
     "narration_words": 284,
@@ -4012,19 +4018,25 @@
     "unbound_claim": {
       "rejected": true,
       "errors": [
-        "L03: unbound claim/frame"
+        "L03: unbound claim/frame",
+        "T01: changed frozen asset codelab/codelab.md",
+        "T01: changed frozen asset docs/learner-route.md"
       ]
     },
     "missing_asset": {
       "rejected": true,
       "errors": [
-        "L03: missing/unsafe asset docs/INTENTIONAL-MISSING-ASSET"
+        "L03: missing/unsafe asset docs/INTENTIONAL-MISSING-ASSET",
+        "T01: changed frozen asset codelab/codelab.md",
+        "T01: changed frozen asset docs/learner-route.md"
       ]
     },
     "changed_digest": {
       "rejected": true,
       "errors": [
-        "L03: changed frozen asset docs/acceptance/fresh-checkout-20261107/wrong-native.json"
+        "L03: changed frozen asset docs/acceptance/fresh-checkout-20261107/wrong-native.json",
+        "T01: changed frozen asset codelab/codelab.md",
+        "T01: changed frozen asset docs/learner-route.md"
       ]
     }
   },

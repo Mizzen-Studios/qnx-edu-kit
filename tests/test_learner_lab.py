@@ -66,7 +66,11 @@ class LearnerTests(unittest.TestCase):
             calls = []
             def execute(command, **kwargs):
                 calls.append(command)
-                if command[3] == 'learner-build':
+                if command[3] == 'learner-compile':
+                    self.assertIn('-g0',command[2]);self.assertNotIn('-g3',command[2])
+                    self.assertEqual((out/'learner-source.c').read_text(),'learner source')
+                    (out/'learner.o').write_bytes(b'\x7fELFobject')
+                elif command[3] == 'learner-link':
                     self.assertEqual((out/'learner-source.c').read_text(),'learner source')
                     (out/'learner_bin').write_bytes(b'\x7fELFtarget')
                 else:
@@ -75,10 +79,29 @@ class LearnerTests(unittest.TestCase):
                     (out/'learner.ifs').write_bytes(b'new image')
             with patch.object(lab.subprocess,'run',side_effect=execute):
                 m = lab.build(source,out,p/'env.sh',buildfile,p)
-            self.assertEqual(len(calls),2)
+            self.assertEqual([command[3] for command in calls],['learner-compile','learner-link','learner-image'])
+            self.assertEqual(m['object_sha256'],lab.sha(out/'learner.o'))
+            self.assertEqual(m['build_sequence'],['compile -O0 -g0','link','mkifs'])
             self.assertEqual(m['source_sha256'],lab.sha(source))
             self.assertEqual(m['image_sha256'],lab.sha(out/'learner.ifs'))
             lab.verify_inputs(source,out)
+            for command in calls:
+                self.assertIn('resource_probe before',command[2]);self.assertIn('resource_probe after',command[2])
+                self.assertIn('free -m',command[2]);self.assertIn('pid,comm,rss,stat',command[2])
+            (out/'learner.o').write_bytes(b'tampered')
+            with self.assertRaisesRegex(ValueError,'object_sha256 mismatch'):lab.verify_inputs(source,out)
+
+    def test_compile_failure_never_starts_link_or_mkifs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);source=p/'own.c';source.write_text('own source')
+            buildfile=p/'bsp';buildfile.write_text('licensed external BSP placeholder for host test')
+            error=lab.subprocess.CalledProcessError(137,['mock-compiler'])
+            with patch.object(lab.subprocess,'run',side_effect=error) as launch:
+                with self.assertRaises(lab.subprocess.CalledProcessError):
+                    lab.build(source,p/'out',p/'env',buildfile,p)
+            self.assertEqual(launch.call_count,1)
+            self.assertEqual(launch.call_args.args[0][3],'learner-compile')
+            self.assertFalse((p/'out/manifest.json').exists())
 
     def test_native_refuses_free_lock(self):
         with tempfile.TemporaryDirectory() as tmp:

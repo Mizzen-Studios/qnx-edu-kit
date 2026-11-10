@@ -135,6 +135,14 @@ def init(work, stage="step3"):
     source.write_text((ROOT/'steps'/stage/'starter/main.c').read_text())
     return source
 
+def measured_shell(action):
+    # Read-only guest diagnostics, before/after each already-serialized phase.
+    probe = ('echo "BUILD_RESOURCE phase=$0 point=$1"; free -m; '
+             "ps -eo pid,comm,rss,stat --sort=-rss | sed -n '1,12p'")
+    # Preserve positional SDK/build paths while the probe uses its own $1.
+    return ('set -eo pipefail; source "$1"; resource_probe() { '+probe+'; }; '
+            'resource_probe before; '+action+'; resource_probe after')
+
 def build(source, out, env, buildfile, cwd, stage="step3"):
     """Run inside learner licensed SDK environment; no private bundle needed.
 
@@ -149,30 +157,35 @@ def build(source, out, env, buildfile, cwd, stage="step3"):
     if source == snapshot:
         raise ValueError('edit main.c, not the generated source snapshot')
     (out/'manifest.json').unlink(missing_ok=True)
-    for stale in ['learner_bin','learner.ifs']:
+    for stale in ['learner.o','learner_bin','learner.ifs']:
         (out/stale).unlink(missing_ok=True)
     snapshot.write_bytes(source.read_bytes())
     binary = out/'learner_bin'
     image = out/'learner.ifs'
     script = out/'learner-start.sh'
     build_hash = sha(buildfile)
-    command = ['bash', '-c',
-        'set -eo pipefail; source "$1"; qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g3 -Wall -Wextra -Wno-unused-variable -o "$2" "$3" -lpci -lslog2',
-        'learner-build', str(Path(env).resolve()), str(binary), str(snapshot)]
-    subprocess.run(command, check=True)
+    obj = out/'learner.o'
+    # One compiler, then one linker, then mkifs. No -g3 or parallel build jobs.
+    subprocess.run(['bash', '-c',
+        measured_shell('qcc -Vgcc_ntox86_64 -std=gnu11 -O0 -g0 -Wall -Wextra -Wno-unused-variable -c "$3" -o "$2"'),
+        'learner-compile', str(Path(env).resolve()), str(obj), str(snapshot)], check=True)
+    subprocess.run(['bash', '-c',
+        measured_shell('qcc -Vgcc_ntox86_64 -o "$2" "$3" -lpci -lslog2'),
+        'learner-link', str(Path(env).resolve()), str(binary), str(obj)], check=True)
     if not binary.read_bytes().startswith(b'\x7fELF'):
         raise ValueError('qcc did not produce an ELF binary')
     binary_hash = sha(binary)
     source_hash = sha(snapshot)
     script.write_text(startup(stage, source_hash, binary_hash))
-    subprocess.run(['bash', '-c', 'set -eo pipefail; source "$1"; mkifs "$2" "$3"',
+    subprocess.run(['bash', '-c', measured_shell('mkifs "$2" "$3"'),
         'learner-image', str(Path(env).resolve()), str(Path(buildfile).resolve()), str(image)], cwd=cwd, check=True)
     if not image.is_file() or image.stat().st_size == 0:
         raise ValueError('mkifs did not produce a nonempty image')
     if sha(source) != source_hash or sha(buildfile) != build_hash:
         raise ValueError('inputs changed during build')
     manifest = {'kind':kind, 'observability':'pulse-slog2-v1' if stage == 'step6' else 'slog2-v1', 'source_sha256':source_hash,
-        'binary_sha256':binary_hash, 'image_sha256':sha(image),
+        'object_sha256':sha(obj), 'binary_sha256':binary_hash, 'image_sha256':sha(image),
+        'build_sequence':['compile -O0 -g0','link','mkifs'],
         'buildfile_sha256':build_hash, 'startup_sha256':sha(script),
         'source_path':str(source), 'built_at':time.time(),
         'build_driver_sha256':sha(Path(__file__)),
@@ -204,6 +217,8 @@ def verify_inputs(source, bundle, stage="step3"):
                       (bundle/'learner-start.sh','startup_sha256')]:
         if sha(path) != m[key]:
             raise ValueError(f'{key} mismatch: rebuild your edited source')
+    if 'object_sha256' in m and sha(bundle/'learner.o') != m['object_sha256']:
+        raise ValueError('object_sha256 mismatch: rebuild your edited source')
     return m
 
 def caps(pid):
