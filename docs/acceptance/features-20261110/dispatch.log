@@ -1,0 +1,31 @@
+Tue Nov 10 10:28:08 UTC 2026
+               total        used        free      shared  buff/cache   available
+Mem:          468216      160612      187180         972      142524      307604
+Swap:              0           0           0
+    PID    PPID COMMAND           RSS COMMAND
+    670       1 apport          32268 /usr/bin/python3 /usr/share/apport/apport --start
+    364       1 multipathd      27300 /sbin/multipathd -d -s
+    671       1 cloud-init      26620 /usr/bin/python3 /usr/bin/cloud-init modules --mode=config
+    680       1 snap            22432 /usr/bin/snap wait system seed.loaded
+    681       1 snapd           22100 /usr/lib/snapd/snapd
+      1       0 systemd         13092 /sbin/init
+    498       1 systemd-resolve 12948 /usr/lib/systemd/systemd-resolved
+    307       1 systemd-journal 12436 /usr/lib/systemd/systemd-journald
+    697       1 udisksd         11640 /usr/libexec/udisks2/udisksd
+    678       1 (polkitd)        9564 (polkitd)
+    626       1 systemd-network  9472 /usr/lib/systemd/systemd-networkd
+    505       1 systemd-timesyn  7892 /usr/lib/systemd/systemd-timesyncd
+    371       1 systemd-udevd    7764 /usr/lib/systemd/systemd-udevd
+    687       1 systemd-logind   7340 /usr/lib/systemd/systemd-logind
+    724     719 apparmor_parser  6484 apparmor_parser -r -W -T /etc/apparmor.d/usr.sbin.rsyslogd
+    673       1 dbus-daemon      5236 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    741     722 ps               4180 ps -eo pid,ppid,comm,rss,args --sort=-rss
+    677       1 host-queue       3728 /bin/bash /usr/local/sbin/host-queue
+    722     677 bash             3680 bash /mnt/host/queue/1794306478628323616.sh.running
+ActiveState=active
+MainPID=0
+ActiveState=active
+MainPID=697
+ActiveState=active
+uid=1001(qnx) gid=1001(qnx) groups=1001(qnx)
+Running as unit: edu-features-20261110.service; invocation ID: 35ce213f3eff45ed965b5abab3400dac

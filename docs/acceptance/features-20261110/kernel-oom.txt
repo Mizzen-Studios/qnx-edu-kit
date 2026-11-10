@@ -1,0 +1,8 @@
+Nov 10 10:34:12 qnx-linux-fallback kernel: x86_64-pc-nto-q invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=0
+Nov 10 10:34:13 qnx-linux-fallback kernel:  oom_kill_process+0x118/0x280
+Nov 10 10:34:13 qnx-linux-fallback kernel:  ? oom_evaluate_task+0x143/0x1e0
+Nov 10 10:34:13 qnx-linux-fallback kernel:  __alloc_pages_may_oom+0x10c/0x1d0
+Nov 10 10:34:14 qnx-linux-fallback kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+Nov 10 10:34:14 qnx-linux-fallback kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/system.slice/edu-features-20261110.service,task=x86_64-pc-nto-q,pid=1617,uid=1001
+Nov 10 10:34:14 qnx-linux-fallback kernel: Out of memory: Killed process 1617 (x86_64-pc-nto-q) total-vm:588924kB, anon-rss:328616kB, file-rss:1736kB, shmem-rss:0kB, UID:1001 pgtables:704kB oom_score_adj:0
+Nov 10 10:34:14 qnx-linux-fallback kernel: oom_reaper: reaped process 1617 (x86_64-pc-nto-q), now anon-rss:84kB, file-rss:44kB, shmem-rss:0kB
