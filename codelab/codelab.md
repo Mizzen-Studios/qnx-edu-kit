@@ -17,6 +17,31 @@ Duration: 8
 
 ### Canonical learner tutorial — wrong edit, real failure, own /dev/edu
 
+<!-- BEGIN STOCK ROUTE DRAFT: prep only, native UNVERIFIED -->
+### First look: stock QNX image route — DRAFT / UNVERIFIED
+
+**Proposal only, not a working reproduction or new native proof. Current authorization is host-only preparation: do not build an image or start SDK/QEMU from this draft.** The existing split-host advanced tutorial follows unchanged below. Its historical receipts do not validate this proposed stock route.
+
+The lesson still starts with the trap: your wrong write12345679 may exit0 while the fixed stage fails; after an actual wrong observation, correct to12345678 for PASS. The intended finish is normal shell write10/read3628800 from your own /dev/edu manager, with real IRQ completion/acknowledgement. These are acceptance targets, **NOT_RUN for this stock route**.
+
+1. **Existing licensed SDK gate.** Use an already installed/licensed QNX SDP8.0 with its compatible x86_64 image tools. Missing access means BLOCKED, not a new install, login, activation, second SDK or licence action. Choose your own fresh working directories; no pre-existing personal lab directories are prerequisites.
+2. **Documented stock generation, not yet fit-proven.** The official QNX8 utility reference documents the following command. It is shown for research, **not authorized execution now**:
+
+   ```sh
+   mkqnximage --type=qemu --arch=x86_64 --build
+   ```
+
+   Current installed help, exact defaults, any already installed prebuilt stock disk and its provenance/hashes still need read-only confirmation. Default512MiB SDK build fit is **UNVERIFIED**: the Nov10 stock image attempt OOM-killed a child at328616KiB anonymous RSS, with313MiB available before stock generation and a zero-byte IFS. A simpler lesson-copy workflow does not remove that image-build peak. No768MiB retry, reserve reduction, swap/platform repair or cap increase.
+3. **Device option, not guessed passthrough.** Official QEMU documentation specifies **-device edu**. The QNX reference documents mkqnximage --run and --run=-h, but this does **not** establish that --run accepts arbitrary QEMU flags. Do not invent --run='-device edu'. Check the installed help/launcher; if necessary, use the documented stock QEMU launch arguments plus the single EDU flag only after review. Exact stock launch, device visibility and IRQ delivery remain **UNVERIFIED**.
+4. **Keep build and execution separate.** A future authorized attempt would build stock QNX and your own lesson binaries serially in the SDK guest, preserve exact source/object/ELF/disk hashes, then **STOP/REAP the SDK guest before HOST native QEMU**. No nested/native QEMU inside the SDK guest. Keep HOST CPU100%, memory1GiB, nice15 and native1CPU/512MiB, sole real lease. Current prep starts neither guest.
+5. **Copy lesson binaries rather than customize the stock IFS.** The QNX reference documents scp/sftp transfer to an image. Actual stock SSH access, compatible libraries, PCI permissions/abilities, launch and finite observation collection are still **UNVERIFIED**. Never turn an assumed copy command into evidence or change the advanced build path to make this claim appear true.
+6. **Demand new observations.** Require wrong stage FAIL with app0 and actual MMIO values before creating the correction; then corrected stage PASS; then own /dev/edu write10/read3628800 and IRQ ack. Current pulse/slog2 scaffolding needs its own runtime proof, not old receipts. Trace is optional only if already in the image; no added components. Any future failure/OOM gets a precise BLOCKED receipt and immediate lane stop, not retries or tuning.
+
+**Promotion gate:** no stock image build or native test was performed for this draft. Keep it DRAFT / UNVERIFIED until a separately authorized, source-bound native run proves the route. Historical split-host evidence and all original acceptance pins remain unchanged. No public/media/spend/C6 work.
+
+Research: [official QNX mkqnximage reference](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.utilities/topic/m/mkqnximage.html), [official QEMU EDU device](https://www.qemu.org/docs/master/specs/edu.html), [bounded research inventory](../docs/stock-route-research.json). The online QEMU page describes a newer QEMU release; it is not verification of the installed host build. Current installed-tool inventory is pending the sole-owner HostShare relay, not concurrent guest inspection.
+<!-- END STOCK ROUTE DRAFT -->
+
 ### Start with the trap: exit0 is not completion
 
 You will edit your own step3 starter, deliberately write12345679 and observe edcba986. That complement can satisfy your application and exit0, yet the independent fixed stage requires12345678→edcba987: **FAIL despite application exit0**. Correct the edit and rebuild for PASS. Then implement your own step6 manager and use normal shell write/read,10→3628800 with IRQ completion/ack. Explain why the first observation failed before fixing it. This is a learner task, not a reference-checker walkthrough.

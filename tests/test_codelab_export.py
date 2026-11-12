@@ -31,6 +31,29 @@ class CodelabExport(unittest.TestCase):
         self.assertIn('Do not activate/create/resize swap',route)
         self.assertNotIn('then swapon',route)
 
+    def test_stock_draft_first_without_modifying_advanced_bytes(self):
+        text=(ROOT/'docs/learner-route.md').read_text()
+        old=subprocess.check_output(['git','show','e2c247d055ddb949d801a48bd809b913ff11721d:docs/learner-route.md'],cwd=ROOT,text=True)
+        begin=text.index('<!-- BEGIN STOCK ROUTE DRAFT:')
+        end=text.index('<!-- END STOCK ROUTE DRAFT -->')+len('<!-- END STOCK ROUTE DRAFT -->')
+        # Removing the inserted section recovers the advanced tutorial exactly.
+        self.assertEqual(text[:begin].rstrip('\n')+'\n'+text[end+1:],old)
+        self.assertLess(begin,text.index('## Start with the trap'))
+        self.assertIn('DRAFT / UNVERIFIED',text)
+        self.assertIn('NOT_RUN for this stock route',text)
+        self.assertIn("Do not invent --run='-device edu'",text)
+        self.assertIn('do not build an image or start SDK/QEMU',text)
+        self.assertIn('No768MiB retry',text)
+        page=(ROOT/'codelab/codelab.md').read_text()
+        self.assertIn('](../docs/stock-route-research.json)',page)
+
+    def test_stock_research_has_no_fresh_native_proof(self):
+        data=json.loads((ROOT/'docs/stock-route-research.json').read_text())
+        self.assertEqual(data['status'],'DRAFT_UNVERIFIED_NO_BUILD_NO_QEMU')
+        self.assertEqual(data['prior_measured_block']['ifs_bytes'],0)
+        self.assertIn('PENDING',data['installed_current_inventory'])
+        self.assertIn('native QNX test',data['actions_not_performed'])
+
     def test_dry_pack_preserves_original_native_pins(self):
         old=json.loads(subprocess.check_output(['git','show','21f583df0a5402953efe63344a5d23ec84798ceb:docs/proof-capture/pack.json'],cwd=ROOT,text=True))
         current=json.loads((ROOT/'docs/proof-capture/pack.json').read_text())

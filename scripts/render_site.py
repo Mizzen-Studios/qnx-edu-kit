@@ -104,6 +104,8 @@ def outputs():
                 result[OUT/f.relative_to(ROOT)] = f.read_text()
     for f in (ROOT/'docs/proof-capture').glob('*.json'):
         result[OUT/f.relative_to(ROOT)]=f.read_text()
+    research=ROOT/'docs/stock-route-research.json'
+    if research.is_file():result[OUT/'docs/stock-route-research.json']=research.read_text()
     f=ROOT/'docs/claim-lint.json'
     if f.is_file():result[OUT/'docs/claim-lint.json']=f.read_text()
     for name in ('appendix.json',):

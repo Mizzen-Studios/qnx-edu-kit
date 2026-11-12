@@ -1,0 +1,48 @@
+{
+  "kind": "edu-stock-route-host-preparation-only",
+  "as_of": "2026-11-12",
+  "baseline_commit": "e2c247d055ddb949d801a48bd809b913ff11721d",
+  "status": "DRAFT_UNVERIFIED_NO_BUILD_NO_QEMU",
+  "authorization": "22:01 owner supersedes earlier lane plan: EDU preparation only; no SDK/image build/native test. HostShare sole QEMU owner.",
+  "documented": {
+    "stock_generator": "mkqnximage --type=qemu --arch=x86_64 --build",
+    "generator_reference": "https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.utilities/topic/m/mkqnximage.html",
+    "run": "--run starts existing current-directory image; documented --run=-h headless. Arbitrary extra-QEMU-option passthrough UNVERIFIED, do not invent syntax.",
+    "transfer": "Official reference documents scp/sftp into running stock image; copying lesson binaries after boot avoids custom IFS integration. Actual SSH and required libraries/abilities remain UNVERIFIED.",
+    "one_qemu_flag": "-device edu",
+    "edu_reference": "https://www.qemu.org/docs/master/specs/edu.html",
+    "archived_installed_brief_help": "/home/ubuntu/qnx-host/guest/shared/clean-step3-20261107/mkqnximage-options.log includes --run=[<options>], --ram, --cpu, --tcg, --build=[<partitions>] but does not establish passthrough grammar or default values"
+  },
+  "unverified": [
+    "current installed mkqnximage --help=run and --help=ram/--help=tcg output",
+    "prebuilt stock x86_64 QEMU image/output paths in already installed SDP (if any), exact hashes/sizes",
+    "generated stock QEMU command/boot mode/disk/network/serial flags without launching nested QEMU",
+    "stock build peak memory <= default512MiB guest under canonical HOST1GiB/CPU100/nice15",
+    "stock image EDU PCI enumeration, abilities, IRQ delivery and acknowledgement; SDK-built lesson binaries run with stock libs",
+    "stock SSH transfer and observation route under HOST-only execution after SDK reaped"
+  ],
+  "prior_measured_block": {
+    "receipt": "acceptance/features-20261110/receipt.json",
+    "sha256": "a46001b78b1b9d96db12e7eb7d2da8e54515513108433492a9cce94c226fb88e",
+    "outcome": "BLOCKED_STOCK_MKIFS_OOM",
+    "child_anon_rss_kib": 328616,
+    "available_before_stock_mib": 313,
+    "ifs_bytes": 0
+  },
+  "installed_current_inventory": "PENDING parent relay from HostShare; no concurrent guest inspection",
+  "actions_performed": [
+    "read official public documentation",
+    "read archived installed brief help as historical evidence only",
+    "draft this section and host copy/site/tests; no guest/controller execution"
+  ],
+  "actions_not_performed": [
+    "SDK boot",
+    "stock image build",
+    "native QNX test",
+    "licence/login/install",
+    "platform/swap/cap changes",
+    "CAN/HostShare mutation",
+    "old native receipt repinning"
+  ],
+  "promotion_gate": "Only separately authorized new native proof may promote draft to working route. Existing split-host advanced bytes and historical receipts preserved."
+}
