@@ -47,6 +47,18 @@ class CodelabExport(unittest.TestCase):
         page=(ROOT/'codelab/codelab.md').read_text()
         self.assertIn('](../docs/stock-route-research.json)',page)
 
+    def test_stock_draft_only_rebinds_instruction_copy(self):
+        old=json.loads(subprocess.check_output(['git','show','e2c247d055ddb949d801a48bd809b913ff11721d:docs/proof-capture/pack.json'],cwd=ROOT,text=True))
+        now=json.loads((ROOT/'docs/proof-capture/pack.json').read_text())
+        self.assertFalse(now['recorded'])
+        for row in old['lines']:
+            current=next(r for r in now['lines'] if r['id']==row['id'])
+            if row['id']!='T01':self.assertEqual(current,row)
+        draft=next(r for r in now['lines'] if r['id']=='T01')
+        self.assertIn('DRAFT/UNVERIFIED',draft['claim'])
+        self.assertIn('No new SDK boot',draft['narration'])
+        self.assertIn('native NOT_RUN',draft['label'])
+
     def test_stock_research_has_no_fresh_native_proof(self):
         data=json.loads((ROOT/'docs/stock-route-research.json').read_text())
         self.assertEqual(data['status'],'DRAFT_UNVERIFIED_NO_BUILD_NO_QEMU')

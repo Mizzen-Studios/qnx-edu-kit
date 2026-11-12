@@ -141,16 +141,16 @@
       "id": "T01",
       "start": 80,
       "end": 115,
-      "narration": "Follow the cold-reader codelab: predict the wrong edit, use the existing licensed SDK guest, stop and reap it, then run capped host QEMU under one lease only if a valid image exists. Notebook and CI are host only. Current SDK gate is blocked; the earlier single-host timeout remains unverified. No tuning or retry.",
-      "claim": "Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.",
-      "frame": "Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.",
-      "label": "HOST-only tutorial copy, not native execution",
-      "review_quote": "BLOCKED_NATIVE_TIMEOUT",
+      "narration": "The first stock-image route is a draft, not a working reproduction. The EDU device flag is documented; installed launch syntax and memory fit remain unverified. No new SDK boot, image build or native test occurred. The advanced split-host instructions remain unchanged, with historical receipts kept separate. Stop before executing this proposal.",
+      "claim": "Host-only stock-first DRAFT/UNVERIFIED proposal; no new build/native proof. Existing advanced tutorial preserved byte-for-byte after the inserted section.",
+      "frame": "Show explicit DRAFT / UNVERIFIED stock section and docs/stock-route-research.json, then the unchanged advanced tutorial boundary. Never show historical frames as execution of the proposed route.",
+      "label": "host-only draft; stock native NOT_RUN",
+      "review_quote": "No new native PASS.",
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b",
-          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
+          "sha256": "9b0880616529fd1e19e9d42a0f72dbc88969db8b10b7b4ccf2c7c4a3807ba0c6",
+          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
         },
         {
           "path": "README.md",
@@ -159,8 +159,13 @@
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "18a94e983c82a6984cc2bed800de68396252b333704c93eb41a4f70554fad170",
-          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
+          "sha256": "36cfb16a04425b30ca5c62a48d4280b9a2cb41355191956fab86b92279b58619",
+          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
+        },
+        {
+          "path": "docs/stock-route-research.json",
+          "sha256": "a858521364f431fbfdfa8bb0c4facf5aa246a511cb6a7995cf4a17885ffa2069",
+          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
         }
       ]
     },
@@ -252,8 +257,8 @@
   "recorded": false,
   "gate": "CONDITIONAL: owner receipt-inspected, not re-run, 2026-11-07 20:03 UTC",
   "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d",
-  "prior_packet_source_commit": "502ac43e010af98a89fd026fa5241f245706f570",
-  "current_copy_scope": "Nov10 post-receipt docs/dry script only: one SDK gate BLOCKED_STOCK_MKIFS_OOM, no new native acceptance. Current tutorial binding is instruction copy, not runtime evidence.",
-  "native_pin_preservation": "All original native assets retain exactly their prior commits and SHA256. Only tutorial-copy bindings change; three new blocked SDK evidence assets are added separately, never native PASS."
+  "packet_source_commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2",
+  "prior_packet_source_commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d",
+  "current_copy_scope": "Nov12 host-only DRAFT/UNVERIFIED stock-first proposal; no SDK boot, image build, or native test. Instruction-copy freeze only, never runtime acceptance.",
+  "native_pin_preservation": "All original native and Nov10 blocked SDK assets retain their existing hashes/commits. Only T01 tutorial-copy bindings change for an explicitly unverified draft."
 }

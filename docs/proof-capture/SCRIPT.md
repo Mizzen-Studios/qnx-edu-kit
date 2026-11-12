@@ -3,9 +3,9 @@
 No recording or audio capture. Separate Olly OK required. No publication/upload authorized.
 
 Default historical asset binding (not current acceptance): ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
-Instruction-copy freeze (not runtime acceptance): b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d
+Instruction-copy freeze (not runtime acceptance): ce28dd067c82d8cedc8291804d0be3db472f9bb2
 recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.
-Exact whitespace narration word count: 295; planned 175 seconds (not measured).
+Exact whitespace narration word count: 293; planned 175 seconds (not measured).
 C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.
 
 ## L03 — 0–25 seconds · recorded native QEMU observation
@@ -29,12 +29,12 @@ Narration: Original failed finishes remain preserved. Corrected learner managers
 Frozen files: docs/acceptance/fresh-checkout-20261107/finish-native.json SHA256 19bf7205f52ef4fac7668f867fd2e31a54d99e542574359b79e54a7e2393bdc5 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/finish-native.log SHA256 e16c828871cd6da91865fb4d01d1568070cfe053f7dbbc69d80386ab8c800a73 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json SHA256 ef83383c93509cbb6113e4e9ff87d2685d73d2f4c799972a649c050b554ef6c2 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/finish-corrected-native.log SHA256 e7e6b0ecc14281609781a4dc805d5247db9bb5d958b1754fffd6bc5d7517b466 @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/finish-corrected/manifest.json SHA256 62af484678314f28cc19787954e8d57c254566f9165cd87dd3775c7a0528279e @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/fresh-checkout-20261107/finish-corrected/main.c SHA256 64647c88597eff57f0723ffb2e479f90501f717065edd5a008827866fd8b76fe @ ada5d0ff03533a2fec0983f3fedbd9bada9df8a9, docs/acceptance/wrapper-20261108/first-finish-native.json SHA256 683c6ace21e774c697775f45ce24b4cec0b0511c6ee44680099b94ee8270c7e7 @ 21f583df0a5402953efe63344a5d23ec84798ceb, docs/acceptance/wrapper-20261108/first-finish-native.log SHA256 b4fc360803703f5b92373771d99e786a23c844c266ecdaf3671199c2df340f79 @ 21f583df0a5402953efe63344a5d23ec84798ceb, docs/acceptance/wrapper-20261108/finish-native.json SHA256 b2bcad7125ea0112d469bf00a35d5b2a5e21b2a8c52207e363d30e88200cb372 @ 21f583df0a5402953efe63344a5d23ec84798ceb, docs/acceptance/wrapper-20261108/finish-native.log SHA256 3682db231ff3c962f2517ddd94a9e0c40b46518a45b4a76470ba142cc1421cfa @ 21f583df0a5402953efe63344a5d23ec84798ceb, docs/acceptance/wrapper-20261108/export-manifest.json SHA256 93da42cf3ffeadea342ea9da4585b35b8e62e0a8b2e446ac8be3fc51f130173c @ 21f583df0a5402953efe63344a5d23ec84798ceb, docs/acceptance/wrapper-20261108/export-validation.json SHA256 4efcdea324d79fe909eb3c2cd9aea5e49bc2440348d1f48c082d3b95613aee6f @ 21f583df0a5402953efe63344a5d23ec84798ceb
 REVIEW boundary: wrong host1/correct host0, initial finish host1/corrected finish host0
 
-## T01 — 80–115 seconds · HOST-only tutorial copy, not native execution
-Claim: Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.
-Planned frame: Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.
-Narration: Follow the cold-reader codelab: predict the wrong edit, use the existing licensed SDK guest, stop and reap it, then run capped host QEMU under one lease only if a valid image exists. Notebook and CI are host only. Current SDK gate is blocked; the earlier single-host timeout remains unverified. No tuning or retry.
-Frozen files: codelab/codelab.md SHA256 f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d, README.md SHA256 de842d89a1718c6eedea242653ae75594844c2690990007fed6a552c3f07ee06 @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d, docs/learner-route.md SHA256 18a94e983c82a6984cc2bed800de68396252b333704c93eb41a4f70554fad170 @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d
-REVIEW boundary: BLOCKED_NATIVE_TIMEOUT
+## T01 — 80–115 seconds · host-only draft; stock native NOT_RUN
+Claim: Host-only stock-first DRAFT/UNVERIFIED proposal; no new build/native proof. Existing advanced tutorial preserved byte-for-byte after the inserted section.
+Planned frame: Show explicit DRAFT / UNVERIFIED stock section and docs/stock-route-research.json, then the unchanged advanced tutorial boundary. Never show historical frames as execution of the proposed route.
+Narration: The first stock-image route is a draft, not a working reproduction. The EDU device flag is documented; installed launch syntax and memory fit remain unverified. No new SDK boot, image build or native test occurred. The advanced split-host instructions remain unchanged, with historical receipts kept separate. Stop before executing this proposal.
+Frozen files: codelab/codelab.md SHA256 9b0880616529fd1e19e9d42a0f72dbc88969db8b10b7b4ccf2c7c4a3807ba0c6 @ ce28dd067c82d8cedc8291804d0be3db472f9bb2, README.md SHA256 de842d89a1718c6eedea242653ae75594844c2690990007fed6a552c3f07ee06 @ b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d, docs/learner-route.md SHA256 36cfb16a04425b30ca5c62a48d4280b9a2cb41355191956fab86b92279b58619 @ ce28dd067c82d8cedc8291804d0be3db472f9bb2, docs/stock-route-research.json SHA256 a858521364f431fbfdfa8bb0c4facf5aa246a511cb6a7995cf4a17885ffa2069 @ ce28dd067c82d8cedc8291804d0be3db472f9bb2
+REVIEW boundary: No new native PASS.
 
 ## L02 — 115–135 seconds · recorded SDK build boundary
 Claim: Recorded new stock platform using guest disk swap under serialized stated caps; existing legal SDK reused.

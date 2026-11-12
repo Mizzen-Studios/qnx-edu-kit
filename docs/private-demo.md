@@ -1,10 +1,10 @@
 # Private demo preparation — DRY PACK only
 
-Current feature wave is **BLOCKED_STOCK_MKIFS_OOM**, not native acceptance. Own wrong-step3 SDK compile/link observed; no valid IFS, no new native run. [Exact Nov10 receipt](acceptance/features-20261110/NOTES.md). Any native frames below are separately labeled historical observations; added pulse/log/trace remain NOT_RUN.
+Nov12 stock-first section is **DRAFT / UNVERIFIED**, preparation only: no fresh SDK boot, image build or native test. The Nov10 feature wave remains **BLOCKED_STOCK_MKIFS_OOM**, not native acceptance. Own wrong-step3 SDK compile/link observed; no valid IFS, no new native run. [Exact Nov10 receipt](acceptance/features-20261110/NOTES.md). Any native frames below are separately labeled historical observations; added pulse/log/trace remain NOT_RUN.
 
-Canonical [line-by-line script, claims, frozen files and planned frames](proof-capture/SCRIPT.md), [pack](proof-capture/pack.json), [report](proof-capture/report.json). Exact narration count **295 words**, planned **175seconds (2:55)**. Editorial arithmetic only; no measured or rehearsed duration or target-timing claim.
+Canonical [line-by-line script, claims, frozen files and planned frames](proof-capture/SCRIPT.md), [pack](proof-capture/pack.json), [report](proof-capture/report.json). Exact narration count **293 words**, planned **175seconds (2:55)**. Editorial arithmetic only; no measured or rehearsed duration or target-timing claim.
 
-Run from any workdir: `python3 /your/checkout/tools/proof_capture.py`. Missing assets, changed frozen hashes, absent claim/REVIEW mapping or stale script/report fail. Current packet asset binding is toada5d0ff03533a2fec0983f3fedbd9bada9df8a9; no old receipt repinned. Structural identity checks do not automatically establish semantic truth.
+Run from any workdir: `python3 /your/checkout/tools/proof_capture.py`. Missing assets, changed frozen hashes, absent claim/REVIEW mapping or stale script/report fail. Current instruction-copy freeze is ce28dd067c82d8cedc8291804d0be3db472f9bb2 (Nov12 DRAFT/UNVERIFIED stock-first proposal, host preparation only); historical receipt and Nov10 blocked-evidence bindings are unchanged. Structural identity checks do not automatically establish semantic truth.
 
 **No recording or audio capture. Separate Olly OK required.** No upload/publication/deployment/contact. Conditional council acceptance only, native features FROZEN; C6FAIL/STOPPED, SocketCANUNVERIFIED. Narration distinguishes automated reused-SDK observations from human learning, fresh install or second SDK, none of which are validated.
 

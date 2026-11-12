@@ -28,17 +28,17 @@
     },
     {
       "path": "docs/private-demo.md",
-      "sha256": "a13ce1b424ff832e3bebc33d16fdf0771f9261c5b613224adc2c2a0d3ad89dd7",
+      "sha256": "c58decc1e4474976e7ca6680b95a8fae686d4638ae907a462abadbad059fa180",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "27c70b4a3b073bcce29947ae5722b2d4f2dfad11b1b6f909bd337099923d0104",
+      "sha256": "cb66d13d96bfaf5ca2791fd1e43b49762e7a584224dde41676279111f7d4b1f6",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b",
+      "sha256": "9b0880616529fd1e19e9d42a0f72dbc88969db8b10b7b4ccf2c7c4a3807ba0c6",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "path": "docs/site/codelab/codelab.html",
-      "sha256": "4564187b9be158c5e3d1a373171b16e00903249684022ed6f82a2d6c4bc3bd32",
+      "sha256": "edc9e91d19f490fa482bddcbc9aa8a2d1780e64b68308e2faa6f20aa60dc6356",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -273,7 +273,7 @@
     },
     {
       "path": "docs/site/docs/learner-route.html",
-      "sha256": "0b652fa39911d9f87955dd9775025260230b42b82117b8ba5f4772a6177b5b7d",
+      "sha256": "5664ca04fce7613fada48aa870b747d45535e414dc9a175d6db8e5918e3ae9c4",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -308,12 +308,12 @@
     },
     {
       "path": "docs/site/docs/private-demo.html",
-      "sha256": "b45fb0e4651f0930d48858073caeb50612749f2e4ff1fe79570844a3915688fb",
+      "sha256": "e8ba63364d06fc1218e1444ea1933bad161f0ced38241d6250626b7f56df32cf",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "ab9144dc62036ff694c4c98846abd78b391c5f52bed1365deac53f3e3fbd5d24",
+      "sha256": "215fe6b5c94255dfc9efbc663b8281861ff75e67934945b212d0bcad15af46d0",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -866,6 +866,11 @@
     {
       "source": "docs/private-demo.md",
       "target": "learner-route.md",
+      "exists": true
+    },
+    {
+      "source": "codelab/codelab.md",
+      "target": "../docs/stock-route-research.json",
       "exists": true
     },
     {
@@ -1586,6 +1591,11 @@
     {
       "source": "docs/site/codelab/codelab.html",
       "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/codelab/codelab.html",
+      "target": "../docs/stock-route-research.json",
       "exists": true
     },
     {
@@ -2825,6 +2835,11 @@
     },
     {
       "source": "docs/site/docs/learner-route.html",
+      "target": "../docs/stock-route-research.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/learner-route.html",
       "target": "../docs/acceptance/choice-a-20261109/receipt.json",
       "exists": true
     },
@@ -3854,8 +3869,8 @@
     "status": "PASS",
     "errors": [],
     "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-    "packet_source_commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d",
-    "narration_words": 295,
+    "packet_source_commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2",
+    "narration_words": 293,
     "planned_seconds": 175,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",
     "recorded": false,
@@ -3997,17 +4012,17 @@
       },
       {
         "id": "T01",
-        "words": 53,
+        "words": 51,
         "start": 80,
         "end": 115,
-        "claim": "Current copy supports split-host only; HOST notebook/CI distinct from recorded QNX and human acceptance.",
-        "frame": "Local sanitized file view: codelab/codelab.md first tutorial, README.md first nine lines, docs/learner-route.md. Show guest versus HOST variables and STOP/REAP barrier. Instruction-copy freeze only, not current native execution.",
-        "label": "HOST-only tutorial copy, not native execution",
+        "claim": "Host-only stock-first DRAFT/UNVERIFIED proposal; no new build/native proof. Existing advanced tutorial preserved byte-for-byte after the inserted section.",
+        "frame": "Show explicit DRAFT / UNVERIFIED stock section and docs/stock-route-research.json, then the unchanged advanced tutorial boundary. Never show historical frames as execution of the proposed route.",
+        "label": "host-only draft; stock native NOT_RUN",
         "assets": [
           {
             "path": "codelab/codelab.md",
-            "sha256": "f442edaf1b96bd8c3a90df71caacb22f0a1dd674c3afd64146f8089497c07f7b",
-            "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
+            "sha256": "9b0880616529fd1e19e9d42a0f72dbc88969db8b10b7b4ccf2c7c4a3807ba0c6",
+            "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
           },
           {
             "path": "README.md",
@@ -4016,8 +4031,13 @@
           },
           {
             "path": "docs/learner-route.md",
-            "sha256": "18a94e983c82a6984cc2bed800de68396252b333704c93eb41a4f70554fad170",
-            "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
+            "sha256": "36cfb16a04425b30ca5c62a48d4280b9a2cb41355191956fab86b92279b58619",
+            "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
+          },
+          {
+            "path": "docs/stock-route-research.json",
+            "sha256": "a858521364f431fbfdfa8bb0c4facf5aa246a511cb6a7995cf4a17885ffa2069",
+            "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
           }
         ]
       },
