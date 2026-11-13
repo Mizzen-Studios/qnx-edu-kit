@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "bytes": 14696,
+  "sha256": "1c39e61dddda036f7595cdf0a2df038c9394c51b681dae8ec392c49f9408f6ad",
+  "method": "guest od hex readback exact byte equality"
+}

@@ -1,0 +1,9 @@
+{
+  "before_sha256": "2cda4901775f46f31b45cef362c1ea68ead9ce72b401ee274be736f95e60d4ef",
+  "after_sha256": "ac1d3c0d70ab30e920de706d608c6b22fcb0a66a4712b215c05f289c81be909e",
+  "default_sdk_mib": 512,
+  "EDU_explicit_optin_mib": 1024,
+  "EDU_other_values_refused": true,
+  "other_caps_unchanged": true,
+  "QEMU_started_by_test": false
+}

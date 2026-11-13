@@ -1,0 +1,132 @@
+{
+  "status": "REQUESTED_STOP",
+  "kind": "clean-stock-native-console-owner",
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "0"
+  },
+  "nice": 15,
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "pc",
+    "-accel",
+    "tcg,tb-size=256",
+    "-cpu",
+    "max",
+    "-smp",
+    "1",
+    "-m",
+    "512",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-drive",
+    "file=/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct-state.qcow2,format=qcow2,if=ide,id=drv0",
+    "-nic",
+    "none",
+    "-device",
+    "virtio-rng-pci",
+    "-kernel",
+    "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+    "-device",
+    "edu"
+  ],
+  "stock_boot_mode": "bios",
+  "network": "none: serial transfer; no bridge/host networking repair",
+  "image_provenance": "fresh stock mkqnximage; only EDU QEMU_OPTIONS snippet; lessons copied after boot",
+  "stock_hashes": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "base_drive": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+  "base_drive_sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+  "overlay_initial_sha256": "f8b95c0bff3dc51a1abdea27091dc2f05026b7a25ce3fcae1a00af265334b21c",
+  "commands": [
+    {
+      "id": "001-prepare",
+      "kind": "send",
+      "started": 1794566545.0440428,
+      "text": "echo EDU_CORRECT_BOOT_BEGIN; uname -a; mkdir -p /data/edu-stock; stty -echo; echo EDU_CORRECT_READY",
+      "status": "DONE",
+      "ended": 1794566545.285675
+    },
+    {
+      "id": "002-correct-transfer",
+      "kind": "transfer",
+      "started": 1794566545.2865908,
+      "status": "DONE",
+      "bytes": 14696,
+      "source": "/home/ubuntu/qnx-host/guest/shared/edu-stock-correct-20261113/output/learner_bin",
+      "source_sha256": "1c39e61dddda036f7595cdf0a2df038c9394c51b681dae8ec392c49f9408f6ad",
+      "target": "/data/edu-stock/correct",
+      "route": "serial builtin printf octal chunks128; target hash verification separate",
+      "ended": 1794566581.991602
+    },
+    {
+      "id": "003-correct-readback",
+      "kind": "send",
+      "started": 1794566582.0424566,
+      "text": "echo EDU_CORRECT_BYTES_BEGIN; od -An -v -tx1 /data/edu-stock/correct; echo EDU_CORRECT_BYTES_END",
+      "status": "DONE",
+      "ended": 1794566582.8824742
+    },
+    {
+      "id": "004-finish-transfer",
+      "kind": "transfer",
+      "started": 1794566582.884797,
+      "status": "DONE",
+      "bytes": 24472,
+      "source": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-finish/learner_bin",
+      "source_sha256": "66c1c767b32b5ac439dcd817101e45f3eff36f71edcf293ddf0e37717ed5f559",
+      "target": "/data/edu-stock/finish",
+      "route": "serial builtin printf octal chunks128; target hash verification separate",
+      "ended": 1794566638.8633962
+    },
+    {
+      "id": "005-finish-readback",
+      "kind": "send",
+      "started": 1794566638.865411,
+      "text": "echo EDU_FINISH_BYTES_BEGIN; od -An -v -tx1 /data/edu-stock/finish; echo EDU_FINISH_BYTES_END",
+      "status": "DONE",
+      "ended": 1794566640.085049
+    },
+    {
+      "id": "006-run-correct",
+      "kind": "send",
+      "started": 1794566640.1362734,
+      "text": "chmod 700 /data/edu-stock/correct; /data/edu-stock/correct; echo EDU_CORRECT_APP_RC=$?; slog2info | grep EDU_EVENT; echo EDU_CORRECT_DONE",
+      "status": "DONE",
+      "ended": 1794566640.7995577
+    },
+    {
+      "id": "007-run-finish",
+      "kind": "send",
+      "started": 1794566655.703413,
+      "text": "chmod 700 /data/edu-stock/finish; /data/edu-stock/finish > /data/edu-stock/finish.log 2>&1 & edu_pid=$!; waitfor /dev/edu 5; echo EDU_WAITFOR_RC=$?; printf '10\\n' > /dev/edu; echo EDU_WRITE_RC=$?; cat /dev/edu; echo EDU_READ_RC=$?; kill $edu_pid; wait $edu_pid; echo EDU_FINISH_STOP_RC=$?; cat /data/edu-stock/finish.log; slog2info | grep EDU_EVENT; echo EDU_FINISH_DONE",
+      "status": "DONE",
+      "ended": 1794566657.6517327
+    }
+  ],
+  "memory_samples": 157,
+  "pid": 595114,
+  "qemu_rc": 0,
+  "peak_cgroup_bytes": 519569408,
+  "stopped_reaped": true,
+  "raw_serial_sha256": "d8675e05e11494ad4b210c58fa164da72e50e440f22e0c498a99a4acb6969a00",
+  "overlay_final_sha256": "6fbca2bf96ed98628debd2fb8a2fde138d8e6a9e900f03ad5a46f195a97c41c3",
+  "stock_base_hashes_after": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "completed_at": 1794566670.3161764
+}

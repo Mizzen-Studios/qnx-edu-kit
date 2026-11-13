@@ -1,0 +1,15 @@
+--- controller.before.py
++++ controller.after.py
+@@ -26,7 +26,11 @@
+    if quota!='max' and int(quota)<=2.5*int(period): capped=True
+  if not capped: raise SystemExit('Refusing uncapped QEMU: use guestctl.py start or an explicit <=250% CPU scope')
+  sdk_memory=os.environ.get('CAN_SDK_MEMORY_MIB','512')
+- if sdk_memory not in ('512','768'): raise SystemExit('SDK memory override must be512 or768')
++ edu_memory=os.environ.get('EDU_SDK_MEMORY_MIB')
++ if edu_memory is not None:
++  if edu_memory != '1024': raise SystemExit('EDU SDK opt-in must be1024; native guests remain512')
++  sdk_memory=edu_memory
++ elif sdk_memory not in ('512','768'): raise SystemExit('SDK memory override must be512 or768')
+  args=['qemu-system-x86_64','-machine','q35','-accel','tcg,tb-size=256','-cpu','max','-smp','1','-m',sdk_memory,'-display','none','-no-reboot','-serial','stdio','-monitor','none','-qmp',f'unix:{qmp},server=on,wait=off','-drive',f'file={p}/guest.qcow2,format=qcow2,if=virtio','-drive',f'file={p}/seed.iso,format=raw,media=cdrom,readonly=on','-nic','user,model=virtio-net-pci','-virtfs',f'local,path={p}/shared,mount_tag=hostshare,security_model=mapped-xattr,id=shared']
+  (p/'launch.json').write_text(json.dumps({'args':args,'started':time.time()},indent=2))
+  proc=subprocess.Popen(args,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL)

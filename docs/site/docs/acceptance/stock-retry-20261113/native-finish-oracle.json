@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED_STOCK_NATIVE_IRQ_TIMEOUT",
+  "device_ready": true,
+  "iat_irq": 10,
+  "write_input": 10,
+  "write_rc": 1,
+  "write_error": "Connection timed out",
+  "read_rc": 1,
+  "read_error": "Input/output error",
+  "factorial_result_observed": false,
+  "irq_completion_observed": false,
+  "pulse_observed": false,
+  "ready_slog2_observed": true,
+  "process_terminated_rc": 143,
+  "root_cause": "UNVERIFIED; no routing changes or retry",
+  "evidence_sha256": "e16bdc30e3f1085c351ca379143a660816272ac7cd535db8122e58a46f34700f"
+}

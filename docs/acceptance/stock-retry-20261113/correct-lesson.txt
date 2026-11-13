@@ -1,0 +1,14 @@
+chmod 700 /data/edu-stock/correct; /data/edu-stock/correct; echo EDU_CORRECT_APP_RC=$?; slog2info | grep EDU_EVENT; echo EDU_CORRECT_DONE
+EDU TARGET QNX 8.0.0 x86pc
+EDU PROBE BEGIN
+EDU STEP1 PASS QNX target process
+EDU LIBPCI base=55428f9000 file=/proc/boot/libpci.so.3.0 read_ba=55429094e0
+EDU LIBC base=5542928000 file=/proc/boot/libc.so.6 memcpy=5542999600
+EDU IO_LEVEL_1 acquired
+EDU PCI attached
+EDU STEP2 PASS PCI server attach
+LEARNER_MMIO id=010000ed write=12345678 read=edcba987
+EDU_CORRECT_APP_RC=0
+Nov 13 10:43:59.206            edu_learner.2871298               events*     1  EDU_EVENT mmio id=010000ed write=12345678 read=edcba987
+EDU_CORRECT_DONE
+# 

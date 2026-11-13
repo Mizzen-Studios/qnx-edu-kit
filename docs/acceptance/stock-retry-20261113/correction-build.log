@@ -1,0 +1,53 @@
+/mnt/host/edu-stock-correct-20261113/step3-correct.c: OK
+/home/qnx/qnx800/host/linux/x86_64/usr/bin/qcc
+EDU_STOCK_COMPILE phase=before_compile
+               total        used        free      shared  buff/cache   available
+Mem:          983540      292552      642340         988      193020      690988
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    682 snap            38164 Ssl
+    683 snapd           36724 Ssl
+    672 cloud-init      34008 Rs
+    366 multipathd      27300 SLsl
+    677 fwupdmgr        16840 Ssl
+    714 udisksd         13476 Rsl
+    505 systemd-resolve 12972 Ss
+      1 systemd         12960 Rs
+    309 systemd-journal 12452 S<s
+    627 systemd-network  9476 Ss
+    778 unattended-upgr  9340 Rs
+EDU_STOCK_COMPILE phase=after_compile
+               total        used        free      shared  buff/cache   available
+Mem:          983540      323848      567808         984      236760      659692
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    672 cloud-init      41860 Rs
+    683 snapd           39176 Ssl
+    682 snap            38164 Ssl
+    366 multipathd      27300 SLsl
+    778 unattended-upgr 23228 Ssl
+    853 fwupd           21312 Rsl
+    714 udisksd         13632 Ssl
+      1 systemd         13032 Ss
+    505 systemd-resolve 12972 Ss
+    841 ModemManager    12612 Rsl
+    309 systemd-journal 12488 S<s
+EDU_STOCK_COMPILE phase=after_link
+               total        used        free      shared  buff/cache   available
+Mem:          983540      320768      560260         992      247500      662772
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    672 cloud-init      42132 Rs
+    683 snapd           40212 Ssl
+    682 snap            38164 Ssl
+    853 fwupd           37748 Rsl
+    366 multipathd      27300 SLsl
+    778 unattended-upgr 23228 Ssl
+    714 udisksd         13668 Ssl
+      1 systemd         13156 Ss
+    505 systemd-resolve 12972 Ss
+    841 ModemManager    12900 Ssl
+    309 systemd-journal 12496 S<s

@@ -1,0 +1,16 @@
+{
+  "stage": "FAIL",
+  "app_rc": 0,
+  "expected": {
+    "id": "010000ed",
+    "write": "12345678",
+    "read": "edcba987"
+  },
+  "actual": {
+    "id": "010000ed",
+    "write": "12345679",
+    "read": "edcba986"
+  },
+  "evidence_sha256": "a691d5b7dafd56e62da966c8d3c5d297cb58a8b36cdb42e9986997ae0f8b4d28",
+  "reviewed_at": 1794566005.6172907
+}

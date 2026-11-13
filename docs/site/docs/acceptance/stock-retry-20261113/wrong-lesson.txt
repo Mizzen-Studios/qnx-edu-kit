@@ -1,0 +1,11 @@
+EDU TARGET QNX 8.0.0 x86pc
+EDU PROBE BEGIN
+EDU STEP1 PASS QNX target process
+EDU LIBPCI base=4b597c9000 file=/proc/boot/libpci.so.3.0 read_ba=4b597d94e0
+EDU LIBC base=4b597f8000 file=/proc/boot/libc.so.6 memcpy=4b59869600
+EDU IO_LEVEL_1 acquired
+EDU PCI attached
+EDU STEP2 PASS PCI server attach
+LEARNER_MMIO id=010000ed write=12345679 read=edcba986
+EDU_WRONG_APP_RC=0
+Nov 13 10:33:00.387            edu_learner.1323010               events*     1  EDU_EVENT mmio id=010000ed write=12345679 read=edcba986

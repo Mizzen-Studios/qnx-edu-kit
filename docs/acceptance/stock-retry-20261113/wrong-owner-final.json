@@ -1,0 +1,120 @@
+{
+  "status": "REQUESTED_STOP",
+  "kind": "clean-stock-native-console-owner",
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "0"
+  },
+  "nice": 15,
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "pc",
+    "-accel",
+    "tcg,tb-size=256",
+    "-cpu",
+    "max",
+    "-smp",
+    "1",
+    "-m",
+    "512",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-drive",
+    "file=/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-state.qcow2,format=qcow2,if=ide,id=drv0",
+    "-nic",
+    "none",
+    "-device",
+    "virtio-rng-pci",
+    "-kernel",
+    "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+    "-device",
+    "edu"
+  ],
+  "stock_boot_mode": "bios",
+  "network": "none: serial transfer; no bridge/host networking repair",
+  "image_provenance": "fresh stock mkqnximage; only EDU QEMU_OPTIONS snippet; lessons copied after boot",
+  "stock_hashes": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "base_drive": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+  "base_drive_sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+  "overlay_initial_sha256": "f8b95c0bff3dc51a1abdea27091dc2f05026b7a25ce3fcae1a00af265334b21c",
+  "commands": [
+    {
+      "id": "001-probe",
+      "kind": "send",
+      "started": 1794565499.3595617,
+      "text": "echo EDU_STOCK_PROBE_BEGIN; uname -a; id; pwd; ls -ld /data /data/home/root; command -v sha256sum; command -v stty; command -v slog2info; command -v waitfor; echo EDU_STOCK_PROBE_DONE",
+      "status": "DONE",
+      "ended": 1794565499.6907778
+    },
+    {
+      "id": "002-hash-tools",
+      "kind": "send",
+      "started": 1794565582.4797559,
+      "text": "echo EDU_HASH_TOOL_PROBE_BEGIN; command -v od; command -v cksum; command -v openssl; ls -l /proc/boot/toybox /system/bin/toybox /system/bin/sha256sum /usr/bin/sha256sum /proc/boot/sha256sum; echo EDU_HASH_TOOL_PROBE_DONE",
+      "status": "DONE",
+      "ended": 1794565582.6702855
+    },
+    {
+      "id": "003-copy-prepare",
+      "kind": "send",
+      "started": 1794565622.221965,
+      "text": "/proc/boot/toybox sha256sum /proc/boot/toybox; echo EDU_HASH_RC=$?; mkdir /data/edu-stock; echo EDU_DIR_RC=$?; stty -echo; echo EDU_COPY_READY",
+      "status": "DONE",
+      "ended": 1794565622.505772
+    },
+    {
+      "id": "004-transfer-wrong",
+      "kind": "transfer",
+      "started": 1794565934.6839957,
+      "status": "DONE",
+      "bytes": 14696,
+      "source": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-wrong/learner_bin",
+      "source_sha256": "b33336d938a1df7561552bd1c4c581a8362421043f2fbb7dc85c2d83b72e9b90",
+      "target": "/data/edu-stock/wrong",
+      "route": "serial builtin printf octal chunks128; target hash verification separate",
+      "ended": 1794565974.1284544
+    },
+    {
+      "id": "005-readback",
+      "kind": "send",
+      "started": 1794565974.1309016,
+      "text": "echo EDU_BYTES_BEGIN; od -An -v -tx1 /data/edu-stock/wrong; echo EDU_BYTES_END",
+      "status": "DONE",
+      "ended": 1794565974.9434183
+    },
+    {
+      "id": "006-run-wrong",
+      "kind": "send",
+      "started": 1794565979.5873334,
+      "text": "chmod 700 /data/edu-stock/wrong; /data/edu-stock/wrong; echo EDU_WRONG_APP_RC=$?; slog2info; echo EDU_WRONG_DONE",
+      "status": "DONE",
+      "ended": 1794565981.2145982
+    }
+  ],
+  "memory_samples": 588,
+  "pid": 593567,
+  "qemu_rc": 0,
+  "peak_cgroup_bytes": 508424192,
+  "stopped_reaped": true,
+  "raw_serial_sha256": "e1bef08485ab0731a46df803e7e88bf581113b6937de730c57eb9f1dd135ebcc",
+  "overlay_final_sha256": "6279c04758abea31c8682ec9819ce127011b3dcabe5bd9f324aa780449b42e89",
+  "stock_base_hashes_after": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "completed_at": 1794566005.856381
+}

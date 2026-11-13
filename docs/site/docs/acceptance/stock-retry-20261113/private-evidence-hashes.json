@@ -1,0 +1,81 @@
+{
+  "native-wrong": {
+    "004-transfer-wrong.result.json": {
+      "sha256": "a7bcb9f482bfa7f43e608923c6aa1fe3db0845c0a9e7aa502e4ecccf8b01ae3a",
+      "bytes": 466,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/004-transfer-wrong.result.json"
+    },
+    "005-readback.result.json": {
+      "sha256": "db78fe6b61dfcbcf3ac1a55747c6040d47645877a3bcbc9540e5f97b04558cb3",
+      "bytes": 48119,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/005-readback.result.json"
+    },
+    "003-copy-prepare.result.json": {
+      "sha256": "6b34cb19c6e4db530c9363cbc837d51a133fb0b83eae22cd28002a4f0964aa6c",
+      "bytes": 561,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/003-copy-prepare.result.json"
+    },
+    "001-probe.result.json": {
+      "sha256": "9b5fc55374d1cb296486aacbec0377f2a371b7b721103d0b4cd6e0a672c9e48e",
+      "bytes": 866,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/001-probe.result.json"
+    },
+    "006-run-wrong.result.json": {
+      "sha256": "a691d5b7dafd56e62da966c8d3c5d297cb58a8b36cdb42e9986997ae0f8b4d28",
+      "bytes": 148199,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/006-run-wrong.result.json"
+    },
+    "002-hash-tools.result.json": {
+      "sha256": "d18bde2b5bc419946d38bf91435bac4df028d4b7aea1c864cda8621828bf7315",
+      "bytes": 1031,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/002-hash-tools.result.json"
+    },
+    "serial.private": {
+      "sha256": "e1bef08485ab0731a46df803e7e88bf581113b6937de730c57eb9f1dd135ebcc",
+      "bytes": 281129,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-wrong/serial.private"
+    }
+  },
+  "native-correct": {
+    "007-run-finish.result.json": {
+      "sha256": "e16bdc30e3f1085c351ca379143a660816272ac7cd535db8122e58a46f34700f",
+      "bytes": 1535,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/007-run-finish.result.json"
+    },
+    "002-correct-transfer.result.json": {
+      "sha256": "6fd7586e16902624af41b0516dcee4c41513958d11f9eaf4b774560e620046a0",
+      "bytes": 467,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/002-correct-transfer.result.json"
+    },
+    "004-finish-transfer.result.json": {
+      "sha256": "70ced200111bb8231610ebffd46845abd73b5871c433c1945cdbfc7348e81020",
+      "bytes": 468,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/004-finish-transfer.result.json"
+    },
+    "001-prepare.result.json": {
+      "sha256": "8e15415912cd06716c796d40836d475f50ba8b89e793a52a206fa1ad73c9b9f5",
+      "bytes": 464,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/001-prepare.result.json"
+    },
+    "003-correct-readback.result.json": {
+      "sha256": "924804d1eed00a9591d2be72686fc43253eb7534aac395e6f5dba75dc2910481",
+      "bytes": 48181,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/003-correct-readback.result.json"
+    },
+    "006-run-correct.result.json": {
+      "sha256": "44193c42602d472a44521f9344f5e2d4a3749dde7be96e5086cedf7202c75bf4",
+      "bytes": 1004,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/006-run-correct.result.json"
+    },
+    "005-finish-readback.result.json": {
+      "sha256": "dfdc79421c23a01cf978bf68adb7f69e883ff557979a9559c4217777ab023c7e",
+      "bytes": 79944,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/005-finish-readback.result.json"
+    },
+    "serial.private": {
+      "sha256": "d8675e05e11494ad4b210c58fa164da72e50e440f22e0c498a99a4acb6969a00",
+      "bytes": 358876,
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/native-correct/serial.private"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "original_source_commit": "4a00a4f4af71f24964450f257acc6aea30312ec4",
+  "retry_start_commit": "d182130534adadeca7fa34eb53e63d8cc04dd214",
+  "wrong": {
+    "source_sha256": "7868b7dfa3fc1d3f21600bc4231430d5c40f082f63999fd4b57d3485f945a19c",
+    "elf_sha256": "b33336d938a1df7561552bd1c4c581a8362421043f2fbb7dc85c2d83b72e9b90",
+    "build_evidence": "../native-20261113 in private qnx-hostshare; reused existing original application ELF, not a stock image"
+  },
+  "finish": {
+    "source_sha256": "1a8fdee05352850931d945fc1a037909172afadb883d31a2ff21bff7b9b5ef46",
+    "elf_sha256": "66c1c767b32b5ac439dcd817101e45f3eff36f71edcf293ddf0e37717ed5f559"
+  },
+  "correct": {
+    "source_sha256": "2e3f68d281f9011024359584a053fa46f52a71f2824abece5c6410888b68aebc",
+    "elf_sha256": "1c39e61dddda036f7595cdf0a2df038c9394c51b681dae8ec392c49f9408f6ad",
+    "created_after_wrong": true,
+    "image_regenerated": false
+  }
+}

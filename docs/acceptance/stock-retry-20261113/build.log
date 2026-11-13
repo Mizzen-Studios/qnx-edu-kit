@@ -1,0 +1,73 @@
+EDU_CLEAN_STOCK phase=before_stock_build
+               total        used        free      shared  buff/cache   available
+Mem:          983540      294676      648964         992      184192      688864
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    681 snapd           38140 Ssl
+    680 snap            37784 Ssl
+    671 cloud-init      35424 Rs
+    366 multipathd      27300 SLsl
+    711 udisksd         13624 Ssl
+    782 unattended-upgr 13320 Rs
+      1 systemd         13232 Ss
+    509 systemd-resolve 13004 Ss
+    308 systemd-journal 12504 S<s
+    626 systemd-network  9492 Ss
+    823 (agetty)         8128 S
+    678 polkitd          8104 Ssl
+    702 systemd-logind   8044 Ss
+    512 systemd-timesyn  7912 Ssl
+Options changed
+Generating output/build/mount_fs.sh
+Generating output/build/expandfs.sh
+Generating output/build/post_startup.sh
+Generating output/build/start_net.sh
+Generating output/build/startup.sh
+Generating output/build/passwd
+Generating output/build/group
+Generating output/build/shadow
+Generating output/build/ifs.build
+Generating output/build/system.build
+Generating output/build/data.build
+Generating output/build/qemu_options
+Building disk
+Generating system partition . . .
+Generating data partition . . .
+Generating ifs . . .
+Building boot partition . . .
+Building disk . . .
+Target type: qemu
+Architecture: x86_64
+Security: no
+Repositories:
+    
+    /home/qnx/qnx800/target/qnx
+
+Options with non-default values:
+
+--cpu='1'
+--ram='512M'
+
+For full list of options, run "mkqnximage --options"
+EDU_CLEAN_STOCK phase=after_stock_build
+               total        used        free      shared  buff/cache   available
+Mem:          983540      350640      468356         976      312568      632900
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    366 multipathd      27300 SLsl
+    782 unattended-upgr 19500 Ssl
+      1 systemd         13436 Ss
+    711 udisksd         11924 Ssl
+    308 systemd-journal 11452 S<s
+    816 ModemManager    10984 Ssl
+    509 systemd-resolve 10648 Ss
+    626 systemd-network  8432 Ss
+    512 systemd-timesyn  7916 Ssl
+    702 systemd-logind   7880 Ss
+    678 polkitd          7868 Ssl
+    374 systemd-udevd    6940 Ss
+    673 dbus-daemon      5268 Ss
+    746 rsyslogd         5220 Ssl
+PASS: generated QEMU_OPTIONS has one EDU device; no lesson IFS snippets

@@ -1,0 +1,10 @@
+{
+  "stage": "PASS",
+  "app_rc": 0,
+  "expected_and_actual": {
+    "id": "010000ed",
+    "write": "12345678",
+    "read": "edcba987"
+  },
+  "evidence_sha256": "44193c42602d472a44521f9344f5e2d4a3749dde7be96e5086cedf7202c75bf4"
+}
