@@ -33,6 +33,18 @@ class CodelabExport(unittest.TestCase):
         self.assertIn('BLOCKED_STOCK_MKIFS_OOM',route)
         self.assertIn('Do not activate/create/resize swap',route)
         self.assertNotIn('then swapon',route)
+        # Keep the actual serialization commands, not just the prose marker.
+        ready = route.index('test -f "$EDU_BASE/sdk-control/SDK_READY"\npython3')
+        build = route.index('python3 "$EDU_CONTROLLER" exec "$EDU_BASE/build.sh" 600')
+        stop = route.index('touch "$EDU_BASE/sdk-control/STOP"', build)
+        reap = route.index('wait "$SDK_OWNER"', stop)
+        free = route.index('flock -n /home/ubuntu/qnx-host/native-test.lock true', reap)
+        native = route.index('env EDU_NATIVE_LEASE=granted python3')
+        self.assertLess(ready, build)
+        self.assertLess(build, stop)
+        self.assertLess(stop, reap)
+        self.assertLess(reap, free)
+        self.assertLess(free, native)
 
     def test_stock_draft_first_without_modifying_advanced_bytes(self):
         text=(ROOT/'docs/learner-route-custom-legacy.md').read_text()

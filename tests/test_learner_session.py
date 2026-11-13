@@ -231,4 +231,7 @@ class SessionTests(unittest.TestCase):
         self.assertFalse(result['ready_for_attempt'])
         self.assertEqual(result['native_acceptance'],'NOT_RUN')
         self.assertIn('learner_bootstrap.sh','\n'.join(result['commands']))
-        self.assertNotIn('/home/ubuntu/qnx-host','\n'.join(result['commands']))
+        # The checkout itself may legally live below qnx-host (shared SDK mount).
+        # Reject undeclared lab paths, not the caller's actual repository path.
+        commands = '\n'.join(result['commands']).replace(str(ROOT), '<REPO>')
+        self.assertNotIn('/home/ubuntu/qnx-host', commands)
