@@ -3,8 +3,8 @@
   "status": "PASS",
   "errors": [],
   "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "70503c476d685f6e061c2d7e10972c5d8eee5570",
-  "narration_words": 294,
+  "packet_source_commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6",
+  "narration_words": 287,
   "planned_seconds": 175,
   "duration_verified": "editorial plan only; no rehearsal/recorded duration",
   "recorded": false,
@@ -146,27 +146,27 @@
     },
     {
       "id": "T01",
-      "words": 52,
+      "words": 45,
       "start": 80,
       "end": 115,
-      "claim": "DRAFT/UNVERIFIED stock-first route; one observed clean stock guest OOM before native. Original advanced bytes and historical proof unchanged.",
-      "frame": "Show Nov13 stock receipt, guest OOM row, zero-byte IFS, absent disk, monitored HOST peak and cleanup. Then DRAFT stock-first guide; no stock-native frame exists. Keep historical run frames separate.",
-      "label": "measured clean stock SDK build BLOCKED; stock native NOT_RUN",
+      "claim": "Working stock recipe: fresh application compile with explicitly reused approved stock artifacts; no new image-generation claim.",
+      "frame": "Show working recipe and explicit artifact prerequisites; keep historical native receipts separately source-bound. DRY instructions only; no recording.",
+      "label": "working stock instruction copy; cold-reader adapter validation pending",
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "f93a50d679586cfa199ac381ae9c84a64800335199669f177701453ddce62ba5",
-          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
+          "sha256": "9829c72865f6366005afee85e5a4c641bf8af475a049eb163ae6ecb0bc0164f8",
+          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
         },
         {
           "path": "README.md",
-          "sha256": "b6b91dee878c88f4e49abe592e477ec244d495f58697670b7373945c4defcee2",
-          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
+          "sha256": "eb9c70a501dec155d891b4c5b19913fb31cfec3c133d122f692981f2ab3d03ea",
+          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "62fe190b1b2f0c8d773e889106e5493751ff9a793e9cbd5365e9eb575573b226",
-          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
+          "sha256": "3adf44429be9fcf6aed2319efce1e0ee88faba630fb5e86ada9d1f28c3a7b601",
+          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
         },
         {
           "path": "docs/stock-route-research.json",
@@ -177,6 +177,11 @@
           "path": "docs/acceptance/stock-20261113/receipt.json",
           "sha256": "839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6",
           "commit": "c569ee4b01b33149dd3ba8236a4e21b4666ca35f"
+        },
+        {
+          "path": "docs/acceptance/irq-retry-20261113/receipt.json",
+          "sha256": "e68f906ba4ccd54fbfa5c561b32e78d8361ad2279dc0e077261cc1add860cdd7",
+          "commit": "ecede36235dfcfb705e9d36c212cd4cdc6358059"
         }
       ]
     },
