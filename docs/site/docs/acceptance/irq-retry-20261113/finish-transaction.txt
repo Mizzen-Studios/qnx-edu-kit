@@ -1,0 +1,19 @@
+chmod 700 /data/edu-irq-retry/finish; /data/edu-irq-retry/finish --pci-line > /data/edu-irq-retry/finish.log 2>&1 & edu_pid=$!; waitfor /dev/edu 5; echo EDU_WAITFOR_RC=$?; printf '10\n' > /dev/edu; echo EDU_WRITE_RC=$?; cat /dev/edu; echo EDU_READ_RC=$?; kill $edu_pid; wait $edu_pid; echo EDU_FINISH_STOP_RC=$?; cat /data/edu-irq-retry/finish.log; slog2info | grep EDU_EVENT; echo EDU_FINISH_DONE
+[1] 1921026
+EDU_WAITFOR_RC=0
+EDU_WRITE_RC=0
+3628800
+EDU_READ_RC=0
+Terminated 
+EDU_FINISH_STOP_RC=143
+EDU IRQ metadata api=10 config=11 pin=1 mode=pci-line
+EDU RESMGR IAT attached irq=11 id=1
+EDU RESMGR SLOG2 configured pages=1 limit=8
+EDU OWN /dev/edu ready; same-owner IRQ pulse + bounded slog2
+EDU RESMGR PULSE sequence=1 input=10 result=3628800 sent=1 received=1 owner=same-thread
+EDU RESMGR IRQ completion=1 input=10 result=3628800 ack=00000000
+Nov 13 11:35:58.221            edu_learner.1921026               events*     1  EDU_EVENT ready channel=private budget=8 pages=1
+Nov 13 11:35:58.324            edu_learner.1921026               events      2  EDU_EVENT irq sequence=1 input=10 result=3628800 ack=00000000
+Nov 13 11:35:58.325            edu_learner.1921026               events      3  EDU_EVENT pulse sequence=1 input=10 result=3628800
+EDU_FINISH_DONE
+# 

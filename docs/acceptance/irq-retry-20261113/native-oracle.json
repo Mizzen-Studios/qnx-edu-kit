@@ -1,0 +1,28 @@
+{
+  "status": "PASS_ONE_STOCK_FINISH_TRANSACTION",
+  "checks": {
+    "write_zero": true,
+    "read_zero": true,
+    "result": true,
+    "metadata": true,
+    "attached_irq11": true,
+    "irq_ack": true,
+    "pulse": true,
+    "slog_irq": true,
+    "slog_pulse": true
+  },
+  "input": 10,
+  "result": 3628800,
+  "api_irq": 10,
+  "config_line": 11,
+  "config_pin": 1,
+  "attached_irq": 11,
+  "ack": "00000000",
+  "write_rc": 0,
+  "read_rc": 0,
+  "service_stop_rc": 143,
+  "service_stop_expected": "explicit SIGTERM after completed transaction",
+  "transactions": 1,
+  "source_and_elf_byte_binding": "transfer-verification.json",
+  "raw_result_sha256": "224eb0988d636647d0304b36bf1a880575b5ce895428bbb4cd6576555fa748ef"
+}

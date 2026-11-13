@@ -1,0 +1,104 @@
+{
+  "status": "REQUESTED_STOP",
+  "kind": "clean-stock-native-console-owner",
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "0"
+  },
+  "nice": 15,
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "pc",
+    "-accel",
+    "tcg,tb-size=256",
+    "-cpu",
+    "max",
+    "-smp",
+    "1",
+    "-m",
+    "512",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-drive",
+    "file=/home/ubuntu/qnx-host/guest/shared/edu-irq-retry-20261113/native-state.qcow2,format=qcow2,if=ide,id=drv0",
+    "-nic",
+    "none",
+    "-device",
+    "virtio-rng-pci",
+    "-kernel",
+    "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+    "-device",
+    "edu"
+  ],
+  "stock_boot_mode": "bios",
+  "network": "none: serial transfer; no bridge/host networking repair",
+  "image_provenance": "fresh stock mkqnximage; only EDU QEMU_OPTIONS snippet; lessons copied after boot",
+  "stock_hashes": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "base_drive": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+  "base_drive_sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+  "overlay_initial_sha256": "f8b95c0bff3dc51a1abdea27091dc2f05026b7a25ce3fcae1a00af265334b21c",
+  "commands": [
+    {
+      "id": "001-prepare",
+      "kind": "send",
+      "started": 1794569648.2532861,
+      "text": "echo EDU_IRQ_RETRY_BOOT; uname -a; mkdir /data/edu-irq-retry; echo EDU_DIR_RC=$?; stty -echo; echo EDU_IRQ_RETRY_READY",
+      "status": "DONE",
+      "ended": 1794569648.4984095
+    },
+    {
+      "id": "002-transfer",
+      "kind": "transfer",
+      "started": 1794569655.3610146,
+      "status": "DONE",
+      "bytes": 24544,
+      "source": "/home/ubuntu/qnx-host/guest/shared/edu-irq-retry-20261113/output/learner_bin",
+      "source_sha256": "e599c54a0eb2b64dff5114f9ab499867a75ba4336ee1d09cba8a628d42d0a3d4",
+      "target": "/data/edu-irq-retry/finish",
+      "route": "serial builtin printf octal chunks128; target hash verification separate",
+      "ended": 1794569715.0125644
+    },
+    {
+      "id": "003-readback",
+      "kind": "send",
+      "started": 1794569715.0150564,
+      "text": "echo EDU_RETRY_BYTES_BEGIN; od -An -v -tx1 /data/edu-irq-retry/finish; echo EDU_RETRY_BYTES_END",
+      "status": "DONE",
+      "ended": 1794569716.1751027
+    },
+    {
+      "id": "004-run-finish",
+      "kind": "send",
+      "started": 1794569758.979891,
+      "text": "chmod 700 /data/edu-irq-retry/finish; /data/edu-irq-retry/finish --pci-line > /data/edu-irq-retry/finish.log 2>&1 & edu_pid=$!; waitfor /dev/edu 5; echo EDU_WAITFOR_RC=$?; printf '10\\n' > /dev/edu; echo EDU_WRITE_RC=$?; cat /dev/edu; echo EDU_READ_RC=$?; kill $edu_pid; wait $edu_pid; echo EDU_FINISH_STOP_RC=$?; cat /data/edu-irq-retry/finish.log; slog2info | grep EDU_EVENT; echo EDU_FINISH_DONE",
+      "status": "DONE",
+      "ended": 1794569760.0679471
+    }
+  ],
+  "memory_samples": 176,
+  "pid": 602899,
+  "qemu_rc": 0,
+  "peak_cgroup_bytes": 517066752,
+  "stopped_reaped": true,
+  "raw_serial_sha256": "e31d5a763d12450bb1e25d5fddb2c2853c8432d960fd0eeed8733daedd8bc8a2",
+  "overlay_final_sha256": "c25c3fad73b647e2944782df40431c7864c780f97b4f5e8cdc290880e95c70be",
+  "stock_base_hashes_after": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+  },
+  "completed_at": 1794569798.068557
+}

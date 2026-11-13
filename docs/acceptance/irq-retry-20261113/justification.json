@@ -1,0 +1,13 @@
+{
+  "source_commit": "67f17401b9a5b946aee8abf59b5f94f2b0fae08b",
+  "prior_failure_receipt": "../stock-retry-20261113/receipt.json",
+  "hostshare_provenance_commit": "22ca7a77c94e7af4e7f8f182b82b9c1d0dc55fcf",
+  "hypothesis": "reported API10 differs from configured stock legacy line11; attach existing config line without writes",
+  "before_attempt": true,
+  "no_image_generation": true,
+  "native_attempt_limit": 1,
+  "minimum_success": "actual 10 to 3628800 plus own IRQ completion and ack0",
+  "selected_mode": "--pci-line; default API mode preserved",
+  "wait_unmask_distinction": "Historical Nov8 used InterruptWait(UNMASK) plus redundant explicit unmask. Current uses InterruptWait(0), so keep one explicit unmask after ack.",
+  "installed_neutrino_header_sha256": "811f603e45f2db4738501eaa74f89e04c383df379c829847ecc6e370bef71a5a"
+}

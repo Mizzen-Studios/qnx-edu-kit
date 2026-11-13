@@ -1,0 +1,10 @@
+{
+  "pid": 602290,
+  "scope": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-r0ad73d7487234f47b8aab91c4bb8c240.scope",
+  "breach": false,
+  "samples": 490,
+  "peak_bytes": 965160960,
+  "swap_bytes": 0,
+  "ended": 1794569582.3120844,
+  "qemu_absent": true
+}

@@ -1,0 +1,53 @@
+/mnt/host/edu-irq-retry-20261113/step6-own.c: OK
+/home/qnx/qnx800/host/linux/x86_64/usr/bin/qcc
+EDU_STOCK_COMPILE phase=before_compile
+               total        used        free      shared  buff/cache   available
+Mem:          983540      304808      637128         980      185924      678732
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    679 snap            37952 Ssl
+    680 snapd           36252 Ssl
+    670 cloud-init      31464 Rs
+    364 multipathd      27300 SLsl
+    713 udisksd         13296 Rsl
+      1 systemd         13116 Rs
+    507 systemd-resolve 12960 Ss
+    307 systemd-journal 12396 S<s
+    625 systemd-network  9532 Ss
+    701 systemd-logind   8088 Ss
+    677 polkitd          8040 Ssl
+EDU_STOCK_COMPILE phase=after_compile
+               total        used        free      shared  buff/cache   available
+Mem:          983540      328600      563556         996      236376      654940
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    670 cloud-init      41876 Rs
+    680 snapd           39048 Ssl
+    679 snap            37952 Ssl
+    364 multipathd      27300 SLsl
+    776 unattended-upgr 23120 Ssl
+    876 fwupd           19584 Rsl
+    713 udisksd         13612 Ssl
+      1 systemd         13180 Ss
+    507 systemd-resolve 12960 Ss
+    836 ModemManager    12868 Ssl
+    307 systemd-journal 12456 R<s
+EDU_STOCK_COMPILE phase=after_link
+               total        used        free      shared  buff/cache   available
+Mem:          983540      330540      547680         992      250344      653000
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    670 cloud-init      42836 Rs
+    680 snapd           40064 Ssl
+    679 snap            37952 Ssl
+    876 fwupd           34260 Rsl
+    364 multipathd      27300 SLsl
+    776 unattended-upgr 23120 Ssl
+    880 package-data-do 15072 Rs
+    713 udisksd         13640 Ssl
+      1 systemd         13304 Ss
+    507 systemd-resolve 12960 Ss
+    836 ModemManager    12868 Ssl

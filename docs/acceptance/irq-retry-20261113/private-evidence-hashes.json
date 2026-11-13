@@ -1,0 +1,20 @@
+{
+  "serial.private": {
+    "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-irq-retry-20261113/native/serial.private",
+    "bytes": 223334,
+    "sha256": "e31d5a763d12450bb1e25d5fddb2c2853c8432d960fd0eeed8733daedd8bc8a2",
+    "not_committed": "executable bytes/raw transfer remain external"
+  },
+  "003-readback.result.json": {
+    "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-irq-retry-20261113/native/003-readback.result.json",
+    "bytes": 80173,
+    "sha256": "5b5e5da0f7cefd6e3428f771bf1e45e8ae3e63d11ebce1df8376d44aef808970",
+    "not_committed": "executable bytes/raw transfer remain external"
+  },
+  "002-transfer.result.json": {
+    "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-irq-retry-20261113/native/002-transfer.result.json",
+    "bytes": 459,
+    "sha256": "7250ae7d3336247be7744dd677a6575721f6a5d120eeb4ad5704aea9d918d082",
+    "not_committed": "executable bytes/raw transfer remain external"
+  }
+}

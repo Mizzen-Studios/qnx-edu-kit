@@ -1,0 +1,141 @@
+{
+  "kind": "edu-one-stock-irq-retry.v1",
+  "status": "PASS_ONE_STOCK_FINISH_TRANSACTION",
+  "scope": "11:03 explicit owner grant; one justified native finish retry; owner independent review pending",
+  "source_commit": "67f17401b9a5b946aee8abf59b5f94f2b0fae08b",
+  "prior_failed_receipt": "../stock-retry-20261113/receipt.json",
+  "source_sha256": "c84e91925d84731b18e1ad11718b692a78e351bf2f633895e9781c7ef8641ef7",
+  "object_sha256": "e9ea03b1c457b7a8a5da2ec8e60af6f4eb132638363feb05b9299416a212cfcb",
+  "elf_sha256": "e599c54a0eb2b64dff5114f9ab499867a75ba4336ee1d09cba8a628d42d0a3d4",
+  "sdk_compile_job": "1794569122267633500",
+  "sdk_compile_rc": 0,
+  "sdk_boots": 1,
+  "native_boots": 1,
+  "stock_image_generation_attempts": 0,
+  "transactions": 1,
+  "wrong_correct_mmio_gates_repeated": false,
+  "native_oracle": {
+    "status": "PASS_ONE_STOCK_FINISH_TRANSACTION",
+    "checks": {
+      "write_zero": true,
+      "read_zero": true,
+      "result": true,
+      "metadata": true,
+      "attached_irq11": true,
+      "irq_ack": true,
+      "pulse": true,
+      "slog_irq": true,
+      "slog_pulse": true
+    },
+    "input": 10,
+    "result": 3628800,
+    "api_irq": 10,
+    "config_line": 11,
+    "config_pin": 1,
+    "attached_irq": 11,
+    "ack": "00000000",
+    "write_rc": 0,
+    "read_rc": 0,
+    "service_stop_rc": 143,
+    "service_stop_expected": "explicit SIGTERM after completed transaction",
+    "transactions": 1,
+    "source_and_elf_byte_binding": "transfer-verification.json",
+    "raw_result_sha256": "224eb0988d636647d0304b36bf1a880575b5ce895428bbb4cd6576555fa748ef"
+  },
+  "stock_artifacts": {
+    "ifs.bin": {
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+      "sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "bytes": 10910404
+    },
+    "disk-qemu": {
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu",
+      "sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "bytes": 154345984
+    },
+    "disk-qemu.vmdk": {
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+      "sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+      "bytes": 169
+    },
+    "qemu_options": {
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/qemu_options",
+      "sha256": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+      "bytes": 12
+    },
+    "options": {
+      "external_path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/options",
+      "sha256": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5",
+      "bytes": 2543
+    }
+  },
+  "bounds": {
+    "sdk_guest_mib": 1024,
+    "native_guest_mib": 512,
+    "host_max_bytes": 2147483648,
+    "reserve_bytes": 67108864,
+    "tcg_cache_mib": 256,
+    "cpu_quota": "100%",
+    "smp": 1,
+    "nice": 15,
+    "swap_bytes": 0,
+    "sdk_peak_with_shutdown_bytes": 965160960,
+    "sdk_resource_breach": false,
+    "native_monitored_peak_bytes": 517066752,
+    "native_effective_caps": {
+      "cpu.max": "100000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "0"
+    }
+  },
+  "no_routing_rewrite_or_qtest": true,
+  "driver_change": "explicit --pci-line selects read-only existing legacy config line; no hardcoded IRQ11 fallback; default API mode unchanged",
+  "observed_selection": {
+    "api": 10,
+    "config_line": 11,
+    "pin": 1,
+    "selected_irq": 11
+  },
+  "causal_claim": "Fix validated in this stock x86 setup only; not a general PCI API defect or portability proof",
+  "cleanup": {
+    "checked_utc": "2026-11-13T11:38:47.793566+00:00",
+    "all_owned_sdk_native_reaped": true,
+    "qemu_absent": true,
+    "actual_lease_free": true,
+    "wave_stopped_for_parent_review": true
+  },
+  "limitations": [
+    "stock networking/SSH unverified, nic none serial route; boot sshd memory fault remains",
+    "one synchronous factorial transaction, not concurrency/stress/safety/timing or full portability proof",
+    "same-owner private pulse, not asynchronous second IST/worker",
+    "optional trace capture NOT_RUN in this finish-only scope",
+    "historical failures and broader acceptance pins unchanged; no media/publication/CAN/C6/install/login/spend"
+  ],
+  "evidence": {
+    "RESULT.md": "5c5a47f08f779b79c6b0fd22759f4a599f0293260f314444e0f7ae23d2fe9cff",
+    "cleanup.json": "ef4817bb202a09c8e7d7d3495dd368c426246ea719320e62d68522dfad3bf896",
+    "compile-lesson.sh": "31758ff8f94a1db3ef1b5943160e729c44107ad03e96adf1caf1722e57a6321a",
+    "finish-transaction.json": "d19f9ca9e41d4f46dfe54e2a9129b200fe3f4c6db104e60284e958cc91fbb55b",
+    "finish-transaction.txt": "67071d9f357a9245a5c995086f5d46b61df5e670908dc12bf31ae977deb22ceb",
+    "hashes.txt": "293762e787a7f385f6d21e6f4d1f8e6b9be338502c2707f9e39c76d4ea565a12",
+    "justification.json": "0be5f5a63a2b3a57aa2d2a1aa84c1dd95b8042b4e2bd49d448e99af4df30db18",
+    "learner-source.c": "c84e91925d84731b18e1ad11718b692a78e351bf2f633895e9781c7ef8641ef7",
+    "native-memory.csv": "f7c5c595bf3d7209c61d0b1f2576d70902a415b2b51e0b7f6e24b713c46fc464",
+    "native-oracle.json": "09a27da109057ff8bfdf1d0759e69fc92ec639e341388b5ffba30d57149e2c0c",
+    "native-owner-final.json": "63db5c4661dafecc015cba471d987fcb2f4932b37859cc87c5c4739424165ed0",
+    "native-owner-start.json": "6863471c258152a471a964cc4e863fb1169f7bb39cff6e9163598978dc192dbc",
+    "native-owner.py": "e6aeb6237a5e06b9536a825106d0e6f7d233ac5da2ec44bc3c9b918cc97bbeea",
+    "native-transfer-verification.json": "523e3cb5d2653c339786b597874a8e4667f6d30953ea29bd548090bf96181944",
+    "private-evidence-hashes.json": "45db25e7b4f71c00caedef19163230c0d509f67bc5f614b46b1788944c2e9d8d",
+    "safety-tail-result.json": "c6b9bf48b0d070846c317653d889a02e6d0308e12598e0fe8068bb6bbfe28ff8",
+    "safety-tail.csv": "5b37669dbdfc319900d49ae797dc8c97fc1d3efc63b25a1a0486f431bf72cf92",
+    "safety-tail.py": "20adc2a1bc96a71ef0cc1c8a4319639d586b4044cedca1d02f27020a30b4b075",
+    "sdk-build.log": "718a1788a85544cf8681e0a80c48bb0e475aa75af89159e341bfa13d20beec7f",
+    "sdk-dispatch.sh": "5bc4f796550037fd409690f46c0408e0d3f06b4d0f799aa3688591e683d6173e",
+    "sdk-memory.csv": "7ab757f9b8335d809758725308888b515e2af81fa7eb955f96fbb087788c70e7",
+    "sdk-owner.json": "c658fb8f7790d221aa72f55ffba73d528a8901e9ea6146e74424febcf80059d9",
+    "sdk-owner.py": "26e6d90be011546d26bd7b01149e9e785f7049eed3606d783c195d62210b126c",
+    "sdk-stop.log": "c68328a1db1a5e84f064c530f569a63395faeff4eb3e1f71815552f0ad08f4d0",
+    "stock-boot.txt": "a90e3eaf7ba27a81e2b67f6b49c80e947b9f2a815ada959c8d9ad91686fc6369"
+  }
+}

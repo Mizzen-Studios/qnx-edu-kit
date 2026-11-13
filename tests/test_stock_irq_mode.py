@@ -21,4 +21,20 @@ class StockIRQMode(unittest.TestCase):
             s=(ROOT/'steps/step6'/name/'main.c').read_text()
             self.assertIn('EDU IRQ metadata api=',s)
             self.assertIn('irq = config_line;',s)
+    def test_one_native_retry_receipt_is_bound_and_bounded(self):
+        import json,hashlib
+        d=ROOT/'docs/acceptance/irq-retry-20261113'
+        r=json.loads((d/'receipt.json').read_text())
+        self.assertEqual(r['status'],'PASS_ONE_STOCK_FINISH_TRANSACTION')
+        self.assertEqual(r['native_boots'],1)
+        self.assertEqual(r['stock_image_generation_attempts'],0)
+        self.assertFalse(r['wrong_correct_mmio_gates_repeated'])
+        self.assertEqual(r['native_oracle']['result'],3628800)
+        self.assertTrue(all(r['native_oracle']['checks'].values()))
+        self.assertTrue(r['no_routing_rewrite_or_qtest'])
+        self.assertTrue(r['cleanup']['actual_lease_free'])
+        self.assertEqual(r['observed_selection']['selected_irq'],11)
+        for name,digest in r['evidence'].items():
+            self.assertEqual(hashlib.sha256((d/name).read_bytes()).hexdigest(),digest,name)
+        self.assertEqual(hashlib.sha256((d/'learner-source.c').read_bytes()).hexdigest(),r['source_sha256'])
 if __name__=='__main__': unittest.main()
