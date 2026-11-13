@@ -1,0 +1,26 @@
+chmod 700 /data/edu-own/learner; echo LEARNER_BIND source=196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605 binary=6ac7621815ad74592a99bd2abb3a2f80600e93313f8152b4aa5cdfc2124fdce0; echo "EDU TARGET $(uname -s) $(uname -r) $(uname -m)"; /data/edu-own/learner --pci-line > /data/edu-own/app.log 2>&1 & learner_pid=$!; waitfor /dev/edu 5; printf "10\n" > /dev/edu; write_rc=$?; observed=$(cat /dev/edu); read_rc=$?; echo "LEARNER_DEV_EDU write_rc=$write_rc read_rc=$read_rc result=$observed"; result_rc=1; if test "$write_rc" = 0 && test "$read_rc" = 0 && test "$observed" = 3628800; then result_rc=0; fi; kill "$learner_pid"; wait "$learner_pid"; echo LEARNER_DAEMON_EXIT=$?; cat /data/edu-own/app.log; echo LEARNER_SLOG2_BEGIN; slog2info -b edu_learner; slog_rc=$?; echo LEARNER_SLOG2_END rc=$slog_rc; command -v secpolpush; echo SECPOL_PUSH_TOOL_RC=$?; command -v secpolmonitor; echo SECPOL_MONITOR_TOOL_RC=$?; echo LEARNER_TRACE OMITTED finish_only_scope; echo LEARNER_RC=$result_rc; echo STOCK_DONE
+
+LEARNER_BIND source=196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605 binary=6ac7621815ad74592a99bd2abb3a2f80600e93313f8152b4aa5cdfc2124fdce0
+EDU TARGET QNX 8.0.0 x86pc
+[1] 1937410
+LEARNER_DEV_EDU write_rc=0 read_rc=0 result=3628800
+Terminated
+LEARNER_DAEMON_EXIT=143
+EDU IRQ metadata api=10 config=11 pin=1 mode=pci-line
+EDU RESMGR IAT attached irq=11 id=1
+EDU RESMGR SLOG2 configured pages=1 limit=8
+EDU OWN COLDREADER 1208 ready /dev/edu mode=0660
+EDU RESMGR PULSE sequence=1 input=10 result=3628800 sent=1 received=1 owner=same-thread
+EDU RESMGR IRQ completion=1 input=10 result=3628800 ack=00000000
+LEARNER_SLOG2_BEGIN
+Nov 13 12:45:30.724            edu_learner.1937410               events*     1  EDU_EVENT ready channel=private budget=8 pages=1
+Nov 13 12:45:30.819            edu_learner.1937410               events      2  EDU_EVENT irq sequence=1 input=10 result=3628800 ack=00000000
+Nov 13 12:45:30.819            edu_learner.1937410               events      3  EDU_EVENT pulse sequence=1 input=10 result=3628800
+LEARNER_SLOG2_END rc=0
+SECPOL_PUSH_TOOL_RC=1
+/system/bin/secpolmonitor
+SECPOL_MONITOR_TOOL_RC=0
+LEARNER_TRACE OMITTED finish_only_scope
+LEARNER_RC=0
+STOCK_DONE
+#

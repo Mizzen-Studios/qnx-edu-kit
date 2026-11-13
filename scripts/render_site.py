@@ -98,6 +98,10 @@ def outputs():
     for name in ('wrong-native.log', 'correct-native.log', 'finish-native.log'):
         f=ROOT/'docs/acceptance/wrapper-20261108'/name
         result[OUT/f.relative_to(ROOT)]=f.read_text()
+    # Reviewed original own C and readable serial text; no SDK assets/readback bytes.
+    for name in ('native-readable.log', 'own-step6.c'):
+        f=ROOT/'docs/acceptance/coldreader-stock-20261113'/name
+        result[OUT/f.relative_to(ROOT)]=f.read_text()
     for folder in ('steps', 'native'):
         for pattern in ('**/*.c', '**/*.h'):
             for f in (ROOT/folder).glob(pattern):

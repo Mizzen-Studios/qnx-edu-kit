@@ -1,0 +1,100 @@
+{
+  "kind": "edu-clean-clone-own-stock-checkpoint-v1",
+  "status": "PASS_NATIVE_AND_OWN_EXPORT_AFTER_OFFLINE_VALIDATOR_FIX",
+  "source_commit": "667d62b5bf9536bbf5694d7753258f802be8a7cf",
+  "scope": "ONE fresh automated clean-clone step6 observation, not independent human/all-stage/fresh-image reproduction",
+  "sdk_boots": 1,
+  "native_boots": 1,
+  "image_generation": false,
+  "stock_provenance": "REUSED approved Nov13 clean stock artifacts; NOT a new image build",
+  "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+  "object_sha256": "ce0e5d97c71eacaa56b8893304984e25878cbec58d45158e1965eaf8cb15868d",
+  "binary_sha256": "6ac7621815ad74592a99bd2abb3a2f80600e93313f8152b4aa5cdfc2124fdce0",
+  "image_sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+  "disk_sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+  "checks": {
+    "binding": true,
+    "ordering": true,
+    "qnx_target": true,
+    "normal_io": true,
+    "irq_completion": true,
+    "exit_zero": true,
+    "finite_slog2": true,
+    "pulse_handoff": true,
+    "bounded_slog2_config": true,
+    "slog2_irq": true,
+    "slog2_pulse": true,
+    "caps_exact": true,
+    "approved_boot_artifacts": true,
+    "serial_bytes_verified": true,
+    "qemu_reaped": true,
+    "stock_unchanged": true,
+    "bounded_completion": true,
+    "explicit_stock_irq": true,
+    "inputs_unchanged_after_boot": true
+  },
+  "raw_native_log_sha256": "58b500465e2be8b8c63a9e027ccbde685b1dfe260901a9350b3330ac0e2b0df0",
+  "raw_observation_sha256": "528422bfa70a7cae4cc04101549bc96458f647ea157026442df51c4609fafe4e",
+  "raw_readback_result_sha256": "62d2e4ae80860a01c5379be6482c66224036e6691f58b08c7a290d3cdfb3184d",
+  "sdk_peak_bytes": 911470592,
+  "native_peak_bytes": 517201920,
+  "sdk_stopped_reaped": true,
+  "native_stopped_reaped": true,
+  "export": {
+    "status": "OWN_EXPORT_VERIFIED",
+    "files": 41,
+    "pack_sha256": "f731641749aeb3928c5a0a71534e4e173939aaa7d3df937e2dda0e1cbbf4ac10",
+    "current_sources": {
+      "step3": {
+        "source_sha256": "b620cc941344e0b9736eb35144cb575754a0919995d3fd7a04f0368a64b3c032",
+        "validation": "CURRENT_STAGE_NOT_VALIDATED"
+      },
+      "step6": {
+        "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+        "validation": "CURRENT_SOURCE_RECORDED_PASS"
+      }
+    },
+    "native_attempts": 1,
+    "offline_revalidation": {
+      "at": 1794574018.8066502,
+      "previous_error": "stock log changed",
+      "validator_sha256": "7434fd8800cb53191669bdd810f7c10818a6cd0b94a0da16f2465c184df32ada",
+      "archive": "supplemental/before-revalidation-f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728.json"
+    },
+    "validator_sha256": "7434fd8800cb53191669bdd810f7c10818a6cd0b94a0da16f2465c184df32ada",
+    "privacy": "All licensed artifacts remain in private local export; only hashes/original application source/sanitized text receipts enter Git."
+  },
+  "clean_clone_initial_host_suite": {
+    "total": 133,
+    "passed": 130,
+    "skipped": 2,
+    "failed": 1,
+    "cause": "Test incorrectly rejected declared qnx-host checkout path; test-only fix3738c63"
+  },
+  "validation_gap": "Initial notebook BLOCKED stock log changed: universal newline conversion. Raw receipt success true/all19checks true. Offline byte-exact fix and revalidation preserve original notebook; no native retry.",
+  "optional_secpol": "BLOCKED: no approved nondisplacing loaded policy/denyallow fixture; tools probed only",
+  "secpolpush": "NOT_INSTALLED command-v rc1",
+  "secpolmonitor": "/system/bin/secpolmonitor command-v rc0; no policy loaded",
+  "optional_trace": "NOT_RUN finish-only scope; no performance claim",
+  "cleanup": "No QEMU; actual native-test.lock acquired nonblocking after cleanup",
+  "historical_receipts": "Unchanged; no old native pins promoted",
+  "files": {
+    "build-manifest.json": "edb50ae3f332f6443f7cde7decd1563f974a458497dc23e3f8d7be428d13358a",
+    "build.log": "86874384894890335305d60552736957d8804a1d42d02282e46c94cdcf9ddaf6",
+    "checkout.json": "74a68b51a6eba470c4dc4145a3fd57f0eb758a86402a858e41fd4b0f1e8007b0",
+    "cold-clone-host-failure.log": "cbbd5478f56e71db1e8295bbcdfe0f63fbf89aaa71e7cd4bc5d8c1de7ce6968a",
+    "export-manifest.json": "f731641749aeb3928c5a0a71534e4e173939aaa7d3df937e2dda0e1cbbf4ac10",
+    "export-validation.json": "d844c7fde3e3d1bed54db611e98fba6453d9b13f90e13ec6a20344e077eea2f4",
+    "native-readable.log": "d85fc50d5ca84ff963b39aeba78d23f5d0a0bb01c1e84512bd298d4cc4f5ea5f",
+    "native.json": "a91f4ff8306f2ebd45592b9a589ed4a51b8779902eee93cf53226310707b89cd",
+    "notebook-after-revalidation.json": "291008521551ada23a9c7036813cd3ed46e91be1442f3e47ed510cc2cc4158b7",
+    "notebook-before-revalidation.json": "f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728",
+    "observation.json": "528422bfa70a7cae4cc04101549bc96458f647ea157026442df51c4609fafe4e",
+    "own-step6.c": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+    "sdk-build.sh": "5f256034514b90ab0507c01019818a2490c5ab7cd47ee833432ddf93d1b0c110",
+    "sdk-host.sh": "1b23e6246db042bc36d5b6b64ac859f8b4cca73d5cf24b450ad8ba995e14dad5",
+    "sdk-owner.json": "f193e3309c4831b99735e124de4855b85b686da595f481be24e4dbd02e0e08af"
+  },
+  "raw_build_log_sha256": "c7a8aee06001e2077e09a5f221e804dce500b723647ca436498cd0ddadf92953",
+  "build_log_sanitization": "SDK environment path banner removed; no compiler/source diagnostics removed"
+}

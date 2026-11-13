@@ -1,0 +1,24 @@
+{
+  "status": "OWN_EXPORT_VERIFIED",
+  "files": 41,
+  "pack_sha256": "f731641749aeb3928c5a0a71534e4e173939aaa7d3df937e2dda0e1cbbf4ac10",
+  "current_sources": {
+    "step3": {
+      "source_sha256": "b620cc941344e0b9736eb35144cb575754a0919995d3fd7a04f0368a64b3c032",
+      "validation": "CURRENT_STAGE_NOT_VALIDATED"
+    },
+    "step6": {
+      "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    }
+  },
+  "native_attempts": 1,
+  "offline_revalidation": {
+    "at": 1794574018.8066502,
+    "previous_error": "stock log changed",
+    "validator_sha256": "7434fd8800cb53191669bdd810f7c10818a6cd0b94a0da16f2465c184df32ada",
+    "archive": "supplemental/before-revalidation-f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728.json"
+  },
+  "validator_sha256": "7434fd8800cb53191669bdd810f7c10818a6cd0b94a0da16f2465c184df32ada",
+  "privacy": "All licensed artifacts remain in private local export; only hashes/original application source/sanitized text receipts enter Git."
+}

@@ -3,8 +3,8 @@
   "status": "PASS",
   "errors": [],
   "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6",
-  "narration_words": 287,
+  "packet_source_commit": "751d3ff8d73130ef2987a024450993ac19f8d1d6",
+  "narration_words": 295,
   "planned_seconds": 175,
   "duration_verified": "editorial plan only; no rehearsal/recorded duration",
   "recorded": false,
@@ -146,27 +146,27 @@
     },
     {
       "id": "T01",
-      "words": 45,
+      "words": 53,
       "start": 80,
       "end": 115,
       "claim": "Working stock recipe: fresh application compile with explicitly reused approved stock artifacts; no new image-generation claim.",
       "frame": "Show working recipe and explicit artifact prerequisites; keep historical native receipts separately source-bound. DRY instructions only; no recording.",
-      "label": "working stock instruction copy; cold-reader adapter validation pending",
+      "label": "working stock instruction copy; new cold-reader receipt separately scoped",
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "9829c72865f6366005afee85e5a4c641bf8af475a049eb163ae6ecb0bc0164f8",
-          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
+          "sha256": "b8a7416ec7a8eb36adea363c19bf44ca9edd6a48662a086dacda06a2c28c595f",
+          "commit": "751d3ff8d73130ef2987a024450993ac19f8d1d6"
         },
         {
           "path": "README.md",
-          "sha256": "eb9c70a501dec155d891b4c5b19913fb31cfec3c133d122f692981f2ab3d03ea",
-          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
+          "sha256": "92da4941a26b71176b9b83be85fb1580339759c8bb37dbe4b90dceef0062b111",
+          "commit": "751d3ff8d73130ef2987a024450993ac19f8d1d6"
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "3adf44429be9fcf6aed2319efce1e0ee88faba630fb5e86ada9d1f28c3a7b601",
-          "commit": "4e0d5446c9110a581e82f0a0e09bab96bcbd4fe6"
+          "sha256": "4148934e38f5f531ce56d2350f27354c49cc7d2a8773dacc88380ef70fe2b941",
+          "commit": "751d3ff8d73130ef2987a024450993ac19f8d1d6"
         },
         {
           "path": "docs/stock-route-research.json",
