@@ -13,6 +13,7 @@ import sys
 import time
 import uuid
 import learner_lab as lab
+import learner_stock as stock
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ('prediction', 'diagnosis', 'explanation')
 
@@ -70,9 +71,23 @@ def attempt(work, stage, action, args):
     folder.mkdir(parents=True)
     source = work/stage/'main.c'
     shutil.copyfile(source, folder/'main.c')
-    command = [sys.executable, str(ROOT/'scripts/learner_lab.py'), action, '--stage', stage,
+    route = getattr(args, 'stock', None) is not None
+    adapter = stock if route else lab
+    driver = ROOT/'scripts'/('learner_stock.py' if route else 'learner_lab.py')
+    command = [sys.executable, str(driver), action, '--stage', stage,
                '--source', str(source)]
-    if action == 'build':
+    if route:
+        shutil.copyfile(ROOT/'scripts/learner_stock.py',folder/'stock-adapter.py')
+        shutil.copyfile(ROOT/'scripts/learner_lab.py',folder/'base-lab-driver.py')
+        if action == 'build':
+            command += ['--out',str(folder/'bundle'),'--sdp-env',args.sdp_env]
+        else:
+            prior=next((x for x in reversed(data['attempts']) if x['stage']==stage and x['action']=='build' and x['status']=='PASS' and x.get('route')=='stock-reuse-v1' and x['source_sha256']==lab.sha(source)),None)
+            if not prior: raise ValueError('build this own source with stock adapter first')
+            command += ['--bundle',str(work/'attempts'/prior['id']/'bundle'),'--stock',args.stock,'--receipt',str(folder/'native'),'--timeout',str(args.timeout)]
+            shutil.copyfile(driver,folder/'run-driver.py')
+            shutil.copyfile(ROOT/'scripts/stock_console.py',folder/'stock-console.py')
+    elif action == 'build':
         command += ['--out',str(work/stage/'bundle'), '--sdp-env',args.sdp_env,
                     '--buildfile',args.buildfile, '--bsp-cwd',args.bsp_cwd]
     else:
@@ -81,6 +96,7 @@ def attempt(work, stage, action, args):
         shutil.copyfile(ROOT/'scripts/learner_lab.py',folder/'run-driver.py')
     record = dict(id=ident, stage=stage, action=action, started=time.time(),
                   source_sha256=lab.sha(source), command=command, label='HOST', status='INTERRUPTED')
+    if route: record['route']='stock-reuse-v1'
     data['attempts'].append(record)
     save(work/'session.json', data)
     with (folder/'command.log').open('w') as out:
@@ -88,11 +104,11 @@ def attempt(work, stage, action, args):
     record.update(returncode=result.returncode, finished=time.time(),
                   status='PASS' if result.returncode == 0 else ('BLOCKED' if result.returncode == 2 else 'FAIL'))
     if action == 'build':
-        if (work/stage/'bundle').exists():
+        if not route and (work/stage/'bundle').exists():
             shutil.copytree(work/stage/'bundle',folder/'bundle')
         if result.returncode == 0:
             try:
-                lab.verify_inputs(folder/'main.c',folder/'bundle',stage)
+                adapter.verify_inputs(folder/'main.c',folder/'bundle',stage)
             except (OSError,ValueError,KeyError) as error:
                 record.update(status='BLOCKED',validation_error=str(error))
     if action == 'run' and not (folder/'native.json').is_file():
@@ -110,6 +126,8 @@ def attempt(work, stage, action, args):
 
 def validate_native(work, record, folder):
     """Recompute existing oracle and own source/build/disk/log bindings."""
+    if record.get("route")=="stock-reuse-v1":
+        return validate_stock_native(work,record,folder)
     receipt = json.loads((folder/'native.json').read_text())
     build = next((x for x in reversed(session(work)[1]['attempts'])
                   if x['stage']==record['stage'] and x['action']=='build'
@@ -148,6 +166,29 @@ def validate_native(work, record, folder):
     return bundle, disk
 
 
+def validate_stock_native(work,record,folder):
+    receipt=json.loads((folder/'native.json').read_text())
+    prior=next((x for x in reversed(session(work)[1]['attempts']) if x['action']=='build' and x['stage']==record['stage'] and x['status']=='PASS' and x.get('route')=='stock-reuse-v1' and x['source_sha256']==record['source_sha256'] and x['started']<=record['started']),None)
+    if not prior: raise ValueError('no own stock build for this source')
+    bundle=work/'attempts'/prior['id']/'bundle';m=stock.verify_inputs(folder/'main.c',bundle,record['stage'])
+    if any(receipt.get(k)!=v for k,v in m.items()): raise ValueError('stock build/receipt mismatch')
+    command=record['command'];root=Path(command[command.index('--stock')+1]);assets=stock.stock_inputs(root)
+    if assets!=receipt.get('stock_assets'): raise ValueError('stock artifact binding mismatch')
+    if lab.sha(folder/'run-driver.py')!=receipt['run_driver_sha256'] or lab.sha(folder/'stock-console.py')!=receipt['console_driver_sha256']: raise ValueError('stock drivers changed')
+    control=folder/'native.control';owner=json.loads((control/'owner-final.json').read_text())
+    if owner.get('caps')!=receipt.get('caps'): raise ValueError('stock caps changed')
+    if owner!=receipt.get('owner'): raise ValueError('stock owner evidence changed')
+    observed=json.loads((control/'004-observe.result.json').read_text())
+    output=(folder/'native.log').read_text()
+    if observed.get('output')!=output: raise ValueError('stock log changed')
+    checked=stock.checks(output,m,control,owner)
+    checked['inputs_unchanged_after_boot']=stock.verify_inputs(folder/'main.c',bundle,record['stage'])==m and stock.stock_inputs(root)==assets
+    if checked!=receipt.get('checks'): raise ValueError('stock oracle disagrees')
+    success=all(checked.values()) and bool(owner.get('caps')) and receipt.get('error') is None
+    if type(receipt.get('success')) is not bool or receipt['success']!=success or record['returncode']!=(0 if success else 1): raise ValueError('stock status/exit mismatch')
+    return bundle,Path(assets['disk-qemu']['path'])
+
+
 def source_state(work, data):
     """Historical outcomes are immutable; current validation is source-bound."""
     result = {}
@@ -184,7 +225,7 @@ def validate_attempt(work, record, folder):
         if status == 'PASS':
             if record.get('returncode') != 0:
                 raise ValueError('build status/exit mismatch')
-            lab.verify_inputs(folder/'main.c', folder/'bundle', record['stage'])
+            (stock if record.get('route')=='stock-reuse-v1' else lab).verify_inputs(folder/'main.c', folder/'bundle', record['stage'])
         elif status == 'FAIL' and record.get('returncode') != 1:
             raise ValueError('build status/exit mismatch')
     elif has_native:
@@ -214,7 +255,12 @@ def export(work, dest):
             folder = work/'attempts'/record['id']
             disk = validate_attempt(work, record, folder)
             shutil.copytree(folder,dest/'attempts'/record['id'])
-            if disk is not None:
+            if record.get('route')=='stock-reuse-v1' and (folder/'native.json').exists():
+                receipt=json.loads((folder/'native.json').read_text())
+                for name,asset in receipt['stock_assets'].items():
+                    target=dest/'stock-artifacts'/name;target.parent.mkdir(exist_ok=True)
+                    if not target.exists(): shutil.copyfile(asset['path'],target)
+            if disk is not None and record.get('route')!='stock-reuse-v1':
                 target = dest/'disks'/lab.sha(disk)
                 target.parent.mkdir(exist_ok=True)
                 if not target.exists():
@@ -242,7 +288,13 @@ def render(work):
                                   ('step6','Your /dev/edu','Normal write10 to read3628800; separate IRQ completion1 and ack00000000 required.')]:
         cmd = 'python3 '+driver
         suffix = ' --work '+shlex.quote(str(work))
-        cmds = ['# HOST notebook notes only; not native execution',
+        cmds = ['# Working stock route: docs/learner-route.md (fresh own build, reused approved stock)',
+                cmd+' build'+suffix+' --stage '+stage+' --stock "$EDU_STOCK" --sdp-env "$EDU_SDP_ENV"',
+                '# STOP/REAP SDK, then HOST with explicit sole lease grant:',
+                'env EDU_NATIVE_LEASE=granted '+cmd+' run'+suffix+' --stage '+stage+' --stock "$EDU_STOCK" --timeout 600',
+                cmd+' export'+suffix+' --out /new/external/stock-own-export',
+                '# Historical CUSTOM-IFS adapter below is a separate route, not stock:',
+                '# HOST notebook notes only; not native execution',
                 cmd+' notes'+suffix+' --file /path/to/downloaded-notes.json',
                 '# SDK GUEST: after canonical bootstrap, copy your own source and verify its hash',
                 'python3 "$EDU_GUEST_LAB" build --stage '+stage+' --source "$EDU_GUEST_SOURCE" --out "$EDU_GUEST_BUNDLE" --sdp-env "$EDU_SDP_ENV" --buildfile "$EDU_PLATFORM/output/build/ifs.build" --bsp-cwd "$EDU_PLATFORM"',
@@ -303,11 +355,14 @@ def main():
         s=sub.add_parser(name);s.add_argument('--work',required=True)
         if name=='notes': s.add_argument('--file',required=True)
         if name=='export': s.add_argument('--out',required=True)
-        if name in ('build','run'): s.add_argument('--stage',choices=('step3','step6'),required=True)
+        if name in ('build','run'):
+            s.add_argument('--stage',choices=('step3','step6'),required=True)
+            s.add_argument('--stock',help='explicit approved stock directory; selects distinct stock adapter')
         if name=='build':
-            for opt in ('sdp-env','buildfile','bsp-cwd'): s.add_argument('--'+opt,required=True)
+            s.add_argument('--sdp-env',required=True)
+            for opt in ('buildfile','bsp-cwd'): s.add_argument('--'+opt)
         if name=='run':
-            s.add_argument('--disk',required=True)
+            s.add_argument('--disk')
             s.add_argument('--timeout',type=int,default=180)
     a=p.parse_args()
     try:

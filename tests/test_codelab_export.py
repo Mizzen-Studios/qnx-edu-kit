@@ -26,13 +26,16 @@ class CodelabExport(unittest.TestCase):
         self.assertLess(route.index('10→3628800'),route.index('## Prerequisite gate'))
         self.assertIn('stop: BLOCKED',route)
         self.assertIn('not a second IST or worker',route)
-        self.assertIn('every new native acceptance stage are NOT_RUN',route)
+        self.assertIn('Working stock recipe',route)
+        self.assertIn('--pci-line',route)
+        self.assertIn('REUSES',route)
+        self.assertIn('STOP/REAP',route)
         self.assertIn('BLOCKED_STOCK_MKIFS_OOM',route)
         self.assertIn('Do not activate/create/resize swap',route)
         self.assertNotIn('then swapon',route)
 
     def test_stock_draft_first_without_modifying_advanced_bytes(self):
-        text=(ROOT/'docs/learner-route.md').read_text()
+        text=(ROOT/'docs/learner-route-custom-legacy.md').read_text()
         old=subprocess.check_output(['git','show','e2c247d055ddb949d801a48bd809b913ff11721d:docs/learner-route.md'],cwd=ROOT,text=True)
         begin=text.index('<!-- BEGIN STOCK ROUTE DRAFT:')
         end=text.index('<!-- END STOCK ROUTE DRAFT -->')+len('<!-- END STOCK ROUTE DRAFT -->')
@@ -45,7 +48,7 @@ class CodelabExport(unittest.TestCase):
         self.assertIn('do not build an image or start SDK/QEMU',text)
         self.assertIn('No768MiB retry',text)
         page=(ROOT/'codelab/codelab.md').read_text()
-        self.assertIn('](../docs/stock-route-research.json)',page)
+        self.assertIn('](../docs/learner-route-custom-legacy.md)',page)
 
     def test_stock_draft_only_rebinds_instruction_copy(self):
         old=json.loads(subprocess.check_output(['git','show','e2c247d055ddb949d801a48bd809b913ff11721d:docs/proof-capture/pack.json'],cwd=ROOT,text=True))

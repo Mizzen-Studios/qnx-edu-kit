@@ -1,10 +1,14 @@
 # Status — current bounded update 9 November 2026
 
-## Nov13 clean stock gate — guest OOM, no native run
+## Current Nov13 working stock recipe
 
-[Exact clean-stock receipt](docs/acceptance/stock-20261113/NOTES.md): **BLOCKED_CLEAN_STOCK_IFS_OOM**. Fresh standard mkqnximage project, explicit512M/1CPU; only authored snippet added -device edu through verified QEMU_OPTIONS, no lesson/custom IFS integration. Guest killed PID1620 at329384KiB anon RSS during Generating ifs; IFS=0bytes, no bootable disk. HOST monitored peak1105190912bytes under enforced2GiB; swap0 and sampled HOST OOM events0. This was a guest memory failure, not a demonstrated HOST cap breach. SDK reaped, lease free. Clean stock route remains blocked; no stock native PASS. Wrong/correct/finish and new IRQ/pulse/slog2 runtime gates NOT_RUN. Stop lane, no retry/repair. Historical advanced source and receipts remain unchanged.
+Follow the [working stock learner recipe](docs/learner-route.md): existing licensed SDK Linux guest1GiB, HOST2GiB/TCG256/reserve64/CPU100/nice15/smp1/swap0, QNX target512MiB. [Stock generation and MMIO gates succeeded](docs/acceptance/stock-retry-20261113/RESULT.md); [actual10→3628800 + IRQack/private pulse/slog2](docs/acceptance/irq-retry-20261113/RESULT.md) uses explicit --pci-line (config11 vs API10), no routing rewrite. The fresh cold-reader adapter compiles OWN code and explicitly reuses those hashed external stock artifacts; no new image-generation claim. SSH faults/networking remain UNVERIFIED; serial transfer only. Earlier OOM/default-IRQ failures below are dated history, not the current stock blocker. No media/CAN/C6 or broader acceptance promotion.
 
-## Nov10 feature gate: stopped at stock image build
+## Historical Nov13 SDK512 gate — OOM before native (superseded)
+
+[Exact clean-stock receipt](docs/acceptance/stock-20261113/NOTES.md): **BLOCKED_CLEAN_STOCK_IFS_OOM**. Fresh standard mkqnximage project, explicit512M/1CPU; only authored snippet added -device edu through verified QEMU_OPTIONS, no lesson/custom IFS integration. Guest killed PID1620 at329384KiB anon RSS during Generating ifs; IFS=0bytes, no bootable disk. HOST monitored peak1105190912bytes under enforced2GiB; swap0 and sampled HOST OOM events0. This was a guest memory failure, not a demonstrated HOST cap breach. SDK reaped, lease free. At that bounded SDK512 attempt the stock native gates were NOT_RUN. The later explicitly authorized SDK1GiB stock build and config-line finish above supersede this blocker; this failed receipt remains unchanged. Historical advanced source and receipts remain unchanged.
+
+## Historical Nov10 feature gate: stopped at stock image build
 
 [Measured bounded receipt](docs/acceptance/features-20261110/NOTES.md): **BLOCKED_STOCK_MKIFS_OOM**. Own wrong-step3 source compiled and linked serially in the existing licensed SDK; stock platform image generation then OOM-killed a mkifs child (PID1617, anon RSS328616KiB). ifs.bin is zero bytes, not a bootable image. No HOST native run followed. Step6 compilation, new IRQ→private pulse→publication, bounded slog2 runtime capture and optional trace remain **NOT_RUN / UNVERIFIED**. Same caps; no swap/platform/package changes; SDK stopped/reaped and lease free. Historical Nov8 wrong/correct/finish receipts are unchanged, not proof of this new code. No new native PASS. Stop for independent owner review.
 

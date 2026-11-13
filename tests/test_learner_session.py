@@ -57,8 +57,11 @@ class SessionTests(unittest.TestCase):
         page=(self.work/'cockpit.html').read_text()
         for text in ['Supported topology: split-host', 'STOP/REAP', 'SDK GUEST', 'HOST ONLY', 'BLOCKED_NATIVE_TIMEOUT', 'root cause UNVERIFIED', 'EDU_GUEST_SOURCE', 'EDU_HOST_SOURCE']:
             self.assertIn(text,page)
-        self.assertNotIn('learner_session.py build',page)
-        self.assertNotIn('learner_session.py run',page)
+        self.assertIn('Working stock route',page)
+        self.assertIn('--stock',page)
+        self.assertIn('Historical CUSTOM-IFS',page)
+        self.assertIn('learner_session.py run',page)
+        self.assertIn('STOP/REAP SDK',page)
         self.assertIn('not imported notebook attempts',page)
 
     def test_readme_then_canonical_route_preserves_starters(self):
