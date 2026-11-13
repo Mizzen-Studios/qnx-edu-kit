@@ -1,0 +1,38 @@
+EDU_CLEAN_STOCK phase=before_stock_build
+               total        used        free      shared  buff/cache   available
+Mem:          468216      172984      134084         992      183212      295232
+Swap:              0           0           0
+Filename				Type		Size		Used		Priority
+    PID COMMAND           RSS STAT
+    677 snap            37816 Ssl
+    678 snapd           37568 Ssl
+    668 cloud-init      36100 Rs
+    363 multipathd      27300 SLsl
+    707 udisksd         13660 Ssl
+    780 unattended-upgr 13384 Rs
+      1 systemd         13300 Ss
+    506 systemd-resolve 13052 Ss
+    306 systemd-journal 12516 S<s
+    623 systemd-network  9568 Ss
+    819 (agetty)         8196 S
+    811 ModemManager     8112 Rsl
+    675 polkitd          8092 Ssl
+    698 systemd-logind   8052 Ss
+Options changed
+Generating output/build/mount_fs.sh
+Generating output/build/expandfs.sh
+Generating output/build/post_startup.sh
+Generating output/build/start_net.sh
+Generating output/build/startup.sh
+Generating output/build/passwd
+Generating output/build/group
+Generating output/build/shadow
+Generating output/build/ifs.build
+Generating output/build/system.build
+Generating output/build/data.build
+Generating output/build/qemu_options
+Building disk
+Generating system partition . . .
+Generating data partition . . .
+Generating ifs . . .
+cc: caught signal: 15

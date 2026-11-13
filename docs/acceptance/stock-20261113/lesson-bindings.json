@@ -1,0 +1,45 @@
+{
+  "source_commit": "4a00a4f4af71f24964450f257acc6aea30312ec4",
+  "compile_provenance_commits": [
+    "8feade27ad7ca662e44eaac350ff68e0135b1d59",
+    "bbfd6f697d32554378094465849de1b8fa0578f4"
+  ],
+  "prepared_lessons": {
+    "wrong": {
+      "learner-source.c": {
+        "sha256": "7868b7dfa3fc1d3f21600bc4231430d5c40f082f63999fd4b57d3485f945a19c",
+        "bytes": 4957,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-wrong/learner-source.c"
+      },
+      "learner.o": {
+        "sha256": "3925125c177a580ef7dd22215f737cfbcb8eb09e9b8fa3338071ed3f79d50a62",
+        "bytes": 7512,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-wrong/learner.o"
+      },
+      "learner_bin": {
+        "sha256": "b33336d938a1df7561552bd1c4c581a8362421043f2fbb7dc85c2d83b72e9b90",
+        "bytes": 14696,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-wrong/learner_bin"
+      }
+    },
+    "finish": {
+      "learner-source.c": {
+        "sha256": "1a8fdee05352850931d945fc1a037909172afadb883d31a2ff21bff7b9b5ef46",
+        "bytes": 13823,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-finish/learner-source.c"
+      },
+      "learner.o": {
+        "sha256": "e2850b2ea191b92ac63fd6709180f37ed1ca78389381e61e364fc58e85237ae7",
+        "bytes": 14928,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-finish/learner.o"
+      },
+      "learner_bin": {
+        "sha256": "66c1c767b32b5ac439dcd817101e45f3eff36f71edcf293ddf0e37717ed5f559",
+        "bytes": 24472,
+        "path": "/home/ubuntu/qnx-host/guest/shared/hostshare-native-20261113/edu-finish/learner_bin"
+      }
+    }
+  },
+  "lesson_runtime": "NOT_RUN; these are standalone compile results, not stock-native evidence",
+  "corrected_source": "NOT_CREATED"
+}

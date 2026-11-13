@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-11-13T09:08:53.739632+00:00",
+  "qemu_absent": true,
+  "lease_free": true,
+  "sdk_owner_reaped": true,
+  "sdk_owner_exit": 0,
+  "sdk_stop_rc": 0,
+  "build_process_list_after_stop_empty": true,
+  "no_further_guest_actions_authorized_or_planned": true
+}
