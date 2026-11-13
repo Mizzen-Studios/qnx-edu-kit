@@ -1,0 +1,8 @@
+{
+  "corrected_source_created": 1794576135.869262,
+  "after_wrong_finished": 1794576086.636551,
+  "wrong_native_receipt_sha256": "1421677ddbfef0b68fd86a9652e822b59d63002a617033db96be623bfdb2bbb6",
+  "wrong_source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca",
+  "correct_source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c",
+  "change": "Only write constant12345679\u219212345678; actual readback/logging unchanged"
+}

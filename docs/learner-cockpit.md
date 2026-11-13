@@ -65,7 +65,9 @@ unfinished notebook, never native acceptance. SDK libraries/images/binaries stay
 outside git. This is a local copy, not permission to redistribute licensed assets;
 review licences/privacy before any sharing. There is no upload action.
 
-## Verification and remaining gates
+## Verified coherent notebook and remaining gates
+
+[Current coherent evidence](acceptance/coherent-stock-20261113/RESULT.md) binds one new notebook at runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8: wrongFAIL/app0 → correctedPASS → own finishIRQ/pulse/slog2 →108-file verified export. This is exact-source automated evidence, not a rerun of later documentation tips or independent human acceptance. A new notebook must still earn its own observations.
 
 Host tests use explicitly artificial fixtures to test orchestration and existing
 oracles, not to claim new QNX evidence. Optional browser QA uses existing Playwright

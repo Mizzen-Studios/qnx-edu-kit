@@ -102,6 +102,10 @@ def outputs():
     for name in ('native-readable.log', 'own-step6.c'):
         f=ROOT/'docs/acceptance/coldreader-stock-20261113'/name
         result[OUT/f.relative_to(ROOT)]=f.read_text()
+    # Original learner sources for the coherent journey; no licensed binaries.
+    for name in ('wrong.c', 'correct.c', 'finish.c'):
+        f=ROOT/'docs/acceptance/coherent-stock-20261113'/name
+        result[OUT/f.relative_to(ROOT)]=f.read_text()
     for folder in ('steps', 'native'):
         for pattern in ('**/*.c', '**/*.h'):
             for f in (ROOT/folder).glob(pattern):

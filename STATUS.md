@@ -2,7 +2,9 @@
 
 ## Current Nov13 working stock recipe
 
-**New [clean-clone own checkpoint](docs/acceptance/coldreader-stock-20261113/RESULT.md):** one fresh step6 application build and stock-native run passed10→3628800/IRQack/private pulse/slog2; own41-file export verified after a documented offline CRLF validator fix. New notebook/source, reused approved stock IFS/disk; no image rebuild or native retry. Untouched step3 stays unvalidated.
+**[Coherent OWN journey verified](docs/acceptance/coherent-stock-20261113/RESULT.md):** one notebook wrong FAIL/app0 → corrected PASS → own10→3628800 with IRQack/private pulse/slog2 →108-file verified export. Exact runtime source `769a4c906c6b172c3624f8fe897b71e3c5d7e6b8`; three fresh application builds, unchanged reused stock IFS/disk, no retries. Later documentation commits report that source-bound run, not another execution at the final tip.
+
+**Earlier step6-only [clean-clone own checkpoint](docs/acceptance/coldreader-stock-20261113/RESULT.md):** one fresh step6 application build and stock-native run passed10→3628800/IRQack/private pulse/slog2; own41-file export verified after a documented offline CRLF validator fix. New notebook/source, reused approved stock IFS/disk; no image rebuild or native retry. Untouched step3 stays unvalidated.
 
 Follow the [working stock learner recipe](docs/learner-route.md): existing licensed SDK Linux guest1GiB, HOST2GiB/TCG256/reserve64/CPU100/nice15/smp1/swap0, QNX target512MiB. [Stock generation and MMIO gates succeeded](docs/acceptance/stock-retry-20261113/RESULT.md); [actual10→3628800 + IRQack/private pulse/slog2](docs/acceptance/irq-retry-20261113/RESULT.md) uses explicit --pci-line (config11 vs API10), no routing rewrite. The fresh cold-reader adapter compiles OWN code and explicitly reuses those hashed external stock artifacts; no new image-generation claim. SSH faults/networking remain UNVERIFIED; serial transfer only. Earlier OOM/default-IRQ failures below are dated history, not the current stock blocker. No media/CAN/C6 or broader acceptance promotion.
 

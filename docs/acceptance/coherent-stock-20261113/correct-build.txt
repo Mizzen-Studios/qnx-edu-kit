@@ -1,0 +1,66 @@
+[SDK environment path banner omitted; raw build log remains in own export]
+BUILD_RESOURCE phase=stock-compile point=before
+               total        used        free      shared  buff/cache   available
+Mem:             960         325         581           0         194         634
+Swap:              0           0           0
+    PID COMMAND           RSS STAT
+    670 cloud-init      42036 Rs
+    680 snapd           38512 Ssl
+    679 snap            38060 Ssl
+    365 multipathd      27300 SLsl
+    775 unattended-upgr 23016 Ssl
+    759 python3         21216 S
+    833 python3         19452 S
+    714 udisksd         13556 Ssl
+      1 systemd         13132 Ss
+    505 systemd-resolve 12964 Ss
+    805 ModemManager    12872 Ssl
+BUILD_RESOURCE phase=stock-compile point=after
+               total        used        free      shared  buff/cache   available
+Mem:             960         322         555           0         224         637
+Swap:              0           0           0
+    PID COMMAND           RSS STAT
+    680 snapd           41480 Ssl
+    365 multipathd      27300 SLsl
+    775 unattended-upgr 23016 Ssl
+    759 python3         21216 S
+    833 python3         19452 S
+    714 udisksd         13556 Ssl
+      1 systemd         13288 Ss
+    505 systemd-resolve 12964 Ss
+    805 ModemManager    12872 Ssl
+    308 systemd-journal 12504 S<s
+    625 systemd-network  9544 Ss
+BUILD_RESOURCE phase=stock-link point=before
+               total        used        free      shared  buff/cache   available
+Mem:             960         321         554           0         225         638
+Swap:              0           0           0
+    PID COMMAND           RSS STAT
+    680 snapd           42524 Ssl
+    365 multipathd      27300 SLsl
+    775 unattended-upgr 23016 Ssl
+    759 python3         21216 S
+    833 python3         19452 S
+    714 udisksd         13556 Ssl
+      1 systemd         13288 Ss
+    505 systemd-resolve 12968 Ss
+    805 ModemManager    12872 Ssl
+    308 systemd-journal 12504 S<s
+    625 systemd-network  9544 Ss
+BUILD_RESOURCE phase=stock-link point=after
+               total        used        free      shared  buff/cache   available
+Mem:             960         310         562           0         229         650
+Swap:              0           0           0
+    PID COMMAND           RSS STAT
+    365 multipathd      27300 SLsl
+    775 unattended-upgr 23016 Ssl
+    759 python3         21216 S
+    894 snapd           19644 Rsl
+    833 python3         19452 S
+    714 udisksd         13556 Ssl
+    886 package-data-do 13476 Rs
+      1 systemd         13288 Ss
+    505 systemd-resolve 12968 Ss
+    805 ModemManager    12872 Ssl
+    308 systemd-journal 12508 S<s
+{"kind": "learner-stock-step3-v1", "route": "stock-reuse-v1", "observability": "slog2-v1", "source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c", "object_sha256": "8213ef97c18f01239f99f9f9830e97be44fe1cbcb796b9dde72ef94f3770bcc4", "binary_sha256": "5c45a5baca4c60ee23d2894f075841e3439997e77c2a411dd4c991c92660e5a0", "built_at": 1794576500.7579613, "build_sequence": ["compile -O0 -g0", "link"], "image_generation": false, "build_driver_sha256": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c"}

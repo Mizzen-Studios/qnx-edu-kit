@@ -1,6 +1,6 @@
 # Six teaching snapshots — reference, not the entry route
 
-**Start here:** [working stock learner route](../docs/learner-route.md), then the [coherent own notebook](../docs/coherent-journey.md). Advanced lab prerequisites: existing licensed SDP, exclusive SDK/QEMU lease and approved hashed stock IFS/disk handoff. Do not use reference checks as learner completion.
+**Start here:** [working stock learner route](../docs/learner-route.md), then the [coherent own notebook](../docs/coherent-journey.md). Advanced lab prerequisites: existing licensed SDP, exclusive SDK/QEMU lease and approved hashed stock IFS/disk handoff. Do not use reference checks as learner completion. The [new coherent own result](../docs/acceptance/coherent-stock-20261113/RESULT.md) is bound to runtime source769a4c9, not automatically to later teaching edits.
 
 Follow [E2 build order](../docs/e2-build-order.md) in a separate learner copy.
 Each step has starter/main.c (deliberately incomplete) and solution/main.c.

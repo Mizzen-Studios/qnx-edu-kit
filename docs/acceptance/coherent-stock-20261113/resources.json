@@ -1,0 +1,57 @@
+{
+  "sdk": {
+    "sdk-wrong": {
+      "peak_cgroup_bytes": 959688704,
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "stopped_reaped": true,
+      "sha256": "14ed7eb37cb712d6db6e5210f6dfb3b17567731953d953a460b5d95087545dcb"
+    },
+    "sdk-correct-finish": {
+      "peak_cgroup_bytes": 908460032,
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "stopped_reaped": true,
+      "sha256": "1b99e6ca7f1ce12ad902d652114fa8990a9f0f2918a9f72954224c4c6475675c"
+    }
+  },
+  "native": {
+    "0002-step3-run": {
+      "peak_cgroup_bytes": 517160960,
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "stopped_reaped": true
+    },
+    "0005-step3-run": {
+      "peak_cgroup_bytes": 515072000,
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "stopped_reaped": true
+    },
+    "0006-step6-run": {
+      "peak_cgroup_bytes": 515256320,
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "stopped_reaped": true
+    }
+  },
+  "cleanup": "zero QEMU and native-test.lock FREE after final observation",
+  "native_boots": 3,
+  "sdk_boots": 2,
+  "image_generation": false
+}

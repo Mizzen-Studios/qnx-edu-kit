@@ -1,0 +1,203 @@
+{
+  "kind": "learner-stock-step6-v1",
+  "route": "stock-reuse-v1",
+  "observability": "pulse-slog2-v1",
+  "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b",
+  "object_sha256": "9362948efcd3bd41545c5ba662e090e6caaa10fcc1243c8c66bc4343df2e174e",
+  "binary_sha256": "210f8f27e23dd9099fc577e8e7096ac663c3e4bab101f32d6815e4b35d477ca6",
+  "built_at": 1794576553.1959376,
+  "build_sequence": [
+    "compile -O0 -g0",
+    "link"
+  ],
+  "image_generation": false,
+  "build_driver_sha256": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+  "success": true,
+  "checks": {
+    "binding": true,
+    "ordering": true,
+    "qnx_target": true,
+    "normal_io": true,
+    "irq_completion": true,
+    "exit_zero": true,
+    "finite_slog2": true,
+    "pulse_handoff": true,
+    "bounded_slog2_config": true,
+    "slog2_irq": true,
+    "slog2_pulse": true,
+    "caps_exact": true,
+    "approved_boot_artifacts": true,
+    "serial_bytes_verified": true,
+    "qemu_reaped": true,
+    "stock_unchanged": true,
+    "bounded_completion": true,
+    "explicit_stock_irq": true,
+    "inputs_unchanged_after_boot": true
+  },
+  "started": 1794576735.5397305,
+  "finished": 1794576827.6170034,
+  "stock_assets": {
+    "ifs.bin": {
+      "path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+      "sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753"
+    },
+    "disk-qemu": {
+      "path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu",
+      "sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532"
+    },
+    "qemu_options": {
+      "path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/qemu_options",
+      "sha256": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df"
+    },
+    "options": {
+      "path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/options",
+      "sha256": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+    },
+    "disk-qemu.vmdk": {
+      "path": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+      "sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e"
+    }
+  },
+  "disk_sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+  "image_sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+  "stock_provenance": "REUSED approved Nov13 clean stock artifacts; NOT a new image build",
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "0"
+  },
+  "owner": {
+    "status": "REQUESTED_STOP",
+    "kind": "clean-stock-native-console-owner",
+    "caps": {
+      "cpu.max": "100000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "0"
+    },
+    "nice": 15,
+    "command": [
+      "qemu-system-x86_64",
+      "-machine",
+      "pc",
+      "-accel",
+      "tcg,tb-size=256",
+      "-cpu",
+      "max",
+      "-smp",
+      "1",
+      "-m",
+      "512",
+      "-display",
+      "none",
+      "-monitor",
+      "none",
+      "-serial",
+      "stdio",
+      "-no-reboot",
+      "-drive",
+      "file=/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0006-step6-run/native.control/state.qcow2,format=qcow2,if=ide,id=drv0",
+      "-nic",
+      "none",
+      "-device",
+      "virtio-rng-pci",
+      "-kernel",
+      "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/ifs.bin",
+      "-device",
+      "edu"
+    ],
+    "stock_boot_mode": "bios",
+    "network": "none: serial transfer; no bridge/host networking repair",
+    "image_provenance": "REUSED hash-verified stock mkqnximage artifacts; only EDU option; lesson copied after boot",
+    "stock_hashes": {
+      "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+      "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+    },
+    "base_drive": "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output/disk-qemu.vmdk",
+    "base_drive_sha256": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+    "overlay_initial_sha256": "f8b95c0bff3dc51a1abdea27091dc2f05026b7a25ce3fcae1a00af265334b21c",
+    "commands": [
+      {
+        "id": "001-prepare",
+        "kind": "send",
+        "started": 1794576761.795045,
+        "text": "mkdir /data/edu-own; echo STOCK_DIR_RC=$?; stty -echo; echo STOCK_READY",
+        "status": "DONE",
+        "ended": 1794576761.948422
+      },
+      {
+        "id": "002-transfer",
+        "kind": "transfer",
+        "started": 1794576762.0001569,
+        "status": "DONE",
+        "bytes": 24544,
+        "source": "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0004-step6-build/bundle/learner_bin",
+        "source_sha256": "210f8f27e23dd9099fc577e8e7096ac663c3e4bab101f32d6815e4b35d477ca6",
+        "target": "/data/edu-own/learner",
+        "route": "serial builtin printf octal chunks128; target hash verification separate",
+        "ended": 1794576824.2563846
+      },
+      {
+        "id": "003-readback",
+        "kind": "send",
+        "started": 1794576824.4597285,
+        "text": "echo STOCK_BYTES_BEGIN; od -An -v -tx1 /data/edu-own/learner; echo STOCK_BYTES_END",
+        "status": "DONE",
+        "ended": 1794576825.753074
+      },
+      {
+        "id": "004-observe",
+        "kind": "send",
+        "started": 1794576825.8555727,
+        "text": "chmod 700 /data/edu-own/learner; echo LEARNER_BIND source=9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b binary=210f8f27e23dd9099fc577e8e7096ac663c3e4bab101f32d6815e4b35d477ca6; echo \"EDU TARGET $(uname -s) $(uname -r) $(uname -m)\"; /data/edu-own/learner --pci-line > /data/edu-own/app.log 2>&1 & learner_pid=$!; waitfor /dev/edu 5; printf \"10\\n\" > /dev/edu; write_rc=$?; observed=$(cat /dev/edu); read_rc=$?; echo \"LEARNER_DEV_EDU write_rc=$write_rc read_rc=$read_rc result=$observed\"; result_rc=1; if test \"$write_rc\" = 0 && test \"$read_rc\" = 0 && test \"$observed\" = 3628800; then result_rc=0; fi; kill \"$learner_pid\"; wait \"$learner_pid\"; echo LEARNER_DAEMON_EXIT=$?; cat /data/edu-own/app.log; echo LEARNER_SLOG2_BEGIN; slog2info -b edu_learner; slog_rc=$?; echo LEARNER_SLOG2_END rc=$slog_rc; command -v secpolpush; echo SECPOL_PUSH_TOOL_RC=$?; command -v secpolmonitor; echo SECPOL_MONITOR_TOOL_RC=$?; echo LEARNER_TRACE OMITTED finish_only_scope; echo LEARNER_RC=$result_rc; echo STOCK_DONE",
+        "status": "DONE",
+        "ended": 1794576827.136721
+      }
+    ],
+    "memory_samples": 91,
+    "pid": 621170,
+    "qemu_rc": 0,
+    "peak_cgroup_bytes": 515256320,
+    "stopped_reaped": true,
+    "raw_serial_sha256": "a7838ee0d3d4fc48c3d5eada8dbb6ef8240a5991f71c5001f86898fe9edc53cf",
+    "overlay_final_sha256": "9e0db27ee49e04ecd5e6664dc75a662b980cc327ff251e3aba3420bb2ddf4026",
+    "stock_base_hashes_after": {
+      "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+      "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5"
+    },
+    "completed_at": 1794576827.440872
+  },
+  "run_driver_sha256": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+  "console_driver_sha256": "2aa6c9c27fb607a820a8f1d77a5fbe6850308ad3e636c86a6c4080261fdd0220",
+  "qemu_command": [
+    "systemd-run",
+    "--user",
+    "--scope",
+    "--quiet",
+    "-p",
+    "CPUQuota=100%",
+    "-p",
+    "MemoryMax=2G",
+    "-p",
+    "MemorySwapMax=0",
+    "nice",
+    "-n",
+    "15",
+    "/usr/bin/python3",
+    "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/repo/scripts/stock_console.py",
+    "--stock",
+    "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output",
+    "--overlay",
+    "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0006-step6-run/native.control/state.qcow2",
+    "--control",
+    "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0006-step6-run/native.control",
+    "--timeout",
+    "600"
+  ],
+  "error": null,
+  "optional_secpol": "BLOCKED: no approved nondisplacing loaded policy/denyallow fixture; tools probed only",
+  "optional_trace": "NOT_RUN finish-only scope; no performance claim"
+}

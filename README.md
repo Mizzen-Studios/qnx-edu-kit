@@ -2,12 +2,14 @@
 
 ## Current Nov13 working stock recipe
 
-**New [clean-clone own checkpoint](docs/acceptance/coldreader-stock-20261113/RESULT.md):** one fresh step6 application build and stock-native run passed10→3628800/IRQack/private pulse/slog2; own41-file export verified after a documented offline CRLF validator fix. New notebook/source, reused approved stock IFS/disk; no image rebuild or native retry. Untouched step3 stays unvalidated.
+**[Coherent OWN journey verified](docs/acceptance/coherent-stock-20261113/RESULT.md):** one notebook wrong FAIL/app0 → corrected PASS → own10→3628800 with IRQack/private pulse/slog2 →108-file verified export. Exact runtime source `769a4c906c6b172c3624f8fe897b71e3c5d7e6b8`; three fresh application builds, unchanged reused stock IFS/disk, no retries. Later documentation commits report that source-bound run, not another execution at the final tip.
+
+**Earlier step6-only [clean-clone own checkpoint](docs/acceptance/coldreader-stock-20261113/RESULT.md):** one fresh step6 application build and stock-native run passed10→3628800/IRQack/private pulse/slog2; own41-file export verified after a documented offline CRLF validator fix. New notebook/source, reused approved stock IFS/disk; no image rebuild or native retry. Untouched step3 stays unvalidated.
 
 Follow the [working stock learner recipe](docs/learner-route.md): existing licensed SDK Linux guest1GiB, HOST2GiB/TCG256/reserve64/CPU100/nice15/smp1/swap0, QNX target512MiB. [Stock generation and MMIO gates succeeded](docs/acceptance/stock-retry-20261113/RESULT.md); [actual10→3628800 + IRQack/private pulse/slog2](docs/acceptance/irq-retry-20261113/RESULT.md) uses explicit --pci-line (config11 vs API10), no routing rewrite. The fresh cold-reader adapter compiles OWN code and explicitly reuses those hashed external stock artifacts; no new image-generation claim. SSH faults/networking remain UNVERIFIED; serial transfer only. Earlier OOM/default-IRQ failures below are dated history, not the current stock blocker. No media/CAN/C6 or broader acceptance promotion.
 
 A learner-owned PCI-to-/dev/edu lab: **wrong edit FAIL despite application exit0 → corrected PASS → shell write10/read3628800**.
-**QNX proven:** recorded source/ELF/IFS/disk-bound [wrong, correct and own finish logs](docs/acceptance/wrapper-20261108/NOTES.md), not a fresh run at this tip.
+**QNX proven:** current coherent source-bound journey above; [Nov8 wrong/correct/finish logs](docs/acceptance/wrapper-20261108/NOTES.md) remain separately dated historical evidence.
 **HOST only:** editable notebook, provenance/export checks and CI; these cannot certify your QNX edits or human learning.
 **How to build:** [cold-reader codelab, prerequisites and exact commands](codelab/codelab.md) — existing licensed SDK guest build → **STOP/REAP guest** → capped HOST QEMU, one lease.
 Single-host **BLOCKED_NATIVE_TIMEOUT** ([receipt](docs/acceptance/choice-a-20261109/receipt.json)); cause **UNVERIFIED**. No retries/tuning/cap increases.
@@ -44,7 +46,7 @@ Do not start with make check-reference-step*: those are reference runs, never
 your completion. Missing legal setup is BLOCKED, not solved by host checks.
 
 
-Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line passed in recorded split-host observations, not a rerun at this tip; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
+Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line passed in the coherent journey at exact runtime source769a4c9; later documentation changes are not another native run; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)

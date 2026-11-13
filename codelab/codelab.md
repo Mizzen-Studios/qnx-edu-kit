@@ -47,7 +47,7 @@ The installed runimage consumes generated output/build/qemu_options as QEMU_OPTI
 
 ### Choose the bounded scope
 
-For a full wrong → correct → finish result, follow the [coherent own-session checklist](../docs/coherent-journey.md) using the commands below. The earlier step6-only checkpoint is historical scoped evidence, not a complete wrong/correct journey. The coherent current-source journey is pending until its new aggregate receipt exists. Never pre-create the corrected source before observing the wrong failure.
+For a full wrong → correct → finish result, follow the [coherent own-session checklist](../docs/coherent-journey.md) using the commands below. The earlier step6-only checkpoint is historical scoped evidence, not a complete wrong/correct journey. The [new coherent aggregate receipt](../docs/acceptance/coherent-stock-20261113/RESULT.md) now records wrongFAIL/app0 → correctedPASS → finishPASS and108-file OWN export at exact runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8. Later documentation SHA changes are not native reruns. Never pre-create the corrected source before observing the wrong failure.
 
 ### 1. Full clean Git clone and a fresh own notebook — HOST
 

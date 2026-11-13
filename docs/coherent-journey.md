@@ -1,6 +1,6 @@
 # One notebook: wrong → correct → finish → own export
 
-This is an **advanced working-stock lab**, not a browser simulator or turnkey fresh install. Start with the [canonical stock prerequisite gate](learner-route.md): existing licensed SDP, exclusive SDK/QEMU lease, controller/shared mount and approved hash-verified IFS/disk handoff. No new IFS, installation/login, routing rewrite or old-receipt import. Current coherent runtime acceptance remains pending until a new aggregate receipt is linked; older step6-only evidence cannot fill this notebook.
+This is an **advanced working-stock lab**, not a browser simulator or turnkey fresh install. Start with the [canonical stock prerequisite gate](learner-route.md): existing licensed SDP, exclusive SDK/QEMU lease, controller/shared mount and approved hash-verified IFS/disk handoff. No new IFS, installation/login, routing rewrite or old-receipt import. The [new coherent receipt](acceptance/coherent-stock-20261113/RESULT.md) passed this journey at exact runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8: wrongFAIL/app0, correctedPASS, finishPASS and108-file OWN export. Later documentation revisions do not claim another run; older step6-only evidence cannot fill a new notebook.
 
 ## Prepare once
 
