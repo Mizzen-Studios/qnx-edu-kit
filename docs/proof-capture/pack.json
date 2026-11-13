@@ -141,31 +141,36 @@
       "id": "T01",
       "start": 80,
       "end": 115,
-      "narration": "The first stock-image route is a draft, not a working reproduction. The EDU device flag is documented; installed launch syntax and memory fit remain unverified. No new SDK boot, image build or native test occurred. The advanced split-host instructions remain unchanged, with historical receipts kept separate. Stop before executing this proposal.",
-      "claim": "Host-only stock-first DRAFT/UNVERIFIED proposal; no new build/native proof. Existing advanced tutorial preserved byte-for-byte after the inserted section.",
-      "frame": "Show explicit DRAFT / UNVERIFIED stock section and docs/stock-route-research.json, then the unchanged advanced tutorial boundary. Never show historical frames as execution of the proposed route.",
-      "label": "host-only draft; stock native NOT_RUN",
-      "review_quote": "No new native PASS.",
+      "narration": "The stock-first route remains a draft. One clean image build was OOM-killed inside the512-megabyte SDK guest; no valid image or disk was produced. The monitored HOST peak stayed below its two-gigabyte cap. No native run followed. Installed EDU option flow is verified, not device behavior. Advanced instructions and historical receipts stay separate.",
+      "claim": "DRAFT/UNVERIFIED stock-first route; one observed clean stock guest OOM before native. Original advanced bytes and historical proof unchanged.",
+      "frame": "Show Nov13 stock receipt, guest OOM row, zero-byte IFS, absent disk, monitored HOST peak and cleanup. Then DRAFT stock-first guide; no stock-native frame exists. Keep historical run frames separate.",
+      "label": "measured clean stock SDK build BLOCKED; stock native NOT_RUN",
+      "review_quote": "Clean stock route remains blocked; no stock native PASS.",
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "9b0880616529fd1e19e9d42a0f72dbc88969db8b10b7b4ccf2c7c4a3807ba0c6",
-          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
+          "sha256": "f93a50d679586cfa199ac381ae9c84a64800335199669f177701453ddce62ba5",
+          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
         },
         {
           "path": "README.md",
-          "sha256": "de842d89a1718c6eedea242653ae75594844c2690990007fed6a552c3f07ee06",
-          "commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d"
+          "sha256": "b6b91dee878c88f4e49abe592e477ec244d495f58697670b7373945c4defcee2",
+          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "36cfb16a04425b30ca5c62a48d4280b9a2cb41355191956fab86b92279b58619",
-          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
+          "sha256": "62fe190b1b2f0c8d773e889106e5493751ff9a793e9cbd5365e9eb575573b226",
+          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
         },
         {
           "path": "docs/stock-route-research.json",
-          "sha256": "a858521364f431fbfdfa8bb0c4facf5aa246a511cb6a7995cf4a17885ffa2069",
-          "commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2"
+          "sha256": "b98a5c294e978731fb65bbe15fea5e2dfe306a8f89c166404e2c67ba1006d5ec",
+          "commit": "70503c476d685f6e061c2d7e10972c5d8eee5570"
+        },
+        {
+          "path": "docs/acceptance/stock-20261113/receipt.json",
+          "sha256": "839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6",
+          "commit": "c569ee4b01b33149dd3ba8236a4e21b4666ca35f"
         }
       ]
     },
@@ -257,8 +262,8 @@
   "recorded": false,
   "gate": "CONDITIONAL: owner receipt-inspected, not re-run, 2026-11-07 20:03 UTC",
   "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2",
-  "prior_packet_source_commit": "b6ce933ef1bdd2e98e3c6e3d1a1eca3d96ff5b9d",
-  "current_copy_scope": "Nov12 host-only DRAFT/UNVERIFIED stock-first proposal; no SDK boot, image build, or native test. Instruction-copy freeze only, never runtime acceptance.",
+  "packet_source_commit": "70503c476d685f6e061c2d7e10972c5d8eee5570",
+  "prior_packet_source_commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2",
+  "current_copy_scope": "Nov13 measured clean stock guest-OOM blocker; draft remains UNVERIFIED, no stock native run. Instruction-copy freeze only; original native and Nov10 evidence pins unchanged.",
   "native_pin_preservation": "All original native and Nov10 blocked SDK assets retain their existing hashes/commits. Only T01 tutorial-copy bindings change for an explicitly unverified draft."
 }
