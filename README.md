@@ -23,18 +23,20 @@ Private £0; C6 STOPPED; no recording/publication/SDK login. SSH/platform health
 
 ## Start here: predict → edit → observe → diagnose → explain
 
-**Create your own notebook now** (from this checkout, external fresh directory):
+**Advanced lab, not a turnkey browser exercise:** first read the [working stock prerequisite gate](docs/learner-route.md). You need an existing licensed SDP, exclusive SDK/QEMU lease and the approved hashed IFS/disk handoff. No installation or bundled licensed artifacts.
+
+Then follow the [one-notebook wrong → correct → finish checklist](docs/coherent-journey.md). Create a notebook in the existing SDK shared mount, not an unrelated home directory:
 
 ```sh
-export EDU_WORK="$HOME/edu-learner-$(date -u +%Y%m%dT%H%M%SZ)"
+export EDU_WORK="$EDU_SHARE/$EDU_CASE/own" # shared mount/case from canonical route
 python3 scripts/learner_session.py init --work "$EDU_WORK"
 # Open the printed $EDU_WORK/cockpit.html locally; notes stay private.
 ```
 
 The generated notebook has persistent predictions, diagnosis, labeled split-host handoff commands
 and private HOST notes export. A browser cannot execute shell commands;
-import downloaded notes with the printed CLI. [Cockpit help](docs/learner-cockpit.md). Follow the **[canonical learner route](docs/learner-route.md)**: choose legal
-SDK/BSP/QEMU paths and preflight; predict/edit step3, observe the wrong-write
+import downloaded notes with the printed CLI. [Cockpit help](docs/learner-cockpit.md). Follow the **[canonical learner route](docs/learner-route.md)**: verify the existing licensed
+SDK, controller, QEMU and approved stock artifact handoff; predict/edit step3, observe the wrong-write
 failure, diagnose/fix/rebuild and explain it; then edit your own step6 starter
 and observe normal write10/read3628800 through /dev/edu. Setup/build/run commands
 and stop gates are integrated in order, not a scavenger hunt.
@@ -129,6 +131,6 @@ For stale-output checking use python3 scripts/render_site.py --check. Actual pin
 
 Edited step6 starter on the same fresh stock generic platform passed actual normal write/read10→3628800 and IRQ completion/ack. Source, binary, image, disk and caps are bound in the [learner finish evidence](docs/acceptance/learner-finish-clean-20261107/NOTES.md). No reference checker, host result injection or polling fallback. Earlier failures remain; startup Memory fault still excludes a healthy-SSH/all-platform claim. Owner completion review is CONDITIONAL, receipt-inspected not re-run; no safety/timing acceptance; C6 stays STOPPED.
 
-Supported stock-platform helper and explicit split-host/swap/isolated-service prerequisites are in the [canonical route](docs/learner-route.md). Existing installed SDK reuse only; no installer or second-SDK claim. Videos deferred until final freeze, final verification, independent gate and separate Olly OK; not a current blocker.
+Supported stock-platform helper and explicit split-host/no-swap-change/exclusive-lease prerequisites are in the [canonical route](docs/learner-route.md). Existing installed SDK reuse only; no installer or second-SDK claim. Videos deferred until final freeze, final verification, independent gate and separate Olly OK; not a current blocker.
 
 Supported canonical route observed on one existing licensed SDK: [supported-bootstrap result](docs/acceptance/bootstrap-final-20261107/NOTES.md). Fresh stock platform, wrong stageFAIL/app0, correctedPASS and own /dev/edu write10/read3628800+IRQack. Automated reuse only, not a second SDK or human gate. Old missing-host-SDK negative preserved. All guests reaped; no platform-health claim.

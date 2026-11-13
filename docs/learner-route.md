@@ -28,6 +28,10 @@ mkqnximage --type=qemu --arch=x86_64 --ram=512M --cpu=1 --ssh-ident=none --build
 
 The installed runimage consumes generated output/build/qemu_options as QEMU_OPTIONS. Do not invent --run='-device edu'. No lesson/startup/custom IFS snippets. **Skip image generation in this cold-reader recipe**: reuse the hashes above; a different rebuild requires a separately reviewed artifact pin, not relabeling. --ram=512M is the TARGET, not the SDK builder's RAM.
 
+## Choose the bounded scope
+
+For a full wrong → correct → finish result, follow the [coherent own-session checklist](coherent-journey.md) using the commands below. The earlier step6-only checkpoint is historical scoped evidence, not a complete wrong/correct journey. The coherent current-source journey is pending until its new aggregate receipt exists. Never pre-create the corrected source before observing the wrong failure.
+
 ## 1. Full clean Git clone and a fresh own notebook — HOST
 
 Set these operator-supplied absolute paths (no spaces), and a fresh case name. The SDK shared mount must contain both the clone and your own notebook. Existing Git access only; no new login.

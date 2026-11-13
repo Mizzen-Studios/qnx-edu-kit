@@ -1,4 +1,6 @@
-# Six teaching snapshots
+# Six teaching snapshots — reference, not the entry route
+
+**Start here:** [working stock learner route](../docs/learner-route.md), then the [coherent own notebook](../docs/coherent-journey.md). Advanced lab prerequisites: existing licensed SDP, exclusive SDK/QEMU lease and approved hashed stock IFS/disk handoff. Do not use reference checks as learner completion.
 
 Follow [E2 build order](../docs/e2-build-order.md) in a separate learner copy.
 Each step has starter/main.c (deliberately incomplete) and solution/main.c.
@@ -19,6 +21,6 @@ reference after checking source equivalence; it does not deploy learner code.
 
 Keep each future runtime receipt bound to snapshot source, executable and image
 hashes, effective caps, fresh raw serial and exit status. Run one exclusive
-guest at a time:CPU100%,1GiB,nice15; guest1vCPU/512MiB. No SDK/binaries in git.
+guest at a time under the canonical caps: HOST2GiB/CPU100%/nice15/TCG256/reserve64/swap0; SDK1GiB or native512MiB, each1vCPU. No SDK/binaries in git.
 Step6 stays in dispatch:collect functional output before stopping its owned
 process. Starter TODO exits must never be relabelled as native PASS.

@@ -4,12 +4,16 @@ A host-operable companion to the [canonical learner route](learner-route.md),
 not a reference checker or a simulated terminal. Python standard library only.
 No daemon, new port, account or browser-to-shell execution.
 
+## Advanced lab prerequisites first
+
+The [working stock route](learner-route.md) requires an existing licensed SDP, exclusive SDK/QEMU lease, reviewed controller/shared mount and approved hash-verified IFS/disk handoff. The notebook supplies none of those. Missing prerequisites are BLOCKED; no installation/login or custom-IFS substitution. Follow the [coherent own-session checklist](coherent-journey.md) for wrong → correct → finish → export.
+
 ## Start a new own session
 
 From your checkout, choose an external, previously nonexistent directory:
 
 ~~~sh
-export EDU_WORK="$HOME/edu-own-session"
+export EDU_WORK="$EDU_SHARE/$EDU_CASE/own" # canonical shared-mount setup first
 python3 scripts/learner_session.py init --work "$EDU_WORK"
 ~~~
 
@@ -20,9 +24,9 @@ use the displayed fixed notes import command. Notes are session-bound; a draft
 alone is not in the evidence pack. CLI import is the durable notebook authority.
 Browser storage is convenience only and may vary with file URL/browser settings.
 
-Edit your main.c in your editor. Supported topology is **split-host**: existing licensed SDK guest builds, **STOP/REAP guest**, then capped HOST QEMU under the sole lease. Follow the [canonical route](learner-route.md), not identical-path local notebook build/run commands. Generated handoff commands use separate guest/host variables; verify transfer hashes. Predict before building, inspect raw checks, diagnose, fix and explain.
+Edit your main.c in your editor. Supported topology is **split-host**: existing licensed SDK guest builds, **STOP/REAP guest**, then capped HOST QEMU under the sole lease. Follow the [canonical route](learner-route.md), not identical-path local notebook build/run commands. Generated stock handoff commands use separate guest/host namespace variables; both address the same own notebook through the shared mount. The stock adapter verifies the transferred ELF bytes. Predict before building, inspect raw checks, diagnose, fix and explain.
 
-The notebook remains a HOST notes/export companion. Standalone split receipts do not automatically become notebook attempts; there is no receipt import. The recorded Nov8 wrapper used explicit environment mapping, not a portable same-path promise. Refresh after local CLI actions; notes alone never fabricate completion.
+The notebook remains a HOST notes/export companion. Standalone split receipts do not automatically become notebook attempts; there is no receipt import. The stock adapter creates actual attempts in the same notebook through the existing shared mount; historical standalone receipts are never imported. Refresh after local CLI actions; notes alone never fabricate completion.
 
 - Step3 wrong write12345679 must fail the existing fixed oracle even if app exit0.
   Correct write12345678 must observe edcba987; printing PASS does not suffice.
@@ -52,8 +56,8 @@ python3 scripts/learner_session.py export --work "$EDU_WORK" --out "$HOME/new-pr
 
 Choose a new external directory outside the session. Export copies notes, current
 own sources, all failed/successful attempt snapshots and logs, archived successful
-builds (source/binary/image/startup/manifest), and hash-deduplicated matching disks
-for native observations. pack.json inventories SHA256 for every copied file. All
+builds (source/object/ELF/manifest), and the matching approved stock artifacts
+for stock-native observations. The historical custom-IFS export stays separate. pack.json inventories SHA256 for every copied file. All
 native receipts are rechecked against their own archived build, source and disk;
 a changed/missing asset fails export, leaving INCOMPLETE.txt, not a fake PASS.
 Keep original disks available until export. A HOST-only pack is valid as an

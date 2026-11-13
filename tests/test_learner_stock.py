@@ -47,6 +47,13 @@ class StockAdapter(unittest.TestCase):
         with patch.object(session.subprocess,'run') as launch:
             with self.assertRaisesRegex(ValueError,'requires own blocked'):session.revalidate(w,'missing')
             launch.assert_not_called()
+    def test_step3_wrong_app_zero_is_only_readback_failure(self):
+        m=dict(kind=stock.kind('step3'),source_sha256='s',binary_sha256='b',observability='slog2-v1')
+        raw='LEARNER_BIND source=s binary=b\nEDU TARGET QNX 8.0.0 x86pc\nLEARNER_MMIO id=010000ed write=12345679 read=edcba986\nLEARNER_SLOG2_BEGIN\nEDU_EVENT mmio id=010000ed write=12345679 read=edcba986\nLEARNER_SLOG2_END rc=0\nLEARNER_RC=0\n'
+        checks=lab.oracle(raw,m)
+        self.assertEqual({k for k,v in checks.items() if not v},{'device_readback'})
+        self.assertTrue(all(lab.oracle(raw.replace('12345679','12345678').replace('edcba986','edcba987'),m).values()))
+        self.assertFalse(lab.oracle(raw.replace('LEARNER_RC=0','LEARNER_RC=1'),m)['exit_zero'])
     def test_cockpit_stock_path_and_no_custom_relabel(self):
         w=self.base/'own';session.create(w);page=(w/'cockpit.html').read_text()
         self.assertIn('Working stock route',page);self.assertIn('--stock',page);self.assertIn('Historical CUSTOM-IFS',page)
