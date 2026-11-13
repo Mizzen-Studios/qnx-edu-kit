@@ -138,7 +138,11 @@ static int factorial(unsigned value, uint32_t *result)
         uint64_t remaining = DEADLINE_NS - (now - start);
         if (TimerTimeout(CLOCK_MONOTONIC, _NTO_TIMEOUT_INTR, NULL,
                          &remaining, NULL) < 0 || InterruptWait(0, NULL) < 0) {
-            failed = 1; return errno;
+            int wait_error = errno;
+            fprintf(stderr, "EDU IRQ wait failed errno=%d pending=%08" PRIx32
+                    " status=%08" PRIx32 " result=%" PRIu32 "\n",
+                    wait_error, regs[0x24/4], regs[8], regs[2]);
+            failed = 1; return wait_error;
         }
         uint32_t pending = regs[0x24/4];
         int complete = (pending & 1U) && !(regs[8] & 1U);
@@ -274,8 +278,10 @@ static int edu_read(resmgr_context_t *ctp, io_read_t *msg, iofunc_ocb_t *base)
     return _RESMGR_NPARTS(1);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
+    if (argc > 2 || (argc == 2 && strcmp(argv[1], "--pci-line") != 0))
+        return EXIT_FAILURE;
     pci_err_t error = PCI_ERR_OK;
     pci_devhdl_t device = NULL;
     pci_ba_t bars[6] = {0};
@@ -333,6 +339,19 @@ int main(void)
     count = 1;
     error = pci_device_read_irq(device, &count, &irq);
     if (error != PCI_ERR_OK || count != 1 || irq < 0) goto pci_error;
+    /* Read-only opt-in for the stock x86 legacy PIC; no routing writes. */
+    uint8_t config_line = 0, config_pin = 0;
+    error = pci_device_cfg_rd8(bdf, 0x3c, &config_line);
+    if (error != PCI_ERR_OK) goto pci_error;
+    error = pci_device_cfg_rd8(bdf, 0x3d, &config_pin);
+    if (error != PCI_ERR_OK) goto pci_error;
+    printf("EDU IRQ metadata api=%d config=%u pin=%u mode=%s\n",
+           irq, config_line, config_pin, argc == 2 ? "pci-line" : "pci-api");
+    if (argc == 2) {
+        if (config_line == 0 || config_line >= 16 || config_pin == 0 || config_pin > 4)
+            goto done; /* Reject invalid legacy metadata; never guess or rewrite. */
+        irq = config_line;
+    }
     regs[0x64/4] = 0xffffffffU;
     irq_id = InterruptAttachThread(irq, _NTO_INTR_FLAGS_TRK_MSK);
     if (irq_id < 0) { perror("InterruptAttachThread"); goto done; }
