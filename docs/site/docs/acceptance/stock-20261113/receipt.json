@@ -1,0 +1,113 @@
+{
+  "kind": "edu-clean-stock-native-gate.v1",
+  "observed_utc": "2026-11-13T09:08:53.740152+00:00",
+  "outcome": "BLOCKED_CLEAN_STOCK_IFS_OOM",
+  "source_commit": "4a00a4f4af71f24964450f257acc6aea30312ec4",
+  "sdk_boots": 1,
+  "stock_build_attempts": 1,
+  "stock_build_command": [
+    "mkqnximage",
+    "--type=qemu",
+    "--arch=x86_64",
+    "--ram=512M",
+    "--cpu=1",
+    "--ssh-ident=none",
+    "--build"
+  ],
+  "stock_guest_directory": "/home/qnx/edu-clean-stock-20261113",
+  "stock_provenance": "fresh stock mkqnximage project; only authored snippet -device edu in QEMU_OPTIONS. No old CAN/custom IFS and no lesson injection.",
+  "sdk_script_sha256": "27f968915c758bcbddd42c05aea3b30744161611680b923873e3ff15ec3ac9ab",
+  "qemu_options": {
+    "value": "-device edu",
+    "bytes": 12,
+    "sha256": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "generated_equals_authored": true
+  },
+  "guest_oom": {
+    "pid": 1620,
+    "task": "x86_64-pc-nto-q",
+    "timestamp_utc": "2026-11-13T09:03:44Z",
+    "anon_rss_kib": 329384,
+    "file_rss_kib": 1736,
+    "total_vm_kib": 588924,
+    "before_generator_available_kib": 295232,
+    "minimum_available_during_link": "UNVERIFIED",
+    "exact_internal_relink_input": "UNVERIFIED; not captured"
+  },
+  "build_service": {
+    "result": "oom-kill",
+    "exec_main_status": 15,
+    "active_state": "failed"
+  },
+  "host_measurement": {
+    "sample_count": 361,
+    "monitored_peak_cgroup_bytes": 1105190912,
+    "minimum_reserve_against_monitored_peak_bytes": 1042292736,
+    "maximum_swap_bytes": 0,
+    "sampled_oom_kill_max": 0,
+    "sampled_max_events": 0,
+    "sampling_window": "boot through stop request; shutdown hard-capped but not sampled",
+    "effective_caps": {
+      "cpu.max": "100000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "0"
+    },
+    "nice": 15,
+    "tcg_cache_mib": 256,
+    "guest_memory_mib": 512,
+    "guest_cpus": 1,
+    "reserve_policy_bytes": 67108864
+  },
+  "image": {
+    "ifs_bytes": 0,
+    "ifs_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "valid": false,
+    "disk_qemu_exists": false,
+    "disk_sha256": null,
+    "vmdk_sha256": null,
+    "partial_partitions": "retained in original SDK disk; hashes and sizes in preserved-partial-hashes.txt; not a bootable disk"
+  },
+  "lesson_bindings": "lesson-bindings.json: existing source/object/ELF hashes, no native execution",
+  "native": {
+    "stock_boot": "NOT_RUN: no valid IFS/disk",
+    "wrong_fail_app0": "NOT_RUN",
+    "corrected_source": "NOT_CREATED",
+    "corrected_pass": "NOT_RUN",
+    "own_dev_edu_10_to_3628800_irq_ack": "NOT_RUN",
+    "pulse_slog2_trace": "NOT_RUN"
+  },
+  "cleanup": "cleanup.json; SDK owner/child stopped and reaped exit0, no QEMU, lease independently FREE",
+  "changes_not_made": [
+    "advanced split-host source/tutorial",
+    "historical receipts",
+    "CAN/HostShare repositories",
+    "guest memory/caps/swap/platform/packages/SDK installation/login",
+    "C6/media/public/spend"
+  ],
+  "evidence": {
+    "NOTES.md": "112076775f2068a222fa8d8fb360ffadd333d9b111f8db8f6ecff7ca2dc3a8ec",
+    "all-partial-hashes.txt": "6b8703f32b39a4dc2aa6871b094cec053ad5e2b396c98240aeb22076db7a933c",
+    "build-processes-after-stop.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-sanitized.log": "700c1fb8bd8bd07aa94c0f48666efbe825c08fddccb2ec541a37f3a626c64a76",
+    "build-unit-final.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608",
+    "cleanup.json": "d3c24202ef976a17fd59f241193087ddb036a95b407f3f393729e275de927a26",
+    "dispatch.sh": "eb238609c68026f65f9c75e762eae0a52904559ad41866786e2bf910c8c95652",
+    "guest-memory-after-stop.txt": "11814e86fb415240e9931de3a6bce03d5a46e5d08480ce7beffa413c4dcad881",
+    "guest-memory-last.txt": "a58230180f1ce41e3e461ffa2a4f63a4b83ec63a1f102a11d4e267ee135db115",
+    "host-memory-series.csv": "0342fce1aba326bf95db772e97479a0e0326aaf3a20e92e79affd99a5fa560ca",
+    "kernel-oom.txt": "fde21f839f9a9b5db7486edc01c63440fad7772fec066f0e7a51c85c9720b2fd",
+    "lesson-bindings.json": "5493e0ef182efd2df2653cc1ada3943e0f12739afbe45fa535d3f5bfffc6bed2",
+    "observe.sh": "508dfe54af4a740a5b2a84646deb82adf21a28ffc1ccbb24b304f9461900154a",
+    "preserve.sh": "d1bb107ffdd8878a1ec504dd5f1b6f4739abeaaf66c2d4028231f685671b5cc3",
+    "preserved-partial-hashes.txt": "79400659d8908ac9f3df8f98ee554dfb4ba1ef86578afedb37110917b1f8e330",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "qemu_options.edu": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "raw-private-log-hash.json": "0cd71b4ac5261e33e4f25f1c26b4a20354c4865f0fe1f3476cb1c84c1f6aeea9",
+    "sdk-build.sh": "27f968915c758bcbddd42c05aea3b30744161611680b923873e3ff15ec3ac9ab",
+    "sdk-launch.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sdk-owner.json": "c7149ff13b9a2472d69e09254e1a1ce29ae98e3b22d4c6025e4fadf87de7abd5",
+    "sdk-owner.py": "bf370a5ed1403c54fd380ac2f4775727544b57fade217f2a5b7fbb0ced12d512",
+    "sdk-stop.log": "c68328a1db1a5e84f064c530f569a63395faeff4eb3e1f71815552f0ad08f4d0",
+    "unit-after-stop.txt": "47504a8a2939692244162317f1c9018c4fd8547643da866af5b0fa20eced0608"
+  }
+}

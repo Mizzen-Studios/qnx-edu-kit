@@ -1,6 +1,9 @@
 # Private demo preparation — DRY PACK only
 
-Nov12 stock-first section is **DRAFT / UNVERIFIED**, preparation only: no fresh SDK boot, image build or native test. The Nov10 feature wave remains **BLOCKED_STOCK_MKIFS_OOM**, not native acceptance. Own wrong-step3 SDK compile/link observed; no valid IFS, no new native run. [Exact Nov10 receipt](acceptance/features-20261110/NOTES.md). Any native frames below are separately labeled historical observations; added pulse/log/trace remain NOT_RUN.
+Nov13 clean stock image generation is **BLOCKED_CLEAN_STOCK_IFS_OOM** (guest OOM, not a measured HOST2GiB breach). No valid IFS/disk, no stock native test. [Exact receipt](acceptance/stock-20261113/NOTES.md). The stock-first section stays DRAFT / UNVERIFIED; all older frames keep their own historical scope.
+
+
+Historical Nov12 preparation did not run a guest. The separately measured Nov13 attempt above did run a stock build, but no native guest. The Nov10 feature wave remains **BLOCKED_STOCK_MKIFS_OOM**, not native acceptance. Own wrong-step3 SDK compile/link observed; no valid IFS, no new native run. [Exact Nov10 receipt](acceptance/features-20261110/NOTES.md). Any native frames below are separately labeled historical observations; added pulse/log/trace remain NOT_RUN.
 
 Canonical [line-by-line script, claims, frozen files and planned frames](proof-capture/SCRIPT.md), [pack](proof-capture/pack.json), [report](proof-capture/report.json). Exact narration count **293 words**, planned **175seconds (2:55)**. Editorial arithmetic only; no measured or rehearsed duration or target-timing claim.
 

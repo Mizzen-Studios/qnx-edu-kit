@@ -1,25 +1,26 @@
 {
   "kind": "edu-stock-route-host-preparation-only",
-  "as_of": "2026-11-12",
+  "as_of": "2026-11-13",
   "baseline_commit": "e2c247d055ddb949d801a48bd809b913ff11721d",
-  "status": "DRAFT_UNVERIFIED_NO_BUILD_NO_QEMU",
-  "authorization": "22:01 owner supersedes earlier lane plan: EDU preparation only; no SDK/image build/native test. HostShare sole QEMU owner.",
+  "status": "DRAFT_UNVERIFIED_BLOCKED_CLEAN_STOCK_IFS_OOM",
+  "authorization": "08:13 owner plus explicit exclusive turn: one clean stock build, stopped after guest OOM; no more runs under this lane.",
   "documented": {
     "stock_generator": "mkqnximage --type=qemu --arch=x86_64 --build",
     "generator_reference": "https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.utilities/topic/m/mkqnximage.html",
-    "run": "--run starts existing current-directory image; documented --run=-h headless. Arbitrary extra-QEMU-option passthrough UNVERIFIED, do not invent syntax.",
+    "run": "Installed --run only-h; QEMU_OPTIONS from generated file; no arbitrary passthrough",
     "transfer": "Official reference documents scp/sftp into running stock image; copying lesson binaries after boot avoids custom IFS integration. Actual SSH and required libraries/abilities remain UNVERIFIED.",
     "one_qemu_flag": "-device edu",
     "edu_reference": "https://www.qemu.org/docs/master/specs/edu.html",
-    "archived_installed_brief_help": "/home/ubuntu/qnx-host/guest/shared/clean-step3-20261107/mkqnximage-options.log includes --run=[<options>], --ram, --cpu, --tcg, --build=[<partitions>] but does not establish passthrough grammar or default values"
+    "archived_installed_brief_help": "/home/ubuntu/qnx-host/guest/shared/clean-step3-20261107/mkqnximage-options.log includes --run=[<options>], --ram, --cpu, --tcg, --build=[<partitions>] but does not establish passthrough grammar or default values",
+    "installed_runimage_sha256": "5f763fbf99508129afc06d3936a44b3e80e87bc5da13c88217aa18a93d9c8df0",
+    "defaults": "Installed1G/2CPU; actual explicit512M/1",
+    "EDU_options": "-device edu generated from local/snippets/qemu_options.edu, SHA256f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df"
   },
   "unverified": [
-    "current installed mkqnximage --help=run and --help=ram/--help=tcg output",
-    "prebuilt stock x86_64 QEMU image/output paths in already installed SDP (if any), exact hashes/sizes",
-    "generated stock QEMU command/boot mode/disk/network/serial flags without launching nested QEMU",
-    "stock build peak memory <= default512MiB guest under canonical HOST1GiB/CPU100/nice15",
-    "stock image EDU PCI enumeration, abilities, IRQ delivery and acknowledgement; SDK-built lesson binaries run with stock libs",
-    "stock SSH transfer and observation route under HOST-only execution after SDK reaped"
+    "clean stock native boot/device/IRQ behavior",
+    "stock SSH/transfer/library/ability runtime",
+    "exact internal relink input and minimum guest memory at OOM",
+    "all stock-native wrong/correct/finish observations; corrected source not created"
   ],
   "prior_measured_block": {
     "receipt": "acceptance/features-20261110/receipt.json",
@@ -29,20 +30,34 @@
     "available_before_stock_mib": 313,
     "ifs_bytes": 0
   },
-  "installed_current_inventory": "PENDING parent relay from HostShare; no concurrent guest inspection",
+  "installed_current_inventory": "VERIFIED installed help and launcher via HostShare8feade27/bbfd6f6 and independent launcher hash; no clean stock disk/native proof.",
   "actions_performed": [
     "read official public documentation",
     "read archived installed brief help as historical evidence only",
-    "draft this section and host copy/site/tests; no guest/controller execution"
+    "draft this section and host copy/site/tests; no guest/controller execution",
+    "independent installed launcher and prepared lesson artifact hash verification",
+    "one exclusive SDK boot and clean stock mkqnximage build with explicit512M/1 and EDU-only QEMU_OPTIONS",
+    "guest OOM evidence, partial hash preservation, SDK stop/reap and independent lease-free/no-QEMU check"
   ],
   "actions_not_performed": [
-    "SDK boot",
-    "stock image build",
     "native QNX test",
     "licence/login/install",
     "platform/swap/cap changes",
     "CAN/HostShare mutation",
     "old native receipt repinning"
   ],
-  "promotion_gate": "Only separately authorized new native proof may promote draft to working route. Existing split-host advanced bytes and historical receipts preserved."
+  "promotion_gate": "Stop lane: clean stock build guest-OOM-blocked; no native proof and no promotion. Existing advanced bytes/historical receipts unchanged.",
+  "current_measured_block": {
+    "receipt": "acceptance/stock-20261113/receipt.json",
+    "sha256": "839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6",
+    "outcome": "BLOCKED_CLEAN_STOCK_IFS_OOM",
+    "guest_oom_anon_rss_kib": 329384,
+    "guest_available_before_generator_kib": 295232,
+    "ifs_bytes": 0,
+    "disk_sha256": null,
+    "host_monitored_peak_bytes": 1105190912,
+    "host_limit_bytes": 2147483648,
+    "host_sampled_oom_kill": 0,
+    "stock_native": "NOT_RUN"
+  }
 }

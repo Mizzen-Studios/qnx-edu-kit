@@ -56,14 +56,14 @@ class CodelabExport(unittest.TestCase):
             if row['id']!='T01':self.assertEqual(current,row)
         draft=next(r for r in now['lines'] if r['id']=='T01')
         self.assertIn('DRAFT/UNVERIFIED',draft['claim'])
-        self.assertIn('No new SDK boot',draft['narration'])
+        self.assertIn('No native run',draft['narration'])
         self.assertIn('native NOT_RUN',draft['label'])
 
     def test_stock_research_has_no_fresh_native_proof(self):
         data=json.loads((ROOT/'docs/stock-route-research.json').read_text())
-        self.assertEqual(data['status'],'DRAFT_UNVERIFIED_NO_BUILD_NO_QEMU')
+        self.assertEqual(data['status'],'DRAFT_UNVERIFIED_BLOCKED_CLEAN_STOCK_IFS_OOM')
         self.assertEqual(data['prior_measured_block']['ifs_bytes'],0)
-        self.assertIn('PENDING',data['installed_current_inventory'])
+        self.assertIn('VERIFIED',data['installed_current_inventory'])
         self.assertIn('native QNX test',data['actions_not_performed'])
 
     def test_dry_pack_preserves_original_native_pins(self):
@@ -95,6 +95,29 @@ class CodelabExport(unittest.TestCase):
             if row['id']=='T01': continue  # instruction-copy freeze, never runtime
             now=next(r for r in current['lines'] if r['id']==row['id'])
             for asset in row['assets']:self.assertIn(asset,now['assets'])
+
+    def test_clean_stock_block_binds_evidence_without_native_promotion(self):
+        import hashlib
+        base=ROOT/'docs/acceptance/stock-20261113'
+        r=json.loads((base/'receipt.json').read_text())
+        self.assertEqual(r['outcome'],'BLOCKED_CLEAN_STOCK_IFS_OOM')
+        self.assertEqual(r['sdk_boots'],1)
+        self.assertEqual(r['stock_build_attempts'],1)
+        self.assertFalse(r['image']['valid'])
+        self.assertEqual(r['image']['ifs_bytes'],0)
+        self.assertIsNone(r['image']['disk_sha256'])
+        self.assertEqual(r['guest_oom']['anon_rss_kib'],329384)
+        self.assertLess(r['host_measurement']['monitored_peak_cgroup_bytes'],2147483648)
+        self.assertEqual(r['host_measurement']['sampled_oom_kill_max'],0)
+        self.assertEqual(r['host_measurement']['maximum_swap_bytes'],0)
+        self.assertEqual((base/'qemu_options').read_text().strip(),'-device edu')
+        self.assertTrue(r['qemu_options']['generated_equals_authored'])
+        self.assertEqual(r['native']['corrected_source'],'NOT_CREATED')
+        self.assertTrue(all(v.startswith('NOT_RUN') for k,v in r['native'].items() if k!='corrected_source'))
+        cleanup=json.loads((base/'cleanup.json').read_text())
+        self.assertTrue(cleanup['qemu_absent'] and cleanup['lease_free'] and cleanup['sdk_owner_reaped'])
+        for name,digest in r['evidence'].items():
+            self.assertEqual(hashlib.sha256((base/name).read_bytes()).hexdigest(),digest,name)
 
     def test_prepare_preserves_content_except_relative_paths(self):
         original = (ROOT / 'codelab/codelab.md').read_text()

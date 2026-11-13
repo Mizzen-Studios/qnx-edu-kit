@@ -1,0 +1,7 @@
+Nov 13 09:03:43 qnx-linux-fallback kernel: systemd invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+Nov 13 09:03:43 qnx-linux-fallback kernel:  oom_kill_process+0x118/0x280
+Nov 13 09:03:43 qnx-linux-fallback kernel:  ? oom_evaluate_task+0x143/0x1e0
+Nov 13 09:03:43 qnx-linux-fallback kernel:  __alloc_pages_may_oom+0x10c/0x1d0
+Nov 13 09:03:44 qnx-linux-fallback kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+Nov 13 09:03:44 qnx-linux-fallback kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/system.slice/edu-clean-stock-20261113.service,task=x86_64-pc-nto-q,pid=1620,uid=1001
+Nov 13 09:03:44 qnx-linux-fallback kernel: Out of memory: Killed process 1620 (x86_64-pc-nto-q) total-vm:588924kB, anon-rss:329384kB, file-rss:1736kB, shmem-rss:0kB, UID:1001 pgtables:700kB oom_score_adj:0

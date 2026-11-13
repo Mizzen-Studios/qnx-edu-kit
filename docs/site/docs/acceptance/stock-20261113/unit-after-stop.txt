@@ -1,0 +1,4 @@
+Result=oom-kill
+ExecMainStatus=15
+ActiveState=failed
+SubState=failed

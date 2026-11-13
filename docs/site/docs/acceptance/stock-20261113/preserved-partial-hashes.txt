@@ -1,0 +1,12 @@
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /home/qnx/edu-clean-stock-20261113/output/ifs.bin
+0 /home/qnx/edu-clean-stock-20261113/output/ifs.bin
+160f2fb74e1ea84b75c38ddb21685935b420746ecb3212d64ff1a6b291c6f4e9  /home/qnx/edu-clean-stock-20261113/output/data.part
+64110592 /home/qnx/edu-clean-stock-20261113/output/data.part
+f11a8ccd2e5c72da3609accd46e6df9fd7c0da7ebf12a0637788024ec38c1153  /home/qnx/edu-clean-stock-20261113/output/system.part
+78893056 /home/qnx/edu-clean-stock-20261113/output/system.part
+ed1a84e2af9d8c6bf693aae5d48b0619375a1e715e6056be5109dd35d76edf27  /home/qnx/edu-clean-stock-20261113/output/build/ifs.build
+4965 /home/qnx/edu-clean-stock-20261113/output/build/ifs.build
+6c140fbcccf1206c8e3a51a12dbb7f1a92eab616822bb67a6bd9d2373facdd44  /home/qnx/edu-clean-stock-20261113/local/options
+2543 /home/qnx/edu-clean-stock-20261113/local/options
+f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df  /home/qnx/edu-clean-stock-20261113/local/snippets/qemu_options.edu
+12 /home/qnx/edu-clean-stock-20261113/local/snippets/qemu_options.edu
