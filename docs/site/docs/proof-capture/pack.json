@@ -149,18 +149,18 @@
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "2b4cbf0c08fd89b5a92ee76a9ab960abfb65b3ceeb8b81dd5ce66d8068f9de47",
-          "commit": "32186b2bcb97e6e467db87858f4b27497a38c76c"
+          "sha256": "74ce8e98edd63ac3b4c9e7589f703ad37b28168a1bd2e166cc6f6d6546da2d1a",
+          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
         },
         {
           "path": "README.md",
-          "sha256": "5394470a091872ac72d2d28e27159d667c7d77e6cd86087cab474516c0411d89",
-          "commit": "32186b2bcb97e6e467db87858f4b27497a38c76c"
+          "sha256": "e5951e8219a1bc4322299e07148942d267b361a23236a6ab15f4414e4a39967e",
+          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
         },
         {
           "path": "docs/learner-route.md",
-          "sha256": "ff104518122e13952fb1f72ade614c820b5a57ee80be4f848111e5fe5d506761",
-          "commit": "32186b2bcb97e6e467db87858f4b27497a38c76c"
+          "sha256": "8e0729e804fc255bb2cf411d5a88f214079d9fc26783e27d4c1c52f452654264",
+          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
         },
         {
           "path": "docs/stock-route-research.json",
@@ -267,7 +267,7 @@
   "recorded": false,
   "gate": "CONDITIONAL: owner receipt-inspected, not re-run, 2026-11-07 20:03 UTC",
   "accepted_conditional_tip": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "32186b2bcb97e6e467db87858f4b27497a38c76c",
+  "packet_source_commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507",
   "prior_packet_source_commit": "ce28dd067c82d8cedc8291804d0be3db472f9bb2",
   "current_copy_scope": "Nov13 measured clean stock guest-OOM blocker; draft remains UNVERIFIED, no stock native run. Instruction-copy freeze only; original native and Nov10 evidence pins unchanged.",
   "native_pin_preservation": "All original native and Nov10 blocked SDK assets retain their existing hashes/commits. Only T01 tutorial-copy bindings change for an explicitly unverified draft."

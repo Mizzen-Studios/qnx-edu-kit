@@ -1,0 +1,186 @@
+{
+  "kind": "edu-own-session-v1",
+  "id": "7af31827-e5ea-49c6-86e1-4774748ec20c",
+  "created": 1794575469.4842994,
+  "notes": {
+    "step3": {
+      "prediction": "After actual wrong FAIL/app0, the only write-constant correction to12345678 should physically read edcba987 and pass the fixed oracle with app0.",
+      "diagnosis": "Wrong native read12345679\u2192edcba986/app0; only device_readback false. The application checked local complement, not the intended write. Correction created only after that recorded observation. Observed coherent journey complete: wrongFAIL/app0, correctedPASS/app0, own finish10\u21923628800 with IRQack0/private pulse/slog2. No retries or receipt imports.",
+      "explanation": "Same own notebook, fresh immutable corrected build; wrong snapshot and failed receipt preserved. No image regeneration or receipt import. Exact runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8; existing stock images reused unchanged. All guests stopped/reaped. Automated own-session evidence, not independent human acceptance."
+    },
+    "step6": {
+      "prediction": "My own registration should expose /dev/edu0660; normal write10/read3628800 must show real IRQack0 and same-owner private pulse plus matching slog2 using --pci-line.",
+      "diagnosis": "Before finish observation: retain actual IRQ/ack/pulse handlers, add only own registration/OCB/dispatch. Corrected step3 must pass before finish native run. Observed coherent journey complete: wrongFAIL/app0, correctedPASS/app0, own finish10\u21923628800 with IRQack0/private pulse/slog2. No retries or receipt imports.",
+      "explanation": "One coherent own notebook; fresh finish source/ELF on shared approved stock artifacts. No routing writes, reference binary, image regeneration, MSI-X or new policy layer. Exact runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8; existing stock images reused unchanged. All guests stopped/reaped. Automated own-session evidence, not independent human acceptance."
+    },
+    "permission": {
+      "prediction": "",
+      "diagnosis": "",
+      "explanation": ""
+    }
+  },
+  "attempts": [
+    {
+      "id": "0001-step3-build",
+      "stage": "step3",
+      "action": "build",
+      "started": 1794575825.7502077,
+      "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/host/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "build",
+        "--stage",
+        "step3",
+        "--source",
+        "/mnt/host/edu-journey-20261113-1300/own/step3/main.c",
+        "--out",
+        "/mnt/host/edu-journey-20261113-1300/own/attempts/0001-step3-build/bundle",
+        "--sdp-env",
+        "/home/qnx/qnx800/qnxsdp-env.sh"
+      ],
+      "label": "HOST",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794575902.1120386
+    },
+    {
+      "id": "0002-step3-run",
+      "stage": "step3",
+      "action": "run",
+      "started": 1794576010.3960383,
+      "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "run",
+        "--stage",
+        "step3",
+        "--source",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/step3/main.c",
+        "--bundle",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0001-step3-build/bundle",
+        "--stock",
+        "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output",
+        "--receipt",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0002-step3-run/native",
+        "--timeout",
+        "600"
+      ],
+      "label": "nativefresh",
+      "status": "FAIL",
+      "route": "stock-reuse-v1",
+      "returncode": 1,
+      "finished": 1794576086.636551
+    },
+    {
+      "id": "0003-step3-build",
+      "stage": "step3",
+      "action": "build",
+      "started": 1794576449.8647163,
+      "source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/host/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "build",
+        "--stage",
+        "step3",
+        "--source",
+        "/mnt/host/edu-journey-20261113-1300/own/step3/main.c",
+        "--out",
+        "/mnt/host/edu-journey-20261113-1300/own/attempts/0003-step3-build/bundle",
+        "--sdp-env",
+        "/home/qnx/qnx800/qnxsdp-env.sh"
+      ],
+      "label": "HOST",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794576501.6902773
+    },
+    {
+      "id": "0004-step6-build",
+      "stage": "step6",
+      "action": "build",
+      "started": 1794576514.7228582,
+      "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/host/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "build",
+        "--stage",
+        "step6",
+        "--source",
+        "/mnt/host/edu-journey-20261113-1300/own/step6/main.c",
+        "--out",
+        "/mnt/host/edu-journey-20261113-1300/own/attempts/0004-step6-build/bundle",
+        "--sdp-env",
+        "/home/qnx/qnx800/qnxsdp-env.sh"
+      ],
+      "label": "HOST",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794576553.7592244
+    },
+    {
+      "id": "0005-step3-run",
+      "stage": "step3",
+      "action": "run",
+      "started": 1794576647.0222704,
+      "source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "run",
+        "--stage",
+        "step3",
+        "--source",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/step3/main.c",
+        "--bundle",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0003-step3-build/bundle",
+        "--stock",
+        "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output",
+        "--receipt",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0005-step3-run/native",
+        "--timeout",
+        "600"
+      ],
+      "label": "nativefresh",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794576724.6626372
+    },
+    {
+      "id": "0006-step6-run",
+      "stage": "step6",
+      "action": "run",
+      "started": 1794576735.3677032,
+      "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/repo/scripts/learner_stock.py",
+        "run",
+        "--stage",
+        "step6",
+        "--source",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/step6/main.c",
+        "--bundle",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0004-step6-build/bundle",
+        "--stock",
+        "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output",
+        "--receipt",
+        "/home/ubuntu/qnx-host/guest/shared/edu-journey-20261113-1300/own/attempts/0006-step6-run/native",
+        "--timeout",
+        "600"
+      ],
+      "label": "nativefresh",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794576827.6274843
+    }
+  ]
+}
