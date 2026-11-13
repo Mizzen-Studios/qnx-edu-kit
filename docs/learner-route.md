@@ -10,6 +10,8 @@ The Nov13 SDK512MiB OOM is [preserved history](acceptance/stock-20261113/NOTES.m
 
 This recipe builds **fresh own application source/object/ELF**, then **REUSES** those approved stock IFS/disk artifacts. It does NOT reproduce image generation or a fresh SDK installation. Missing disclosed artifacts means stop: BLOCKED, not substitute a custom IFS, old ELF or reference receipt. The distinct stock adapter rejects custom manifests and unapproved artifact hashes. The old custom-IFS runner remains separate [historical material](learner-route-custom-legacy.md).
 
+The [fresh clean-clone checkpoint](acceptance/coldreader-stock-20261113/RESULT.md) followed this stock-reuse path with new own registration/source/ELF. One native run passed; a byte-exact CRLF notebook-validator fix was then verified offline before the41-file OWN export. Its failed initial host validation is preserved; no second native run or image build.
+
 ## Prerequisite gate — existing licensed platform only
 
 - Existing licensed SDP8.0 Linux x86_64 SDK guest, qnx user and existing environment file; no installation, activation, login or second SDK.
@@ -137,5 +139,9 @@ PY
 ```
 
 Export validates by action, own matching source/build, distinct stock driver, target readback, log/oracle, base-image bindings and actual resource caps/reaping—not display labels. It contains private licensed stock assets locally; no upload. It is not a reference-receipt import or a relabeled custom-IFS run. Preserve failures; never overwrite attempts. Lower-level receipt prefixes produce PREFIX.json and PREFIX.log (plus private native.control directory).
+
+### Recover only a completed own observation after a host-validator fix
+
+If an older notebook reports BLOCKED despite a completed stock driver, preserve it and inspect its validation error. After correcting the host validator, `python3 scripts/learner_session.py revalidate --work "$EDU_WORK" --attempt 0002-step6-run` checks that own attempt again **offline**, preserves its prior notebook under supplemental/, and never starts SDK/QEMU or alters raw receipts. A changed log/source/stock binding still fails. This is not a retry, receipt import or claim of fresh execution; choose the actual blocked attempt ID. Export only after validation succeeds.
 
 Stop after the one permitted observation; verify no QEMU and FREE actual lease; leave independent owner review pending. Single-host remains BLOCKED_NATIVE_TIMEOUT, cause UNVERIFIED, and is not retried. Historical BLOCKED_STOCK_MKIFS_OOM and the earlier stock512 OOM remain immutable, not today's stock status. No full-platform, human-learning, fresh-install, timing/performance/safety or public-media claim.

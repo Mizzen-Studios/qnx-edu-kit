@@ -167,6 +167,15 @@ def validate_native(work, record, folder):
     return bundle, disk
 
 
+def stock_observed_output(folder):
+    observed = json.loads((folder/'native.control/004-observe.result.json').read_text())
+    # read_text performs universal-newline conversion; serial evidence must not.
+    output = (folder/'native.log').read_bytes().decode('utf-8')
+    if observed.get('status') != 'DONE' or observed.get('output') != output:
+        raise ValueError('stock log changed')
+    return output
+
+
 def validate_stock_native(work,record,folder):
     receipt=json.loads((folder/'native.json').read_text())
     prior=next((x for x in reversed(session(work)[1]['attempts']) if x['action']=='build' and x['stage']==record['stage'] and x['status']=='PASS' and x.get('route')=='stock-reuse-v1' and x['source_sha256']==record['source_sha256'] and x['started']<=record['started']),None)
@@ -179,15 +188,41 @@ def validate_stock_native(work,record,folder):
     control=folder/'native.control';owner=json.loads((control/'owner-final.json').read_text())
     if owner.get('caps')!=receipt.get('caps'): raise ValueError('stock caps changed')
     if owner!=receipt.get('owner'): raise ValueError('stock owner evidence changed')
-    observed=json.loads((control/'004-observe.result.json').read_text())
-    output=(folder/'native.log').read_text()
-    if observed.get('output')!=output: raise ValueError('stock log changed')
+    output=stock_observed_output(folder)
     checked=stock.checks(output,m,control,owner)
     checked['inputs_unchanged_after_boot']=stock.verify_inputs(folder/'main.c',bundle,record['stage'])==m and stock.stock_inputs(root)==assets
     if checked!=receipt.get('checks'): raise ValueError('stock oracle disagrees')
     success=all(checked.values()) and bool(owner.get('caps')) and receipt.get('error') is None
     if type(receipt.get('success')) is not bool or receipt['success']!=success or record['returncode']!=(0 if success else 1): raise ValueError('stock status/exit mismatch')
     return bundle,Path(assets['disk-qemu']['path'])
+
+
+def revalidate(work, ident):
+    """Offline recovery of an own stock observation rejected by host validation.
+
+    Never invokes a guest, changes raw receipts, imports evidence or changes
+    source identity. Preserve the pre-recovery notebook inside the export.
+    """
+    work, data = session(work)
+    record = next((r for r in data['attempts'] if r['id'] == ident), None)
+    if (record is None or record.get('route') != 'stock-reuse-v1'
+            or record.get('action') != 'run' or record.get('status') != 'BLOCKED'
+            or type(record.get('returncode')) is not int
+            or record['returncode'] not in (0, 1) or not record.get('validation_error')):
+        raise ValueError('requires own blocked stock observation with completed driver')
+    candidate = dict(record, status='PASS' if record['returncode'] == 0 else 'FAIL', label='nativefresh')
+    candidate.pop('validation_error')
+    validate_attempt(work, candidate, work/'attempts'/ident)
+    before = (work/'session.json').read_bytes()
+    archive = work/'supplemental'/('before-revalidation-'+hashlib.sha256(before).hexdigest()+'.json')
+    archive.parent.mkdir(exist_ok=True)
+    archive.write_bytes(before)
+    candidate['offline_revalidation'] = dict(at=time.time(), previous_error=record['validation_error'],
+                                             validator_sha256=lab.sha(__file__), archive=str(archive.relative_to(work)))
+    record.clear(); record.update(candidate)
+    save(work/'session.json', data)
+    render(work)
+    return candidate['status']
 
 
 def source_state(work, data):
@@ -352,10 +387,11 @@ for(const form of document.forms){
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     sub=p.add_subparsers(dest='action',required=True)
-    for name in ('init','render','notes','build','run','export'):
+    for name in ('init','render','notes','build','run','export','revalidate'):
         s=sub.add_parser(name);s.add_argument('--work',required=True)
         if name=='notes': s.add_argument('--file',required=True)
         if name=='export': s.add_argument('--out',required=True)
+        if name=='revalidate': s.add_argument('--attempt',required=True)
         if name in ('build','run'):
             s.add_argument('--stage',choices=('step3','step6'),required=True)
             s.add_argument('--stock',help='explicit approved stock directory; selects distinct stock adapter')
@@ -378,6 +414,8 @@ def main():
                     fcntl.flock(lock,fcntl.LOCK_EX | fcntl.LOCK_NB)
                 except BlockingIOError:
                     raise ValueError('another session action is active')
+                if a.action == 'revalidate':
+                    print(revalidate(work, a.attempt)); return 0
                 return attempt(work,a.stage,a.action,a)
         return 0
     except (OSError,ValueError,KeyError,subprocess.SubprocessError) as e:

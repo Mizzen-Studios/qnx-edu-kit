@@ -1,0 +1,15 @@
+{
+  "kind": "learner-stock-step6-v1",
+  "route": "stock-reuse-v1",
+  "observability": "pulse-slog2-v1",
+  "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+  "object_sha256": "ce0e5d97c71eacaa56b8893304984e25878cbec58d45158e1965eaf8cb15868d",
+  "binary_sha256": "6ac7621815ad74592a99bd2abb3a2f80600e93313f8152b4aa5cdfc2124fdce0",
+  "built_at": 1794573734.5942423,
+  "build_sequence": [
+    "compile -O0 -g0",
+    "link"
+  ],
+  "image_generation": false,
+  "build_driver_sha256": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c"
+}

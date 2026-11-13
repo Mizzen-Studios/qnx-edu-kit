@@ -32,6 +32,21 @@ class StockAdapter(unittest.TestCase):
     def test_readback_corruption_rejected(self):
         _,b,m=self.bundle();c=self.base/'control';c.mkdir();stock.save(c/'003-readback.result.json',{'status':'DONE','output':'STOCK_BYTES_BEGIN'+chr(10)+'00'+chr(10)+'STOCK_BYTES_END'})
         self.assertFalse(stock.byte_check(c,m))
+    def test_raw_serial_crlf_is_bound_without_normalization(self):
+        folder=self.base/'observation';control=folder/'native.control';control.mkdir(parents=True)
+        raw='EDU TARGET QNX 8.0.0 x86pc\r\nIRQ ack=00000000\r\r\n'
+        stock.save(control/'004-observe.result.json',dict(status='DONE',output=raw))
+        (folder/'native.log').write_bytes(raw.encode())
+        self.assertEqual(session.stock_observed_output(folder),raw)
+        (folder/'native.log').write_bytes(raw.replace('ack=00000000','ack=00000001').encode())
+        with self.assertRaisesRegex(ValueError,'stock log changed'):session.stock_observed_output(folder)
+        (folder/'native.log').write_bytes(raw.replace('\r','').encode())
+        with self.assertRaisesRegex(ValueError,'stock log changed'):session.stock_observed_output(folder)
+    def test_offline_revalidation_rejects_no_own_observation(self):
+        w=self.base/'own';session.create(w)
+        with patch.object(session.subprocess,'run') as launch:
+            with self.assertRaisesRegex(ValueError,'requires own blocked'):session.revalidate(w,'missing')
+            launch.assert_not_called()
     def test_cockpit_stock_path_and_no_custom_relabel(self):
         w=self.base/'own';session.create(w);page=(w/'cockpit.html').read_text()
         self.assertIn('Working stock route',page);self.assertIn('--stock',page);self.assertIn('Historical CUSTOM-IFS',page)

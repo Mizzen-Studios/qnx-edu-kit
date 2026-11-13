@@ -1,0 +1,79 @@
+{
+  "kind": "edu-own-session-v1",
+  "id": "1cbe066f-3c03-4821-b035-895adb87ed4b",
+  "created": 1794573319.0505931,
+  "notes": {
+    "step3": {
+      "prediction": "",
+      "diagnosis": "",
+      "explanation": ""
+    },
+    "step6": {
+      "prediction": "I expect normal write10/read3628800 with IRQ acknowledgement and same-owner private pulse using the existing config line via --pci-line. The API10 default is not used.",
+      "diagnosis": "Before observation: registration TODO prevents a device node. Complete own registration only.",
+      "explanation": "Fresh own source will be compiled; approved stock IFS/disk reused, not rebuilt. Step3 remains unvalidated in this notebook."
+    },
+    "permission": {
+      "prediction": "",
+      "diagnosis": "",
+      "explanation": ""
+    }
+  },
+  "attempts": [
+    {
+      "id": "0001-step6-build",
+      "stage": "step6",
+      "action": "build",
+      "started": 1794573676.6216364,
+      "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/host/edu-coldreader-20261113-1208/repo/scripts/learner_stock.py",
+        "build",
+        "--stage",
+        "step6",
+        "--source",
+        "/mnt/host/edu-coldreader-20261113-1208/own/step6/main.c",
+        "--out",
+        "/mnt/host/edu-coldreader-20261113-1208/own/attempts/0001-step6-build/bundle",
+        "--sdp-env",
+        "/home/qnx/qnx800/qnxsdp-env.sh"
+      ],
+      "label": "HOST",
+      "status": "PASS",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794573735.278934
+    },
+    {
+      "id": "0002-step6-run",
+      "stage": "step6",
+      "action": "run",
+      "started": 1794573840.0616086,
+      "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ubuntu/qnx-host/guest/shared/edu-coldreader-20261113-1208/repo/scripts/learner_stock.py",
+        "run",
+        "--stage",
+        "step6",
+        "--source",
+        "/home/ubuntu/qnx-host/guest/shared/edu-coldreader-20261113-1208/own/step6/main.c",
+        "--bundle",
+        "/home/ubuntu/qnx-host/guest/shared/edu-coldreader-20261113-1208/own/attempts/0001-step6-build/bundle",
+        "--stock",
+        "/home/ubuntu/qnx-host/guest/shared/edu-stock-control-1024-20261113/stock-output",
+        "--receipt",
+        "/home/ubuntu/qnx-host/guest/shared/edu-coldreader-20261113-1208/own/attempts/0002-step6-run/native",
+        "--timeout",
+        "600"
+      ],
+      "label": "HOST",
+      "status": "BLOCKED",
+      "route": "stock-reuse-v1",
+      "returncode": 0,
+      "finished": 1794573932.5154514,
+      "validation_error": "stock log changed"
+    }
+  ]
+}

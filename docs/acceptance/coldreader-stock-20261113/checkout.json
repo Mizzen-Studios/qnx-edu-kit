@@ -1,0 +1,17 @@
+{
+  "kind": "edu-stock-coldreader-checkout",
+  "recorded_at": 1794573589.1796148,
+  "source_commit": "667d62b5bf9536bbf5694d7753258f802be8a7cf",
+  "shallow": "false",
+  "status": "",
+  "session_id": "1cbe066f-3c03-4821-b035-895adb87ed4b",
+  "own_source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+  "files": {
+    "docs/learner-route.md": "3adf44429be9fcf6aed2319efce1e0ee88faba630fb5e86ada9d1f28c3a7b601",
+    "codelab/codelab.md": "9829c72865f6366005afee85e5a4c641bf8af475a049eb163ae6ecb0bc0164f8",
+    "scripts/learner_stock.py": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+    "scripts/learner_session.py": "2a4c1ea61d1bef94941eb0aa05a706b11f402033533d751a6b1ecb85fd1b8370"
+  },
+  "scope": "Automated clean full Git clone, fresh own step6 registration and application build; reuse disclosed stock images, not independent human or fresh installation. Step3 not repeated.",
+  "host_suite_at_source": "133 total:130pass/2skip/1fail; declared qnx-host checkout rejected by test. Preserved log; test-only fix3738c63, no runtime/source change."
+}

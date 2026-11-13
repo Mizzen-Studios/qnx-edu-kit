@@ -71,7 +71,7 @@ class CodelabExport(unittest.TestCase):
             if row['id']!='T01':self.assertEqual(current,row)
         draft=next(r for r in now['lines'] if r['id']=='T01')
         self.assertIn('Working stock recipe',draft['claim'])
-        self.assertIn('cold-reader run pending',draft['narration'])
+        self.assertIn('cold-reader checkpoint',draft['narration'])
         self.assertIn('instruction copy',draft['label'])
 
     def test_stock_research_has_no_fresh_native_proof(self):

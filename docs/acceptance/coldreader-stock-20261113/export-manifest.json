@@ -1,0 +1,59 @@
+{
+  "kind": "edu-own-pack-v1",
+  "session_id": "1cbe066f-3c03-4821-b035-895adb87ed4b",
+  "files": {
+    "attempts/0001-step6-build/base-lab-driver.py": "74ae4ab6cab6120636a2edfc1511d841a1610d53a1893041553ddef60e6c5460",
+    "attempts/0001-step6-build/bundle/learner-source.c": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+    "attempts/0001-step6-build/bundle/learner.o": "ce0e5d97c71eacaa56b8893304984e25878cbec58d45158e1965eaf8cb15868d",
+    "attempts/0001-step6-build/bundle/learner_bin": "6ac7621815ad74592a99bd2abb3a2f80600e93313f8152b4aa5cdfc2124fdce0",
+    "attempts/0001-step6-build/bundle/manifest.json": "edb50ae3f332f6443f7cde7decd1563f974a458497dc23e3f8d7be428d13358a",
+    "attempts/0001-step6-build/command.log": "c7a8aee06001e2077e09a5f221e804dce500b723647ca436498cd0ddadf92953",
+    "attempts/0001-step6-build/main.c": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+    "attempts/0001-step6-build/stock-adapter.py": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+    "attempts/0002-step6-run/base-lab-driver.py": "74ae4ab6cab6120636a2edfc1511d841a1610d53a1893041553ddef60e6c5460",
+    "attempts/0002-step6-run/command.log": "9e44953ca0eab54261a511559ad08ed8c66a9d8d8574d384fd1c5f313be0c8be",
+    "attempts/0002-step6-run/main.c": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+    "attempts/0002-step6-run/native.control/001-prepare.result.json": "66eb7b1bb938d66f81f6d245e09509887a03b81268d52758a01b44aab1ccdc34",
+    "attempts/0002-step6-run/native.control/002-transfer.result.json": "e781d65e0122926c172c08056932f8400d4d35b14dbd01bb0a0c07aa351f0bf8",
+    "attempts/0002-step6-run/native.control/003-readback.result.json": "62d2e4ae80860a01c5379be6482c66224036e6691f58b08c7a290d3cdfb3184d",
+    "attempts/0002-step6-run/native.control/004-observe.result.json": "528422bfa70a7cae4cc04101549bc96458f647ea157026442df51c4609fafe4e",
+    "attempts/0002-step6-run/native.control/STOP": "ecd084fd9454ba4d428e767994928beef1a68bf93e3c53b33f873253a37a0939",
+    "attempts/0002-step6-run/native.control/controller.log": "dd7f0315d516d1888884f2383c70998d5a4635cbe8e76f532ce631fa73616a65",
+    "attempts/0002-step6-run/native.control/memory.jsonl": "99dd35e59b466d8fe57d88e149f1fa0a5d5b3fc8faa0afee8a471d83837e4565",
+    "attempts/0002-step6-run/native.control/owner-final.json": "5ea86a068865a6a56316c3838a80c9a26abb747cac02d2dfe2adeac7ed30528a",
+    "attempts/0002-step6-run/native.control/owner-start.json": "6fec6ca99cef00343142584a393906dac9ca71dc2b7bb6436d79646df0da2bc7",
+    "attempts/0002-step6-run/native.control/queue/001-prepare.done": "52235fcdca37f50b8c5568105827370ce8e1a19ec6b90a8a86ec68f71661cd6b",
+    "attempts/0002-step6-run/native.control/queue/002-transfer.done": "6351dd629d2c8b40e975e9e7283ff5fe6ac7da60dace0fc6530acff73166547a",
+    "attempts/0002-step6-run/native.control/queue/003-readback.done": "90d041223c97e07ab6b135522e9de1941ddbc84b524b9ee5bfda3c1d6af7b3ba",
+    "attempts/0002-step6-run/native.control/queue/004-observe.done": "2b6f14c576f7ceb6bac386934ab1ce5c375af557a17015fab4afb5309bd510d3",
+    "attempts/0002-step6-run/native.control/serial.private": "ed022ed73d06c55fffd168d800e549f56cd4d2a2b734011b998f0ec843fbc854",
+    "attempts/0002-step6-run/native.control/state.qcow2": "4065f7e2929f090993fd637e528c13c4f76fb011343a7bd05a1e3e62b0c3458a",
+    "attempts/0002-step6-run/native.json": "a91f4ff8306f2ebd45592b9a589ed4a51b8779902eee93cf53226310707b89cd",
+    "attempts/0002-step6-run/native.log": "58b500465e2be8b8c63a9e027ccbde685b1dfe260901a9350b3330ac0e2b0df0",
+    "attempts/0002-step6-run/run-driver.py": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+    "attempts/0002-step6-run/stock-adapter.py": "71495af18b9e4dbe8435636065247f63c01b2c522ec37a67951115615033535c",
+    "attempts/0002-step6-run/stock-console.py": "2aa6c9c27fb607a820a8f1d77a5fbe6850308ad3e636c86a6c4080261fdd0220",
+    "cockpit.html": "197276a6693c811f3003cabb35c056cc6e9a675a3db94703c05735d1484ccf1b",
+    "session.json": "291008521551ada23a9c7036813cd3ed46e91be1442f3e47ed510cc2cc4158b7",
+    "step3/main.c": "b620cc941344e0b9736eb35144cb575754a0919995d3fd7a04f0368a64b3c032",
+    "step6/main.c": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+    "stock-artifacts/disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "stock-artifacts/disk-qemu.vmdk": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e",
+    "stock-artifacts/ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "stock-artifacts/options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5",
+    "stock-artifacts/qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "supplemental/before-revalidation-f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728.json": "f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728"
+  },
+  "current_sources": {
+    "step3": {
+      "source_sha256": "b620cc941344e0b9736eb35144cb575754a0919995d3fd7a04f0368a64b3c032",
+      "validation": "CURRENT_STAGE_NOT_VALIDATED"
+    },
+    "step6": {
+      "source_sha256": "196a12f586da0aded01daf17a3f9a453df81e15d832a44de773dc2ead4448605",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    }
+  },
+  "reference_imports": "unsupported; recorded reference is not learner work",
+  "privacy": "Local licensed artifacts. Review licences before sharing. No upload provided."
+}

@@ -1,6 +1,8 @@
-# Status — current bounded update 9 November 2026
+# Status — bounded stock checkpoint 13 November 2026
 
 ## Current Nov13 working stock recipe
+
+**New [clean-clone own checkpoint](docs/acceptance/coldreader-stock-20261113/RESULT.md):** one fresh step6 application build and stock-native run passed10→3628800/IRQack/private pulse/slog2; own41-file export verified after a documented offline CRLF validator fix. New notebook/source, reused approved stock IFS/disk; no image rebuild or native retry. Untouched step3 stays unvalidated.
 
 Follow the [working stock learner recipe](docs/learner-route.md): existing licensed SDK Linux guest1GiB, HOST2GiB/TCG256/reserve64/CPU100/nice15/smp1/swap0, QNX target512MiB. [Stock generation and MMIO gates succeeded](docs/acceptance/stock-retry-20261113/RESULT.md); [actual10→3628800 + IRQack/private pulse/slog2](docs/acceptance/irq-retry-20261113/RESULT.md) uses explicit --pci-line (config11 vs API10), no routing rewrite. The fresh cold-reader adapter compiles OWN code and explicitly reuses those hashed external stock artifacts; no new image-generation claim. SSH faults/networking remain UNVERIFIED; serial transfer only. Earlier OOM/default-IRQ failures below are dated history, not the current stock blocker. No media/CAN/C6 or broader acceptance promotion.
 
@@ -12,7 +14,7 @@ Follow the [working stock learner recipe](docs/learner-route.md): existing licen
 
 [Measured bounded receipt](docs/acceptance/features-20261110/NOTES.md): **BLOCKED_STOCK_MKIFS_OOM**. Own wrong-step3 source compiled and linked serially in the existing licensed SDK; stock platform image generation then OOM-killed a mkifs child (PID1617, anon RSS328616KiB). ifs.bin is zero bytes, not a bootable image. No HOST native run followed. Step6 compilation, new IRQ→private pulse→publication, bounded slog2 runtime capture and optional trace remain **NOT_RUN / UNVERIFIED**. Same caps; no swap/platform/package changes; SDK stopped/reaped and lease free. Historical Nov8 wrong/correct/finish receipts are unchanged, not proof of this new code. No new native PASS. Stop for independent owner review.
 
-## Current product lock — supported split-host, copy-only
+## Historical Nov9 product lock — supported split-host, copy-only
 
 Follow [the canonical route](docs/learner-route.md): licensed SDK guest builds → **STOP/REAP guest** → capped **HOST QEMU**, with one exclusive lease. Recorded [Nov8 wrapper journey](docs/acceptance/wrapper-20261108/NOTES.md) retains wrong FAIL despite app exit0, corrected PASS and original own export bindings. No native rerun at this documentation tip. HOST notes and standalone split receipts remain separately labeled.
 
