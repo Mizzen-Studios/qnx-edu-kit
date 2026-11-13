@@ -58,9 +58,9 @@ class CodelabExport(unittest.TestCase):
             current=next(r for r in now['lines'] if r['id']==row['id'])
             if row['id']!='T01':self.assertEqual(current,row)
         draft=next(r for r in now['lines'] if r['id']=='T01')
-        self.assertIn('DRAFT/UNVERIFIED',draft['claim'])
-        self.assertIn('No native run',draft['narration'])
-        self.assertIn('native NOT_RUN',draft['label'])
+        self.assertIn('Working stock recipe',draft['claim'])
+        self.assertIn('cold-reader run pending',draft['narration'])
+        self.assertIn('instruction copy',draft['label'])
 
     def test_stock_research_has_no_fresh_native_proof(self):
         data=json.loads((ROOT/'docs/stock-route-research.json').read_text())

@@ -2,6 +2,7 @@
 """Own stock-route adapter: fresh application build, explicitly reused stock image."""
 import argparse,hashlib,json,os,re,subprocess,sys,time
 from pathlib import Path
+sys.dont_write_bytecode = True
 import learner_lab as lab
 ROOT=Path(__file__).resolve().parents[1]
 PINS={'ifs.bin':'68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753','disk-qemu':'0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532','qemu_options':'f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df','options':'340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5','disk-qemu.vmdk':'1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e'}

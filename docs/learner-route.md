@@ -82,19 +82,29 @@ runuser -u qnx -- env HOME=/home/qnx python3 "$G/repo/scripts/learner_session.py
 
 The build action selects a fresh, immutable attempt bundle. It serially runs qcc compile -O0 -g0 then link with pci/slog2; **no mkifs**. Its manifest kind is learner-stock-step6-v1, never learner-dev-edu-v1 custom IFS. Predictions, source/object/ELF digests and build command/rc are notebook-owned.
 
+**STOP/REAP barrier:** the SDK must be stopped and reaped, its owner receipt checked, and the actual lease FREE before native starts.
+
 HOST starts the already installed SDK through the bounded owner, dispatches exactly one build, and stops/reaps even on a failed build. No SDK/native overlap:
 
 ```sh
+set -e
 mkdir "$EDU_BASE/sdk-control"
 python3 scripts/stock_sdk_owner.py --controller "$EDU_CONTROLLER" --control "$EDU_BASE/sdk-control" > "$EDU_BASE/sdk-owner.log" 2>&1 &
 SDK_OWNER=$!
 trap 'touch "$EDU_BASE/sdk-control/STOP"; wait "$SDK_OWNER"' EXIT
+for attempt in $(seq 1 310); do
+  test -f "$EDU_BASE/sdk-control/SDK_READY" && break
+  kill -0 "$SDK_OWNER" || exit 1
+  sleep 2
+done
+test -f "$EDU_BASE/sdk-control/SDK_READY"
 python3 "$EDU_CONTROLLER" exec "$EDU_BASE/build.sh" 600
 touch "$EDU_BASE/sdk-control/STOP"
 wait "$SDK_OWNER"
 trap - EXIT
 python3 -c 'import json,sys;r=json.load(open(sys.argv[1]));assert r["stopped_reaped"] and r["status"]=="REQUESTED_STOP";print(r)' "$EDU_BASE/sdk-control/sdk-owner.json"
-pgrep -af '^qemu-system-' # must return no QEMU; rc1 means absent
+if pgrep -af '^qemu-system-'; then exit 1; fi # rc1 means absent
+flock -n /home/ubuntu/qnx-host/native-test.lock true
 ```
 
 The owner checks effective caps, SDK1GiB and reserve64, samples memory/process RSS including shutdown. Missing legal SDK or any breach is BLOCKED and stop, never a cap increase/retry. Require actual SDK reaping and FREE lease before proceeding.

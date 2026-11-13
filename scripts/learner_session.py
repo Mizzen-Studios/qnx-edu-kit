@@ -12,6 +12,7 @@ import subprocess
 import sys
 import time
 import uuid
+sys.dont_write_bytecode = True
 import learner_lab as lab
 import learner_stock as stock
 ROOT = Path(__file__).resolve().parents[1]
