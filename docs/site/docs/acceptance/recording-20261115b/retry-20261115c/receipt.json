@@ -1,5 +1,5 @@
 {
-  "status": "PASS_NATIVE_AND_ENCODED_PREVIEW; PENDING_PARENT_REVIEW_BEFORE_REPLACEMENT",
+  "status": "PASS_NATIVE_ENCODED_REVIEW_AND_PRIVATE_DRAFT_DELIVERY",
   "previous_aborted_capture": "../receipt.json",
   "previous_aborted_capture_commit": "6822229b1b3843c91167972601a4f599c899e606",
   "native_source_commit": "6822229b1b3843c91167972601a4f599c899e606",
@@ -220,5 +220,18 @@
     "edit_real_pixels.py": "0fe3a20f5ab23ce3a5715a5467846be6ee23fb7b607cdcbb85a84976b50e2730",
     "finalize_seekable.py": "f54253223039ee28fb2b3288fa8bb0038c1935a73c81abc9597abe16a53acff6"
   },
-  "native_text_views": "Readable .txt derivatives normalize CR and trailing whitespace only; exact original output remains in observation JSON and private raw bytes."
+  "native_text_views": "Readable .txt derivatives normalize CR and trailing whitespace only; exact original output remains in observation JSON and private raw bytes.",
+  "draft_delivery": {
+    "release_id": 446111464,
+    "draft": true,
+    "repository_private": true,
+    "previous_asset_id": 751229853,
+    "asset_id": 752192798,
+    "name": "edu-live-demo-20261115-final.mp4",
+    "size": 6261279,
+    "sha256": "092914cceb622d39a8682c8da245cd77dafd3ceefa5f4e2be27d289d7461514f",
+    "authenticated_download_hash_verified": true,
+    "parent_encoded_still_review": "PASS",
+    "worker_interruption": "Upload completed before worker cancellation; parent reconciled API and downloaded bytes. No repeat upload."
+  }
 }
