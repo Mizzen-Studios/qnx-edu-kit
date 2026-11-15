@@ -68,7 +68,7 @@
     },
     {
       "path": "docs/site/docs/PUBLISH_AUDIT.html",
-      "sha256": "8511e15c304c8f245b99055d1507890247b3ee0ee7d5df6186cb1dd650e771ce",
+      "sha256": "9d1a2415f804e6a35fd93bc64922e8bc1954e9d13372c2870ecebc8e1b919646",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
