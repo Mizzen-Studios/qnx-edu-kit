@@ -45,4 +45,4 @@ The authored snippet adds only the EDU device to stock QEMU options. The install
 
 ## Limits
 
-**DIRECT route UNVERIFIED.** Independent human learner completion, fresh/second SDK installation, SSH/platform health, actual secpol and MSI-X are **not proven**. Host CI is not QNX runtime proof. No production safety, timing, availability or broad portability claim. `Published` is codelab metadata, not evidence of a public repository or hosted release.
+**DIRECT route UNVERIFIED.** Independent human learner completion, fresh/second SDK installation, SSH/platform health, actual secpol and MSI-X are **not proven**. Host CI is not QNX runtime proof. No production safety, timing, availability or broad portability claim. The repository and [codelab](../codelab/codelab.md) are public, with a [demo video](https://youtu.be/hI8-QtwMg8A). Publication is not evidence of additional native acceptance or a hosted Pages release.

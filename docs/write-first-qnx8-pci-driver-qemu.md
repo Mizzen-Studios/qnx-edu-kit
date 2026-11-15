@@ -2,16 +2,16 @@
 
 **Companion/reference details: start with the [canonical learner route](learner-route.md), integrating step3 then your own /dev/edu.**
 
-**Private working draft, 6 November 2026. Not a completed or runnable learner tutorial.**
+**Published companion reference. Follow the [canonical learner tutorial](../codelab/codelab.md) for the supported end-to-end journey.**
 No completion-time, first-ever, safety-certification or performance claim. The experimental native probe compiles and now demonstrates BAR mapping and factorial polling after requesting per-thread I/O level1; native one-shot interrupt completion and a 64-byte polled DMA round-trip now pass; normal resource-manager I/O now passes, while robustness and full learner acceptance remain pending. Host models and qtest prove neither QNX PCI API correctness nor a working /dev/edu.
 
 ## What we are building
 
 A small resource manager for QEMU's edu device, PCI vendor 0x1234/device 0x11e8. Intended finish line: write 10 to /dev/edu, read 3628800. Learn discovery/ownership, BAR mapping, bounded polling, interrupt acknowledgement, DMA ownership, and request validation. That normal-I/O finish line now passes on QNX; full learner reproducibility and lifecycle robustness have not passed.
 
-## 0. Establish a private, bounded environment
+## 0. Establish a local, bounded environment
 
-Use a locally authorized QNX SDP 8.0 installation and x86_64 target image. Keep SDKs, target headers, images, core dumps and compiled binaries outside the repository, including ignored folders. This draft does not provide an SDK downloader or a redistribution licence.
+Use a locally authorized QNX SDP 8.0 installation and x86_64 target image. Keep SDKs, target headers, images, core dumps and compiled binaries outside the repository, including ignored folders. This reference does not provide an SDK downloader or a redistribution licence.
 
 Record host architecture, QEMU version, target/SDK build, image hash, start command and log destination. ARM64 host with x86 TCG is an experiment; it is not a KVM or supported-performance claim. Boot the existing image first, without changing authentication policies. Preserve the known-good image; do not rebuild over an attached disk.
 
@@ -76,10 +76,10 @@ Original native/edu_resmgr.c and the target-side native/edu_accept.c now cross-b
 
 Remaining acceptance: true simultaneous-client stress, disconnects, graceful termination/restart, injected failures, least-privilege deny/allow evidence, then two fresh learner runs. Until then verify.sh correctly refuses full target acceptance.
 
-## References and publication gate
+## References and scope
 
 - QNX 8 PCI APIs: https://www.qnx.com/developers/docs/8.0/com.qnx.doc.pci_server/topic/pci_device_attach.html and pci_device_read_ba.html in the same section.
 - QNX signal fault metadata: https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.lib_ref/topic/s/siginfo_t.html
 - QEMU edu specification: https://www.qemu.org/docs/master/specs/edu.html (pin the tested source revision for reproducibility).
 
-No SDK text/headers or upstream implementation is reproduced. Keep all publication, video, Pages and submission gates closed until owner approval and demonstrated target acceptance.
+No SDK text/headers or upstream implementation is reproduced. The repository, tutorial and [demo video](https://youtu.be/hI8-QtwMg8A) are public; licensed artifacts remain external. Publication does not promote unverified technical gates or authorize Pages deployment or submission.
