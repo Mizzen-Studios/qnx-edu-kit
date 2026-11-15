@@ -4,6 +4,29 @@ from pathlib import Path
 p=Path(os.environ.get('EDU_LAB_DIR','')).expanduser().resolve()
 if not os.environ.get('EDU_LAB_DIR'):raise SystemExit('Set EDU_LAB_DIR to existing external guest assets; no installation is performed')
 qmp=p/'qmp.sock'
+def verify_caps(group, root, nice):
+ """Fail closed before QEMU: effective cgroup-v2 ancestor limits and priority."""
+ group=group.resolve();root=root.resolve()
+ if group!=root and root not in group.parents:raise SystemExit('Invalid cgroup path')
+ cpu=[];memory=[];swap=[]
+ try:
+  for parent in [group,*group.parents]:
+   if parent!=root and root not in parent.parents:continue
+   for name,dest in [('memory.max',memory),('memory.swap.max',swap)]:
+    path=parent/name
+    if path.exists():
+     value=path.read_text().strip()
+     if value!='max':dest.append(int(value))
+   path=parent/'cpu.max'
+   if path.exists():
+    quota,period=path.read_text().split()
+    if quota!='max':
+     quota=int(quota);period=int(period)
+     if quota<=0 or period<=0:raise ValueError('invalid CPU quota')
+     cpu.append(quota/period)
+ except (OSError,ValueError) as exc:raise SystemExit('Unreadable canonical caps: '+str(exc))
+ if not cpu or min(cpu)>1 or not memory or min(memory)>2147483648 or min(memory)<=0 or not swap or min(swap)!=0 or nice!=15:
+  raise SystemExit('Refusing QEMU: require effective CPU<=100%, memory<=2GiB, swap0, nice15')
 def request(cmd):
  with socket.socket(socket.AF_UNIX) as s:
   s.settimeout(10); s.connect(str(qmp)); f=s.makefile('rwb',buffering=0); f.readline()
@@ -18,14 +41,7 @@ if mode=='run':
  root=Path('/sys/fs/cgroup')
  relative=next(line.split(':',2)[2] for line in Path('/proc/self/cgroup').read_text().splitlines() if line.startswith('0::'))
  group=root/relative.lstrip('/')
- capped=False
- for parent in [group,*group.parents]:
-  if parent!=root and root not in parent.parents: continue
-  limit=parent/'cpu.max'
-  if limit.exists():
-   quota,period=limit.read_text().split()
-   if quota!='max' and int(quota)<=2.5*int(period): capped=True
- if not capped: raise SystemExit('Refusing uncapped QEMU: use guestctl.py start or an explicit <=250% CPU scope')
+ verify_caps(group,root,os.getpriority(os.PRIO_PROCESS,0))
  sdk_memory=os.environ.get('CAN_SDK_MEMORY_MIB','512')
  edu_memory=os.environ.get('EDU_SDK_MEMORY_MIB')
  if edu_memory is not None:
