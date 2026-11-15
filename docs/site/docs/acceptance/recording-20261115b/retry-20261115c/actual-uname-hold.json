@@ -1,0 +1,9 @@
+{
+  "id": "001b-uname-visible",
+  "kind": "send",
+  "started": 1794771084.2139385,
+  "text": "sleep 12; echo EDU_UNAME_VISIBLE_DONE",
+  "output": "sleep 12; echo EDU_UNAME_VISIBLE_DONE\r\r\nEDU_UNAME_VISIBLE_DONE\r\n",
+  "status": "DONE",
+  "ended": 1794771096.2917497
+}

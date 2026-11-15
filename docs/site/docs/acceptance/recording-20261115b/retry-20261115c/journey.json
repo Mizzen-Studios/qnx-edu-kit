@@ -1,0 +1,145 @@
+{
+  "kind": "edu-coherent-own-stock-journey-v1",
+  "status": "PASS",
+  "tested_source_commit": "6822229b1b3843c91167972601a4f599c899e606",
+  "session_id": "70540b16-204a-4960-a1eb-58d70eabb32c",
+  "phases": [
+    {
+      "stage": "step3",
+      "status": "FAIL",
+      "attempt": "0002-step3-run",
+      "build_attempt": "0001-step3-build",
+      "started": 1794771057.5833266,
+      "finished": 1794771150.4232194,
+      "build_started": 1794770895.009087,
+      "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca",
+      "object_sha256": "30e9a3d73318cd2b984a79c133a481107568cf52986d9411af60cb46aae23a1a",
+      "binary_sha256": "ae9f34748734c1f04f46b50c46ff6d0f404226364613c6a16dba58fe8c41118a",
+      "image_sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "disk_sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "device_readback": false,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "slog2_actual_mmio": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "native_receipt_sha256": "bc16ceed2a0d080ff17f375ec75853888356a15852e5ff7ff7f54fb9baf4b245",
+      "native_log_sha256": "234e677a6c9fd2f8124312843f3779a5167432d3c3214d5f97778056de13c866",
+      "mmio": [
+        [
+          "010000ed",
+          "12345679",
+          "edcba986"
+        ]
+      ]
+    },
+    {
+      "stage": "step3",
+      "status": "PASS",
+      "attempt": "0005-step3-run",
+      "build_attempt": "0003-step3-build",
+      "started": 1794771710.393893,
+      "finished": 1794771791.8153741,
+      "build_started": 1794771518.5891376,
+      "source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c",
+      "object_sha256": "8213ef97c18f01239f99f9f9830e97be44fe1cbcb796b9dde72ef94f3770bcc4",
+      "binary_sha256": "5c45a5baca4c60ee23d2894f075841e3439997e77c2a411dd4c991c92660e5a0",
+      "image_sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "disk_sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "device_readback": true,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "slog2_actual_mmio": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "native_receipt_sha256": "3d2ff430b956c5b481c686ef89a56b4bcd0569fa89978a3f10482af859986558",
+      "native_log_sha256": "885f066a9144129e2228164b33bea71d3465e7c133c98c7bec03b711e3f4985d",
+      "mmio": [
+        [
+          "010000ed",
+          "12345678",
+          "edcba987"
+        ]
+      ]
+    },
+    {
+      "stage": "step6",
+      "status": "PASS",
+      "attempt": "0006-step6-run",
+      "build_attempt": "0004-step6-build",
+      "started": 1794771807.1385665,
+      "finished": 1794771899.7780366,
+      "build_started": 1794771585.039084,
+      "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b",
+      "object_sha256": "9362948efcd3bd41545c5ba662e090e6caaa10fcc1243c8c66bc4343df2e174e",
+      "binary_sha256": "210f8f27e23dd9099fc577e8e7096ac663c3e4bab101f32d6815e4b35d477ca6",
+      "image_sha256": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+      "disk_sha256": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "normal_io": true,
+        "irq_completion": true,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "pulse_handoff": true,
+        "bounded_slog2_config": true,
+        "slog2_irq": true,
+        "slog2_pulse": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "explicit_stock_irq": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "native_receipt_sha256": "5005090ee73593274b699bee69ab8360bc4affbd0a6c83982c89779d5c45b6cb",
+      "native_log_sha256": "89075ea1f48224eb9b5c394aced8fa85a313d9beff8f49cc779aec207cf77f01",
+      "mmio": []
+    }
+  ],
+  "stock_pins": {
+    "ifs.bin": "68bbe1b49a9b723c09d152773ee323ec6ab576eb29de933bfe3f08fdae21c753",
+    "disk-qemu": "0aee00c281f8eeb5b02c66555ed9517e317bb1503002a19dbf2b0155de336532",
+    "qemu_options": "f72b3d8f85b7f82f03c8572d10369a212ef87dfd322c0cc882ed441261d770df",
+    "options": "340ec003fd11044e6eea2d2e39eae00f024bfc483b70dc05cb1cc239a06665f5",
+    "disk-qemu.vmdk": "1d01efe9cc8d4a418416d50fac0b2dc8f12100ac2912a1418286e1169528576e"
+  },
+  "export_pack_sha256": "40da71536144391402effe16f6acf1ab254476cc7ef2f49ee2711b79b2807c34",
+  "export_files": 106,
+  "current_sources": {
+    "step3": {
+      "source_sha256": "624a87b55e73bf37c27481b5d1dcaea81a02e481863bf028f9e6fff2f3f5923c",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    },
+    "step6": {
+      "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b",
+      "validation": "CURRENT_SOURCE_RECORDED_PASS"
+    }
+  },
+  "image_generation": false,
+  "scope": "One automated own notebook, three fresh stock observations; existing licensed SDK and stock artifacts reused. Not independent human/fresh-install/all-six-stage acceptance."
+}

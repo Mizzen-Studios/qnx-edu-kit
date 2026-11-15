@@ -1,0 +1,15 @@
+# Fresh whole real-X11 retry — native PASS; encoded preview awaits parent review
+
+The earlier [capture-helper blocker](../RESULT.md) and its6822229b receipts/logs remain unchanged. This is an independent fresh whole capture, not resumed/spliced partial footage. Runtime source6822229b1b3843c91167972601a4f599c899e606; no product code changes, SDK installation or stock image regeneration.
+
+[One-session journey](journey.json): three fresh existing-SDK builds and three stock-native observations. **Wrong FAIL/app0 only device_readback** (12345679→edcba986), one actual sed constant correction, **correct PASS** (12345678→edcba987), then **finish PASS** (normal /dev/edu write10/read3628800,ack00000000,private pulse sent/received,finite slog2info). Actual IRQ metadata: **IAT attached IRQ11**; queried PCI metadata api10/config11 is distinct from the attached interrupt. The106-file own export was independently rehashed; failed attempt remains retained.
+
+Actual continuous pixels: Xvfb + xfce4-terminal + real interactive bash/native/build streams + ffmpeg x11grab. Visible real prompts, compiler-shell output, stock QNX console boot, actual uname-a (QNX noname8.0.0 … x86pc x86_64), source/diff, MMIO/slog2 and own export—not reconstructed terminal slides or simulated typing. A bounded read-only uname/12-second real-time wait is inside the actual console; not a frozen frame. Disclosed privacy aliases/masks apply before display; QNX facts unchanged.
+
+**Exact review-only preview:** edu-live-demo-20261115-final.mp4,165.000s,1920×1080,H.264,30fps,4950frames,no audio,6,261,279bytes,SHA256 092914cceb622d39a8682c8da245cd77dafd3ceefa5f4e2be27d289d7461514f. Raw and final fully decoded. All retained full-screen intervals are chronological actual X11 pixels; numeric time-skipped labels declare cuts. Large bottom captions held12/18/20/13/42/13/13/22/12seconds outside terminal at y900+. No freeze/generated/reconstructed terminal frames. An initial unsafe stream-copy join was caught in still inspection and replaced with one seek-safe final encoder, never uploaded.
+
+[Receipt and caps](receipt.json), [raw-pixel/frame/edit/still map](pixel-frame-edit-map.json), [12 raw→encoded pixel comparisons](raw-encoded-pixel-proof.json), [media probe](video-probe.json), [wrong receipt](wrong-native.json), [correct receipt](correct-native.json), [finish receipt](finish-native.json), [actual uname-a](actual-uname-a.json), [export manifest](export-pack.json). No MP4, PNG, ELF, licensed SDK/image or transfer bytes in Git.
+
+All SDK/native owners stopped/reaped; zeroQEMU and actual lease FREE at capture completion. CPU100%,nice15,HOST2GiB,guest1GiB/512MiB,1CPU,TCG256,swap0,reserve64MiB unchanged. This is a cleanup-time statement, not a later owner's lease claim.
+
+**PAUSED FOR PARENT'S EXACT ENCODED PREVIEW/STILL REVIEW BEFORE REPLACEMENT.** Existing draft446111464/asset751229853 untouched; no upload/title/visibility mutation. Replace only the known EDU MP4 after parent review/grant, keep draft. HostShare/CAN untouched,C6off. Native PASS does not mean video accepted or uploaded.

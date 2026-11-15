@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "All actual arriving displayed bytes reconstructed using identical pre-display privacy function; no text rendered into video by this check",
+  "rows": 5595,
+  "visible_pool_sha256": "cd2a0edcf952369d1b07733eb7d8bd9663f0dc1ac2639e29ce8f63e010c1c8ea",
+  "private_fields_found": false,
+  "OS_facts": "Actual QNX noname8.0.0 unchanged"
+}

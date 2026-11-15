@@ -1,0 +1,224 @@
+{
+  "status": "PASS_NATIVE_AND_ENCODED_PREVIEW; PENDING_PARENT_REVIEW_BEFORE_REPLACEMENT",
+  "previous_aborted_capture": "../receipt.json",
+  "previous_aborted_capture_commit": "6822229b1b3843c91167972601a4f599c899e606",
+  "native_source_commit": "6822229b1b3843c91167972601a4f599c899e606",
+  "session_id": "70540b16-204a-4960-a1eb-58d70eabb32c",
+  "fresh_whole_continuous_x11": true,
+  "old_partial_or_log_splicing": false,
+  "capture_stack": "Xvfb + actual xfce4-terminal + real interactive bash PTY, arriving native serial and actual build stdout + ffmpeg x11grab",
+  "presenter_contract": "native.success bool;14 positive/negative schema fixtures before retry; expected wrong FAIL/app0 only device_readback; no native status rewritten",
+  "phases": [
+    {
+      "status": "FAIL",
+      "attempt": "0002-step3-run",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "device_readback": false,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "slog2_actual_mmio": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "mmio": [
+        [
+          "010000ed",
+          "12345679",
+          "edcba986"
+        ]
+      ]
+    },
+    {
+      "status": "PASS",
+      "attempt": "0005-step3-run",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "device_readback": true,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "slog2_actual_mmio": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "mmio": [
+        [
+          "010000ed",
+          "12345678",
+          "edcba987"
+        ]
+      ]
+    },
+    {
+      "status": "PASS",
+      "attempt": "0006-step6-run",
+      "checks": {
+        "binding": true,
+        "ordering": true,
+        "qnx_target": true,
+        "normal_io": true,
+        "irq_completion": true,
+        "exit_zero": true,
+        "finite_slog2": true,
+        "pulse_handoff": true,
+        "bounded_slog2_config": true,
+        "slog2_irq": true,
+        "slog2_pulse": true,
+        "caps_exact": true,
+        "approved_boot_artifacts": true,
+        "serial_bytes_verified": true,
+        "qemu_reaped": true,
+        "stock_unchanged": true,
+        "bounded_completion": true,
+        "explicit_stock_irq": true,
+        "inputs_unchanged_after_boot": true
+      },
+      "mmio": []
+    }
+  ],
+  "normal_io": "Actual /dev/edu write10/read3628800,ack00000000,private pulse sent/received,finite slog2info",
+  "irq_precision": "Actual IAT attached IRQ11. Queried PCI API metadata api10/config11 is not the attached IRQ; original actual presenter text retained, caption precisely labels IAT11.",
+  "stock": "Approved stock mkqnximage IFS/disk reused unchanged with-deviceedu; no image generation or SDK install",
+  "export_files": 106,
+  "export_pack_sha256": "40da71536144391402effe16f6acf1ab254476cc7ef2f49ee2711b79b2807c34",
+  "failed_attempt_retained": true,
+  "video": {
+    "filename": "edu-live-demo-20261115-final.mp4",
+    "sha256": "092914cceb622d39a8682c8da245cd77dafd3ceefa5f4e2be27d289d7461514f",
+    "bytes": 6261279,
+    "duration": 165,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 4950,
+    "audio": false,
+    "full_decode": "PASS",
+    "private_external_only": true
+  },
+  "raw_continuous_video": {
+    "filename": "raw-continuous-x11.mp4",
+    "sha256": "6ab2cab316dea49dc1c7e6ebebbadacf971b7bf546f5d9347d61ed17778b9c7f",
+    "bytes": 282675278,
+    "duration": 1405.4,
+    "fps": 10,
+    "full_decode": "PASS",
+    "private_external_only": true
+  },
+  "raw_timed_events_sha256": "2f78751a6744c724e74f9f2dea52795514986cd1330d3821c7931282f9023092",
+  "screen_start": {
+    "utc_before_ffmpeg": 1794770554.2127652,
+    "monotonic_before_ffmpeg": 941006.389111871,
+    "display": ":88",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "framerate": 10,
+    "source": "ACTUAL X11 framebuffer; no generated frames; no terminal reconstruction",
+    "raw": "raw-continuous-x11.mp4"
+  },
+  "privacy_redactions": 25,
+  "privacy": "Arriving service-user/home/host path aliases and private identifier masks before display; actual generic QNX noname unchanged. Original private bytes and ELF transfer data external only.",
+  "edit_policy": "Only chronological full-screen actual X11 intervals; no generated terminal frames/slides/simulated typing/line selection/frozen frames. Bottom captions y900+ outside terminal; holds12/18/20/13/42/13/13/22/12seconds. Numeric time-skipped labels. Entire transfer/readback intervals omitted.",
+  "pixel_verification": "12 raw-to-encoded comparisons above y900 PASS; frame/interval/caption map attached. Final single seek-safe H264 encoder; initial stream-copy-join candidate rejected privately and never uploaded.",
+  "cleanup": {
+    "timestamp": 1794771956.2838347,
+    "qemu_absent": true,
+    "lease_free": true,
+    "all_sdk_native_reaped": true
+  },
+  "resource_summary": [
+    {
+      "kind": "SDK",
+      "label": "sdk-wrong",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 1027674112,
+      "stopped_reaped": true
+    },
+    {
+      "kind": "SDK",
+      "label": "sdk-correct-finish",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 925085696,
+      "stopped_reaped": true
+    },
+    {
+      "kind": "native",
+      "label": "0002-step3-run",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 515383296,
+      "stopped_reaped": true
+    },
+    {
+      "kind": "native",
+      "label": "0005-step3-run",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 517496832,
+      "stopped_reaped": true
+    },
+    {
+      "kind": "native",
+      "label": "0006-step6-run",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 515256320,
+      "stopped_reaped": true
+    }
+  ],
+  "project_code_changes": false,
+  "existing_draft_asset": {
+    "release_id": 446111464,
+    "asset_id": 751229853,
+    "name": "edu-live-demo-20261115-final.mp4",
+    "mutations": "NONE; await parent review and replacement grant"
+  },
+  "helpers_sha256": {
+    "capture_journey.py": "fa2714449a3629984ad98916019c92cd094a7023cdbd096dd40e76ab5f1d554f",
+    "screen_owner.py": "34798cd1b9e6fc8e340dbc9c4d1758a7bfcd3434710ccd862824ae782aa29cca",
+    "show_outcome.py": "07d6cd5218b34d40f7bb30ae32a28625cd6490d110a706d8303c2ccf71636b38",
+    "inspect_own_export.py": "2259a272ce479ac4e2604bcf6af5f453485a7dfb7c765aa495982678ecbb9e69",
+    "edit_real_pixels.py": "0fe3a20f5ab23ce3a5715a5467846be6ee23fb7b607cdcbb85a84976b50e2730",
+    "finalize_seekable.py": "f54253223039ee28fb2b3288fa8bb0038c1935a73c81abc9597abe16a53acff6"
+  },
+  "native_text_views": "Readable .txt derivatives normalize CR and trailing whitespace only; exact original output remains in observation JSON and private raw bytes."
+}

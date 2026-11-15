@@ -222,6 +222,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "sha256": "b8b8fb0da154b0f57e2a7deec810e643b4d25b1bf50b4035682d9ebdb7899e5d",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
       "sha256": "0703b37d52334028c1175e807ab7e78d97c029f91d30da4461c1be2e64f53916",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -2856,6 +2861,76 @@
     {
       "source": "docs/site/docs/acceptance/recording-20261115b/RESULT.html",
       "target": "../../../docs/acceptance/recording-20261115b/pixel-still-map.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/RESULT.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/journey.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/pixel-frame-edit-map.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/raw-encoded-pixel-proof.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/video-probe.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/wrong-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/correct-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/finish-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/actual-uname-a.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115b/retry-20261115c/RESULT.html",
+      "target": "../../../../docs/acceptance/recording-20261115b/retry-20261115c/export-pack.json",
       "exists": true
     },
     {

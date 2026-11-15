@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "method": "Compare corresponding raw continuous X11 frame to final encoded still above caption rectangle; only normal H264 encoding loss expected",
+  "comparisons": [
+    {
+      "encoded_still": "source.png",
+      "raw_t": 8.8,
+      "source_frame_10fps": 88,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 45.66772835036923,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "build.png",
+      "raw_t": 376.4,
+      "source_frame_10fps": 3764,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 47.109847359808626,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "uname.png",
+      "raw_t": 535.0,
+      "source_frame_10fps": 5350,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 55.83734739772771,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "one-constant-diff.png",
+      "raw_t": 615.6,
+      "source_frame_10fps": 6156,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 47.29294640232525,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "corrected-source.png",
+      "raw_t": 627.6,
+      "source_frame_10fps": 6276,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 46.905456188305564,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "own-dev-source.png",
+      "raw_t": 639.7,
+      "source_frame_10fps": 6397,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 46.22909380093059,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "qcc-rebuild.png",
+      "raw_t": 994.7,
+      "source_frame_10fps": 9947,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 47.04283318885715,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "wrong-oracle.png",
+      "raw_t": 605.8,
+      "source_frame_10fps": 6058,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 51.02823554880331,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "correct-oracle.png",
+      "raw_t": 1246.2,
+      "source_frame_10fps": 12462,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 51.090422772850275,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "finish-oracle.png",
+      "raw_t": 1354.1,
+      "source_frame_10fps": 13541,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 50.577745253791164,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "export-retained-failure.png",
+      "raw_t": 1373.0,
+      "source_frame_10fps": 13730,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 50.404146298141384,
+      "status": "PASS actual captured pixels survive encoding"
+    },
+    {
+      "encoded_still": "repo-url.png",
+      "raw_t": 1393.2,
+      "source_frame_10fps": 13932,
+      "uncaptioned_rectangle": [
+        0,
+        0,
+        1920,
+        900
+      ],
+      "psnr_dB": 47.30600568655497,
+      "status": "PASS actual captured pixels survive encoding"
+    }
+  ]
+}

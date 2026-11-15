@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "scope": "HOST_ONLY schema fixtures, never imported into future recording/native evidence",
+  "sdk_qemu_started": false,
+  "cases": [
+    {
+      "label": "wrong-prior-schema-host-fixture",
+      "expected_accept": true,
+      "actual_accept": true,
+      "output": [
+        "INDEPENDENT ORACLE: FAIL",
+        "failed checks: ['device_readback']",
+        "actual native application exit=0; wrong complement observed, oracle remains FAIL"
+      ]
+    },
+    {
+      "label": "correct-prior-schema-host-fixture",
+      "expected_accept": true,
+      "actual_accept": true,
+      "output": [
+        "INDEPENDENT ORACLE: PASS",
+        "failed checks: []",
+        "actual native application exit=0; correct complement observed"
+      ]
+    },
+    {
+      "label": "finish-prior-schema-host-fixture",
+      "expected_accept": true,
+      "actual_accept": true,
+      "output": [
+        "INDEPENDENT ORACLE: PASS",
+        "failed checks: []",
+        "actual normal I/O result=3628800; PCI config IRQ11, QNX API IRQ10; actual ack and private pulse logged",
+        "actual daemon exit=['143'] (bounded test intentionally stops daemon)"
+      ]
+    },
+    {
+      "label": "wrong-current-schema-app0",
+      "expected_accept": true,
+      "actual_accept": true,
+      "output": [
+        "INDEPENDENT ORACLE: FAIL",
+        "failed checks: ['device_readback']",
+        "actual native application exit=0; wrong complement observed, oracle remains FAIL"
+      ]
+    },
+    {
+      "label": "reject-wrong-invented-success",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-wrong-no-failing-device-check",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-wrong-other-native-failure",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-nonzero-app-exit",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-wrong-mismatched-mmio",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-missing-canonical-schema",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-correct-false-success",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-finish-false-success",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-unacknowledged-irq",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    },
+    {
+      "label": "reject-unreceived-pulse",
+      "expected_accept": false,
+      "actual_accept": false,
+      "output": []
+    }
+  ]
+}

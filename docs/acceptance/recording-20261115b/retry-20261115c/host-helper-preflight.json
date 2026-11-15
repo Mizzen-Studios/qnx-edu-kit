@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "HOST_ONLY; SDK/QEMU/release operations never executed",
+  "checks": [
+    "bash-n sdk-wrong-host.sh",
+    "bash-n sdk-correct-finish-build.sh",
+    "bash-n sdk-correct-finish-host.sh",
+    "bash-n compiler-trace.sh",
+    "bash-n sdk-wrong-build.sh",
+    "shell arg REPO",
+    "shell arg OWN",
+    "shell arg BASE",
+    "shell arg ORIGIN",
+    "shell arg R",
+    "shell arg STOCK",
+    "actual C grep wrong.c",
+    "actual C grep finish.c",
+    "export inspector actual previous completed pack schema HOST_ONLY",
+    "aggregate phases/export_files schema",
+    "repo unchanged / partial receipt preserved"
+  ],
+  "export_fixture_stdout_sha256": "c8ef30e1f00a9be0ff99a389c76a9d98ad93dac7013bfc5812d8d9323f0d3bc7"
+}
