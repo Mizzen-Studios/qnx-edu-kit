@@ -102,7 +102,7 @@ def validate(folder, root):
             if link not in parser.links or (folder / link).read_bytes() != (root / link).read_bytes():
                 raise ValueError('missing or changed source snapshot: ' + link)
     first_step = (folder / 'index.html').read_text().split('<google-codelab-step', 2)[1]
-    if 'PRIVATE DRAFT' not in first_step or 'QSTI provenance remains unverified' not in first_step:
+    if 'Deliberately fail your own edit despite exit 0, correct it, then implement normal /dev/edu I/O on QNX 8.0. Advanced lab: needs an existing QNX SDP 8.0 install and QEMU.' not in first_step:
         raise ValueError('essential first-step warnings omitted by upstream')
     external = []
     for link in parser.links:

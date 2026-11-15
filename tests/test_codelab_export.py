@@ -204,7 +204,7 @@ class CodelabExport(unittest.TestCase):
             source.write_bytes(original)
             page = folder/'index.html'
             original = page.read_text()
-            page.write_text(original.replace('PRIVATE DRAFT', 'REMOVED WARNING'))
+            page.write_text(original.replace('Advanced lab: needs an existing QNX SDP 8.0 install and QEMU.', 'REMOVED WARNING'))
             with self.assertRaisesRegex(ValueError, 'first-step warnings'):
                 export.validate(folder, ROOT)
             page.write_text(original)

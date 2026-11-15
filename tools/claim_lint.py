@@ -10,6 +10,7 @@ class Links(HTMLParser):
  def handle_starttag(self,t,a):self.links.extend(v for k,v in a if k in ('href','src') and v)
 def build():
  errors=[];checked=[];surfaces=[]
+ if 'Deliberately fail your own edit despite exit 0, correct it, then implement normal /dev/edu I/O on QNX 8.0. Advanced lab: needs an existing QNX SDP 8.0 install and QEMU.' not in (ROOT/'codelab/codelab.md').read_text():errors.append('missing advanced-lab banner')
  paths=[ROOT/'README.md',ROOT/'STATUS.md',ROOT/'REVIEW.md',ROOT/'docs/private-demo.md',ROOT/'docs/proof-capture/SCRIPT.md']
  if (ROOT/'codelab/codelab.md').exists():paths.append(ROOT/'codelab/codelab.md')
  if (ROOT/'docs/site').exists():paths+=sorted((ROOT/'docs/site').rglob('*.html'))

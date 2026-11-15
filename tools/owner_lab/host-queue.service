@@ -1,0 +1,8 @@
+[Unit]
+Description=Trusted local owner-lab shared command queue
+After=local-fs.target
+[Service]
+ExecStart=/usr/local/sbin/host-queue
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

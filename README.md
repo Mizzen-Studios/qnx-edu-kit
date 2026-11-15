@@ -1,4 +1,7 @@
 # edu-kit — learn QNX by making a convincing wrong edit
+[Judges: start here](docs/JUDGES.md)
+
+QNX Global Hackathon 2026 entry (Low-level Software; Best Codelab/Tutorial). Apache-2.0.
 
 ## Current Nov13 working stock recipe
 
@@ -12,8 +15,8 @@ A learner-owned PCI-to-/dev/edu lab: **wrong edit FAIL despite application exit0
 **QNX proven:** current coherent source-bound journey above; [Nov8 wrong/correct/finish logs](docs/acceptance/wrapper-20261108/NOTES.md) remain separately dated historical evidence.
 **HOST only:** editable notebook, provenance/export checks and CI; these cannot certify your QNX edits or human learning.
 **How to build:** [cold-reader codelab, prerequisites and exact commands](codelab/codelab.md) — existing licensed SDK guest build → **STOP/REAP guest** → capped HOST QEMU, one lease.
-Single-host **BLOCKED_NATIVE_TIMEOUT** ([receipt](docs/acceptance/choice-a-20261109/receipt.json)); cause **UNVERIFIED**. No retries/tuning/cap increases.
-Private £0; C6 STOPPED; no recording/publication/SDK login. SSH/platform health and independent learner acceptance remain UNVERIFIED.
+Historical Nov9 single-host **BLOCKED_NATIVE_TIMEOUT** ([receipt](docs/acceptance/choice-a-20261109/receipt.json)); cause **UNVERIFIED**. No retries/tuning/cap increases.
+No paid resources used. SSH/platform health and independent learner acceptance remain UNVERIFIED.
 
 ## Historical Nov13 SDK512 gate — OOM before native (superseded)
 
@@ -46,7 +49,7 @@ Do not start with make check-reference-step*: those are reference runs, never
 your completion. Missing legal setup is BLOCKED, not solved by host checks.
 
 
-Private development milestone. [Private evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line passed in the coherent journey at exact runtime source769a4c9; later documentation changes are not another native run; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
+[Evidence review](REVIEW.md) audits claims and missing bindings. **Experimental native QNX components; not a production driver or human-validated tutorial.** Intended finish line: write 10 to /dev/edu and read 3628800 on QNX in QEMU. That normal-I/O finish line passed in the coherent journey at exact runtime source769a4c9; later documentation changes are not another native run; lifecycle robustness and independent human-learner acceptance remain unvalidated. No performance or functional evaluation of QNX is published here.
 
 Canonical [capability ledger](docs/capabilities.md): host checks, native compilation,
 reference-run and learner-run are separate. [Fresh clean-platform step3](docs/acceptance/clean-step3-20261107/native-clean/NOTES.md)

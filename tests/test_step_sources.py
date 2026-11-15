@@ -89,8 +89,6 @@ class StepSources(unittest.TestCase):
     def test_warning_inside_first_step_and_no_can_course(self):
         text = (ROOT/'codelab/codelab.md').read_text()
         first = text.split('## 1. ', 1)[1].split('## 2. ', 1)[0]
-        self.assertIn('PRIVATE DRAFT', first)
-        self.assertIn('QSTI provenance remains unverified', first)
-        self.assertIn('unmeasured planning estimates', first)
+        self.assertIn('Deliberately fail your own edit despite exit 0, correct it, then implement normal /dev/edu I/O on QNX 8.0. Advanced lab: needs an existing QNX SDP 8.0 install and QEMU.', first)
         self.assertNotIn('candump', text)
         self.assertNotIn('kvaser', text)
