@@ -1,0 +1,18 @@
+{
+  "source": "actual continuous encoded X11 capture, not reconstructed terminal",
+  "raw_sha256": "3892f2dfa575457ff552d7e402203d0f6062876bf9da52df3840140400bf5912",
+  "points": {
+    "own-wrong-source": 4.709744215011597,
+    "actual-qcc-build": 350.9534324645996,
+    "stock-qnx-boot": 488.2887554168701,
+    "actual-wrong-mmio": 576.7385755062103,
+    "actual-uname-a": 513.1374473571777
+  },
+  "stills": {
+    "actual-qcc-build.png": "ec43bd43429966af55b4ad6213df014e5488e7354c9161a424806a0cfe501b0a",
+    "actual-uname-a.png": "7899608ee3dd0d298cfb9875c9ecb4f21586ede652efcf5fbbbe49cd92bbd98c",
+    "actual-wrong-mmio.png": "601760e57fc25d47432ae390f5b685ddb95163e2d18fc7415ef992c34b4b4572",
+    "own-wrong-source.png": "544dd00b3a5de16a15b566e8ea392ecc2aec28bd87e3918a9167019ffe3a8b6c",
+    "stock-qnx-boot.png": "452f5d6baa5df3fa6ff3b1e142645e1948173ffaaee69cc3b761388841cfa194"
+  }
+}

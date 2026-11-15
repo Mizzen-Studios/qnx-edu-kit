@@ -1,0 +1,9 @@
+{
+  "id": "001a-uname",
+  "kind": "send",
+  "started": 1794769714.9946885,
+  "text": "printf '\\033[2J\\033[H'; uname -a; echo EDU_UNAME_A_DONE",
+  "output": "printf '\\033[2J\\033[H'; uname -a; echo EDU_UNAME_A_DONE\r\r\n\u001b[2J\u001b[HQNX noname 8.0.0 2026/06/05-16:26:03EDT x86pc x86_64\r\nEDU_UNAME_A_DONE\r\n",
+  "status": "DONE",
+  "ended": 1794769715.169294
+}

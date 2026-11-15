@@ -1,0 +1,22 @@
+chmod 700 /data/edu-own/learner; echo LEARNER_BIND source=3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca binary=ae9f34748734c1f04f46b50c46ff6d0f404226364613c6a16dba58fe8c41118a; echo "EDU TARGET $(uname -s) $(uname -r) $(uname -m)"; /data/edu-own/learner; result_rc=$?; echo LEARNER_SLOG2_BEGIN; slog2info -b edu_learner; slog_rc=$?; echo LEARNER_SLOG2_END rc=$slog_rc; command -v secpolpush; echo SECPOL_PUSH_TOOL_RC=$?; command -v secpolmonitor; echo SECPOL_MONITOR_TOOL_RC=$?; echo LEARNER_TRACE OMITTED finish_only_scope; echo LEARNER_RC=$result_rc; echo STOCK_DONE
+LEARNER_BIND source=3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca binary=ae9f34748734c1f04f46b50c46ff6d0f404226364613c6a16dba58fe8c41118a
+EDU TARGET QNX 8.0.0 x86pc
+EDU TARGET QNX 8.0.0 x86pc
+EDU PROBE BEGIN
+EDU STEP1 PASS QNX target process
+EDU LIBPCI base=5d59764000 file=/proc/boot/libpci.so.3.0 read_ba=5d597744e0
+EDU LIBC base=5d59793000 file=/proc/boot/libc.so.6 memcpy=5d59804600
+EDU IO_LEVEL_1 acquired
+EDU PCI attached
+EDU STEP2 PASS PCI server attach
+LEARNER_MMIO id=010000ed write=12345679 read=edcba986
+EDU OWN JOURNEY STEP3 local complement PASS; application exits0
+LEARNER_SLOG2_BEGIN
+Nov 15 19:09:40.656            edu_learner.1593346             own_mmio*     1  EDU_EVENT mmio id=010000ed write=12345679 read=edcba986
+LEARNER_SLOG2_END rc=0
+SECPOL_PUSH_TOOL_RC=1
+/system/bin/secpolmonitor
+SECPOL_MONITOR_TOOL_RC=0
+LEARNER_TRACE OMITTED finish_only_scope
+LEARNER_RC=0
+STOCK_DONE

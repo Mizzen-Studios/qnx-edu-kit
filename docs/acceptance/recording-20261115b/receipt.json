@@ -1,0 +1,101 @@
+{
+  "status": "BLOCKED_CAPTURE_HELPER",
+  "native_source_commit": "cde717f8a379b2ff80d6f4984933940e1e43f4ce",
+  "recording": "Real Xvfb + xfce4-terminal, ffmpeg x11grab actual continuous pixels. No generated terminal frames, slides, simulated typing or old logs.",
+  "raw_video": {
+    "name": "raw-continuous-x11.mp4",
+    "sha256": "3892f2dfa575457ff552d7e402203d0f6062876bf9da52df3840140400bf5912",
+    "bytes": 91731673,
+    "duration": 581.1,
+    "width": 1920,
+    "height": 1080,
+    "fps": 10,
+    "audio": false,
+    "full_decode": "PASS",
+    "private_external_only": true
+  },
+  "capture_raw_sha256": "9ad7767a0f6ff6ed2cab5958f59b68302474c5b04da8cd8951a40c694887a9d5",
+  "screen_capture_start": {
+    "utc_before_ffmpeg": 1794769205.0329697,
+    "monotonic_before_ffmpeg": 939657.209316471,
+    "display": ":88",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "framerate": 10,
+    "source": "ACTUAL X11 framebuffer; no generated frames; no terminal reconstruction",
+    "raw": "raw-continuous-x11.mp4"
+  },
+  "blocker": {
+    "owner": "external capture/presentation helper; not product or SDK",
+    "exception": "KeyError: 'status' in show_outcome.py",
+    "cause": "Presenter read native.json status; this contract has success boolean. The phase status lives in session.json attempts.",
+    "actual_native_result": "Expected wrong native observation: app0, FAIL only device_readback;13 other checks passed",
+    "native_checks": {
+      "binding": true,
+      "ordering": true,
+      "qnx_target": true,
+      "device_readback": false,
+      "exit_zero": true,
+      "finite_slog2": true,
+      "slog2_actual_mmio": true,
+      "caps_exact": true,
+      "approved_boot_artifacts": true,
+      "serial_bytes_verified": true,
+      "qemu_reaped": true,
+      "stock_unchanged": true,
+      "bounded_completion": true,
+      "inputs_unchanged_after_boot": true
+    },
+    "recording_abort_after_wrong": true,
+    "corrected_native": "NOT_RUN",
+    "finish_native": "NOT_RUN",
+    "export": "NOT_RUN",
+    "final_under170s_video": "NOT_PRODUCED",
+    "retry": "NOT_ATTEMPTED",
+    "continuation": "Await owner lease/retry decision; do not substitute partial footage as completion"
+  },
+  "resource_cleanup": {
+    "sdk": {
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 996179968,
+      "status": "REQUESTED_STOP",
+      "stopped_reaped": true
+    },
+    "native": {
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 517439488,
+      "status": "REQUESTED_STOP",
+      "stopped_reaped": true,
+      "raw_serial_sha256": "6ac87d41fd90006a0f492888a0f493c8a7586462a29e60d388b2eb19b6fb4785"
+    },
+    "qemu_absent_at_capture_end": true,
+    "lease_free_at_capture_end": true,
+    "timestamp_at_capture_end": 1794769782.5409834
+  },
+  "extra_read_only_console_commands": [
+    "printf ANSI clear; uname -a",
+    "sleep12 for real prompt visibility; not frozen frames"
+  ],
+  "privacy": "Generic real bash lab$ prompt; actual QNX nodename noname; arriving host/home paths and private identifiers privacy-substituted before terminal display, originals retained privately. QNX version/facts unchanged.",
+  "project_code_changes": false,
+  "stock_image_generation": false,
+  "existing_rejected_draft_asset": "UNTOUCHED; no upload, replacement, release, title or visibility mutation",
+  "helpers": {
+    "capture_journey.py": "8ae910cad26ff730a410493b0def2565a325d3e4da6cb0a4bab7abf2c9068761",
+    "screen_owner.py": "ba4d5589201c11c3c3ad79b0b3955516e05ea4dd5aad68e0c7d406e3678dc109",
+    "show_outcome.py": "a2309769f5d643098551ddf30e70b5eb51a2bc6dac6d4c5640b3a6781b166bff"
+  },
+  "host_only_preflight_stop": "Earlier pre-guest clone argument binding smoke failure preserved separately; zero SDK/QEMU on that preliminary capture, corrected outside product before this single native attempt."
+}
