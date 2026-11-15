@@ -1,0 +1,934 @@
+{
+  "source_sha256": "092914cceb622d39a8682c8da245cd77dafd3ceefa5f4e2be27d289d7461514f",
+  "final_sha256": "592657c12f662e263c469242818098d6d927cdaa13ea7dda8432c65917438bea",
+  "size": 5994547,
+  "duration": "165.000000",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "audio": false,
+  "frames": 4950,
+  "footage": "Same accepted file, same frame order and timing; only caption rectangle y900:1080 overwritten; ordinary H264 re-encoding loss elsewhere.",
+  "no_recording": true,
+  "no_qemu": true,
+  "intervals": [
+    {
+      "start": 0,
+      "end": 12,
+      "caption_lines": [
+        "This program exits with code 0. It is still wrong.",
+        "The learner's code deliberately writes 0x12345679."
+      ],
+      "footer": "Time skipped: 2.8s",
+      "source_interval": {
+        "chapter": "source",
+        "caption_hold_seconds": 12,
+        "source_start_frame": 28,
+        "source_end_frame_exclusive": 148,
+        "source_start_seconds": 2.8,
+        "source_end_seconds": 14.8,
+        "source_fps": 10,
+        "encoded_start_seconds": 0,
+        "encoded_end_seconds": 12,
+        "encoded_start_frame": 0,
+        "encoded_end_frame_exclusive": 360,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "This program exits zero. It's still wrong.",
+          "Own notebook: deliberately write0x12345679."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "2.8",
+          "-t",
+          "12.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/source-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-00-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "12",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/00.mp4"
+        ]
+      }
+    },
+    {
+      "start": 12,
+      "end": 30,
+      "caption_lines": [
+        "Compiling the learner's code with the existing QNX SDK.",
+        "New program binaries; the boot images are unchanged."
+      ],
+      "footer": "Time skipped: 353.6s",
+      "source_interval": {
+        "chapter": "wrong-build",
+        "caption_hold_seconds": 18,
+        "source_start_frame": 3684,
+        "source_end_frame_exclusive": 3864,
+        "source_start_seconds": 368.4,
+        "source_end_seconds": 386.4,
+        "source_fps": 10,
+        "encoded_start_seconds": 12,
+        "encoded_end_seconds": 30,
+        "encoded_start_frame": 360,
+        "encoded_end_frame_exclusive": 900,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Existing licensed QNX SDP8.0: actual serial qcc build.",
+          "Fresh own source and ELF; stock images are not rebuilt."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "368.4",
+          "-t",
+          "18.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/wrong-build-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-01-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "18",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/01.mp4"
+        ]
+      }
+    },
+    {
+      "start": 30,
+      "end": 39,
+      "caption_lines": [
+        "The real QNX console boots with the emulated EDU device.",
+        "The system reports QNX 8.0.0."
+      ],
+      "footer": "Time skipped: 115.4s",
+      "source_interval": {
+        "chapter": "boot-uname",
+        "caption_hold_seconds": 20,
+        "source_start_frame": 5018,
+        "source_end_frame_exclusive": 5108,
+        "source_start_seconds": 501.8,
+        "source_end_seconds": 510.8,
+        "source_fps": 10,
+        "encoded_start_seconds": 30,
+        "encoded_end_seconds": 39,
+        "encoded_start_frame": 900,
+        "encoded_end_frame_exclusive": 1170,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Real QNX console: stock mkqnximage IFS + -device edu.",
+          "Actual uname -a: QNX8.0.0. Approved stock reused."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "501.8",
+          "-t",
+          "9.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/boot-uname-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-02-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "9",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/02.mp4"
+        ]
+      }
+    },
+    {
+      "start": 39,
+      "end": 50,
+      "caption_lines": [
+        "The real QNX console boots with the emulated EDU device.",
+        "The system reports QNX 8.0.0."
+      ],
+      "footer": "Time skipped: 19.2s",
+      "source_interval": {
+        "chapter": "boot-uname",
+        "caption_hold_seconds": 20,
+        "source_start_frame": 5300,
+        "source_end_frame_exclusive": 5410,
+        "source_start_seconds": 530.0,
+        "source_end_seconds": 541.0,
+        "source_fps": 10,
+        "encoded_start_seconds": 39,
+        "encoded_end_seconds": 50,
+        "encoded_start_frame": 1170,
+        "encoded_end_frame_exclusive": 1500,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Real QNX console: stock mkqnximage IFS + -device edu.",
+          "Actual uname -a: QNX8.0.0. Approved stock reused."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "530.0",
+          "-t",
+          "11.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/boot-uname-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-03-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "11",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/03.mp4"
+        ]
+      }
+    },
+    {
+      "start": 50,
+      "end": 63,
+      "caption_lines": [
+        "write 0x12345679 / read 0xedcba986; exit 0.",
+        "The checker reads the device back: wrong value, FAIL."
+      ],
+      "footer": "Time skipped: 54.8s",
+      "source_interval": {
+        "chapter": "wrong",
+        "caption_hold_seconds": 13,
+        "source_start_frame": 5958,
+        "source_end_frame_exclusive": 6088,
+        "source_start_seconds": 595.8,
+        "source_end_seconds": 608.8,
+        "source_fps": 10,
+        "encoded_start_seconds": 50,
+        "encoded_end_seconds": 63,
+        "encoded_start_frame": 1500,
+        "encoded_end_frame_exclusive": 1890,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Wrong write12345679 / readedcba986; application exit0.",
+          "Independent oracle FAIL: device_readback only."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "595.8",
+          "-t",
+          "13.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/wrong-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-04-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "13",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/04.mp4"
+        ]
+      }
+    },
+    {
+      "start": 63,
+      "end": 73,
+      "caption_lines": [
+        "One constant corrected: 0x12345679 -> 0x12345678.",
+        "Next: the learner's /dev/edu code and its rebuild."
+      ],
+      "footer": "Time skipped: 2.8s",
+      "source_interval": {
+        "chapter": "fix-rebuild",
+        "caption_hold_seconds": 42,
+        "source_start_frame": 6116,
+        "source_end_frame_exclusive": 6216,
+        "source_start_seconds": 611.6,
+        "source_end_seconds": 621.6,
+        "source_fps": 10,
+        "encoded_start_seconds": 63,
+        "encoded_end_seconds": 73,
+        "encoded_start_frame": 1890,
+        "encoded_end_frame_exclusive": 2190,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "ONE constant corrected:0x12345679 ->0x12345678.",
+          "Own /dev/edu source and actual qcc rebuild follow."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "611.6",
+          "-t",
+          "10.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/fix-rebuild-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-05-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "10",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/05.mp4"
+        ]
+      }
+    },
+    {
+      "start": 73,
+      "end": 83,
+      "caption_lines": [
+        "One constant corrected: 0x12345679 -> 0x12345678.",
+        "Next: the learner's /dev/edu code and its rebuild."
+      ],
+      "footer": "Time skipped: 2.0s",
+      "source_interval": {
+        "chapter": "fix-rebuild",
+        "caption_hold_seconds": 42,
+        "source_start_frame": 6236,
+        "source_end_frame_exclusive": 6336,
+        "source_start_seconds": 623.6,
+        "source_end_seconds": 633.6,
+        "source_fps": 10,
+        "encoded_start_seconds": 73,
+        "encoded_end_seconds": 83,
+        "encoded_start_frame": 2190,
+        "encoded_end_frame_exclusive": 2490,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "ONE constant corrected:0x12345679 ->0x12345678.",
+          "Own /dev/edu source and actual qcc rebuild follow."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "623.6",
+          "-t",
+          "10.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/fix-rebuild-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-06-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "10",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/06.mp4"
+        ]
+      }
+    },
+    {
+      "start": 83,
+      "end": 93,
+      "caption_lines": [
+        "One constant corrected: 0x12345679 -> 0x12345678.",
+        "Next: the learner's /dev/edu code and its rebuild."
+      ],
+      "footer": "Time skipped: 2.1s",
+      "source_interval": {
+        "chapter": "fix-rebuild",
+        "caption_hold_seconds": 42,
+        "source_start_frame": 6357,
+        "source_end_frame_exclusive": 6457,
+        "source_start_seconds": 635.7,
+        "source_end_seconds": 645.7,
+        "source_fps": 10,
+        "encoded_start_seconds": 83,
+        "encoded_end_seconds": 93,
+        "encoded_start_frame": 2490,
+        "encoded_end_frame_exclusive": 2790,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "ONE constant corrected:0x12345679 ->0x12345678.",
+          "Own /dev/edu source and actual qcc rebuild follow."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "635.7",
+          "-t",
+          "10.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/fix-rebuild-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-07-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "10",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/07.mp4"
+        ]
+      }
+    },
+    {
+      "start": 93,
+      "end": 105,
+      "caption_lines": [
+        "One constant corrected: 0x12345679 -> 0x12345678.",
+        "Next: the learner's /dev/edu code and its rebuild."
+      ],
+      "footer": "Time skipped: 343.0s",
+      "source_interval": {
+        "chapter": "fix-rebuild",
+        "caption_hold_seconds": 42,
+        "source_start_frame": 9887,
+        "source_end_frame_exclusive": 10007,
+        "source_start_seconds": 988.7,
+        "source_end_seconds": 1000.7,
+        "source_fps": 10,
+        "encoded_start_seconds": 93,
+        "encoded_end_seconds": 105,
+        "encoded_start_frame": 2790,
+        "encoded_end_frame_exclusive": 3150,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "ONE constant corrected:0x12345679 ->0x12345678.",
+          "Own /dev/edu source and actual qcc rebuild follow."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "988.7",
+          "-t",
+          "12.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/fix-rebuild-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-08-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "12",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/08.mp4"
+        ]
+      }
+    },
+    {
+      "start": 105,
+      "end": 118,
+      "caption_lines": [
+        "write 0x12345678 / read 0xedcba987: PASS.",
+        "The corrected program is rebuilt and run on QNX."
+      ],
+      "footer": "Time skipped: 236.5s",
+      "source_interval": {
+        "chapter": "correct",
+        "caption_hold_seconds": 13,
+        "source_start_frame": 12372,
+        "source_end_frame_exclusive": 12502,
+        "source_start_seconds": 1237.2,
+        "source_end_seconds": 1250.2,
+        "source_fps": 10,
+        "encoded_start_seconds": 105,
+        "encoded_end_seconds": 118,
+        "encoded_start_frame": 3150,
+        "encoded_end_frame_exclusive": 3540,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Corrected write12345678 / readedcba987: PASS.",
+          "Same notebook; freshly rebuilt and observed QNX target."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "1237.2",
+          "-t",
+          "13.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/correct-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-09-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "13",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/09.mp4"
+        ]
+      }
+    },
+    {
+      "start": 118,
+      "end": 131,
+      "caption_lines": [
+        "/dev/edu: write 10, read 3628800; interrupt attached on IRQ 11.",
+        "Interrupt acknowledged; private notification and system logs shown."
+      ],
+      "footer": "Time skipped: 94.9s",
+      "source_interval": {
+        "chapter": "finish",
+        "caption_hold_seconds": 13,
+        "source_start_frame": 13451,
+        "source_end_frame_exclusive": 13581,
+        "source_start_seconds": 1345.1,
+        "source_end_seconds": 1358.1,
+        "source_fps": 10,
+        "encoded_start_seconds": 118,
+        "encoded_end_seconds": 131,
+        "encoded_start_frame": 3540,
+        "encoded_end_frame_exclusive": 3930,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "/dev/edu: 10 ->3628800; IAT attached IRQ11.",
+          "ack00000000; private pulse sent/received; finite slog2info."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "1345.1",
+          "-t",
+          "13.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/finish-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-10-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "13",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/10.mp4"
+        ]
+      }
+    },
+    {
+      "start": 131,
+      "end": 153,
+      "caption_lines": [
+        "The evidence export keeps the original failed attempt.",
+        "All 106 exported files have been checked against their hashes."
+      ],
+      "footer": "Time skipped: 2.9s",
+      "source_interval": {
+        "chapter": "export",
+        "caption_hold_seconds": 22,
+        "source_start_frame": 13610,
+        "source_end_frame_exclusive": 13830,
+        "source_start_seconds": 1361.0,
+        "source_end_seconds": 1383.0,
+        "source_fps": 10,
+        "encoded_start_seconds": 131,
+        "encoded_end_seconds": 153,
+        "encoded_start_frame": 3930,
+        "encoded_end_frame_exclusive": 4590,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "Own export verified: original failed attempt retained.",
+          "106 files independently rehashed from this fresh journey."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "1361.0",
+          "-t",
+          "22.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/export-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-11-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "22",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/11.mp4"
+        ]
+      }
+    },
+    {
+      "start": 153,
+      "end": 165,
+      "caption_lines": [
+        "github.com/Mizzen-Studios/qnx-edu-kit",
+        "QNX 8.0.0 / QEMU x86_64. Advanced lab, not production."
+      ],
+      "footer": "Time skipped: 4.2s",
+      "source_interval": {
+        "chapter": "close",
+        "caption_hold_seconds": 12,
+        "source_start_frame": 13872,
+        "source_end_frame_exclusive": 13992,
+        "source_start_seconds": 1387.2,
+        "source_end_seconds": 1399.2,
+        "source_fps": 10,
+        "encoded_start_seconds": 153,
+        "encoded_end_seconds": 165,
+        "encoded_start_frame": 4590,
+        "encoded_end_frame_exclusive": 4950,
+        "speed_factor": 1.0,
+        "caption_lines": [
+          "github.com/Mizzen-Studios/qnx-edu-kit",
+          "QNX SDP8.0 / QEMU x86_64 / qcc. Advanced lab, not production."
+        ],
+        "caption_only_rectangle": [
+          0,
+          900,
+          1920,
+          180
+        ],
+        "terminal_pixels": "unchanged full-frame X11 pixels above y900, except ordinary H264 encoding loss",
+        "encode_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-ss",
+          "1387.2",
+          "-t",
+          "12.0",
+          "-i",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/raw-continuous-x11.mp4",
+          "-vf",
+          "setpts=(PTS-STARTPTS)/1.0,fps=30,drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/close-caption.txt:fontcolor=white:fontsize=34:line_spacing=18:x=45:y=916,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/cut-12-footer.txt:fontcolor=0xabbcd2:fontsize=24:x=45:y=1043",
+          "-t",
+          "12",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-threads",
+          "2",
+          "-preset",
+          "fast",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/segments/12.mp4"
+        ]
+      }
+    }
+  ],
+  "command": [
+    "ffmpeg",
+    "-y",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-threads",
+    "2",
+    "-i",
+    "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-recording-20261115c/edu-live-demo-20261115-final.mp4",
+    "-vf",
+    "drawbox=x=0:y=900:w=iw:h=180:color=black:t=fill,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-0.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,0)*lt(t,12)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-0.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,0)*lt(t,12)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-1.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,12)*lt(t,30)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-1.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,12)*lt(t,30)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-2.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,30)*lt(t,39)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-2.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,30)*lt(t,39)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-3.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,39)*lt(t,50)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-3.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,39)*lt(t,50)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-4.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,50)*lt(t,63)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-4.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,50)*lt(t,63)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-5.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,63)*lt(t,73)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-5.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,63)*lt(t,73)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-6.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,73)*lt(t,83)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-6.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,73)*lt(t,83)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-7.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,83)*lt(t,93)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-7.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,83)*lt(t,93)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-8.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,93)*lt(t,105)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-8.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,93)*lt(t,105)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-9.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,105)*lt(t,118)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-9.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,105)*lt(t,118)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-10.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,118)*lt(t,131)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-10.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,118)*lt(t,131)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-11.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,131)*lt(t,153)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-11.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,131)*lt(t,153)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/caption-12.txt:expansion=none:fontcolor=white:fontsize=32:line_spacing=18:x=45:y=916:enable='gte(t,153)*lt(t,165)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:textfile=/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/footer-12.txt:expansion=none:fontcolor=0xabbcd2:fontsize=24:line_spacing=18:x=45:y=1043:enable='gte(t,153)*lt(t,165)'",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-threads",
+    "2",
+    "-preset",
+    "fast",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/home/ubuntu/.openclaw/workspace/.openclaw/tmp/qnx-caption-polish-20261115/edu-live-demo-20261115-final.mp4"
+  ],
+  "terminal_pixel_verification": {
+    "region": [
+      0,
+      0,
+      1920,
+      900
+    ],
+    "samples": [
+      {
+        "second": 6,
+        "terminal_ssim": 0.999896
+      },
+      {
+        "second": 20,
+        "terminal_ssim": 0.999851
+      },
+      {
+        "second": 34,
+        "terminal_ssim": 0.999939
+      },
+      {
+        "second": 44,
+        "terminal_ssim": 0.999985
+      },
+      {
+        "second": 60,
+        "terminal_ssim": 0.999992
+      },
+      {
+        "second": 67,
+        "terminal_ssim": 0.999972
+      },
+      {
+        "second": 77,
+        "terminal_ssim": 0.999866
+      },
+      {
+        "second": 87,
+        "terminal_ssim": 0.99981
+      },
+      {
+        "second": 99,
+        "terminal_ssim": 0.999961
+      },
+      {
+        "second": 114,
+        "terminal_ssim": 0.999971
+      },
+      {
+        "second": 127,
+        "terminal_ssim": 0.999982
+      },
+      {
+        "second": 143,
+        "terminal_ssim": 0.999988
+      },
+      {
+        "second": 159,
+        "terminal_ssim": 0.999976
+      }
+    ],
+    "threshold": 0.98,
+    "purpose": "Check unchanged terminal footage alignment despite ordinary lossy re-encoding; no timing or line substitutions."
+  },
+  "encoded_still_review": "PASS: captions spaced, plain English, no jargon footer, all accepted terminal footage preserved",
+  "delivery": {
+    "verified_at": "2026-11-15T20:25:55.077619+00:00",
+    "repository_private": true,
+    "release_id": 446111464,
+    "draft": true,
+    "published_at": null,
+    "metadata_unchanged": true,
+    "other_assets_unchanged": true,
+    "previous_asset_id": 752192798,
+    "asset": {
+      "id": 752247609,
+      "name": "edu-live-demo-20261115-final.mp4",
+      "size": 5994547,
+      "digest": "sha256:592657c12f662e263c469242818098d6d927cdaa13ea7dda8432c65917438bea",
+      "url": "https://api.github.com/repos/Mizzen-Studios/qnx-edu-kit/releases/assets/752247609",
+      "browser_download_url": "https://github.com/Mizzen-Studios/qnx-edu-kit/releases/download/untagged-0a7eb0666ccdae579d76/edu-live-demo-20261115-final.mp4"
+    },
+    "authenticated_download_hash_verified": true
+  }
+}
