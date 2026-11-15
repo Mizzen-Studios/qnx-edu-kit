@@ -3,7 +3,7 @@
 No recording or audio capture. Separate Olly OK required. No publication/upload authorized.
 
 Default historical asset binding (not current acceptance): ada5d0ff03533a2fec0983f3fedbd9bada9df8a9
-Instruction-copy freeze (not runtime acceptance): 63aaf0d38acd544425c98a8dfe4011a2b2307395
+Instruction-copy freeze (not runtime acceptance): 56cb3394ef0f468b340a910508594815193a6b88
 recorded: false; acceptance CONDITIONAL (receipt-inspected, not re-run). Historical receipt source/build pins are unchanged.
 Exact whitespace narration word count: 295; planned 175 seconds (not measured).
 C6 FAIL / STOPPED; SocketCAN UNVERIFIED. Historical native and host-only frames remain separate.
@@ -33,7 +33,7 @@ REVIEW boundary: wrong host1/correct host0, initial finish host1/corrected finis
 Claim: Working stock recipe: fresh application compile with explicitly reused approved stock artifacts; no new image-generation claim.
 Planned frame: Show working recipe and explicit artifact prerequisites; keep historical native receipts separately source-bound. DRY instructions only; no recording.
 Narration: Working stock recipe uses a1GiB licensed SDK guest and explicitly reused hashed stock IFS/disk. The earlier SDK512 OOM is historical. The bound11:03 receipt observed10 to3628800 plus IRQack, private pulse and slog2 using read-only pci-line selection. New own cold-reader checkpoint and export are separately documented, including an offline validator fix; no new image-generation claim.
-Frozen files: codelab/codelab.md SHA256 e18b9b36545fde3fc5cbfd193089d17d3ec79f1c4941f64ec62a4b257b824e90 @ 63aaf0d38acd544425c98a8dfe4011a2b2307395, README.md SHA256 c18666b2fa8496e8636a8e800b4007bcba5c571e9addcf2d44330685d35eeb4e @ 63aaf0d38acd544425c98a8dfe4011a2b2307395, docs/learner-route.md SHA256 8e0729e804fc255bb2cf411d5a88f214079d9fc26783e27d4c1c52f452654264 @ 63aaf0d38acd544425c98a8dfe4011a2b2307395, docs/stock-route-research.json SHA256 b98a5c294e978731fb65bbe15fea5e2dfe306a8f89c166404e2c67ba1006d5ec @ 70503c476d685f6e061c2d7e10972c5d8eee5570, docs/acceptance/stock-20261113/receipt.json SHA256 839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6 @ c569ee4b01b33149dd3ba8236a4e21b4666ca35f, docs/acceptance/irq-retry-20261113/receipt.json SHA256 e68f906ba4ccd54fbfa5c561b32e78d8361ad2279dc0e077261cc1add860cdd7 @ ecede36235dfcfb705e9d36c212cd4cdc6358059
+Frozen files: codelab/codelab.md SHA256 edf2ef00f41d1581bc00d20de6f51d27c8052a4a5ed734ee9995ac0afc73d3be @ 56cb3394ef0f468b340a910508594815193a6b88, README.md SHA256 14988ddd23e42ef7bd29b90f71bc07296fff84a91345e9a56b5a820b660efca2 @ 56cb3394ef0f468b340a910508594815193a6b88, docs/learner-route.md SHA256 cd12d8dc0ac5c8cf390d277d6f045127ecee2c1e2d939dce38bba9b3bccb0cab @ 56cb3394ef0f468b340a910508594815193a6b88, docs/stock-route-research.json SHA256 b98a5c294e978731fb65bbe15fea5e2dfe306a8f89c166404e2c67ba1006d5ec @ 70503c476d685f6e061c2d7e10972c5d8eee5570, docs/acceptance/stock-20261113/receipt.json SHA256 839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6 @ c569ee4b01b33149dd3ba8236a4e21b4666ca35f, docs/acceptance/irq-retry-20261113/receipt.json SHA256 e68f906ba4ccd54fbfa5c561b32e78d8361ad2279dc0e077261cc1add860cdd7 @ ecede36235dfcfb705e9d36c212cd4cdc6358059
 REVIEW boundary: Working stock recipe: fresh application compile with explicitly reused approved stock artifacts; no new image-generation claim.
 
 ## L02 — 115–135 seconds · recorded SDK build boundary
