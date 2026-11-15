@@ -1,0 +1,11 @@
+--- own/step3/main.c before
++++ own/step3/main.c after
+@@ -77,7 +77,7 @@
+     if (r == MAP_FAILED) goto done;
+     uint32_t identity = r[0];
+     if (identity != UINT32_C(0x010000ed)) goto done;
+-    uint32_t chosen = UINT32_C(0x12345679);
++    uint32_t chosen = UINT32_C(0x12345678);
+     r[1] = chosen;
+     uint32_t observed = r[1];
+     printf("LEARNER_MMIO id=%08x write=%08x read=%08x\n", identity, chosen, observed);

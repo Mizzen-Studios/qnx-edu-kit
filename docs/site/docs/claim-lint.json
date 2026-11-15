@@ -212,6 +212,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "sha256": "70a61bdb5ff7fca171bf32cc6a1cfdeee3f84b7a821db8470f93f99433d3ab9e",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/acceptance/review-fixes-20261108/NOTES.html",
       "sha256": "0703b37d52334028c1175e807ab7e78d97c029f91d30da4461c1be2e64f53916",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -2701,6 +2706,96 @@
     {
       "source": "docs/site/docs/acceptance/prereq-20261108/capability-checkpoint.html",
       "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/recording.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/video-provenance.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/correction.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/export-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/resources.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/wrong-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/wrong-observation.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/wrong-native.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/correct-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/correct-observation.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/correct-native.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/finish-native.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/finish-observation.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/acceptance/recording-20261115/RESULT.html",
+      "target": "../../../docs/acceptance/recording-20261115/finish-native.txt",
       "exists": true
     },
     {

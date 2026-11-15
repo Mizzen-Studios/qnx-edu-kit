@@ -1,0 +1,125 @@
+{
+  "kind": "edu-private-captioned-live-recording-v1",
+  "status": "PASS",
+  "tested_source_commit": "a26962acd737f57bd6d3199384ccfa9cbd63f0f6",
+  "session_id": "45154234-bc23-4ec0-862a-d59f4da49280",
+  "recording_capture_started_before_commands": true,
+  "video": {
+    "name": "edu-live-demo-20261115-final.mp4",
+    "sha256": "3aaa0223023e2fec76a9f6e7d832cdb08aabaafbdf5becf16079f96e0dadd37b",
+    "bytes": 2692342,
+    "duration_seconds": 165.0,
+    "width": 1920,
+    "height": 1080,
+    "audio": false
+  },
+  "raw_capture": {
+    "name": "raw-timed-events.jsonl",
+    "sha256": "63d1ba3b0a5f6e2bb045aab3c8654a867121ec386a4205c0ba756d3bc4f7fa1d",
+    "bytes": 1116576,
+    "events": 1459,
+    "kept_private_outside_git": true
+  },
+  "supplemental_export_capture": {
+    "name": "export-inspection-timed-events-v2.jsonl",
+    "sha256": "3027da7ab19ac623cb86f040d0e643853d5cd8924ad5a002bdf907106c089aa0",
+    "scope": "actual offline inspection of this live run export; no new guest execution"
+  },
+  "helpers": {
+    "capture_journey.py": "2ed5c364e60f19f249a1ef30f68c37ba8e1651b58c28e10bc87ccda07f471f6c",
+    "render_capture.py": "c9238e6eb6ecba04f74ad84ff18bdf597778ef4e4c2ca520699967c74a7b9d22",
+    "inspect_export_capture.py": "838972caac5de1c6c67fa50df99cea9df672adb424c681da523ef31d76f4f7d2",
+    "inspect_own_export.py": "d012f06ab5aabdafd1da4e0e6d9bd30103d6d1c7ae691072c23455613b080750"
+  },
+  "journey_receipt_sha256": "d7f056d9b33bdd056da1600b62b0c8dc002a481c6158dcfa106395cfa92f8a41",
+  "export_files": 102,
+  "failed_attempt_preserved": true,
+  "resources": {
+    "native": [
+      {
+        "label": "wrong",
+        "attempt": "0002-step3-run",
+        "resource_caps": {
+          "cpu.max": "100000 100000",
+          "memory.max": "2147483648",
+          "memory.swap.max": "0"
+        },
+        "nice": 15,
+        "peak_cgroup_bytes": 515190784,
+        "stopped_reaped": true,
+        "raw_serial_sha256": "280c459ad8506eb0b95d0af50c5c45a11f483b2bae719809aefa529cf6026988",
+        "observation_started": 1794751035.5682974,
+        "observation_ended": 1794751036.329959
+      },
+      {
+        "label": "correct",
+        "attempt": "0005-step3-run",
+        "resource_caps": {
+          "cpu.max": "100000 100000",
+          "memory.max": "2147483648",
+          "memory.swap.max": "0"
+        },
+        "nice": 15,
+        "peak_cgroup_bytes": 517193728,
+        "stopped_reaped": true,
+        "raw_serial_sha256": "384fffd8621f0972a4ba61e976e14eccca42c71364f6bc30afaa2c269123f85e",
+        "observation_started": 1794751659.713693,
+        "observation_ended": 1794751660.4594345
+      },
+      {
+        "label": "finish",
+        "attempt": "0006-step6-run",
+        "resource_caps": {
+          "cpu.max": "100000 100000",
+          "memory.max": "2147483648",
+          "memory.swap.max": "0"
+        },
+        "nice": 15,
+        "peak_cgroup_bytes": 517484544,
+        "stopped_reaped": true,
+        "raw_serial_sha256": "3a3697a75c973312275d564a4da9f46c52783b6f1250c581f4109e02e20f1915",
+        "observation_started": 1794751748.6098957,
+        "observation_ended": 1794751749.8132675
+      }
+    ],
+    "sdk": [
+      {
+        "status": "REQUESTED_STOP",
+        "caps": {
+          "cpu.max": "100000 100000",
+          "memory.max": "2147483648",
+          "memory.swap.max": "0"
+        },
+        "nice": 15,
+        "peak_cgroup_bytes": 997310464,
+        "stopped_reaped": true,
+        "samples": 288
+      },
+      {
+        "status": "REQUESTED_STOP",
+        "caps": {
+          "cpu.max": "100000 100000",
+          "memory.max": "2147483648",
+          "memory.swap.max": "0"
+        },
+        "nice": 15,
+        "peak_cgroup_bytes": 1046822912,
+        "stopped_reaped": true,
+        "samples": 334
+      }
+    ],
+    "qemu_absent": true,
+    "lease_free": true,
+    "image_generation": false,
+    "source_unchanged": true
+  },
+  "editing": "Captioned terminal render from this run timed raw serial/command streams; selected output and source/diff views. Boot/build/ELF transport omitted, holds added for readability. No old footage. Terminal rows preserve captured text except declared host-path masks; verdicts outside terminal are receipt annotations.",
+  "source_history": "NO project code changes. This run freshly compiled original own application C into this notebook; no old binary/log/receipt import. All video runtime rows map to this capture, not previous observations.",
+  "limitations": [
+    "one automated existing-SDK stock journey, not independent human learner or fresh install",
+    "SSH/platform health unverified; no secpol/MSI-X/HA claim",
+    "No production driver, safety, timing or availability claim",
+    "Boot/build/transport waits cut; selected output displayed, not a continuous realtime screencast"
+  ],
+  "media_status": "PRIVATE; no public publication or visibility change authorized"
+}

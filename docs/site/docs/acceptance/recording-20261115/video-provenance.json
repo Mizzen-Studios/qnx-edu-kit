@@ -1,0 +1,668 @@
+{
+  "kind": "edu-this-live-run-video-provenance-v1",
+  "tested_source_commit": "a26962acd737f57bd6d3199384ccfa9cbd63f0f6",
+  "raw_capture_sha256": "63d1ba3b0a5f6e2bb045aab3c8654a867121ec386a4205c0ba756d3bc4f7fa1d",
+  "supplemental_export_capture_sha256": "3027da7ab19ac623cb86f040d0e643853d5cd8924ad5a002bdf907106c089aa0",
+  "chapters": [
+    {
+      "id": "title",
+      "duration": 9,
+      "title": "This program exits zero.",
+      "subtitle": "It's still wrong.",
+      "caption": "edu-kit | Learn QNX by breaking an apparently successful program",
+      "rows": [],
+      "video_start": 0,
+      "video_end": 9,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "wrong-source",
+      "duration": 17,
+      "title": "1 / Own notebook: choose the wrong write",
+      "subtitle": "Source view - not runtime output",
+      "caption": "Predict first: write12345679. The required value is12345678.",
+      "rows": [
+        {
+          "text": "    uint32_t identity = r[0];",
+          "source_line": 78,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    if (identity != UINT32_C(0x010000ed)) goto done;",
+          "source_line": 79,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    uint32_t chosen = UINT32_C(0x12345679);",
+          "source_line": 80,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    r[1] = chosen;",
+          "source_line": 81,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    uint32_t observed = r[1];",
+          "source_line": 82,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    printf(\"LEARNER_MMIO id=%08x write=%08x read=%08x\\n\", identity, chosen, observed);",
+          "source_line": 83,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    slog2_buffer_set_config_t logging = {0};",
+          "source_line": 84,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        },
+        {
+          "text": "    slog2_buffer_t event;",
+          "source_line": 85,
+          "event_seq": 12,
+          "source_sha256": "3bda5f7ea86d71d7bc87eb2d0614587a33993938700076176e71d1c6ccc45fca"
+        }
+      ],
+      "source_event": 12,
+      "video_start": 9,
+      "video_end": 26,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "wrong-live",
+      "duration": 28,
+      "title": "2 / Recorded live: exit0, requirement FAIL",
+      "subtitle": "Actual target serial output from this fresh run",
+      "caption": "Only device_readback fails. Exit0 did not make the edit correct.",
+      "rows": [
+        {
+          "text": "EDU TARGET QNX 8.0.0 x86pc",
+          "event_seq": 447,
+          "raw_t": 563.5188110891031,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170134,
+          "end_byte": 170162
+        },
+        {
+          "text": "EDU TARGET QNX 8.0.0 x86pc",
+          "event_seq": 448,
+          "raw_t": 563.5693905201042,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170162,
+          "end_byte": 170190
+        },
+        {
+          "text": "LEARNER_MMIO id=010000ed write=12345679 read=edcba986",
+          "event_seq": 449,
+          "raw_t": 563.6703469810309,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170466,
+          "end_byte": 170521
+        },
+        {
+          "text": "LEARNER_SLOG2_BEGIN",
+          "event_seq": 450,
+          "raw_t": 563.7210408530664,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170586,
+          "end_byte": 170607
+        },
+        {
+          "text": "Nov 15 13:57:15.082            edu_learner.1568770             own_mmio*     1  EDU_EVENT mmio id=010000ed write=12345679 read=edcba986",
+          "event_seq": 451,
+          "raw_t": 563.8220207931008,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170607,
+          "end_byte": 170744
+        },
+        {
+          "text": "LEARNER_SLOG2_END rc=0",
+          "event_seq": 451,
+          "raw_t": 563.8220207931008,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170744,
+          "end_byte": 170768
+        },
+        {
+          "text": "LEARNER_RC=0",
+          "event_seq": 451,
+          "raw_t": 563.8220207931008,
+          "stream": "own/attempts/0002-step3-run/native.control/serial.private",
+          "start_byte": 170885,
+          "end_byte": 170899
+        }
+      ],
+      "outcome_event": 453,
+      "time_compressed": true,
+      "video_start": 26,
+      "video_end": 54,
+      "raw_first_t": 563.5188110891031,
+      "raw_last_t": 563.8220207931008,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "correction",
+      "duration": 14,
+      "title": "3 / Diagnose, then correct ONE constant",
+      "subtitle": "Own-source diff created after observing the wrong result",
+      "caption": "12345679 ->12345678. Actual readback and logging are unchanged.",
+      "rows": [
+        {
+          "text": "--- own/step3/main.c before",
+          "event_seq": 454
+        },
+        {
+          "text": "+++ own/step3/main.c after",
+          "event_seq": 454
+        },
+        {
+          "text": "@@ -77,7 +77,7 @@",
+          "event_seq": 454
+        },
+        {
+          "text": "     if (r == MAP_FAILED) goto done;",
+          "event_seq": 454
+        },
+        {
+          "text": "     uint32_t identity = r[0];",
+          "event_seq": 454
+        },
+        {
+          "text": "     if (identity != UINT32_C(0x010000ed)) goto done;",
+          "event_seq": 454
+        },
+        {
+          "text": "-    uint32_t chosen = UINT32_C(0x12345679);",
+          "event_seq": 454
+        },
+        {
+          "text": "+    uint32_t chosen = UINT32_C(0x12345678);",
+          "event_seq": 454
+        },
+        {
+          "text": "     r[1] = chosen;",
+          "event_seq": 454
+        },
+        {
+          "text": "     uint32_t observed = r[1];",
+          "event_seq": 454
+        },
+        {
+          "text": "     printf(\"LEARNER_MMIO id=%08x write=%08x read=%08x\\n\", identity, chosen, observed);",
+          "event_seq": 454
+        }
+      ],
+      "source_event": 454,
+      "video_start": 54,
+      "video_end": 68,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "correct-live",
+      "duration": 26,
+      "title": "4 / Fresh rebuild, fresh native observation",
+      "subtitle": "Actual target serial output - independent oracle PASS",
+      "caption": "Write12345678, readedcba987. Application exit0, all checks PASS.",
+      "rows": [
+        {
+          "text": "EDU TARGET QNX 8.0.0 x86pc",
+          "event_seq": 912,
+          "raw_t": 1187.6341141980374,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170134,
+          "end_byte": 170162
+        },
+        {
+          "text": "EDU TARGET QNX 8.0.0 x86pc",
+          "event_seq": 913,
+          "raw_t": 1187.6848305140156,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170162,
+          "end_byte": 170190
+        },
+        {
+          "text": "LEARNER_MMIO id=010000ed write=12345678 read=edcba987",
+          "event_seq": 914,
+          "raw_t": 1187.8366107380716,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170466,
+          "end_byte": 170521
+        },
+        {
+          "text": "LEARNER_SLOG2_BEGIN",
+          "event_seq": 914,
+          "raw_t": 1187.8366107380716,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170586,
+          "end_byte": 170607
+        },
+        {
+          "text": "Nov 15 14:07:39.660            edu_learner.1568770             own_mmio*     1  EDU_EVENT mmio id=010000ed write=12345678 read=edcba987",
+          "event_seq": 915,
+          "raw_t": 1187.9378195670433,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170607,
+          "end_byte": 170744
+        },
+        {
+          "text": "LEARNER_SLOG2_END rc=0",
+          "event_seq": 915,
+          "raw_t": 1187.9378195670433,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170744,
+          "end_byte": 170768
+        },
+        {
+          "text": "LEARNER_RC=0",
+          "event_seq": 915,
+          "raw_t": 1187.9378195670433,
+          "stream": "own/attempts/0005-step3-run/native.control/serial.private",
+          "start_byte": 170885,
+          "end_byte": 170899
+        }
+      ],
+      "outcome_event": 917,
+      "time_compressed": true,
+      "video_start": 68,
+      "video_end": 94,
+      "raw_first_t": 1187.6341141980374,
+      "raw_last_t": 1187.9378195670433,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "finish-source",
+      "duration": 16,
+      "title": "5 / Own normal-I/O resource manager",
+      "subtitle": "Source excerpts - not runtime output",
+      "caption": "Register /dev/edu. Keep real IRQ acknowledge and private pulse handoff.",
+      "rows": [
+        {
+          "text": "    }",
+          "source_line": 362,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        },
+        {
+          "text": "    dispatch = dispatch_create();",
+          "source_line": 363,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        },
+        {
+          "text": "    if (dispatch == NULL) { perror(\"journey dispatch\"); goto done; }",
+          "source_line": 364,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        },
+        {
+          "text": "    config.nparts_max = 1;",
+          "source_line": 378,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        },
+        {
+          "text": "    attach_id = resmgr_attach(dispatch, &config, \"/dev/edu\", _FTYPE_ANY, 0,",
+          "source_line": 379,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        },
+        {
+          "text": "                              &connect_funcs, &io_funcs, &attr);",
+          "source_line": 380,
+          "event_seq": 458,
+          "source_sha256": "9cca18c9af773b1142b91f88079da9832e3c6f056e045035ecf6f14ea75d333b"
+        }
+      ],
+      "source_event": 458,
+      "video_start": 94,
+      "video_end": 110,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "finish-live",
+      "duration": 29,
+      "title": "6 / Recorded live: normal /dev/edu I/O",
+      "subtitle": "Harness executed printf10 > /dev/edu, cat /dev/edu and slog2info",
+      "caption": "10 ->3628800. Real IRQ completion/ack; same-owner pulse; finite slog2.",
+      "rows": [
+        {
+          "text": "EDU TARGET QNX 8.0.0 x86pc",
+          "event_seq": 1441,
+          "raw_t": 1276.638182359049,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222111,
+          "end_byte": 222139
+        },
+        {
+          "text": "LEARNER_DEV_EDU write_rc=0 read_rc=0 result=3628800",
+          "event_seq": 1443,
+          "raw_t": 1277.0944885601057,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222152,
+          "end_byte": 222205
+        },
+        {
+          "text": "EDU IRQ metadata api=10 config=11 pin=1 mode=pci-line",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222243,
+          "end_byte": 222298
+        },
+        {
+          "text": "EDU RESMGR IAT attached irq=11 id=1",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222298,
+          "end_byte": 222335
+        },
+        {
+          "text": "EDU RESMGR SLOG2 configured pages=1 limit=8",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222335,
+          "end_byte": 222380
+        },
+        {
+          "text": "EDU RESMGR PULSE sequence=1 input=10 result=3628800 sent=1 received=1 owner=same-thread",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222436,
+          "end_byte": 222525
+        },
+        {
+          "text": "EDU RESMGR IRQ completion=1 input=10 result=3628800 ack=00000000",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222525,
+          "end_byte": 222591
+        },
+        {
+          "text": "LEARNER_SLOG2_BEGIN",
+          "event_seq": 1445,
+          "raw_t": 1277.1961633540923,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222591,
+          "end_byte": 222612
+        },
+        {
+          "text": "Nov 15 14:09:08.550            edu_learner.1937410               events*     1  EDU_EVENT ready channel=private budget=8 pages=1",
+          "event_seq": 1446,
+          "raw_t": 1277.297839748091,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222612,
+          "end_byte": 222742
+        },
+        {
+          "text": "Nov 15 14:09:08.641            edu_learner.1937410               events      2  EDU_EVENT irq sequence=1 input=10 result=3628800 ack=00000000",
+          "event_seq": 1446,
+          "raw_t": 1277.297839748091,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222742,
+          "end_byte": 222885
+        },
+        {
+          "text": "Nov 15 14:09:08.641            edu_learner.1937410               events      3  EDU_EVENT pulse sequence=1 input=10 result=3628800",
+          "event_seq": 1446,
+          "raw_t": 1277.297839748091,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 222885,
+          "end_byte": 223017
+        },
+        {
+          "text": "LEARNER_SLOG2_END rc=0",
+          "event_seq": 1446,
+          "raw_t": 1277.297839748091,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 223017,
+          "end_byte": 223041
+        },
+        {
+          "text": "LEARNER_RC=0",
+          "event_seq": 1446,
+          "raw_t": 1277.297839748091,
+          "stream": "own/attempts/0006-step6-run/native.control/serial.private",
+          "start_byte": 223158,
+          "end_byte": 223172
+        }
+      ],
+      "outcome_event": 1448,
+      "time_compressed": true,
+      "video_start": 110,
+      "video_end": 139,
+      "raw_first_t": 1276.638182359049,
+      "raw_last_t": 1277.297839748091,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "export",
+      "duration": 17,
+      "title": "7 / Export OWN evidence, including the failure",
+      "subtitle": "Actual host command output; personal paths masked",
+      "caption": "102 files verified. Same notebook: FAIL -> PASS -> PASS; failed attempt retained.",
+      "rows": [
+        {
+          "text": "OWN EXPORT: 102 files independently rehashed",
+          "event_seq": 1462,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "0002-step3-run  FAIL  retained=True",
+          "event_seq": 1463,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "0005-step3-run  PASS  retained=True",
+          "event_seq": 1464,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "0006-step6-run  PASS  retained=True",
+          "event_seq": 1465,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "ONE SESSION: 45154234-bc23-4ec0-862a-d59f4da49280",
+          "event_seq": 1466,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "step3  CURRENT_SOURCE_RECORDED_PASS",
+          "event_seq": 1467,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "step6  CURRENT_SOURCE_RECORDED_PASS",
+          "event_seq": 1468,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "EXACT RUNTIME SOURCE: a26962acd737f57bd6d3199384ccfa9cbd63f0f6",
+          "event_seq": 1469,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        },
+        {
+          "text": "STOCK IFS/DISK reused unchanged; image_generation=False",
+          "event_seq": 1470,
+          "privacy_redactions": [
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own-export",
+              "$OWN_EXPORT"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/own",
+              "$OWN_WORK"
+            ],
+            [
+              "/home/ubuntu/qnx-host/guest/shared/edu-recording-20261115-1344/journey.json",
+              "$JOURNEY_RECEIPT"
+            ]
+          ]
+        }
+      ],
+      "journey_sha256": "d7f056d9b33bdd056da1600b62b0c8dc002a481c6158dcfa106395cfa92f8a41",
+      "export_pack_sha256": "b11367f121908ec0890310aa9ef81114de6f90cf28daec13510dcbcee9e644e0",
+      "video_start": 139,
+      "video_end": 156,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    },
+    {
+      "id": "end",
+      "duration": 9,
+      "title": "QNX8.0 | QEMU x86_64 | qcc",
+      "subtitle": "Advanced lab. Not a production driver.",
+      "caption": "github.com/Mizzen-Studios/qnx-edu-kit | Existing licensed QNX SDP8 required",
+      "rows": [],
+      "video_start": 156,
+      "video_end": 165,
+      "raw_first_t": null,
+      "raw_last_t": null,
+      "within_selected_output_speed_factor": 1
+    }
+  ],
+  "native_streams": {
+    "own/attempts/0002-step3-run/native.control/serial.private": {
+      "sha256": "280c459ad8506eb0b95d0af50c5c45a11f483b2bae719809aefa529cf6026988",
+      "bytes": 170913
+    },
+    "own/attempts/0005-step3-run/native.control/serial.private": {
+      "sha256": "384fffd8621f0972a4ba61e976e14eccca42c71364f6bc30afaa2c269123f85e",
+      "bytes": 170913
+    },
+    "own/attempts/0006-step6-run/native.control/serial.private": {
+      "sha256": "3a3697a75c973312275d564a4da9f46c52783b6f1250c581f4109e02e20f1915",
+      "bytes": 223186
+    }
+  },
+  "editing": "Captioned terminal render from this run timed raw serial/command streams; selected output and source/diff views. Boot/build/ELF transport omitted, holds added for readability. No old footage. Terminal rows preserve captured text except declared host-path masks; verdicts outside terminal are receipt annotations.",
+  "duration": 165,
+  "width": 1920,
+  "height": 1080,
+  "audio": false
+}

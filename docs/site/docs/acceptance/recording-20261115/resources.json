@@ -1,0 +1,79 @@
+{
+  "native": [
+    {
+      "label": "wrong",
+      "attempt": "0002-step3-run",
+      "resource_caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 515190784,
+      "stopped_reaped": true,
+      "raw_serial_sha256": "280c459ad8506eb0b95d0af50c5c45a11f483b2bae719809aefa529cf6026988",
+      "observation_started": 1794751035.5682974,
+      "observation_ended": 1794751036.329959
+    },
+    {
+      "label": "correct",
+      "attempt": "0005-step3-run",
+      "resource_caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 517193728,
+      "stopped_reaped": true,
+      "raw_serial_sha256": "384fffd8621f0972a4ba61e976e14eccca42c71364f6bc30afaa2c269123f85e",
+      "observation_started": 1794751659.713693,
+      "observation_ended": 1794751660.4594345
+    },
+    {
+      "label": "finish",
+      "attempt": "0006-step6-run",
+      "resource_caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 517484544,
+      "stopped_reaped": true,
+      "raw_serial_sha256": "3a3697a75c973312275d564a4da9f46c52783b6f1250c581f4109e02e20f1915",
+      "observation_started": 1794751748.6098957,
+      "observation_ended": 1794751749.8132675
+    }
+  ],
+  "sdk": [
+    {
+      "status": "REQUESTED_STOP",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 997310464,
+      "stopped_reaped": true,
+      "samples": 288
+    },
+    {
+      "status": "REQUESTED_STOP",
+      "caps": {
+        "cpu.max": "100000 100000",
+        "memory.max": "2147483648",
+        "memory.swap.max": "0"
+      },
+      "nice": 15,
+      "peak_cgroup_bytes": 1046822912,
+      "stopped_reaped": true,
+      "samples": 334
+    }
+  ],
+  "qemu_absent": true,
+  "lease_free": true,
+  "image_generation": false,
+  "source_unchanged": true
+}
