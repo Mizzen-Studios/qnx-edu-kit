@@ -3,7 +3,7 @@
   "status": "PASS",
   "errors": [],
   "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-  "packet_source_commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507",
+  "packet_source_commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395",
   "narration_words": 295,
   "planned_seconds": 175,
   "duration_verified": "editorial plan only; no rehearsal/recorded duration",
@@ -155,18 +155,18 @@
       "assets": [
         {
           "path": "codelab/codelab.md",
-          "sha256": "74ce8e98edd63ac3b4c9e7589f703ad37b28168a1bd2e166cc6f6d6546da2d1a",
-          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+          "sha256": "e18b9b36545fde3fc5cbfd193089d17d3ec79f1c4941f64ec62a4b257b824e90",
+          "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
         },
         {
           "path": "README.md",
-          "sha256": "e5951e8219a1bc4322299e07148942d267b361a23236a6ab15f4414e4a39967e",
-          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+          "sha256": "c18666b2fa8496e8636a8e800b4007bcba5c571e9addcf2d44330685d35eeb4e",
+          "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
         },
         {
           "path": "docs/learner-route.md",
           "sha256": "8e0729e804fc255bb2cf411d5a88f214079d9fc26783e27d4c1c52f452654264",
-          "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+          "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
         },
         {
           "path": "docs/stock-route-research.json",

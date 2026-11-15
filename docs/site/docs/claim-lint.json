@@ -13,7 +13,7 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "e5951e8219a1bc4322299e07148942d267b361a23236a6ab15f4414e4a39967e",
+      "sha256": "c18666b2fa8496e8636a8e800b4007bcba5c571e9addcf2d44330685d35eeb4e",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -33,17 +33,17 @@
     },
     {
       "path": "docs/proof-capture/SCRIPT.md",
-      "sha256": "09a1878706303d61480c0f13b8416d75ee415923f3f64d2ddfdb6da6eb964840",
+      "sha256": "a21fe5ff0603b77baca5f7bac8ac98d5d3244df8579643a738fbae3758137ba9",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "codelab/codelab.md",
-      "sha256": "74ce8e98edd63ac3b4c9e7589f703ad37b28168a1bd2e166cc6f6d6546da2d1a",
+      "sha256": "e18b9b36545fde3fc5cbfd193089d17d3ec79f1c4941f64ec62a4b257b824e90",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
       "path": "docs/site/README.html",
-      "sha256": "ab372d7b2d80d53c67528dfced47de324a246cf784ead5bd69a04c0b882b4e22",
+      "sha256": "d3bd6ee1e28f2df8c9908eba6b26d4368bd611b9d0c15ad285d42a0170726679",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -58,7 +58,12 @@
     },
     {
       "path": "docs/site/codelab/codelab.html",
-      "sha256": "4f1a8f2a05073b0c9c21542ed9d0cbc01982ac6da545abd49f328f4d50f9a15f",
+      "sha256": "e767771d54c3db20b43d9481555aea5d074490165707211daa1b8d1326ce4ec3",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/docs/JUDGES.html",
+      "sha256": "fa2bce06b702b133f1563b669cb23d1ed4fb60f318e5ff88afa2f9136a03b80b",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -353,7 +358,7 @@
     },
     {
       "path": "docs/site/docs/proof-capture/SCRIPT.html",
-      "sha256": "4344642e84ae7162601970942367d40e741d9aa93458b22f2d0a58be1663b5d4",
+      "sha256": "e81e73ab78d5f775c659fd9b92ea3fdfcb2b1ed8527d8227ca19cd0a91343168",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -433,7 +438,7 @@
     },
     {
       "path": "docs/site/index.html",
-      "sha256": "ab372d7b2d80d53c67528dfced47de324a246cf784ead5bd69a04c0b882b4e22",
+      "sha256": "d3bd6ee1e28f2df8c9908eba6b26d4368bd611b9d0c15ad285d42a0170726679",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
@@ -500,9 +505,19 @@
       "path": "docs/site/steps/step6/starter/README.html",
       "sha256": "335da775963b60cccc274be8320b3727c51910e213bf130e0440780112ed5130",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
+      "path": "docs/site/tools/owner_lab/README.html",
+      "sha256": "25cc4cf7757a82cddd2b895215fae818c594e371f71991ee8ab8496b84dc694e",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     }
   ],
   "local_links": [
+    {
+      "source": "README.md",
+      "target": "docs/JUDGES.md",
+      "exists": true
+    },
     {
       "source": "README.md",
       "target": "docs/acceptance/coherent-stock-20261113/RESULT.md",
@@ -1255,6 +1270,11 @@
     },
     {
       "source": "docs/site/README.html",
+      "target": "docs/JUDGES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/README.html",
       "target": "docs/acceptance/coherent-stock-20261113/RESULT.html",
       "exists": true
     },
@@ -2001,6 +2021,66 @@
     {
       "source": "docs/site/codelab/codelab.html",
       "target": "../docs/acceptance/learner-finish-clean-20261107/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/acceptance/coherent-stock-20261113/RESULT.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/acceptance/coherent-stock-20261113/receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/coherent-journey.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../codelab/codelab.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/learner-cockpit.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/acceptance/stock-20261113/NOTES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../docs/acceptance/stock-retry-20261113/RESULT.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/JUDGES.html",
+      "target": "../tools/owner_lab/README.html",
       "exists": true
     },
     {
@@ -3850,6 +3930,11 @@
     },
     {
       "source": "docs/site/index.html",
+      "target": "docs/JUDGES.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/index.html",
       "target": "docs/acceptance/coherent-stock-20261113/RESULT.html",
       "exists": true
     },
@@ -4377,6 +4462,21 @@
       "source": "docs/site/steps/step6/starter/README.html",
       "target": "../../../codelab/codelab.html",
       "exists": true
+    },
+    {
+      "source": "docs/site/tools/owner_lab/README.html",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/tools/owner_lab/README.html",
+      "target": "../../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/tools/owner_lab/README.html",
+      "target": "../../codelab/codelab.html",
+      "exists": true
     }
   ],
   "dry_pack": {
@@ -4384,7 +4484,7 @@
     "status": "PASS",
     "errors": [],
     "frozen_commit": "ada5d0ff03533a2fec0983f3fedbd9bada9df8a9",
-    "packet_source_commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507",
+    "packet_source_commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395",
     "narration_words": 295,
     "planned_seconds": 175,
     "duration_verified": "editorial plan only; no rehearsal/recorded duration",
@@ -4536,18 +4636,18 @@
         "assets": [
           {
             "path": "codelab/codelab.md",
-            "sha256": "74ce8e98edd63ac3b4c9e7589f703ad37b28168a1bd2e166cc6f6d6546da2d1a",
-            "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+            "sha256": "e18b9b36545fde3fc5cbfd193089d17d3ec79f1c4941f64ec62a4b257b824e90",
+            "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
           },
           {
             "path": "README.md",
-            "sha256": "e5951e8219a1bc4322299e07148942d267b361a23236a6ab15f4414e4a39967e",
-            "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+            "sha256": "c18666b2fa8496e8636a8e800b4007bcba5c571e9addcf2d44330685d35eeb4e",
+            "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
           },
           {
             "path": "docs/learner-route.md",
             "sha256": "8e0729e804fc255bb2cf411d5a88f214079d9fc26783e27d4c1c52f452654264",
-            "commit": "b99e810931aa13ce7f1c2d0c78f2f260709d3507"
+            "commit": "63aaf0d38acd544425c98a8dfe4011a2b2307395"
           },
           {
             "path": "docs/stock-route-research.json",

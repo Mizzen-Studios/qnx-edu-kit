@@ -84,6 +84,7 @@ def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))
     files += sorted((ROOT/'docs/acceptance').glob('**/*.md'))
     files += sorted((ROOT/'docs/proof-capture').glob('*.md'))
+    files += [ROOT/'tools/owner_lab/README.md']
     if (ROOT/'STATUS.md').is_file(): files.append(ROOT/'STATUS.md')
     result={OUT / f.relative_to(ROOT).with_suffix('.html'):render(f) for f in files}
     result[OUT/'index.html']=render(ROOT/'README.md')
