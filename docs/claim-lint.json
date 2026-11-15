@@ -67,6 +67,11 @@
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
     },
     {
+      "path": "docs/site/docs/PUBLISH_AUDIT.html",
+      "sha256": "2e3b2306fa68f3dda1cdf9bc2ecff4df6326385ed8b366aaeedc1e31cc716b39",
+      "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
+    },
+    {
       "path": "docs/site/docs/ability-lesson.html",
       "sha256": "bad7e77a5463c4d852df7377623a755baa257f42eb8b0316a1316284b9714128",
       "claim_authority": "REVIEW.md; occurrence inventory and manual bounded claim review, not automatic semantic proof"
@@ -2081,6 +2086,21 @@
     {
       "source": "docs/site/docs/JUDGES.html",
       "target": "../tools/owner_lab/README.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/PUBLISH_AUDIT.html",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/PUBLISH_AUDIT.html",
+      "target": "../docs/learner-route.html",
+      "exists": true
+    },
+    {
+      "source": "docs/site/docs/PUBLISH_AUDIT.html",
+      "target": "../codelab/codelab.html",
       "exists": true
     },
     {
