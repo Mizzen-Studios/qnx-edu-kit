@@ -78,7 +78,7 @@ def render(source):
     if code:raise ValueError('unclosed code fence: '+str(source))
     depth=len(source.relative_to(ROOT).parts)-1
     base='../'*depth
-    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · private teaching draft</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'docs/learner-route.html">Start learner route</a><a href="'+base+'codelab/codelab.html">Codelab + reference</a><span>Private draft · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
+    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · QNX teaching tutorial</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'docs/learner-route.html">Start learner route</a><a href="'+base+'codelab/codelab.html">Codelab + reference</a><span>Public tutorial · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
 
 def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))

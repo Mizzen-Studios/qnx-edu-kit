@@ -16,3 +16,12 @@ deploy:
 .PHONY: live-edu-check
 live-edu-check:
 	EDU_LIVE_QTEST=1 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p test_qtest_live.py -v
+
+# Source prose -> HTML -> hash inventories -> copied inventories.
+.PHONY: refresh-docs
+refresh-docs:
+	PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_site.py
+	PYTHONDONTWRITEBYTECODE=1 python3 docs/review/build_packet.py
+	PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_site.py
+	PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_site.py --check
+	PYTHONDONTWRITEBYTECODE=1 python3 docs/review/build_packet.py --check
