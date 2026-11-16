@@ -42,3 +42,13 @@ does not claim all proof gates green. Current claim inventory records FAIL.
 No QEMU/SDK/licence/media/Devpost/YouTube/visibility/outreach/spend work.
 C6 untouched. Material features, new lessons/studies, native handoffs and
 independent learner admission remain outside this maintenance milestone.
+
+## Verified pushed milestone
+
+Repair commit `4d14942f0826b0a7cafcab52908eb10642cc3c02` matched remote main.
+Exact-tip host-foundation CI [43839470195](https://github.com/Mizzen-Studios/qnx-edu-kit/actions/runs/43839470195)
+completed SUCCESS. A fresh HTTPS remote clone at that exact SHA passed the
+unchanged 143-test host suite (141 pass, 2 skip), guard, source check and
+`make refresh-docs`; regeneration left the clone completely clean.
+This is host-only evidence, not QNX acceptance. Final documentation-only tip
+will be checked independently and reported with its own exact CI run.
