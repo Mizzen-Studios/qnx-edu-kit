@@ -39,6 +39,7 @@ def build(project,stock,environment):
  raw=subprocess.check_output(['bash','--noprofile','--norc','-c','set -e; source "$1" >/dev/null; env -0','stock-env',str(environment)],env={'HOME':os.environ.get('HOME','/home/qnx'),'PATH':'/usr/bin:/bin','LANG':'C'})
  sourced=dict(item.decode().split('=',1) for item in raw.split(bytes([0])) if item)
  os.environ.clear();os.environ.update(sourced)
+ if len(Path('/proc/swaps').read_text().splitlines())!=1: raise ValueError('SDK guest swap active; no swap change authorized')
  measured=tools();started=time.time()
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  tree=subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip()
