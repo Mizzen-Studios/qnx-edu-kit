@@ -86,6 +86,7 @@ def attempt(work, stage, action, args):
             prior=next((x for x in reversed(data['attempts']) if x['stage']==stage and x['action']=='build' and x['status']=='PASS' and x.get('route')=='stock-reuse-v1' and x['source_sha256']==lab.sha(source)),None)
             if not prior: raise ValueError('build this own source with stock adapter first')
             command += ['--bundle',str(work/'attempts'/prior['id']/'bundle'),'--stock',args.stock,'--receipt',str(folder/'native'),'--timeout',str(args.timeout)]
+            if getattr(args,'stock_admission',None): command += ['--stock-admission',args.stock_admission,'--stock-owner-sha256',args.stock_owner_sha256 or '']
             shutil.copyfile(driver,folder/'run-driver.py')
             shutil.copyfile(ROOT/'scripts/stock_console.py',folder/'stock-console.py')
     elif action == 'build':
@@ -101,7 +102,9 @@ def attempt(work, stage, action, args):
     data['attempts'].append(record)
     save(work/'session.json', data)
     with (folder/'command.log').open('w') as out:
-        result = subprocess.run(command, stdout=out, stderr=subprocess.STDOUT)
+        import stock_lease
+        lease=stock_lease.inherited()
+        result = subprocess.run(command, pass_fds=(() if lease is None else (lease,)), stdout=out, stderr=subprocess.STDOUT)
     record.update(returncode=result.returncode, finished=time.time(),
                   status='PASS' if result.returncode == 0 else ('BLOCKED' if result.returncode == 2 else 'FAIL'))
     if action == 'build':
@@ -182,15 +185,27 @@ def validate_stock_native(work,record,folder):
     if not prior: raise ValueError('no own stock build for this source')
     bundle=work/'attempts'/prior['id']/'bundle';m=stock.verify_inputs(folder/'main.c',bundle,record['stage'])
     if any(receipt.get(k)!=v for k,v in m.items()): raise ValueError('stock build/receipt mismatch')
-    command=record['command'];root=Path(command[command.index('--stock')+1]);assets=stock.stock_inputs(root)
+    command=record['command'];root=Path(command[command.index('--stock')+1]);admission=None
+    if '--stock-admission' in command:
+        at=command.index('--stock-admission')
+        if command.count('--stock-admission')!=1 or at+1>=len(command) or command[at+1]!='independent-cooperative-v1': raise ValueError('invalid recorded stock admission')
+        admission=command[at+1]
+    owner_sha=None
+    if admission:
+        if command.count('--stock-owner-sha256')!=1: raise ValueError('owner digest absent/duplicate')
+        owner_sha=command[command.index('--stock-owner-sha256')+1]
+    assets=stock.stock_inputs(root,admission,owner_sha)
+    if admission:
+        import stock_provenance as fresh
+        if receipt.get('stock_admission')!=admission or receipt.get('stock_provenance')!=fresh.verify(root,owner_sha256=owner_sha): raise ValueError('stock provenance receipt mismatch')
     if assets!=receipt.get('stock_assets'): raise ValueError('stock artifact binding mismatch')
     if lab.sha(folder/'run-driver.py')!=receipt['run_driver_sha256'] or lab.sha(folder/'stock-console.py')!=receipt['console_driver_sha256']: raise ValueError('stock drivers changed')
     control=folder/'native.control';owner=json.loads((control/'owner-final.json').read_text())
     if owner.get('caps')!=receipt.get('caps'): raise ValueError('stock caps changed')
     if owner!=receipt.get('owner'): raise ValueError('stock owner evidence changed')
     output=stock_observed_output(folder)
-    checked=stock.checks(output,m,control,owner)
-    checked['inputs_unchanged_after_boot']=stock.verify_inputs(folder/'main.c',bundle,record['stage'])==m and stock.stock_inputs(root)==assets
+    checked=stock.checks(output,m,control,owner,{k:v['sha256'] for k,v in assets.items()})
+    checked['inputs_unchanged_after_boot']=stock.verify_inputs(folder/'main.c',bundle,record['stage'])==m and stock.stock_inputs(root,admission,owner_sha)==assets
     if checked!=receipt.get('checks'): raise ValueError('stock oracle disagrees')
     success=all(checked.values()) and bool(owner.get('caps')) and receipt.get('error') is None
     if type(receipt.get('success')) is not bool or receipt['success']!=success or record['returncode']!=(0 if success else 1): raise ValueError('stock status/exit mismatch')
@@ -294,8 +309,13 @@ def export(work, dest):
             if record.get('route')=='stock-reuse-v1' and (folder/'native.json').exists():
                 receipt=json.loads((folder/'native.json').read_text())
                 for name,asset in receipt['stock_assets'].items():
-                    target=dest/'stock-artifacts'/name;target.parent.mkdir(exist_ok=True)
+                    identity=receipt.get('stock_owner_sha256')
+                    target=dest/'stock-artifacts'/(identity or 'legacy-pinned')/name;target.parent.mkdir(parents=True,exist_ok=True)
                     if not target.exists(): shutil.copyfile(asset['path'],target)
+                if receipt.get('stock_admission'):
+                    root=Path(receipt['stock_assets']['ifs.bin']['path']).parent
+                    for name in ('stock-build.json','stock-owner.json','build.private.log'):
+                        shutil.copyfile(root/name,target.parent/name)
             if disk is not None and record.get('route')!='stock-reuse-v1':
                 target = dest/'disks'/lab.sha(disk)
                 target.parent.mkdir(exist_ok=True)
@@ -401,6 +421,8 @@ def main():
             for opt in ('buildfile','bsp-cwd'): s.add_argument('--'+opt)
         if name=='run':
             s.add_argument('--disk')
+            s.add_argument('--stock-admission',choices=['independent-cooperative-v1'])
+            s.add_argument('--stock-owner-sha256')
             s.add_argument('--timeout',type=int,default=180)
     a=p.parse_args()
     try:

@@ -3,8 +3,11 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 import argparse
 ap=argparse.ArgumentParser();ap.add_argument('--controller',required=True);ap.add_argument('--control',required=True);opts=ap.parse_args();out=Path(opts.control).resolve();control=out;guest=Path(opts.controller).resolve().parent;ctl=str(Path(opts.controller).resolve());out.mkdir(parents=True,exist_ok=True)
-lock=open('/home/ubuntu/qnx-host/native-test.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-assert not list((guest/'shared/queue').glob('*.sh'))
+import stock_lease
+lease=stock_lease.inherited()
+if lease is None:
+ lock=open('/home/ubuntu/qnx-host/native-test.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+assert stock_lease.queue_clear(guest), 'unresolved SDK jobs; reconcile originals without deleting work'
 assert subprocess.run(['pgrep','-f','^qemu-system-'],stdout=subprocess.DEVNULL).returncode==1
 assert not (out/'BOOT_STARTED').exists()
 (out/'BOOT_STARTED').write_text(str(time.time()));r={'status':'RUNNING','boot_attempts':1,'reserve_bytes':67108864};child=None;cg=None;pid=None;samples=[]
@@ -19,6 +22,7 @@ try:
     p=int((guest/'qemu.pid').read_text());cmd=Path('/proc/%s/cmdline'%p).read_bytes()
     if b'tb-size=256' not in cmd:time.sleep(1);continue
     pid=p;cg=Path('/sys/fs/cgroup')/next(x.split(':',2)[2].strip().lstrip('/') for x in Path('/proc/%s/cgroup'%pid).read_text().splitlines() if x.startswith('0::'))
+    r['pid_starttime']=Path('/proc/%s/stat'%pid).read_text().split()[21]
     r.update(pid=pid,cmdline=cmd.replace(bytes([0]),b' ').decode(),nice=os.getpriority(os.PRIO_PROCESS,pid),caps={k:(cg/k).read_text().strip() for k in ['cpu.max','memory.max','memory.swap.max']})
     assert r['caps']=={'cpu.max':'100000 100000','memory.max':'2147483648','memory.swap.max':'0'} and r['nice']==15 and '-m 1024 ' in r['cmdline'] and '-smp 1 ' in r['cmdline']
    s={'time':time.time(),'ready':(guest/'shared/ready').exists(),'memory':{k:(cg/k).read_text().strip() for k in ['memory.current','memory.peak','memory.stat','memory.events','memory.swap.current']},'processes':(cg/'cgroup.procs').read_text(),'qemu_status':Path('/proc/%s/status'%pid).read_text()};samples.append(s)
@@ -52,6 +56,16 @@ finally:
    except Exception as e:r['stop_error']=repr(e)
   try:r['owner_child_rc']=child.wait(timeout=30)
   except Exception as e:r['reap_error']=repr(e)
+ # Emergency cleanup targets ONLY the PID measured from this launch, with starttime.
+ if child and child.poll() is None and pid and r.get('pid_starttime'):
+  try:
+   if Path('/proc/%s/stat'%pid).read_text().split()[21]==r['pid_starttime']:
+    os.kill(pid,signal.SIGTERM)
+    try: child.wait(timeout=15)
+    except subprocess.TimeoutExpired:
+     if Path('/proc/%s/stat'%pid).read_text().split()[21]==r['pid_starttime']: os.kill(pid,signal.SIGKILL)
+     child.wait(timeout=15)
+  except ProcessLookupError: pass
  done.set();watcher.join(3)
  r['samples']=len(samples);r['peak_cgroup_bytes']=max([int(s['memory']['memory.peak']) for s in samples] or [0]);r['stopped_reaped']=child is not None and child.poll() is not None
  (out/'sdk-owner.json').write_text(json.dumps(r,indent=2)+'\n')

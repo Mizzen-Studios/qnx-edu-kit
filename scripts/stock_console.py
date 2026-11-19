@@ -4,7 +4,10 @@ from pathlib import Path
 ap=argparse.ArgumentParser();ap.add_argument('--stock',required=True);ap.add_argument('--overlay',required=True);ap.add_argument('--control',required=True);ap.add_argument('--timeout',type=int,default=1200);a=ap.parse_args()
 stock=Path(a.stock).resolve();overlay=Path(a.overlay).resolve();control=Path(a.control).resolve();control.mkdir(parents=True,exist_ok=True);queue=control/'queue';queue.mkdir(exist_ok=True)
 h=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
-lock=open('/home/ubuntu/qnx-host/native-test.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+import stock_lease
+lease=stock_lease.inherited()
+if lease is None:
+ lock=open('/home/ubuntu/qnx-host/native-test.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 assert subprocess.run(['pgrep','-f','^qemu-system-'],stdout=subprocess.DEVNULL).returncode==1
 cg=Path('/sys/fs/cgroup')/next(x.split(':',2)[2].strip().lstrip('/') for x in Path('/proc/self/cgroup').read_text().splitlines() if x.startswith('0::'))
 caps={k:(cg/k).read_text().strip() for k in ['cpu.max','memory.max','memory.swap.max']};assert caps=={'cpu.max':'100000 100000','memory.max':'2147483648','memory.swap.max':'0'} and os.getpriority(os.PRIO_PROCESS,0)>=15

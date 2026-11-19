@@ -10,7 +10,12 @@ def save(p,data): Path(p).write_text(json.dumps(data,indent=2))
 def kind(stage):
     lab.manifest_kind(stage)
     return 'learner-stock-'+stage+'-v1'
-def stock_inputs(stock):
+def stock_inputs(stock, provenance=None, owner_sha256=None):
+    if provenance is not None:
+        if provenance!='independent-cooperative-v1': raise ValueError('unsupported stock admission')
+        import stock_provenance as fresh
+        m=fresh.verify(stock,owner_sha256=owner_sha256)
+        return {n:{'path':str(fresh.external(stock)/n),'sha256':d} for n,d in m['artifacts'].items()}
     stock=lab.external(stock)
     # Exact reviewed artifacts only: never relabel an arbitrary custom IFS as stock.
     result={}
@@ -47,24 +52,28 @@ def byte_check(control,m):
     except (IndexError,ValueError): return False
     return r.get('status')=='DONE' and hashlib.sha256(data).hexdigest()==m['binary_sha256']
 
-def checks(output,m,control,owner):
+def checks(output,m,control,owner,approved=None):
+    approved=PINS if approved is None else approved
     base=lab.dev_edu_oracle(output,m) if m['kind']==kind('step6') else lab.oracle(output,m)
     base['caps_exact']=owner.get('caps')=={'cpu.max':'100000 100000','memory.max':'2147483648','memory.swap.max':'0'} and owner.get('nice',0)>=15
-    base['approved_boot_artifacts']=owner.get('stock_hashes')=={k:v for k,v in PINS.items() if k!='disk-qemu.vmdk'} and owner.get('base_drive_sha256')==PINS['disk-qemu.vmdk']
+    base['approved_boot_artifacts']=owner.get('stock_hashes')=={k:v for k,v in approved.items() if k!='disk-qemu.vmdk'} and owner.get('base_drive_sha256')==approved['disk-qemu.vmdk']
     base.update(serial_bytes_verified=byte_check(control,m),qemu_reaped=owner.get('stopped_reaped') is True,stock_unchanged=owner.get('stock_hashes')==owner.get('stock_base_hashes_after') and bool(owner.get('stock_hashes')),bounded_completion=owner.get('status')=='REQUESTED_STOP')
     if m['kind']==kind('step6'): base['explicit_stock_irq']=bool(re.search(r'^EDU IRQ metadata api=10 config=11 pin=1 mode=pci-line$',output.replace(chr(13),''),re.M))
     return base
 
-def run(source,bundle,stock,receipt,stage,timeout=600):
+def run(source,bundle,stock,receipt,stage,timeout=600,provenance=None,owner_sha256=None):
     if not 60<=timeout<=900: raise ValueError('stock timeout must be60..900')
     if os.environ.get('EDU_NATIVE_LEASE')!='granted': raise ValueError('explicit sole lease grant required')
-    m=verify_inputs(source,bundle,stage);assets=stock_inputs(stock)
+    m=verify_inputs(source,bundle,stage);assets=stock_inputs(stock,provenance,owner_sha256)
     receipt=lab.external(receipt);control=receipt.with_suffix('.control')
     if control.exists() or receipt.with_suffix('.json').exists(): raise ValueError('fresh receipt required')
     control.mkdir(parents=True);queue=control/'queue';queue.mkdir()
     helper=ROOT/'scripts/stock_console.py'
     command=['systemd-run','--user','--scope','--quiet','-p','CPUQuota=100%','-p','MemoryMax=2G','-p','MemorySwapMax=0','nice','-n','15',sys.executable,str(helper),'--stock',str(Path(stock).resolve()),'--overlay',str(control/'state.qcow2'),'--control',str(control),'--timeout',str(timeout)]
-    started=time.time();proc=subprocess.Popen(command,stdout=(control/'controller.log').open('w'),stderr=subprocess.STDOUT)
+    import stock_lease
+    lease=stock_lease.inherited()
+    if provenance is not None and lease is None: raise ValueError('whole-chain inherited lease required')
+    started=time.time();proc=subprocess.Popen(command,pass_fds=(() if lease is None else (lease,)),stdout=(control/'controller.log').open('w'),stderr=subprocess.STDOUT)
     end=time.monotonic()+timeout;output='';problem=None
     def wait_for(test):
         while time.monotonic()<end:
@@ -101,10 +110,15 @@ def run(source,bundle,stock,receipt,stage,timeout=600):
             # Helper pump checks total budget; do not abandon owned QEMU.
             proc.wait(max(1,int(end-time.monotonic())+35))
     owner=json.loads((control/'owner-final.json').read_text()) if (control/'owner-final.json').exists() else {}
-    result=checks(output,m,control,owner)
-    result['inputs_unchanged_after_boot']=verify_inputs(source,bundle,stage)==m and stock_inputs(stock)==assets
+    result=checks(output,m,control,owner,{k:v['sha256'] for k,v in assets.items()})
+    result['inputs_unchanged_after_boot']=verify_inputs(source,bundle,stage)==m and stock_inputs(stock,provenance,owner_sha256)==assets
     success=bool(owner.get('caps')) and all(result.values()) and problem is None
     evidence=dict(m,success=success,checks=result,started=started,finished=time.time(),stock_assets=assets,disk_sha256=assets['disk-qemu']['sha256'],image_sha256=assets['ifs.bin']['sha256'],stock_provenance='REUSED approved Nov13 clean stock artifacts; NOT a new image build',caps=owner.get('caps'),owner=owner,run_driver_sha256=lab.sha(__file__),console_driver_sha256=lab.sha(helper),qemu_command=command,error=problem,optional_secpol='BLOCKED: no approved nondisplacing loaded policy/denyallow fixture; tools probed only',optional_trace='NOT_RUN finish-only scope; no performance claim')
+    if provenance is not None:
+        import stock_provenance as fresh
+        evidence['stock_provenance']=fresh.verify(stock,owner_sha256=owner_sha256)
+        evidence['stock_owner_sha256']=owner_sha256
+        evidence['stock_admission']='independent-cooperative-v1'
     receipt.with_suffix('.log').write_text(output);save(receipt.with_suffix('.json'),evidence)
     print(output);print('STOCK_NATIVE_PASS' if success else 'STOCK_NATIVE_FAIL');return 0 if success else 1
 
@@ -113,10 +127,13 @@ def main():
     for action in ['build','run']:
         a=s.add_parser(action)
         for x in ['source','stage','out','sdp-env'] if action=='build' else ['source','stage','bundle','stock','receipt']:a.add_argument('--'+x,required=True)
-        if action=='run':a.add_argument('--timeout',type=int,default=600)
+        if action=='run':
+            a.add_argument('--timeout',type=int,default=600)
+            a.add_argument('--stock-admission',choices=['independent-cooperative-v1'])
+            a.add_argument('--stock-owner-sha256')
     a=p.parse_args()
     try:
         if a.action=='build':print(json.dumps(build(a.source,a.out,a.sdp_env,a.stage)));return 0
-        return run(a.source,a.bundle,a.stock,a.receipt,a.stage,a.timeout)
+        return run(a.source,a.bundle,a.stock,a.receipt,a.stage,a.timeout,a.stock_admission,a.stock_owner_sha256)
     except (ValueError,OSError,KeyError,subprocess.SubprocessError) as e:print('BLOCKED:',e,file=sys.stderr);return 2
 if __name__=='__main__':sys.exit(main())
