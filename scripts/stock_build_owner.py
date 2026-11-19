@@ -39,7 +39,13 @@ def run(controller,case,environment):
     if time.monotonic()>end: raise ValueError('SDK readiness deadline')
     time.sleep(1)
    # This controller's timeout leaves the original job intact. No resubmission.
-   job=subprocess.run([sys.executable,str(controller),'exec',str(build),'1500'],stdout=(case/'queue.private.log').open('w'),stderr=subprocess.STDOUT)
+   with (case/'queue.private.log').open('w') as queued:
+    job=subprocess.Popen([sys.executable,str(controller),'exec',str(build),'1500'],stdout=queued,stderr=subprocess.STDOUT)
+    while job.poll() is None:
+     if owner.poll() is not None:
+      job.terminate();job.wait(timeout=10)
+      raise ValueError('SDK monitor stopped original job; inspect sdk-owner.json; no retry')
+     time.sleep(.5)
    if job.returncode: raise ValueError('original SDK job incomplete/failed: inspect queue.private.log; no retry')
   return finalize(case,owner)
  finally:

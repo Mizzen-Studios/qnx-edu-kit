@@ -45,7 +45,7 @@ def validate_export_inventory(work,data,exported,pack):
             for name,asset in r['stock_assets'].items(): expected[str(prefix/name)]=asset['sha256']
             if identity:
                 root=Path(r['stock_assets']['ifs.bin']['path']).parent
-                for name in ('stock-build.json','stock-owner.json','build.private.log'): expected[str(prefix/name)]=lab.sha(root/name)
+                for name in ('stock-build.json','stock-owner.json','build.private.log','tool-versions.private.log','build-start.json'): expected[str(prefix/name)]=lab.sha(root/name)
     if (work/'supplemental').is_dir():
         for file in (work/'supplemental').rglob('*'):
             if file.is_file(): expected[str(file.relative_to(work))]=lab.sha(file)

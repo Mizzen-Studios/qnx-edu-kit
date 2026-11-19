@@ -111,8 +111,8 @@ Each fresh native overlay uses unchanged admitted platform artifacts, exact ELF
 serial readback, and the same pre/post checks and oracle as pinned reuse.
 
 Export with the existing notebook command. Private exports include stock assets
-in distinct owner-digest directories plus build manifest, private build log and
-owner completion. Raw serial ELF transfers/readback and licensed stock files
+in distinct owner-digest directories plus invocation-start receipt, private tool-version and build logs, build
+manifest and owner completion. Raw serial ELF transfers/readback and licensed stock files
 must not be committed/uploaded. Browser notebook is HOST notes, never a shell.
 
 See [source-bound acceptance status](acceptance/independent-stock-20261119/RESULT.md).

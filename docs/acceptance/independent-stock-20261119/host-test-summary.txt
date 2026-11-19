@@ -1,0 +1,6 @@
+HOST ONLY — not native acceptance
+Ran 162 tests; OK (skipped=2); original143 retained +19 new.
+Redistribution guard PASS. Docs rendering/review inventory PASS.
+Missing EDU_LIVE_BUNDLE correctly BLOCKED exit2.
+Historical proof_capture exit1; claim_lint exit1; unchanged frozen T01/report drift.
+Full private host log sha256: 138e347fddacfc8aa698bafef9171b803e614decd60c114ee4e28b8f80c3e5df

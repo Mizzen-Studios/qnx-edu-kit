@@ -317,7 +317,7 @@ def export(work, dest):
                     if not target.exists(): shutil.copyfile(asset['path'],target)
                 if receipt.get('stock_admission'):
                     root=Path(receipt['stock_assets']['ifs.bin']['path']).parent
-                    for name in ('stock-build.json','stock-owner.json','build.private.log'):
+                    for name in ('stock-build.json','stock-owner.json','build.private.log','tool-versions.private.log','build-start.json'):
                         shutil.copyfile(root/name,target.parent/name)
             if disk is not None and record.get('route')!='stock-reuse-v1':
                 target = dest/'disks'/lab.sha(disk)

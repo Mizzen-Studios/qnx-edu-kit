@@ -1,0 +1,67 @@
+{
+  "kind": "edu-independent-stock-attempt-v1",
+  "status": "BLOCKED_STOCK_BUILD_RESERVE64",
+  "execution_source": "593b2ccaaa1ff6617371cf99e2ef1308ce472094",
+  "recipe": [
+    "mkqnximage",
+    "--type=qemu",
+    "--arch=x86_64",
+    "--ram=512M",
+    "--cpu=1",
+    "--ssh-ident=none",
+    "--build"
+  ],
+  "original_queue_request": "1795113265349792925",
+  "attempts": 1,
+  "retry": false,
+  "completion": {
+    "eof": false,
+    "returncode": null,
+    "stock_build_manifest": false,
+    "owner_admission_receipt": false,
+    "tool_versions_and_tool_hashes": "NOT_PERSISTED_BEFORE_ABORT; do not infer from later HOST source"
+  },
+  "caps": {
+    "cpu.max": "100000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "0"
+  },
+  "sdk_ram_mib": 1024,
+  "native_ram_mib": 512,
+  "native_launches": 0,
+  "tcg_mib": 256,
+  "nice": 15,
+  "reserve_bytes": 67108864,
+  "peak_cgroup_bytes": 2095493120,
+  "sample_count": 339,
+  "swap_peak_bytes": 0,
+  "oom_event_max": 0,
+  "cleanup": {
+    "stopped_reaped": true,
+    "observed_qemu_processes": 0,
+    "lock_free": true,
+    "observed_at": "2026-11-19T18:47:47.119267+00:00",
+    "queued_sh": 0
+  },
+  "not_run": [
+    "own wrong FAIL/app0",
+    "corrected PASS",
+    "step6 normal/dev/edu10",
+    "3628800 IRQ ack/private pulse/slog2",
+    "new notebook/export"
+  ],
+  "private_evidence_sha256": {
+    "sdk-memory.jsonl": "984e1cbf3428f5f389bfd7d934d331f3bbc7018e07de0e6945e909df0c26a275",
+    "sdk-shutdown.jsonl": "c32d7aeb62c409da8a4ca336069eacda98bf91f208e7b290e30ac931b27ee6c9",
+    "sdk-owner.json": "2da333eb8071a68dfc6948f364a4d98d61629b004f512d71e815c1c9cbfe3969"
+  },
+  "build_log_sha256": "2de39eaa4c846ae476719db23651c168be3d4dd861462e15058966ce23f2928a",
+  "source_sha256": {
+    "scripts/stock_provenance.py": "d12db569c2dd54f1cb286f5cfcfdc15305e19ffeb9eb3d9a9b281f737c4acdfd",
+    "scripts/stock_build_owner.py": "8050c014c2dc20889906a2a573bd6d5d5d59289191894734ca59f4474d30d423",
+    "scripts/stock_sdk_owner.py": "5005ab216edcf497ca520ff3496dd0a18b1a7afba61c5e23fa302c58ec96ce19"
+  },
+  "controller_sha256": "ac1d3c0d70ab30e920de706d608c6b22fcb0a66a4712b215c05f289c81be909e",
+  "legacy_pins_source_sha256": "b35249aca57392cc98c67f6bfa5b26a31ac4305b40ed8b79b4e1fa0c56e75ebd",
+  "legacy_pins_unchanged": true
+}

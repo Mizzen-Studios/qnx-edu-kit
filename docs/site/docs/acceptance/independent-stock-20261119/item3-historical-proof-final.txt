@@ -1,0 +1,1 @@
+{"status": "FAIL", "narration_words": 295, "planned_seconds": 175, "errors": ["T01: changed frozen asset codelab/codelab.md", "T01: changed frozen asset README.md", "T01: changed frozen asset docs/learner-route.md", "stale report.json"]}

@@ -6,8 +6,9 @@ import learner_lab as lab
 ROOT=Path(__file__).resolve().parents[1]
 KIND='edu-independent-stock-build-v1'
 COMMAND=['mkqnximage','--type=qemu','--arch=x86_64','--ram=512M','--cpu=1','--ssh-ident=none','--build']
+VERSION_OUTPUT={}
 ARTIFACTS=('ifs.bin','disk-qemu','disk-qemu.vmdk','qemu_options','options')
-FIELDS=set('kind id recipe builder_sha256 repo_commit repo_tree tools tools_after artifacts inputs log_sha256 returncode eof started finished project stock environment_sha256 provenance'.split())
+FIELDS=set('kind id recipe builder_sha256 repo_commit repo_tree tools tools_after artifacts inputs log_sha256 start_sha256 tool_versions_sha256 returncode eof started finished project stock environment_sha256 provenance'.split())
 def external(value):
  p=Path(value)
  if not p.is_absolute() or '..' in p.parts or any(c.isspace() for c in str(p)): raise ValueError('absolute external path without traversal/whitespace required')
@@ -24,6 +25,7 @@ def tools():
  for name in ('mkqnximage','mkifs','qcc'):
   p=Path(shutil.which(name) or '/missing').resolve(strict=True)
   v=subprocess.run([str(p),'-V'] if name=='qcc' else [str(p),'-?'],capture_output=True,timeout=20)
+  VERSION_OUTPUT[name]=v.stdout+v.stderr
   result[name]=dict(path=str(p),sha256=lab.sha(p),version_rc=v.returncode,version_output_sha256=hashlib.sha256(v.stdout+v.stderr).hexdigest())
  return result
 def check_project_inputs(m):
@@ -51,6 +53,10 @@ def build(project,stock,environment):
  env['LANG']='C';env['LC_ALL']='C'
  for k in list(env):
   if k.startswith(('OPT_','MKQNX','QEMU_')): del env[k]
+ (stock/'tool-versions.private.log').write_bytes(b''.join(name.encode()+b':'+data+bytes([10]) for name,data in VERSION_OUTPUT.items()))
+ invocation=str(uuid.uuid4())
+ start=dict(id=invocation,kind='edu-independent-stock-build-start-v1',recipe=COMMAND,builder_sha256=lab.sha(__file__),repo_commit=commit,repo_tree=tree,tools=measured,started=started,authored_inputs=inventory(project/'local'),environment_sha256=lab.sha(environment))
+ (stock/'build-start.json').write_text(json.dumps(start,indent=2)+chr(10))
  with (stock/'build.private.log').open('wb') as log:
   rc=subprocess.run(COMMAND,cwd=project,env=env,stdout=log,stderr=subprocess.STDOUT).returncode
  after=tools()
@@ -61,7 +67,7 @@ def build(project,stock,environment):
  for name,p in sources.items():
   if not p.resolve().is_relative_to(project) or not p.is_file() or p.stat().st_size==0: raise ValueError('missing/unsafe generated artifact '+name)
   shutil.copyfile(p,stock/name)
- m=dict(kind=KIND,id=str(uuid.uuid4()),recipe=COMMAND,builder_sha256=lab.sha(__file__),repo_commit=commit,repo_tree=tree,tools=measured,tools_after=after,artifacts={n:lab.sha(stock/n) for n in ARTIFACTS},inputs=inventory(project/'local'),log_sha256=lab.sha(stock/'build.private.log'),returncode=rc,eof=True,started=started,finished=time.time(),project=str(project),stock=str(stock),environment_sha256=lab.sha(environment),provenance='cooperative controlled builder; NOT cryptographic stock attestation or licence certification')
+ m=dict(kind=KIND,id=invocation,recipe=COMMAND,builder_sha256=lab.sha(__file__),repo_commit=commit,repo_tree=tree,tools=measured,tools_after=after,artifacts={n:lab.sha(stock/n) for n in ARTIFACTS},inputs=inventory(project/'local'),log_sha256=lab.sha(stock/'build.private.log'),start_sha256=lab.sha(stock/'build-start.json'),tool_versions_sha256=lab.sha(stock/'tool-versions.private.log'),returncode=rc,eof=True,started=started,finished=time.time(),project=str(project),stock=str(stock),environment_sha256=lab.sha(environment),provenance='cooperative controlled builder; NOT cryptographic stock attestation or licence certification')
  (stock/'stock-build.json').write_text(json.dumps(m,indent=2)+'\n');verify(stock,False)
  return m
 def verify(stock, finalized=True, owner_sha256=None):
@@ -100,6 +106,11 @@ def verify(stock, finalized=True, owner_sha256=None):
   owner=json.loads(owner_path.read_text())
   expected={'kind':'edu-independent-stock-owner-v1','build_sha256':lab.sha(stock/'stock-build.json'),'stock':str(stock),'builder_sha256':lab.sha(__file__),'caps':{'cpu.max':'100000 100000','memory.max':'2147483648','memory.swap.max':'0'},'stopped_reaped':True,'queue_clear':True,'foreign_qemu':0}
   if json.dumps(owner,sort_keys=True)!=json.dumps(expected,sort_keys=True): raise ValueError('missing/mixed/forged typed owner completion')
+ if (stock/'build-start.json').is_symlink() or lab.sha(stock/'build-start.json')!=m['start_sha256']: raise ValueError('changed invocation start receipt')
+ start=json.loads((stock/'build-start.json').read_text())
+ expected_start=dict(kind='edu-independent-stock-build-start-v1',id=m['id'],recipe=m['recipe'],builder_sha256=m['builder_sha256'],repo_commit=m['repo_commit'],repo_tree=m['repo_tree'],tools=m['tools'],started=m['started'],authored_inputs={'snippets/qemu_options.edu':m['inputs']['snippets/qemu_options.edu']},environment_sha256=m['environment_sha256'])
+ if start!=expected_start: raise ValueError('mixed build invocation')
+ if (stock/'tool-versions.private.log').is_symlink() or lab.sha(stock/'tool-versions.private.log')!=m['tool_versions_sha256']: raise ValueError('changed tool-version log')
  if lab.sha(stock/'build.private.log')!=m['log_sha256']: raise ValueError('changed build log')
  return m
 def main():
