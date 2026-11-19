@@ -9,7 +9,7 @@ def render():
     route = (ROOT/'docs/learner-route.md').read_text()
     # Preserve all teaching bytes/commands, only relocate links and headings.
     route = route.replace('](acceptance/', '](../docs/acceptance/')
-    for name in ('learner-route.md', 'capabilities.md', 'learner-cockpit.md', 'stock-route-research.json', 'learner-route-custom-legacy.md', 'coherent-journey.md'):
+    for name in ('learner-route.md', 'capabilities.md', 'learner-cockpit.md', 'stock-route-research.json', 'learner-route-custom-legacy.md', 'coherent-journey.md', 'independent-stock.md'):
         route = route.replace(']('+name+')', '](../docs/'+name+')')
     # Keep explicit ../codelab self-link, consistent with export path relocation.
     lines = []; fenced = False

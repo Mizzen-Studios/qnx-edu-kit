@@ -345,6 +345,8 @@ def render(work):
         cmd = 'python3 '+driver
         suffix = ' --work '+shlex.quote(str(work))
         cmds = ['# Working stock route: docs/learner-route.md and docs/coherent-journey.md',
+                '# Own fresh platform: docs/independent-stock.md; keep whole-chain inherited lease.',
+                '# Independent ONLY: append --stock-admission independent-cooperative-v1 --stock-owner-sha256 <trusted-owner-digest> to EACH run below.',
                 '# ADVANCED LAB: existing licensed SDP, exclusive SDK/QEMU lease, approved stock IFS/disk handoff.',
                 '# HOST notes only; import before building:',
                 cmd+' notes'+suffix+' --file /path/to/downloaded-notes.json',

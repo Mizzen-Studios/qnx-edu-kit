@@ -37,7 +37,7 @@ def aggregate(work, exported, commit):
     frozen=lambda name:subprocess.check_output(['git','show',commit+':scripts/'+name],cwd=ROOT)
     if hashlib.sha256(frozen('learner_journey.py')).hexdigest()!=lab.sha(__file__):
         raise ValueError('aggregate validator must match tested source commit')
-    runs=[];builds=[]
+    runs=[];builds=[];admitted=[]
     for record in data['attempts']:
         folder=work/'attempts'/record['id']
         if record.get('route')!='stock-reuse-v1': raise ValueError('only own stock attempts accepted')
@@ -49,7 +49,7 @@ def aggregate(work, exported, commit):
             builds.append(record);continue
         for name,original in [('run-driver.py','learner_stock.py'),('stock-console.py','stock_console.py')]:
             if (folder/name).read_bytes()!=frozen(original):raise ValueError('runtime driver differs from tested commit')
-        r=json.loads((folder/'native.json').read_text());log=notebook.stock_observed_output(folder)
+        r=json.loads((folder/'native.json').read_text());admitted.append((r.get('stock_admission'),r.get('stock_owner_sha256'),{k:v['sha256'] for k,v in r['stock_assets'].items()}));log=notebook.stock_observed_output(folder)
         build=next((b for b in reversed(builds) if b['stage']==record['stage'] and b['source_sha256']==record['source_sha256']),None)
         if not build: raise ValueError('own preceding build required')
         runs.append(dict(stage=record['stage'],status=record['status'],attempt=record['id'],build_attempt=build['id'],
@@ -60,6 +60,7 @@ def aggregate(work, exported, commit):
             mmio=re.findall(r'^LEARNER_MMIO id=([0-9a-f]{8}) write=([0-9a-f]{8}) read=([0-9a-f]{8})$',log.replace('\r',''),re.M)))
     if len(data['attempts'])!=6 or len(builds)!=3:raise ValueError('one journey requires three builds and three observations')
     chain(runs)
+    if any(a!=admitted[0] for a in admitted): raise ValueError('mixed platform admission identities')
     pack=json.loads((exported/'pack.json').read_text())
     if pack['session_id']!=data['id'] or (exported/'session.json').read_bytes()!=(work/'session.json').read_bytes():
         raise ValueError('export must belong to same unchanged own notebook')
@@ -69,9 +70,9 @@ def aggregate(work, exported, commit):
     if pack['current_sources']!=notebook.source_state(work,data) or any(v['validation']!='CURRENT_SOURCE_RECORDED_PASS' for v in pack['current_sources'].values()):
         raise ValueError('both current own sources must be validated')
     return dict(kind='edu-coherent-own-stock-journey-v1',status='PASS',tested_source_commit=commit,session_id=data['id'],
-        phases=runs,stock_pins=stock.PINS,export_pack_sha256=lab.sha(exported/'pack.json'),export_files=len(pack['files']),
-        current_sources=pack['current_sources'],image_generation=False,
-        scope='One automated own notebook, three fresh stock observations; existing licensed SDK and stock artifacts reused. Not independent human/fresh-install/all-six-stage acceptance.')
+        phases=runs,stock_pins=admitted[0][2],export_pack_sha256=lab.sha(exported/'pack.json'),export_files=len(pack['files']),
+        current_sources=pack['current_sources'],image_generation=admitted[0][0]=='independent-cooperative-v1',stock_admission=admitted[0][0] or 'historical-pinned-reuse',stock_owner_sha256=admitted[0][1],
+        scope='One automated own notebook, three fresh stock observations; existing legal SDK. Platform admission identity reported separately. Not independent human/fresh-install/all-six-stage acceptance.')
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)

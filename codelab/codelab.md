@@ -23,6 +23,11 @@ Duration: 8
 
 A wrong write12345679 can return edcba986 and exit0: **FAIL despite application exit0** against the intended12345678→edcba987 oracle. Predict, edit, observe, diagnose, correct, rebuild and explain. The normal-I/O finish is **10→3628800** with real IRQ acknowledgement and a same-owner private pulse, not a second IST or worker. A self-declared PASS, saved log or HOST test cannot complete your source.
 
+### Choose your platform admission route
+
+- **Own legal SDP build:** [controlled fresh stock build and explicit cooperative admission](../docs/independent-stock.md). No Olly artifact hashes required; separate trusted owner handoff and exact explicit opt-in required. Same own-source wrong/correct/finish oracles.
+- **Historical pinned reuse:** the recipe below remains strict against every original PINS value. Its "skip image generation" instruction applies only to this reuse choice. Neither route accepts arbitrary custom IFS metadata.
+
 ### Working stock recipe — bounded, explicit artifact reuse
 
 The Nov13 SDK512MiB OOM is [preserved history](../docs/acceptance/stock-20261113/NOTES.md), not the current stock blocker. [SDK1GiB stock generation and wrong/correct gates](../docs/acceptance/stock-retry-20261113/RESULT.md) succeeded. The [11:03 finish receipt](../docs/acceptance/irq-retry-20261113/RESULT.md) records actual10→3628800, IRQack0, private pulse and finite slog2 with explicit --pci-line. API10 versus config11 was observed; default API attachment timed out in that stock setup. Selecting the read-only existing line is not a routing rewrite or a general PCI API/portability claim.

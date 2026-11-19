@@ -3,6 +3,10 @@
 
 QNX Global Hackathon 2026 entry (Low-level Software; Best Codelab/Tutorial). Apache-2.0.
 
+## Two explicit stock admission routes
+
+New: [build your own stock platform](docs/independent-stock.md) in your existing legal SDP, with a controlled recipe and separately bound cooperative owner completion. Different per-user image hashes are admitted only through the explicit independent route, never by changing the historical pins. [Current source-bound result](docs/acceptance/independent-stock-20261119/RESULT.md) distinguishes native execution from HOST tests. No independent-human or fresh-install claim.
+
 ## Current Nov13 working stock recipe
 
 **[Coherent OWN journey verified](docs/acceptance/coherent-stock-20261113/RESULT.md):** one notebook wrong FAIL/app0 → corrected PASS → own10→3628800 with IRQack/private pulse/slog2 →108-file verified export. Exact runtime source `769a4c906c6b172c3624f8fe897b71e3c5d7e6b8`; three fresh application builds, unchanged reused stock IFS/disk, no retries. Later documentation commits report that source-bound run, not another execution at the final tip.

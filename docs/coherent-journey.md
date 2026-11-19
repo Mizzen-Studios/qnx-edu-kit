@@ -2,6 +2,10 @@
 
 This is an **advanced working-stock lab**, not a browser simulator or turnkey fresh install. Start with the [canonical stock prerequisite gate](learner-route.md): existing licensed SDP, exclusive SDK/QEMU lease, controller/shared mount and approved hash-verified IFS/disk handoff. No new IFS, installation/login, routing rewrite or old-receipt import. The [new coherent receipt](acceptance/coherent-stock-20261113/RESULT.md) passed this journey at exact runtime source769a4c906c6b172c3624f8fe897b71e3c5d7e6b8: wrongFAIL/app0, correctedPASS, finishPASS and108-file OWN export. Later documentation revisions do not claim another run; older step6-only evidence cannot fill a new notebook.
 
+## Platform choice
+
+This checklist defaults to strict historical pinned reuse. To build your own platform in an existing legal SDK, follow [independent cooperative admission](independent-stock.md) first, retain the same whole-chain lease, and add its two explicit admission options to **every** HOST run below. Application builds remain separate compile/link; stage ordering and all oracles are unchanged. Do not release the chain lease between SDK/native phases on that route.
+
 ## Prepare once
 
 Use the canonical full clean Git clone inside the existing shared mount with a fresh `EDU_CASE`, for example `edu-journey-20261113-1300`. Set `EDU_TESTED_COMMIT=$(git rev-parse HEAD)` and keep that checkout unchanged throughout execution. Init exactly one `EDU_WORK`; both step3 and step6 live there. SDK sees `/mnt/host/$EDU_CASE/{repo,own}`; HOST sees `$EDU_SHARE/$EDU_CASE/{repo,own}`. Save session-bound predictions using the notebook notes command.
