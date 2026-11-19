@@ -193,11 +193,13 @@ def validate_stock_native(work,record,folder):
     owner_sha=None
     if admission:
         if command.count('--stock-owner-sha256')!=1: raise ValueError('owner digest absent/duplicate')
-        owner_sha=command[command.index('--stock-owner-sha256')+1]
+        at=command.index('--stock-owner-sha256')
+        if at+1>=len(command): raise ValueError('owner digest value absent')
+        owner_sha=command[at+1]
     assets=stock.stock_inputs(root,admission,owner_sha)
     if admission:
         import stock_provenance as fresh
-        if receipt.get('stock_admission')!=admission or receipt.get('stock_provenance')!=fresh.verify(root,owner_sha256=owner_sha): raise ValueError('stock provenance receipt mismatch')
+        if receipt.get('stock_owner_sha256')!=owner_sha or receipt.get('stock_admission')!=admission or receipt.get('stock_provenance')!=fresh.verify(root,owner_sha256=owner_sha): raise ValueError('stock provenance receipt mismatch')
     if assets!=receipt.get('stock_assets'): raise ValueError('stock artifact binding mismatch')
     if lab.sha(folder/'run-driver.py')!=receipt['run_driver_sha256'] or lab.sha(folder/'stock-console.py')!=receipt['console_driver_sha256']: raise ValueError('stock drivers changed')
     control=folder/'native.control';owner=json.loads((control/'owner-final.json').read_text())
