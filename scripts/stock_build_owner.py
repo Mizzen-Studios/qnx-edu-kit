@@ -56,6 +56,7 @@ def finalize(case,owner):
  owner.wait(timeout=190)
  sdk=json.loads((case/'sdk-control/sdk-owner.json').read_text())
  if sdk.get('status')!='REQUESTED_STOP' or sdk.get('stopped_reaped') is not True or sdk.get('caps')!=CAPS or sdk.get('shutdown_resource_breach') or not no_qemu(): raise ValueError('SDK cleanup/caps failed')
+ if not lease.queue_clear(case.parent.parent): raise ValueError('queue changed before finalization; preserve original requests')
  stock=case/'stock';m=provenance.verify(stock,False)
  # This private receipt is trusted only through the separately returned digest.
  r=dict(kind='edu-independent-stock-owner-v1',build_sha256=lab.sha(stock/'stock-build.json'),stock=str(stock),builder_sha256=lab.sha(provenance.__file__),caps=CAPS,stopped_reaped=True,queue_clear=True,foreign_qemu=0)

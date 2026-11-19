@@ -312,7 +312,7 @@ def export(work, dest):
                 receipt=json.loads((folder/'native.json').read_text())
                 for name,asset in receipt['stock_assets'].items():
                     identity=receipt.get('stock_owner_sha256')
-                    target=dest/'stock-artifacts'/(identity or 'legacy-pinned')/name;target.parent.mkdir(parents=True,exist_ok=True)
+                    target=(dest/'stock-artifacts'/identity/name) if identity else (dest/'stock-artifacts'/name);target.parent.mkdir(parents=True,exist_ok=True)
                     if not target.exists(): shutil.copyfile(asset['path'],target)
                 if receipt.get('stock_admission'):
                     root=Path(receipt['stock_assets']['ifs.bin']['path']).parent

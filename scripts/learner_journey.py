@@ -31,6 +31,28 @@ def chain(phases):
         raise ValueError('shared stock artifacts required')
     return True
 
+def validate_export_inventory(work,data,exported,pack):
+    if (exported/'INCOMPLETE.txt').exists(): raise ValueError('incomplete export')
+    expected={name:lab.sha(work/name) for name in ('session.json','cockpit.html','step3/main.c','step6/main.c')}
+    for record in data['attempts']:
+        folder=work/'attempts'/record['id']
+        for file in folder.rglob('*'):
+            if file.is_symlink(): raise ValueError('symlink attempt evidence')
+            if file.is_file(): expected[str(file.relative_to(work))]=lab.sha(file)
+        if (folder/'native.json').is_file():
+            r=json.loads((folder/'native.json').read_text());identity=r.get('stock_owner_sha256')
+            prefix=Path('stock-artifacts')/identity if identity else Path('stock-artifacts')
+            for name,asset in r['stock_assets'].items(): expected[str(prefix/name)]=asset['sha256']
+            if identity:
+                root=Path(r['stock_assets']['ifs.bin']['path']).parent
+                for name in ('stock-build.json','stock-owner.json','build.private.log'): expected[str(prefix/name)]=lab.sha(root/name)
+    if (work/'supplemental').is_dir():
+        for file in (work/'supplemental').rglob('*'):
+            if file.is_file(): expected[str(file.relative_to(work))]=lab.sha(file)
+    actual={str(f.relative_to(exported)) for f in exported.rglob('*') if f.is_file() and f!=exported/'pack.json'}
+    if actual!=set(expected) or pack.get('files')!=expected: raise ValueError('incomplete/mixed export inventory')
+    return True
+
 def aggregate(work, exported, commit):
     if not re.fullmatch('[0-9a-f]{40}',commit): raise ValueError('exact tested commit required')
     work,data=notebook.session(work); exported=lab.external(exported)
@@ -64,6 +86,7 @@ def aggregate(work, exported, commit):
     pack=json.loads((exported/'pack.json').read_text())
     if pack['session_id']!=data['id'] or (exported/'session.json').read_bytes()!=(work/'session.json').read_bytes():
         raise ValueError('export must belong to same unchanged own notebook')
+    validate_export_inventory(work,data,exported,pack)
     for name,digest in pack['files'].items():
         p=exported/name
         if not p.resolve().is_relative_to(exported) or lab.sha(p)!=digest:raise ValueError('export hash mismatch')

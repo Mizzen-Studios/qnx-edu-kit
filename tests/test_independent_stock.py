@@ -74,4 +74,37 @@ class IndependentStock(unittest.TestCase):
  def test_queue_preflight_does_not_delete_original(self):
   q=self.base/'guest/shared/queue';q.mkdir(parents=True);job=q/'original.sh';job.write_text('preserve')
   self.assertFalse(stock_lease.queue_clear(self.base/'guest'));self.assertTrue(job.exists())
+ def test_finalization_checks_queue_after_sdk_stop(self):
+  import stock_build_owner as owner
+  case=self.base/'case';control=case/'sdk-control';control.mkdir(parents=True)
+  (control/'sdk-owner.json').write_text(json.dumps(dict(status='REQUESTED_STOP',stopped_reaped=True,caps=owner.CAPS)))
+  with patch.object(owner,'no_qemu',return_value=True),patch.object(owner.lease,'queue_clear',return_value=False),patch.object(owner.provenance,'verify') as verify:
+   with self.assertRaisesRegex(ValueError,'queue changed'):owner.finalize(case,__import__('unittest').mock.Mock())
+   verify.assert_not_called();self.assertFalse((case/'stock/stock-owner.json').exists())
+ def test_export_inventory_rejects_omission_and_incomplete(self):
+  import learner_session as notebook,learner_journey as journey
+  work=self.base/'own';notebook.create(work);dest=self.base/'export';notebook.export(work,dest)
+  pack=json.loads((dest/'pack.json').read_text());data=notebook.session(work)[1]
+  self.assertTrue(journey.validate_export_inventory(work,data,dest,pack))
+  corrupt=copy.deepcopy(pack);del corrupt['files']['step3/main.c']
+  with self.assertRaises(ValueError):journey.validate_export_inventory(work,data,dest,corrupt)
+  (dest/'INCOMPLETE.txt').write_text('failed')
+  with self.assertRaisesRegex(ValueError,'incomplete'):journey.validate_export_inventory(work,data,dest,pack)
+ def test_owner_integer_cannot_impersonate_boolean(self):
+  owner=json.loads((self.root/'stock-owner.json').read_text());owner['stopped_reaped']=1
+  (self.root/'stock-owner.json').write_text(json.dumps(owner));self.owner=lab.sha(self.root/'stock-owner.json')
+  with self.assertRaises(ValueError):self.verify()
+ def test_native_receipt_owner_identity_cannot_change(self):
+  import learner_session as notebook
+  folder=self.base/'attempt';folder.mkdir();work=self.base/'own'
+  manifest=dict(kind=stock.kind('step3'),source_sha256='s')
+  record=dict(stage='step3',source_sha256='s',started=10,command=['--stock',str(self.root),'--stock-admission','independent-cooperative-v1','--stock-owner-sha256',self.owner])
+  prior=dict(action='build',stage='step3',status='PASS',route='stock-reuse-v1',source_sha256='s',started=1,id='build')
+  receipt=dict(manifest,stock_admission='independent-cooperative-v1',stock_provenance=self.m)
+  for forged in (None,'f'*64):
+   if forged is None: receipt.pop('stock_owner_sha256',None)
+   else:receipt['stock_owner_sha256']=forged
+   (folder/'native.json').write_text(json.dumps(receipt))
+   with patch.object(notebook,'session',return_value=(work,{'attempts':[prior]})),patch.object(stock,'verify_inputs',return_value=manifest),patch.object(stock,'stock_inputs',return_value={}):
+    with self.assertRaisesRegex(ValueError,'provenance receipt mismatch'):notebook.validate_stock_native(work,record,folder)
 if __name__=='__main__':unittest.main()
