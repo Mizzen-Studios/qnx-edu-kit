@@ -70,6 +70,7 @@ def run(source,bundle,stock,receipt,stage,timeout=600,provenance=None,owner_sha2
     control.mkdir(parents=True);queue=control/'queue';queue.mkdir()
     helper=ROOT/'scripts/stock_console.py'
     command=['systemd-run','--user','--scope','--quiet','-p','CPUQuota=100%','-p','MemoryMax=2G','-p','MemorySwapMax=0','nice','-n','15',sys.executable,str(helper),'--stock',str(Path(stock).resolve()),'--overlay',str(control/'state.qcow2'),'--control',str(control),'--timeout',str(timeout)]
+    if provenance is not None: command += ['--stock-admission',provenance,'--stock-owner-sha256',owner_sha256]
     import stock_lease
     lease=stock_lease.inherited()
     if provenance is not None and lease is None: raise ValueError('whole-chain inherited lease required')
@@ -111,6 +112,7 @@ def run(source,bundle,stock,receipt,stage,timeout=600,provenance=None,owner_sha2
             proc.wait(max(1,int(end-time.monotonic())+35))
     owner=json.loads((control/'owner-final.json').read_text()) if (control/'owner-final.json').exists() else {}
     result=checks(output,m,control,owner,{k:v['sha256'] for k,v in assets.items()})
+    if provenance is not None: result['independent_owner_binding']=owner.get('stock_admission')==provenance and owner.get('stock_owner_sha256')==owner_sha256
     result['inputs_unchanged_after_boot']=verify_inputs(source,bundle,stage)==m and stock_inputs(stock,provenance,owner_sha256)==assets
     success=bool(owner.get('caps')) and all(result.values()) and problem is None
     evidence=dict(m,success=success,checks=result,started=started,finished=time.time(),stock_assets=assets,disk_sha256=assets['disk-qemu']['sha256'],image_sha256=assets['ifs.bin']['sha256'],stock_provenance='REUSED approved Nov13 clean stock artifacts; NOT a new image build',caps=owner.get('caps'),owner=owner,run_driver_sha256=lab.sha(__file__),console_driver_sha256=lab.sha(helper),qemu_command=command,error=problem,optional_secpol='BLOCKED: no approved nondisplacing loaded policy/denyallow fixture; tools probed only',optional_trace='NOT_RUN finish-only scope; no performance claim')

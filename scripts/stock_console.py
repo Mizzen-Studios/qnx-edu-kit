@@ -1,13 +1,17 @@
 """Owned stock-native console, file-queued commands; no custom IFS or SDK launch. Stock artifact reuse, not generation."""
 import argparse,fcntl,hashlib,json,os,re,selectors,shlex,signal,subprocess,time
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--stock',required=True);ap.add_argument('--overlay',required=True);ap.add_argument('--control',required=True);ap.add_argument('--timeout',type=int,default=1200);a=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('--stock',required=True);ap.add_argument('--overlay',required=True);ap.add_argument('--control',required=True);ap.add_argument('--timeout',type=int,default=1200);ap.add_argument('--stock-admission',choices=['independent-cooperative-v1']);ap.add_argument('--stock-owner-sha256');a=ap.parse_args()
 stock=Path(a.stock).resolve();overlay=Path(a.overlay).resolve();control=Path(a.control).resolve();control.mkdir(parents=True,exist_ok=True);queue=control/'queue';queue.mkdir(exist_ok=True)
 h=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 import stock_lease
 lease=stock_lease.inherited()
 if lease is None:
  lock=open('/home/ubuntu/qnx-host/native-test.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+if a.stock_admission:
+ import stock_provenance
+ assert lease is not None, 'whole-chain lease required'
+ stock_provenance.verify(a.stock,owner_sha256=a.stock_owner_sha256)
 assert subprocess.run(['pgrep','-f','^qemu-system-'],stdout=subprocess.DEVNULL).returncode==1
 cg=Path('/sys/fs/cgroup')/next(x.split(':',2)[2].strip().lstrip('/') for x in Path('/proc/self/cgroup').read_text().splitlines() if x.startswith('0::'))
 caps={k:(cg/k).read_text().strip() for k in ['cpu.max','memory.max','memory.swap.max']};assert caps=={'cpu.max':'100000 100000','memory.max':'2147483648','memory.swap.max':'0'} and os.getpriority(os.PRIO_PROCESS,0)>=15
@@ -26,6 +30,8 @@ if mode=='uefi':
 else:args+=['-kernel',str(stock/'ifs.bin')]
 args+=opts
 r={'status':'RUNNING','kind':'clean-stock-native-console-owner','caps':caps,'nice':os.getpriority(os.PRIO_PROCESS,0),'command':args,'stock_boot_mode':mode,'network':'none: serial transfer; no bridge/host networking repair','image_provenance':'REUSED hash-verified stock mkqnximage artifacts; only EDU option; lesson copied after boot','stock_hashes':{p.name:h(p) for p in [stock/'ifs.bin',stock/'disk-qemu',stock/'qemu_options',stock/'options']},'base_drive':str(base),'base_drive_sha256':h(base),'overlay_initial_sha256':h(overlay),'commands':[],'memory_samples':0}
+if a.stock_admission:
+ r['stock_admission']=a.stock_admission;r['stock_owner_sha256']=a.stock_owner_sha256;r['image_provenance']='Fresh independent controlled stock build, separately trusted cooperative owner receipt; not cryptographic attestation'
 (control/'owner-start.json').write_text(json.dumps(r,indent=2)+'\n')
 proc=None;sel=None;serial=bytearray();started=time.monotonic();lastsample=0;samples=[]
 def sample():

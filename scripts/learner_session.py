@@ -207,6 +207,7 @@ def validate_stock_native(work,record,folder):
     if owner!=receipt.get('owner'): raise ValueError('stock owner evidence changed')
     output=stock_observed_output(folder)
     checked=stock.checks(output,m,control,owner,{k:v['sha256'] for k,v in assets.items()})
+    if admission: checked['independent_owner_binding']=owner.get('stock_admission')==admission and owner.get('stock_owner_sha256')==owner_sha
     checked['inputs_unchanged_after_boot']=stock.verify_inputs(folder/'main.c',bundle,record['stage'])==m and stock.stock_inputs(root,admission,owner_sha)==assets
     if checked!=receipt.get('checks'): raise ValueError('stock oracle disagrees')
     success=all(checked.values()) and bool(owner.get('caps')) and receipt.get('error') is None
