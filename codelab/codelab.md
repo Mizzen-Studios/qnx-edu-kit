@@ -63,13 +63,13 @@ For a full wrong → correct → finish result, follow the [coherent own-session
 Set these operator-supplied absolute paths (no spaces), and a fresh case name. The SDK shared mount must contain both the clone and your own notebook. Existing Git access only; no new login.
 
 ```sh
-export EDU_CONTROLLER=/absolute/path/to/guestctl-capped.py
-export EDU_SHARE="$(dirname "$EDU_CONTROLLER")/shared"
+# Before copying this block: set EDU_CONTROLLER, EDU_SHARE, EDU_STOCK,
+# EDU_SDP_ENV (SDK-guest path) and EDU_NATIVE_LEASE to existing approved paths.
+# Unset/placeholder/unwritable inputs stop here, before creating any notebook.
+sh scripts/learner-path-preflight.sh
 export EDU_CASE=edu-coldreader-20261113-1208
 export EDU_BASE="$EDU_SHARE/$EDU_CASE"
-export EDU_STOCK=/absolute/path/to/approved/stock-output
-export EDU_SDP_ENV=/home/qnx/qnx800/qnxsdp-env.sh
-mkdir "$EDU_BASE"
+mkdir "$EDU_BASE" # fresh case only; do not sudo/chmod if this is denied
 git clone https://github.com/Mizzen-Studios/qnx-edu-kit.git "$EDU_BASE/repo"
 export EDU_REPO="$EDU_BASE/repo"
 export EDU_WORK="$EDU_BASE/own"
@@ -108,8 +108,10 @@ Create EDU_BASE/build.sh on HOST containing the following SDK-root dispatch, sub
 #!/bin/bash
 set -euo pipefail
 G=/mnt/host/edu-coldreader-20261113-1208
+: "${EDU_SDK_HOME:?Set the existing SDK user home inside this guest dispatch script}"
+: "${EDU_SDP_ENV:?Set the installed SDK environment file inside this guest dispatch script}"
 chown -R qnx:qnx "$G/own"
-runuser -u qnx -- env HOME=/home/qnx python3 "$G/repo/scripts/learner_session.py" build --work "$G/own" --stage step6 --stock approved-stock-reuse --sdp-env /home/qnx/qnx800/qnxsdp-env.sh
+runuser -u qnx -- env HOME="$EDU_SDK_HOME" python3 "$G/repo/scripts/learner_session.py" build --work "$G/own" --stage step6 --stock approved-stock-reuse --sdp-env "$EDU_SDP_ENV"
 ```
 
 The build action selects a fresh, immutable attempt bundle. It serially runs qcc compile -O0 -g0 then link with pci/slog2; **no mkifs**. Its manifest kind is learner-stock-step6-v1, never learner-dev-edu-v1 custom IFS. Predictions, source/object/ELF digests and build command/rc are notebook-owned.
@@ -174,7 +176,7 @@ Export validates by action, own matching source/build, distinct stock driver, ta
 
 If an older notebook reports BLOCKED despite a completed stock driver, preserve it and inspect its validation error. After correcting the host validator, `python3 scripts/learner_session.py revalidate --work "$EDU_WORK" --attempt 0002-step6-run` checks that own attempt again **offline**, preserves its prior notebook under supplemental/, and never starts SDK/QEMU or alters raw receipts. A changed log/source/stock binding still fails. This is not a retry, receipt import or claim of fresh execution; choose the actual blocked attempt ID. Export only after validation succeeds.
 
-Stop after the one permitted observation; verify no QEMU and FREE actual lease; leave independent owner review pending. Single-host remains BLOCKED_NATIVE_TIMEOUT, cause UNVERIFIED, and is not retried. Historical BLOCKED_STOCK_MKIFS_OOM and the earlier stock512 OOM remain immutable, not today's stock status. No full-platform, human-learning, fresh-install, timing/performance/safety or public-media claim.
+Stop after the one permitted observation; verify no QEMU and FREE actual lease; leave independent owner review pending. The 9 November single-host route remains historically BLOCKED_NATIVE_TIMEOUT, cause UNVERIFIED, and is not retried; this does not negate the source-bound 13 November split-host journey. The 19 November own-stock build remains separately reserve-blocked, not native accepted. Historical BLOCKED_STOCK_MKIFS_OOM and the earlier stock512 OOM remain immutable, not today's stock status. No full-platform, human-learning, fresh-install, timing/performance/safety or public-media claim.
 
 <!-- END CANONICAL TUTORIAL -->
 

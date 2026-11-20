@@ -3,11 +3,6 @@
   "scope": "Tracked residual historical host/guest home prefixes; generated site/review projections excluded; values intentionally not repeated. No raw receipt or log bytes changed.",
   "files": [
     {
-      "path": "codelab/codelab.md",
-      "sha256": "57140f48a20b0421ec19fc8d95d98bf0d5074d1bd0ca86452d3cb04cc2e627d5",
-      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
-    },
-    {
       "path": "docs/PUBLISH_AUDIT_FINDINGS.json",
       "sha256": "6e7ceac8c0e2bd5e2b5a7209c8392ca920cc6ed7df187b2e4cfe14642e10ebf7",
       "classification": "preserved historical evidence / pinned diagnostic"
@@ -1008,18 +1003,8 @@
       "classification": "preserved historical evidence / pinned diagnostic"
     },
     {
-      "path": "docs/independent-stock.md",
-      "sha256": "2b101a38af5f2b32ed0f9c14426f7d965a1a81bf9ce333e4216ceddb9d94d499",
-      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
-    },
-    {
       "path": "docs/learner-route-custom-legacy.md",
       "sha256": "62fe190b1b2f0c8d773e889106e5493751ff9a793e9cbd5365e9eb575573b226",
-      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
-    },
-    {
-      "path": "docs/learner-route.md",
-      "sha256": "22d735f0a10086ce0b1309b763d3e7ede249d2efd2a4fa289bf0efe075d46067",
       "classification": "historical lab record or native implementation constraint; not HOST quickstart"
     },
     {

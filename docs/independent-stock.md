@@ -69,7 +69,7 @@ original request: inspect its original result; never resubmit it blindly.
 ```sh
 python3 "$EDU_REPO/scripts/stock_build_owner.py" \
   --controller "$EDU_CONTROLLER" --case "$EDU_SHARE/new-independent-case" \
-  --environment /home/qnx/qnx800/qnxsdp-env.sh
+  --environment "${EDU_SDP_ENV:?Set the installed environment path inside the existing SDK guest}"
 ```
 
 The case must not exist. The owner clones the clean source into this private

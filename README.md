@@ -11,9 +11,11 @@ No QNX hardware, SDK, image or QEMU required. From the repository root with Pyth
 3. Run HOST checks only:
 
 ~~~sh
-./verify.sh --host-only
+sh verify.sh --host-only
 python3 scripts/render_site.py --check
 ~~~
+
+No EDU_* variables are required. The sh invocation avoids permission-denied errors when an archive/download loses executable bits; do not use sudo. Native setup is a separate optional route.
 
 Then open [the local tutorial](docs/site/index.html). Predictions and HOST provenance checks are not QNX runtime proof or independent human learning acceptance.
 
@@ -22,7 +24,7 @@ Then open [the local tutorial](docs/site/index.html). Predictions and HOST prove
 | Evidence route | State |
 |---|---|
 | Recorded journey | Bounded source-bound observations; not current live health. |
-| HOST checks | 166 Python tests (164 passed / 2 skipped); not native acceptance. |
+| HOST checks | 169 Python tests (167 passed / 2 skipped); not native acceptance. |
 | Native / reproduction scope | [Complete current status and limits](STATUS.md); separate licensed setup required. |
 | Repository | PUBLIC; earlier private-state wording is stale. |
 

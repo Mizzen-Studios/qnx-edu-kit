@@ -2,7 +2,20 @@
 
 QNX Global Hackathon 2026 entry (Low-level Software; Best Codelab/Tutorial). Apache-2.0. No paid resources used.
 
-## Proven coherent journey
+## Start here — working HOST command, no SDK
+
+From the checkout root, with Python 3, GNU make and a POSIX shell:
+
+~~~sh
+sh verify.sh --host-only
+python3 scripts/render_site.py --check
+~~~
+
+No EDU_* variables, QNX licence, SDK, guest image, native lease or hardware are needed. Use sh rather than relying on downloaded executable permission bits. Do not run bare verify.sh: its separate native gate needs legal external inputs. Open [the local tutorial](site/index.html) after these checks.
+
+Historical **BLOCKED_NATIVE_TIMEOUT** describes the 9 November single-host attempt only, with unverified cause. It is not a banner for the later successful 13 November split-host journey below. Conversely, that historical success does not close the 19 November independently built stock/reserve blocker or prove the current tip natively. [Current status](../STATUS.md).
+
+## Proven coherent journey — historical, exact source-bound
 
 The [coherent stock result](acceptance/coherent-stock-20261113/RESULT.md) and [aggregate receipt](acceptance/coherent-stock-20261113/receipt.json) bind one own notebook, source/object/ELF hashes, shared stock IFS/disk and verified 108-file export.
 

@@ -5,7 +5,7 @@
 | Area | Evidence-backed state |
 |---|---|
 | Repository | PUBLIC; historical private/visibility-pending wording is stale. No visibility change performed here. |
-| HOST regression | 166 Python tests: 164 passed, 2 skipped; host-only, not target acceptance. |
+| HOST regression | 169 Python tests: 167 passed, 2 skipped; host-only, not target acceptance. |
 | Coherent recorded journey | Historical source 769a4c9: wrong FAIL/app0 → corrected PASS → own normal I/O finish; reused pinned stock image. |
 | Independent stock route | Implemented at 28daa16; fresh stock build BLOCKED by unchanged 2GiB host / 64MiB reserve gate; new native journey NOT_RUN. |
 | Historical diagnostics | Old proof/claim scripts FAIL against their historical pins. See [diagnostic scope](docs/HISTORICAL-DIAGNOSTICS.md); not repaired by weakening gates. |
