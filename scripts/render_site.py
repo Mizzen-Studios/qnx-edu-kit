@@ -49,9 +49,17 @@ def render(source):
     lines=source.read_text().splitlines()
     if source.parent.name=='codelab':
         lines=lines[next(i for i,line in enumerate(lines) if line.startswith('# ')):]
-    out=[]; code=False; fence=chr(96)*3; listing=False; table=False
+    out=[]; code=False; fence=chr(96)*3; listing=False; table=False; comment=False
     for line in lines:
-        if line.startswith(fence):
+        if not code:
+            if comment:
+                if '-->' in line: comment=False; line=line.split('-->',1)[1]
+                else: continue
+            while '<!--' in line:
+                left, tail=line.split('<!--',1)
+                if '-->' in tail: line=left+tail.split('-->',1)[1]
+                else: line=left; comment=True; break
+        if line.startswith((fence, '~~~')):
             if listing:out.append('</ul>');listing=False
             out.append('</code></pre>' if code else '<pre><code>');code=not code;continue
         if code:out.append(html.escape(line)+'\n');continue
@@ -78,7 +86,7 @@ def render(source):
     if code:raise ValueError('unclosed code fence: '+str(source))
     depth=len(source.relative_to(ROOT).parts)-1
     base='../'*depth
-    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · QNX teaching tutorial</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'docs/learner-route.html">Start learner route</a><a href="'+base+'codelab/codelab.html">Codelab + reference</a><span>Public tutorial · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
+    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>edu-kit · QNX teaching tutorial</title><style>'+CSS+'</style><header><a href="'+base+'index.html">edu-kit</a><a href="'+base+'docs/learner-route.html">Start here</a><a href="'+base+'codelab/codelab.html">Codelab + reference</a><span>Public tutorial · scoped native evidence</span></header><main>'+''.join(out)+'</main></html>\n'
 
 def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))

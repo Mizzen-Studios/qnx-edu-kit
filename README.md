@@ -17,19 +17,25 @@ python3 scripts/render_site.py --check
 
 Then open [the local tutorial](docs/site/index.html). Predictions and HOST provenance checks are not QNX runtime proof or independent human learning acceptance.
 
-## Status — 20 November 2026
+## Evidence at a glance
 
-| Area | Evidence-backed state |
+| Evidence route | State |
 |---|---|
-| Repository | PUBLIC; historical private/visibility-pending wording is stale. No visibility change performed here. |
-| HOST regression | 164 Python tests: 162 passed, 2 skipped; host-only, not target acceptance. |
-| Coherent recorded journey | Historical source 769a4c9: wrong FAIL/app0 → corrected PASS → own normal I/O finish; reused pinned stock image. |
-| Independent stock route | Implemented at 28daa16; fresh stock build BLOCKED by unchanged 2GiB host / 64MiB reserve gate; new native journey NOT_RUN. |
-| Historical diagnostics | Old proof/claim scripts FAIL against their historical pins. See [diagnostic scope](docs/HISTORICAL-DIAGNOSTICS.md); not repaired by weakening gates. |
-| Limits | Independent human / second SDK / platform health UNVERIFIED; C6 STOPPED, SSH / SocketCAN UNVERIFIED. |
+| Recorded journey | Bounded source-bound observations; not current live health. |
+| HOST checks | 166 Python tests (164 passed / 2 skipped); not native acceptance. |
+| Native / reproduction scope | [Complete current status and limits](STATUS.md); separate licensed setup required. |
+| Repository | PUBLIC; earlier private-state wording is stale. |
 
 **Demo in QEMU; not a safety or latency claim.** Native evidence remains bound to its recorded source/image, not the current documentation tip.
 
 [Current independent-stock result](docs/acceptance/independent-stock-20261119/RESULT.md) · [Canonical licensed learner route](docs/learner-route.md) · [Capability ledger](docs/capabilities.md) · [Dated history](docs/HISTORY.md) · [Path preservation policy](docs/PATHS.md).
 
 Apache-2.0; Python stdlib only. No licensed SDK, image, secret or binary is distributed. Missing legal setup is BLOCKED; HOST checks cannot replace it. Native/full verify is not part of the judge path.
+
+## Why QNX
+
+The lesson uses QNX PCI attachment, MMIO, interrupt acknowledgement, a same-owner private pulse and resource-manager read/write handling at /dev/edu. Wrong and corrected observations teach why application exit 0 alone is not a device oracle.
+
+## How we used AI
+
+Developed with an AI coding agent under human direction: implementation, tests, documentation and evidence review were AI-assisted. HOST checks and recorded native receipts support only their stated scope; AI output is not independent human learner validation, attestation or QNX acceptance.

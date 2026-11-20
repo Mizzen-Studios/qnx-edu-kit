@@ -1,10 +1,10 @@
 {
   "date": "2026-11-20",
-  "scope": "Tracked residual historical host/guest home prefixes; generated site projections excluded; values intentionally not repeated. No raw receipt or log bytes changed.",
+  "scope": "Tracked residual historical host/guest home prefixes; generated site/review projections excluded; values intentionally not repeated. No raw receipt or log bytes changed.",
   "files": [
     {
       "path": "codelab/codelab.md",
-      "sha256": "3da8f14f6baf7f0bf635e9111678f801275acdd9f2df626a6c83cc12c6809a5b",
+      "sha256": "57140f48a20b0421ec19fc8d95d98bf0d5074d1bd0ca86452d3cb04cc2e627d5",
       "classification": "historical lab record or native implementation constraint; not HOST quickstart"
     },
     {
@@ -1009,7 +1009,7 @@
     },
     {
       "path": "docs/independent-stock.md",
-      "sha256": "07c48100d9cb9e47087a6e598ccc45a6a6061b6afb51de5a926f3414a2dcae79",
+      "sha256": "2b101a38af5f2b32ed0f9c14426f7d965a1a81bf9ce333e4216ceddb9d94d499",
       "classification": "historical lab record or native implementation constraint; not HOST quickstart"
     },
     {
@@ -1025,11 +1025,6 @@
     {
       "path": "docs/native-recovery-20261104.md",
       "sha256": "8420a6aebfcb9fe05cc3f383dd1bfdb2fbb7e46e44907ab14e514273d2da06fe",
-      "classification": "preserved historical evidence / pinned diagnostic"
-    },
-    {
-      "path": "docs/review/appendix.json",
-      "sha256": "ac39ac62bd6c18c19bb823dbb49079a00738a6045cf25d53bb66b779f112e62c",
       "classification": "preserved historical evidence / pinned diagnostic"
     },
     {
@@ -1080,11 +1075,6 @@
     {
       "path": "scripts/stock_sdk_owner.py",
       "sha256": "5005ab216edcf497ca520ff3496dd0a18b1a7afba61c5e23fa302c58ec96ce19",
-      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
-    },
-    {
-      "path": "tests/test_codelab_export.py",
-      "sha256": "a224e006da5753d34292c661cd6bb608ba5fb7270d345dd24cb33a1783e5891b",
       "classification": "historical lab record or native implementation constraint; not HOST quickstart"
     },
     {
