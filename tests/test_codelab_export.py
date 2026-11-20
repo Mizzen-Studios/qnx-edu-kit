@@ -38,7 +38,7 @@ class CodelabExport(unittest.TestCase):
         build = route.index('python3 "$EDU_CONTROLLER" exec "$EDU_BASE/build.sh" 600')
         stop = route.index('touch "$EDU_BASE/sdk-control/STOP"', build)
         reap = route.index('wait "$SDK_OWNER"', stop)
-        free = route.index('flock -n /home/ubuntu/qnx-host/native-test.lock true', reap)
+        free = route.index('flock -n "$EDU_NATIVE_LEASE" true', reap)
         native = route.index('env EDU_NATIVE_LEASE=granted python3')
         self.assertLess(ready, build)
         self.assertLess(build, stop)

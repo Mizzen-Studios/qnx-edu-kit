@@ -1,0 +1,1096 @@
+{
+  "date": "2026-11-20",
+  "scope": "Tracked residual historical host/guest home prefixes; generated site projections excluded; values intentionally not repeated. No raw receipt or log bytes changed.",
+  "files": [
+    {
+      "path": "codelab/codelab.md",
+      "sha256": "3da8f14f6baf7f0bf635e9111678f801275acdd9f2df626a6c83cc12c6809a5b",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "docs/PUBLISH_AUDIT_FINDINGS.json",
+      "sha256": "6e7ceac8c0e2bd5e2b5a7209c8392ca920cc6ed7df187b2e4cfe14642e10ebf7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/ability-20261108/run.json",
+      "sha256": "014961af46955d7ba0517d176f7532f7de019f9d21f01164d60aa01deb04305c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/NOTES.md",
+      "sha256": "6224d5112439c0325e7d21857f6fd8faabcad719c0d7c643116195b680c9c63f",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/correct-native.json",
+      "sha256": "f5493ab995f26dca223367d12742932acbc5dceabc9dadd0504994837f85c602",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/finish-native.json",
+      "sha256": "069fefbdc88aaf3d2c6567d89c1eadc50e6eb7da27d94be8c3472b1131743514",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/initial-export-failed.log",
+      "sha256": "83b7e32a6832821d9dc00fe49db99a68d537829182dc06ee4203ae8a4ab3eb7f",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/initial-host-failed.log",
+      "sha256": "1cd990b32ffd2f47a925c3471d8152d13b65f9e8967d6161de1d76b071b09e13",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/job.sh",
+      "sha256": "3463e04355654ef31f1b4732bb3c5134c8fa572164087c46bb80b92774ca7eb2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/platform-hashes.txt",
+      "sha256": "c18e51e80071b861b95b3b3669b6f464ea6d88c111a067d273f7fc2a4e8b3051",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/preflight.json",
+      "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/provenance.json",
+      "sha256": "0d4306d4b0de44ba9e248b6e26d9b783ad59ec3b9a45f21dabb404a2a8fe5644",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/receipt.json",
+      "sha256": "25f2c2408febe37c2bd156bc96e674a76ffa92812b628fca3f24cddfd24fca0b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/sdk-caps.json",
+      "sha256": "f3eb4e25b5fdbba333e0bdee1dfdfb00c3b96023c62cabe3d1a8b105ee92f417",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/second-export-failed.log",
+      "sha256": "00e7f35cf9a2ce79833e94c28082f0aad473518a53ac4de837f397a15c666f9c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/second-host-failed.log",
+      "sha256": "2d79bd1334f39bfb2e13062bef0f6f47d5777ef7a1b8a0affee133a8357f32c6",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/bootstrap-final-20261107/wrong-native.json",
+      "sha256": "51f83a1ba3a066f7809331a24e2500b96eb3e057be44775d97baa2ddd546cde3",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261108/initial-inspection.log",
+      "sha256": "f0016a764be1c49c40447776320a690cd37a8139db5e3b7c84d7cf21629b7875",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261108/package-audit.log",
+      "sha256": "9d38a74ff9c101701fd042bc29093e5ea76b5e969b10066e04f676928c8028e9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261108/package-install.log",
+      "sha256": "a0eb4fe2fd90d7b2d10483da398d4f58b292d7cc0db0b31510c91b9956a45986",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/NOTES.md",
+      "sha256": "9fc03e4391df73ade01693326e71494a0bbcb3a6f0f9d7c110e958f6f940f5d1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/REPRO.md",
+      "sha256": "63c5b80d09450e66c73270fb9cc431c5dbdeda0eaa5dd0b665595299752e523c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/export-check.log",
+      "sha256": "28c987c06088424d51cf9a366d945f311f829c7fcd70ef284989b99e8d6bcbec",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/extended-timeout/native.json",
+      "sha256": "77314de84830015b0e2e9a4fc6ca0a3b484facbd6048218137e7befc00747ebf",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/final-session.json",
+      "sha256": "39703a3b1b29ddba1b5f52ed6ab0a374183a4ccedb52561dd9e7ee01cd73dfdb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/first-timeout/build-manifest.json",
+      "sha256": "16853e2e843e4ff2aae0bcb8eb932b6d06f7f9b0ecec4f769e39ee4fdd380e17",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/first-timeout/native.json",
+      "sha256": "d717400cbc9ba3268b7c5da5acdc44279c3e813b3144d1d122cd344243a62cbf",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/package-session.log",
+      "sha256": "ad562374ee6ad49646155a4605c17c3304f335bf952a1b9027844207022e736e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/receipt.json",
+      "sha256": "c77c0006426b3c0f286007b7211537da3af06dbc1a05d0f5902a29b910cd6b23",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/choice-a-20261109/stock-build-finish.log",
+      "sha256": "f6f0c00200d16480661c1d0652f2e5f1e4129c9122842c49aabfc202c1ac5fdb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/NOTES.md",
+      "sha256": "35c173a9d78dc0dd989c6bc4de79c5f479b030f201e6c9be6788a9e4410d91cb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/attempt-driver.sh",
+      "sha256": "809cb2fec45c65d791cbafd201a49095bffe42cb09914516a8d704bbf7e78f8b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/attempt-initial.log",
+      "sha256": "ec33f6289c4d0c3919bbad70c8e707cf02af584aa990d6b7fe24354c2d78578a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/build-progress.log",
+      "sha256": "446d0531d1422b3420f8ab5838295026273182e7641852c905129f7aa9ebac86",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/build.log",
+      "sha256": "86f0a0b749638ad8f5fc2c286b6ff70d0f1d6e30aa33d28dad9e326312fd7043",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/diagnosis900/NOTES.md",
+      "sha256": "eb995117ccfe85ae2b548152d33100017f9aa5026888beb4205a20d7e2139524",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/diagnosis900/driver.sh",
+      "sha256": "033550baac02ff0c0954f44163e202e98d68654c2dc1885e619a938dee6fc648",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/diagnosis900/resources.log",
+      "sha256": "c6c8ad72a24101e4d38808fbd7c432cf3c2b7ad11a9b5fedfe1b76f4a099a39e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/diagnosis900/sdk-caps.json",
+      "sha256": "acac4cd61e3340c0d31d9b7fccd6ce5e267ba9b9c8087dac30728df1b35d0c03",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/full-host-tests.log",
+      "sha256": "ec6af107c7cb203d92a4d79c345f81eafca08a93580b9d732d68a0109983e851",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/installed-inventory.log",
+      "sha256": "f33feb0af39adf23590869e2e91699679f5765a9d1de01d831a4dfb2abe127e2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/installed-pci-layout.log",
+      "sha256": "84ec5bc918d23a761f59d0e2f74d363bdc8b5f2280d4e6c890a09d30e0ededfd",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/inventory-driver.sh",
+      "sha256": "7902846083a570a703635bd33f6ef2ae48f2cb6aec64aeda81e9d8db3449cad9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/build-driver.py",
+      "sha256": "0cbded0cbaee20489612edb0eceb8b65c181ebb4144d5ac594eb6e41e2e96b8e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/controller.log",
+      "sha256": "c586cdd40dd40f33580b37c4d304be99d1e73e6c77bc6b0918c31f079ed9d0cb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/correct-build.log",
+      "sha256": "e833b4f0c8063161d264a8ad36b71174305b9ae6d2d6c07152dc97de2fda9961",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/correct-manifest.json",
+      "sha256": "e833b4f0c8063161d264a8ad36b71174305b9ae6d2d6c07152dc97de2fda9961",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/correct-native.json",
+      "sha256": "f129588f1a502cd0e24d100c76d3237a2d45baa9b5d6b88cae0dbc89b6920b1a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/final-topology/correct-native.json",
+      "sha256": "885beb8da00ee0be899d87ba293a24a5574dd039fb5c75c2e2674042531fd208",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/final-topology/wrong-native.json",
+      "sha256": "99b3cc011c3d11863dd9edfec0de1a13e3f5baddbbe714d7ee89fa13033bf7d6",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/integrate-step3.sh",
+      "sha256": "023a917213d45b8b7fed019aebd6981cc465f456e57ca29974a9651e1c022b6c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/launch-integration.sh",
+      "sha256": "863ce010f2e99370626a2b3f5a2223291d6b7e84bab0efe6bba87d31fb0583d4",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/wrong-build.log",
+      "sha256": "06f4db9693dec9ed0ccade929be95bf3461db7b7a6e3319e112d91d43baaa09c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/wrong-manifest.json",
+      "sha256": "06f4db9693dec9ed0ccade929be95bf3461db7b7a6e3319e112d91d43baaa09c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/native-clean/wrong-native.json",
+      "sha256": "265ae021944a31435a1277fc78d5c7e22aff9cc9804976f80a85358a0fb68a94",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/preflight-initial.json",
+      "sha256": "ec33f6289c4d0c3919bbad70c8e707cf02af584aa990d6b7fe24354c2d78578a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/preflight.json",
+      "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/sdk-caps.json",
+      "sha256": "31a8ce24f6b89fabc324c4d3fca16935b2cd47d1bdef2e3a1815e0928c664346",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/swap-attempt/build.log",
+      "sha256": "e04c7120e3e8b77a3a3356adfd94fa2391d69399f3fa312745268bf0ba5bb35d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/swap-attempt/final-hashes.log",
+      "sha256": "14e9f46bdf2d3af005863515e4ba530a5aa382e2ce0cbdbcaedeaeaeca663c2d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/swap-attempt/swap-attempt.sh",
+      "sha256": "c8a89c2c25df4f4256275b52baa54316fb9092b08863339ce568e23c9471e2ab",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/swap-attempt/swap-launch-correct.sh",
+      "sha256": "06f5192864df77c14c532abfa2c7f8fc2fb0ec8584d688673ea9e1dde001171b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/clean-step3-20261107/swap-attempt/swap-monitor.sh",
+      "sha256": "8a4b38e9504724a9aa24fef09e5ee6df6372a62b2b180f714ec498b17fa6ab9a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/build-correct-finish.sh",
+      "sha256": "312f4cb1cc72492540483e8366ff3ef4f52ec73ba386bf48510d1aa46823652d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/build-wrong.sh",
+      "sha256": "1235554824a918137c8e5c03cb0a134605f7502460613ff448fac49d3ba22c23",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/correct-native.json",
+      "sha256": "8e13cd0bdfe8cff8a3ec81bc3bdd369e08fe9f06c08a9691b01b60f8fe1faf1a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/finish-native.json",
+      "sha256": "97a055f755ae1d1f17848eb7d07372726f0b0f8f4e3e3420a6493dfcb88d7221",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/notebook.json",
+      "sha256": "72ab21006589f316a46f44c7b3ef05473c936805e043f99fe35afa4dbbb99b9c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/sdk-correct-finish-host.sh",
+      "sha256": "f1f13b59217679a27b636a468ce4008a9a28190227689c536dc00699bb10d740",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/sdk-correct-finish.json",
+      "sha256": "1b99e6ca7f1ce12ad902d652114fa8990a9f0f2918a9f72954224c4c6475675c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/sdk-wrong-host.sh",
+      "sha256": "e9b953b0c502698c8ea0d6b335edac49cf4de646ec986afd5f46b30c99de0b42",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/sdk-wrong.json",
+      "sha256": "14ed7eb37cb712d6db6e5210f6dfb3b17567731953d953a460b5d95087545dcb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coherent-stock-20261113/wrong-native.json",
+      "sha256": "1421677ddbfef0b68fd86a9652e822b59d63002a617033db96be623bfdb2bbb6",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/cold-clone-host-failure.log",
+      "sha256": "cbbd5478f56e71db1e8295bbcdfe0f63fbf89aaa71e7cd4bc5d8c1de7ce6968a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/native.json",
+      "sha256": "a91f4ff8306f2ebd45592b9a589ed4a51b8779902eee93cf53226310707b89cd",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/notebook-after-revalidation.json",
+      "sha256": "291008521551ada23a9c7036813cd3ed46e91be1442f3e47ed510cc2cc4158b7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/notebook-before-revalidation.json",
+      "sha256": "f52b39bebd9c57500796f44e64abe86beb5e25ae2bc4c1b4658f109883ffc728",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/sdk-build.sh",
+      "sha256": "5f256034514b90ab0507c01019818a2490c5ab7cd47ee833432ddf93d1b0c110",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/sdk-host.sh",
+      "sha256": "1b23e6246db042bc36d5b6b64ac859f8b4cca73d5cf24b450ad8ba995e14dad5",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/coldreader-stock-20261113/sdk-owner.json",
+      "sha256": "f193e3309c4831b99735e124de4855b85b686da595f481be24e4dbd02e0e08af",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/artifact-inventory.txt",
+      "sha256": "7a30717f475d8a2aef0f42098e0bb6c011962b4f41e034b3953622ec79168f44",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/build-plan.sh",
+      "sha256": "a0c47cd027ffcd54f608e150a720c173d3bc77ce92f25239ec292cb2a18370c9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/build.log",
+      "sha256": "422415b6e14f4476398ced3c60c3ef3b5e40f45a23b433a6234bde70fc50318b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/dispatch.sh",
+      "sha256": "c5966f2c2913f62c9f191b31994c737387b55c8ed2193707b0bb7942f91f2d43",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/elf-type.txt",
+      "sha256": "bc21bdfbe1214213a28745877391274da95df368e4f8367bc7741b914391162e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/observe.sh",
+      "sha256": "778edc4c71195cae3d3e6a0b694dcdcbcf2a2bb67b5f5794425b213e1fa41a56",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/preserve.sh",
+      "sha256": "650dda5f74305e381cb0524764cc2e57d2997b10f31436c377a46edefe1dfc9b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/features-20261110/receipt.json",
+      "sha256": "a46001b78b1b9d96db12e7eb7d2da8e54515513108433492a9cce94c226fb88e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/final-upgrade-20261108/initial-packaging-failure.log",
+      "sha256": "17f384e4c39e347dd319bbb950c78fed2fba08e6f8be45e247178ff6bcc4b832",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/NOTES.md",
+      "sha256": "2a1a2ad295df356789ba101e430e79a0c026ac369358cee51a3398b3c4e219e2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/build.sh",
+      "sha256": "12177161e8998c0cd4f575dbb3b4c28109e98a32b1f393d19d847b0931d5a119",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/correct-native.json",
+      "sha256": "4d5dc15560f8449f04e2cfbce8d6061f5c603826d9cdc4d6582fa539c1a1eafd",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected-build.sh",
+      "sha256": "69e11b4a6cbae3a249a8c9a21a202f18c6f008b6757e4b3fc1faa66bb06308fb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/finish-corrected-native.json",
+      "sha256": "ef83383c93509cbb6113e4e9ff87d2685d73d2f4c799972a649c050b554ef6c2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/finish-native.json",
+      "sha256": "19bf7205f52ef4fac7668f867fd2e31a54d99e542574359b79e54a7e2393bdc5",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/host.log",
+      "sha256": "e4a9dc7f089dafc9b5101360f69446d6eafe012365055258e3068f8951116d26",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/preflight.json",
+      "sha256": "b06c41832702128049a27b218a7d21f63530add2766ccf5c9f556ab5ebcae8ed",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/resume-build.sh",
+      "sha256": "39543d58b7206b967482cbd008466f12ab0d2abaca42de4d2ffcf8f42fe7abfa",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/fresh-checkout-20261107/wrong-native.json",
+      "sha256": "e6dff846f146d337ca8df51bc6bfc039af76624688ec37ed7423c17747871d4d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/native-owner-final.json",
+      "sha256": "63db5c4661dafecc015cba471d987fcb2f4932b37859cc87c5c4739424165ed0",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/native-owner-start.json",
+      "sha256": "6863471c258152a471a964cc4e863fb1169f7bb39cff6e9163598978dc192dbc",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/native-owner.py",
+      "sha256": "e6aeb6237a5e06b9536a825106d0e6f7d233ac5da2ec44bc3c9b918cc97bbeea",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/private-evidence-hashes.json",
+      "sha256": "45db25e7b4f71c00caedef19163230c0d509f67bc5f614b46b1788944c2e9d8d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/receipt.json",
+      "sha256": "e68f906ba4ccd54fbfa5c561b32e78d8361ad2279dc0e077261cc1add860cdd7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/safety-tail.py",
+      "sha256": "20adc2a1bc96a71ef0cc1c8a4319639d586b4044cedca1d02f27020a30b4b075",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/sdk-build.log",
+      "sha256": "718a1788a85544cf8681e0a80c48bb0e475aa75af89159e341bfa13d20beec7f",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/sdk-dispatch.sh",
+      "sha256": "5bc4f796550037fd409690f46c0408e0d3f06b4d0f799aa3688591e683d6173e",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/sdk-owner.json",
+      "sha256": "c658fb8f7790d221aa72f55ffba73d528a8901e9ea6146e74424febcf80059d9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/irq-retry-20261113/sdk-owner.py",
+      "sha256": "26e6d90be011546d26bd7b01149e9e785f7049eed3606d783c195d62210b126c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/NOTES.md",
+      "sha256": "05b1414d91353eb95e6b6d1eb4bf7cab3495eef701c7573a3dd6fdad0c7fc6b4",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/build-driver.py",
+      "sha256": "f6be785f8f1e08b42fe0a42b1fd165fa59140b440bd23785df4a8984c3b9c5f1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/correct-initial-oracle.json",
+      "sha256": "2a7d53efe2ea0a03b19308d949c33a9906848d3be24764f917164bf3aa6f63f1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/correct-native.json",
+      "sha256": "2c1a12f641e2483325cca3e0e5720f41ab068e6f319bf35e8029ec419a19ea7d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/local-build-adapter.sh",
+      "sha256": "40003c4f716aad0979e4b7d10321b56153f7ff619104fc71b3c5266bc3ca7afa",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-20261107/wrong-native.json",
+      "sha256": "cba582c587100e0946ea427ce3ea304bde035db4ab5b54e8758ea4729de47db2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/build-driver.py",
+      "sha256": "9385d612334c8e1484e8cb64a124bf73b2d348f5943fc94fb78b415cde0694ef",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/build-finish-corrected.sh",
+      "sha256": "51315aec167da62ad3154172c5fc86adee5654e46808c5f6c36d30a3e311f808",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/build-finish.sh",
+      "sha256": "6cfbb23d9ec2ede78d505f918afd085237dd917e952a77260b5289fc256b86be",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/build.log",
+      "sha256": "d55a8c453cc67db955a3951b3a4685c44ea445ab9ae209f41e86156404e51279",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/controller-inspection-failure/native.json",
+      "sha256": "a834fc0a6287a802752dcb417a3e6ed92951d294f50b9f96cefc6d750452d5e2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/diagnostic-run-driver.py",
+      "sha256": "0d4d1a9ca1fb1a62dfdb011331034aaf985624937b669cf0919947be98faa679",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/final-host-packaging-failure.log",
+      "sha256": "c1c758df3c141eb9601c76354b0727491e011fcf1974621f9477cd8671f24bd9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/initial-failure/build.log",
+      "sha256": "e455d7705a0fdfc11ccbac7dc6e5fe50cd437808838a9a86713cb349055f3461",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/initial-failure/manifest.json",
+      "sha256": "e455d7705a0fdfc11ccbac7dc6e5fe50cd437808838a9a86713cb349055f3461",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/initial-failure/native.json",
+      "sha256": "35f7e98d677e4dfb56ef01ec460267c91faa2eaef0654a7b45da4776115b0916",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/intermediate-host-failure.log",
+      "sha256": "f9fb89c801616bbdc754dd919c7e53e2c9055ca57293dc9cff1e14ce0467a2ab",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/irq-routing-failure/manifest.json",
+      "sha256": "d55a8c453cc67db955a3951b3a4685c44ea445ab9ae209f41e86156404e51279",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/irq-routing-failure/native.json",
+      "sha256": "2b1757c4edfa58a0dc1119092393589925a0452c884ba849dbc4cffd87330f12",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/launch-finish-corrected.sh",
+      "sha256": "4919cba5e2b1677e4a3a66ad6852befddb884a31510a5c71ceaac6fac4f22f55",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/launch-finish.sh",
+      "sha256": "bb5ce26c4a86340fed755a081738e89df87348f3a0807f30f079698afa72ce7b",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/manifest.json",
+      "sha256": "d55a8c453cc67db955a3951b3a4685c44ea445ab9ae209f41e86156404e51279",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/route-inspection-failure/native.json",
+      "sha256": "2a6029959de7424c1e751dffe0cbbcc21aa5fbdeddd1d43e9713ce62780227a3",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/route-noop-failure/native.json",
+      "sha256": "460926219e96944535838c303d3e580bc9119aea0a89de421ca2a849f8fea3c1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/slot5-failure/native.json",
+      "sha256": "24ebf1640ceb88ecbbc572b947fc82ab3b1d2fca3ebc68698e95ca8181ba3b12",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/unmasked/build.log",
+      "sha256": "2fc38690ed09bb47ce8b633a40986a7c0166ffb140ea445290bb00cf64975717",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/unmasked/manifest.json",
+      "sha256": "2fc38690ed09bb47ce8b633a40986a7c0166ffb140ea445290bb00cf64975717",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/learner-finish-clean-20261107/unmasked/native.json",
+      "sha256": "01ce4c3b2b338282b5a583a3a9cdff174ae47e859dcce9b07d4718fb8d4af2c7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/packaging-20261107/initial-host-failed.log",
+      "sha256": "7aad92ba3436d45d0a0f2f2ab055c5fdcc5caf6c8ae8960dafcc49b02ec4a291",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/baseline-renewed.json",
+      "sha256": "fdbf947895e7d6f5d6ca883596bc0005b37e878b54cb8f844daf0285c5fdb821",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/host-initial-failed.log",
+      "sha256": "4625480ced8c537c86b922d33e598b7520d78fa6cac32c69ed18bbaedf3c46c1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/route-initial.json",
+      "sha256": "26f9faca285bd24a5377bce0a257df44b560e1fbfad03fd6fc5e7a116331ca91",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/route.json",
+      "sha256": "e9e4e254df710aae4d375702092ea313df2c7fd750d3ddc35dcbc8a3427f381c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/sdk-attempt.json",
+      "sha256": "091ba8fa3e8529d9525863821ec83307e5283b45fb105181f8f9137a86343639",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/portability-20261107/traced-renewed.json",
+      "sha256": "1ce183d08fd1515257c224ac49e78731ceed7882c487cb69a796491890cd3fed",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/prereq-20261108/NOTES.md",
+      "sha256": "c9c5416dc5506cc8dd51a802986174dbc1992402e0f3e416dbdca41db46d3571",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/prereq-20261108/build-first-interrupted.log",
+      "sha256": "64ce3899130b1de5740efb454763def47cc9bb874f26d59084acc43a5bb58027",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/prereq-20261108/native.py",
+      "sha256": "5f7259d985a8a5146568451fe4ee33f31a75320c86df3b8b013f6c18ac00bf39",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/prereq-20261108/sdk-build-final.log",
+      "sha256": "cbd9cc1d3933fb1c7238f344f2e93834b8a747e25129bc0bae9d315a19d52b08",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/prereq-20261108/sdk-first-raw.log",
+      "sha256": "fc53bd0d64c46618d6447342c47090890d6c1f7576313080f43c37e5bd7732f5",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/provenance-20261108/initial-host-failure.log",
+      "sha256": "c56cb583177ab31698efed3a8504febf8fdd778ac207d724b24138ec7316fcde",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115/correct-native.json",
+      "sha256": "477219bf23b0f024e31bef3aa2b0ee7994a82a69b6c4363663a869c26c0a63e1",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115/finish-native.json",
+      "sha256": "2311b6b16d2c4a583e8a3ee11eb965bdca1e9738ffe066cb0040660a7198a934",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115/video-provenance.json",
+      "sha256": "dcbde43e6afac10146b179ccdb920ab182358663f286b9bc9d55c95340bc4a05",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115/wrong-native.json",
+      "sha256": "a076aba568d7489b20c4303c3532794f957f3d4538f2ebbcfb9fd82816fb0288",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/caption-polish-20261115/receipt.json",
+      "sha256": "20161927b8d0c03482d15625003ac8eb70a6c75a6fc8d1cd78b09e2d1055a00d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/correct-native.json",
+      "sha256": "3d2ff430b956c5b481c686ef89a56b4bcd0569fa89978a3f10482af859986558",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/finish-native.json",
+      "sha256": "5005090ee73593274b699bee69ab8360bc4affbd0a6c83982c89779d5c45b6cb",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/pixel-frame-edit-map.json",
+      "sha256": "c9a5b8a20d8b3fdb216fcd31606e6d8c29538c20f5deb4254c14ca5a9881c3a6",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/sdk-correct-finish-owner.json",
+      "sha256": "e86eeb2ed5d0fdb70bc607b07b9389e40e1e1b68ee007cfd81cf72947ec23839",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/sdk-wrong-owner.json",
+      "sha256": "e0e1ee03e8334fce5aea636ccdb1875bbc6ab93618233f34a177a4a963285644",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/video-probe.json",
+      "sha256": "6fdd2c36c30ad71406d7a1951aa7011ccb94daf1ada0ceba33abcce9310fc7a7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/retry-20261115c/wrong-native.json",
+      "sha256": "bc16ceed2a0d080ff17f375ec75853888356a15852e5ff7ff7f54fb9baf4b245",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/recording-20261115b/wrong-native.json",
+      "sha256": "71fadc730b174f1ca636bacd5a4826ce385bb1be54141066af83410c2a8a8c53",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/review-fixes-20261108/actual-export.json",
+      "sha256": "4782ab6cf2d447b7de67481fbfdfd23a26f098279993ddaf23e21e162e4606e5",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/route-paths-20261107/receipt.json",
+      "sha256": "98bfa56254c59f715720ff5bb126c285a00cfddd6fb2b1a18f501ef1e5218438",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/singlehost-20261108/browser-initial-failure.log",
+      "sha256": "77fbbc7c2583c5e53f5c11d5b49788503bbc3233751dd62b7106e750fa0faa47",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/singlehost-20261108/browser-snap-path-failure.log",
+      "sha256": "6eb3460f02f98182a00f447c7fed0d1badb69c17d0fb8460c0a51ac45ff2abef",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/singlehost-20261108/probe.log",
+      "sha256": "b08292bd55c112f9213a7daa5f75a6ee8b2beab189e75dc5213beb5b212429cf",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/singlehost-20261108/probe.sh",
+      "sha256": "8c421af9f2fd8da20f2eaf9545c02da506b6fffc115e7ae47af140c95f61df66",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/singlehost-20261108/setup-result.json",
+      "sha256": "15236e426cf85111caf4f4ab525445089b2731f873336e3259c46ad3423e0488",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/startup-diagnosis-20261107/NOTES.md",
+      "sha256": "18377ca276b53c4c5b2b4b5007f3279cff369e841d7794ec0355e56fab711404",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/startup-diagnosis-20261107/baseline.json",
+      "sha256": "64c151b9e7bf93f9cb03c0d471d145e95d3eda34bfb7c0850f9279c8a3529108",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/startup-diagnosis-20261107/traced.json",
+      "sha256": "09b26787145787d915bad34b2c705d0567afed5e4f8c1a532c1731de7e6a0894",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/all-partial-hashes.txt",
+      "sha256": "6b8703f32b39a4dc2aa6871b094cec053ad5e2b396c98240aeb22076db7a933c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/dispatch.sh",
+      "sha256": "eb238609c68026f65f9c75e762eae0a52904559ad41866786e2bf910c8c95652",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/lesson-bindings.json",
+      "sha256": "5493e0ef182efd2df2653cc1ada3943e0f12739afbe45fa535d3f5bfffc6bed2",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/observe.sh",
+      "sha256": "508dfe54af4a740a5b2a84646deb82adf21a28ffc1ccbb24b304f9461900154a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/preserve.sh",
+      "sha256": "d1bb107ffdd8878a1ec504dd5f1b6f4739abeaaf66c2d4028231f685671b5cc3",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/preserved-partial-hashes.txt",
+      "sha256": "79400659d8908ac9f3df8f98ee554dfb4ba1ef86578afedb37110917b1f8e330",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/raw-private-log-hash.json",
+      "sha256": "0cd71b4ac5261e33e4f25f1c26b4a20354c4865f0fe1f3476cb1c84c1f6aeea9",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/receipt.json",
+      "sha256": "839cc53352b4db9e0a8b0bad9a4bdc5bb59b15b33b0977a388a4c54e3de307d6",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/sdk-owner.json",
+      "sha256": "c7149ff13b9a2472d69e09254e1a1ce29ae98e3b22d4c6025e4fadf87de7abd5",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-20261113/sdk-owner.py",
+      "sha256": "bf370a5ed1403c54fd380ac2f4775727544b57fade217f2a5b7fbb0ced12d512",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/build.log",
+      "sha256": "c0e3e39e17828364d115e7fb31d5ceb569f0325f5fc07493d7cfc74e8a9a2f00",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/correct-compile.sh",
+      "sha256": "dc762ca73da7dc665a4630a16dc0248744471efd975defdf112ecc91c27abb87",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/correct-sdk-owner.json",
+      "sha256": "14f283ffc183e5dba2a1f23ca7a87f3d08bc8f2c86adf95e71ccc20431f10c08",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/correction-build.log",
+      "sha256": "7724d121e1bf87f58e322e7ed2d49c8ffce02aef879c61900d4e8588eee31c9a",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/native-owner-final.json",
+      "sha256": "b7dd38eb3cd4bbe6cfb19c4850563bb8c41ac5affe3e1ce78bfac5363bce77a4",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/native-owner-start.json",
+      "sha256": "c463d0a0b38f69f432c71a7034b47c2c372b5660d56d47a92b6e945fb2e6f5f4",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/private-evidence-hashes.json",
+      "sha256": "8a6f79fb9862e10ed8ad931edde170d5d306281887543d5ff7ac2108f789b07f",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/sdk-owner.json",
+      "sha256": "b98ffc8630737a0a001dfbaf81680fa6b3df4d9f45a39091bd6c6bec88f24e40",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/stock-artifact-handoff.json",
+      "sha256": "110fe8c50bda480e74de52aa95000a642f58a91ecf1ad201e300b4f27e6a7d36",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/wrong-owner-final.json",
+      "sha256": "89f9f692a53a7424de7f99aea5a52f502b6323bcfcb9a57d5c4e4c279550bf1d",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/stock-retry-20261113/wrong-owner-start.json",
+      "sha256": "7caaf34b4ddb64b0e81dccb2a226ce3e5b335da5bff31f1d0ed1440cc0ea7965",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/0001-build-failed-projection.log",
+      "sha256": "9413b4590f7e9e1562012a15c2d64564b72e027f94b6d116067d799c57584f12",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/correct-native.json",
+      "sha256": "36477b8427a250c82258f33748cc62e179fef124d8b4989eaf67cacc67af8148",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/finish-native.json",
+      "sha256": "b2bcad7125ea0112d469bf00a35d5b2a5e21b2a8c52207e363d30e88200cb372",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/first-finish-native.json",
+      "sha256": "683c6ace21e774c697775f45ce24b4cec0b0511c6ee44680099b94ee8270c7e7",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/setup-split-host-blocked.json",
+      "sha256": "8242fe0eb911f722a1e6a41351938fc1d46ba4753b524de91647e6ede047f9ad",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/acceptance/wrapper-20261108/wrong-native.json",
+      "sha256": "8236c4f21222835ea7bf3f73916fe15e3ecac9fcf94e8b8158cebe87ad66be43",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/followup9-20261106.md",
+      "sha256": "c314f13f3ae649ab61a19028dbd5f5e1ce23a38c856a477e36f4eaf59a1c0970",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/independent-stock.md",
+      "sha256": "07c48100d9cb9e47087a6e598ccc45a6a6061b6afb51de5a926f3414a2dcae79",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "docs/learner-route-custom-legacy.md",
+      "sha256": "62fe190b1b2f0c8d773e889106e5493751ff9a793e9cbd5365e9eb575573b226",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "docs/learner-route.md",
+      "sha256": "22d735f0a10086ce0b1309b763d3e7ede249d2efd2a4fa289bf0efe075d46067",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "docs/native-recovery-20261104.md",
+      "sha256": "8420a6aebfcb9fe05cc3f383dd1bfdb2fbb7e46e44907ab14e514273d2da06fe",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/review/appendix.json",
+      "sha256": "ac39ac62bd6c18c19bb823dbb49079a00738a6045cf25d53bb66b779f112e62c",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/review/host-initial-failure.log",
+      "sha256": "3b0a5e420315a55b795cd9f99f95096e651fe852fd0e39578de144bc2a756d38",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/sdk-install-result-20261104.md",
+      "sha256": "882531617767acdd33a2958b5ab67dde0dcde5ca120a9a186d659d5b4f429de3",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "docs/stock-route-research.json",
+      "sha256": "b98a5c294e978731fb65bbe15fea5e2dfe306a8f89c166404e2c67ba1006d5ec",
+      "classification": "preserved historical evidence / pinned diagnostic"
+    },
+    {
+      "path": "scripts/build-target.sh",
+      "sha256": "436323100a7e46dd7725fa20bb267c0c8bbf014351e9781e32f5d3a22c90f111",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/learner_lab.py",
+      "sha256": "74ae4ab6cab6120636a2edfc1511d841a1610d53a1893041553ddef60e6c5460",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/stock_build_owner.py",
+      "sha256": "083ca2da0353f480e2c4455fb6927dffc4ff45d87ddc7b3367b9bf446476c809",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/stock_console.py",
+      "sha256": "0fb950f2cb732a3493fb64febbe896ef7588b9c5987c9da6946ee1a5deb4092c",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/stock_lease.py",
+      "sha256": "68240eea3345863f243ba133cb12647471864c72136bdf1a0805688cff07bb73",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/stock_provenance.py",
+      "sha256": "449bf3591f8b091b77901fddb10a13d965d6c1f318169e6f749da6b2cad7f284",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "scripts/stock_sdk_owner.py",
+      "sha256": "5005ab216edcf497ca520ff3496dd0a18b1a7afba61c5e23fa302c58ec96ce19",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "tests/test_codelab_export.py",
+      "sha256": "a224e006da5753d34292c661cd6bb608ba5fb7270d345dd24cb33a1783e5891b",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    },
+    {
+      "path": "tests/test_learner_session.py",
+      "sha256": "9423275032997a8e32baf7264af0312ef319041d0684a24604ed194ea75b33de",
+      "classification": "historical lab record or native implementation constraint; not HOST quickstart"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Publication audit — 15 November 2026
 
-**HOLD for owner review; not a clean-publication certificate. Repository remains PRIVATE.** No history rewrite, public release, guest execution, SDK installation, contacts or spending were performed. Runtime sources and historical acceptance receipts are unchanged.
+**HOLD for owner review; not a clean-publication certificate. Historical PRIVATE status — STALE: repository is now PUBLIC.** No history rewrite, public release, guest execution, SDK installation, contacts or spending were performed. Runtime sources and historical acceptance receipts are unchanged.
 
 ## Audited base and scope
 

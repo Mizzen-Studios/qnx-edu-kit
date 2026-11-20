@@ -1,3 +1,5 @@
+> Portable paths: set EDU_NATIVE_LEASE to your operator-approved shared native lock and QNX_GUESTCTL to your reviewed external controller. These are licensed native prerequisites, not HOST judge steps. Do not invoke native commands without separate authority.
+
 # Build your own stock platform — explicit cooperative admission
 
 This is a second, explicit route, not a relaxation of the Nov13 pinned handoff.
@@ -45,8 +47,10 @@ second licence, paid resources, swap change or platform repair. Missing legal
 setup is BLOCKED. SDK1GiB; native512MiB; CPU100%, HOST2GiB, swap0, nice15,
 smp1, TCG256, reserve64. Active guest swap stops the build without changing it.
 
+The current stock_chain/stock_lease implementation still binds its historical owner-lab lock internally (see scripts/stock_lease.py); setting EDU_NATIVE_LEASE alone does not relocate that lock. Portable adaptation requires a separate reviewed change, not an arbitrary lock substitution.
+
 One trusted owner script holds the inherited exclusive
-`/home/ubuntu/qnx-host/native-test.lock` descriptor through the full chain:
+`"$EDU_NATIVE_LEASE"` descriptor through the full chain:
 
 ```sh
 python3 scripts/stock_chain.py /absolute/private/owner-journey.sh

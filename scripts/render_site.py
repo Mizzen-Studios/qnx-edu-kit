@@ -113,6 +113,8 @@ def outputs():
                 result[OUT/f.relative_to(ROOT)] = f.read_text()
     for f in (ROOT/'docs/proof-capture').glob('*.json'):
         result[OUT/f.relative_to(ROOT)]=f.read_text()
+    inventory=ROOT/'docs/immutable-path-inventory.json'
+    if inventory.is_file():result[OUT/'docs/immutable-path-inventory.json']=inventory.read_text()
     research=ROOT/'docs/stock-route-research.json'
     if research.is_file():result[OUT/'docs/stock-route-research.json']=research.read_text()
     f=ROOT/'docs/claim-lint.json'

@@ -34,6 +34,7 @@ def script(pack,report):
   out.extend(['## '+x['id']+' — '+str(x['start'])+'–'+str(x['end'])+' seconds · '+x['label'],'Claim: '+x['claim'],'Planned frame: '+x['frame'],'Narration: '+x['narration'],'Frozen files: '+', '.join(a['path']+' SHA256 '+a['sha256']+' @ '+a.get('commit',pack['frozen_commit']) for a in x['assets']),'REVIEW boundary: '+x['review_quote'],''])
  return '\n'.join(out)+'\n'
 def main():
+ print("HISTORICAL diagnostic: original proof/claim pins remain strict; FAIL is not current HOST CI failure. See docs/HISTORICAL-DIAGNOSTICS.md", file=__import__("sys").stderr)
  a=argparse.ArgumentParser();a.add_argument('--write',action='store_true');args=a.parse_args()
  pack=json.loads((BASE/'pack.json').read_text());report=validate(pack);body=script(pack,report)
  if args.write:
