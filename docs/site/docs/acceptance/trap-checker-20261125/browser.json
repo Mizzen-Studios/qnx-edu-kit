@@ -1,0 +1,65 @@
+{
+  "scope": "HOST_BROWSER",
+  "receipts": [
+    {
+      "width": 360,
+      "height": 900,
+      "entryY": 583.578125,
+      "missing": true,
+      "wrongAndCorrectEachStep": true,
+      "downloadCLIParity": true,
+      "staleFeedbackCleared": true,
+      "reloadResets": true,
+      "instructionsNavigation": true,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "native_validation": "NOT_RUN"
+    },
+    {
+      "width": 520,
+      "height": 900,
+      "entryY": 459.140625,
+      "missing": true,
+      "wrongAndCorrectEachStep": true,
+      "downloadCLIParity": true,
+      "staleFeedbackCleared": true,
+      "reloadResets": true,
+      "instructionsNavigation": true,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "native_validation": "NOT_RUN"
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "entryY": 385.390625,
+      "missing": true,
+      "wrongAndCorrectEachStep": true,
+      "downloadCLIParity": true,
+      "staleFeedbackCleared": true,
+      "reloadResets": true,
+      "instructionsNavigation": true,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "native_validation": "NOT_RUN"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "entryY": 424.953125,
+      "missing": true,
+      "wrongAndCorrectEachStep": true,
+      "downloadCLIParity": true,
+      "staleFeedbackCleared": true,
+      "reloadResets": true,
+      "instructionsNavigation": true,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "native_validation": "NOT_RUN"
+    }
+  ]
+}

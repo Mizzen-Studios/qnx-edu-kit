@@ -5,7 +5,7 @@ const fs=require('fs'),path=require('path'),url=require('url'),cp=require('child
  const root=path.resolve(__dirname,'..'),scratch=path.resolve(root,'.openclaw/trap-browser');fs.mkdirSync(scratch,{recursive:true});
  const server=http.createServer((req,res)=>{const file=path.resolve(root,'docs/site','.'+decodeURIComponent(req.url.split('?')[0]));if(!file.startsWith(path.join(root,'docs/site')+path.sep)){res.writeHead(403).end();return;}try{res.setHeader('Content-Type',file.endsWith('.js')?'application/javascript':'text/html');res.end(fs.readFileSync(file));}catch{res.writeHead(404).end();}});
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const origin='http://127.0.0.1:'+server.address().port;
- const browser=await chromium.launch({headless:true,downloadsPath:path.join(scratch,'downloads'),executablePath:'/usr/bin/chromium-browser',args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,downloadsPath:path.join(scratch,'downloads'),executablePath:process.env.EDU_QA_CHROMIUM||'/usr/bin/chromium-browser',args:['--no-sandbox']});
  const receipts=[];
  try{
  for(const width of [360,520,768,1280]){

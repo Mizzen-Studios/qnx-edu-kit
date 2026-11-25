@@ -1,0 +1,28 @@
+{
+  "scope": "HOST_STATIC_REASONING_AND_BROWSER",
+  "native_validation": "NOT_RUN",
+  "tests": {
+    "total": 178,
+    "passed": 176,
+    "skipped": 2
+  },
+  "sha256": {
+    "scripts/check_traps.py": "bc466c2e5b6de0d272db8393b14b9ab6e5c355556254d1b838bc7a3e0bec5016",
+    "scripts/render_traps.py": "0b235ff46c18974172b64ac5dd968e1cee5e2be903c46b55044c41ddb451206a",
+    "codelab/qnx-traps/catalog.json": "c418df1160c2cd797db4114818d4a65b6b321245f86e4244ca1c62ff77ab3901",
+    "codelab/qnx-traps/lab.js": "6e519ec346f11d655796ebfdfc05cf69ea8512f2b43809cbbea488222efc0d21",
+    "codelab/qnx-traps/qnx-traps.md": "a333132225621fa86ceb3f7020458d233e8ebd28827ec494c583f75796aabf00",
+    "tests/test_traps.py": "91ef429723b88a561372bfd54fd2730aab8b76565197582a9230566b3b2dada3",
+    "tests/browser_traps.cjs": "1bc53e496358f859bc459bf08cbde2a2a36ec0f6456f0e61cad3879ea7163417"
+  },
+  "screenshots": {
+    "worksheet-520.png": "c2dea7028397b8da815db191183bf6a7450ae97cd7ef747b74b252e6e15c7f62",
+    "worksheet-768.png": "f682518d7491467f1b46931424b3d3a67181b12670a6d950394759d574d26141",
+    "worksheet-360.png": "da3adf1c39d81281468e0b7a4a5779b78ef8aaf2800c4bec97ebc156ef4b0116",
+    "worksheet-1280.png": "2b738892357af18f05215bab3550eac02872ae660442db04ee0ab070edbdbd61"
+  },
+  "browser": "installed Playwright Chromium 1243 arm64; headless, loopback only",
+  "guest_operations": 0,
+  "licenced_sdk_assets_added": 0,
+  "spend_gbp": 0
+}
