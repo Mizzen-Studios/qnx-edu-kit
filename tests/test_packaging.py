@@ -50,7 +50,10 @@ class Packaging(unittest.TestCase):
         self.assertIn('Congratulations',s);self.assertEqual(s.count('Mini-map:'),7)
     def test_no_external_runtime_assets(self):
         for page in (ROOT/'docs/site').rglob('*.html'):
-            text=page.read_text();self.assertNotIn('<script',text)
+            text=page.read_text()
+            if page.relative_to(ROOT/'docs/site').as_posix()=='codelab/qnx-traps/index.html':
+                self.assertIn('src="lab.js"',text);self.assertIn("connect-src 'none'",text)
+            else:self.assertNotIn('<script',text)
             self.assertNotRegex(text,r'(?:src|href)="https?://[^\"]+\.(?:js|css|woff)')
     def test_policy_not_fake_validation(self):
         self.assertIn('NOT validated', (ROOT/'docs/security-policy.md').read_text())

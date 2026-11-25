@@ -1,3 +1,7 @@
+# HOST trap checker — 25 November 2026
+
+Five-step QNX reasoning checker and offline worksheet implemented. HOST_STATIC_REASONING only; NativeLab validation **NOT_RUN**. Message/pulse/reply, finite OCB read, ability/path-policy distinction and fixed EDU oracle. [Instructions](codelab/qnx-traps/qnx-traps.md). This does not update any historical runtime pin, failure or native result. C6 STOPPED; £0.
+
 # Current evidence and limits — 20 November 2026
 
 ## Status — 20 November 2026

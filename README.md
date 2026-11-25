@@ -2,6 +2,10 @@
 
 A learner-owned PCI-to-/dev/edu lab: wrong edit FAIL despite application exit 0 → corrected PASS → write 10 / read 3628800. [Watch the demo](https://youtu.be/hI8-QtwMg8A).
 
+## Try the QNX trap checker — HOST ONLY
+
+[Open the five-step worksheet](docs/site/codelab/qnx-traps/index.html): messages, pulses, finite resource-manager reads, abilities and the exit-zero trap. Per-step diagnosis and fixes, no SDK. **Native validation NOT_RUN.** [Codelab and CLI](codelab/qnx-traps/qnx-traps.md).
+
 ## Five-minute HOST ONLY judge path
 
 No QNX hardware, SDK, image or QEMU required. From the repository root with Python 3, POSIX shell and GNU make:

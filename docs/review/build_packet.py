@@ -62,6 +62,8 @@ def build():
  e['stock-blocked']=rec('docs/acceptance/stock-20261113/receipt.json','observed clean stock guest OOM; no native run',note='One fresh standard stock build, no custom IFS. HOST2GiB not breached in sampled evidence; guest512 OOM. All stock-native gates NOT_RUN.')
  # Line-level coverage includes all prose/code, not just a keyword-selected subset.
  sources=[ROOT/'README.md',ROOT/'STATUS.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'docs').glob('*.md'))+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs/acceptance').glob('**/*.md'))
+ sources += sorted((ROOT/'codelab/qnx-traps').glob('*.md'))
+ sources += [ROOT/'codelab/qnx-traps/catalog.json',ROOT/'codelab/qnx-traps/lab.js']
  sources += sorted((ROOT/'docs/proof-capture').glob('*.md'))
  sources += [ROOT/'tools/owner_lab/README.md']
  groups=[('clean stock block',['stock-blocked'],r'BLOCKED_CLEAN_STOCK_IFS_OOM|stock-20261113|Nov13 clean stock'),('Nov10 feature SDK block',['features-blocked'],r'BLOCKED_STOCK_MKIFS_OOM|features-20261110|Nov10 feature|private pulse'),('supported topology and blocked single-host',['single-host-timeout'],r'split.host|single.host|BLOCKED_NATIVE_TIMEOUT|STOP.?REAP'),('ability teaching',['ability-native'],r'ability-only|ability stage|IO0|subrange|IO_LEVEL'),('own notebook native',['wrapper-wrong','wrapper-correct','wrapper-finish','notebook-host-fixes'],r'wrapper-20261108|own-session|notebook|cockpit'),('new prerequisite',['prereq-native'],r'prereq-20261108|ability control|slog2|co-located|attach/connect'),('reference',['reference','reference-clean','compile'],r'PCI|BAR|factorial|IAT|Interrupt|IRQ|DMA|resmgr|resource.manager|/dev/edu|STEP[1-6]|step[1-6]'),('clean learner',['step3-wrong','step3-correct','finish','stock-build','oom'],r'learner|clean|swap|stock|Memory fault|sshd'),('host framework',['host','old-host','upgrade-final-host'],r'host|model|test|guard|framework|source.contract|Python|stdlib|dependenc'),('export/site',['export'],r'claat|render|site|SVG|diagram|snapshot'),('register reference',['qtest'],r'qtest|register|QEMU.device')]
@@ -76,6 +78,7 @@ def build():
  site=[]
  for p in sorted((ROOT/'docs/site').rglob('*.html')):
   rel=p.relative_to(ROOT/'docs/site'); src=ROOT/rel.with_suffix('.md') if rel.as_posix()!='index.html' else ROOT/'README.md'
+  if rel.as_posix()=='codelab/qnx-traps/index.html': src=ROOT/'codelab/qnx-traps/catalog.json'
   site.append(dict(path=str(p.relative_to(ROOT)),sha256=sha(p),source=str(src.relative_to(ROOT)),coverage='same source line inventory; generated projection, not independent evidence'))
  return dict(schema='qnx-private-review.v1',reviewed_tip='0610fda2ffda125d3e3b4888c74c70ecbcf7eb69',accepted_conditional_tip='ada5d0ff03533a2fec0983f3fedbd9bada9df8a9',labels=['observed in this QEMU run','host-only','UNKNOWN','UNVERIFIED'],evidence=e,source_surfaces=surfaces,site_projection=site,claim_catalog=dict(path='REVIEW.md',sha256=sha(ROOT/'REVIEW.md')))
 if __name__=='__main__':

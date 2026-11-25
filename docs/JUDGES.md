@@ -2,6 +2,10 @@
 
 QNX Global Hackathon 2026 entry (Low-level Software; Best Codelab/Tutorial). Apache-2.0. No paid resources used.
 
+## Start here — try a QNX mistake
+
+[Open the local per-step trap worksheet](site/codelab/qnx-traps/index.html). Predict, check, diagnose and fix five QNX-specific mistakes. HOST reasoning only; native validation NOT_RUN. [Read the codelab](../codelab/qnx-traps/qnx-traps.md). No SDK or guest is started.
+
 ## Start here — working HOST command, no SDK
 
 From the checkout root, with Python 3, GNU make and a POSIX shell:

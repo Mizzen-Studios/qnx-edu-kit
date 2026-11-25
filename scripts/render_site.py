@@ -31,7 +31,7 @@ def destination(url, source):
         return url
     target = (source.parent / url).resolve()
     rel = target.relative_to(ROOT).as_posix()
-    if rel == 'docs/site/index.html': rel = 'index.html'
+    if rel.startswith('docs/site/'): rel = rel[len('docs/site/'):]
     if target.suffix == '.md': rel = rel[:-3]+'.html'
     # every generated content page has canonical paths rooted at docs/site
     depth = len(source.relative_to(ROOT).parts)-1
@@ -90,6 +90,7 @@ def render(source):
 
 def outputs():
     files=[ROOT/'README.md',ROOT/'REVIEW.md',ROOT/'codelab/codelab.md']+sorted((ROOT/'steps').glob('**/*.md'))+sorted((ROOT/'docs').glob('*.md'))
+    files += sorted((ROOT/'codelab/qnx-traps').glob('*.md'))
     files += sorted((ROOT/'docs/acceptance').glob('**/*.md'))
     files += sorted((ROOT/'docs/proof-capture').glob('*.md'))
     files += [ROOT/'tools/owner_lab/README.md']
@@ -97,6 +98,7 @@ def outputs():
     result={OUT / f.relative_to(ROOT).with_suffix('.html'):render(f) for f in files}
     result[OUT/'index.html']=render(ROOT/'README.md')
     result[OUT/'LICENSE']=(ROOT/'LICENSE').read_text()
+    result[OUT/'codelab/qnx-traps/catalog.json']=(ROOT/'codelab/qnx-traps/catalog.json').read_text()
     for f in (ROOT/'docs/diagrams').glob('*'):
         result[OUT/'docs/diagrams'/f.name]=f.read_text()
     for f in (ROOT/'docs').glob('*.txt'):result[OUT/'docs'/f.name]=f.read_text()
@@ -130,6 +132,8 @@ def outputs():
     for name in ('appendix.json',):
         f=ROOT/'docs/review'/name
         if f.is_file(): result[OUT/'docs/review'/name]=f.read_text()
+    from render_traps import outputs as trap_outputs
+    result.update(trap_outputs())
     return result
 
 def main():
