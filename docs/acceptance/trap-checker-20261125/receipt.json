@@ -2,17 +2,17 @@
   "scope": "HOST_STATIC_REASONING_AND_BROWSER",
   "native_validation": "NOT_RUN",
   "tests": {
-    "total": 178,
-    "passed": 176,
+    "total": 179,
+    "passed": 177,
     "skipped": 2
   },
   "sha256": {
     "scripts/check_traps.py": "bc466c2e5b6de0d272db8393b14b9ab6e5c355556254d1b838bc7a3e0bec5016",
-    "scripts/render_traps.py": "0b235ff46c18974172b64ac5dd968e1cee5e2be903c46b55044c41ddb451206a",
+    "scripts/render_traps.py": "eb19485af53cae224c58e4ace194b40396c7d96723dc9b7145c38ba3535d787e",
     "codelab/qnx-traps/catalog.json": "c418df1160c2cd797db4114818d4a65b6b321245f86e4244ca1c62ff77ab3901",
     "codelab/qnx-traps/lab.js": "6e519ec346f11d655796ebfdfc05cf69ea8512f2b43809cbbea488222efc0d21",
     "codelab/qnx-traps/qnx-traps.md": "a333132225621fa86ceb3f7020458d233e8ebd28827ec494c583f75796aabf00",
-    "tests/test_traps.py": "91ef429723b88a561372bfd54fd2730aab8b76565197582a9230566b3b2dada3",
+    "tests/test_traps.py": "677ee75cf529378a96fda3686773c9bb657537c2db64f0ac5937e2f621f76f9c",
     "tests/browser_traps.cjs": "1bc53e496358f859bc459bf08cbde2a2a36ec0f6456f0e61cad3879ea7163417"
   },
   "screenshots": {

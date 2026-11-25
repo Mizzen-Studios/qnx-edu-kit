@@ -80,6 +80,15 @@ class Traps(unittest.TestCase):
         self.assertIn('connect-src',page);self.assertIn('application/json',page)
         self.assertIn('Native validation: NOT_RUN',page)
 
+    def test_catalog_closing_tag_is_escaped(self):
+        from unittest.mock import patch
+        raw=json.dumps({'steps': [], 'title': '</script><script>alert(1)</script>'}).encode()
+        with patch.object(Path, 'read_bytes', return_value=raw):
+            page=next(content for path,content in r.outputs().items() if path.suffix=='.html')
+        payload=page.split('id="trap-data">',1)[1].split('</script>',1)[0]
+        self.assertNotIn('<',payload)
+        self.assertEqual(json.loads(payload)['title'],'</script><script>alert(1)</script>')
+
     def test_sources_and_metadata(self):
         steps=c.catalog()['steps'];self.assertEqual(len({s['id'] for s in steps}),5)
         for s in steps:self.assertIn(s['answer'],s['options'])

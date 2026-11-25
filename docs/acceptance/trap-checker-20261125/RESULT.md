@@ -28,3 +28,7 @@ node tests/browser_traps.cjs
 ~~~
 
 Core implementation milestone f60979a4f97e6fadbce78f12d33583daca6fd151 was pushed. CI status is verified separately against the final pushed tip; no native acceptance is inferred from green Actions.
+
+## Final inert-JSON hardening
+
+Final source inspection caught a command-escaping mistake: the intended less-than escape in the inert catalog serializer had become a no-op. Corrected it, added an actual closing-script-tag injection regression, and reran the full suite: **179 tests /177 passed /2 skipped** plus all four browser widths and download-to-CLI parity. Initial stale-generated-output assertion after this change failed as expected before regeneration; regenerated outputs and retested. Existing HOST transcript above remains the earlier178-test milestone; hardened-host.txt is the final179-test transcript. No learner-supplied catalog is imported; this adds defense in depth for future repository catalog edits.
